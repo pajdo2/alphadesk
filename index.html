@@ -2745,7 +2745,8 @@ var POLY_KEYWORDS={
   SUI:["sui"],PEPE:["pepe"],WIF:["dogwifhat","wif"]
 };
 function fetchPolymarket(){
-  fetch("https://gamma-api.polymarket.com/markets?tag_slug=crypto&closed=false&limit=60&sort_by=volume&order=desc")
+  // tag_slug parametar ne postoji — dohvaćamo sve aktivne markete i filtriramo client-side
+  fetch("https://gamma-api.polymarket.com/markets?active=true&closed=false&limit=100")
     .then(function(r){return r.json();})
     .then(function(markets){
       if(!Array.isArray(markets))return;
@@ -2845,7 +2846,10 @@ function connectLiqWS(){
 
 // ── SPX (S&P500) KORELACIJA — Yahoo Finance besplatno ────────────────
 function fetchSPX(){
-  fetch("https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC?interval=1d&range=7d")
+  // Yahoo Finance blokira direktne browser zahtjeve (CORS) — koristimo allorigins proxy
+  var yahooUrl="https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC?interval=1d&range=7d";
+  var proxyUrl="https://api.allorigins.win/raw?url="+encodeURIComponent(yahooUrl);
+  fetch(proxyUrl)
     .then(function(r){return r.json();})
     .then(function(d){
       var result=d&&d.chart&&d.chart.result&&d.chart.result[0];
@@ -2857,7 +2861,20 @@ function fetchSPX(){
       var ret=+((valid[valid.length-1]-valid[0])/valid[0]*100).toFixed(2);
       spxData={ret5d:ret,bullish:ret>0,last:+valid[valid.length-1].toFixed(2)};
       lastRefresh.spx=Date.now();
-    }).catch(function(){});
+    }).catch(function(){
+      // Fallback: pokušaj direktno (može raditi na nekim mrežama)
+      fetch(yahooUrl).then(function(r){return r.json();}).then(function(d){
+        var result=d&&d.chart&&d.chart.result&&d.chart.result[0];
+        if(!result)return;
+        var prices=result.indicators&&result.indicators.quote&&result.indicators.quote[0]&&result.indicators.quote[0].close;
+        if(!prices||prices.length<2)return;
+        var valid=prices.filter(function(p){return p!=null;});
+        if(valid.length<2)return;
+        var ret=+((valid[valid.length-1]-valid[0])/valid[0]*100).toFixed(2);
+        spxData={ret5d:ret,bullish:ret>0,last:+valid[valid.length-1].toFixed(2)};
+        lastRefresh.spx=Date.now();
+      }).catch(function(){});
+    });
 }
 
 // ── EXCHANGE NETFLOW (CryptoQuant — zahtijeva API ključ) ─────────────
