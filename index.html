@@ -885,8 +885,8 @@ function analyze3D(sym){
 function getOpportunities(){
   var analyzeFn=(activeFilter==="ulaz"||activeFilter==="watch")&&activePct===3?analyze3pct:(activeFilter==="ulaz"||activeFilter==="watch")&&activePct===10?analyze10pct:analyze3D;
   var minConf=activeFilter==="watch"?Math.min(settings.minConf,38):settings.minConf;
-  // Koristi sve tokene iz TOP100 koji imaju cijenu
-  var syms=TOP100.filter(function(s){return px[s]&&px[s].p>0;});
+  // Koristi sve ne-meme tokene iz TOP100 koji imaju cijenu (meme coini imaju vlastiti tab)
+  var syms=TOP100.filter(function(s){return px[s]&&px[s].p>0&&KNOWN_MEME.indexOf(s)<0;});
   var all=syms.map(analyzeFn).filter(function(x){return x&&x.conf>=minConf;});
   all.sort(function(a,b){return b.conf-a.conf||b.score-a.score;});
 
