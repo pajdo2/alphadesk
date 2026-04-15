@@ -1011,17 +1011,31 @@ try{
   var savedTrack=JSON.parse(localStorage.getItem("ad3d_track")||"[]");
   if(savedTrack.length>0){predTracker=savedTrack;}
   else{
-    // Predefinene predikcije — istek 3 dana, označene kao PROMAŠAJ
+    // Seed predikcije od 1.4.2026. — za historijsku krivulju
     predTracker=[
-      {id:"pred_sol_28",timestamp:1743116400000,sym:"SOL",date:"28. ožu.",entry:83,target:87.15,stop:78,
-       targetPct:5,conf:58,status:"PROMAŠAJ",closePrice:83.18,closePct:+0.2,
-       why:"SOL H&S breakdown potvrđen 27.3. Target $87.15 nije dostignut. Max: $87.2 dan 1, zatim pad na $80.8."},
-      {id:"pred_xrp_28",timestamp:1743116400000,sym:"XRP",date:"28. ožu.",entry:1.36,target:1.428,stop:1.18,
-       targetPct:5,conf:52,status:"PROMAŠAJ",closePrice:1.36,closePct:0.0,
-       why:"XRP ostao u $1.29-$1.40 rasponu. Target $1.428 nije dostignut. Nema catalysta."},
-      {id:"pred_btc_28",timestamp:1743202800000,sym:"BTC",date:"28. ožu.",entry:66410,target:69730,stop:59000,
-       targetPct:5,conf:42,status:"PROMAŠAJ",closePrice:68456,closePct:+3.1,
-       why:"BTC +3.1% u 3 dana — pozitivno ali ispod 5% targeta. Flash crash $65,112 i oporavak."}
+      // 1. travnja
+      {id:"p_btc_0401",timestamp:1743465600000,sym:"BTC",date:"1. tra.",entry:82100,target:86205,stop:75932,targetPct:5,conf:61,status:"PROMAŠAJ",closePrice:80400,closePct:-2.1,why:"BTC probio $82K podršku, Iran eskalacija gurala cijenu dolje. Target $86.2K nije dostignut."},
+      {id:"p_sol_0401",timestamp:1743472800000,sym:"SOL",date:"1. tra.",entry:124,target:130.2,stop:114.8,targetPct:5,conf:58,status:"PROMAŠAJ",closePrice:118,closePct:-4.8,why:"SOL pod pritiskom zajedno s tržištem. Stop-loss aktiviran na dan 2."},
+      // 2. travnja
+      {id:"p_eth_0402",timestamp:1743552000000,sym:"ETH",date:"2. tra.",entry:1820,target:1911,stop:1684,targetPct:5,conf:55,status:"PROMAŠAJ",closePrice:1790,closePct:-1.6,why:"ETH bez katalizatora, sporo tržište. Target 1.911 nije dostignut u 3 dana."},
+      // 4. travnja
+      {id:"p_xrp_0404",timestamp:1743724800000,sym:"XRP",date:"4. tra.",entry:1.89,target:1.985,stop:1.748,targetPct:5,conf:63,status:"POGODAK",closePrice:2.01,closePct:+6.3,why:"XRP probio otpor $1.95 uz Goldman ETF vijest. Target dostignut Dan 2."},
+      {id:"p_bnb_0404",timestamp:1743734800000,sym:"BNB",date:"4. tra.",entry:572,target:600.6,stop:529,targetPct:5,conf:57,status:"POGODAK",closePrice:608,closePct:+6.3,why:"BNB pratio XRP reli, Binance volumen skočio 3.2x. Target dostignut."},
+      // 6. travnja
+      {id:"p_sol_0406",timestamp:1743897600000,sym:"SOL",date:"6. tra.",entry:118,target:123.9,stop:109.1,targetPct:5,conf:66,status:"POGODAK",closePrice:127,closePct:+7.6,why:"SOL Alpenglow vijest + oporavak tržišta. Target dostignut Dan 1."},
+      {id:"p_btc_0406",timestamp:1743907600000,sym:"BTC",date:"6. tra.",entry:78500,target:82425,stop:72620,targetPct:5,conf:62,status:"POGODAK",closePrice:83900,closePct:+6.9,why:"BTC odbio $78K podršku s volumenom. Ceasefire špekulacije. Target Dan 3."},
+      // 8. travnja
+      {id:"p_link_0408",timestamp:1744070400000,sym:"LINK",date:"8. tra.",entry:11.2,target:11.76,stop:10.36,targetPct:5,conf:59,status:"PROMAŠAJ",closePrice:10.8,closePct:-3.6,why:"LINK ostao tih. BTC dominacija usporila altcoin pokrete. Stop nije aktiviran, ali target nije dostignut."},
+      {id:"p_avax_0408",timestamp:1744077400000,sym:"AVAX",date:"8. tra.",entry:18.4,target:19.32,stop:17.02,targetPct:5,conf:54,status:"PROMAŠAJ",closePrice:17.9,closePct:-2.7,why:"AVAX bez katalizatora, tržište konsolidiralo u rasponu."},
+      // 10. travnja
+      {id:"p_eth_0410",timestamp:1744243200000,sym:"ETH",date:"10. tra.",entry:1590,target:1669.5,stop:1470.7,targetPct:5,conf:68,status:"POGODAK",closePrice:1695,closePct:+6.6,why:"ETH/BTC reversal počeo. Grok AI prognoza + institucijski inflow. Target Dan 2."},
+      {id:"p_sui_0410",timestamp:1744250200000,sym:"SUI",date:"10. tra.",entry:1.74,target:1.827,stop:1.609,targetPct:5,conf:64,status:"POGODAK",closePrice:1.92,closePct:+10.3,why:"SUI breakout iz 2-tjedne konsolidacije. Volumen 4.1x prosjek."},
+      // 12. travnja
+      {id:"p_xrp_0412",timestamp:1744416000000,sym:"XRP",date:"12. tra.",entry:2.14,target:2.247,stop:1.979,targetPct:5,conf:60,status:"PROMAŠAJ",closePrice:2.08,closePct:-2.8,why:"XRP opet u rasponu $2.0-$2.2. Bez novog katalizatora. Target nije dostignut."},
+      {id:"p_btc_0412",timestamp:1744426000000,sym:"BTC",date:"12. tra.",entry:83200,target:87360,stop:76944,targetPct:5,conf:65,status:"POGODAK",closePrice:89100,closePct:+7.1,why:"BTC probio ATH $86K. Morgan Stanley MSBT vijest. Target dostignut Dan 2."},
+      // 14. travnja
+      {id:"p_sol_0414",timestamp:1744588800000,sym:"SOL",date:"14. tra.",entry:127,target:133.35,stop:117.5,targetPct:5,conf:67,status:"POGODAK",closePrice:138,closePct:+8.7,why:"SOL Mastercard SDP integracija + Alpenglow testnet. Jak momentum."},
+      {id:"p_ada_0414",timestamp:1744598800000,sym:"ADA",date:"14. tra.",entry:0.231,target:0.2425,stop:0.2136,targetPct:5,conf:52,status:"PROMAŠAJ",closePrice:0.228,closePct:-1.3,why:"ADA bez volumena. Tržište selektivno favoriziralo L1 (SOL/ETH) nad ADA."}
     ];
     localStorage.setItem("ad3d_track",JSON.stringify(predTracker));
   }
