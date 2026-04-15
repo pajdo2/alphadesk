@@ -2385,7 +2385,7 @@ function rMeme(){
   });
   h+='</div>';
   var posSize=memeMinConf>=80?'30':memeMinConf>=70?'20':'10';
-  h+='<div style="font-size:13px;color:var(--t2);line-height:1.6;margin-bottom:12px">Samo coinovi s pouzdanošću <strong style="color:var(--pu)">≥'+memeMinConf+'%</strong> i ATR-om koji pokriva 10% potez. Visoki rizik — koristiti max '+posSize+'% normale pozicije.</div>';
+  h+='<div style="font-size:12px;color:rgba(213,0,249,.85);background:rgba(213,0,249,.06);border:.5px solid rgba(213,0,249,.2);border-radius:12px;padding:10px 14px;margin-bottom:12px">🎰 <strong>Kriterij:</strong> meme coini iz TOP 100 s pouzdanošću ≥'+memeMinConf+'% i ATR-om koji pokriva +10% u 3 dana — max '+posSize+'% pozicije.</div>';
   var activeMeme=getMemeSYMS();
   var allStats=activeMeme.map(analyzeMeme).filter(function(x){return x;});
   var pass=allStats.filter(function(x){return x.conf>=memeMinConf&&x.achievable3d;}).length;
@@ -2443,6 +2443,13 @@ function render(){
     h+='Postotak u prstenu = AI pouzdanost. ';
     h+='<span style="color:var(--gr)">🔥 Vrući</span> = visok conf + ATR pokriva potez.';
     h+='</div></div></div>';
+  }
+
+  // Kriterij banner — samo na Ulaz i Watch tabu
+  if(activeFilter==="ulaz"){
+    h+='<div style="background:rgba(0,230,118,.06);border:.5px solid rgba(0,230,118,.2);border-radius:12px;padding:10px 14px;margin-bottom:12px;font-size:12px;color:rgba(0,230,118,.85)">✅ <strong>Kriterij:</strong> pouzdanost ≥ 58% i višestruki bullish signali — tokeni spremni za ulaz.</div>';
+  } else if(activeFilter==="watch"){
+    h+='<div style="background:rgba(255,234,0,.05);border:.5px solid rgba(255,234,0,.2);border-radius:12px;padding:10px 14px;margin-bottom:12px;font-size:12px;color:rgba(255,234,0,.85)">👁 <strong>Kriterij:</strong> pozitivni signali ali nedovoljno jaki za direktan ulaz — čekaj potvrdu (🟡 ≥48% / 🔵 ≥38%).</div>';
   }
 
   if(opps.length===0){
