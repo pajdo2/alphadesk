@@ -2343,7 +2343,8 @@ function render(){
   if(activeFilter==="meme"){sc.innerHTML=rMeme();return;}
   var opps=getOpportunities();
 
-  var h='<div class="pg">'+renderRefreshStatus();
+  var isPregled=activeFilter==="all";
+  var h='<div class="pg">'+(isPregled?renderRefreshStatus():'');
 
   // Summary stats — iz TOP100
   var scanSyms=TOP100.filter(function(s){return px[s]&&px[s].p>0;});
