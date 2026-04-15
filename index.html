@@ -2344,35 +2344,36 @@ function render(){
   var opps=getOpportunities();
 
   var isPregled=activeFilter==="all";
-  var h='<div class="pg">'+(isPregled?renderRefreshStatus():'');
+  var h='<div class="pg">';
 
-  // Summary stats — iz TOP100
-  var scanSyms=TOP100.filter(function(s){return px[s]&&px[s].p>0;});
-  var all=scanSyms.map(analyze3D).filter(function(x){return x;});
-  var hot=all.filter(function(x){return x.isHot;}).length;
-  var visible=opps.length;
-  h+='<div style="display:flex;gap:8px;margin-bottom:12px">';
-  h+='<div style="flex:1;background:var(--s1);border:.5px solid var(--sep);border-radius:12px;padding:10px 8px;text-align:center"><div style="font-size:22px;font-weight:900;color:var(--bl)">'+scanSyms.length+'</div><div style="font-size:11px;color:var(--t3);margin-top:2px">Skenirano</div></div>';
-  h+='<div style="flex:1;background:var(--s1);border:.5px solid var(--sep);border-radius:12px;padding:10px 8px;text-align:center"><div style="font-size:22px;font-weight:900;color:var(--ye)">'+visible+'</div><div style="font-size:11px;color:var(--t3);margin-top:2px">Prilike</div></div>';
-  h+='<div style="flex:1;background:var(--s1);border:.5px solid var(--sep);border-radius:12px;padding:10px 8px;text-align:center"><div style="font-size:22px;font-weight:900;color:var(--or)">'+hot+'</div><div style="font-size:11px;color:var(--t3);margin-top:2px">🔥 Vrući</div></div>';
-  h+='<div style="flex:1;background:var(--s1);border:.5px solid var(--sep);border-radius:12px;padding:10px 8px;text-align:center"><div style="font-size:22px;font-weight:900;color:var(--gr)">'+settings.targetPct+'%</div><div style="font-size:11px;color:var(--t3);margin-top:2px">Target</div></div>';
-  h+='</div>';
-  // Collapsible legenda
-  var legendOpen=lsGet("ad3d_legend")!=="0";
-  h+='<div class="legend" style="margin-bottom:14px">';
-  h+='<div onclick="var o=this.nextElementSibling.style.display===\'none\';this.nextElementSibling.style.display=o?\'block\':\'none\';lsSet(\'ad3d_legend\',o?\'1\':\'0\');this.querySelector(\'.leg-arr\').textContent=o?\'▲\':\'▼\'" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none">';
-  h+='<span style="font-size:11px;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:.08em">Kako čitati ovaj prikaz</span>';
-  h+='<span class="leg-arr" style="font-size:10px;color:var(--t4)">'+(legendOpen?'▲':'▼')+'</span>';
-  h+='</div>';
-  h+='<div style="display:'+(legendOpen?'block':'none')+';margin-top:10px">';
-  h+='<div style="font-size:12px;color:var(--t2);line-height:1.7">';
-  h+='Skenirano <strong style="color:var(--ye)">top '+TOP100.length+' kripto tokena</strong> po tržišnoj kapitalizaciji. ';
-  h+='Traži prilike za <strong style="color:var(--ye)">+'+settings.targetPct+'%</strong> u <strong style="color:var(--ye)">3 dana</strong>. ';
-  h+='Postotak u prstenu = AI pouzdanost. ';
-  h+='<span style="color:var(--gr)">🔥 Vrući</span> = visok conf + ATR pokriva potez.';
-  h+='</div>';
-  h+='</div>';
-  h+='</div>';
+  if(isPregled){
+    h+=renderRefreshStatus();
+    // Summary stats
+    var scanSyms=TOP100.filter(function(s){return px[s]&&px[s].p>0;});
+    var all=scanSyms.map(analyze3D).filter(function(x){return x;});
+    var hot=all.filter(function(x){return x.isHot;}).length;
+    var visible=opps.length;
+    h+='<div style="display:flex;gap:8px;margin-bottom:12px">';
+    h+='<div style="flex:1;background:var(--s1);border:.5px solid var(--sep);border-radius:12px;padding:10px 8px;text-align:center"><div style="font-size:22px;font-weight:900;color:var(--bl)">'+scanSyms.length+'</div><div style="font-size:11px;color:var(--t3);margin-top:3px">Skenirano</div></div>';
+    h+='<div style="flex:1;background:var(--s1);border:.5px solid var(--sep);border-radius:12px;padding:10px 8px;text-align:center"><div style="font-size:22px;font-weight:900;color:var(--ye)">'+visible+'</div><div style="font-size:11px;color:var(--t3);margin-top:3px">Prilike</div></div>';
+    h+='<div style="flex:1;background:var(--s1);border:.5px solid var(--sep);border-radius:12px;padding:10px 8px;text-align:center"><div style="font-size:22px;font-weight:900;color:var(--or)">'+hot+'</div><div style="font-size:11px;color:var(--t3);margin-top:3px">🔥 Vrući</div></div>';
+    h+='<div style="flex:1;background:var(--s1);border:.5px solid var(--sep);border-radius:12px;padding:10px 8px;text-align:center"><div style="font-size:22px;font-weight:900;color:var(--gr)">'+settings.targetPct+'%</div><div style="font-size:11px;color:var(--t3);margin-top:3px">Target</div></div>';
+    h+='</div>';
+    // Collapsible legenda
+    var legendOpen=lsGet("ad3d_legend")!=="0";
+    h+='<div class="legend" style="margin-bottom:14px">';
+    h+='<div onclick="var o=this.nextElementSibling.style.display===\'none\';this.nextElementSibling.style.display=o?\'block\':\'none\';lsSet(\'ad3d_legend\',o?\'1\':\'0\');this.querySelector(\'.leg-arr\').textContent=o?\'▲\':\'▼\'" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none">';
+    h+='<span style="font-size:11px;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:.08em">Kako čitati ovaj prikaz</span>';
+    h+='<span class="leg-arr" style="font-size:10px;color:var(--t4)">'+(legendOpen?'▲':'▼')+'</span>';
+    h+='</div>';
+    h+='<div style="display:'+(legendOpen?'block':'none')+';margin-top:10px">';
+    h+='<div style="font-size:12px;color:var(--t2);line-height:1.7">';
+    h+='Skenirano <strong style="color:var(--ye)">top '+TOP100.length+' kripto tokena</strong> po tržišnoj kapitalizaciji. ';
+    h+='Traži prilike za <strong style="color:var(--ye)">+'+settings.targetPct+'%</strong> u <strong style="color:var(--ye)">3 dana</strong>. ';
+    h+='Postotak u prstenu = AI pouzdanost. ';
+    h+='<span style="color:var(--gr)">🔥 Vrući</span> = visok conf + ATR pokriva potez.';
+    h+='</div></div></div>';
+  }
 
   if(opps.length===0){
     h+='<div class="empty"><div style="font-size:48px;margin-bottom:14px">🔍</div><div style="font-size:17px;font-weight:600;color:var(--t2);margin-bottom:6px">Nema prilike</div><div style="font-size:13px;color:var(--t3)">Trenutni uvjeti ne zadovoljavaju kriterije.<br>Smanji min. pouzdanost ili pričekaj bolji setup.</div></div>';
@@ -2380,44 +2381,46 @@ function render(){
     opps.forEach(function(o){h+=renderOpp(o);});
   }
 
-  // ── POLYMARKET PANEL ─────────────────────────────────────────────
-  var allPolyMarkets=[];
-  Object.keys(polyData).forEach(function(sym){
-    polyData[sym].forEach(function(m){
-      if(allPolyMarkets.findIndex(function(x){return x.slug===m.slug;})<0)
-        allPolyMarkets.push(Object.assign({sym:sym},m));
+  // ── POLYMARKET PANEL — samo na Pregled tabu ──────────────────────
+  if(isPregled){
+    var allPolyMarkets=[];
+    Object.keys(polyData).forEach(function(sym){
+      polyData[sym].forEach(function(m){
+        if(allPolyMarkets.findIndex(function(x){return x.slug===m.slug;})<0)
+          allPolyMarkets.push(Object.assign({sym:sym},m));
+      });
     });
-  });
-  allPolyMarkets.sort(function(a,b){return b.volume-a.volume;});
-  var topMarkets=allPolyMarkets.slice(0,8);
-  if(topMarkets.length>0){
-    h+='<div style="margin-bottom:16px">';
-    h+='<div style="font-size:11px;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;display:flex;align-items:center;gap:6px">';
-    h+='<span style="background:rgba(99,102,241,.15);border:.5px solid rgba(99,102,241,.3);border-radius:6px;padding:2px 7px;color:#818cf8">📊 POLYMARKET</span>';
-    h+='<span>Prediction Markets — crowd intelligence</span></div>';
-    topMarkets.forEach(function(m){
-      var pct=Math.round(m.prob*100);
-      var barCol=pct>60?"var(--gr)":pct<35?"var(--re)":"var(--ye)";
-      var symBadge=m.sym?'<span style="font-size:9px;font-weight:800;background:rgba(255,255,255,.07);border-radius:4px;padding:1px 5px;color:var(--t3);margin-right:5px">'+m.sym+'</span>':"";
-      var volStr=m.volume>=1000000?"$"+(m.volume/1000000).toFixed(1)+"M":"$"+(m.volume/1000).toFixed(0)+"K";
-      var daysStr="";
-      if(m.endDate){var dd=Math.round((new Date(m.endDate)-Date.now())/86400000);if(dd>=0)daysStr='<span style="font-size:10px;color:var(--t4)"> · '+dd+'d do zaključenja</span>';}
-      h+='<div style="background:var(--s1);border-radius:12px;padding:11px 14px;margin-bottom:7px;border:.5px solid var(--sep)">';
-      h+='<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:7px">';
-      h+='<div style="font-size:12px;font-weight:600;color:var(--t1);flex:1;padding-right:12px">'+symBadge+m.question+'</div>';
-      h+='<div style="font-size:20px;font-weight:900;color:'+barCol+';white-space:nowrap">'+pct+'%</div>';
+    allPolyMarkets.sort(function(a,b){return b.volume-a.volume;});
+    var topMarkets=allPolyMarkets.slice(0,8);
+    if(topMarkets.length>0){
+      h+='<div style="margin-bottom:16px">';
+      h+='<div style="font-size:11px;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;display:flex;align-items:center;gap:6px">';
+      h+='<span style="background:rgba(99,102,241,.15);border:.5px solid rgba(99,102,241,.3);border-radius:6px;padding:2px 7px;color:#818cf8">📊 POLYMARKET</span>';
+      h+='<span>Prediction Markets — crowd intelligence</span></div>';
+      topMarkets.forEach(function(m){
+        var pct=Math.round(m.prob*100);
+        var barCol=pct>60?"var(--gr)":pct<35?"var(--re)":"var(--ye)";
+        var symBadge=m.sym?'<span style="font-size:9px;font-weight:800;background:rgba(255,255,255,.07);border-radius:4px;padding:1px 5px;color:var(--t3);margin-right:5px">'+m.sym+'</span>':"";
+        var volStr=m.volume>=1000000?"$"+(m.volume/1000000).toFixed(1)+"M":"$"+(m.volume/1000).toFixed(0)+"K";
+        var daysStr="";
+        if(m.endDate){var dd=Math.round((new Date(m.endDate)-Date.now())/86400000);if(dd>=0)daysStr='<span style="font-size:10px;color:var(--t4)"> · '+dd+'d do zaključenja</span>';}
+        h+='<div style="background:var(--s1);border-radius:12px;padding:11px 14px;margin-bottom:7px;border:.5px solid var(--sep)">';
+        h+='<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:7px">';
+        h+='<div style="font-size:12px;font-weight:600;color:var(--t1);flex:1;padding-right:12px">'+symBadge+m.question+'</div>';
+        h+='<div style="font-size:20px;font-weight:900;color:'+barCol+';white-space:nowrap">'+pct+'%</div>';
+        h+='</div>';
+        h+='<div style="display:flex;align-items:center;gap:8px">';
+        h+='<div style="flex:1;height:4px;background:var(--s3);border-radius:4px"><div style="width:'+pct+'%;height:4px;background:'+barCol+';border-radius:4px;transition:width .4s"></div></div>';
+        h+='<span style="font-size:10px;color:var(--t4)">'+volStr+' vol'+daysStr+'</span>';
+        h+='</div></div>';
+      });
       h+='</div>';
-      h+='<div style="display:flex;align-items:center;gap:8px">';
-      h+='<div style="flex:1;height:4px;background:var(--s3);border-radius:4px"><div style="width:'+pct+'%;height:4px;background:'+barCol+';border-radius:4px;transition:width .4s"></div></div>';
-      h+='<span style="font-size:10px;color:var(--t4)">'+volStr+' vol'+daysStr+'</span>';
-      h+='</div></div>';
-    });
-    h+='</div>';
-  } else {
-    h+='<div style="margin-bottom:16px;padding:12px 14px;background:var(--s1);border-radius:12px;border:.5px solid var(--sep);font-size:12px;color:var(--t3)">📊 Polymarket podaci se učitavaju...</div>';
+    } else {
+      h+='<div style="margin-bottom:16px;padding:12px 14px;background:var(--s1);border-radius:12px;border:.5px solid var(--sep);font-size:12px;color:var(--t3)">📊 Polymarket podaci se učitavaju...</div>';
+    }
   }
 
-  h+='<div style="text-align:center;padding:10px 0 20px;font-size:11px;color:var(--t4)">⚡ Auto-refresh 10s · WS live na Netlify · Projekcije ≠ financijski savjet</div>';
+  h+='<div style="text-align:center;padding:10px 0 20px;font-size:11px;color:var(--t4)">⚡ Auto-refresh 10s · WS live · Projekcije ≠ financijski savjet</div>';
   h+='</div>';
   sc.innerHTML=h;
 }
