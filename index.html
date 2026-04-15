@@ -149,6 +149,10 @@ svg.sp{overflow:visible;display:block}
         <div class="live-dot" id="wsd"></div>
         <span class="live-txt" id="wst">WS</span>
       </div>
+      <div class="live-pill" id="tg-pill" style="display:none">
+        <div class="live-dot" id="tgd"></div>
+        <span class="live-txt" id="tgt" style="color:#2979ff">TG</span>
+      </div>
       <button class="hd-gear" onclick="openSettings()">⚙️</button>
     </div>
   </div>
@@ -389,25 +393,48 @@ function renderRefreshStatus(){
   }
   var now=new Date(),pad=function(n){return n<10?"0"+n:n;};
   var clk=pad(now.getHours())+":"+pad(now.getMinutes())+":"+pad(now.getSeconds());
+  // Najstariji izvor određuje poziciju igle — prikazuje "health" sustava
+  var sources=[
+    {lbl:"Cijene",ts:lastRefresh.prices,m:20},
+    {lbl:"F&G",ts:lastRefresh.fg,m:360},
+    {lbl:"Futures",ts:lastRefresh.futures,m:360},
+    {lbl:"OI",ts:lastRefresh.oi,m:720},
+    {lbl:"Poly",ts:lastRefresh.polymarket,m:1200},
+    {lbl:"SPX",ts:lastRefresh.spx,m:2400}
+  ];
+  // Najlošiji (najstariji relativno) izvor
+  var worstFresh=0,worstLbl="Analiza",worstTs=lastRefresh.analysis,worstMax=30;
+  sources.forEach(function(s){
+    var f=s.ts?Math.min(1,(Date.now()-s.ts)/1000/s.m):1;
+    if(f>worstFresh){worstFresh=f;worstLbl=s.lbl;worstTs=s.ts;worstMax=s.m;}
+  });
+  // Analiza je uvijek na ljestvici — uzmi max između analize i najlošijeg izvora
+  var anaFresh=lastRefresh.analysis?Math.min(1,(Date.now()-lastRefresh.analysis)/1000/30):1;
+  if(anaFresh>worstFresh){worstFresh=anaFresh;worstLbl="Analiza";worstTs=lastRefresh.analysis;worstMax=30;}
+
   var h='<div style="background:linear-gradient(175deg,#0e0e11 0%,#111116 100%);border-radius:16px;padding:12px 14px 10px;margin-bottom:12px;border:.5px solid rgba(255,255,255,.055);box-shadow:0 2px 20px rgba(0,0,0,.4)">';
-  // Header row
-  h+='<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">';
+  // Header
+  h+='<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">';
   h+='<span style="font-size:9px;font-weight:800;color:rgba(255,255,255,.2);letter-spacing:.18em;text-transform:uppercase">Signal Dashboard</span>';
   h+='<span style="font-size:14px;font-weight:900;color:rgba(255,255,255,.6);font-family:\'Courier New\',monospace;letter-spacing:.08em">'+clk+'</span>';
   h+='</div>';
-  // Main + mini layout
-  h+='<div style="display:flex;align-items:flex-end;justify-content:center;gap:6px;flex-wrap:wrap">';
-  h+=tacho("an","ANALIZA",lastRefresh.analysis,30,136);
-  h+='<div style="width:.5px;height:72px;background:rgba(255,255,255,.05);align-self:center;flex-shrink:0"></div>';
-  h+='<div style="display:flex;flex-wrap:wrap;gap:2px;justify-content:center;max-width:280px">';
-  [{id:"pr",l:"CIJENE",ts:lastRefresh.prices,m:20},
-   {id:"fg",l:"F&G",ts:lastRefresh.fg,m:360},
-   {id:"fu",l:"FUTURES",ts:lastRefresh.futures,m:360},
-   {id:"oi",l:"OI",ts:lastRefresh.oi,m:720},
-   {id:"po",l:"POLY",ts:lastRefresh.polymarket,m:1200},
-   {id:"sp",l:"SPX",ts:lastRefresh.spx,m:2400}
-  ].forEach(function(m){h+=tacho(m.id,m.l,m.ts,m.m,74);});
-  h+='</div></div>';
+  // Jedan RPM meter — centriran
+  h+='<div style="display:flex;justify-content:center;margin-bottom:10px">';
+  h+=tacho("main",worstLbl,worstTs,worstMax,160);
+  h+='</div>';
+  // Kompaktni badges za sve izvore ispod metera
+  h+='<div style="display:flex;flex-wrap:wrap;gap:5px;justify-content:center">';
+  [{lbl:"Analiza",ts:lastRefresh.analysis,m:30}].concat(sources).forEach(function(s){
+    var f=s.ts?Math.min(1,(Date.now()-s.ts)/1000/s.m):1;
+    var c=f<0.35?"#00e676":f<0.70?"#ffab00":"#ff1744";
+    var ago=s.ts?fmtTsAgo(s.ts):"—";
+    h+='<div style="display:flex;align-items:center;gap:4px;background:rgba(255,255,255,.04);border:.5px solid rgba(255,255,255,.07);border-radius:20px;padding:3px 9px">';
+    h+='<span style="width:5px;height:5px;border-radius:50%;background:'+c+';display:inline-block;flex-shrink:0"></span>';
+    h+='<span style="font-size:10px;color:rgba(255,255,255,.4)">'+s.lbl+'</span>';
+    h+='<span style="font-size:10px;color:'+c+';font-weight:700;font-family:monospace">'+ago+'</span>';
+    h+='</div>';
+  });
+  h+='</div>';
   // GH sync
   if(apiKeys.github){
     var gc2=ghSync.status==="ok"?"#00e676":ghSync.status==="error"?"#ff1744":ghSync.status==="syncing"?"#ffab00":"rgba(255,255,255,.25)";
