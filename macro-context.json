@@ -1,0 +1,31 @@
+{
+  "lastUpdated": "2026-04-02T10:00:00.000Z",
+  "warActive": true,
+  "macroPenalty": 4,
+  "oil": 115,
+  "btcDom": 57.9,
+  "stableDom": 8.2,
+  "aiSummary": "Tržište u Extreme Fear (F&G 13). Iran-Izrael konflikt aktivan, nafta $115 inflacijski pritisak. BTC dominance 57.9% pritišće altcoine. Stablecoin dominance 8.2% — kapital čeka na sidelines.",
+  "catalysts": {
+    "BTC": ["Morgan Stanley $MSBT uskoro", "Bernstein $150K target", "Halving dan 703/777"],
+    "ETH": ["ETH $2K drži kao support", "Grok AI procjena $4.9K-6.7K", "ETH/BTC reversal potencijal"],
+    "XRP": ["Goldman $153.8M ETF pozicija", "CLARITY Act 72% šansa travanj", "25% institucija planira XRP"],
+    "SOL": ["25% institucija planira SOL", "Alpenglow upgrade Q3 2026", "Mastercard SDP integracija"],
+    "BNB": [],
+    "ADA": [],
+    "LINK": ["Chainlink CCIP ekspanzija"],
+    "AVAX": [],
+    "SUI": []
+  },
+  "warnings": {
+    "BTC": ["Rudari troše $79,995/BTC — near break-even", "Dom >57% = altcoins pate"],
+    "ETH": ["Fusaka tokenomic promjena zabrinjavajuća", "ETF net outflows zadnji tjedan"],
+    "XRP": ["Iran range vezan za $1.30-$1.50", "3.8B XRP na burzama — supply pritisak"],
+    "SOL": ["Head & Shoulders formacija na grafovima", "$80 break = put $60 scenarij"],
+    "BNB": [],
+    "ADA": ["Slabi kratkoročni katalyzatori"],
+    "LINK": [],
+    "AVAX": [],
+    "SUI": ["Slabi kratkoročni katalyzatori"]
+  }
+}

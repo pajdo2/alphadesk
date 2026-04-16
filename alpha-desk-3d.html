@@ -217,6 +217,11 @@ svg.sp{overflow:visible;display:block}
           <input id="s-lc" class="inp" type="password" placeholder="API key..." style="font-size:12px">
         </div>
         <div>
+          <label class="inp-lbl">CryptoPanic API key <span style="color:var(--t3)">(news sentiment — opcionalno, bez ključa radi free endpoint)</span></label>
+          <input id="s-cp" class="inp" type="password" placeholder="API token..." style="font-size:12px">
+          <div style="font-size:10px;color:var(--t3);margin-top:4px">cryptopanic.com → My Account → API token (besplatno)</div>
+        </div>
+        <div>
           <label class="inp-lbl">GitHub Personal Access Token <span style="color:var(--t3)">(sync rezultata između uređaja)</span></label>
           <input id="s-gh" class="inp" type="password" placeholder="ghp_..." style="font-size:12px">
           <div style="font-size:10px;color:var(--t3);margin-top:4px">github.com → Settings → Developer settings → Personal access tokens → repo scope</div>
@@ -343,7 +348,7 @@ var tokenUnlocks={      // Poznati unlock eventi — bearish pritisak pred unloc
   SOL:{date:"2026-04-20",pct:2.1,usd:420000000,reason:"FTX estate distribucija"},
   ARB:{date:"2026-03-16",pct:11.6,usd:950000000,reason:"Team unlock cliff"}
 };
-var apiKeys={cryptoquant:"",coinglass:"",lunarcrush:"",github:""};
+var apiKeys={cryptoquant:"",coinglass:"",lunarcrush:"",github:"",cryptopanic:""};
 try{var _ak=JSON.parse(lsGet("ad3d_apikeys")||"{}");if(_ak&&typeof _ak==="object")Object.assign(apiKeys,_ak);}catch(e){}
 // GitHub sync
 var GH_REPO="ttovernic/alphadesk";
@@ -352,8 +357,13 @@ var ghSha=null; // SHA trenutne verzije fajla na GitHubu (potreban za PUT)
 var ghSync={status:"idle",lastSync:null,error:null}; // "idle"|"syncing"|"ok"|"error"
 var polyData={};  // {sym:[{question,prob,volume,endDate}]} — Polymarket prediction markets
 var polyRaw=[];   // raw lista aktivnih kripto marketa s Polymarketa
+var cvdData={};      // {sym:{cvd,trend,divergence}} — Cumulative Volume Delta (skrivena akumulacija)
+var relStrength={};  // {sym:{rs24h,rs7d,leading,lagging}} — relativna snaga vs BTC
+var swingLevels={};  // {sym:{supports:[],resistances:[]}} — swing high/low S/R nivoi
+var newsData={};     // {sym:[{title,sentiment,ts}]} — CryptoPanic news sentiment
+var backtestResults={}; // {sym:{accuracy,n,hits,recent}} — historijski backtest na daily klines
 var lastRefresh={ // timestamp zadnjeg osvježavanja po izvoru
-  analysis:null, prices:null, fg:null, futures:null, polymarket:null, spx:null, oi:null, btcDom:null, oil:null
+  analysis:null, prices:null, fg:null, futures:null, polymarket:null, spx:null, oi:null, btcDom:null, oil:null, news:null
 };
 const CG_IDS={BTC:"bitcoin",ETH:"ethereum",XRP:"ripple",BNB:"binancecoin",ADA:"cardano",LINK:"chainlink",SOL:"solana",AVAX:"avalanche-2",SUI:"sui",DOGE:"dogecoin",SHIB:"shiba-inu",PEPE:"pepe",WIF:"dogwifhat",BONK:"bonk",FLOKI:"floki"};
 
@@ -393,7 +403,8 @@ function renderRefreshStatus(){
     {lbl:"Poly",ts:lastRefresh.polymarket,m:1200},
     {lbl:"SPX",ts:lastRefresh.spx,m:2400},
     {lbl:"BTC Dom",ts:lastRefresh.btcDom,m:900},
-    {lbl:"Oil",ts:lastRefresh.oil,m:1800}
+    {lbl:"Oil",ts:lastRefresh.oil,m:1800},
+    {lbl:"News",ts:lastRefresh.news,m:1200}
   ];
   var h='<div style="background:rgba(255,255,255,.025);border-radius:12px;padding:8px 12px;margin-bottom:12px;border:.5px solid rgba(255,255,255,.05)">';
   h+='<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">';
@@ -691,6 +702,40 @@ function scoreMarketSignals(sym,signals,warnings){
       else if(isBear&&m.prob<0.3){delta+=1;signals.push({txt:"Polymarket samo "+pct+"% pada — bullish vs bear scenario",type:"bull"});}
     });
   }
+  // 20. CVD (Cumulative Volume Delta) — otkriva skrivenu akumulaciju/distribuciju
+  // Najvažniji signal koji manjina retail trejdera koristi
+  var cvd=cvdData[sym];
+  if(cvd){
+    if(cvd.divergence==="BULLISH"){delta+=2.5;signals.push({txt:"📊 CVD bullish div: cijena pada, akumulacija raste — smart money kupuje",type:"bull"});}
+    else if(cvd.divergence==="BEARISH"){delta-=2.5;warnings.push({txt:"📊 CVD bearish div: cijena raste, akumulacija pada — distribucija/fakeout",type:"bear"});}
+    else if(cvd.trend==="RISING"){delta+=1;signals.push({txt:"📊 CVD raste — kupci dominiraju taker flowom",type:"bull"});}
+    else if(cvd.trend==="FALLING"){delta-=1;warnings.push({txt:"📊 CVD pada — prodavači dominiraju",type:"warn"});}
+  }
+  // 21. RELATIVNA SNAGA vs BTC — leader vs lagging token
+  var rs=relStrength[sym];
+  if(rs&&sym!=="BTC"){
+    if(rs.leading){delta+=1.5;signals.push({txt:"💪 RS: +"+(rs.rs24h>0?"+":"")+rs.rs24h+"% vs BTC — outperformer, kapital teče ovamo",type:"bull"});}
+    else if(rs.lagging){delta-=1;warnings.push({txt:"📉 RS: "+rs.rs24h+"% vs BTC — underperformer, izbjegavaj",type:"warn"});}
+    if(rs.rs7dLeading){delta+=0.5;signals.push({txt:"💪 7d RS: +"+(rs.rs7d>0?"+":"")+rs.rs7d+"% vs BTC — tjednički leader",type:"bull"});}
+  }
+  // 22. SWING HIGH/LOW — support & resistance nivoi iz price historije
+  var sw=swingLevels[sym];var curPx=px[sym]?px[sym].p:0;
+  if(sw&&curPx){
+    var nearSup=sw.supports.filter(function(l){return Math.abs(curPx-l)/curPx<0.018;});
+    var nearRes=sw.resistances.filter(function(l){return Math.abs(curPx-l)/curPx<0.018;});
+    if(nearSup.length){delta+=1.5;signals.push({txt:"🔵 Na swing podršci "+fp(nearSup[0])+" — historijska bounce zona",type:"bull"});}
+    if(nearRes.length){delta-=1;warnings.push({txt:"🔴 Blizu swing otpora "+fp(nearRes[0])+" — zona distribucije",type:"warn"});}
+  }
+  // 23. NEWS SENTIMENT (CryptoPanic — ako dostupno)
+  var news=newsData[sym];
+  if(news&&news.length){
+    var recent48h=news.filter(function(n){return Date.now()-n.ts<48*3600000;});
+    var bullNews=recent48h.filter(function(n){return n.sentiment==="positive";}).length;
+    var bearNews=recent48h.filter(function(n){return n.sentiment==="negative";}).length;
+    if(bullNews>=2&&bullNews>bearNews){delta+=1;signals.push({txt:"📰 "+bullNews+" bullish vijesti (48h) — pozitivan news flow",type:"bull"});}
+    else if(bearNews>=2&&bearNews>bullNews){delta-=1.5;warnings.push({txt:"📰 "+bearNews+" negativnih vijesti (48h) — FUD ili fundamentalni problem",type:"bear"});}
+    else if(bearNews>=1&&bullNews===0){delta-=0.5;warnings.push({txt:"📰 Negativna vijest u zadnja 48h",type:"warn"});}
+  }
   // Clamp ukupnog delta — sprječava overflow scoring modela (svaki engine ima maxScore 28-30)
   // Bez clampa, 20 istovremenih bullish signala = delta 30+ → rawConf izlazi iz opsega
   delta=Math.max(-12,Math.min(12,delta));
@@ -828,6 +873,21 @@ function analyze3D(sym){
 
   // Tržišni signali: BTC dom, BTC trend, volume, order book, 7d trend, DXY
   score+=scoreMarketSignals(sym,signals,warnings);
+
+  // ── TRIFECTA SETUP — bonus kad se više jakih signala poklopi istovremeno ──
+  // Sinergija signala je jača od linearne sume — svaki dodatni potvrđuje setup
+  var vs3d=volSpike[sym],fd3d=futuresData[sym];
+  var trifecta=0;
+  if(t&&t.rsi<35)trifecta++;
+  if(t&&t.divergence==="BULLISH")trifecta++;
+  if(m&&m.cross==="BULLISH")trifecta++;
+  if(vs3d&&vs3d.ratio>2)trifecta++;
+  if(t&&t.bb&&price<t.bb.l)trifecta++;
+  if(fd3d&&fd3d.lsRatio!=null&&fd3d.lsRatio<0.7)trifecta++;
+  if(fd3d&&fd3d.takerRatio!=null&&fd3d.takerRatio<0.75)trifecta++;
+  if(cvdData[sym]&&cvdData[sym].divergence==="BULLISH")trifecta++;
+  if(trifecta>=5){score+=3.5;signals.push({txt:"🎯 TRIFECTA "+trifecta+"/8: izniman multi-signal poklopaj — visoka pouzdanost",type:"bull"});}
+  else if(trifecta>=3){score+=1.5;signals.push({txt:"🎯 Multi-signal "+trifecta+"/8: jak setup, višestruka potvrda",type:"bull"});}
 
   // Confidence calculation — rekalibrirani maxScore i strožiji war cap
   var maxScore=28;
@@ -1039,6 +1099,51 @@ function renderOpp(o){
   h+='<div class="rbar"><div class="rbar-fill" style="width:'+riskPct+'%;background:'+o.riskCol+'"></div></div>';
   h+='</div>';
 
+  // ── CVD + Swing S/R + RS info strip ─────────────────────────────
+  var cvdI=cvdData[o.sym],swI=swingLevels[o.sym],rsI=relStrength[o.sym];
+  var hasExtra=cvdI||swI||rsI;
+  if(hasExtra){
+    h+='<div style="padding:8px 16px;border-bottom:.5px solid var(--sep2);display:flex;flex-wrap:wrap;gap:6px">';
+    if(cvdI&&cvdI.trend!=="FLAT"){
+      var cvdCol=cvdI.divergence==="BULLISH"?"var(--gr)":cvdI.divergence==="BEARISH"?"var(--re)":cvdI.trend==="RISING"?"rgba(0,230,118,.6)":"rgba(255,23,68,.6)";
+      var cvdLbl=cvdI.divergence==="BULLISH"?"📊 CVD: bull div ↑":cvdI.divergence==="BEARISH"?"📊 CVD: bear div ↓":cvdI.trend==="RISING"?"📊 CVD raste":"📊 CVD pada";
+      h+='<span style="font-size:10px;padding:3px 8px;border-radius:20px;background:'+cvdCol+'18;color:'+cvdCol+';border:.5px solid '+cvdCol+'40">'+cvdLbl+'</span>';
+    }
+    if(rsI&&o.sym!=="BTC"){
+      var rsCol=rsI.leading?"var(--gr)":rsI.lagging?"var(--re)":"var(--t3)";
+      var rsLbl=rsI.leading?"💪 RS leader +"+(rsI.rs24h>0?"+":"")+rsI.rs24h+"%":rsI.lagging?"📉 RS lagging "+rsI.rs24h+"%":"RS "+rsI.rs24h+"% vs BTC";
+      h+='<span style="font-size:10px;padding:3px 8px;border-radius:20px;background:'+rsCol+'18;color:'+rsCol+';border:.5px solid '+rsCol+'40">'+rsLbl+'</span>';
+    }
+    if(swI&&swI.supports.length){h+='<span style="font-size:10px;padding:3px 8px;border-radius:20px;background:rgba(0,230,118,.08);color:rgba(0,230,118,.7);border:.5px solid rgba(0,230,118,.2)">🔵 Podrška '+fp(swI.supports[swI.supports.length-1])+'</span>';}
+    if(swI&&swI.resistances.length){h+='<span style="font-size:10px;padding:3px 8px;border-radius:20px;background:rgba(255,23,68,.06);color:rgba(255,100,100,.8);border:.5px solid rgba(255,23,68,.2)">🔴 Otpor '+fp(swI.resistances[0])+'</span>';}
+    h+='</div>';
+  }
+  // ── NEWS vijesti za token ───────────────────────────────────────
+  var newsI=newsData[o.sym];
+  if(newsI&&newsI.length){
+    var recentNews=newsI.slice(0,2);
+    h+='<div style="padding:8px 16px;border-bottom:.5px solid var(--sep2)">';
+    recentNews.forEach(function(n){
+      var nc=n.sentiment==="positive"?"var(--gr)":n.sentiment==="negative"?"var(--re)":"var(--t3)";
+      var ni=n.sentiment==="positive"?"📗":n.sentiment==="negative"?"📕":"📰";
+      h+='<div style="font-size:10px;color:'+nc+';margin-bottom:2px">'+ni+' '+n.title.slice(0,80)+(n.title.length>80?"…":"")+'</div>';
+    });
+    h+='</div>';
+  }
+  // ── KELLY POSITION SIZING ────────────────────────────────────────
+  var kelly=kellyPositionSize();
+  if(kelly){
+    var kCol=kelly.halfKelly>=10?"var(--gr)":kelly.halfKelly>=5?"var(--ye)":"var(--re)";
+    var kAdjusted=+(kelly.halfKelly*(o.conf/100)*2).toFixed(1); // kalibriran i po confidence-u
+    kAdjusted=Math.max(1,Math.min(kelly.halfKelly,kAdjusted));
+    h+='<div style="padding:8px 16px;border-bottom:.5px solid var(--sep2);background:rgba(255,255,255,.02)">';
+    h+='<div style="display:flex;align-items:center;justify-content:space-between">';
+    h+='<span style="font-size:10px;color:var(--t3)">📐 Kelly pozicija <span style="color:var(--t4)">('+kelly.n+' predikcija, '+Math.round(kelly.winRate*100)+'% acc)</span></span>';
+    h+='<span style="font-size:13px;font-weight:800;color:'+kCol+'">~'+kAdjusted+'% portfolia</span>';
+    h+='</div>';
+    h+='<div style="font-size:9px;color:var(--t4);margin-top:1px">Half-Kelly: '+kelly.halfKelly+'% · prilagođeno za '+o.conf+'% conf → '+kAdjusted+'%</div>';
+    h+='</div>';
+  }
   // Action button
   h+='<div style="padding:12px 16px;display:flex;gap:8px">';
   h+='<button onclick="recordPred(\''+o.sym+'\','+o.price+','+o.targetPrice+','+o.stopPrice+','+o.conf+','+o.targetPct+','+o.d1Price+','+o.d2Price+')" style="flex:1;padding:11px;background:rgba(41,121,255,.15);border:.5px solid rgba(41,121,255,.35);border-radius:12px;font-size:13px;font-weight:700;color:#2979ff;cursor:pointer;font-family:inherit">📝 Zabilježi trade</button>';
@@ -1473,6 +1578,16 @@ function analyze3pct(sym){
   // Tržišni signali: BTC dom, BTC trend, volume, order book, 7d trend, DXY
   score+=scoreMarketSignals(sym,signals,warnings);
 
+  // Trifecta za 3% engine (t,m su lokalne varijable iz analyze3pct)
+  var vs3p=volSpike[sym],fd3p=futuresData[sym];
+  var tri3p=0;
+  if(t&&t.rsi<28)tri3p++;if(t&&t.divergence==="BULLISH")tri3p++;
+  if(m&&m.cross==="BULLISH")tri3p++;if(vs3p&&vs3p.ratio>2)tri3p++;
+  if(t&&t.bb&&price<t.bb.l)tri3p++;if(fd3p&&fd3p.lsRatio!=null&&fd3p.lsRatio<0.7)tri3p++;
+  if(cvdData[sym]&&cvdData[sym].divergence==="BULLISH")tri3p++;
+  if(tri3p>=5){score+=2.5;signals.push({txt:"🎯 TRIFECTA "+tri3p+"/7 — izniman setup za 3% target",type:"bull"});}
+  else if(tri3p>=3){score+=1;signals.push({txt:"🎯 Multi-signal "+tri3p+"/7 — višestruka potvrda",type:"bull"});}
+
   // Confidence — rekalibrirani maxScore, war cap snižen s 78% na 65%
   var maxScore=28;
   var rawConf=Math.round(50+(score/maxScore)*42);
@@ -1626,6 +1741,18 @@ function analyze10pct(sym){
   score-=warns2.length*0.3;warns2.slice(0,1).forEach(function(w){warnings.push({txt:w,type:"warn"});});
 
   score+=scoreMarketSignals(sym,signals,warnings);
+
+  // Trifecta za 10% engine — zahtijeva više potvrda jer je cilj 2x viši
+  var vs10=volSpike[sym],fd10=futuresData[sym];
+  var tri10=0;
+  if(t&&t.rsi<32)tri10++;if(t&&t.divergence==="BULLISH")tri10++;
+  if(m&&m.cross==="BULLISH")tri10++;if(vs10&&vs10.ratio>2.5)tri10++;
+  if(t&&t.bb&&price<t.bb.l)tri10++;if(fd10&&fd10.lsRatio!=null&&fd10.lsRatio<0.7)tri10++;
+  if(fd10&&fd10.takerRatio!=null&&fd10.takerRatio<0.75)tri10++;
+  if(cvdData[sym]&&cvdData[sym].divergence==="BULLISH")tri10++;
+  if(relStrength[sym]&&relStrength[sym].leading)tri10++;
+  if(tri10>=6){score+=4;signals.push({txt:"🎯 TRIFECTA "+tri10+"/9 — izniman setup, 10% potez realan",type:"bull"});}
+  else if(tri10>=4){score+=2;signals.push({txt:"🎯 Multi-signal "+tri10+"/9 — jak, ali treba još potvrda za 10%",type:"bull"});}
 
   var atrPct=a?parseFloat(a.pct):2.0;
   var achievable3d=atrPct>=(TARGET/3)*0.6; // blaži prag — 10% potez ima šansu i s nešto nižim ATR
@@ -2285,6 +2412,67 @@ function renderWeightsPanel(){
   return h;
 }
 
+// ── KELLY CRITERION PANEL ────────────────────────────────────────
+function renderKellyPanel(){
+  var k=kellyPositionSize();
+  if(!k)return'<div style="background:var(--s1);border-radius:14px;padding:12px 16px;margin-bottom:12px;border:.5px solid rgba(255,255,255,.06);text-align:center;color:var(--t3);font-size:12px">📐 Kelly kalkulator — treba min. 8 zatvorenih predikcija</div>';
+  var kCol=k.halfKelly>=10?"var(--gr)":k.halfKelly>=5?"var(--ye)":"var(--re)";
+  var interpretation=k.halfKelly>=15?"Agresivna veličina — tržišni uvjeti povoljni":k.halfKelly>=8?"Umjerena pozicija — standardna kelly preporuka":k.halfKelly>=3?"Konzervativna — niska točnost ili loš R:R":"Micro pozicija — poboljšaj točnost ili R:R";
+  var h='<div style="background:var(--s1);border-radius:16px;padding:14px 16px;margin-bottom:12px;border:.5px solid rgba(255,255,255,.08)">';
+  h+='<div style="font-size:11px;font-weight:700;color:var(--t2);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px">📐 Kelly Criterion — optimalna veličina pozicije</div>';
+  h+='<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px">';
+  [["Win rate",Math.round(k.winRate*100)+"%","var(--gr)"],["Avg dobitak","+"+k.avgGain+"%","var(--gr)"],["Avg gubitak","-"+k.avgLoss+"%","var(--re)"]].forEach(function(s){
+    h+='<div style="background:var(--s2);border-radius:10px;padding:9px;text-align:center"><div style="font-size:18px;font-weight:900;color:'+s[2]+'">'+s[1]+'</div><div style="font-size:10px;color:var(--t3);margin-top:2px">'+s[0]+'</div></div>';
+  });
+  h+='</div>';
+  h+='<div style="background:var(--s3);border-radius:12px;padding:12px;margin-bottom:8px;text-align:center">';
+  h+='<div style="font-size:11px;color:var(--t3);margin-bottom:4px">Preporučena veličina pozicije (½ Kelly)</div>';
+  h+='<div style="font-size:36px;font-weight:900;color:'+kCol+'">'+k.halfKelly+'%</div>';
+  h+='<div style="font-size:11px;color:var(--t4)">Full Kelly: '++(k.kelly*100).toFixed(1)+'% · ½ Kelly = konzervativniji, manje drawdown</div>';
+  h+='</div>';
+  h+='<div style="font-size:11px;color:var(--t3)">💡 '+interpretation+' · Iz '+k.n+' zatvorenih predikcija</div>';
+  h+='</div>';
+  return h;
+}
+
+// ── BACKTEST PANEL ───────────────────────────────────────────────
+function renderBacktestPanel(){
+  var keys=Object.keys(backtestResults);
+  if(keys.length===0){
+    return'<div style="background:var(--s1);border-radius:14px;padding:12px 16px;margin-bottom:12px;border:.5px solid rgba(41,121,255,.1);text-align:center;color:var(--t3);font-size:12px">🔬 Backtest se pokreće u pozadini — podaci stižu uskoro…</div>';
+  }
+  var h='<div style="background:var(--s1);border-radius:16px;padding:14px 16px;margin-bottom:12px;border:.5px solid rgba(41,121,255,.15)">';
+  h+='<div style="font-size:11px;font-weight:700;color:#2979ff;text-transform:uppercase;letter-spacing:.08em;margin-bottom:2px">🔬 Historijski Backtest (90 dana, daily klines)</div>';
+  h+='<div style="font-size:10px;color:var(--t3);margin-bottom:10px">Simulacija signal engina na prošlim podacima · Samo tehnički signali (RSI, MACD, EMA, BB, divergencija) · Target: +5% u 3 dana</div>';
+  h+='<div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px">';
+  var sorted=keys.sort(function(a,b){return(backtestResults[b].accuracy||0)-(backtestResults[a].accuracy||0);});
+  sorted.forEach(function(sym){
+    var bt=backtestResults[sym];
+    if(bt.accuracy===null)return;
+    var col=bt.accuracy>=60?"var(--gr)":bt.accuracy>=50?"var(--ye)":"var(--re)";
+    h+='<div style="background:var(--s2);border-radius:10px;padding:8px 12px;text-align:center;min-width:70px">';
+    h+='<div style="font-size:11px;font-weight:700;color:var(--t2);margin-bottom:3px">'+sym+'</div>';
+    h+='<div style="font-size:20px;font-weight:900;color:'+col+'">'+bt.accuracy+'%</div>';
+    h+='<div style="font-size:9px;color:var(--t4)">'+bt.hits+'/'+bt.n+' signala</div>';
+    h+='</div>';
+  });
+  h+='</div>';
+  // Ukupna backtest točnost (sve tokene zajedno)
+  var totalN=0,totalH=0;
+  keys.forEach(function(sym){totalN+=backtestResults[sym].n||0;totalH+=backtestResults[sym].hits||0;});
+  var totalAcc=totalN?Math.round(totalH/totalN*100):null;
+  if(totalAcc!==null){
+    var totCol=totalAcc>=60?"var(--gr)":totalAcc>=50?"var(--ye)":"var(--re)";
+    h+='<div style="padding:10px;background:var(--s3);border-radius:10px;text-align:center">';
+    h+='<div style="font-size:11px;color:var(--t3);margin-bottom:3px">Ukupna backtest točnost (svi tokeni)</div>';
+    h+='<div style="font-size:28px;font-weight:900;color:'+totCol+'">'+totalAcc+'%</div>';
+    h+='<div style="font-size:10px;color:var(--t4)">'+totalH+' pogodaka od '+totalN+' signaliziranih setupova</div>';
+    h+='</div>';
+  }
+  h+='</div>';
+  return h;
+}
+
 function rTracker(){
   autoClosePreds();
   var regularPreds=predTracker.filter(function(p){return p.type!=="meme"&&KNOWN_MEME.indexOf(p.sym)<0;});
@@ -2295,6 +2483,8 @@ function rTracker(){
     h+='<div class="empty"><div style="font-size:48px;margin-bottom:14px">📝</div><div style="font-size:17px;font-weight:700;color:var(--t2);margin-bottom:8px">Nema zabilježenih tradova</div><div style="font-size:13px;color:var(--t3);margin-bottom:20px">Otvori Pregled tab, odaberi token i klikni "Zabilježi trade".</div><button onclick="setTab(\'pregled\')" style="padding:12px 24px;background:rgba(41,121,255,.15);border:.5px solid rgba(41,121,255,.35);border-radius:12px;font-size:14px;font-weight:700;color:#2979ff;cursor:pointer;font-family:inherit">→ Idi na Pregled</button></div>';
   }else{
     h+=renderHistoryChart(predTracker);
+    h+=renderKellyPanel();
+    h+=renderBacktestPanel();
 
     // ── ULAZ vs WATCH auto-track usporedba ──
     var srcUlaz=predTracker.filter(function(p){return p.autoTrack&&p.autoSource==="ulaz";});
@@ -2667,10 +2857,11 @@ function setPct(pct){
 // ── SETTINGS ────────────────────────────────────────────────────
 function openSettings(){
   document.getElementById("modal").classList.add("open");
-  var cq=document.getElementById("s-cq");var lc=document.getElementById("s-lc");var gh=document.getElementById("s-gh");
+  var cq=document.getElementById("s-cq");var lc=document.getElementById("s-lc");var gh=document.getElementById("s-gh");var cp=document.getElementById("s-cp");
   if(cq&&apiKeys.cryptoquant)cq.value=apiKeys.cryptoquant;
   if(lc&&apiKeys.lunarcrush)lc.value=apiKeys.lunarcrush;
   if(gh&&apiKeys.github)gh.value=apiKeys.github;
+  if(cp&&apiKeys.cryptopanic)cp.value=apiKeys.cryptopanic;
 }
 function closeModal(){document.getElementById("modal").classList.remove("open");}
 function applySettings(){
@@ -2679,9 +2870,10 @@ function applySettings(){
   settings.maxRisk=parseFloat(document.getElementById("s-risk").value)||3;
   settings.minRR=parseFloat(document.getElementById("s-rr").value)||1.5;
   lsSet("ad3d_s",JSON.stringify(settings));
-  var cq=document.getElementById("s-cq");var lc=document.getElementById("s-lc");var gh=document.getElementById("s-gh");
+  var cq=document.getElementById("s-cq");var lc=document.getElementById("s-lc");var gh=document.getElementById("s-gh");var cp=document.getElementById("s-cp");
   if(cq&&cq.value.trim())apiKeys.cryptoquant=cq.value.trim();
   if(lc&&lc.value.trim())apiKeys.lunarcrush=lc.value.trim();
+  if(cp&&cp.value.trim())apiKeys.cryptopanic=cp.value.trim();
   var newGhToken=gh?gh.value.trim():"";
   if(newGhToken&&newGhToken!==apiKeys.github){
     apiKeys.github=newGhToken;
@@ -2689,11 +2881,11 @@ function applySettings(){
     closeModal();
     showToast("✓ Postavke spremljene");
     syncFromGH(function(){render();});
-    fetchNetflow();fetchSocialData();
+    fetchNetflow();fetchSocialData();fetchNewsData();
     return;
   }
   lsSet("ad3d_apikeys",JSON.stringify(apiKeys));
-  fetchNetflow();fetchSocialData();
+  fetchNetflow();fetchSocialData();fetchNewsData();
   closeModal();render();
   showToast("✓ Postavke spremljene");
 }
@@ -2838,6 +3030,48 @@ function fetchVP3D(){
           else if(lo>=0){accum+=aL;vaL=sorted[lo];lo--;}else break;
         }
         volProfile[sym]={poc:poc,valueAreaHigh:vaH,valueAreaLow:vaL,ts:Date.now()};
+
+        // ── CVD (Cumulative Volume Delta) ─────────────────────────
+        // k[9] = taker buy base asset volume, k[5] = total base asset volume
+        // CVD delta = taker buy - taker sell = k[9] - (k[5]-k[9]) = 2*k[9] - k[5]
+        // Rastuće CVD uz padajuću cijenu = skrivena akumulacija = bullish divergencija
+        var cvdCum=0;
+        var cvdSeries=data.map(function(k){
+          var tbv=parseFloat(k[9]);var tv=parseFloat(k[5]);
+          cvdCum+=(tbv-(tv-tbv));return cvdCum;
+        });
+        var cvdNow=cvdSeries[cvdSeries.length-1];
+        var cvdMid=cvdSeries[Math.floor(cvdSeries.length/2)]||0;
+        var cvdNorm=Math.abs(cvdMid)>0?(cvdNow-cvdMid)/Math.abs(cvdMid):0;
+        var cvdTrend=cvdNorm>0.10?"RISING":cvdNorm<-0.10?"FALLING":"FLAT";
+        // CVD divergencija vs cijena (zadnjih 24h)
+        var rc=closes.slice(-24),rcvd=cvdSeries.slice(-24);
+        var pTrend=rc.length>1?(rc[rc.length-1]-rc[0])/Math.abs(rc[0]||1):0;
+        var cTrend=rcvd.length>1?(rcvd[rcvd.length-1]-rcvd[0])/Math.abs(rcvd[0]||1):0;
+        var cvdDiv=null;
+        if(pTrend<-0.015&&cTrend>0.05)cvdDiv="BULLISH";   // cijena pada, CVD raste
+        else if(pTrend>0.015&&cTrend<-0.05)cvdDiv="BEARISH"; // cijena raste, CVD pada
+        cvdData[sym]={cvd:cvdNow,trend:cvdTrend,divergence:cvdDiv,ts:Date.now()};
+
+        // ── SWING HIGH/LOW — Support & Resistance nivoi ───────────
+        // Swing high: lokalni maksimum u prozoru ±4 kandli
+        var SW=4;var lastClose=closes[closes.length-1];
+        var swH=[],swL=[];
+        for(var si=SW;si<closes.length-SW;si++){
+          var isH=true,isL=true;
+          for(var sj=si-SW;sj<=si+SW;sj++){
+            if(sj===si)continue;
+            if(closes[sj]>=closes[si])isH=false;
+            if(closes[sj]<=closes[si])isL=false;
+          }
+          if(isH)swH.push(closes[si]);
+          if(isL)swL.push(closes[si]);
+        }
+        swingLevels[sym]={
+          resistances:swH.slice(-6).filter(function(l){return l>lastClose*1.003;}),
+          supports:swL.slice(-6).filter(function(l){return l<lastClose*0.997;})
+        };
+
       }).catch(function(){});
     },Math.floor(idx/5)*500); // batch: 5 tokena / 500ms
   });
@@ -3216,6 +3450,7 @@ function loadTop100(){
       if(syms.length<5)return; // sanity check
       TOP100=syms;
       TOP100_LOADED=true;
+      computeRelStrength(); // izračunaj relativnu snagu čim imamo CG podatke
       // Poveži WS za sve tokene
       connectWSPool(TOP100.concat(MEME_SYMS.filter(function(s){return TOP100.indexOf(s)<0;})));
       // Dohvati volume profile i order book za sve tokene (batched)
@@ -3267,6 +3502,149 @@ function fetchFearGreed(){
         if(!isNaN(val)){MACRO.fg=val;lastRefresh.fg=Date.now();}
       }
     }).catch(function(){});
+}
+
+// ── RELATIVNA SNAGA vs BTC ───────────────────────────────────────
+// Leader token = outperformira BTC → kapital teče prema njemu
+// Lagging token = underperformira BTC → izbjegavati, čak i uz dobre TA signale
+function computeRelStrength(){
+  var btc24h=(px["BTC"]&&px["BTC"].c24!=null)?px["BTC"].c24:null;
+  var btc7d=(cgData["BTC"]&&cgData["BTC"].change7d!=null)?cgData["BTC"].change7d:null;
+  TOP100.concat(MEME_SYMS).forEach(function(sym){
+    if(sym==="BTC")return;
+    var p24h=(px[sym]&&px[sym].c24!=null)?px[sym].c24:null;
+    var p7d=(cgData[sym]&&cgData[sym].change7d!=null)?cgData[sym].change7d:null;
+    if(p24h!==null&&btc24h!==null){
+      var rs24h=+(p24h-btc24h).toFixed(2);
+      var rs7d=(p7d!==null&&btc7d!==null)?+(p7d-btc7d).toFixed(2):null;
+      relStrength[sym]={
+        rs24h:rs24h,
+        rs7d:rs7d,
+        leading:rs24h>2,          // outperformira BTC 24h za 2%+
+        lagging:rs24h<-3,         // underperformira BTC 24h za 3%+
+        rs7dLeading:rs7d!=null&&rs7d>5
+      };
+    }
+  });
+}
+
+// ── KELLY CRITERION VELIČINA POZICIJE ────────────────────────────
+// Optimalni % portfolia za ulaganje na temelju prošle točnosti i R:R omjera
+// Koristi half-Kelly kao konzervativniji, realističniji pristup
+function kellyPositionSize(){
+  var closed=predTracker.filter(function(p){return p.status!=="AKTIVAN"&&p.closePct!=null;});
+  if(closed.length<8)return null;
+  var hits=closed.filter(function(p){return p.status==="POGODAK";});
+  var misses=closed.filter(function(p){return p.status==="PROMAŠAJ";});
+  if(!hits.length||!misses.length)return null;
+  var winRate=hits.length/closed.length;
+  var avgGain=hits.reduce(function(s,p){return s+(p.closePct||0);},0)/hits.length;
+  var avgLoss=Math.abs(misses.reduce(function(s,p){return s+(p.closePct||0);},0)/misses.length);
+  if(!avgGain||!avgLoss)return null;
+  // Kelly formula: f* = (win_rate * avg_gain - loss_rate * avg_loss) / avg_gain
+  var kelly=(winRate*avgGain-(1-winRate)*avgLoss)/avgGain;
+  // Half-Kelly = sigurniji, standardni pristup u praksi (manji drawdown)
+  var halfKelly=Math.max(1,Math.min(25,kelly/2*100));
+  return{
+    kelly:+kelly.toFixed(3),halfKelly:+halfKelly.toFixed(1),
+    winRate:+winRate.toFixed(3),avgGain:+avgGain.toFixed(1),
+    avgLoss:+avgLoss.toFixed(1),n:closed.length
+  };
+}
+
+// ── NEWS SENTIMENT (CryptoPanic) ─────────────────────────────────
+// Bezplatni API (bez tokena = ograničen); s tokenom = više podataka
+// Negativna vijest može poništiti sve tehničke signale → visok prioritet
+function fetchNewsData(){
+  var key=apiKeys.cryptopanic;
+  var url=key?
+    "https://cryptopanic.com/api/v1/posts/?auth_token="+key+"&kind=news&public=true":
+    "https://cryptopanic.com/api/free/v1/posts/?kind=news";
+  var doProcess=function(d){
+    if(!d||!d.results)return;
+    d.results.forEach(function(item){
+      var currencies=(item.currencies||[]).map(function(c){return c.code.toUpperCase();});
+      currencies.forEach(function(sym){
+        if(!newsData[sym])newsData[sym]=[];
+        var vp=item.votes||{};
+        var sentiment=(vp.positive||0)>(vp.negative||0)?"positive":(vp.negative||0)>(vp.positive||0)?"negative":"neutral";
+        // Parsiramo i naslov za brzu provjeru
+        var title=(item.title||"").toLowerCase();
+        if(!sentiment||sentiment==="neutral"){
+          var negKw=/hack|exploit|crash|ban|lawsuit|sec|fraud|rug|dump|sell-off|warning|panic/;
+          var posKw=/etf|approval|launch|partnership|upgrade|bullish|buy|adopt|institutional|listing/;
+          if(negKw.test(title))sentiment="negative";
+          else if(posKw.test(title))sentiment="positive";
+        }
+        newsData[sym].push({title:item.title,sentiment:sentiment,ts:new Date(item.published_at||Date.now()).getTime()});
+      });
+    });
+    // Drži samo zadnjih 5 vijesti po tokenu
+    Object.keys(newsData).forEach(function(sym){
+      newsData[sym].sort(function(a,b){return b.ts-a.ts;});
+      newsData[sym]=newsData[sym].slice(0,5);
+    });
+    lastRefresh.news=Date.now();
+  };
+  fetch(url).then(function(r){return r.json();}).then(doProcess).catch(function(){
+    // Fallback: allorigins proxy
+    fetch("https://api.allorigins.win/raw?url="+encodeURIComponent("https://cryptopanic.com/api/free/v1/posts/?kind=news"))
+      .then(function(r){return r.json();}).then(doProcess).catch(function(){});
+  });
+}
+
+// ── HISTORIJSKI BACKTEST (daily klines, 90 dana) ─────────────────
+// Simulira kako bi naš signal engine radio na prošlim podacima
+// Koristi samo tehničke signale (RSI, MACD, EMA, BB, divergencija)
+// jer futures/orderbook podaci nisu dostupni historijski
+function runBacktest(){
+  var btSyms=["BTC","ETH","SOL","XRP","BNB","ADA","LINK","AVAX","SUI","DOGE"];
+  btSyms.forEach(function(sym,idx){
+    setTimeout(function(){
+      fetch("https://api.binance.com/api/v3/klines?symbol="+sym+"USDT&interval=1d&limit=120")
+        .then(function(r){return r.json();})
+        .then(function(data){
+          if(!data||data.length<30)return;
+          var closes=data.map(function(k){return parseFloat(k[4]);});
+          var results=[];
+          var LOOKBACK=30; // treba 30 kandli za pouzdane signale
+          var TARGET_PCT=0.05; // 5% target
+          for(var i=LOOKBACK;i<closes.length-3;i++){
+            var slice=closes.slice(0,i+1);
+            var taR=compTA(slice);
+            var macdR=compMACD(slice);
+            if(!taR)continue;
+            // Pojednostavljen scoring (samo tehnika, bez live podataka)
+            var sig=0;
+            if(taR.rsi<32)sig+=3; else if(taR.rsi<42)sig+=1.5;
+            else if(taR.rsi>72)sig-=3;
+            if(taR.trend==="UP")sig+=1.5; else if(taR.trend==="DOWN")sig-=2;
+            if(taR.bb&&closes[i]<taR.bb.l)sig+=2; else if(taR.bb&&closes[i]>taR.bb.u)sig-=2;
+            if(taR.divergence==="BULLISH")sig+=3; else if(taR.divergence==="BEARISH")sig-=2.5;
+            if(macdR&&macdR.cross==="BULLISH")sig+=3; else if(macdR&&macdR.cross==="BEARISH")sig-=2;
+            // Filtriranje signala — prognoziramo samo kad postoji pozitivan setup
+            var conf=Math.max(20,Math.min(90,Math.round(50+(sig/24)*38)));
+            if(conf<50||sig<0)continue;
+            // Provjera ishoda: je li cijena dostigla +5% u sljedeća 3 dana?
+            var entry=closes[i];
+            var future=[closes[i+1],closes[i+2],closes[i+3]].filter(function(v){return v!=null;});
+            var maxNext=future.length?Math.max.apply(null,future):entry;
+            var hit=maxNext>=entry*(1+TARGET_PCT);
+            var actualPct=+((maxNext-entry)/entry*100).toFixed(1);
+            results.push({
+              date:new Date(parseInt(data[i][0])).toLocaleDateString("hr-HR",{month:"short",day:"numeric"}),
+              conf:conf,sig:+sig.toFixed(1),hit:hit,pct:actualPct,rsi:+taR.rsi.toFixed(0)
+            });
+          }
+          var nHits=results.filter(function(r){return r.hit;}).length;
+          backtestResults[sym]={
+            accuracy:results.length?Math.round(nHits/results.length*100):null,
+            n:results.length,hits:nHits,
+            recent:results.slice(-15),ts:Date.now()
+          };
+        }).catch(function(){});
+    },idx*700);
+  });
 }
 
 // ── BTC DOMINANCE LIVE (CoinGecko /global) ───────────────────────
@@ -3417,6 +3795,8 @@ fetchSocialData();      // social sentiment — samo ako LunarCrush API key dost
 fetchPolymarket();      // Polymarket prediction markets — crowd intelligence
 fetchBTCDom();          // BTC + stablecoin dominance live (CoinGecko /global)
 fetchOilPrice();        // WTI crude oil live (Yahoo Finance proxy)
+fetchNewsData();        // CryptoPanic news sentiment (free endpoint + auth token ako dostupan)
+setTimeout(runBacktest, 5000); // Backtest engine — pokreni 5s nakon starta da ne blokira init
 // ── OPEN INTEREST (Binance Futures) ─────────────────────────────
 // OI raste + cijena raste = zdrav trend (novi kapital ulazi)
 // OI pada + cijena raste = short covering, ne pravi bullish (slabiji signal)
@@ -3466,6 +3846,9 @@ setInterval(fetchSPX, 1800000);            // svako 30 min — SPX macro korelac
 setInterval(fetchNetflow, 600000);         // svako 10 min — exchange netflow (ako key)
 setInterval(fetchSocialData, 900000);      // svako 15 min — social sentiment (ako key)
 setInterval(fetchPolymarket, 900000);      // svako 15 min — Polymarket prediction markets
+setInterval(fetchNewsData, 900000);        // svako 15 min — CryptoPanic news sentiment
+setInterval(runBacktest, 3600000);         // svako 60 min — backtest engine (sporo, skupo)
+setInterval(computeRelStrength, 60000);   // svako 1 min — relative strength vs BTC (ovisi o WS cijenama)
 // ── BACKGROUND AUTO-TRACK (neovisno o aktivnom tabu) ─────────────
 function backgroundAutoTrack(){
   var syms=TOP100.filter(function(s){return px[s]&&px[s].p>0;});
