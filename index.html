@@ -195,7 +195,7 @@ svg.sp{overflow:visible;display:block}
   <div class="g2" style="margin-bottom:12px">
     <div><label class="inp-lbl">Min pouzdanost (%)</label><input id="s-conf" class="inp" type="number" value="40" min="20" max="90"></div>
     <div><label class="inp-lbl">Target profit (%)</label><input id="s-tgt" class="inp" type="number" value="5" min="2" max="20" step="0.5"></div>
-    <div><label class="inp-lbl">Max rizik (%)</label><input id="s-risk" class="inp" type="number" value="3" min="1" max="10" step="0.5"></div>
+    <div><label class="inp-lbl">Max rizik (%)</label><input id="s-risk" class="inp" type="number" value="2" min="1" max="10" step="0.5"></div>
     <div><label class="inp-lbl">Min R/R omjer</label><input id="s-rr" class="inp" type="number" value="1.2" min="0.8" max="5" step="0.1"></div>
   </div>
   <div style="margin-bottom:14px">
@@ -284,7 +284,7 @@ function getMemeSYMS(){
 }
 
 // Settings
-var settings={minConf:40,targetPct:5,maxRisk:3,minRR:1.2};
+var settings={minConf:40,targetPct:5,maxRisk:2,minRR:1.2};
 try{var ss=JSON.parse(lsGet("ad3d_s")||"{}");if(ss.minConf)settings=ss;}catch(e){}
 
 // Macro context
@@ -1477,7 +1477,7 @@ function autoTrackOpps(opps, source){
       autoTrack:true,
       autoSource:source||"ulaz",
       snap:buildSnap(o.sym),
-      d1Hit:false,d2Hit:false,d3Hit:false
+      d1Hit:false,d2Hit:false,d3Hit:false,d4Hit:false,d5Hit:false
     };
     predTracker.unshift(p);
     added=true;
@@ -1586,8 +1586,9 @@ function analyze10pct(sym){
   if(fd10&&fd10.takerRatio!=null&&fd10.takerRatio<0.75)tri10++;
   if(cvdData[sym]&&cvdData[sym].divergence==="BULLISH")tri10++;
   if(relStrength[sym]&&relStrength[sym].leading)tri10++;
-  if(tri10>=6){score+=4;signals.push({txt:"🎯 TRIFECTA "+tri10+"/9 — izniman setup, 10% potez realan",type:"bull"});}
-  else if(tri10>=4){score+=2;signals.push({txt:"🎯 Multi-signal "+tri10+"/9 — jak, ali treba još potvrda za 10%",type:"bull"});}
+  if(taDaily[sym]&&taDaily[sym].trend==="UP")tri10++; // dnevni trend — ključan za 5-dnevni horizont
+  if(tri10>=6){score+=4;signals.push({txt:"🎯 TRIFECTA "+tri10+"/10 — izniman setup, 10% potez realan",type:"bull"});}
+  else if(tri10>=4){score+=2;signals.push({txt:"🎯 Multi-signal "+tri10+"/10 — jak, ali treba još potvrda za 10%",type:"bull"});}
 
   var atrPct=a?parseFloat(a.pct):2.0;
   var achievable3d=atrPct>=(TARGET/5)*0.6; // treba ≥1.2%/dan ATR za 10% u 5 dana
@@ -1960,10 +1961,11 @@ function renderActiveCard(p){
   var pC=curPct>=0?"var(--gr)":"var(--re)";
   var prog=p.target>p.entry?Math.min(100,Math.max(0,(cur-p.entry)/(p.target-p.entry)*100)):0;
   var ts=p.timestamp||parseInt(p.id);
-  var msLeft=Math.max(0,(ts+3*24*3600*1000)-Date.now());
+  var windowDays=(p.targetPct===10?5:3);
+  var msLeft=Math.max(0,(ts+windowDays*24*3600*1000)-Date.now());
   var hLeft=Math.floor(msLeft/3600000);
   var dLeft=Math.floor(hLeft/24);
-  var timeStr=msLeft===0?"⏰ Ističe danas":dLeft>0?dLeft+"d "+( hLeft%24)+"h preostalo":hLeft+"h preostalo";
+  var timeStr=msLeft===0?"⏰ Ističe danas":dLeft>0?dLeft+"d "+(hLeft%24)+"h preostalo":hLeft+"h preostalo";
   var isMeme=p.type==="meme";
   var h='<div style="background:var(--s1);border-radius:16px;padding:14px 16px;margin-bottom:10px;border:.5px solid '+(isMeme?"rgba(213,0,249,.2)":"var(--sep)")+'">';
   h+='<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">';
@@ -2484,7 +2486,7 @@ function render(){
     h+='<div style="display:'+(legendOpen?'block':'none')+';margin-top:10px">';
     h+='<div style="font-size:12px;color:var(--t2);line-height:1.7">';
     h+='Skenirano <strong style="color:var(--ye)">top '+TOP100.length+' kripto tokena</strong> po tržišnoj kapitalizaciji. ';
-    h+='Traži prilike za <strong style="color:var(--ye)">+'+settings.targetPct+'%</strong> u <strong style="color:var(--ye)">3 dana</strong>. ';
+    h+='Traži prilike za <strong style="color:var(--ye)">+'+settings.targetPct+'%</strong> u <strong style="color:var(--ye)">'+(settings.targetPct===10?'5':'3')+' dana</strong>. ';
     h+='Postotak u prstenu = AI pouzdanost. ';
     h+='<span style="color:var(--gr)">🔥 Vrući</span> = visok conf + ATR pokriva potez.';
     h+='</div></div></div>';
