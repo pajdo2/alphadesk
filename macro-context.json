@@ -1,31 +1,124 @@
 {
-  "lastUpdated": "2026-04-02T10:00:00.000Z",
+  "lastUpdated": "2026-04-16T10:00:00.000Z",
   "warActive": true,
-  "macroPenalty": 4,
-  "oil": 115,
-  "btcDom": 57.9,
-  "stableDom": 8.2,
-  "aiSummary": "Tržište u Extreme Fear (F&G 13). Iran-Izrael konflikt aktivan, nafta $115 inflacijski pritisak. BTC dominance 57.9% pritišće altcoine. Stablecoin dominance 8.2% — kapital čeka na sidelines.",
+  "macroPenalty": 3,
+  "oil": 105,
+  "btcDom": 58.5,
+  "stableDom": 8.5,
+  "aiSummary": "Tržište u Extreme Fear (F&G ~23). US-Iran konflikt aktivan, Hormuški prolaz zatvoren od 28.02. — nafta $100-115/bbl, inflacijski pritisak. BTC dominance 58.5% pritiče altcoine. BTC na $74k — odbijaj od Feb kraša ($60k dno), ali $76k otpor nije prošao. Stablecoin dominance 8.5% — kapital čeka na sidelines. IMF smanjio globalni rast, 44% investitora citira geopolitiku kao primarni rizik.",
+  "prices": {
+    "BTC": 74286,
+    "ETH": 2332,
+    "XRP": 1.36,
+    "SOL": 87,
+    "BNB": 595
+  },
   "catalysts": {
-    "BTC": ["Morgan Stanley $MSBT uskoro", "Bernstein $150K target", "Halving dan 703/777"],
-    "ETH": ["ETH $2K drži kao support", "Grok AI procjena $4.9K-6.7K", "ETH/BTC reversal potencijal"],
-    "XRP": ["Goldman $153.8M ETF pozicija", "CLARITY Act 72% šansa travanj", "25% institucija planira XRP"],
-    "SOL": ["25% institucija planira SOL", "Alpenglow upgrade Q3 2026", "Mastercard SDP integracija"],
-    "BNB": [],
-    "ADA": [],
-    "LINK": ["Chainlink CCIP ekspanzija"],
-    "AVAX": [],
-    "SUI": []
+    "BTC": [
+      "BlackRock IBIT drži 784k+ BTC — likvidni zid koji apsorbira šokove",
+      "ETF potražnja raste, doprinosi dubokoj institucionalnoj likvidnosti",
+      "Oporavak od Feb5 kraša ($60k dno) — BTC +23% od dna",
+      "Iran mirovni pregovori vraćaju risk-appetite",
+      "SEC/CFTC klasificirali BTC kao 'Digital Commodity' — regulatorna jasnoća"
+    ],
+    "ETH": [
+      "Glamsterdam upgrade na pomolu — pozitivan katalizator",
+      "SEC CLARITY Act roundtable 16.04. — moguć proboj",
+      "ETH na $2,332 — +$174 u jednom danu, momentum se gradi",
+      "Standard Chartered dugoročni cilj $40k"
+    ],
+    "XRP": [
+      "Rakuten integracija — 44M korisnika, 5M trgovaca u Japanu",
+      "Société Générale EURCV stablecoin na XRP Ledgeru",
+      "Južna Koreja: feasibility test tokeniziranih obveznica s Ripple Custody (15.04.)",
+      "Coinbase CEO Armstrong i Treasury Secretary Bessent podržali CLARITY Act",
+      "CLARITY Act: Garlinghouse očekuje prolaz do kraja svibnja",
+      "SEC roundtable o CLARITY Actu 16.04."
+    ],
+    "SOL": [
+      "Interactive Brokers Europa — SOL dostupan europskim institucijama (Zero Hash)",
+      "Firedancer validator: 5,500 TPS u produkciji",
+      "SEC/CFTC: SOL klasificiran kao Digital Commodity — staking izuzet iz securities pravila",
+      "X (Twitter) spekulacije o crypto integraciji — SOL potencijalni beneficijent",
+      "Alpenglow upgrade dolazi"
+    ],
+    "BNB": [
+      "Fermi hard fork aktiviran — block time 0.45s (DeFi + AI aplikacije)",
+      "34. kvartalni burn: 1,371,703 BNB (~$1.277B uništeno) — najveći ikad po USD vrijednosti",
+      "Analitičari: $650-900 cluster kao 2026 cilj"
+    ],
+    "ADA": [
+      "CME Group lansirao Cardano futures — institucionalni pristup osiguran",
+      "Cycle gains signali od analitičara"
+    ],
+    "LINK": [
+      "Interactive Brokers dodao LINK trading",
+      "CME Group nedavno lansirao Chainlink futures",
+      "CME 24/7 crypto trading od 29.05. — povećana likvidnost",
+      "Chainlink CCIP ekspanzija nastavlja"
+    ],
+    "AVAX": [
+      "CME Group AVAX futures: lansiranje 4.05. (5,000 AVAX / Micro 500 AVAX)",
+      "NHN KCP (South Korea) MOU s Ava Labs — payments L1 s sub-second finalnošću",
+      "Interactive Brokers dodao AVAX trading",
+      "CME dnevni volumen $8B — raste 19% YoY"
+    ],
+    "SUI": [
+      "CME Group SUI futures: lansiranje 4.05. (50,000 SUI / Micro 5,000 SUI)",
+      "Interactive Brokers dodao SUI trading",
+      "CME 24/7 trading od 29.05. — institucionalna likvidnost raste"
+    ]
   },
   "warnings": {
-    "BTC": ["Rudari troše $79,995/BTC — near break-even", "Dom >57% = altcoins pate"],
-    "ETH": ["Fusaka tokenomic promjena zabrinjavajuća", "ETF net outflows zadnji tjedan"],
-    "XRP": ["Iran range vezan za $1.30-$1.50", "3.8B XRP na burzama — supply pritisak"],
-    "SOL": ["Head & Shoulders formacija na grafovima", "$80 break = put $60 scenarij"],
-    "BNB": [],
-    "ADA": ["Slabi kratkoročni katalyzatori"],
-    "LINK": [],
-    "AVAX": [],
-    "SUI": ["Slabi kratkoročni katalyzatori"]
+    "BTC": [
+      "BTC ispod 200-day MA ($87,519) — dugotrajni bearish signal",
+      "$76k otpor nije prošao — lažni breakout, reversal na $74k",
+      "Dom >58% = altcoins pate",
+      "46 uzastopnih dana F&G u Extreme Fear zoni — rekord od Terra-LUNA kraša 2022."
+    ],
+    "ETH": [
+      "Vitalik Buterin prodao milijune USD u ETH — negativan sentiment",
+      "Bearish trend, pad od ATH ~$5k (kolovoz 2025.)",
+      "Tržišna kap $233B vs BTC $1.33T — ETH/BTC omjer pod pritiskom"
+    ],
+    "XRP": [
+      "Zaglavljeni u $1.33-1.38 konsolidaciji (pad od $2.42 January ATH)",
+      "CLARITY Act odgođen na kraj svibnja — neizvjesnost produljuje konsolidaciju",
+      "Stagnacija bez jasnog katalizatora u kratkom roku"
+    ],
+    "SOL": [
+      "$280-285M Drift Protocol exploit (travanj 2026.) — ~$1B TVL izgubljen",
+      "Solana Foundation security overhaul neophodan",
+      "Alameda Research premješta $16M SOL za creditor distribuciju — supply pritisak",
+      "Standard Chartered smanjio 2026 SOL cilj na $250"
+    ],
+    "BNB": [
+      "Down 57% od ATH ($1,370 — listopad 2025.)",
+      "$600 support pod testiranjem — proboj prema dolje otvara $500",
+      "$1,000+ breakout zahtijeva institucionalnu adopciju koja još izostaje"
+    ],
+    "ADA": [
+      "Slabi kratkoročni katalizatori osim CME futures najave",
+      "Cycle gains su dugoročan signal, ne kratkoročan"
+    ],
+    "LINK": [
+      "Ovisnost o općem tržišnom sentiment — altcoin beta"
+    ],
+    "AVAX": [
+      "CME futures tek lansiraju 4.05. — efekt tek dolazi",
+      "Geopolitički makro pritisak na risk-on imovinu"
+    ],
+    "SUI": [
+      "CME futures tek lansiraju 4.05. — efekt tek dolazi",
+      "Slabi kratkoročni katalizatori izvan CME vijesti"
+    ]
+  },
+  "macro": {
+    "strait_of_hormuz": "Zatvoren od 28.02. — 20% globalnog naftnog tranzita blokiran",
+    "fed_policy": "Tržišta čekaju prvi cut — Fed pod pritiskom inflacije i recesijskih strahova",
+    "sec_clarity_act": "SEC roundtable 16.04. — Garlinghouse očekuje prolaz do kraja svibnja",
+    "imf_outlook": "IMF snizio globalni rast — geopolitika primarni rizik za 44% investitora",
+    "cme_expansion": "CME lansira AVAX + SUI futures 4.05., 24/7 trading od 29.05. — institucionalizacija se širi",
+    "stablecoin_volume": "Godišnji stablecoin volumen prešao $5 triliona — rivalizu tradicionalne payment procesore"
   }
 }
