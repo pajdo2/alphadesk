@@ -209,8 +209,8 @@
       "d3Hit": false,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 1.881,
-      "peakPct": 0.11
+      "peakPrice": 1.882,
+      "peakPct": 0.16
     },
     {
       "id": "1776426593133_PUMP",
@@ -1855,8 +1855,8 @@
       "d3Hit": false,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 0.007297,
-      "peakPct": 0.19
+      "peakPrice": 0.007304,
+      "peakPct": 0.29
     },
     {
       "id": "1776426522755_KAS",
@@ -4642,5 +4642,5 @@
     }
   ],
   "signalWeights": {},
-  "updatedAt": "2026-04-17T12:00:38.129Z"
+  "updatedAt": "2026-04-17T12:01:38.178Z"
 }
