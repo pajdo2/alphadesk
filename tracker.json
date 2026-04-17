@@ -1696,8 +1696,8 @@
       "d3Hit": false,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 1.0055,
-      "peakPct": 0.63
+      "peakPrice": 1.0058,
+      "peakPct": 0.66
     },
     {
       "id": "1776426522755_PAXG",
@@ -1855,8 +1855,8 @@
       "d3Hit": false,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 0.007311,
-      "peakPct": 0.38
+      "peakPrice": 0.007313,
+      "peakPct": 0.41
     },
     {
       "id": "1776426522755_KAS",
@@ -2145,8 +2145,8 @@
       "d3Hit": false,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 0.06457,
-      "peakPct": 0.26
+      "peakPrice": 0.06463,
+      "peakPct": 0.36
     },
     {
       "id": "1776426516823_ETH",
@@ -3596,8 +3596,8 @@
       "d3Hit": false,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 0.03755,
-      "peakPct": 0.21
+      "peakPrice": 0.03757,
+      "peakPct": 0.27
     },
     {
       "id": "1776425579984_XDC",
@@ -4642,5 +4642,5 @@
     }
   ],
   "signalWeights": {},
-  "updatedAt": "2026-04-17T12:14:38.170Z"
+  "updatedAt": "2026-04-17T12:15:38.171Z"
 }
