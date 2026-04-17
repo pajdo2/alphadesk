@@ -1,6 +1,57 @@
 {
   "predictions": [
     {
+      "id": "1776426563049_ALGO",
+      "timestamp": 1776426563049,
+      "sym": "ALGO",
+      "type": "regular",
+      "date": "17. tra",
+      "entry": 0.1156,
+      "target": 0.1214,
+      "d1Target": 0.1176,
+      "d2Target": 0.1196,
+      "d4Target": 0.1214,
+      "d5Target": 0.1214,
+      "d3Target": 0.1214,
+      "stop": 0.1133,
+      "conf": 44,
+      "score": 0.25,
+      "targetPct": 5,
+      "status": "AKTIVAN",
+      "closePrice": null,
+      "closePct": null,
+      "autoClose": false,
+      "direction": "LONG",
+      "autoTrack": true,
+      "autoSource": "watch",
+      "snap": {
+        "rsiOversold": false,
+        "rsiOverbought": false,
+        "trendUp": true,
+        "trendDown": false,
+        "bbBelow": false,
+        "divBullish": false,
+        "divBearish": false,
+        "macdBullCross": false,
+        "macdBearCross": false,
+        "lsRatioBull": false,
+        "lsRatioExtreme": false,
+        "basisBack": false,
+        "takerSell": false,
+        "btcDomHigh": true,
+        "btcDomLow": false,
+        "volSpike": false,
+        "mtfAllUp": false,
+        "fgExtremeFear": false,
+        "fgFear": true
+      },
+      "d1Hit": false,
+      "d2Hit": false,
+      "d3Hit": false,
+      "d4Hit": false,
+      "d5Hit": false
+    },
+    {
       "id": "1776426522755_ONDO",
       "timestamp": 1776426522755,
       "sym": "ONDO",
@@ -3155,5 +3206,5 @@
     }
   ],
   "signalWeights": {},
-  "updatedAt": "2026-04-17T11:48:52.302Z"
+  "updatedAt": "2026-04-17T11:49:23.050Z"
 }
