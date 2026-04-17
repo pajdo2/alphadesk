@@ -147,7 +147,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v3.4</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v3.5</span></div>
       <div class="hd-sub" id="hdsub">Učitavam top 100 tokena…</div>
       <div class="hd-claude" id="claude-update">🤖 Claude analiza: —</div>
     </div>
@@ -628,15 +628,6 @@ function scoreMarketSignals(sym,signals,warnings){
     else if(oi.trend==="FALLING_FAST"&&priceUp){delta-=1;warnings.push({txt:"OI -"+Math.abs(oi.oiChange24h)+"% — rast od short coveringa, nije pravi bullish",type:"warn"});}
     else if(oi.trend==="FALLING"&&priceDown){delta+=1;signals.push({txt:"OI pada uz cijenu — pozicije se zatvaraju, dno blizu",type:"bull"});}
   }
-  // 12. FUNDING RATE po tokenu — negativan = bearish sentiment = kontrarian BUY
-  var fundR=fr[sym];
-  if(fundR&&fundR.rate!==undefined){
-    var fRate=+(fundR.rate*100).toFixed(4);
-    if(fRate<-0.05){delta+=2;signals.push({txt:"Funding "+fRate+"% — ekstremno negativan = shorts dominiraju, squeeze potencijal",type:"bull"});}
-    else if(fRate<-0.01){delta+=1;signals.push({txt:"Funding "+fRate+"% — negativan = bearish sentiment u derivatima",type:"bull"});}
-    else if(fRate>0.08){delta-=1.5;warnings.push({txt:"Funding +"+fRate+"% — visok = longs preplati, oprez",type:"warn"});}
-    else if(fRate>0.04){delta-=0.5;warnings.push({txt:"Funding +"+fRate+"% — pozitivan funding, blagi oprez",type:"warn"});}
-  }
   // 13. LIKVIDACIJE — Binance force orders real-time (short squeeze / capitulation)
   var liq=liquidations[sym];
   if(liq&&(liq.buyLiq+liq.sellLiq)>500000){
@@ -804,7 +795,7 @@ function analyze3D(sym){
     if(d.c24<-5&&t&&t.rsi<40){score+=2;signals.push({txt:"Pad "+d.c24.toFixed(1)+"% + oversold = bounce setup",type:"bull"});}
     else if(d.c24<-4&&MACRO.fg<25){score+=1.5;signals.push({txt:"Pad "+d.c24.toFixed(1)+"% u Extreme Fear = oversold bounce",type:"bull"});}
     else if(d.c24>5){score+=1;signals.push({txt:"+"+d.c24.toFixed(1)+"% momentum",type:"bull"});}
-    else if(d.c24<-8){score-=1;warnings.push({txt:d.c24.toFixed(1)+"% — jak pad, pazi na nastavak",type:"warn"});}
+    if(d.c24<-8){score-=1;warnings.push({txt:d.c24.toFixed(1)+"% — jak pad, pazi na nastavak",type:"warn"});}
   }
 
   // Macro war + oil penalty
@@ -1460,13 +1451,15 @@ function statsForGroup(preds){
 // Primjer: conf=70% ali točnost=45% → cap confidence na 52% (45+7 buffer)
 // Filtrira po targetPct da kalibracija bude specifična za svaki target
 // Unaprijeđeno: sliding window zadnjih 30 predikcija (sprječava feedback loop s davnom poviješću)
-function getConfCalibrationCap(tPct){
-  var pct=tPct||settings.targetPct;
+function getConfCalibrationCap(targetPct){
+  var pct=targetPct||settings.targetPct;
   var allClosed=predTracker.filter(function(p){return p.status!=="AKTIVAN";});
   // Sliding window: samo zadnjih 30 zatvorenih (predTracker je newest-first)
   // Recency bias je poželjno — stariji podaci reflektiraju drugačiji tržišni režim
   var recent=allClosed.slice(0,30);
-  var closed=recent.filter(function(p){return(p.targetPct||5)===pct;});
+  var closed=recent.filter(function(p){
+    return p.status!=="AKTIVAN"&&(targetPct==="meme"?p.type==="meme":(p.targetPct===targetPct&&p.type!=="meme"));
+  });
   // Fallback na sve iz recent prozora ako nema dovoljno za ovaj target
   if(closed.length<8){
     if(recent.length<8)return null;
@@ -1581,7 +1574,7 @@ function autoTrackOpps(opps, source){
       d2Target:o.d2Price||o.targetPrice||o.price,
       d4Target:o.d4Price||o.targetPrice||o.price,
       d5Target:o.d5Price||o.targetPrice||o.price,
-      d3Target:o.targetPrice||o.price,
+      d3Target:o.d3Price||o.targetPrice||o.price,
       stop:o.stopPrice||o.price,
       conf:o.conf,
       score:o.score,
@@ -1648,7 +1641,7 @@ function analyze10pct(sym){
     if(d.c24<-10&&MACRO.fg<25){score+=3;signals.push({txt:"Pad "+d.c24.toFixed(1)+"% u Extreme Fear = jak bounce setup",type:"bull"});}
     else if(d.c24<-5){score+=1.5;signals.push({txt:"Pad "+d.c24.toFixed(1)+"% — oversold",type:"bull"});}
     else if(d.c24>8){score+=1.5;signals.push({txt:"+"+d.c24.toFixed(1)+"% — jak momentum",type:"bull"});}
-    else if(d.c24<-15){score-=1;warnings.push({txt:"Jak pad — provjeri razlog",type:"warn"});}
+    if(d.c24<-15){score-=1;warnings.push({txt:"Jak pad — provjeri razlog",type:"warn"});}
   }
 
   var opt=optionsData[sym];
@@ -1736,12 +1729,12 @@ function analyze10pct(sym){
   var isHot=conf>=65&&achievable3d&&score>=3;
 
   var verdict="",verdictWhy="";
-  if(conf>=60&&achievable3d){
+  if(conf>=60&&achievable3d&&score>=2){
     verdict="✅ Ulazi — visok potencijal";
     verdictWhy="Setup podržava 10% potez u 5 dana (stop -3%, R/R 3.3:1). Trailing stop aktivira se na +5%. Max 30% normale pozicije."+( MACRO.warActive?" Iran rat — još konzervativnije.":"");
   }else if(conf>=48){
     verdict="🟡 Spekulativni ulaz";
-    verdictWhy="Potencijal postoji. Čekaj zelenu svjećicu iznad "+fp(price*1.015)+". Stop -5% obavezan.";
+    verdictWhy="Potencijal postoji. Čekaj zelenu svjećicu iznad "+fp(price*1.015)+". Stop -3% obavezan (trailing stop aktivira se na +5%).";
   }else if(conf>=38){
     verdict="🔵 Visoko-rizičan";
     verdictWhy="Slabiji signali. Max 10% normale pozicije. 10% target zahtijeva jak momentum.";
@@ -2459,6 +2452,7 @@ function rTracker(){
 // ── MEME COIN ENGINE (10% u 3 dana) ─────────────────────────────
 function analyzeMeme(sym){
   var d=px[sym]||{},t=ta[sym],m=macd[sym],a=atr[sym];
+  var vs=volSpike[sym];
   var price=d.p||0;
   if(!price)return null;
   var score=0,signals=[],warnings=[];
@@ -2533,12 +2527,22 @@ function analyzeMeme(sym){
   // Tržišni signali: BTC dom, volume, order book, 7d trend, DXY
   score+=scoreMarketSignals(sym,signals,warnings);
 
+  // Trifecta — multi-signal convergence bonus
+  var triM=0;
+  if(t&&t.rsi<35)triM++;
+  if(t&&t.divergence==="BULLISH")triM++;
+  if(m&&m.cross==="BULLISH")triM++;
+  if(vs&&vs.ratio>2)triM++;
+  if(t&&t.bb&&price<t.bb.l)triM++;
+  if(triM>=4){score+=3;signals.push({txt:"🎯 TRIFECTA "+triM+"/5 — multi-signal poklopaj",type:"bull"});}
+  else if(triM>=3){score+=1.5;signals.push({txt:"🎯 Multi-signal "+triM+"/5",type:"bull"});}
+
   // Confidence — war cap dodan (bio: bez cap-a = precijenjeni signali u ratu)
   var maxScore=30;
-  var rawConf=Math.round(50+(score/maxScore)*50);
+  var rawConf=Math.round(50+(score/maxScore)*40);
   var warCap=score>=5?65:score>=3?58:50;
-  var conf=Math.min(MACRO.warActive?warCap:93,Math.max(18,rawConf));
-  var calCap=getConfCalibrationCap(10);if(calCap!==null)conf=Math.min(conf,calCap);
+  var conf=Math.min(MACRO.warActive?warCap:88,Math.max(18,rawConf));
+  var calCap=getConfCalibrationCap("meme");if(calCap!==null)conf=Math.min(conf,calCap);
   var tokAcc=getTokenAccuracy(sym,10);if(tokAcc!==null)conf=Math.min(conf,Math.max(20,Math.round((tokAcc*100+12)/5)*5));
 
   // Targets
