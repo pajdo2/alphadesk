@@ -2157,8 +2157,8 @@
       "d3Hit": false,
       "peakPrice": 88.15,
       "peakPct": 0,
-      "valleyPrice": 88.06,
-      "valleyPct": 0.1
+      "valleyPrice": 88.04,
+      "valleyPct": 0.12
     },
     {
       "id": "1776425508737",
@@ -4608,5 +4608,5 @@
     }
   ],
   "signalWeights": {},
-  "updatedAt": "2026-04-17T11:40:42.060Z"
+  "updatedAt": "2026-04-17T11:42:38.162Z"
 }
