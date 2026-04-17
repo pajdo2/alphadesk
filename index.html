@@ -147,7 +147,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v3.3</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v3.4</span></div>
       <div class="hd-sub" id="hdsub">Učitavam top 100 tokena…</div>
       <div class="hd-claude" id="claude-update">🤖 Claude analiza: —</div>
     </div>
@@ -944,7 +944,7 @@ function analyze3D(sym){
   var topBullSignal=signals.length>0?signals[0].txt:"";
   var topWarnSignal=warnings.length>0?warnings[0].txt:"";
   var riskSuffix=MACRO.warActive?" ⚠️ Koristiti 50-70% normale pozicije (rat aktivan).":"";
-  if(conf>=58&&score>=2){
+  if(conf>=60&&score>=2){
     verdict="✅ Ulazi — dobra prilika";
     var keyReason=hasTrifecta?"💎 Trifecta signal — izniman poklopaj indikatora.":hasMtf3?"💪 MTF 3/3 alignment (1h+4h+Daily) — trend potvrđen na svim vremenskim okvirima.":topBullSignal?"Ključni signal: "+topBullSignal+".":"Višestruki bullish signali.";
     verdictWhy=keyReason+" "+(achievable3d?"ATR pokriva "+settings.targetPct+"% u "+(settings.targetPct===10?"5":"3")+" dana.":"Volatilnost niska, potez može trajati dulje.")+riskSuffix;
@@ -965,8 +965,8 @@ function analyze3D(sym){
   var mtfInfo={count:mtfBullCount,h1:!!(t1hV&&t1hV.trend==="UP"),h4:!!(t4hV&&t4hV.trend==="UP"),daily:!!(tDayV&&tDayV.trend==="UP")};
 
   // ── Watch-specific: confirmation trigger + što nedostaje za ✅ ──
-  var confirmTrigger="",missingSignals=[],promotionGap=Math.max(0,58-conf);
-  if(conf<58){
+  var confirmTrigger="",missingSignals=[],promotionGap=Math.max(0,60-conf);
+  if(conf<60){
     var _atrC=+(Math.max(0.8,Math.min(2.5,atrPct*0.5))).toFixed(1);
     var _ct=+(price*(1+_atrC/100)).toFixed(4);
     // Specifičan trigger po tehničkom stanju
@@ -1025,9 +1025,7 @@ function getOpportunities(){
   if(activeFilter==="ulaz"){
     var ulazRes=all.filter(function(x){return x.verdict&&x.verdict.indexOf("✅")===0;});
     autoTrackOpps(ulazRes,"ulaz");
-    // Priloži metapodatke
     ulazRes._totalAnalyzed=totalAnalyzed;
-    ulazRes._watchFallback=ulazRes.length===0?all.filter(function(x){return x.verdict&&(x.verdict.indexOf("🟡")===0||x.verdict.indexOf("🔵")===0);}).slice(0,2):[];
     return ulazRes;
   }
   if(activeFilter==="watch"){
@@ -1252,7 +1250,7 @@ function renderOpp(o){
     // Promotion gap bar
     h+='<div style="display:flex;justify-content:space-between;font-size:10px;margin-bottom:4px">';
     h+='<span style="color:var(--t3)">Conf '+o.conf+'%</span>';
-    h+='<span style="color:'+pgCol+';font-weight:700">'+o.promotionGap+'pt do ✅ Ulaz (58%)</span>';
+    h+='<span style="color:'+pgCol+';font-weight:700">'+o.promotionGap+'pt do ✅ Ulaz (60%)</span>';
     h+='</div>';
     h+='<div style="height:5px;background:var(--s4);border-radius:3px;overflow:hidden;margin-bottom:10px;position:relative">';
     h+='<div style="height:100%;width:'+pgFill+'%;background:'+pgCol+';border-radius:3px"></div>';
@@ -2705,7 +2703,7 @@ function render(){
 
   // Kriterij banner + count header — samo na Ulaz i Watch tabu
   if(activeFilter==="ulaz"){
-    h+='<div style="background:rgba(0,230,118,.06);border:.5px solid rgba(0,230,118,.2);border-radius:12px;padding:10px 14px;margin-bottom:10px;font-size:12px;color:rgba(0,230,118,.85)">✅ <strong>Kriterij:</strong> pouzdanost ≥ 58% i višestruki bullish signali — tokeni spremni za ulaz.</div>';
+    h+='<div style="background:rgba(0,230,118,.06);border:.5px solid rgba(0,230,118,.2);border-radius:12px;padding:10px 14px;margin-bottom:10px;font-size:12px;color:rgba(0,230,118,.85)">✅ <strong>Kriterij:</strong> pouzdanost ≥ 60% i višestruki bullish signali — tokeni spremni za ulaz.</div>';
     // Count header + sort toggle
     if(opps.length>0){
       var totalA=opps._totalAnalyzed||0;
@@ -2741,11 +2739,8 @@ function render(){
   }
 
   if(opps.length===0){
-    var watchFallback=opps._watchFallback||[];
-    if(activeFilter==="ulaz"&&watchFallback.length>0){
-      h+='<div style="margin-bottom:14px"><div style="font-size:12px;color:var(--t3);padding:14px;text-align:center">🔍 Nema ✅ ulaza trenutno — najbliže prilike:</div>';
-      watchFallback.forEach(function(o){h+=renderOpp(o);});
-      h+='</div>';
+    if(activeFilter==="ulaz"){
+      h+='<div class="empty"><div style="font-size:48px;margin-bottom:14px">🔍</div><div style="font-size:17px;font-weight:600;color:var(--t2);margin-bottom:6px">Nema ✅ ulaza</div><div style="font-size:13px;color:var(--t3);margin-bottom:16px">Nema tokena s pouzdanošću ≥60% i višestrukim bullish signalima.<br>Provjeri Watch tab za prilike u razvoju.</div><button onclick="setTab(\'watch\')" style="padding:10px 22px;background:rgba(255,234,0,.1);border:.5px solid rgba(255,234,0,.3);border-radius:12px;font-size:13px;font-weight:700;color:#ffea00;cursor:pointer;font-family:inherit">👁 Idi na Watch</button></div>';
     } else {
       h+='<div class="empty"><div style="font-size:48px;margin-bottom:14px">🔍</div><div style="font-size:17px;font-weight:600;color:var(--t2);margin-bottom:6px">Nema prilike</div><div style="font-size:13px;color:var(--t3)">Trenutni uvjeti ne zadovoljavaju kriterije.<br>Smanji min. pouzdanost ili pričekaj bolji setup.</div></div>';
     }
