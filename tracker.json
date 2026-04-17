@@ -1974,8 +1974,8 @@
       "d3Hit": false,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 4774.86,
-      "peakPct": 0.03
+      "peakPrice": 4775.03,
+      "peakPct": 0.04
     },
     {
       "id": "1776425529795_PAXG",
@@ -4556,5 +4556,5 @@
     }
   ],
   "signalWeights": {},
-  "updatedAt": "2026-04-17T11:35:11.077Z"
+  "updatedAt": "2026-04-17T11:35:42.088Z"
 }
