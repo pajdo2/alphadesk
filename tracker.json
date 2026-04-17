@@ -1802,8 +1802,8 @@
       "d3Hit": false,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 0.0816,
-      "peakPct": -0.24
+      "peakPrice": 0.0817,
+      "peakPct": -0.12
     },
     {
       "id": "1776426522755_VET",
@@ -2781,8 +2781,8 @@
       "d3Hit": false,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 11.991,
-      "peakPct": 0.2
+      "peakPrice": 12.001,
+      "peakPct": 0.28
     },
     {
       "id": "1776426516823_ARB",
@@ -4642,5 +4642,5 @@
     }
   ],
   "signalWeights": {},
-  "updatedAt": "2026-04-17T11:55:38.098Z"
+  "updatedAt": "2026-04-17T11:56:38.116Z"
 }
