@@ -951,8 +951,8 @@
       "d3Hit": false,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 9.54,
-      "peakPct": 0.1
+      "peakPrice": 9.55,
+      "peakPct": 0.21
     },
     {
       "id": "1776426593133_LEO",
@@ -1431,8 +1431,8 @@
       "d3Hit": false,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 0.099,
-      "peakPct": 0.27
+      "peakPrice": 0.09912,
+      "peakPct": 0.4
     },
     {
       "id": "1776426563049_ALGO",
@@ -1696,8 +1696,8 @@
       "d3Hit": false,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 1.0078,
-      "peakPct": 0.86
+      "peakPrice": 1.0081,
+      "peakPct": 0.89
     },
     {
       "id": "1776426522755_PAXG",
@@ -1855,8 +1855,8 @@
       "d3Hit": false,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 0.007314,
-      "peakPct": 0.43
+      "peakPrice": 0.007315,
+      "peakPct": 0.44
     },
     {
       "id": "1776426522755_KAS",
@@ -2145,8 +2145,8 @@
       "d3Hit": false,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 0.06474,
-      "peakPct": 0.53
+      "peakPrice": 0.06488,
+      "peakPct": 0.75
     },
     {
       "id": "1776426516823_ETH",
@@ -2675,8 +2675,8 @@
       "d3Hit": false,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 0.09153,
-      "peakPct": 0.62
+      "peakPrice": 0.09156,
+      "peakPct": 0.65
     },
     {
       "id": "1776426516823_BCH",
@@ -2993,8 +2993,8 @@
       "d3Hit": false,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 76.44,
-      "peakPct": 0.26
+      "peakPrice": 76.51,
+      "peakPct": 0.35
     },
     {
       "id": "1776426516823_APT",
@@ -3152,8 +3152,8 @@
       "d3Hit": false,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 1.824,
-      "peakPct": 0.33
+      "peakPrice": 1.825,
+      "peakPct": 0.39
     },
     {
       "id": "1776426516823_RENDER",
@@ -4585,8 +4585,8 @@
       "d3Hit": false,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 3.457,
-      "peakPct": 0.44
+      "peakPrice": 3.458,
+      "peakPct": 0.46
     },
     {
       "id": "1776425579984_DOT",
@@ -4642,5 +4642,5 @@
     }
   ],
   "signalWeights": {},
-  "updatedAt": "2026-04-17T12:16:38.167Z"
+  "updatedAt": "2026-04-17T12:17:38.157Z"
 }
