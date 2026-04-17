@@ -1696,8 +1696,8 @@
       "d3Hit": false,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 1.0058,
-      "peakPct": 0.66
+      "peakPrice": 1.0078,
+      "peakPct": 0.86
     },
     {
       "id": "1776426522755_PAXG",
@@ -1855,8 +1855,8 @@
       "d3Hit": false,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 0.007313,
-      "peakPct": 0.41
+      "peakPrice": 0.007314,
+      "peakPct": 0.43
     },
     {
       "id": "1776426522755_KAS",
@@ -2145,8 +2145,8 @@
       "d3Hit": false,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 0.06463,
-      "peakPct": 0.36
+      "peakPrice": 0.06474,
+      "peakPct": 0.53
     },
     {
       "id": "1776426516823_ETH",
@@ -2675,8 +2675,8 @@
       "d3Hit": false,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 0.09146,
-      "peakPct": 0.54
+      "peakPrice": 0.09153,
+      "peakPct": 0.62
     },
     {
       "id": "1776426516823_BCH",
@@ -2834,8 +2834,8 @@
       "d3Hit": false,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 0.1359,
-      "peakPct": 1.72
+      "peakPrice": 0.136,
+      "peakPct": 1.8
     },
     {
       "id": "1776426516823_NEXO",
@@ -2887,8 +2887,8 @@
       "d3Hit": false,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 0.916,
-      "peakPct": 0.11
+      "peakPrice": 0.917,
+      "peakPct": 0.22
     },
     {
       "id": "1776426516823_RAVE",
@@ -2993,8 +2993,8 @@
       "d3Hit": false,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 76.43,
-      "peakPct": 0.25
+      "peakPrice": 76.44,
+      "peakPct": 0.26
     },
     {
       "id": "1776426516823_APT",
@@ -3752,8 +3752,8 @@
       "d3Hit": false,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 3.028,
-      "peakPct": 0.17
+      "peakPrice": 3.03,
+      "peakPct": 0.23
     },
     {
       "id": "1776425579984_BCAP",
@@ -4642,5 +4642,5 @@
     }
   ],
   "signalWeights": {},
-  "updatedAt": "2026-04-17T12:15:38.171Z"
+  "updatedAt": "2026-04-17T12:16:38.167Z"
 }
