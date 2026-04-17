@@ -1,6 +1,58 @@
 {
   "predictions": [
     {
+      "id": "1776425802069_ICP",
+      "timestamp": 1776425802069,
+      "sym": "ICP",
+      "type": "regular",
+      "date": "17. tra",
+      "entry": 2.633,
+      "target": 2.8963,
+      "d1Target": 2.6857,
+      "d2Target": 2.7383,
+      "d4Target": 2.8436,
+      "d5Target": 2.8963,
+      "d3Target": 2.791,
+      "stop": 2.554,
+      "conf": 40,
+      "score": -7.5,
+      "targetPct": 10,
+      "status": "AKTIVAN",
+      "closePrice": null,
+      "closePct": null,
+      "autoClose": false,
+      "autoTrack": true,
+      "autoSource": "watch",
+      "snap": {
+        "rsiOversold": false,
+        "rsiOverbought": false,
+        "trendUp": true,
+        "trendDown": false,
+        "bbBelow": false,
+        "divBullish": false,
+        "divBearish": true,
+        "macdBullCross": false,
+        "macdBearCross": false,
+        "lsRatioBull": false,
+        "lsRatioExtreme": false,
+        "basisBack": false,
+        "takerSell": false,
+        "btcDomHigh": true,
+        "btcDomLow": false,
+        "volSpike": false,
+        "mtfAllUp": false,
+        "fgExtremeFear": false,
+        "fgFear": true
+      },
+      "d1Hit": false,
+      "d2Hit": false,
+      "d3Hit": false,
+      "d4Hit": false,
+      "d5Hit": false,
+      "peakPrice": 2.633,
+      "peakPct": 0
+    },
+    {
       "id": "1776425579984_OUSG",
       "timestamp": 1776425579984,
       "sym": "OUSG",
@@ -361,8 +413,8 @@
       "d3Hit": false,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 3.024,
-      "peakPct": 0.03
+      "peakPrice": 3.025,
+      "peakPct": 0.07
     },
     {
       "id": "1776425579984_BCAP",
@@ -3014,8 +3066,8 @@
       "d3Hit": false,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 1.4456,
-      "peakPct": 0.08
+      "peakPrice": 1.4459,
+      "peakPct": 0.1
     },
     {
       "id": "1776425459954_BONK",
@@ -3433,8 +3485,8 @@
       "d3Hit": false,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 0.2577,
-      "peakPct": 0.16
+      "peakPrice": 0.258,
+      "peakPct": 0.27
     },
     {
       "id": "1776425438209_STABLE",
@@ -3641,8 +3693,8 @@
       "d3Hit": false,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 0.1692,
-      "peakPct": 0
+      "peakPrice": 0.1693,
+      "peakPct": 0.06
     },
     {
       "id": "1776425438209_BNB",
@@ -4556,5 +4608,5 @@
     }
   ],
   "signalWeights": {},
-  "updatedAt": "2026-04-17T11:35:42.088Z"
+  "updatedAt": "2026-04-17T11:36:42.080Z"
 }
