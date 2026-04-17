@@ -4060,6 +4060,8 @@ function backgroundAutoTrack(){
       var cleanUrl=window.location.pathname+(window.location.hash||"");
       window.history.replaceState({},"",cleanUrl);
       showToast("✓ GitHub sync postavljen! Podaci se sinkroniziraju automatski.");
+      // Odmah napravi tracker.json na GitHubu (čak i prazan) da verificiramo da radi
+      setTimeout(function(){syncToGH();},2000);
     }
   }catch(e){}
 })();
