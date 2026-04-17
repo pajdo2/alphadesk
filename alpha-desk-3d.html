@@ -1161,18 +1161,20 @@ function renderOpp(o){
   }
   h+='</div>';
 
-  // Signal chips — expandable
+  // Signal chips — sklopivi, skriveni po defaultu
   var sigIcon={bull:"↑ ",bear:"↓ ",warn:"⚠ "};
   var isExpanded=!!expandedSigs[o.sym];
   var allSigs=o.signals.concat(o.warnings);
-  var shownSigs=isExpanded?allSigs:o.signals.slice(0,5).concat(o.warnings.slice(0,3));
-  var hiddenCount=allSigs.length-shownSigs.length;
+  var bullCount2=o.signals.length,warnCount=o.warnings.length;
   h+='<div class="sigs">';
-  shownSigs.forEach(function(s){h+='<span class="sig-chip '+s.type+'">'+(sigIcon[s.type]||'')+s.txt+'</span>';});
-  if(!isExpanded&&hiddenCount>0){
-    h+='<span onclick="expandedSigs[\''+o.sym+'\']=true;render()" style="font-size:10px;color:var(--t4);cursor:pointer;padding:3px 8px;border-radius:20px;border:.5px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04)">+'+hiddenCount+' više ▾</span>';
-  } else if(isExpanded){
-    h+='<span onclick="delete expandedSigs[\''+o.sym+'\'];render()" style="font-size:10px;color:var(--t4);cursor:pointer;padding:3px 8px;border-radius:20px;border:.5px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04)">Sažmi ▴</span>';
+  if(!isExpanded){
+    // Zatvoreno — samo gumb
+    var sigSummary=(bullCount2>0?'↑ '+bullCount2+' bull':'')+( bullCount2>0&&warnCount>0?' · ':'')+( warnCount>0?'⚠ '+warnCount+' warn':'');
+    h+='<span onclick="expandedSigs[\''+o.sym+'\']=true;render()" style="font-size:10px;color:var(--t4);cursor:pointer;padding:4px 11px;border-radius:20px;border:.5px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);display:inline-flex;align-items:center;gap:5px">📋 Signali ('+allSigs.length+')&nbsp;<span style="opacity:.6">'+sigSummary+'</span> ▾</span>';
+  } else {
+    // Otvoreno — svi signali + gumb za zatvaranje
+    allSigs.forEach(function(s){h+='<span class="sig-chip '+s.type+'">'+(sigIcon[s.type]||'')+s.txt+'</span>';});
+    h+='<span onclick="delete expandedSigs[\''+o.sym+'\']; render()" style="font-size:10px;color:var(--t4);cursor:pointer;padding:4px 11px;border-radius:20px;border:.5px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);display:inline-flex;align-items:center;gap:4px">Sažmi ▴</span>';
   }
   h+='</div>';
 
