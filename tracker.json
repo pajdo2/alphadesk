@@ -209,8 +209,8 @@
       "d3Hit": false,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 1.879,
-      "peakPct": 0
+      "peakPrice": 1.88,
+      "peakPct": 0.05
     },
     {
       "id": "1776426593133_PUMP",
@@ -1855,8 +1855,8 @@
       "d3Hit": false,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 0.007294,
-      "peakPct": 0.15
+      "peakPrice": 0.007297,
+      "peakPct": 0.19
     },
     {
       "id": "1776426522755_KAS",
@@ -2781,8 +2781,8 @@
       "d3Hit": false,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 11.982,
-      "peakPct": 0.13
+      "peakPrice": 11.986,
+      "peakPct": 0.16
     },
     {
       "id": "1776426516823_ARB",
@@ -2993,8 +2993,8 @@
       "d3Hit": false,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 76.3,
-      "peakPct": 0.08
+      "peakPrice": 76.38,
+      "peakPct": 0.18
     },
     {
       "id": "1776426516823_APT",
@@ -3258,8 +3258,8 @@
       "d3Hit": false,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 0.3238,
-      "peakPct": 0.03
+      "peakPrice": 0.3239,
+      "peakPct": 0.06
     },
     {
       "id": "1776426516823_BTC",
@@ -3336,8 +3336,8 @@
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
-      "peakPrice": 254.4,
-      "peakPct": 0.16
+      "peakPrice": 254.6,
+      "peakPct": 0.24
     },
     {
       "id": "1776425802069_ICP",
@@ -4585,8 +4585,8 @@
       "d3Hit": false,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 3.45,
-      "peakPct": 0.23
+      "peakPrice": 3.451,
+      "peakPct": 0.26
     },
     {
       "id": "1776425579984_DOT",
@@ -4642,5 +4642,5 @@
     }
   ],
   "signalWeights": {},
-  "updatedAt": "2026-04-17T11:52:53.060Z"
+  "updatedAt": "2026-04-17T11:53:53.064Z"
 }
