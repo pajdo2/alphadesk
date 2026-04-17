@@ -2026,8 +2026,8 @@
       "d3Hit": false,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 4784.28,
-      "peakPct": 0.23
+      "peakPrice": 4785.29,
+      "peakPct": 0.25
     },
     {
       "id": "1776425529795_PAXG",
@@ -2078,8 +2078,8 @@
       "d3Hit": false,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 4787.83,
-      "peakPct": 0.24
+      "peakPrice": 4789.15,
+      "peakPct": 0.27
     },
     {
       "id": "1776425529795_FIL",
@@ -4421,8 +4421,8 @@
       "d3Hit": false,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 253.7,
-      "peakPct": 0.24
+      "peakPrice": 253.9,
+      "peakPct": 0.32
     },
     {
       "id": "1776425438204",
@@ -4608,5 +4608,5 @@
     }
   ],
   "signalWeights": {},
-  "updatedAt": "2026-04-17T11:46:38.096Z"
+  "updatedAt": "2026-04-17T11:47:50.171Z"
 }
