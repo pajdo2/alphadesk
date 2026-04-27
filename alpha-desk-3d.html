@@ -142,6 +142,62 @@ html,body{height:100%;background:#000;color:#fff;font-family:-apple-system,'SF P
 .prog{height:4px;background:var(--s4);border-radius:4px;overflow:hidden;margin-top:4px}
 .prog-f{height:100%;border-radius:4px;transition:width .4s}
 svg.sp{overflow:visible;display:block}
+
+/* ── MOBILE ───────────────────────────────────────────────────────── */
+/* Utility klase za responsivne komponente */
+.rr-row{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:6px}
+.day-grid{gap:6px;margin-bottom:10px}
+/* Scrollabilni wrapper za 5-dnevni timeline */
+.tl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tl-scroll::-webkit-scrollbar{display:none}
+.tl-scroll{scrollbar-width:none}
+
+@media(max-width:500px){
+  /* Padding */
+  .pg{padding:10px 10px 80px}
+  /* Header */
+  .hd{padding:10px 12px 7px}
+  .hd-title{font-size:13px;letter-spacing:-.3px}
+  .hd-sub{font-size:10px}
+  .hd-claude{font-size:10px}
+  .live-pill{padding:4px 8px}
+  .live-txt{font-size:10px}
+  /* Tabs */
+  .tab{padding:11px 12px;font-size:12px}
+  /* Token card header */
+  .opp-head{padding:11px 12px;gap:9px}
+  .tok-ico{width:36px;height:36px;border-radius:10px;font-size:13px}
+  .opp-name{font-size:15px}
+  .opp-price{font-size:11px}
+  .conf-ring{width:46px;height:46px}
+  .conf-ring .num{font-size:12px}
+  /* Verdict */
+  .verdict{padding:11px 12px}
+  .verdict-text{font-size:13px}
+  .verdict-why{font-size:11px}
+  /* Trade setup grid */
+  .setup-cell{padding:10px 6px}
+  .setup-val{font-size:13px}
+  .setup-lbl,.setup-sub{font-size:10px}
+  /* R/R info row */
+  .rr-row{gap:4px}
+  .rr-row span{font-size:11px}
+  /* Timeline */
+  .timeline{padding:11px 12px}
+  .tl-day{min-width:68px;flex-shrink:0}
+  .tl-dprice{font-size:12px}
+  /* Signals */
+  .sigs{padding:10px 12px;gap:5px}
+  .sig-chip{font-size:10px;padding:4px 8px}
+  /* Risk bar */
+  .risk-bar{padding:10px 12px}
+  /* Active trade 5-day milestones */
+  .day-grid-5{display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:2px;scrollbar-width:none}
+  .day-grid-5::-webkit-scrollbar{display:none}
+  .day-grid-5>div{min-width:58px;flex-shrink:0}
+  /* Modal input font */
+  .inp{font-size:16px} /* Sprječava auto-zoom na iOS */
+}
 </style>
 </head>
 <body>
@@ -1050,7 +1106,7 @@ function getOpportunities(){
 function confRing(conf){
   var col=conf>=60?"var(--gr)":conf>=50?"var(--ye)":"var(--re)";
   var R=22,circ=2*Math.PI*R,arc=(conf/100)*circ;
-  return'<div class="conf-ring"><svg width="56" height="56"><circle cx="28" cy="28" r="'+R+'" fill="none" stroke="'+col+'" stroke-opacity=".12" stroke-width="4"/><circle cx="28" cy="28" r="'+R+'" fill="none" stroke="'+col+'" stroke-width="4" stroke-dasharray="'+arc+' '+circ+'" stroke-linecap="round" transform="rotate(-90 28 28)"/></svg><div class="num" style="color:'+col+'">'+conf+'%</div></div>';
+  return'<div class="conf-ring"><svg width="100%" height="100%" viewBox="0 0 56 56"><circle cx="28" cy="28" r="'+R+'" fill="none" stroke="'+col+'" stroke-opacity=".12" stroke-width="4"/><circle cx="28" cy="28" r="'+R+'" fill="none" stroke="'+col+'" stroke-width="4" stroke-dasharray="'+arc+' '+circ+'" stroke-linecap="round" transform="rotate(-90 28 28)"/></svg><div class="num" style="color:'+col+'">'+conf+'%</div></div>';
 }
 
 // ── RENDER OPPORTUNITY CARD ──────────────────────────────────────
@@ -1123,18 +1179,18 @@ function renderOpp(o){
   h+='</div>';
 
   // R/R + ATR info
-  h+='<div style="padding:10px 16px;border-bottom:.5px solid var(--sep2);display:flex;justify-content:space-between;align-items:center">';
+  h+='<div class="rr-row" style="padding:10px 16px;border-bottom:.5px solid var(--sep2)">';
   var windowLabel=(o.targetPct===10?'5d':'3d');
-  h+='<span style="font-size:12px;color:var(--t3)">R/R omjer: <strong style="color:var(--t1)">'+o.rr+':1</strong></span>';
-  h+='<span style="font-size:12px;color:var(--t3)">Volatilnost: <strong style="color:'+o.riskCol+'">'+o.atrPct+'%/dan · '+o.riskLevel+'</strong></span>';
-  h+='<span style="font-size:12px;color:var(--t3)">'+windowLabel+' pokriva: <strong style="color:'+(o.achievable3d?"var(--gr)":"var(--re)")+'">'+(o.achievable3d?"DA ✓":"Rizično")+' </strong></span>';
+  h+='<span style="font-size:12px;color:var(--t3)">R/R: <strong style="color:var(--t1)">'+o.rr+':1</strong></span>';
+  h+='<span style="font-size:12px;color:var(--t3)">ATR: <strong style="color:'+o.riskCol+'">'+o.atrPct+'%/dan · '+o.riskLevel+'</strong></span>';
+  h+='<span style="font-size:12px;color:var(--t3)">'+windowLabel+': <strong style="color:'+(o.achievable3d?"var(--gr)":"var(--re)")+'">'+(o.achievable3d?"DA ✓":"Rizično")+' </strong></span>';
   h+='</div>';
 
   // 3-Day Timeline — koristi targetPct iz objekta, ne iz globalnih postavki
   var tgt=o.targetPct||settings.targetPct;
   h+='<div class="timeline">';
   h+='<div class="tl-label">📅 '+(o.targetPct===10?'5-Dnevna projekcija (+10% target · trailing stop na +5%)':'3-Dnevna projekcija (+'+tgt+'% target)')+'</div>';
-  h+='<div class="tl-row">';
+  h+='<div class="tl-scroll"><div class="tl-row">';
   var days=[
     {cls:"d1",n:"Dan 1",p:o.d1Price,prob:o.d1Prob,pct:+(((o.d1Price/o.price-1)*100).toFixed(1))},
     {cls:"d2",n:"Dan 2",p:o.d2Price,prob:o.d2Prob,pct:+(((o.d2Price/o.price-1)*100).toFixed(1))},
@@ -1153,7 +1209,7 @@ function renderOpp(o){
     h+=pr(day.prob,"var(--gr)",2);
     h+='</div>';
   });
-  h+='</div>';
+  h+='</div></div>'; // close tl-row + tl-scroll
 
   // Scenario note
   if(MACRO.warActive){
@@ -2180,7 +2236,7 @@ function renderActiveCard(p){
     {n:"D2",t:p.d2Target||p.target,hit:p.d2Hit,due:elapsed>=2*DAY},
     {n:"D3",t:p.target,hit:p.d3Hit,due:elapsed>=3*DAY}
   ];
-  h+='<div style="display:grid;grid-template-columns:repeat('+days.length+',1fr);gap:6px;margin-bottom:10px">';
+  h+='<div class="day-grid day-grid-'+days.length+'" style="display:grid;grid-template-columns:repeat('+days.length+',1fr)">';
   days.forEach(function(d){
     var dCol=d.hit?"var(--gr)":d.due?"var(--re)":"var(--t3)";
     var icon=d.hit?"✅":d.due?"❌":"⏳";
