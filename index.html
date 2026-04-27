@@ -2806,7 +2806,7 @@ function render(){
     var regimeLbl={BEAR_MARKET:"🐻 Bear Market",BULL_MARKET:"🚀 Bull Market",ALT_ACCUMULATION:"🌱 Alt Accum.",BTC_DOMINANCE_FEAR:"₿ BTC Bijeg",GREED_CAUTION:"⚠️ Pohlepa",MACRO_RISK_OFF:"🔴 Risk-Off",NEUTRAL:"➖ Neutral"};
     var regimeCol={BEAR_MARKET:"var(--re)",BULL_MARKET:"var(--gr)",ALT_ACCUMULATION:"#00e5ff",BTC_DOMINANCE_FEAR:"var(--or)",GREED_CAUTION:"var(--ye)",MACRO_RISK_OFF:"#ff5252",NEUTRAL:"var(--t3)"};
     var btcSmaStr=MACRO.btcSma200?"$"+MACRO.btcSma200.toLocaleString():"—";
-    var btcSmaAbove=MACRO.btcAbove200;
+    var btcSmaAbove=MACRO.btcAbove200!=null?MACRO.btcAbove200:null;
     var btcDomCol=MACRO.btcDom>60?"var(--re)":MACRO.btcDom>55?"var(--ye)":MACRO.btcDom<45?"var(--gr)":"var(--t2)";
     var oilCol=MACRO.oil>110?"var(--re)":MACRO.oil>90?"var(--ye)":"var(--gr)";
     var dxyCol=MACRO.dxy>106?"var(--re)":MACRO.dxy>103?"var(--ye)":MACRO.dxy<100?"var(--gr)":"var(--t2)";
@@ -2822,8 +2822,8 @@ function render(){
     h+='</div>';
     h+='<div style="background:rgba(255,255,255,.03);border:.5px solid rgba(255,255,255,.07);border-radius:8px;padding:5px 10px;display:flex;align-items:center;gap:6px">';
     h+='<span style="font-size:10px;color:var(--t4)">200 SMA</span>';
-    h+='<span style="font-size:11px;font-weight:800;color:'+(btcSmaAbove?"var(--gr)":"var(--re)")+'">'+btcSmaStr+'</span>';
-    h+='<span style="font-size:10px;color:'+(btcSmaAbove?"var(--gr)":"var(--re)")+'">'+(btcSmaAbove?"▲":"▼")+'</span>';
+    h+='<span style="font-size:11px;font-weight:800;color:'+(btcSmaAbove===null?"var(--t3)":btcSmaAbove?"var(--gr)":"var(--re)")+'">'+btcSmaStr+'</span>';
+    h+='<span style="font-size:10px;color:'+(btcSmaAbove===null?"var(--t3)":btcSmaAbove?"var(--gr)":"var(--re)")+'">'+(btcSmaAbove===null?"—":btcSmaAbove?"▲":"▼")+'</span>';
     h+='</div>';
     h+='<div style="background:rgba(255,255,255,.03);border:.5px solid rgba(255,255,255,.07);border-radius:8px;padding:5px 10px;display:flex;align-items:center;gap:6px">';
     h+='<span style="font-size:10px;color:var(--t4)">Nafta</span>';
@@ -3015,7 +3015,7 @@ function openSettings(){
 }
 function closeModal(){document.getElementById("modal").classList.remove("open");}
 function applySettings(){
-  settings.minConf=parseInt(document.getElementById("s-conf").value)||55;
+  settings.minConf=parseInt(document.getElementById("s-conf").value)||40;
   settings.targetPct=parseFloat(document.getElementById("s-tgt").value)||5;
   settings.maxRisk=parseFloat(document.getElementById("s-risk").value)||3;
   settings.minRR=parseFloat(document.getElementById("s-rr").value)||1.5;
@@ -3661,8 +3661,8 @@ function loadTop100(){
     });
 }
 
-function fetchDXY(){
-  // EUR/USD kao proxy za DXY: viši EUR/USD = slabiji USD = bullish crypto
+function fetchEurUsd(){
+  // EUR/USD kao proxy za USD snagu u scoring signalima
   fetch("https://api.frankfurter.app/latest?from=USD&to=EUR")
     .then(function(r){return r.json();})
     .then(function(d){
@@ -4017,6 +4017,7 @@ fetchOptions3D();
 fetchMacro3D();
 fetchFearGreed();
 fetchMacroContext();
+fetchEurUsd();
 fetchDXY();
 fetchSPX();          // S&P500 5d povrat — macro korelacija
 fetchOpenInterest();
@@ -4069,6 +4070,7 @@ setInterval(fetchFearGreed, 300000);   // svako 5 min
 setInterval(fetchMacroContext, 600000);// svako 10 min
 setInterval(fetchOrderBooks, 300000);  // svako 5 min (batched)
 setInterval(loadTop100, 900000);       // svako 15 min — osvježi top 100 + CoinGecko podaci
+setInterval(fetchEurUsd, 1800000);     // svako 30 min — EUR/USD proxy za scoring
 setInterval(fetchDXY, 1800000);        // svako 30 min
 setInterval(fetchOpenInterest, 600000);    // svako 10 min
 setInterval(fetch4hTA, 1800000);           // svako 30 min (4h+daily sporije se mijenjaju)
