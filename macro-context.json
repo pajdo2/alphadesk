@@ -1,181 +1,176 @@
 {
-  "lastUpdated": "2026-04-17T12:00:00.000Z",
+  "lastUpdated": "2026-04-27T10:00:00.000Z",
   "warActive": true,
   "macroPenalty": 1,
-  "oil": 96,
-  "btcDom": 57.0,
+  "oil": 87,
+  "btcDom": 57.5,
   "stableDom": 8.5,
-  "aiSummary": "BTC reclaimed $74K (Apr 14) na CLARITY Act optimizmu — bullish momentum ka $75K-$76K otporu. CLARITY Act Senate markup kasni travanj: regulatorni katalizator koji može komprimirati 2-4 mj. oporavak u dane. ETH surged 6% na istom katalizatoru, na ~$2,325; ETH/BTC ratio oporavak s 2026 dna 0.028 na 0.0313 — znaci sireg oporavka. XRP na $1.38 — SEC roundtable 16.04. odrzan za CLARITY Act, regulatorna jasnoaca napreduje; ETF AUM $1.25B uz $17.11M dnevnih inflows (Apr 15). SOL na $82.26 — Firedancer validator potvrden 1M TPS; SOL ETF AUM >$1B. BNB na $623 — reclaimed 4. mjesto po trzisnoj kap., analitiari ciljaju $900. AVAX +10% u 24h, SUI +10.7% — CME futures za oba potvrdeni 4.05. (institucionalna validacija). ADA i LINK cekaju smjer bez snaznog katalizatora. Geopolitika: US-Iran primirje krhko (istice 22.04.) ali pregovori prema miru napreduju — crypto trzista optimisticna. Novi Israel-Lebanon 10-dnevni ceasefire od 16.04. Nafta Brent ~$96/bbl. F&G 56 Greed (Apr 16) — sentiment flip s 11 (Apr 7) sugerira institucijski FOMO. Fed pauza na 3.5-3.75%, DXY predviden pad 5% u 2026 — bullish za crypto dugorocno. Powell mandat istice svibanj 2026 — macro smjena dolazi.",
+  "aiSummary": "BTC na $78,085 (Apr 26) — best April performance since 2020 (+13.71% MTD). ETF 8-day inflow streak $2.1B, April ukupno $2.4B+; kumulativni AUM $102B. Kljucni otpor $78,100-$80,100 jos nije probijen — short-term holders tiho prodaju. ETH na $2,315 — ETF $539M inflows u travnju, ali Apr 23 outflow $75.9M prekinuo 10-dnevni streak. XRP na $1.44 — 'triangle squeeze' pred breakoutom; watch $1.50 gore ili $1.39 dolje. ETF AUM presao $2.6B. SOL na ~$85 — ETF inflows -92% (s $419M na $34M) ali Alpenglow Q3 2026 (150ms finality, 80x poboljsanje). BNB $630 — 35. kvartal burn 2.14M BNB ($1.32B, Apr 15); Osaka/Mendel hard fork Apr 28. AVAX $9.47 — Bitwise staking ETF lansiran Apr 15, NYSE/Securitize MOU za tokenizaciju dionica. SUI $0.93 — vesting pritisak (60.5% supply jos zakljucano), CME futures Mai 4. LINK $9.34 — konsolidacija $8.50-$9.50, resistance $9.30-$10.00. US-Iran: Trump konfrontativan, SAD zamrznuo $344M iranskog kripta (Tether podrska), Iran trazi kripto placanja za prolaz Hormuz. Mir slabo vjerojatan do Apr 30 — geopoliticki rizik ostaje. Nafta pada na vijesti o mogucim pregovorima (~$87), Iran potencijalno +1.3M bbl/dan. Fed: Powell mandat istice SVIBANJ 2026 — Trump imenuje nasljednika, key macro smjena dolazi. DXY pod pritiskom. IMF snizio EM rast na 3.9% za 2026.",
   "prices": {
-    "BTC": 74000,
-    "ETH": 2325,
-    "XRP": 1.38,
-    "SOL": 82.26,
-    "BNB": 623,
-    "ADA": 0.242,
-    "LINK": 8.80,
-    "AVAX": 9.60,
-    "SUI": 1.03
+    "BTC": 78085,
+    "ETH": 2315,
+    "XRP": 1.44,
+    "SOL": 85.00,
+    "BNB": 630,
+    "ADA": 0.245,
+    "LINK": 9.34,
+    "AVAX": 9.47,
+    "SUI": 0.93
   },
   "catalysts": {
     "BTC": [
-      "CLARITY Act Senate markup kasni travanj — regulatorna jasnoaca, potencijalni brzi katalizator",
-      "BlackRock IBIT: tjedni inflows $1.1B (najjaci od Jan 2026), AUM $54B+ — dominantan ETP",
-      "Q1 2026: $12.4B BTC ETF inflows; globalni crypto ETP neto $18.7B",
-      "F&G Index: 11 (Apr 7) → 56 Greed (Apr 16) — institucijski FOMO na svakom dipu",
-      "BTC drzi sve kljucne MA: MA7 $73,495 / MA14 $71,511 / MA30 $69,984 — bullish stack",
-      "RSI 63 — bullish momentum bez overbought zone; prostora do 70+",
-      "US-Iran peace talks napreduju — geopoliticki risk-off pritisak popusta",
-      "Israel-Lebanon novi 10-dnevni ceasefire od 16.04. — dodatni deeskalacijski signal",
-      "DXY predviden pad 5% u 2026 — inverzna korelacija pozitivna za BTC",
-      "BTC dominance 57.0% — historijski prethodnik altcoin rotacije u 2-6 mj."
+      "ETF 8-day inflow streak: $2.1B kumulativno, April ukupno $2.4B+ — najjaci travanj od lansiranja",
+      "Kumulativni BTC ETF AUM dostigao $102B (net inflows $58B od lansiranja) — strukturalna institucionalna baza",
+      "BlackRock IBIT: $733M u tjednu Apr 20-24 — dominantan ETP",
+      "Morgan Stanley MSBT lansiran Apr 8, $71M u prvom tjednom — novi institucionalni distribucijski kanal",
+      "BTC exchange reserves na 7-godišnjem minimumu — supply squeeze tesis ojacava",
+      "4 uzastopna tjedna pozitivnih ETF priljeva — institucionalni FOMO kontinuiran",
+      "RSI 62.63 — bullish momentum, prostora do overbought zone",
+      "BTC +13.71% MTD u travnju — best April since 2020, sentiment preokret od 'extreme fear'",
+      "US-Iran peace talks restart signali (Apr 22/25) — risk-on sentiment podrska",
+      "DXY pod pritiskom — inverzna korelacija bullish za BTC"
     ],
     "ETH": [
-      "CLARITY Act rally: ETH surged 6% (Apr 14) — nadmasio BTC u kratkorocnom odskoku",
-      "ETH/BTC ratio oporavak: 0.028 (Feb 2026 dno) → 0.0313 — znaci sireg crypto oporavka",
-      "Glamsterdam upgrade: lipanj 2026 — 78.6% nize gas cijene, 10k TPS, gas limit 200M",
-      "Hegota upgrade: 2026 — brza finalizacija transakcija, visi gas limiti",
-      "ETH ETF kumulativni neto pritoci $11.68B — stabilna institucionalna baza",
-      "Stablecoin supply ATH $180B — Ethereum ekosustav raste",
-      "On-chain: 82% kvartalnog skoka u novim korisnicima, rekordni transaction volumeni",
-      "ETH MA stack bullish: MA7 $2,274 / MA14 $2,195 / MA30 $2,148"
+      "ETH spot ETF: $539M inflows u travnju — institucijska potraznja kontinuirana",
+      "ETH/BTC ratio oporavak od 2026 dna — prati siri crypto oporavak",
+      "Glamsterdam upgrade: ciljni datum lipanj 2026 — gas -78.6%, throughput 10k TPS, gas limit 200M",
+      "Stablecoin supply ATH $180B+ — Ethereum ekosustav raste",
+      "Standard Chartered dugorocno bullish: ETH moze dosegnuti $40K do kraja desetljeca",
+      "ETH daily close iznad $2,380 = bullish signal za kratkorocni smjer"
     ],
     "XRP": [
-      "SEC roundtable 16.04. odrzan — CLARITY Act rasprava zavrsena, regulatorna jasnoaca napreduje",
-      "XRP spot ETF: rekordnih $17.11M dnevnih inflows (Apr 15) — AUM $1.25B",
-      "CLARITY Act Senate markup kasni travanj — binary katalizator",
-      "Coca-Cola i American Airlines medu 1,100+ korporacija istrazuju XRP onchain placanja (Ripple Treasury)",
-      "Rakuten integracija — 44M korisnika, 5M trgovaca u Japanu",
-      "Societe Generale EURCV stablecoin na XRP Ledgeru",
-      "Juzna Koreja: feasibility test tokeniziranih obveznica s Ripple Custody",
-      "SEC Atkins 'safe harbor' — XRP nije security; ETF put opened"
+      "XRP spot ETF AUM presao $2.6B — institucionalni momentum jak",
+      "'Triangle squeeze' konsolidacija pred breakoutom — $1.50 kljucni bullish trigger",
+      "Standard Chartered prognoza: +100% na $2.80 u 2026",
+      "SEC lawsuit rezolucija uklonila 5-godisnji regulatorni teret — siroka institucionalna upotreba otvorena",
+      "CLARITY Act: regulatorna jasnoaca nastavlja napredovati",
+      "Rakuten (44M korisnika), Coca-Cola, American Airlines i 1,100+ korporacija istrazuju XRP placanja"
     ],
     "SOL": [
-      "Firedancer validator: potvrdeno 1M TPS u produkciji — mrezna stabilnost ojacana",
-      "SOL Spot ETF AUM presao $1B — Bitwise i Fidelity s inflows",
-      "On-chain ekonomska aktivnost +6,500% u Q1 2026 — $1.1T ukupna aktivnost",
+      "Alpenglow (SIMD-0326): Solana najveci ikad core upgrade, Q3 2026 mainnet — 150ms block finality (80x poboljsanje od ~12s)",
+      "Institucijska povjerenje ostaje: javna kompanija s 6.17% staking yield na SOL treasury",
+      "Otpor $90 → $98, target analitičara $117 ako drži $80 support",
+      "Alpenglow zamjenjuje PoH konsenzus — fundamentalna mrezna nadogradnja",
       "SEC/CFTC: SOL klasificiran kao Digital Commodity — staking izuzet",
-      "Multiple asset manageri s SOL ETF aplikacijama pod SEC reviziom za 2026",
-      "Interactive Brokers Europa — SOL dostupan europskim institucijama (Zero Hash)",
-      "Alpenglow upgrade u planu — daljnje poboljsanje performansi"
+      "Multiple asset manageri s SOL ETF aplikacijama pod SEC reviziom"
     ],
     "BNB": [
-      "BNB reclaimed 4. mjesto po trzisnoj kapitalizaciji od XRP (Apr 15) — momentum pozitivno",
-      "Analitiari ciljaju $900 u oporavku, InvestingHaven peak >$1,100 u bullish fazi",
-      "Fermi hard fork: block time 0.45s — DeFi + AI aplikacije ubrzane",
-      "34. kvartalni burn: 1,371,703 BNB (~$1.277B) — najveci u povijesti po USD vrijednosti",
-      "BNB Chain: 4.5M prosjecnih dnevnih aktivnih korisnika Q1 2026",
-      "Tokenized RWA na BNB Chainu: $16.6B, +100% YoY"
+      "35. kvartal burn: 2.14M BNB (~$1.32B, Apr 15) — deflacijski mehanizam nastavlja",
+      "Osaka/Mendel hard fork: Apr 28 02:30 UTC — block processing i validator efficiency poboljsanje",
+      "BNB Chain: 329.5M token holdera (nadmasilo Ethereum 308.2M) — najveci L1 po holderima",
+      "Teucrium XBNB ETF: prvi US-listiran 2x leveraged BNB futures fond",
+      "BNB Chain: 4.5M+ prosjecnih dnevnih aktivnih korisnika — mreza aktivna",
+      "Tokenized RWA na BNB Chainu: $16.6B+, snazna institucijska prisutnost"
     ],
     "ADA": [
+      "On-chain aktivnost na višemjesecnom maksimumu — transaction counts i aktivni korisnici rastu",
+      "Whale akumulacija: walleti s 10M+ ADA na najvisoj razini u mjesecima",
       "SEC Atkins 'safe harbor' — ADA nije security; ETF put opened",
       "ADA spot ETF filings: Grayscale, VanEck, 21Shares, Canary Capital — pending SEC",
-      "CME crypto futures suite ukljucuje ADA — institucionalna validacija",
-      "Protocol 11 hard fork: on-chain governance aktiviran",
       "Midnight sidechain LIVE — Google Cloud i MoneyGram kao validatori",
-      "Whale akumulacija: 424 walleta s 10M+ ADA (najvise u 4 mj.)",
       "Van Rossem hard fork (lipanj 2026): smart contract performance boost"
     ],
     "LINK": [
-      "CME crypto suite ukljucuje Chainlink — uz BTC, ETH, SOL, XRP, ADA, AVAX, SUI",
-      "Bitwise LINK ETF (CLNK) lansiran na NYSE Arca — 401(k) i IRA pristup",
-      "LINK spot ETF ukupni AUM: $93.78M — Grayscale GLNK $73M + Bitwise CLNK $15.4M",
-      "CCIP procesira $18B/mj. cross-chain volumena (+62% YoY)",
+      "CCIP procesira $18B/mj. cross-chain volumena (+62% YoY) — fundamentali jaki",
       "JPMorgan i UBS live blockchain settlement piloti na Chainlink infrastrukturi",
       "Swift, Euroclear, DTCC, BNP Paribas, UBS — institucijski konzorcij usvojio Chainlink orakle",
-      "Tokenized RWA sektor $27B — Chainlink esencijalna infrastruktura"
+      "Bitwise LINK ETF (CLNK) aktivan na NYSE Arca — 401(k) i IRA pristup",
+      "Tokenized RWA sektor $27B+ — Chainlink esencijalna infrastruktura",
+      "CME crypto suite ukljucuje Chainlink — institucionalna validacija"
     ],
     "AVAX": [
-      "CME Group AVAX futures: lansiranje 4.05. (5,000 AVAX / Micro 500 AVAX) — POTVRDJENO",
-      "AVAX +~10% u 24h na CME futures vijest — institucionalna validacija u cijenama",
-      "CME 24/7 crypto trading od 29.05. — institucionalna likvidnost raste",
-      "VanEck AVAX Spot ETF (VAVX) aktivan od Jan 26, 2026 — sa staking rewards",
-      "Grayscale AVAX Staking ETF (GAVA) aktivan — 0% naknada",
-      "RWA TVL: $2.1B (+100% YoY) — institucionalni pilot programi ubrzavaju",
-      "C-Chain: 2.5M prosjecnih dnevnih transakcija — mreza aktivna",
-      "NHN KCP (South Korea) MOU s Ava Labs — payments L1 sub-second finalnoscu",
-      "Interactive Brokers dodao AVAX trading"
+      "Bitwise staking AVAX ETF lansiran Apr 15, 2026 — reguliran ETF sa staking yield",
+      "NYSE/Securitize MOU za tokenizaciju dionica — Securitize vec live na AVAX C-Chain, direktna korist",
+      "CME Group AVAX futures: lansiranje 4.05. (5,000 AVAX / Micro 500 AVAX) — institucionalna validacija",
+      "VanEck AVAX Spot ETF (VAVX) i Grayscale GAVA aktivni",
+      "RWA TVL: $2.1B+ na Avalanche — institucionalni pilot programi ubrzavaju",
+      "NHN KCP (South Korea) MOU s Ava Labs — payments L1 sub-second finalnoscu"
     ],
     "SUI": [
-      "CME Group SUI futures: lansiranje 4.05. (50,000 SUI / Micro 5,000 SUI) — POTVRDJENO",
-      "SUI +~10.7% u 24h na CME futures vijest — institucionalna validacija u cijenama",
-      "Odbio $1.00 resistancea prema gore — ovo je kljucni proboj za praenje",
-      "Hong Kong Web3 Festival 2026 (20–23.04.) — Sui Foundation sponzor, vidljivost OVA tjedan",
+      "21Shares SUI ETF (TSUI) na Nasdaq od Feb 24, 2026 — Grayscale i Canary Capital ETF-ovi takodjer aktivni",
+      "CME Group SUI futures: lansiranje 4.05. — institucionalna validacija dolazi",
+      "SUI prati BTC trend — price edges higher after unlock event",
       "Interactive Brokers dodao SUI trading",
       "CME 24/7 trading od 29.05. — institucionalna likvidnost raste"
     ]
   },
   "warnings": {
     "BTC": [
-      "Kljucni otpor $75,396–$76,016 jos nije probijen — konsolidacija moguca",
-      "BTC ispod EMA100 i EMA200 — strukturalno bearish dugorocno, oporavak nekonsolidiran",
-      "US-Iran: ceasefire istice 22.04. — propast pregovora = risk-off udarac",
-      "US blokada iranskih luka — Strait of Hormuz napetost nastavlja se",
-      "BTC ispod peak $94K (Jan 2026) — jos -21% od ATH podrucja",
-      "Dom 57.0% — altcoini pod pritiskom dok BTC dominira kapitalnim tokovima"
+      "Kljucni otpor $78,100-$80,100 jos nije probijen — on-chain lokalni top zona",
+      "Short-term holders tiho prodaju tijekom ETF inflow streaka — distribucijski signal",
+      "BTC ispod 200-day SMA (prognoza $81,202 do May 27) — strukturalno nekonsolidirano",
+      "US-Iran: Trump konfrontativan, SAD zamrznuo $344M kripta — eskalacija, ne de-eskalacija",
+      "Iran zahtijeva kripto placanja za Strait of Hormuz tranzit — geopoliticki kaos ostaje",
+      "IMF snizio EM rast na 3.9% za 2026 — globalni makro headwind",
+      "4 tjedna ETF inflows moguca korekcija ako $80K resistanca ne pukne"
     ],
     "ETH": [
-      "ETH/BTC ratio bez potvrdjenog uzlaznog trenda — potrebno tjedno zatvaranje >0.035",
-      "$2,414 kljucni otpor (Glamsterdam konvergencija) — proboj jos nije potvrden",
-      "ETH down ~27% YTD — underperformance vs BTC nastavlja se strukturalno",
+      "Apr 23: ETH ETF outflow $75.9M — prekinuo 10-dnevni inflow streak, kratkorocni sentiment flip",
+      "Vitalik Buterin prodao ETH ranije u 2026 — bearish psihološki signal",
+      "Daily close ispod $2,270 = bearish kratkorocni signal",
+      "ETH down ~25%+ YTD — underperformance vs BTC nastavlja se",
       "Glamsterdam + Hegota timelines aspiracijski — kasnjenja moguca"
     ],
     "XRP": [
-      "XRP na $1.38 — zaglavljen u konsolidaciji, daleko od ATH $3.65 (srpanj 2025.)",
-      "F&G Index za XRP specificno: 21 (Extreme Fear) — sentiment tezak",
-      "CLARITY Act Senate markup gurnut na kasni travanj — neizvjesnost produljuje konsolidaciju",
-      "US-Iran eskalacija (propast pregovora 22.04.) bi srusila risk assets ukljucujuci XRP"
+      "XRP down 42% YTD usprkos dostupnosti spot ETF-ova — skepticizam tržišta prema kratkorocnim gainovima",
+      "Triangle squeeze moze ici u oba smjera — $1.39 break = bearish",
+      "US-Iran eskalacija (kripto zamrzavanja) moze pritisnuti risk assets",
+      "Dalje od ATH $3.65 — strukturalni oporavak dugorocan"
     ],
     "SOL": [
-      "$280-285M Drift Protocol exploit (travanj 2026.) — reputacijski rizik svjez",
-      "Alameda Research distribucija SOL creditorima — supply pritisak moguci",
-      "Standard Chartered snizio 2026 SOL cilj na $250 — dugorocni bullish cilj nepromijenjen",
-      "SOL na $82.26, ispod $87 otpora — $100 reclaim jos nije potvrden"
+      "SOL ETF inflows -92%: s $419M (Nov 2025) na $34M (Apr 2026) — institucionalni interes hladi",
+      "YTD: -31% (s $127 na ~$85) — underperformance vs BTC",
+      "Alpenglow mainnet Q3 2026 — kasnjenja moguca; timeline aspiracijski",
+      "Support $80 kritican — proboj prema dolje otvara $76",
+      "Alameda Research distribucija SOL creditorima — supply pritisak moguci"
     ],
     "BNB": [
+      "Osaka/Mendel hard fork Apr 28 — exchange/wallet downtime moguca kratkorocno",
       "Down ~55% od ATH ($1,370 — listopad 2025.)",
-      "$600 support kritican — proboj prema dolje otvara put na $500",
-      "Bez snaznog kratkorocnog katalizatora za breakout iznad $650"
+      "Teucrium XBNB je leveraged futures ETF (ne spot) — visoka volatilnost i kontraindikacija za dugorocne holdere",
+      "Bez snaznog kratkorocnog katalizatora za breakout iznad $650-$670"
     ],
     "ADA": [
-      "ADA na $0.242 — ispod $0.25 supporta, momentum slab",
+      "ADA ~$0.245 — ispod $0.25 supporta, momentum slab bez konkretnih DApp metrika",
       "ETF filings pending — odobrenje neizvjesno, timeline nepoznat",
-      "Trziste ceka konkretne DApp metrike usprkos Protocol 11 i Midnight",
-      "Ceka smjer — bez specificinog kratkorocnog katalizatora"
+      "On-chain rast bez price discovery — tržiste ceka konkretne rezultate",
+      "Van Rossem hard fork (lipanj 2026) — timeline aspiracijski"
     ],
     "LINK": [
-      "LINK zaglavljen $8.20-$9.55 od veljace — uska konsolidacija bez breakouta",
-      "Bollinger Band squeeze: breakout moze ici u oba smjera — rizik naglog pada",
-      "ETF AUM $93.78M relativno skroman — institucionalni inflows ne impresioniraju",
-      "Ceka smjer — ADA i LINK u 'wait-and-see' modu prema analiticarima"
+      "LINK u konsolidaciji $8.50-$9.50 od veljace — uska zona bez breakouta",
+      "Down od $14 (Jan 2026 vrh) — -33% od lokalnog vrha",
+      "Resistance $9.30-$10.00 — ključna zona za praćenje",
+      "ETF AUM relativno skroman — institucionalni inflows ne impresioniraju"
     ],
     "AVAX": [
-      "CME futures +10% skoka vec u cijenama — buy-the-rumor, sell-the-news rizik na 4.05.",
-      "CME futures lansiraju 4.05. — aktualni efekt ovisi o institucijskim inflows nakon lansiranja",
-      "Geopoliticki makro pritisak na risk-on imovinu ostaje aktivan",
-      "Daleko od ATH podrucja — strukturalni oporavak dugorocan"
+      "CME futures +~10% vec u cijenama od ranijih tjedana — buy-the-rumor, sell-the-news rizik oko 4.05.",
+      "Bitwise staking ETF lansiran Apr 15 — pocetni hype mogao se iscrpiti",
+      "AVAX ~$9.47 — daleko od ATH podrucja, strukturalni oporavak dugorocan",
+      "Geopoliticki makro pritisak na risk-on imovinu ostaje"
     ],
     "SUI": [
-      "SUI na $1.03 — probio $1.00 resistancu, no potvrdeno drzanje iznad potrebno",
-      "CME futures +10.7% skoka vec u cijenama — sell-the-news rizik na 4.05.",
-      "83% pad od ATH ($5.35 — sijcanj 2025.) — daleko od strukturalnog oporavka",
-      "HK Web3 Festival vidljivost ovaj tjedan — kratkorocni katalizator bez duge trajnosti"
+      "SUI $0.93 — pao ispod $1.00 psiholoske razine (sa vrha $1.03+)",
+      "60.5% supply jos zakljucano (vesting schedule) — ongoing supply inflation headwind",
+      "Apr 1 unlock: 42.94M tokena (~$37M) — regularni supply pritisak",
+      "CME futures +SUI event May 4 — sell-the-news rizik",
+      "83%+ pad od ATH ($5.35) — daleko od strukturalnog oporavka"
     ]
   },
   "macro": {
-    "us_iran_ceasefire": "Ceasefire od 8.04. (brokirao Pakistan) istice 22.04. — KLJUCNI DATUM OVA TJEDAN. Bitcoin i ETH pristupaju 2-mjesecnim visinama na optimizmu oko US-Iran mirovnih pregovora. Trump: 'Iran rat blizu kraja, trzista ce eksplodirati' (Apr 15). SAD salje 10,000+ vojnika ali pregovori prema framework dealu napreduju. Propast pregovora = risk-off udarac za sve risk assete.",
-    "israel_lebanon": "Novi 10-dnevni Israel-Lebanon ceasefire od 16.04. (5PM EST) — Netanyahu pristao. Dodatan deeskalacijski signal za siru regiju. Smanjuje geopoliticki risk premium.",
-    "strait_of_hormuz": "US blokada iranskih luka nastavlja se — efektivno zatvoren. Energetski tranzit ogranicen. Framework deal s Iranom bi otklonio energetski rizik i srušio naftu ispod $85.",
-    "oil_price": "Brent crude ~$96/bbl (pad s $103 pocetek tjedna). Trzista diskontiraju deeskalaciju. US-Iran framework deal bi srušio naftu ispod $85 — direktan pozitivni makro efekt za crypto (easing prostora za Fed).",
-    "fed_policy": "Fed pauza — rates 3.50-3.75% od 28.01. 2026. US inflacija 2.7%, GDP rast 5.3% Q1 2026. 0-1 cut predviden za 2026. KLJUCNO: Powell mandat istice SVIBANJ 2026 — smjena Fed predsjednika = potencijalna macro smjena monetarnog tona za risk assete.",
-    "dxy_outlook": "DXY predviden pad ~5% u 2026 (post-peak USD era). Dolar slabljenje historijski korelira sa snagom BTC i ETH. Momentum-driven rally zamijenjen spot flows i strukturalnim institucijskim hedgingom u 2026.",
-    "sec_clarity_act": "CLARITY Act Senate Banking Committee markup kasni travanj — binary regulatorni katalizator. SEC roundtable 16.04. odrzan (CLARITY Act klase digitalnih asseta). Analitiari: moze komprimirati 2-4 mj. oporavak u dane ako Senate markup bude zakazan. SEC Atkins 'safe harbor': vecina crypto asseta nisu securities. ADA, XRP, SOL, AVAX, LINK ETF filings aktivne.",
-    "imf_outlook": "IMF snizio globalni rast — geopolitika primarni rizik. Energetske cijene ogranicavaju monetarnu fleksibilnost centralnih banaka. US ekonomija resilientna uz rast produktivnosti.",
-    "cme_expansion": "CME lansira AVAX + SUI futures 4.05.2026 (5,000 AVAX; 50,000 SUI). CME 24/7 crypto trading od 29.05.2026. CME crypto suite (8 asseta): BTC, ETH, SOL, XRP, ADA, LINK, AVAX, SUI. ADV +19% YoY; $3T notional 2025.",
-    "stablecoin_volume": "Stablecoin supply ATH $180B (+82% YoY novih korisnika na Ethereumu). Godisnji volumen presao $5 triliona — rivalizira Visa/Mastercard. Ethereum ekosustav dominira stablecoin infrastrukturom.",
-    "eth_upgrades": "Glamsterdam upgrade: ciljni datum lipanj 2026 — gas -78.6%, throughput 10k TPS, gas limit 200M. Hegota upgrade: brza finalizacija, visi gas limiti (datum TBD 2026). $2,414 kljucni otpor/konvergencija za ETH.",
-    "btc_technicals": "BTC RSI 63 (bullish), MFI-14 ~79 (blizu overbought 80 praga). MA7 $73,495 / MA14 $71,511 / MA30 $69,984 — bullish stack. Iznad EMA20/50, ispod EMA100/200. Otpor $75,396-$76,016, support $73,492 i $71,780. Analitiari: proboj $74K-$75K otvara put ka $87K-$90K.",
-    "fear_greed": "Nagli sentiment oporavak: F&G 11 (Apr 7, Extreme Fear) → 23 (Apr 15) → 56 Greed (Apr 16). Brzi flip od 'extreme fear' na 'greed' sugerira institucijski FOMO na dipovima. XRP specificno: F&G 21 (Extreme Fear).",
-    "etp_inflows": "BTC ETF tjedni inflows $1.1B — najjaci tjedan od sijcnja 2026. IBIT sam $871M ($54B AUM). Q1 2026: $12.4B BTC ETF inflows; $18.7B globalni crypto ETP. XRP ETF: $17.11M u jednom danu (Apr 15), AUM $1.25B. SOL ETF AUM >$1B."
+    "us_iran_geopolitics": "US-Iran eskalacija: Trump konfrontativan prema iranskim nuklearnim sposobnostima — mir do Apr 30 malo vjerojatan. SAD zamrznuo $344M u kriptu (Tether podrska) vezanom za Iran (Apr 24). Iran operacionalizirao 'Strait of Hormuz Management Plan': IRGC trazi kripto placanja od tankera za tranzit. Iranac izgradio kripto mrežu od 2018 ($2.3B kroz Nobitex od 2023). Ipak: iranski dužnosnici Apr 25 signalizirali optimizam za sporazum — Iran moze dodati +1.3M bbl/dan na globalnu ponudu ako sporazum uspije. Volatilnost visoka.",
+    "oil_price": "Brent crude ~$87/bbl — pada na vijestima o mogucim US-Iran pregovorima (sa ~$96). Sporazum s Iranom bi srusio naftu ispod $75-$80 — direktno bullish za crypto (povecava Fed easing prostor). IRGC Hormuz kripto tolls cine tranzit skupljim i nepredvidljivijim.",
+    "fed_policy": "Fed pauza — rates 3.50-3.75%. KLJUCNO: Powell mandat istice SVIBANJ 2026 — Trump imenuje nasljednika. Tržiste ocekuje manje agresivnog nasljednika (dovish pivot moguc). 0-1 cut predviden za ostatak 2026. Novo imenovanje = potencijalna macro smjena monetarnog tona. Bullish za risk assets ako dode do dovish smjene.",
+    "dxy_outlook": "DXY pod konstantnim pritiskom — Fed tranzicija prema neutralnoj kamatnoj stopi. Razina 95.5 dostizna, ali pad ispod 92.5 treba snazni fundamentalni katalizator. Dolar slabljenje historijski korelira sa snagom BTC i altcoina.",
+    "sec_clarity_act": "CLARITY Act: regulatorna jasnoaca napreduje — Senate markup u toku (kasni travanj / pocetak svibnja). SEC roundtable odrzan. SEC Atkins 'safe harbor': vecina crypto asseta nisu securities. ADA, XRP, SOL, AVAX, LINK ETF filings aktivne. Regulatorni katalizator ostaje kljucni 2026 tematic driver.",
+    "imf_outlook": "IMF snizio globalni rast — EM prognoza 3.9% za 2026 (sa 4.2% u sijecnju). Geopolitika primarni rizik. Energetske cijene ogranicavaju monetarnu fleksibilnost. US ekonomija resilientna uz rast produktivnosti.",
+    "cme_expansion": "CME lansira AVAX + SUI futures 4.05.2026. CME 24/7 crypto trading od 29.05.2026. CME crypto suite (8 asseta): BTC, ETH, SOL, XRP, ADA, LINK, AVAX, SUI. Institucionalna infrastruktura kompletna za sve pracene tokene.",
+    "btc_etf_flows": "BTC spot ETF: 8-dnevni inflow streak $2.1B kroz Apr 23; April ukupno $2.4B+ (gotovo duplo March ukupno). 4 uzastopna tjedna pozitivnih priljeva. Kumulativni net inflows $58B; ukupni AUM $102B. IBIT dominira: $733M u tjednu Apr 20-24. Morgan Stanley MSBT lansiran Apr 8, $71M prvih tjedan. UPOZORENJE: short-term holders tiho prodaju — distribucija na snazi.",
+    "eth_etf_flows": "ETH spot ETF: $539M inflows u travnju (do Apr 27). Apr 23: outflow $75.9M — prekinuo 10-dnevni pozitivni streak. ETH ETF biljezi 'best April performance in 2026' ali kratkorocna volatilnost visoka.",
+    "stablecoin_volume": "Stablecoin supply ATH $180B+. Godisnji volumen presao $5 triliona. Ethereum ekosustav dominira stablecoin infrastrukturom.",
+    "btc_technicals": "BTC RSI 62.63 — neutralno/bullish, prostora za kretanje bez overbought. Kljucni otpor: $78,100 i $80,100 (on-chain lokalni top zona). 200-day SMA prognoza: $81,202 do May 27. Exchange reserves na 7-godišnjem minimumu — supply squeeze aktivan. +13.71% MTD — best April since 2020.",
+    "fear_greed": "Sentiment: krenulo od Extreme Fear u travnju prema Greed zoni (RSI 62.63 na BTC, jaki ETF inflows). XRP specificno jos ispod prosjeka. Rapid sentiment recovery sugerira institucijski FOMO na dipovima.",
+    "bnb_hardwork": "BNB Osaka/Mendel hard fork: Apr 28 02:30 UTC — mandatory upgrade za block processing i validator efficiency. Exchanges/wallets moguce kratkorocne pauze. Dio 2026 Tech Roadmapa (visi throughput i pouzdanost).",
+    "sol_alpenglow": "Alpenglow (SIMD-0326): Solana's largest-ever core software overhaul, Q3 2026 mainnet. Zamjenjuje PoH konsenzus novim mehanizmom: ~150ms block finality (80x poboljsanje od ~12s). Fundamentalni mrežni upgrade koji direktno poboljsava korisnicko iskustvo i DeFi aplikabilnost.",
+    "avax_rwa": "NYSE/Securitize MOU za tokenizaciju equities: Securitize vec live na AVAX C-Chain — direktna korist za Avalanche ekosustav. RWA sektor na Avalancheu: $2.1B TVL. Bitwise staking AVAX ETF lansiran Apr 15. Institucionalni kataliticki momentum jak u Q2 2026."
   }
 }
