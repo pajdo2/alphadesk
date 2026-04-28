@@ -204,7 +204,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v4.9</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v4.10</span></div>
       <div class="hd-sub" id="hdsub">Učitavam top 100 tokena…</div>
       <div class="hd-claude" id="claude-update" style="display:flex;align-items:center;gap:6px">
         <span id="claude-update-txt">🤖 Claude analiza: —</span>
@@ -1262,8 +1262,9 @@ function analyze3D(sym){
   else if(trifecta>=3){score+=1.5;signals.push({txt:"🎯 Multi-signal "+trifecta+"/8: jak setup, višestruka potvrda",type:"bull"});}
 
   // Confidence calculation — rekalibrirani maxScore i strožiji war cap
+  // Baza 44 (ne 50) — nulti score ne zaslužuje 50% conf, realnija procjena
   var maxScore=28;
-  var rawConf=Math.round(50+(score/maxScore)*40);
+  var rawConf=Math.round(44+(score/maxScore)*42);
   // War cap — dovoljno visok da se prikažu signali, ali konzervativniji od mirnog tržišta
   var warCap=score>=4?55:score>=2?50:44;
   var conf=Math.min(MACRO.warActive?warCap:88,Math.max(22,rawConf));
@@ -1277,11 +1278,16 @@ function analyze3D(sym){
     conf=Math.min(conf,Math.max(25,tokCap));
   }
 
-  // Expected 3-day price targets
+  // Expected 3-day price targets — ATR-aware milestones
+  // d1/d2 targets capped na 1.1x / 2.0x dnevnog ATR-a da budu realistični
+  // Npr. ATR=0.5%/dan → d1Target samo +0.55%, ne +1.75% koliko bi bio 35% of 5%
   var tgt=settings.targetPct/100;
   var risk=settings.maxRisk/100;
-  var d1Price=+(price*(1+tgt*0.35)).toFixed(4); // day 1: 35% of target
-  var d2Price=+(price*(1+tgt*0.70)).toFixed(4); // day 2: 70% of target
+  var dailyAtr3=atrPct/100; // ATR kao decimal (dnevni)
+  var d1Step=dailyAtr3>0?Math.min(tgt*0.35,dailyAtr3*1.1):tgt*0.35;
+  var d2Step=dailyAtr3>0?Math.min(tgt*0.70,dailyAtr3*2.0):tgt*0.70;
+  var d1Price=+(price*(1+d1Step)).toFixed(4);
+  var d2Price=+(price*(1+d2Step)).toFixed(4);
   var d3Price=+(price*(1+tgt)).toFixed(4);       // day 3: full target
   var stopPrice=+(price*(1-risk)).toFixed(4);
 
@@ -1291,9 +1297,9 @@ function analyze3D(sym){
   var baseProb=conf/100;
   var daily5pctNeed=settings.targetPct/3;
   var atrBoost=atrPct>0?Math.min(1.25,Math.max(0.75,atrPct/daily5pctNeed)):1.0;
-  var d1Prob=Math.min(90,Math.round(baseProb*0.82*atrBoost*100));
-  var d2Prob=Math.min(85,Math.round(baseProb*0.70*atrBoost*100));
-  var d3Prob=Math.min(80,Math.round(baseProb*0.58*atrBoost*100));
+  var d1Prob=Math.min(90,Math.round(baseProb*0.80*atrBoost*100));
+  var d2Prob=Math.min(84,Math.round(baseProb*0.67*atrBoost*100));
+  var d3Prob=Math.min(78,Math.round(baseProb*0.54*atrBoost*100));
 
   // Risk level
   var riskLevel=atrPct>4?"VISOK":atrPct>2?"UMJEREN":"NIZAK";
@@ -2129,28 +2135,31 @@ function analyze10pct(sym){
   var atrPct=a?parseFloat(a.pct):2.0;
   var achievable3d=atrPct>=(TARGET/5)*0.6; // treba ≥1.2%/dan ATR za 10% u 5 dana
 
+  // Baza 44 (ne 50) — realnija procjena; nulti score ne zaslužuje 50% conf
   var maxScore=30;
-  var rawConf=Math.round(50+(score/maxScore)*40);
+  var rawConf=Math.round(44+(score/maxScore)*42);
   // War cap podignut da ✅ bude moguć za dobre setupe
   var warCap=score>=5?65:score>=3?57:48;
   var conf=Math.min(MACRO.warActive?warCap:88,Math.max(20,rawConf));
   var calCap=getConfCalibrationCap(10);if(calCap!==null)conf=Math.min(conf,calCap);
   var tokAcc=getTokenAccuracy(sym,10);if(tokAcc!==null)conf=Math.min(conf,Math.max(22,Math.round((tokAcc*100+12)/5)*5));
 
+  // ATR-aware milestones — cap svaki dan na realistično prema dnevnom ATR-u
   var tgt=TARGET/100,risk=RISK/100;
-  var d1P=+(price*(1+tgt*0.20)).toFixed(4); // Dan 1: +2%
-  var d2P=+(price*(1+tgt*0.40)).toFixed(4); // Dan 2: +4%
-  var d3P=+(price*(1+tgt*0.60)).toFixed(4); // Dan 3: +6%
-  var d4P=+(price*(1+tgt*0.80)).toFixed(4); // Dan 4: +8%
+  var dailyAtr10=atrPct/100;
+  var d1P=+(price*(1+Math.min(tgt*0.20,dailyAtr10*1.0))).toFixed(4); // Dan 1: +2% ili 1×ATR
+  var d2P=+(price*(1+Math.min(tgt*0.40,dailyAtr10*1.8))).toFixed(4); // Dan 2: +4% ili 1.8×ATR
+  var d3P=+(price*(1+Math.min(tgt*0.60,dailyAtr10*2.8))).toFixed(4); // Dan 3: +6% ili 2.8×ATR
+  var d4P=+(price*(1+Math.min(tgt*0.80,dailyAtr10*3.8))).toFixed(4); // Dan 4: +8% ili 3.8×ATR
   var d5P=+(price*(1+tgt)).toFixed(4);       // Dan 5: +10% — target
   var stopP=+(price*(1-risk)).toFixed(4);    // Stop -3%
   var trailStopP=+(price*(1+tgt*0.30)).toFixed(4); // Trailing stop nakon +5% → +3%
   var rr=(price*tgt)/(price*risk);           // R/R = 3.33:1
-  var d1Prob=Math.min(88,Math.round(conf/100*0.72*100));
-  var d2Prob=Math.min(82,Math.round(conf/100*0.60*100));
-  var d3Prob=Math.min(76,Math.round(conf/100*0.48*100));
-  var d4Prob=Math.min(68,Math.round(conf/100*0.37*100));
-  var d5Prob=Math.min(60,Math.round(conf/100*0.28*100));
+  var d1Prob=Math.min(86,Math.round(conf/100*0.70*100));
+  var d2Prob=Math.min(80,Math.round(conf/100*0.58*100));
+  var d3Prob=Math.min(72,Math.round(conf/100*0.46*100));
+  var d4Prob=Math.min(64,Math.round(conf/100*0.35*100));
+  var d5Prob=Math.min(56,Math.round(conf/100*0.26*100));
 
   var riskLevel=atrPct>8?"EKSTREMNI":atrPct>4?"VISOK":atrPct>2?"UMJEREN":"NIZAK";
   var riskCol=atrPct>8?"var(--pu)":atrPct>4?"var(--re)":atrPct>2?"var(--ye)":"var(--gr)";
@@ -3098,27 +3107,30 @@ function analyzeMeme(sym){
   if(triM>=4){score+=3;signals.push({txt:"🎯 TRIFECTA "+triM+"/6 — multi-signal poklopaj",type:"bull"});}
   else if(triM>=3){score+=1.5;signals.push({txt:"🎯 Multi-signal "+triM+"/6",type:"bull"});}
 
-  // Confidence — war cap dodan (bio: bez cap-a = precijenjeni signali u ratu)
+  // Confidence — war cap dodan; baza 44 (ne 50) = realnija procjena
   var maxScore=30;
-  var rawConf=Math.round(50+(score/maxScore)*40);
+  var rawConf=Math.round(44+(score/maxScore)*42);
   var warCap=score>=5?65:score>=3?58:50;
   var conf=Math.min(MACRO.warActive?warCap:88,Math.max(18,rawConf));
   var calCap=getConfCalibrationCap("meme");if(calCap!==null)conf=Math.min(conf,calCap);
   var tokAcc=getTokenAccuracy(sym,10);if(tokAcc!==null)conf=Math.min(conf,Math.max(20,Math.round((tokAcc*100+12)/5)*5));
 
-  // Targets
+  // ATR-aware milestones — meme coinovi imaju visok ATR ali mogu eksplodirati odmah
+  // d1/d2 capped na ATR da milestoneovi budu dostižni
   var tgt=TARGET/100,risk=RISK/100;
-  var d1P=+(price*(1+tgt*0.35)).toFixed(8);
-  var d2P=+(price*(1+tgt*0.70)).toFixed(8);
+  var dailyAtrM=atrPct/100;
+  var d1P=+(price*(1+Math.min(tgt*0.35,dailyAtrM*1.2))).toFixed(8);
+  var d2P=+(price*(1+Math.min(tgt*0.70,dailyAtrM*2.2))).toFixed(8);
   var d3P=+(price*(1+tgt)).toFixed(8);
   var stopP=+(price*(1-risk)).toFixed(8);
   var rr=(price*tgt)/(price*risk);
 
   // Meme 10% target — još teži od regularnog 10% (volatilnost ide na obje strane)
+  // Dodani Math.min() capovi (konzistentno s ostalim engineima)
   var baseProb=conf/100;
-  var d1Prob=Math.round(baseProb*0.58*100);
-  var d2Prob=Math.round(baseProb*0.47*100);
-  var d3Prob=Math.round(baseProb*0.37*100);
+  var d1Prob=Math.min(75,Math.round(baseProb*0.58*100));
+  var d2Prob=Math.min(65,Math.round(baseProb*0.47*100));
+  var d3Prob=Math.min(55,Math.round(baseProb*0.37*100));
 
   var achievable=atrPct>=(dailyNeeded*0.7);
   var riskCol=atrPct>10?"var(--pu)":atrPct>5?"var(--re)":atrPct>2?"var(--ye)":"var(--gr)";
