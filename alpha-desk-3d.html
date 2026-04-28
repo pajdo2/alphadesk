@@ -204,7 +204,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v4.2</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v4.3</span></div>
       <div class="hd-sub" id="hdsub">Učitavam top 100 tokena…</div>
       <div class="hd-claude" id="claude-update" style="display:flex;align-items:center;gap:6px">
         <span id="claude-update-txt">🤖 Claude analiza: —</span>
@@ -569,6 +569,27 @@ function compATR(c){
   return{atr:av,pct:+(av/c[c.length-1]*100).toFixed(2)};
 }
 
+// ── FUNDING FEE SENTIMENT ────────────────────────────────────────
+// Agregira funding rates svih tokena u jedinstveni sentiment indikator
+// Pozitivan prosječni FR = tržište preplavljeno longovima = kontrarian bearish signal
+// Negativan prosječni FR = shorteri dominiraju = kontrarian bullish signal
+function getFundingSentiment(){
+  var rates=Object.keys(fr).map(function(s){return fr[s]&&fr[s].rate!=null?fr[s].rate*100:null;}).filter(function(v){return v!==null;});
+  if(rates.length<5)return null;
+  var avg=rates.reduce(function(a,b){return a+b;},0)/rates.length;
+  var extremePos=rates.filter(function(v){return v>0.05;}).length;
+  var extremeNeg=rates.filter(function(v){return v<-0.03;}).length;
+  var pctLong=rates.filter(function(v){return v>0;}).length/rates.length*100;
+  var lbl,col,score,signal;
+  if(avg>0.06){lbl="🔴 Ekstremna pohlepa";col="var(--re)";score=15;signal="bear";}
+  else if(avg>0.03){lbl="🟠 Longs preplati";col="#ff6d00";score=30;signal="warn";}
+  else if(avg>0.01){lbl="🟡 Blago bullish";col="var(--ye)";score=45;signal="neutral";}
+  else if(avg>-0.01){lbl="⚪ Neutralno";col="var(--t3)";score=50;signal="neutral";}
+  else if(avg>-0.03){lbl="🟢 Blago bearish";col="#69f0ae";score=60;signal="bull";}
+  else{lbl="💚 Shorts preplati";col="var(--gr)";score=80;signal="bull";}
+  return{avg:+avg.toFixed(4),pctLong:+pctLong.toFixed(0),extremePos:extremePos,extremeNeg:extremeNeg,lbl:lbl,col:col,score:score,signal:signal,n:rates.length};
+}
+
 // ── MARKET REGIME DETEKCIJA ──────────────────────────────────────
 // Određuje tržišnu fazu za kalibriraniju procjenu pouzdanosti
 function getMarketRegime(){
@@ -825,6 +846,14 @@ function scoreMarketSignals(sym,signals,warnings){
     if(bullNews>=2&&bullNews>bearNews){delta+=1;signals.push({txt:"📰 "+bullNews+" bullish vijesti (48h) — pozitivan news flow",type:"bull"});}
     else if(bearNews>=2&&bearNews>bullNews){delta-=1.5;warnings.push({txt:"📰 "+bearNews+" negativnih vijesti (48h) — FUD ili fundamentalni problem",type:"bear"});}
     else if(bearNews>=1&&bullNews===0){delta-=0.5;warnings.push({txt:"📰 Negativna vijest u zadnja 48h",type:"warn"});}
+  }
+  // 24. FUNDING FEE SENTIMENT — agregirani market-wide sentiment (kontrarian signal)
+  var fs=getFundingSentiment();
+  if(fs){
+    if(fs.signal==="bull"&&fs.avg<-0.03){delta+=2;signals.push({txt:"💰 Funding sentiment: "+fs.lbl+" (avg "+fs.avg.toFixed(3)+"%) — shorteri preplati, kontrarian BUY",type:"bull"});}
+    else if(fs.signal==="bull"){delta+=1;signals.push({txt:"💰 Funding: "+fs.lbl+" (avg "+fs.avg.toFixed(3)+"%) — tržište preplavljeno shortovima",type:"bull"});}
+    else if(fs.signal==="bear"&&fs.avg>0.06){delta-=2;warnings.push({txt:"💰 Funding sentiment: "+fs.lbl+" (avg "+fs.avg.toFixed(3)+"%) — masivna pohlepa, opasnost",type:"bear"});}
+    else if(fs.signal==="warn"){delta-=1;warnings.push({txt:"💰 Funding: "+fs.lbl+" (avg "+fs.avg.toFixed(3)+"%) — longs preplati",type:"warn"});}
   }
   // Clamp ukupnog delta — sprječava overflow scoring modela (svaki engine ima maxScore 28-30)
   // Bez clampa, 20 istovremenih bullish signala = delta 30+ → rawConf izlazi iz opsega
@@ -3019,6 +3048,13 @@ function render(){
     h+='<span style="font-size:10px;color:var(--t4)">F&G</span>';
     h+='<span style="font-size:11px;font-weight:800;color:'+fgCol+'">'+MACRO.fg+'</span>';
     h+='</div>';
+    var _fs=getFundingSentiment();
+    if(_fs){
+      h+='<div style="background:rgba(255,255,255,.03);border:.5px solid rgba(255,255,255,.07);border-radius:8px;padding:5px 10px;display:flex;align-items:center;gap:6px">';
+      h+='<span style="font-size:10px;color:var(--t4)">Funding</span>';
+      h+='<span style="font-size:11px;font-weight:800;color:'+_fs.col+'" title="Avg FR: '+_fs.avg.toFixed(4)+'% · '+_fs.n+' tokena · '+_fs.pctLong+'% long">'+_fs.lbl+'</span>';
+      h+='</div>';
+    }
     h+='</div>';
 
     // AI summary expandable widget
