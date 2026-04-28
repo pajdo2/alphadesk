@@ -204,7 +204,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v4.7</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v4.8</span></div>
       <div class="hd-sub" id="hdsub">Učitavam top 100 tokena…</div>
       <div class="hd-claude" id="claude-update" style="display:flex;align-items:center;gap:6px">
         <span id="claude-update-txt">🤖 Claude analiza: —</span>
@@ -427,6 +427,8 @@ var swingLevels={};  // {sym:{supports:[],resistances:[]}} — swing high/low S/
 var newsData={};     // {sym:[{title,sentiment,ts}]} — CryptoPanic news sentiment
 var backtestResults={}; // {sym:{accuracy,n,hits,recent}} — historijski backtest na daily klines
 var liqZones={};     // {sym:{mark,fundingRate,longLiq20x,shortLiq20x,longPressure,shortPressure}} — procijenjene liq zone
+var wyckoffData={};  // {sym:{phase,signal,score,desc,rangeHigh,rangeLow,volRatio}} — Wyckoff price cycle faza
+var wyckoff4h={};    // isti format, 4h timeframe
 var ta4hReady=false; // postaje true ~90s nakon starta kad ta4h podaci stignu
 var btcDomHistory=[]; // [{dom,ts}] — prati trend BTC dominance za meme season signal
 var memeRelStrength={}; // {sym:{vsAvg,catchUp}} — relativna snaga unutar meme grupe
@@ -639,6 +641,99 @@ function detectRSIDiv(closes){
              rsiDiff:+(rh2-rh1).toFixed(1),rsi:+rh2.toFixed(1),
              desc:"Hidden bearish div — downtrend se nastavlja ("+rh2.toFixed(0)+")"};
     }
+  }
+  return null;
+}
+
+// ── WYCKOFF PRICE CYCLE DETECTION ───────────────────────────────────
+// Identificira faze akumulacije (Spring, LPS, SOS) i distribucije (UTAD, SOW, LPSY)
+// koristeći price + volume strukturu — jedan od najpouzdanijih strukturnih pristupa
+// Reference: Richard Wyckoff, 1930; modernizirano za crypto klines
+function detectWyckoff(closes,volumes){
+  if(!closes||closes.length<50||!volumes||volumes.length<50)return null;
+  var n=closes.length;
+  // Raspon (Wyckoff trading range) = prethodnih 40-75 kandli, isključujemo zadnjih 15 ("recent")
+  var rStart=Math.max(0,n-75),rEnd=n-15;
+  var rangeC=closes.slice(rStart,rEnd),rangeV=volumes.slice(rStart,rEnd);
+  if(rangeC.length<20)return null;
+  var rangeHigh=Math.max.apply(null,rangeC);
+  var rangeLow=Math.min.apply(null,rangeC);
+  var rangeSize=rangeHigh-rangeLow;
+  if(rangeSize/rangeLow<0.02)return null; // preuzak raspon — nema informacije
+  var curPrice=closes[n-1];
+  var avgVol=volumes.reduce(function(a,b){return a+b;},0)/volumes.length;
+  var recent=closes.slice(-15),recentV=volumes.slice(-15);
+  var recentAvgV=recentV.reduce(function(a,b){return a+b;},0)/recentV.length;
+  var volRatio=avgVol>0?+(recentAvgV/avgVol).toFixed(2):1;
+  var recentHigh=Math.max.apply(null,recent),recentLow=Math.min.apply(null,recent);
+  var recentMom=(curPrice-recent[0])/Math.abs(recent[0]||1);
+  // Zadnjih 12 kandli za spring/UTAD detekciju
+  var last12=closes.slice(-12),last12V=volumes.slice(-12);
+  var l12Min=Math.min.apply(null,last12),l12Max=Math.max.apply(null,last12);
+  var l12MinIdx=last12.reduce(function(b,v,i){return v<last12[b]?i:b;},0);
+  var l12MaxIdx=last12.reduce(function(b,v,i){return v>last12[b]?i:b;},0);
+  var volAtMin=last12V[l12MinIdx]||0,volAtMax=last12V[l12MaxIdx]||0;
+
+  // ── SPRING (Phase C) — najjači bullish signal ──────────────────
+  // Kratki proboj ispod podrške s brzim oporavkom + volumen na dnu
+  var recovFromSpring=l12Min>0?(curPrice-l12Min)/l12Min:0;
+  if(l12Min<rangeLow*0.988&&            // proboj >1.2% ispod range lowa
+     curPrice>rangeLow*1.005&&          // oporavak iznad range lowa
+     recovFromSpring>0.015&&            // oporavak >1.5%
+     l12MinIdx<10&&                     // spring je bio u zadnjih 10 kandli
+     (volAtMin>avgVol*1.1||volRatio>1.1)){
+    return{phase:"SPRING",signal:"bull",score:4,
+           desc:"Wyckoff Spring (Phase C) — kratki proboj podrške i oporavak +"+
+                (recovFromSpring*100).toFixed(1)+"% — najjači akumulacijski signal",
+           rangeHigh:+rangeHigh.toFixed(6),rangeLow:+rangeLow.toFixed(6),volRatio:volRatio};
+  }
+  // ── UTAD — Upthrust After Distribution ────────────────────────
+  // Lažni breakout iznad otpora s brzim povratom
+  var fallFromUT=l12Max>0?(l12Max-curPrice)/l12Max:0;
+  if(l12Max>rangeHigh*1.012&&           // proboj >1.2% iznad range higha
+     curPrice<rangeHigh*0.992&&         // ali sad ispod range higha
+     fallFromUT>0.015&&                 // pad >1.5% od vrha
+     l12MaxIdx<10&&
+     (volAtMax>avgVol*1.1||volRatio>1.1)){
+    return{phase:"UTAD",signal:"bear",score:-3.5,
+           desc:"Wyckoff UTAD — lažni proboj gore i pad -"+(fallFromUT*100).toFixed(1)+
+                "% — distribucija, jak bearish reversal",
+           rangeHigh:+rangeHigh.toFixed(6),rangeLow:+rangeLow.toFixed(6),volRatio:volRatio};
+  }
+  // ── SOS — Sign of Strength (proboj sa volumenom) ───────────────
+  if(curPrice>rangeHigh*1.012&&recentMom>0.02&&volRatio>1.25){
+    return{phase:"SOS",signal:"bull",score:2.5,
+           desc:"Wyckoff SOS — proboj raspona gore s volumenom "+volRatio+"x — markup faza počinje",
+           rangeHigh:+rangeHigh.toFixed(6),rangeLow:+rangeLow.toFixed(6),volRatio:volRatio};
+  }
+  // ── SOW — Sign of Weakness ─────────────────────────────────────
+  if(curPrice<rangeLow*0.988&&recentMom<-0.02&&volRatio>1.2){
+    return{phase:"SOW",signal:"bear",score:-3,
+           desc:"Wyckoff SOW — proboj podrške dole s volumenom "+volRatio+"x — markdown faza",
+           rangeHigh:+rangeHigh.toFixed(6),rangeLow:+rangeLow.toFixed(6),volRatio:volRatio};
+  }
+  // ── LPS — Last Point of Support (pullback, slab volumen) ───────
+  var priceUpper=curPrice>rangeLow+rangeSize*0.55;
+  var pullFromHigh=recentHigh>0?(recentHigh-curPrice)/recentHigh:0;
+  if(priceUpper&&pullFromHigh>0.015&&pullFromHigh<0.09&&recentMom<0&&volRatio<0.82){
+    return{phase:"LPS",signal:"bull",score:2,
+           desc:"Wyckoff LPS — pullback na podršku, volumen presušuje ("+volRatio+"x) — re-entry zona",
+           rangeHigh:+rangeHigh.toFixed(6),rangeLow:+rangeLow.toFixed(6),volRatio:volRatio};
+  }
+  // ── LPSY — Last Point of Supply (slab bounce, nema kupaca) ─────
+  var priceLower=curPrice<rangeLow+rangeSize*0.45;
+  var bounceFromLow=recentLow>0?(curPrice-recentLow)/recentLow:0;
+  if(priceLower&&bounceFromLow>0.008&&bounceFromLow<0.065&&recentMom>0&&volRatio<0.78){
+    return{phase:"LPSY",signal:"bear",score:-2,
+           desc:"Wyckoff LPSY — slab bounce na otpor bez volumena ("+volRatio+"x) — prodavači dominiraju",
+           rangeHigh:+rangeHigh.toFixed(6),rangeLow:+rangeLow.toFixed(6),volRatio:volRatio};
+  }
+  // ── ACCUMULATION (donji dio raspona, neutralan volumen) ────────
+  var inLowerRange=curPrice<rangeLow+rangeSize*0.4&&curPrice>rangeLow*0.99;
+  if(inLowerRange&&volRatio>0.85&&volRatio<1.15&&recentMom>-0.005){
+    return{phase:"ACCUMULATION",signal:"neutral",score:0.5,
+           desc:"Wyckoff Accumulation — cijena u donjem dijelu raspona, volumen neutralan — čekaj Spring",
+           rangeHigh:+rangeHigh.toFixed(6),rangeLow:+rangeLow.toFixed(6),volRatio:volRatio};
   }
   return null;
 }
@@ -984,6 +1079,27 @@ function scoreMarketSignals(sym,signals,warnings){
     else if(_div4h.type==="HIDDEN_BULLISH"){delta+=0.5;signals.push({txt:"📐 4h Hidden bullish div (RSI "+(_div4h.rsi||"—")+") — trend nastavak",type:"bull"});}
     else if(_div4h.type==="REG_BEARISH"){delta-=1;warnings.push({txt:"📐 4h Reg bearish div (RSI "+(_div4h.rsi||"—")+") — bearish reversal signal",type:"bear"});}
     else if(_div4h.type==="HIDDEN_BEARISH"){delta-=0.5;warnings.push({txt:"📐 4h Hidden bearish div — downtrend nastavlja",type:"warn"});}
+  }
+  // 26. WYCKOFF PRICE CYCLE — strukturna faza akumulacije/distribucije
+  // 4h je pouzdan za swing, 1h za kratkoročne ulaze; oba skupa = jak signal
+  var _wy4=wyckoff4h[sym],_wy1=wyckoffData[sym];
+  var _wyMain=_wy4||_wy1; // preferiramo 4h
+  if(_wyMain){
+    var _wyMTF=_wy4&&_wy1&&_wy4.signal===_wy1.signal; // oba TF slažu = MTF bonus
+    var _wyBonus=_wyMTF?0.5:0;
+    var _wyTF=_wy4?"4h":"1h";
+    if(_wyMain.signal==="bull"){
+      var _wyBullScore=_wyMain.score+_wyBonus;
+      if(_wyMain.phase==="SPRING"){delta+=_wyBullScore;signals.push({txt:"🌊 Wyckoff Spring ["+_wyTF+"]"+(_wyMTF?" ×2TF":"")+": "+_wyMain.desc,type:"bull"});}
+      else if(_wyMain.phase==="SOS"){delta+=_wyBullScore;signals.push({txt:"🌊 Wyckoff SOS ["+_wyTF+"]"+(_wyMTF?" ×2TF":"")+": "+_wyMain.desc,type:"bull"});}
+      else if(_wyMain.phase==="LPS"){delta+=_wyBullScore;signals.push({txt:"🌊 Wyckoff LPS ["+_wyTF+"]"+(_wyMTF?" ×2TF":"")+": "+_wyMain.desc,type:"bull"});}
+      else if(_wyMain.phase==="ACCUMULATION"){delta+=_wyMain.score;signals.push({txt:"🌊 Wyckoff Accumulation ["+_wyTF+"]: "+_wyMain.desc,type:"bull"});}
+    } else if(_wyMain.signal==="bear"){
+      var _wyBearScore=_wyMain.score-_wyBonus;
+      if(_wyMain.phase==="UTAD"){delta+=_wyBearScore;warnings.push({txt:"🌊 Wyckoff UTAD ["+_wyTF+"]"+(_wyMTF?" ×2TF":"")+": "+_wyMain.desc,type:"bear"});}
+      else if(_wyMain.phase==="SOW"){delta+=_wyBearScore;warnings.push({txt:"🌊 Wyckoff SOW ["+_wyTF+"]"+(_wyMTF?" ×2TF":"")+": "+_wyMain.desc,type:"bear"});}
+      else if(_wyMain.phase==="LPSY"){delta+=_wyBearScore;warnings.push({txt:"🌊 Wyckoff LPSY ["+_wyTF+"]"+(_wyMTF?" ×2TF":"")+": "+_wyMain.desc,type:"warn"});}
+    }
   }
   // Clamp ukupnog delta — sprječava overflow scoring modela (svaki engine ima maxScore 28-30)
   // Bez clampa, 20 istovremenih bullish signala = delta 30+ → rawConf izlazi iz opsega
@@ -1440,6 +1556,17 @@ function renderOpp(o){
       h+='<span onclick="delete expandedSigs[\''+o.sym+'\']; render()" style="font-size:10px;color:var(--t4);cursor:pointer;padding:4px 11px;border-radius:20px;border:.5px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);display:inline-flex;align-items:center;gap:4px">Sažmi ▴</span>';
     }
     h+='</div>';
+
+    // Wyckoff faza chip
+    var _wyD=wyckoff4h[o.sym]||wyckoffData[o.sym];
+    if(_wyD){
+      var _wyC=_wyD.signal==="bull"?"var(--gr)":_wyD.signal==="bear"?"var(--re)":"var(--ye)";
+      var _wyPhaseIco={SPRING:"🌀",SOS:"🚀",LPS:"🎯",ACCUMULATION:"📦",UTAD:"⚠️",SOW:"📉",LPSY:"🔻"}[_wyD.phase]||"🌊";
+      h+='<div style="padding:7px 16px;border-top:.5px solid var(--sep2)">';
+      h+='<span style="font-size:10px;padding:3px 9px;border-radius:14px;background:'+_wyC+'18;color:'+_wyC+';border:.5px solid '+_wyC+'40">'+_wyPhaseIco+' Wyckoff '+_wyD.phase+' · vol '+_wyD.volRatio+'x</span>';
+      h+='<div style="font-size:10px;color:var(--t4);margin-top:4px;line-height:1.4">'+_wyD.desc+'</div>';
+      h+='</div>';
+    }
 
     // CVD + Swing + RS chips (kompakt)
     var cvdI=cvdData[o.sym],swI=swingLevels[o.sym],rsI=relStrength[o.sym];
@@ -3630,6 +3757,10 @@ function fetchVP3D(){
           supports:swL.slice(-6).filter(function(l){return l<lastClose*0.997;})
         };
 
+        // ── WYCKOFF PRICE CYCLE — 1h klines ──────────────────────
+        var wyRes=detectWyckoff(closes,vols);
+        if(wyRes)wyckoffData[sym]=wyRes;
+
       }).catch(function(){});
     },Math.floor(idx/5)*500); // batch: 5 tokena / 500ms
   });
@@ -4026,8 +4157,12 @@ function fetch4hTA(){
         .then(function(data){
           if(!data||data.length<50)return;
           var closes=data.map(function(k){return parseFloat(k[4]);});
+          var vols4h=data.map(function(k){return parseFloat(k[5]);});
           var taRes=compTA(closes);
           if(taRes)ta4h[sym]=taRes;
+          // Wyckoff na 4h — pouzdaniji za swing trading
+          var wy4=detectWyckoff(closes,vols4h);
+          if(wy4)wyckoff4h[sym]=wy4;
         }).catch(function(){});
       // Daily klines — 220 svjećica za BTC (treba 200 za SMA200), 60 za ostale
       var dailyLimit=(sym==="BTC")?220:60;
