@@ -204,7 +204,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v4.25</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v4.26</span></div>
       <div class="hd-sub" id="hdsub">Učitavam top 100 tokena…</div>
       <div class="hd-claude" id="claude-update" style="display:flex;align-items:center;gap:6px">
         <span id="claude-update-txt">🤖 Claude analiza: —</span>
@@ -2848,15 +2848,28 @@ function renderTabSuccessPanel(tabKey){
         h+='</div>';
       });
       h+='</div>';
-      // Kvadratići — zadnjih 15
-      var recent=preds.slice(-15);
-      h+='<div style="display:flex;gap:3px;flex-wrap:wrap;margin-bottom:10px">';
+      // Token redovi — zadnjih 20, od najnovijeg prema starijem
+      var recent=preds.slice().reverse().slice(0,20);
+      h+='<div style="display:flex;flex-direction:column;gap:4px;margin-bottom:10px">';
       recent.forEach(function(p){
         var isHit=p.status==="POGODAK";
-        h+='<div title="'+p.sym+' '+( p.date||'')+(p.closePct!=null?' · '+(p.closePct>0?'+':'')+p.closePct+'%':'')+'" ';
-        h+='style="width:14px;height:14px;border-radius:3px;background:'+(isHit?"var(--gr)":"var(--re)")+';opacity:'+(isHit?'1':'0.5')+';flex-shrink:0"></div>';
+        var col=isHit?"var(--gr)":"var(--re)";
+        var pctStr=p.closePct!=null?(p.closePct>0?"+":"")+p.closePct.toFixed(1)+"%":"";
+        var pctCol=p.closePct!=null?(p.closePct>=0?"var(--gr)":"var(--re)"):"var(--t4)";
+        var dirStr=p.direction==="SHORT"?"▼":"▲";
+        var cfg=getCfg(p.sym);
+        var dateStr="";
+        try{var _d=new Date(p.date||p.ts);if(!isNaN(_d))dateStr=_d.toLocaleDateString("hr-HR",{day:"2-digit",month:"2-digit"});}catch(e){}
+        h+='<div style="display:flex;align-items:center;gap:7px;padding:5px 8px;background:var(--s1);border-radius:9px;border:.5px solid '+col+'33">';
+        h+='<span style="font-size:12px;flex-shrink:0">'+(isHit?"✅":"❌")+'</span>';
+        h+='<span style="width:20px;height:20px;border-radius:5px;background:'+cfg.c+'22;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;color:'+cfg.c+';flex-shrink:0">'+cfg.i+'</span>';
+        h+='<span style="font-size:12px;font-weight:800;color:var(--t1);flex-shrink:0;min-width:40px">'+p.sym+'</span>';
+        h+='<span style="font-size:10px;color:var(--t4);flex-shrink:0">'+dirStr+'</span>';
+        h+='<span style="font-size:11px;font-weight:700;color:'+pctCol+';margin-left:auto">'+pctStr+'</span>';
+        h+='<span style="font-size:9px;color:var(--t4);flex-shrink:0;min-width:32px;text-align:right">'+dateStr+'</span>';
+        h+='</div>';
       });
-      if(total>15) h+='<div style="font-size:9px;color:var(--t4);align-self:center;margin-left:3px">+'+( total-15)+' starijih</div>';
+      if(total>20) h+='<div style="font-size:10px;color:var(--t4);text-align:center;padding:4px 0">+ još '+(total-20)+' starijih tradova</div>';
       h+='</div>';
       // Graf kumulativne uspješnosti
       h+=hcCumulative(preds);
