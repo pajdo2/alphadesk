@@ -6,11 +6,28 @@
 <title>Alpha Desk · 3D Pogled</title>
 <style>
 :root{
-  --bg:#000;--s1:#0c0c10;--s2:#141418;--s3:#1c1c22;--s4:#242430;
+  /* ── BACKGROUND (3 razine + page) ── */
+  --bg:#0a0a0d;--s1:#14141a;--s2:#1a1a22;--s3:#22222c;--s4:#2a2a36;
   --sep:rgba(255,255,255,.06);--sep2:rgba(255,255,255,.04);
-  --t1:#fff;--t2:rgba(255,255,255,.75);--t3:rgba(255,255,255,.4);--t4:rgba(255,255,255,.18);
-  --gr:#00e676;--re:#ff1744;--ye:#ffea00;--bl:#2979ff;--or:#ff6d00;--pu:#d500f9;--cy:#00bcd4;
+
+  /* ── TEXT (samo opacity hierarchy) ── */
+  --t1:#fff;--t2:rgba(255,255,255,.72);--t3:rgba(255,255,255,.42);--t4:rgba(255,255,255,.2);
+
+  /* ── SEMANTIC (4 primarne + 3 specijalne) ── */
+  --bull:#00e676;--bear:#ff1744;--warn:#ffa726;--info:#2979ff;
+  /* Legacy aliasi za postojeći kod (zadrži, ne brisati): */
+  --gr:#00e676;--re:#ff1744;--ye:#ffd54f;--bl:#2979ff;--or:#ff8a50;--pu:#ce93d8;--cy:#4dd0e1;
   --target-green:rgba(0,230,118,.12);--stop-red:rgba(255,23,68,.1);
+
+  /* ── TYPOGRAPHY (4 sizes, 3 weights) ── */
+  --text-xs:11px;--text-sm:13px;--text-md:15px;--text-lg:22px;
+  --fw-r:400;--fw-b:600;--fw-x:800;
+
+  /* ── SPACING (5 razina) ── */
+  --sp-xs:4px;--sp-sm:8px;--sp-md:12px;--sp-lg:20px;--sp-xl:32px;
+
+  /* ── RADIUS ── */
+  --r-sm:8px;--r-md:12px;--r-lg:16px;--r-xl:20px;
 }
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 html,body{height:100%;background:#000;color:#fff;font-family:-apple-system,'SF Pro Display','Helvetica Neue',sans-serif;overflow:hidden;-webkit-font-smoothing:antialiased}
@@ -51,16 +68,16 @@ html,body{height:100%;background:#000;color:#fff;font-family:-apple-system,'SF P
 .pct-btn{padding:5px 9px;border-radius:18px;font-size:11px;font-weight:800;border:none;background:none;color:var(--t3);cursor:pointer;font-family:inherit;transition:all .2s;letter-spacing:-.3px}
 .pct-btn.on{background:var(--ye);color:#000}
 
-/* OPPORTUNITY CARD */
-.opp{background:var(--s1);border-radius:20px;margin-bottom:12px;overflow:hidden;border:.5px solid var(--sep);transition:border-color .2s,background .12s}
+/* OPPORTUNITY CARD — minimalistic, semantic borders */
+.opp{background:var(--s1);border-radius:var(--r-xl);margin-bottom:var(--sp-md);overflow:hidden;border:.5px solid var(--sep);transition:border-color .2s,background .12s}
 .opp:active{background:var(--s2)}
-.opp.hot{border-color:rgba(255,109,0,.3)}
-.opp.safe{border-color:rgba(0,230,118,.25)}
-.opp.t60{border-color:rgba(41,121,255,.45)}
-.opp.watch-blue{border-color:rgba(41,121,255,.18);opacity:.88}
-.opp.t70{border-color:rgba(255,234,0,.45)}
-.opp.t80{border-color:rgba(255,109,0,.5)}
-.opp.t90{border-color:rgba(255,215,0,.65);box-shadow:0 0 16px rgba(255,215,0,.09)}
+.opp.hot{border-color:rgba(255,167,38,.32)}
+.opp.safe{border-color:rgba(0,230,118,.22)}
+.opp.t60{border-color:rgba(41,121,255,.32)}
+.opp.watch-blue{border-color:rgba(41,121,255,.16);opacity:.92}
+.opp.t70{border-color:rgba(41,121,255,.4)}
+.opp.t80{border-color:rgba(255,167,38,.45)}
+.opp.t90{border-color:rgba(0,230,118,.55);box-shadow:0 0 16px rgba(0,230,118,.07)}
 
 /* HEADER STRIP */
 .opp-head{padding:14px 16px;display:flex;align-items:center;gap:12px;border-bottom:.5px solid var(--sep2)}
@@ -204,7 +221,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v4.31</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v4.32</span></div>
       <div class="hd-sub" id="hdsub">Učitavam top 100 tokena…</div>
       <div class="hd-claude" id="claude-update" style="display:flex;align-items:center;gap:6px">
         <span id="claude-update-txt">🤖 Claude analiza: —</span>
@@ -1670,30 +1687,31 @@ function analyze3D(sym){
   // ✅ zahtijeva: high conf, score, confluence ≥3, volume OK, BTC nije u danger zoni, Wyckoff nije distribucija
   var passesAllGates=conf>=60&&score>=2&&confluenceCount>=3&&volumeOK&&!btcCtx.danger&&!wyBlocker;
   if(passesAllGates){
-    verdict="✅ Ulazi — dobra prilika";
-    var keyReason=hasTrifecta?"💎 Trifecta signal — izniman poklopaj indikatora.":hasMtf3?"💪 MTF 3/3 alignment (1h+4h+Daily) — trend potvrđen na svim vremenskim okvirima.":topBullSignal?"Ključni signal: "+topBullSignal+".":"Višestruki bullish signali.";
-    verdictWhy=keyReason+" 📊 Confluence "+confluenceCount+"/5 · Vol "+(vsT1?vsT1.ratio.toFixed(1):'?')+"× · "+(achievable3d?"ATR pokriva "+settings.targetPct+"% u "+(settings.targetPct===10?"5":"3")+" dana.":"Volatilnost niska.")+riskSuffix;
+    // Kratak verdict — bez šuma. Detalji u expand.
+    verdict="✅ Ulazi";
+    var keyReason=hasTrifecta?"Trifecta — izniman poklopaj":hasMtf3?"MTF 3/3 — trend potvrđen":topBullSignal||"Višestruki bullish signali";
+    verdictWhy=keyReason+". Confluence "+confluenceCount+"/5 · Vol "+(vsT1?vsT1.ratio.toFixed(1):'?')+"× · "+(achievable3d?"ATR pokriva "+settings.targetPct+"%":"vol niska")+riskSuffix;
   } else if(conf>=60&&score>=2){
     // Bio bi ✅ ali nedostaje neki gate → downgrade na 🟡 s eksplicitnim razlogom
-    verdict="🟡 Ulaz s oprezom";
+    verdict="🟡 Oprez";
     var blockers=[];
-    if(confluenceCount<3)blockers.push("samo "+confluenceCount+"/5 kategorija signala");
-    if(!volumeOK)blockers.push("volumen "+(vsT1?vsT1.ratio.toFixed(1)+"×":"nedostupan")+" (treba ≥1.3×)");
-    if(btcCtx.danger)blockers.push("BTC u downtrendu ("+btcCtx.c24.toFixed(1)+"% 24h, "+btcCtx.trend1h+" 1h)");
+    if(confluenceCount<3)blockers.push(confluenceCount+"/5 kategorija");
+    if(!volumeOK)blockers.push("vol "+(vsT1?vsT1.ratio.toFixed(1)+"×":"nedost.")+" <1.3×");
+    if(btcCtx.danger)blockers.push("BTC "+btcCtx.c24.toFixed(1)+"%/24h");
     if(wyBlocker)blockers.push(wyBlocker);
-    verdictWhy="High conf ali blokirano: "+blockers.join(" · ")+". Pričekaj potvrdu."+riskSuffix;
+    verdictWhy="Blokirano: "+blockers.join(" · ")+riskSuffix;
   } else if(conf>=48){
-    verdict="🟡 Ulaz s oprezom";
+    verdict="🟡 Oprez";
     var stopPriceWhy=+(price*(1-(settings.targetPct===10?0.03:settings.maxRisk/100))).toFixed(4);
     var atrConfirmPct2=+(Math.max(0.8,Math.min(2.5,atrPct*0.5))).toFixed(1);
     var confirmThresh2=+(price*(1+atrConfirmPct2/100)).toFixed(4);
-    verdictWhy="Setup pozitivan"+(topBullSignal?" — "+topBullSignal:"")+". Čekaj potvrdu: zelena svjećica iznad "+fp(confirmThresh2)+" (+"+atrConfirmPct2+"% ATR). Stop-loss: "+fp(stopPriceWhy)+"."+riskSuffix;
+    verdictWhy=(topBullSignal?topBullSignal+". ":"")+"Čekaj potvrdu iznad "+fp(confirmThresh2)+riskSuffix;
   } else if(conf>=38&&score>=-1){
-    verdict="🔵 Spekulativni ulaz";
-    verdictWhy="Slabiji signali"+(topWarnSignal?" — pazi: "+topWarnSignal:"")+(MACRO.fg<25?". Extreme Fear otvara bounce šansu":"")+". Max 30% normale pozicije."+riskSuffix;
+    verdict="🔵 Spekulativno";
+    verdictWhy=(topWarnSignal?topWarnSignal+". ":"")+(MACRO.fg<25?"Extreme Fear bounce. ":"")+"Max 30% pozicije"+riskSuffix;
   } else {
     verdict="🔴 Preskoči";
-    verdictWhy="Premalo bullish faktora"+(topWarnSignal?" — "+topWarnSignal:"")+". Pričekaj bolji setup ili smanjeni otpor.";
+    verdictWhy=topWarnSignal||"Premalo bullish faktora";
   }
   // Dodaj MTF info na objekt za prikaz u kartici
   var mtfInfo={count:mtfBullCount,h1:!!(t1hV&&t1hV.trend==="UP"),h4:!!(t4hV&&t4hV.trend==="UP"),daily:!!(tDayV&&tDayV.trend==="UP")};
@@ -1830,35 +1848,27 @@ function renderOpp(o){
   h+=confRing(o.conf);
   h+='</div>';
 
-  // ── CONFIDENCE TIER + MTF (1 kompaktna linija) ─────────────────
-  var tierInfo=o.conf>=90?{l:"🔥🔥 ELITNI",c:"#ffd700"}:o.conf>=80?{l:"🔥 JAK",c:"#ff6d00"}:o.conf>=70?{l:"⭐⭐ DOBAR",c:"#ffea00"}:o.conf>=60?{l:"⭐ SOLIDAN",c:"#2979ff"}:null;
+  // ── TIER + MTF samo ako je conf ≥70 (vrijednije od 60% threshold-a) ─
+  var tierInfo=o.conf>=90?{l:"ELITNI",c:"var(--bull)"}:o.conf>=80?{l:"JAK",c:"var(--warn)"}:o.conf>=70?{l:"DOBAR",c:"var(--info)"}:null;
   var mtfShort="";
-  if(o.mtfInfo&&o.mtfInfo.count>=2){var mc=o.mtfInfo.count===3?"var(--gr)":"var(--ye)";mtfShort='<span style="font-size:10px;font-weight:700;color:'+mc+';margin-left:8px">'+(o.mtfInfo.count===3?"🎯 MTF 3/3":"📊 MTF "+o.mtfInfo.count+"/3")+'</span>';}
+  if(o.mtfInfo&&o.mtfInfo.count>=2){var mc=o.mtfInfo.count===3?"var(--bull)":"var(--warn)";mtfShort='<span style="font-size:var(--text-xs);font-weight:var(--fw-b);color:'+mc+'">MTF '+o.mtfInfo.count+'/3</span>';}
   if(tierInfo||mtfShort){
-    h+='<div style="padding:5px 16px;border-bottom:.5px solid var(--sep2);display:flex;align-items:center;justify-content:space-between">';
-    h+='<div style="display:flex;align-items:center">';
-    if(tierInfo)h+='<span style="font-size:11px;font-weight:800;color:'+tierInfo.c+'">'+tierInfo.l+'</span>';
+    h+='<div style="padding:6px 16px;border-bottom:.5px solid var(--sep2);display:flex;align-items:center;gap:10px">';
+    if(tierInfo)h+='<span style="font-size:var(--text-xs);font-weight:var(--fw-x);color:'+tierInfo.c+';letter-spacing:.06em">'+tierInfo.l+'</span>';
     h+=mtfShort;
-    h+='</div>';
-    if(tierInfo){
-      h+='<div style="display:flex;align-items:center;gap:3px">';
-      [60,70,80,90].forEach(function(thr){h+='<div style="width:6px;height:6px;border-radius:50%;background:'+(o.conf>=thr?tierInfo.c:'rgba(255,255,255,.12)')+';border:.5px solid '+(o.conf>=thr?tierInfo.c:'rgba(255,255,255,.15)')+'"></div>';});
-      h+='<span style="font-size:11px;font-weight:800;color:'+tierInfo.c+';margin-left:3px">'+o.conf+'%</span>';
-      h+='</div>';
-    }
     h+='</div>';
   }
 
-  // ── VERDICT (samo tekst, bez why) ─────────────────────────────
-  h+='<div style="padding:8px 16px;border-bottom:.5px solid var(--sep2)">';
-  h+='<div style="font-size:12px;color:var(--t2);line-height:1.4">'+o.verdict+'</div>';
+  // ── VERDICT (kompakt, jedna linija) ───────────────────────────
+  h+='<div style="padding:10px 16px;border-bottom:.5px solid var(--sep2)">';
+  h+='<div style="font-size:var(--text-sm);color:var(--t1);font-weight:var(--fw-b);letter-spacing:-.2px">'+o.verdict+'</div>';
   h+='</div>';
 
-  // ── TRADE SETUP kompakt (3 col grid) ──────────────────────────
-  h+='<div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:10px 16px;border-bottom:.5px solid var(--sep2)">';
-  h+='<div><div style="font-size:9px;color:rgba(41,121,255,.7);font-weight:700;letter-spacing:.04em;margin-bottom:2px">ULAZ</div><div style="font-size:14px;font-weight:900;color:#2979ff">'+fp(o.price)+'</div></div>';
-  h+='<div style="text-align:center"><div style="font-size:9px;color:rgba(255,23,68,.7);font-weight:700;letter-spacing:.04em;margin-bottom:2px">STOP −'+(o.targetPct===10?3:settings.maxRisk)+'%</div><div style="font-size:14px;font-weight:900;color:var(--re)">'+fp(o.stopPrice)+'</div></div>';
-  h+='<div style="text-align:right"><div style="font-size:9px;color:rgba(0,230,118,.7);font-weight:700;letter-spacing:.04em;margin-bottom:2px">TARGET +'+o.targetPct+'%</div><div style="font-size:14px;font-weight:900;color:var(--gr)">'+fp(o.targetPrice)+'</div></div>';
+  // ── TRADE SETUP (3 col, čisti grid bez šuma) ──────────────────
+  h+='<div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:12px 16px;border-bottom:.5px solid var(--sep2);gap:8px">';
+  h+='<div><div style="font-size:var(--text-xs);color:var(--t3);font-weight:var(--fw-b);margin-bottom:3px">Ulaz</div><div style="font-size:var(--text-md);font-weight:var(--fw-x);color:var(--t1)">'+fp(o.price)+'</div></div>';
+  h+='<div style="text-align:center"><div style="font-size:var(--text-xs);color:var(--bear);font-weight:var(--fw-b);margin-bottom:3px">Stop −'+(o.targetPct===10?3:settings.maxRisk)+'%</div><div style="font-size:var(--text-md);font-weight:var(--fw-x);color:var(--bear)">'+fp(o.stopPrice)+'</div></div>';
+  h+='<div style="text-align:right"><div style="font-size:var(--text-xs);color:var(--bull);font-weight:var(--fw-b);margin-bottom:3px">Target +'+o.targetPct+'%</div><div style="font-size:var(--text-md);font-weight:var(--fw-x);color:var(--bull)">'+fp(o.targetPrice)+'</div></div>';
   h+='</div>';
 
   // ── WATCH: promotion gap (uvijek vidljivo, kompakt) ────────────
