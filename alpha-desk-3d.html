@@ -104,6 +104,27 @@ html,body{height:100%;background:#000;color:#fff;font-family:-apple-system,'SF P
 .txt-bull{color:var(--bull)}.txt-bear{color:var(--bear)}.txt-warn{color:var(--warn)}.txt-info{color:var(--info)}
 .txt-t1{color:var(--t1)}.txt-t2{color:var(--t2)}.txt-t3{color:var(--t3)}.txt-t4{color:var(--t4)}
 
+/* Card sub-sections */
+.sec{padding:12px 16px}
+.sec-tight{padding:8px 16px}
+.sec-divider-top{border-top:.5px solid var(--sep2)}
+.sec-divider-bottom{border-bottom:.5px solid var(--sep2)}
+
+/* Mali metric "R/R 2.5:1" stil chip-a */
+.metric{font-size:var(--text-xs);color:var(--t3);display:inline-flex;align-items:center;gap:4px}
+.metric strong{color:var(--t1);font-weight:var(--fw-x)}
+
+/* Projekcija dani — kompaktna ćelija */
+.day-cell{flex:1;min-width:54px;background:var(--s3);border-radius:var(--r-sm);padding:7px 5px;text-align:center}
+.day-cell-name{font-size:9px;color:var(--t4);margin-bottom:3px}
+.day-cell-price{font-size:11px;font-weight:var(--fw-x);color:var(--bull)}
+.day-cell-pct{font-size:10px;color:rgba(0,230,118,.6)}
+.day-cell-prob{font-size:10px;color:var(--t3);margin-top:2px}
+
+/* Mini progress bar */
+.mini-bar{height:3px;background:var(--s4);border-radius:2px;overflow:hidden}
+.mini-bar-fill{height:100%;border-radius:2px}
+
 /* ACTION BUTTONS — semantic, no inline */
 .act-row{padding:12px 16px;display:flex;gap:8px}
 .act-btn{flex:1;padding:10px 12px;border-radius:var(--r-md);font-size:var(--text-sm);font-weight:var(--fw-x);cursor:pointer;font-family:inherit;border:.5px solid;transition:transform .1s,background .15s;letter-spacing:-.2px}
@@ -252,7 +273,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v4.35</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v4.36</span></div>
       <div class="hd-sub" id="hdsub">Učitavam top 100 tokena…</div>
       <div class="hd-claude" id="claude-update" style="display:flex;align-items:center;gap:6px">
         <span id="claude-update-txt">🤖 Claude analiza: —</span>
@@ -1897,14 +1918,14 @@ function renderOpp(o){
 
   // ── WATCH: promotion gap (uvijek vidljivo, kompakt) ────────────
   if((isWatchYellow||isWatchBlue)&&o.promotionGap>0){
-    var pgCol=isWatchYellow?"var(--ye)":"#2979ff";
+    var pgCol=isWatchYellow?"var(--warn)":"var(--info)";
     var pgFill=Math.max(4,Math.min(94,Math.round((o.conf/60)*100)));
-    h+='<div style="padding:8px 16px;border-bottom:.5px solid var(--sep2)">';
-    h+='<div style="display:flex;justify-content:space-between;font-size:10px;margin-bottom:4px">';
-    h+='<span style="color:var(--t4)">'+o.conf+'% pouzdanost</span>';
-    h+='<span style="color:'+pgCol+';font-weight:700">+'+o.promotionGap+'pt do ✅ (60%)</span>';
+    h+='<div class="sec-tight sec-divider-bottom">';
+    h+='<div class="row-between" style="font-size:10px;margin-bottom:4px">';
+    h+='<span class="txt-t4">'+o.conf+'% pouzdanost</span>';
+    h+='<span style="color:'+pgCol+';font-weight:var(--fw-x)">+'+o.promotionGap+'pt do ✅ (60%)</span>';
     h+='</div>';
-    h+='<div style="height:3px;background:var(--s4);border-radius:2px;margin-bottom:4px"><div style="height:100%;width:'+pgFill+'%;background:'+pgCol+';border-radius:2px"></div></div>';
+    h+='<div class="mini-bar" style="margin-bottom:4px"><div class="mini-bar-fill" style="width:'+pgFill+'%;background:'+pgCol+'"></div></div>';
     if(o.confirmTrigger)h+='<div style="font-size:10px;color:var(--t3);line-height:1.35">⏳ '+o.confirmTrigger+'</div>';
     h+='</div>';
   }
@@ -1920,15 +1941,15 @@ function renderOpp(o){
 
   // ── EXPANDED DETAILS ────────────────────────────────────────────
   if(isExpDet){
-    // verdictWhy + R/R/ATR info
-    h+='<div style="padding:8px 16px;border-top:.5px solid var(--sep2);background:rgba(255,255,255,.015)">';
+    // verdictWhy + R/R/ATR metric row
+    h+='<div class="sec-tight sec-divider-top" style="background:rgba(255,255,255,.015)">';
     if(o.verdictWhy)h+='<div style="font-size:11px;color:var(--t3);line-height:1.5;margin-bottom:7px">'+o.verdictWhy+'</div>';
     var wlbl=o.targetPct===10?'5d':'3d';
-    h+='<div style="display:flex;gap:12px;flex-wrap:wrap">';
-    h+='<span style="font-size:11px;color:var(--t3)">R/R <strong style="color:var(--t1)">'+o.rr+':1</strong></span>';
-    h+='<span style="font-size:11px;color:var(--t3)">ATR <strong style="color:'+o.riskCol+'">'+o.atrPct+'%/d · '+o.riskLevel+'</strong></span>';
-    h+='<span style="font-size:11px;color:var(--t3)">'+wlbl+' <strong style="color:'+(o.achievable3d?"var(--gr)":"var(--re)")+'">'+(o.achievable3d?"DA ✓":"Rizično")+'</strong></span>';
-    if(MACRO.warActive)h+='<span style="font-size:11px;color:rgba(255,234,0,.7)">⚠️ Rat aktivan</span>';
+    h+='<div class="row-wrap" style="gap:12px">';
+    h+='<span class="metric">R/R <strong>'+o.rr+':1</strong></span>';
+    h+='<span class="metric">ATR <strong style="color:'+o.riskCol+'">'+o.atrPct+'%/d · '+o.riskLevel+'</strong></span>';
+    h+='<span class="metric">'+wlbl+' <strong class="'+(o.achievable3d?"txt-bull":"txt-bear")+'">'+(o.achievable3d?"DA ✓":"Rizično")+'</strong></span>';
+    if(MACRO.warActive)h+='<span class="metric txt-warn">⚠️ Rat aktivan</span>';
     h+='</div></div>';
 
     // Projekcija timeline (horizontal, kompakt)
@@ -1942,16 +1963,16 @@ function renderOpp(o){
       ddays.push({n:"Dan 4",p:o.d4Price,prob:o.d4Prob,pct:+(((o.d4Price/o.price-1)*100).toFixed(1))});
       ddays.push({n:"Dan 5 🎯",p:o.d5Price,prob:o.d5Prob,pct:tgt});
     }
-    h+='<div style="padding:10px 16px;border-top:.5px solid var(--sep2)">';
-    h+='<div style="font-size:10px;font-weight:700;color:var(--t4);letter-spacing:.05em;text-transform:uppercase;margin-bottom:7px">📅 '+(o.targetPct===10?'5d projekcija':'3d projekcija')+'</div>';
+    h+='<div class="sec sec-divider-top">';
+    h+='<div class="sec-lbl-sm" style="margin-bottom:7px">📅 '+(o.targetPct===10?'5d projekcija':'3d projekcija')+'</div>';
     h+='<div style="display:flex;gap:5px;overflow-x:auto">';
     ddays.forEach(function(d){
-      h+='<div style="flex:1;min-width:54px;background:var(--s3);border-radius:9px;padding:7px 5px;text-align:center">';
-      h+='<div style="font-size:9px;color:var(--t4);margin-bottom:3px">'+d.n+'</div>';
-      h+='<div style="font-size:11px;font-weight:800;color:var(--gr)">'+fp(d.p)+'</div>';
-      h+='<div style="font-size:10px;color:rgba(0,230,118,.6)">+'+d.pct+'%</div>';
-      h+='<div style="font-size:10px;color:var(--t3);margin-top:2px">'+d.prob+'%</div>';
-      h+=pr(d.prob,"var(--gr)",2);
+      h+='<div class="day-cell">';
+      h+='<div class="day-cell-name">'+d.n+'</div>';
+      h+='<div class="day-cell-price">'+fp(d.p)+'</div>';
+      h+='<div class="day-cell-pct">+'+d.pct+'%</div>';
+      h+='<div class="day-cell-prob">'+d.prob+'%</div>';
+      h+=pr(d.prob,"var(--bull)",2);
       h+='</div>';
     });
     h+='</div></div>';
@@ -1973,61 +1994,60 @@ function renderOpp(o){
     // Wyckoff faza chip
     var _wyD=wyckoff4h[o.sym]||wyckoffData[o.sym];
     if(_wyD){
-      var _wyC=_wyD.signal==="bull"?"var(--gr)":_wyD.signal==="bear"?"var(--re)":"var(--ye)";
+      var _wyChip=_wyD.signal==="bull"?"chip-bull":_wyD.signal==="bear"?"chip-bear":"chip-warn";
       var _wyPhaseIco={SPRING:"🌀",SOS:"🚀",LPS:"🎯",ACCUMULATION:"📦",UTAD:"⚠️",SOW:"📉",LPSY:"🔻"}[_wyD.phase]||"🌊";
-      h+='<div style="padding:7px 16px;border-top:.5px solid var(--sep2)">';
-      h+='<span style="font-size:10px;padding:3px 9px;border-radius:14px;background:'+_wyC+'18;color:'+_wyC+';border:.5px solid '+_wyC+'40">'+_wyPhaseIco+' Wyckoff '+_wyD.phase+' · vol '+_wyD.volRatio+'x</span>';
+      h+='<div class="sec-tight sec-divider-top">';
+      h+='<span class="chip '+_wyChip+'">'+_wyPhaseIco+' Wyckoff '+_wyD.phase+' · vol '+_wyD.volRatio+'×</span>';
       h+='<div style="font-size:10px;color:var(--t4);margin-top:4px;line-height:1.4">'+_wyD.desc+'</div>';
       h+='</div>';
     }
 
-    // CVD + Swing + RS chips (kompakt)
+    // CVD + Swing + RS chips (kompakt) — semantic chip klase
     var cvdI=cvdData[o.sym],swI=swingLevels[o.sym],rsI=relStrength[o.sym];
     if(cvdI||swI||rsI){
-      h+='<div style="padding:7px 16px;border-top:.5px solid var(--sep2);display:flex;flex-wrap:wrap;gap:5px">';
+      h+='<div class="sec-tight sec-divider-top row-wrap" style="gap:5px">';
       if(cvdI&&(cvdI.divergence||cvdI.trend!=="FLAT")){
         var _bd=cvdI.divergence==="BULLISH"||cvdI.divergence==="STRONG_BULLISH";
         var _be=cvdI.divergence==="BEARISH"||cvdI.divergence==="STRONG_BEARISH";
-        var _st=cvdI.divergence==="STRONG_BULLISH"||cvdI.divergence==="STRONG_BEARISH";
-        var cC=_bd?"var(--gr)":_be?"var(--re)":(cvdI.trend==="RISING"||cvdI.trend==="RISING_STRONG")?"rgba(0,230,118,.6)":"rgba(255,23,68,.6)";
+        var cChip=_bd?"chip-bull":_be?"chip-bear":(cvdI.trend==="RISING"||cvdI.trend==="RISING_STRONG")?"chip-bull":"chip-bear";
         var cL=cvdI.divergence==="STRONG_BULLISH"?"CVD STRONG ↑":cvdI.divergence==="BULLISH"?"CVD bull div"+(cvdI.accel>0.6?" ⚡":""):cvdI.divergence==="STRONG_BEARISH"?"CVD STRONG ↓":cvdI.divergence==="BEARISH"?"CVD bear div":cvdI.trend==="RISING_STRONG"?"CVD jak ↑":cvdI.trend==="RISING"?"CVD ↑":cvdI.trend==="FALLING_STRONG"?"CVD jak ↓":"CVD ↓";
-        h+='<span style="font-size:10px;padding:2px 7px;border-radius:14px;background:'+cC+'15;color:'+cC+';border:.5px solid '+cC+(_st?"70":"30")+'">📊 '+cL+(cvdI.pTrend!=null?" ("+cvdI.pTrend+"%)":"")+'</span>';
+        h+='<span class="chip '+cChip+'">📊 '+cL+(cvdI.pTrend!=null?" ("+cvdI.pTrend+"%)":"")+'</span>';
       }
       if(rsI&&o.sym!=="BTC"){
-        var rC2=rsI.leading?"var(--gr)":rsI.lagging?"var(--re)":"var(--t4)";
-        h+='<span style="font-size:10px;padding:2px 7px;border-radius:14px;background:'+rC2+'15;color:'+rC2+';border:.5px solid '+rC2+'30">'+(rsI.leading?"💪":rsI.lagging?"📉":"")+" RS "+rsI.rs24h+"%"+'</span>';
+        var rChip=rsI.leading?"chip-bull":rsI.lagging?"chip-bear":"chip";
+        h+='<span class="chip '+rChip+'">'+(rsI.leading?"💪":rsI.lagging?"📉":"")+' RS '+rsI.rs24h+'%</span>';
       }
-      if(swI&&swI.supports.length)h+='<span style="font-size:10px;padding:2px 7px;border-radius:14px;background:rgba(0,230,118,.08);color:rgba(0,230,118,.7);border:.5px solid rgba(0,230,118,.2)">🔵 Sup '+fp(swI.supports[swI.supports.length-1])+'</span>';
-      if(swI&&swI.resistances.length)h+='<span style="font-size:10px;padding:2px 7px;border-radius:14px;background:rgba(255,23,68,.06);color:rgba(255,100,100,.8);border:.5px solid rgba(255,23,68,.2)">🔴 Res '+fp(swI.resistances[0])+'</span>';
+      if(swI&&swI.supports.length)h+='<span class="chip chip-bull">🔵 Sup '+fp(swI.supports[swI.supports.length-1])+'</span>';
+      if(swI&&swI.resistances.length)h+='<span class="chip chip-bear">🔴 Res '+fp(swI.resistances[0])+'</span>';
       h+='</div>';
     }
 
     // Options + Vol Profile
     var oOpt=o.opt,oVp=o.vp;
     if(oOpt&&(oOpt.maxPain||oOpt.putCallRatio)){
-      h+='<div style="padding:7px 16px;border-top:.5px solid var(--sep2);font-size:11px;color:var(--t2)">🎯 Options: ';
+      h+='<div class="sec-tight sec-divider-top" style="font-size:11px;color:var(--t2)">🎯 Options: ';
       if(oOpt.maxPain)h+='Max Pain '+fp(oOpt.maxPain)+' ';
       if(oOpt.putCallRatio)h+='P/C: '+oOpt.putCallRatio+(oOpt.putCallRatio>1.2?' 🟢':oOpt.putCallRatio<0.7?' 🔴':'');
       h+='</div>';
     }
     if(oVp&&o.price){
       var vpT=o.price<oVp.valueAreaLow?"🟢 Ispod VA":o.price>oVp.valueAreaHigh?"🔴 Iznad VA":"🟡 Unutar VA";
-      h+='<div style="padding:7px 16px;border-top:.5px solid var(--sep2);font-size:11px;color:var(--t2)">📊 Vol Profile: '+vpT+' · POC '+fp(oVp.poc)+'</div>';
+      h+='<div class="sec-tight sec-divider-top" style="font-size:11px;color:var(--t2)">📊 Vol Profile: '+vpT+' · POC '+fp(oVp.poc)+'</div>';
     }
 
     // Risk bar
     var rP=o.riskLevel==="VISOK"?80:o.riskLevel==="UMJEREN"?50:25;
-    h+='<div style="padding:7px 16px;border-top:.5px solid var(--sep2)">';
-    h+='<div style="display:flex;justify-content:space-between;font-size:10px;margin-bottom:3px"><span style="color:var(--t4)">Rizik: <span style="color:'+o.riskCol+'">'+o.riskLevel+'</span></span><span style="color:var(--t4)">Conf '+o.conf+'%</span></div>';
-    h+='<div style="height:3px;background:var(--s4);border-radius:2px"><div style="height:100%;width:'+rP+'%;background:'+o.riskCol+';border-radius:2px"></div></div>';
+    h+='<div class="sec-tight sec-divider-top">';
+    h+='<div class="row-between" style="font-size:10px;margin-bottom:3px"><span class="txt-t4">Rizik: <span style="color:'+o.riskCol+'">'+o.riskLevel+'</span></span><span class="txt-t4">Conf '+o.conf+'%</span></div>';
+    h+='<div class="mini-bar"><div class="mini-bar-fill" style="width:'+rP+'%;background:'+o.riskCol+'"></div></div>';
     h+='</div>';
 
     // News vijesti
     var newsI=newsData[o.sym];
     if(newsI&&newsI.length){
-      h+='<div style="padding:7px 16px;border-top:.5px solid var(--sep2)">';
+      h+='<div class="sec-tight sec-divider-top">';
       newsI.slice(0,2).forEach(function(n){
-        var nc=n.sentiment==="positive"?"var(--gr)":n.sentiment==="negative"?"var(--re)":"var(--t3)";
+        var nc=n.sentiment==="positive"?"var(--bull)":n.sentiment==="negative"?"var(--bear)":"var(--t3)";
         h+='<div style="font-size:10px;color:'+nc+';margin-bottom:2px">'+(n.sentiment==="positive"?"📗":n.sentiment==="negative"?"📕":"📰")+' '+n.title.slice(0,80)+(n.title.length>80?"…":"")+'</div>';
       });
       h+='</div>';
