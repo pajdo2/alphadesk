@@ -282,7 +282,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v4.41</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v4.42</span></div>
       <div class="hd-sub" id="hdsub">Učitavam top 100 tokena…</div>
       <div class="hd-claude" id="claude-update" style="display:flex;align-items:center;gap:6px">
         <span id="claude-update-txt">🤖 Claude analiza: —</span>
@@ -362,6 +362,15 @@ svg.sp{overflow:visible;display:block}
           <label class="inp-lbl">GitHub Personal Access Token <span style="color:var(--t3)">(sync rezultata između uređaja)</span></label>
           <input id="s-gh" class="inp" type="password" placeholder="ghp_..." style="font-size:12px">
           <div style="font-size:10px;color:var(--t3);margin-top:4px">github.com → Settings → Developer settings → Personal access tokens → repo scope</div>
+        </div>
+
+        <div style="margin-top:16px;padding-top:14px;border-top:.5px solid var(--sep)">
+          <div class="row-between" style="margin-bottom:10px">
+            <span class="sec-lbl" style="margin:0">📋 Debug logovi</span>
+            <button onclick="renderDebugLogs()" style="font-size:10px;padding:3px 9px;background:rgba(41,121,255,.12);border:.5px solid rgba(41,121,255,.3);border-radius:7px;color:var(--info);cursor:pointer;font-family:inherit">↻ Osvježi</button>
+          </div>
+          <div id="debug-logs" style="font-size:11px;color:var(--t3);max-height:200px;overflow-y:auto;background:var(--s2);border:.5px solid var(--sep);border-radius:8px;padding:8px"></div>
+          <button onclick="if(confirm('Obriši sve logove?')){errorLog=[];localStorage.removeItem('ad3d_errors');renderDebugLogs();}" style="margin-top:6px;font-size:10px;padding:4px 10px;background:none;border:.5px solid rgba(255,23,68,.22);color:rgba(255,23,68,.6);border-radius:7px;cursor:pointer;font-family:inherit">🗑 Obriši logove</button>
         </div>
       </div>
     </div>
@@ -484,6 +493,59 @@ var MACRO={
     ETH:["Fusaka tokenomic issue","ETF net outflows"]
   }
 };
+
+// ── ERROR HANDLER & SAFE FETCH ─────────────────────────────────
+// Centralizira: HTTP errors, network failures, rate limits, JSON parse errors
+// Loguje u localStorage (`ad3d_errors`), max 50 entries — vidljivo u Settings → Logovi
+var errorLog=(function(){try{return JSON.parse(localStorage.getItem("ad3d_errors")||"[]");}catch(e){return[];}})();
+var errorCounts={}; // {host:count} za detektciju "tihog otpada" jednog API-ja
+
+function logError(source,err,detail){
+  var msg=err&&err.message?err.message:(typeof err==="string"?err:"unknown");
+  var entry={
+    ts:Date.now(),
+    source:source||"unknown",
+    msg:msg.slice(0,200),
+    detail:detail?String(detail).slice(0,100):null
+  };
+  errorLog.unshift(entry);
+  if(errorLog.length>50)errorLog=errorLog.slice(0,50);
+  try{localStorage.setItem("ad3d_errors",JSON.stringify(errorLog));}catch(e){}
+  // Brojač po izvoru — za detekciju kontinuiranih grešaka
+  errorCounts[source]=(errorCounts[source]||0)+1;
+}
+
+// safeFetch — wrapper oko fetch s automatskim error logging-om i HTTP status check-om
+// Vraća: parsed JSON ili null (NIKAD ne baca exception)
+// onError opcionalan callback — npr. koristi cached vrijednost
+function safeFetch(url,opts,onError){
+  var host=(url.match(/^https?:\/\/([^\/]+)/)||[])[1]||"local";
+  return fetch(url,opts||{})
+    .then(function(r){
+      if(!r.ok){
+        logError(host,"HTTP "+r.status,url.slice(0,80));
+        if(r.status===429){logError(host,"RATE LIMIT","429 — usporavam"); }
+        if(onError)onError(r.status);
+        return null;
+      }
+      return r.json().catch(function(e){
+        logError(host,"JSON parse",url.slice(0,80));
+        return null;
+      });
+    })
+    .catch(function(e){
+      logError(host,e,url.slice(0,80));
+      if(onError)onError(0);
+      return null;
+    });
+}
+
+// Helper: gleda koliko grešaka određeni host ima u zadnjih 5 min
+// Korisno kad se odlučuje hoće li se nastaviti slati zahtjevi
+function recentErrorsFor(source,minutes){
+  var cutoff=Date.now()-(minutes||5)*60*1000;
+  return errorLog.filter(function(e){return e.source===source&&e.ts>cutoff;}).length;
+}
 
 // Live data
 var px={},hist={},ta={},macd={},atr={},fr={},wsLive=false;
@@ -1343,18 +1405,16 @@ function getDynamicTarget(sym,price,basePct){
   return candidates[0].price;
 }
 
-// Order book L2 imbalance (spot Binance depth)
+// Order book L2 imbalance (spot Binance depth) — koristi safeFetch
 // Bid/ask depth ratio — duboki bidovi = buying support, duboki askovi = resistance
 function fetchOrderbookImbalance(sym){
-  return fetch("https://api.binance.com/api/v3/depth?symbol="+sym+"USDT&limit=100")
-    .then(function(r){return r.json();})
-    .then(function(d){
-      if(!d||!d.bids||!d.asks)return null;
-      var bidVol=d.bids.reduce(function(s,b){return s+parseFloat(b[1]);},0);
-      var askVol=d.asks.reduce(function(s,a){return s+parseFloat(a[1]);},0);
-      var ratio=askVol>0?bidVol/askVol:1;
-      return{bidVol:bidVol,askVol:askVol,ratio:+ratio.toFixed(2),imbalance:ratio>1.5?"BULL":ratio<0.67?"BEAR":"NEUTRAL"};
-    }).catch(function(){return null;});
+  return safeFetch("https://api.binance.com/api/v3/depth?symbol="+sym+"USDT&limit=100").then(function(d){
+    if(!d||!d.bids||!d.asks)return null;
+    var bidVol=d.bids.reduce(function(s,b){return s+parseFloat(b[1]);},0);
+    var askVol=d.asks.reduce(function(s,a){return s+parseFloat(a[1]);},0);
+    var ratio=askVol>0?bidVol/askVol:1;
+    return{bidVol:bidVol,askVol:askVol,ratio:+ratio.toFixed(2),imbalance:ratio>1.5?"BULL":ratio<0.67?"BEAR":"NEUTRAL"};
+  });
 }
 
 // ── ANALYZE3D HELPERS — ekstrahirani dijelovi monolita ────────────
@@ -4352,6 +4412,33 @@ function openSettings(){
   if(lc&&apiKeys.lunarcrush)lc.value=apiKeys.lunarcrush;
   if(gh&&apiKeys.github)gh.value=apiKeys.github;
   if(cp&&apiKeys.cryptopanic)cp.value=apiKeys.cryptopanic;
+  renderDebugLogs();
+}
+
+// Renderira debug log panel — grupira po izvoru, prikazuje broj grešaka
+function renderDebugLogs(){
+  var el=document.getElementById("debug-logs");
+  if(!el)return;
+  if(!errorLog||errorLog.length===0){
+    el.innerHTML='<div style="text-align:center;color:var(--t4);padding:8px">✅ Nema grešaka u zadnjih 50 zapisa</div>';
+    return;
+  }
+  // Grupiranje po source za sažetak
+  var bySrc={};
+  errorLog.forEach(function(e){bySrc[e.source]=(bySrc[e.source]||0)+1;});
+  var srcSummary=Object.keys(bySrc).map(function(s){return s+":"+bySrc[s];}).join(" · ");
+  var h='<div style="font-size:10px;color:var(--t4);margin-bottom:6px;padding-bottom:6px;border-bottom:.5px solid var(--sep2)">'+errorLog.length+' grešaka · '+srcSummary+'</div>';
+  errorLog.slice(0,30).forEach(function(e){
+    var ago=Math.round((Date.now()-e.ts)/1000);
+    var agoStr=ago<60?ago+"s":ago<3600?Math.round(ago/60)+"m":Math.round(ago/3600)+"h";
+    h+='<div style="font-size:10px;color:var(--t3);margin-bottom:4px;padding:4px 6px;background:var(--s3);border-radius:5px;border-left:2px solid var(--bear)">';
+    h+='<span style="color:var(--warn);font-weight:var(--fw-b)">'+e.source+'</span> ';
+    h+='<span style="color:var(--t4);font-size:9px">'+agoStr+' ago</span><br>';
+    h+='<span style="color:var(--t2);word-break:break-word">'+e.msg+'</span>';
+    if(e.detail)h+='<div style="color:var(--t4);font-size:9px;margin-top:2px">'+e.detail+'</div>';
+    h+='</div>';
+  });
+  el.innerHTML=h;
 }
 function closeModal(){document.getElementById("modal").classList.remove("open");}
 function applySettings(){
@@ -4878,19 +4965,17 @@ function fetchAllFundingRates(){
 // Razlika izmedu Coinbase (USD) i Binance (USDT) BTC cijene
 // Pozitivno = US institucije kupuju, negativno = prodaju
 function fetchCoinbasePremium(){
-  fetch("https://api.coinbase.com/v2/prices/BTC-USD/spot")
-    .then(function(r){return r.json();})
-    .then(function(d){
-      if(!d||!d.data||!d.data.amount)return;
-      var cbPrice=parseFloat(d.data.amount);
-      var binPrice=px["BTC"]?px["BTC"].p:0;
-      if(!cbPrice||!binPrice)return;
-      var premium=((cbPrice-binPrice)/binPrice*100);
-      var prev=coinbasePremium.value;
-      coinbasePremium.value=+premium.toFixed(3);
-      coinbasePremium.trend=prev!==null?(premium>prev?"UP":premium<prev?"DOWN":"FLAT"):"FLAT";
-      coinbasePremium.ts=Date.now();
-    }).catch(function(){});
+  safeFetch("https://api.coinbase.com/v2/prices/BTC-USD/spot").then(function(d){
+    if(!d||!d.data||!d.data.amount)return;
+    var cbPrice=parseFloat(d.data.amount);
+    var binPrice=px["BTC"]?px["BTC"].p:0;
+    if(!cbPrice||!binPrice)return;
+    var premium=((cbPrice-binPrice)/binPrice*100);
+    var prev=coinbasePremium.value;
+    coinbasePremium.value=+premium.toFixed(3);
+    coinbasePremium.trend=prev!==null?(premium>prev?"UP":premium<prev?"DOWN":"FLAT"):"FLAT";
+    coinbasePremium.ts=Date.now();
+  });
 }
 
 // ── TOP TRADER L/S RATIO (Binance besplatno) — institucijski sentiment ──
