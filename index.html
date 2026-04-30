@@ -102,11 +102,6 @@ html,body{height:100%;background:#000;color:#fff;font-family:-apple-system,'SF P
 .conf-num{font-size:28px;font-weight:900;letter-spacing:-2px;line-height:1}
 .conf-lbl{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-top:2px;opacity:.7}
 
-/* CONFIDENCE RING */
-.conf-ring{position:relative;width:56px;height:56px;flex-shrink:0}
-.conf-ring svg{transform:rotate(-90deg)}
-.conf-ring .num{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900}
-
 /* VERDICT */
 .verdict{padding:14px 16px;border-bottom:.5px solid var(--sep2)}
 .verdict-label{font-size:11px;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px}
@@ -199,8 +194,6 @@ svg.sp{overflow:visible;display:block}
   .tok-ico{width:36px;height:36px;border-radius:10px;font-size:13px}
   .opp-name{font-size:15px}
   .opp-price{font-size:11px}
-  .conf-ring{width:46px;height:46px}
-  .conf-ring .num{font-size:12px}
   /* Verdict */
   .verdict{padding:11px 12px}
   .verdict-text{font-size:13px}
@@ -234,7 +227,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v4.33</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v4.34</span></div>
       <div class="hd-sub" id="hdsub">Učitavam top 100 tokena…</div>
       <div class="hd-claude" id="claude-update" style="display:flex;align-items:center;gap:6px">
         <span id="claude-update-txt">🤖 Claude analiza: —</span>
@@ -526,12 +519,6 @@ function hslForSym(s){var h=0;for(var i=0;i<s.length;i++)h=(s.charCodeAt(i)+((h<
 function getCfg(sym){if(!CFG[sym])CFG[sym]={i:sym.length<=3?sym:sym.slice(0,3),c:hslForSym(sym),cn:sym};return CFG[sym];}
 
 // ── FORMAT ──────────────────────────────────────────────────────
-function fmtTs(ts){
-  if(!ts)return"—";
-  var d=new Date(ts);
-  var pad=function(n){return n<10?"0"+n:n;};
-  return pad(d.getHours())+":"+pad(d.getMinutes())+":"+pad(d.getSeconds());
-}
 function fmtTsAgo(ts){
   if(!ts)return"—";
   var sec=Math.round((Date.now()-ts)/1000);
@@ -1827,13 +1814,6 @@ function getOpportunities(){
   return all;
 }
 
-// ── RENDER CONFIDENCE RING ────────────────────────────────────────
-function confRing(conf){
-  var col=conf>=60?"var(--gr)":conf>=50?"var(--ye)":"var(--re)";
-  var R=22,circ=2*Math.PI*R,arc=(conf/100)*circ;
-  return'<div class="conf-ring"><svg width="100%" height="100%" viewBox="0 0 56 56"><circle cx="28" cy="28" r="'+R+'" fill="none" stroke="'+col+'" stroke-opacity=".12" stroke-width="4"/><circle cx="28" cy="28" r="'+R+'" fill="none" stroke="'+col+'" stroke-width="4" stroke-dasharray="'+arc+' '+circ+'" stroke-linecap="round" transform="rotate(-90 28 28)"/></svg><div class="num" style="color:'+col+'">'+conf+'%</div></div>';
-}
-
 // ── RENDER OPPORTUNITY CARD ──────────────────────────────────────
 function renderOpp(o){
   var cfg=getCfg(o.sym);
@@ -1872,7 +1852,7 @@ function renderOpp(o){
   h+='<div style="font-size:24px;font-weight:var(--fw-x);color:'+confCol+';letter-spacing:-1.5px;line-height:1;flex-shrink:0">'+o.conf+'%</div>';
   h+='</div>';
 
-  // ── TOKEN INFO (cleaner, bez confRing-a) ─────────────────────
+  // ── TOKEN INFO ───────────────────────────────────────────────
   h+='<div style="padding:12px 16px;display:flex;align-items:center;gap:12px;border-bottom:.5px solid var(--sep2)">';
   h+='<div class="tok-ico" style="color:'+cfg.c+';background:'+cfg.c+'15">'+cfg.i+'</div>';
   h+='<div style="flex:1;min-width:0">';
@@ -2194,9 +2174,6 @@ function recordPred(sym,entryPrice,targetPrice,stopPrice,conf,forcePct,d1T,d2T,d
   render();
   var dirLbl=dir==="SHORT"?"📉 SHORT":"📈 LONG";
   alert("✅ "+sym+" "+dirLbl+" zabilježen!\nTarget: $"+targetPrice.toFixed(4)+" | Stop: $"+stopPrice.toFixed(4));
-}
-function addShortPred(sym,price,conf,targetPct){
-  recordPred(sym,price,null,null,conf,targetPct,null,null,"SHORT");
 }
 
 function closePred(id,hit){
@@ -3003,21 +2980,6 @@ function hcInsights(sorted){
   return h;
 }
 
-// Detaljna analiza za Analitika sekciju — bez duplikata grafa (prikazan je na vrhu taba)
-function renderHistoryChart(allPreds){
-  var closed=allPreds.filter(function(p){return p.status!=="AKTIVAN";});
-  if(closed.length<3)return'';
-  var sorted=closed.slice().sort(function(a,b){return(a.timestamp||parseInt(a.id))-(b.timestamp||parseInt(b.id));});
-  var h='<div style="background:var(--s1);border-radius:16px;padding:14px 16px;margin-bottom:10px;border:.5px solid var(--sep)">';
-  h+='<div style="font-size:11px;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px">📐 Detaljna analiza</div>';
-  h+=hcDayMilestones(sorted);
-  h+=hcConfCalib(sorted);
-  h+=hcConfBuckets(sorted);
-  h+=hcTokenPerf(sorted);
-  h+='</div>';
-  return h;
-}
-
 // ── TRACKER RENDER ────────────────────────────────────────────────
 
 // Unificirani panel uspješnosti — jedini graf na Rezultati tabu
@@ -3299,78 +3261,6 @@ function renderActiveCard(p){
   h+='<button onclick="closePred(\''+p.id+'\',true)" style="flex:1;padding:10px;background:rgba(0,230,118,.1);border:.5px solid rgba(0,230,118,.3);border-radius:10px;font-size:13px;font-weight:700;color:var(--gr);cursor:pointer;font-family:inherit">✅ Pogodak</button>';
   h+='<button onclick="closePred(\''+p.id+'\',false)" style="flex:1;padding:10px;background:rgba(255,23,68,.08);border:.5px solid rgba(255,23,68,.2);border-radius:10px;font-size:13px;font-weight:700;color:var(--re);cursor:pointer;font-family:inherit">❌ Promašaj</button>';
   h+='</div></div>';
-  return h;
-}
-
-function renderGroupSection(preds,title,accentCol,emoji){
-  if(preds.length===0)return'<div style="text-align:center;padding:20px;color:var(--t3);font-size:13px">Nema '+title.toLowerCase()+' tradova.</div>';
-  var st=statsForGroup(preds);
-  var accC=st.acc===null?"var(--t3)":st.acc>=60?"var(--gr)":st.acc>=45?"var(--ye)":"var(--re)";
-  var h='<div style="background:var(--s1);border-radius:18px;padding:16px;margin-bottom:14px;border:.5px solid '+accentCol+'22">';
-  h+='<div style="font-size:12px;font-weight:700;color:'+accentCol+';text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px">'+emoji+' '+title+'</div>';
-  h+='<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:12px">';
-  [["Ukupno",st.total,"var(--t1)"],["✅",st.hits,"var(--gr)"],["❌",st.misses,"var(--re)"],["⏳",st.active,"var(--ye)"]].forEach(function(s){
-    h+='<div style="background:var(--s2);border-radius:10px;padding:9px;text-align:center"><div style="font-size:20px;font-weight:900;color:'+s[2]+'">'+s[1]+'</div><div style="font-size:11px;color:var(--t3);margin-top:3px">'+s[0]+'</div></div>';
-  });
-  h+='</div>';
-  if(st.acc!==null){
-    h+='<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px">';
-    h+='<span style="font-size:13px;font-weight:600;color:var(--t2)">Uspješnost</span>';
-    h+='<span style="font-size:22px;font-weight:900;color:'+accC+'">'+st.acc+'%</span></div>';
-    h+='<div style="height:6px;background:var(--s4);border-radius:4px;overflow:hidden;margin-bottom:8px">';
-    h+='<div style="height:100%;width:'+st.acc+'%;background:'+accC+';border-radius:4px"></div></div>';
-    if(st.avgGain||st.avgLoss){
-      h+='<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">';
-      if(st.avgGain)h+='<div style="background:rgba(0,230,118,.07);border-radius:10px;padding:9px;text-align:center"><div style="font-size:10px;color:var(--gr);font-weight:700;margin-bottom:3px">Prosj. dobitak</div><div style="font-size:18px;font-weight:900;color:var(--gr)">+'+st.avgGain+'%</div></div>';
-      if(st.avgLoss)h+='<div style="background:rgba(255,23,68,.07);border-radius:10px;padding:9px;text-align:center"><div style="font-size:10px;color:var(--re);font-weight:700;margin-bottom:3px">Prosj. gubitak</div><div style="font-size:18px;font-weight:900;color:var(--re)">'+st.avgLoss+'%</div></div>';
-      h+='</div>';
-    }
-  }else{
-    h+='<div style="font-size:12px;color:var(--t3);text-align:center;padding:8px 0">Zatvori prvi trade da vidiš statistiku.</div>';
-  }
-  h+='</div>';
-
-  // Aktivni
-  var active=preds.filter(function(p){return p.status==="AKTIVAN";});
-  if(active.length>0){
-    h+='<div style="font-size:11px;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px">⏳ Aktivni</div>';
-    active.forEach(function(p){h+=renderActiveCard(p);});
-  }
-
-  // Povijest
-  var closed=preds.filter(function(p){return p.status!=="AKTIVAN";});
-  if(closed.length>0){
-    h+='<div style="font-size:11px;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:.08em;margin:12px 0 8px">Povijest ('+closed.length+')</div>';
-    closed.forEach(function(p){
-      var isHit=p.status==="POGODAK";var col=isHit?"var(--gr)":"var(--re)";
-      h+='<div style="background:var(--s1);border-radius:12px;padding:11px 14px;margin-bottom:7px;border:.5px solid '+(isHit?"rgba(0,230,118,.2)":"rgba(255,23,68,.15)")+';display:flex;align-items:center;gap:10px">';
-      h+='<span style="font-size:22px">'+(isHit?"✅":"❌")+'</span>';
-      var dBadges=(p.d1Hit?"<span style='color:var(--gr);font-size:10px'>D1✓</span> ":"<span style='color:var(--re);font-size:10px'>D1✗</span> ")+(p.d2Hit?"<span style='color:var(--gr);font-size:10px'>D2✓</span> ":"<span style='color:var(--re);font-size:10px'>D2✗</span> ")+(p.d3Hit?"<span style='color:var(--gr);font-size:10px'>D3✓</span>":"<span style='color:var(--re);font-size:10px'>D3✗</span>");
-      if(p.targetPct===10)dBadges+=(p.d4Hit?" <span style='color:var(--gr);font-size:10px'>D4✓</span>":" <span style='color:var(--re);font-size:10px'>D4✗</span>")+(p.d5Hit?" <span style='color:var(--gr);font-size:10px'>D5✓</span>":" <span style='color:var(--re);font-size:10px'>D5✗</span>");
-      var isShortC=p.direction==="SHORT";
-      var dirBadgeC=isShortC
-        ?'<span style="font-size:9px;background:rgba(255,23,68,.12);color:var(--re);border-radius:6px;padding:1px 6px;margin-left:4px;font-weight:700">📉S</span>'
-        :'<span style="font-size:9px;background:rgba(41,121,255,.12);color:#2979ff;border-radius:6px;padding:1px 6px;margin-left:4px;font-weight:700">📈L</span>';
-      var autoBadge=p.autoClose?'<span style="font-size:9px;background:rgba(41,121,255,.12);color:#2979ff;border-radius:6px;padding:1px 6px;margin-left:4px;font-weight:700">AUTO</span>':'';
-      var tgtBadge='<span style="font-size:9px;color:var(--t4);margin-left:5px">'+(isShortC?"-":"+")+p.targetPct+'%</span>';
-      h+='<div style="flex:1"><div style="font-size:13px;font-weight:700;color:var(--t1)">'+p.sym+tgtBadge+dirBadgeC+autoBadge+'<span style="font-size:10px;color:var(--t3);margin-left:7px">'+p.date+'</span></div>';
-      h+='<div style="font-size:11px;margin-bottom:2px">'+dBadges+'</div>';
-      h+='<div style="font-size:10px;color:var(--t3)">'+fp(p.entry)+' → '+fp(p.closePrice)+(p.closeReason?' · '+p.closeReason:'')+'</div>';
-      // Peak/Valley — "kako blizu smo bili" kod promašaja
-      if(!isHit&&!isShortC&&p.peakPct!=null&&p.peakPct>0){
-        var peakColor=p.peakPct>=(p.targetPct||5)*0.8?"var(--ye)":"rgba(255,255,255,.3)";
-        h+='<div style="font-size:10px;color:'+peakColor+';margin-top:2px">📈 Vrh: +'+p.peakPct+'% ('+fp(p.peakPrice)+')</div>';
-      }
-      if(!isHit&&isShortC&&p.valleyPct!=null&&p.valleyPct>0){
-        var valleyColor=p.valleyPct>=(p.targetPct||5)*0.8?"var(--ye)":"rgba(255,255,255,.3)";
-        h+='<div style="font-size:10px;color:'+valleyColor+';margin-top:2px">📉 Dno: -'+p.valleyPct+'% ('+fp(p.valleyPrice)+')</div>';
-      }
-      h+='</div>';
-      h+='<div style="text-align:right"><div style="font-size:17px;font-weight:900;color:'+col+'">'+(p.closePct>=0?"+":"")+p.closePct+'%</div>';
-      h+='<div style="font-size:10px;color:var(--t3)">Target: '+p.targetPct+'%</div></div>';
-      h+='</div>';
-    });
-  }
   return h;
 }
 
@@ -5234,30 +5124,6 @@ function computeMemeRelStrength(){
     var vsAvg=+(c-avg).toFixed(2);
     memeRelStrength[s]={vsAvg:vsAvg,avg:+avg.toFixed(2),catchUp:vsAvg<-5,overExtended:vsAvg>8};
   });
-}
-
-// ── KELLY CRITERION VELIČINA POZICIJE ────────────────────────────
-// Optimalni % portfolia za ulaganje na temelju prošle točnosti i R:R omjera
-// Koristi half-Kelly kao konzervativniji, realističniji pristup
-function kellyPositionSize(){
-  var closed=predTracker.filter(function(p){return p.status!=="AKTIVAN"&&p.closePct!=null;});
-  if(closed.length<8)return null;
-  var hits=closed.filter(function(p){return p.status==="POGODAK";});
-  var misses=closed.filter(function(p){return p.status==="PROMAŠAJ";});
-  if(!hits.length||!misses.length)return null;
-  var winRate=hits.length/closed.length;
-  var avgGain=hits.reduce(function(s,p){return s+(p.closePct||0);},0)/hits.length;
-  var avgLoss=Math.abs(misses.reduce(function(s,p){return s+(p.closePct||0);},0)/misses.length);
-  if(!avgGain||!avgLoss)return null;
-  // Kelly formula: f* = (win_rate * avg_gain - loss_rate * avg_loss) / avg_gain
-  var kelly=(winRate*avgGain-(1-winRate)*avgLoss)/avgGain;
-  // Half-Kelly = sigurniji, standardni pristup u praksi (manji drawdown)
-  var halfKelly=Math.max(1,Math.min(25,kelly/2*100));
-  return{
-    kelly:+kelly.toFixed(3),halfKelly:+halfKelly.toFixed(1),
-    winRate:+winRate.toFixed(3),avgGain:+avgGain.toFixed(1),
-    avgLoss:+avgLoss.toFixed(1),n:closed.length
-  };
 }
 
 // ── NEWS SENTIMENT (CryptoPanic) ─────────────────────────────────
