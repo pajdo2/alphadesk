@@ -1,136 +1,167 @@
 {
     "dxy":  99.27,
-    "changeSummary":  "Stanje ostaje stabilno u CRAB režimu — BTC pada ispod $80K pod pritiskom rastućih prinosa obveznica, dok DXY, FG i BTC dominacija ostaju nepromijenjeni u odnosu na prijašnju analizu.",
-    "lastUpdated":  "2026-05-16T12:00:00Z",
+    "changeSummary":  "Fear & Greed pao s 49 na 43 (Strah), BTC klizio na ~$78.2K, DXY stabilan uz nastavak CRAB konsolidacije.",
+    "lastUpdated":  "2026-05-17T12:00:00Z",
     "warnings":  {
                      "ACT":  [
+
                              ],
                      "MEME":  [
-                                 "Altcoin season indeks 39/100 - Bitcoin sezona"
+                                "354 tokena u padu 17.05., altcoini pod pritiskom"
                               ],
                      "ANIME":  [
+
                                ],
                      "XRP":  [
+
                              ],
                      "BNB":  [
+
                              ],
                      "SUI":  [
+
                              ],
                      "AVAX":  [
+
                               ],
                      "PENGU":  [
-                                 "Altcoin season indeks 39/100 - Bitcoin sezona"
+
                                ],
                      "BOME":  [
-                                 "Altcoin season indeks 39/100 - Bitcoin sezona"
+
                               ],
                      "DOGS":  [
-                                 "Altcoin season indeks 39/100 - Bitcoin sezona"
+
                               ],
                      "NOT":  [
-                                "Altcoin season indeks 39/100 - Bitcoin sezona"
+
                              ],
                      "PEOPLE":  [
+
                                 ],
                      "SOL":  [
+
                              ],
                      "ADA":  [
+
                              ],
                      "PNUT":  [
-                                 "Altcoin season indeks 39/100 - Bitcoin sezona"
+
                               ],
                      "AIXBT":  [
+
                                ],
                      "ETH":  [
+
                              ],
                      "LINK":  [
+
                               ],
                      "PUMP":  [
-                                 "Altcoin season indeks 39/100 - Bitcoin sezona"
+
                               ],
                      "TRUMP":  [
-                                  "Altcoin season indeks 39/100 - Bitcoin sezona"
+
                                ],
                      "BTC":  [
-                                "Rastuci prinosi obveznica pritiscaju rizicnu imovinu",
-                                "BTC pada ispod $80K - gubitak kljucne razine"
+                               "Rast prinosa obveznica pritišće BTC ispod $78.5K",
+                               "Hormuški tjesnac zatvoren, nafta iznad $105"
                              ]
                  },
     "catalysts":  {
                       "ACT":  [
+
                               ],
                       "MEME":  [
+
                                ],
                       "ANIME":  [
+
                                 ],
                       "XRP":  [
+                                "Intesa Sanpaolo: +18M$ u Grayscale XRP Trust"
                               ],
                       "BNB":  [
+
                               ],
                       "SUI":  [
+
                               ],
                       "AVAX":  [
+
                                ],
                       "PENGU":  [
+
                                 ],
                       "BOME":  [
+
                                ],
                       "DOGS":  [
+
                                ],
                       "NOT":  [
+
                               ],
                       "PEOPLE":  [
+
                                  ],
                       "SOL":  [
+
                               ],
                       "ADA":  [
+
                               ],
                       "PNUT":  [
+
                                ],
                       "AIXBT":  [
+
                                 ],
                       "ETH":  [
-                                 "Schwab spot ETH trading za 39M korisnika"
+
                               ],
                       "LINK":  [
+
                                ],
                       "PUMP":  [
+
                                ],
                       "TRUMP":  [
+
                                 ],
                       "BTC":  [
-                                 "CLARITY Act odobren u Senate Banking Committee"
+                                "Clarity Act prolazi Senate Banking Committee"
                               ]
                   },
-    "fearGreed":  49,
+    "fearGreed":  43,
     "macroPenalty":  1,
     "regime":  "CRAB",
     "sentimentScore":  {
                            "ACT":  0,
-                           "MEME":  -1,
+                           "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  0,
+                           "XRP":  1,
                            "BNB":  0,
                            "SUI":  0,
                            "AVAX":  0,
-                           "PENGU":  -1,
-                           "BOME":  -1,
-                           "DOGS":  -1,
-                           "NOT":  -1,
+                           "PENGU":  0,
+                           "BOME":  0,
+                           "DOGS":  0,
+                           "NOT":  0,
                            "PEOPLE":  0,
                            "SOL":  0,
                            "ADA":  0,
-                           "PNUT":  -1,
+                           "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  1,
+                           "ETH":  0,
                            "LINK":  0,
-                           "PUMP":  -1,
-                           "TRUMP":  -1,
-                           "BTC":  0
+                           "PUMP":  0,
+                           "TRUMP":  0,
+                           "BTC":  -1
                        },
-    "aiSummary":  "DXY se stabilizirao na ~99.27, ispod ključnog otpora 100, što blago smanjuje makro pritisak na kripto tržište. BTC pada ispod $80K pod utjecajem rastućih prinosa obveznica i inflacijskih briga, uz Fear & Greed na 49 i BTC dominaciju od ~60% koji potvrđuju CRAB konsolidacijski režim — altcoini pod pritiskom s altcoin season indeksom na 39/100. Pozitivan dugoročni signal dolazi od odobrenja CLARITY Acta u Senate Banking Committeeu, dok Hormuzov tjesnac ostaje zatvoren uz naftu na ~$105.",
+    "aiSummary":  "DXY ostaje stabilan oko 99.27, ispod ključnog otpora 100, pružajući blagu makro podršku kriptotržištu. Fear & Greed pao je na 43 (Strah), Bitcoin klizi na ~$78.2K pod pritiskom rasta prinosa obveznica i zatvorenog Hormuzovog tjesnaca koji drži naftu iznad $105. CRAB konsolidacija se nastavlja uz BTC dominaciju ~59.5%, no pozitivan dugoročni signal dolazi od Clarity Acta koji prolazi Senate Banking Committee s bipartijskom podrškom.",
     "warActive":  true,
-    "btcDom":  60.0,
-    "stableDom":  11.9,
+    "btcDom":  59.5,
+    "stableDom":  6.0,
     "oil":  105.4
 }
