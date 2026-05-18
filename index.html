@@ -278,7 +278,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.8</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.10</span></div>
       <div class="hd-sub" id="hdsub">Učitavam top 100 tokena…</div>
       <div class="hd-claude" id="claude-update" style="display:flex;align-items:center;gap:6px">
         <span id="claude-update-txt">🤖 Claude analiza: —</span>
@@ -933,7 +933,9 @@ var futuresData={}; // {sym:{basis,lsRatio,takerRatio,skew25d}} — institucijsk
 var liquidations={};    // {sym:{buyLiq,sellLiq,ts}} — Binance force orders WS (real-time likvidacije)
 var topTraderRatio={};  // {sym:{longPct,shortPct,ratio}} — Binance top traders (institucijski)
 var netflowData={};     // {sym:{inflow,outflow,netflow}} — CryptoQuant (zahtijeva API ključ)
-var socialSentiment={}; // {sym:{score,volume,volumeChange}} — LunarCrush (zahtijeva API ključ)
+var socialSentiment={}; // {sym:{score,volume,volumeChange,sentiment}} — LunarCrush (trenutni snimak)
+var sentimentHistory={}; // {sym:[{ts,score,volume,sentiment}]} — 7-dnevni rolling buffer za delta calc
+try{var _sh=JSON.parse(lsGet("ad3d_sh")||"{}");if(_sh&&typeof _sh==="object")sentimentHistory=_sh;}catch(e){}
 var spxData={ret5d:null,bullish:null,last:null}; // S&P500 5d povrat — macro korelacija
 var tokenUnlocks={      // Poznati unlock eventi — bearish pritisak pred unlock
   SUI:{date:"2026-05-01",pct:6.8,usd:310000000,reason:"Team/investor vesting"},
@@ -1715,6 +1717,23 @@ function scoreMarketSignals(sym,signals,warnings){
   // 16. SOCIAL SENTIMENT (LunarCrush — ako API ključ dostupan)
   var ss=socialSentiment[sym];
   if(ss){
+    // ── SENTIMENT DELTA (24h trend — predictive) ─────────────────
+    // Promjena sentimenta je često predictive za price action — sentiment
+    // koji raste prije proboja je jak bull signal, koji pada prije pada bear.
+    var sd=getSentimentDelta(sym,24);
+    if(sd){
+      // Strong score delta (>10pt change u 24h)
+      if(sd.scoreDelta>=10){delta+=1.2;signals.push({txt:"📈 Social score "+sd.oldEntry.score+"→"+sd.current.score+" (+"+sd.scoreDelta+" u "+sd.hoursActual+"h) — rastuće zanimanje",type:"bull"});}
+      else if(sd.scoreDelta>=5){delta+=0.6;signals.push({txt:"📈 Social score +"+sd.scoreDelta+" u "+sd.hoursActual+"h — blaga akceleracija",type:"bull"});}
+      else if(sd.scoreDelta<=-10){delta-=1.2;warnings.push({txt:"📉 Social score "+sd.oldEntry.score+"→"+sd.current.score+" ("+sd.scoreDelta+" u "+sd.hoursActual+"h) — interes blijedi",type:"bear"});}
+      else if(sd.scoreDelta<=-5){delta-=0.5;warnings.push({txt:"📉 Social score "+sd.scoreDelta+" u "+sd.hoursActual+"h — slabi interes",type:"warn"});}
+      // Sentiment polarity delta (bullish/bearish narrative shift)
+      if(sd.sentimentDelta>=15){delta+=0.8;signals.push({txt:"😀 Sentiment shift "+sd.oldEntry.sentiment+"→"+sd.current.sentiment+" — narativa postaje bullish",type:"bull"});}
+      else if(sd.sentimentDelta<=-15){delta-=0.8;warnings.push({txt:"😨 Sentiment shift "+sd.oldEntry.sentiment+"→"+sd.current.sentiment+" — narativa postaje bearish",type:"bear"});}
+      // Volume explosion (>200% u 24h = pump alert)
+      if(sd.volumeChangePct>=200){delta+=0.5;signals.push({txt:"🔊 Social volume +"+sd.volumeChangePct.toFixed(0)+"% u 24h — pump pažnja",type:"bull"});}
+      else if(sd.volumeChangePct<=-50){delta-=0.3;warnings.push({txt:"🔇 Social volume "+sd.volumeChangePct.toFixed(0)+"% u 24h — interes pada",type:"warn"});}
+    }
     if(ss.score>70&&ss.volumeChange>50){delta+=1;signals.push({txt:"Social score "+ss.score+"/100 (vol +"+ss.volumeChange+"%) — rastući interes",type:"bull"});}
     else if(ss.score>60){delta+=0.5;signals.push({txt:"Social score "+ss.score+"/100 — pozitivna pažnja",type:"bull"});}
     else if(ss.score<20){delta-=0.5;warnings.push({txt:"Social score "+ss.score+"/100 — malo interesa zajednice",type:"warn"});}
@@ -2776,6 +2795,19 @@ function renderOpp(o){
     h+='<span title="'+tip+'" style="display:inline-flex;gap:2px;font-size:9px;font-weight:var(--fw-b);background:rgba(255,255,255,.04);padding:2px 5px;border-radius:6px;cursor:help">';
     tfs.forEach(function(x){h+='<span style="color:'+rsiCol(x.r)+'">'+x.l+' '+x.r+'</span>';});
     h+='</span>';
+  })();
+  // ── SENTIMENT DELTA chip — 24h smjer (samo ako ima history) ──
+  (function(){
+    var sd=getSentimentDelta(o.sym,24);
+    if(!sd||Math.abs(sd.scoreDelta)<3)return; // <3 = noise
+    var rising=sd.scoreDelta>0;
+    var strong=Math.abs(sd.scoreDelta)>=10;
+    var col=rising?(strong?"var(--bull)":"#69f0ae"):(strong?"var(--bear)":"#ff7043");
+    var bg=rising?"rgba(0,230,118,.10)":"rgba(255,23,68,.08)";
+    var ico=rising?"📈":"📉";
+    var tip="Social score "+sd.oldEntry.score+" → "+sd.current.score+" (Δ "+( rising?"+":"")+sd.scoreDelta+" u "+sd.hoursActual+"h)";
+    if(sd.volumeChangePct!==0)tip+=" · volume "+(sd.volumeChangePct>0?"+":"")+sd.volumeChangePct.toFixed(0)+"%";
+    h+='<span title="'+tip+'" style="font-size:9px;font-weight:var(--fw-b);color:'+col+';background:'+bg+';padding:2px 6px;border-radius:6px;cursor:help">'+ico+' '+(rising?"+":"")+sd.scoreDelta+'</span>';
   })();
   // ── WHALE ALERT badge — uvijek vidljiv ako ima recent transakcija ──
   (function(){
@@ -6614,15 +6646,57 @@ function fetchSocialData(){
       .then(function(d){
         if(!d||!d.data)return;
         var data=d.data;
-        socialSentiment[sym]={
+        var snap={
           score:Math.round(data.galaxy_score||50),
           volume:data.social_volume_24h||0,
           volumeChange:Math.round(data.social_volume_24h_rank||0),
           sentiment:Math.round(data.sentiment_absolute||50)
         };
+        socialSentiment[sym]=snap;
+        // ── Push u sentimentHistory (rolling 7-day buffer) ──────────
+        if(!sentimentHistory[sym])sentimentHistory[sym]=[];
+        var lastEntry=sentimentHistory[sym][sentimentHistory[sym].length-1];
+        // Throttle: pushaj samo ako >30min od zadnjeg snimka (ne spam-aj history)
+        if(!lastEntry||(Date.now()-lastEntry.ts)>30*60*1000){
+          sentimentHistory[sym].push({ts:Date.now(),score:snap.score,volume:snap.volume,sentiment:snap.sentiment});
+          // Trim na zadnjih 7 dana (max ~336 entries pri 30min throttle)
+          var cutoff=Date.now()-7*24*3600*1000;
+          sentimentHistory[sym]=sentimentHistory[sym].filter(function(e){return e.ts>=cutoff;});
+          // Persistencija — throttled, samo jednom po fetch ciklusu (zadnji sym)
+          if(idx===Object.keys(slugs).length-1){
+            try{lsSet("ad3d_sh",JSON.stringify(sentimentHistory));}catch(e){}
+          }
+        }
       }).catch(function(){});
     },idx*400);
   });
+}
+
+// ── SENTIMENT DELTA HELPER ───────────────────────────────────────
+// Vraća promjenu sentiment metrika preko zadanog window-a (sati).
+// Default 24h. Vraća null ako nema dovoljno history podataka.
+function getSentimentDelta(sym,hoursAgo){
+  var hist=sentimentHistory[sym];
+  if(!hist||hist.length<2)return null;
+  var cur=hist[hist.length-1];
+  var targetTs=Date.now()-(hoursAgo||24)*3600*1000;
+  // Najbliža entry oko targetTs (uzimamo prvu koja je >=targetTs)
+  var old=null;
+  for(var i=0;i<hist.length;i++){
+    if(hist[i].ts>=targetTs){old=hist[i];break;}
+  }
+  if(!old||old.ts===cur.ts)return null;
+  // Ako je najstariji entry mlađi od target window-a, vrati ipak (data is what it is)
+  var actualHours=Math.round((cur.ts-old.ts)/3600000);
+  return{
+    scoreDelta:cur.score-old.score,
+    sentimentDelta:cur.sentiment-old.sentiment,
+    volumeDelta:cur.volume-old.volume,
+    volumeChangePct:old.volume>0?+((cur.volume-old.volume)/old.volume*100).toFixed(1):0,
+    hoursActual:actualHours,
+    current:cur,
+    oldEntry:old
+  };
 }
 
 // ── 4H + DAILY MULTI-TIMEFRAME ───────────────────────────────────
