@@ -278,7 +278,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.15</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.16</span></div>
       <div class="hd-sub" id="hdsub">Učitavam top 100 tokena…</div>
       <div class="hd-claude" id="claude-update" style="display:flex;align-items:center;gap:6px">
         <span id="claude-update-txt">🤖 Claude analiza: —</span>
@@ -7084,64 +7084,231 @@ function fetchNewsData(){
 // CONCURRENCY GUARD — paralelni pozivi pišu u isti signalBacktest/walkForwardResults
 // objekt i scramble rezultate. Flag _btRunning blokira ponovni poziv dok nije gotov.
 var _btRunning={regular:false,signal:false,walkforward:false};
+
+// ── UNIFIED HISTORICAL SCORING ───────────────────────────────────
+// Backtesti su do v5 koristili 3 razlicite simplified scoring logike.
+// Sad sve koriste OVU funkciju koja replicira analyze3D koliko je moguce
+// s historijskim daily klines (closes/highs/lows/vols).
+//
+// NEDOSTUPNO u historiji (besplatni izvori): funding rate, L/S ratio,
+// OI, taker ratio, LunarCrush, Whale Alert, makro kontekst (war, DXY,
+// oil, sentiment). Backtest pokriva samo OHLCV-derivirane signale.
+//
+// PARITY s live analyze3D:
+// - Iste RSI thresholde (32/42/72)
+// - Iste BB logike (ispod L = bull, iznad U = bear)
+// - Iste MACD logike (cross bullish/bearish)
+// - Iste divergence logike
+// - Iste wyckoff faze (detectWyckoff radi cisto na closes+vols)
+// - Iste volume spike thresholde (1.3× / 2× / 3×)
+// - Iste market breadth threshold (>70%)
+// - Iste conf formule: 38 + (score/maxScore)*50
+// - Isti wt() weights kad su trening podaci dostupni
+function simulateScoreHistorical(ctx){
+  // ctx: {taR, macdR, closes, highs, lows, vols, i, syms, allData, regime}
+  var taR=ctx.taR,macdR=ctx.macdR,closes=ctx.closes,vols=ctx.vols;
+  var highs=ctx.highs,lows=ctx.lows,i=ctx.i;
+  var price=closes[i];
+  var score=0,signals=[],warnings=[];
+
+  // ── RSI (isti pragovi kao analyze3D linija 2246-2248) ──────────
+  if(taR.rsi<32){score+=wt("rsiOversold",3);signals.push({type:"bull",txt:"RSI "+taR.rsi.toFixed(0)+" jako oversold"});}
+  else if(taR.rsi<42){score+=wt("rsiOversold",1.5);signals.push({type:"bull",txt:"RSI "+taR.rsi.toFixed(0)+" oversold"});}
+  else if(taR.rsi>72){score-=3;warnings.push({type:"bear",txt:"RSI "+taR.rsi.toFixed(0)+" overbought"});}
+
+  // ── Trend (EMA50) ──────────────────────────────────────────────
+  if(taR.trend==="UP"){score+=wt("trendUp",1.5);signals.push({type:"bull",txt:"Iznad EMA50"});}
+  else if(taR.trend==="DOWN"){score-=2;warnings.push({type:"bear",txt:"Ispod EMA50"});}
+
+  // ── Bollinger Bands ────────────────────────────────────────────
+  if(taR.bb&&price<taR.bb.l){score+=wt("bbBelow",2);signals.push({type:"bull",txt:"Ispod BB dna"});}
+  else if(taR.bb&&price>taR.bb.u){score-=2;warnings.push({type:"bear",txt:"Iznad BB vrha"});}
+
+  // ── Divergencija ───────────────────────────────────────────────
+  if(taR.divergence==="BULLISH"){score+=wt("divBullish",3);signals.push({type:"bull",txt:"Bullish divergence"});}
+  else if(taR.divergence==="BEARISH"){score-=2.5;warnings.push({type:"bear",txt:"Bearish divergence"});}
+
+  // ── MACD cross ─────────────────────────────────────────────────
+  if(macdR){
+    if(macdR.cross==="BULLISH"){score+=wt("macdBullCross",3);signals.push({type:"bull",txt:"MACD bullish cross"});}
+    else if(macdR.cross==="BEARISH"){score-=2;warnings.push({type:"bear",txt:"MACD bearish cross"});}
+  }
+
+  // ── Volume spike (replicira scoreVolumeBoost) ──────────────────
+  var volAvg=0,volN=0;
+  for(var k=Math.max(0,i-20);k<i;k++){volAvg+=vols[k];volN++;}
+  volAvg=volN>0?volAvg/volN:0;
+  var volRatio=volAvg>0?vols[i]/volAvg:1;
+  if(volRatio>=3){score+=wt("volSpike",2.5);signals.push({type:"bull",txt:"Vol spike "+volRatio.toFixed(1)+"×"});}
+  else if(volRatio>=2){score+=wt("volSpike",1.5);signals.push({type:"bull",txt:"Vol "+volRatio.toFixed(1)+"×"});}
+  else if(volRatio>=1.3){score+=0.5;}
+  else if(volRatio<0.7){score-=1.5;warnings.push({type:"warn",txt:"Vol slab "+volRatio.toFixed(1)+"×"});}
+
+  // ── Wyckoff (radi cisto na closes+vols) ────────────────────────
+  var wyVols=vols.slice(0,i+1);
+  var wyR=detectWyckoff(closes.slice(0,i+1),wyVols);
+  var wyPhase=wyR?wyR.phase:null;
+  if(wyR){
+    score+=wyR.score; // ima vec built-in score (+4 Spring, -3.5 UTAD, itd.)
+    if(wyR.signal==="bull")signals.push({type:"bull",txt:"Wyckoff "+wyR.phase});
+    else if(wyR.signal==="bear")warnings.push({type:"bear",txt:"Wyckoff "+wyR.phase});
+  }
+
+  // ── ATR check (replicira achievable3d gate) ────────────────────
+  var atrSum=0,atrN=0;
+  for(var j=Math.max(1,i-13);j<=i;j++){
+    var tr=Math.max(highs[j]-lows[j],Math.abs(highs[j]-closes[j-1]),Math.abs(lows[j]-closes[j-1]));
+    atrSum+=tr/closes[j]*100;atrN++;
+  }
+  var atrPct=atrN>0?atrSum/atrN:2;
+  var targetPct=(settings&&settings.targetPct?settings.targetPct:6);
+  var daily5pctNeed=Math.max(0.1,targetPct/3);
+  var achievable3d=atrPct>=daily5pctNeed*0.65;
+
+  // ── Market breadth approximation (iz allData) ──────────────────
+  // Replicira marketBreadth iz live analyze3D-a
+  if(ctx.allData&&Object.keys(ctx.allData).length>=10){
+    var bullN=0,bearN=0,totN=0;
+    Object.keys(ctx.allData).forEach(function(s){
+      var d=ctx.allData[s];
+      if(!d||d.length<i+1||i<2)return;
+      var c=parseFloat(d[i][4]),c2=parseFloat(d[i-1][4]);
+      if(!c||!c2)return;
+      var pctCh=(c-c2)/c2*100;
+      if(pctCh>1)bullN++;
+      else if(pctCh<-1)bearN++;
+      totN++;
+    });
+    if(totN>=10){
+      var bullPct=bullN/totN*100;
+      if(bullPct>70){score+=0.5;signals.push({type:"bull",txt:"Breadth bull "+bullPct.toFixed(0)+"%"});}
+      else if(bullPct<25){score-=0.5;warnings.push({type:"warn",txt:"Breadth bear "+bullPct.toFixed(0)+"%"});}
+    }
+  }
+
+  // ── Confluence count (zrcali 6 kategorija iz analyze3D) ────────
+  var trendBull=taR.trend==="UP";
+  var momBull=(macdR&&macdR.cross==="BULLISH")||(taR.rsi<40);
+  var volBull=volRatio>=1.3;
+  var divBull=taR.divergence==="BULLISH";
+  var bbBull=taR.bb&&price<taR.bb.l;
+  // macroBull i ofBull nedostupni historijski → svaki pridonosi 0.5 (neutralni proxy)
+  var confluenceCount=(trendBull?1:0)+(momBull?1:0)+(volBull?1:0)+(divBull?1:0)+(bbBull?1:0);
+
+  // ── Conf (ista formula kao analyze3D: 38 + score/maxScore*50, clamp 20-90) ──
+  var maxScore=28;
+  var conf=Math.round(38+(score/maxScore)*50);
+  conf=Math.min(90,Math.max(20,conf));
+
+  // ── Volume gate (replicira volumeOK iz analyze3D) ──────────────
+  var volumeOK=volRatio>=1.15;
+
+  return{
+    score:+score.toFixed(2),
+    conf:conf,
+    signals:signals,
+    warnings:warnings,
+    wyPhase:wyPhase,
+    confluenceCount:confluenceCount,
+    achievable3d:achievable3d,
+    volumeOK:volumeOK,
+    volRatio:+volRatio.toFixed(2),
+    atrPct:+atrPct.toFixed(2)
+  };
+}
 function runBacktest(){
   if(_btRunning.regular){showToast("⏳ Backtest već radi, pričekaj…");return;}
   _btRunning.regular=true;
   var btSyms=["BTC","ETH","SOL","XRP","BNB","ADA","LINK","AVAX","SUI","DOGE"];
+  // Skupimo sve klines da bismo mogli pratiti market breadth
+  var allData={};
   var btDone=0;
   btSyms.forEach(function(sym,idx){
     setTimeout(function(){
       safeFetch("https://api.binance.com/api/v3/klines?symbol="+sym+"USDT&interval=1d&limit=120")
         .then(function(data){
-          if(!data||data.length<30)return;
-          var closes=data.map(function(k){return parseFloat(k[4]);});
-          var results=[];
-          var LOOKBACK=30; // treba 30 kandli za pouzdane signale
-          var TARGET_PCT=(settings&&settings.targetPct?settings.targetPct:6)/100; // koristi postavke (default 6%)
-          for(var i=LOOKBACK;i<closes.length-3;i++){
-            var slice=closes.slice(0,i+1);
-            var taR=compTA(slice);
-            var macdR=compMACD(slice);
-            if(!taR)continue;
-            // Pojednostavljen scoring (samo tehnika, bez live podataka)
-            var sig=0;
-            if(taR.rsi<32)sig+=3; else if(taR.rsi<42)sig+=1.5;
-            else if(taR.rsi>72)sig-=3;
-            if(taR.trend==="UP")sig+=1.5; else if(taR.trend==="DOWN")sig-=2;
-            if(taR.bb&&closes[i]<taR.bb.l)sig+=2; else if(taR.bb&&closes[i]>taR.bb.u)sig-=2;
-            if(taR.divergence==="BULLISH")sig+=3; else if(taR.divergence==="BEARISH")sig-=2.5;
-            if(macdR&&macdR.cross==="BULLISH")sig+=3; else if(macdR&&macdR.cross==="BEARISH")sig-=2;
-            // Filtriranje signala — prognoziramo samo kad postoji pozitivan setup
-            var conf=Math.max(20,Math.min(90,Math.round(50+(sig/24)*38)));
-            if(conf<50||sig<0)continue;
-            // Provjera ishoda: je li cijena dostigla +5% u sljedeća 3 dana?
-            // REALISTIČNO: ulaz s +0.05% slippage, target hit minus 0.15% round-trip fees
-            var FEE=0.0015; // 0.075% × 2 strane = 0.15% round trip
-            var SLIP=0.0005; // 0.05% slippage
-            var entry=closes[i]*(1+SLIP); // realan ulaz uvijek malo iznad
-            var effectiveTarget=entry*(1+TARGET_PCT+FEE); // moram dosegnuti više da pokrijem fees
-            var future=[closes[i+1],closes[i+2],closes[i+3]].filter(function(v){return v!=null;});
-            var maxNext=future.length?Math.max.apply(null,future):entry;
-            var hit=maxNext>=effectiveTarget;
-            var actualPct=+((maxNext-entry)/entry*100-FEE*100).toFixed(1);
-            results.push({
-              date:new Date(parseInt(data[i][0])).toLocaleDateString("hr-HR",{month:"short",day:"numeric"}),
-              conf:conf,sig:+sig.toFixed(1),hit:hit,pct:actualPct,rsi:+taR.rsi.toFixed(0)
-            });
-          }
-          var nHits=results.filter(function(r){return r.hit;}).length;
-          backtestResults[sym]={
-            accuracy:results.length?Math.round(nHits/results.length*100):null,
-            n:results.length,hits:nHits,
-            recent:results.slice(-15),ts:Date.now()
-          };
+          if(data&&data.length>=30)allData[sym]=data;
         }).catch(function(){})
         .then(function(){
           btDone++;
-          if(btDone===btSyms.length)_btRunning.regular=false;
+          if(btDone===btSyms.length)processBacktest(allData);
         });
     },idx*700);
   });
+}
+
+// Backtest processing — sada koristi unified simulateScoreHistorical()
+function processBacktest(allData){
+  var TARGET_PCT=(settings&&settings.targetPct?settings.targetPct:6)/100;
+  var STOP_PCT=(settings&&settings.maxRisk?settings.maxRisk:2)/100;
+  var FEE=0.0015,SLIP=0.0005;
+  var LOOKBACK=30;
+  // Min conf filter — koristi live settings prag (ne 50 hard-code)
+  var MIN_CONF=Math.max(40,Math.min(75,settings.minConf||45));
+
+  Object.keys(allData).forEach(function(sym){
+    var data=allData[sym];
+    var closes=data.map(function(k){return parseFloat(k[4]);});
+    var highs=data.map(function(k){return parseFloat(k[2]);});
+    var lows=data.map(function(k){return parseFloat(k[3]);});
+    var vols=data.map(function(k){return parseFloat(k[5]);});
+    var results=[];
+
+    for(var i=LOOKBACK;i<closes.length-3;i++){
+      var slice=closes.slice(0,i+1);
+      var taR=compTA(slice);
+      var macdR=compMACD(slice);
+      if(!taR)continue;
+
+      // Unified scoring (zrcali analyze3D koliko je moguce historijski)
+      var r=simulateScoreHistorical({
+        taR:taR,macdR:macdR,closes:closes,highs:highs,lows:lows,vols:vols,
+        i:i,allData:allData
+      });
+
+      // Replicira analyze3D gates: conf>=MIN_CONF, score>=2, confluence>=2,
+      // achievable3d, volumeOK, !wyBlocker
+      var wyBlock=r.wyPhase==="UTAD"||r.wyPhase==="DISTRIBUTION";
+      if(r.conf<MIN_CONF)continue;
+      if(r.score<2)continue;
+      if(r.confluenceCount<2)continue;
+      if(!r.achievable3d)continue;
+      if(!r.volumeOK)continue;
+      if(wyBlock)continue;
+
+      // Outcome: target ili stop u sljedeća 3 dana
+      var entry=closes[i]*(1+SLIP);
+      var effTarget=entry*(1+TARGET_PCT+FEE);
+      var effStop=entry*(1-STOP_PCT);
+      var hitDay=-1,stopDay=-1;
+      for(var d=i+1;d<=Math.min(i+3,closes.length-1);d++){
+        if(highs[d]>=effTarget&&hitDay<0)hitDay=d-i;
+        if(lows[d]<=effStop&&stopDay<0)stopDay=d-i;
+      }
+      var hit=hitDay>0&&(stopDay<0||hitDay<=stopDay);
+      var actualPct;
+      if(hit)actualPct=(TARGET_PCT*100)-FEE*100;
+      else if(stopDay>0)actualPct=-(STOP_PCT*100)-FEE*100;
+      else{
+        var endIdx=Math.min(i+3,closes.length-1);
+        actualPct=((closes[endIdx]-entry)/entry*100)-FEE*100;
+      }
+
+      results.push({
+        date:new Date(parseInt(data[i][0])).toLocaleDateString("hr-HR",{month:"short",day:"numeric"}),
+        conf:r.conf,sig:+r.score.toFixed(1),hit:hit,pct:+actualPct.toFixed(1),rsi:+taR.rsi.toFixed(0),
+        confluence:r.confluenceCount,wy:r.wyPhase||""
+      });
+    }
+    var nHits=results.filter(function(r){return r.hit;}).length;
+    backtestResults[sym]={
+      accuracy:results.length?Math.round(nHits/results.length*100):null,
+      n:results.length,hits:nHits,
+      recent:results.slice(-15),ts:Date.now(),
+      unified:true // marker da je iz v5.x unified backtest-a
+    };
+  });
+  _btRunning.regular=false;
 }
 
 // ── PER-SIGNAL ATTRIBUTION BACKTEST ─────────────────────────────
@@ -7208,29 +7375,15 @@ function processSignalBacktest(allData){
 
       var price=closes[i];
 
-      // ATR: avg 14-day true range kao % od cijene
-      var atrSum=0,atrN=0;
-      for(var j=Math.max(1,i-13);j<=i;j++){
-        var tr=Math.max(highs[j]-lows[j],Math.abs(highs[j]-closes[j-1]),Math.abs(lows[j]-closes[j-1]));
-        atrSum+=tr/closes[j]*100;
-        atrN++;
-      }
-      var atrPct=atrN>0?atrSum/atrN:0;
-      var atrAchievable=atrPct*3>=(TARGET_PCT*100); // može li 3 dana ATR pokriti 5%?
-
-      // Volume vs 20-day avg (isključuje trenutni dan)
-      var volAvg=0,volN=0;
-      for(var k2=Math.max(0,i-20);k2<i;k2++){volAvg+=vols[k2];volN++;}
-      volAvg=volN>0?volAvg/volN:0;
-      var volRatio=volAvg>0?vols[i]/volAvg:1;
-
-      // Tehički score (isti kao runBacktest) — preskačemo čiste bearove
-      var sig=0;
-      if(taR.rsi<32)sig+=3; else if(taR.rsi<42)sig+=1.5; else if(taR.rsi>72)sig-=3;
-      if(taR.trend==="UP")sig+=1.5; else if(taR.trend==="DOWN")sig-=2;
-      if(taR.bb&&price<taR.bb.l)sig+=2; else if(taR.bb&&price>taR.bb.u)sig-=2;
-      if(taR.divergence==="BULLISH")sig+=3; else if(taR.divergence==="BEARISH")sig-=2.5;
-      if(macdR&&macdR.cross==="BULLISH")sig+=3; else if(macdR&&macdR.cross==="BEARISH")sig-=2;
+      // Unified scoring (same simulator kao runBacktest/processWalkForward)
+      var rr=simulateScoreHistorical({
+        taR:taR,macdR:macdR,closes:closes,highs:highs,lows:lows,vols:vols,
+        i:i,allData:allData
+      });
+      var atrPct=rr.atrPct;
+      var volRatio=rr.volRatio;
+      var atrAchievable=rr.achievable3d;
+      var sig=rr.score;
       if(sig<0)continue; // preskači jasno bear setupove
 
       // Ishod: je li cijena dostigla +5% u sljedeća 3 dana?
@@ -7312,12 +7465,10 @@ function runWalkForwardBacktest(){
 }
 
 function processWalkForward(allData){
-  var TARGET=(settings&&settings.targetPct?settings.targetPct:6)/100; // koristi postavke (default 6%)
-  var STOP=(settings&&settings.maxRisk?settings.maxRisk:2)/100; // koristi postavke (default 2%)
-  var FEE=0.0015; // 0.15% round trip
-  var SLIP=0.0005;
+  var TARGET=(settings&&settings.targetPct?settings.targetPct:6)/100;
+  var STOP=(settings&&settings.maxRisk?settings.maxRisk:2)/100;
+  var FEE=0.0015; var SLIP=0.0005;
   var LOOKBACK=30;
-
   var trades=[];
 
   Object.keys(allData).forEach(function(sym){
@@ -7332,69 +7483,40 @@ function processWalkForward(allData){
       var taR=compTA(slice);
       var macdR=compMACD(slice);
       if(!taR)continue;
-      var price=closes[i];
 
-      // Volume ratio
-      var volAvg=0,volN=0;
-      for(var k2=Math.max(0,i-20);k2<i;k2++){volAvg+=vols[k2];volN++;}
-      volAvg=volN>0?volAvg/volN:0;
-      var volRatio=volAvg>0?vols[i]/volAvg:1;
+      // Unified scoring (zrcali analyze3D — Wyckoff, breadth, volume, BB, divergence, MACD, RSI)
+      var r=simulateScoreHistorical({
+        taR:taR,macdR:macdR,closes:closes,highs:highs,lows:lows,vols:vols,
+        i:i,allData:allData
+      });
+      if(r.score<=0)continue; // skip jasno bear (kao prije)
 
-      // ATR
-      var atrSum=0,atrN=0;
-      for(var j=Math.max(1,i-13);j<=i;j++){
-        var tr=Math.max(highs[j]-lows[j],Math.abs(highs[j]-closes[j-1]),Math.abs(lows[j]-closes[j-1]));
-        atrSum+=tr/closes[j]*100;atrN++;
-      }
-      var atrPct=atrN>0?atrSum/atrN:2;
-
-      // Score (simplified analyze3D)
-      var sig=0;
-      if(taR.rsi<32)sig+=3; else if(taR.rsi<42)sig+=1.5; else if(taR.rsi>72)sig-=3;
-      if(taR.trend==="UP")sig+=1.5; else if(taR.trend==="DOWN")sig-=2;
-      if(taR.bb&&price<taR.bb.l)sig+=2; else if(taR.bb&&price>taR.bb.u)sig-=2;
-      if(taR.divergence==="BULLISH")sig+=3; else if(taR.divergence==="BEARISH")sig-=2.5;
-      if(macdR&&macdR.cross==="BULLISH")sig+=3; else if(macdR&&macdR.cross==="BEARISH")sig-=2;
-      if(volRatio>3)sig+=2.5; else if(volRatio>2)sig+=1.5; else if(volRatio<0.7)sig-=1.5;
-
-      if(sig<=0)continue; // skip jasno bear
-
-      var conf=Math.min(88,Math.max(22,Math.round(50+(sig/22)*38)));
-      var entry=price*(1+SLIP); // realistic ulaz
+      // Outcome — 5 dana window za walk-forward
+      var entry=closes[i]*(1+SLIP);
       var effTarget=entry*(1+TARGET+FEE);
       var effStop=entry*(1-STOP);
-
-      // Outcome — koji je hit prvi (target ili stop) u 5 dana
-      var hitDay=-1, stopDay=-1;
+      var hitDay=-1,stopDay=-1;
       for(var d=i+1;d<=Math.min(i+5,closes.length-1);d++){
         if(highs[d]>=effTarget&&hitDay<0)hitDay=d-i;
         if(lows[d]<=effStop&&stopDay<0)stopDay=d-i;
       }
-
       var hit=hitDay>0&&(stopDay<0||hitDay<=stopDay);
       var actualPct;
       if(hit)actualPct=(TARGET*100)-FEE*100;
       else if(stopDay>0)actualPct=-(STOP*100)-FEE*100;
       else{
-        // Nije hit ni stop — zatvori na zadnji close
         var endIdx=Math.min(i+5,closes.length-1);
         actualPct=((closes[endIdx]-entry)/entry*100)-FEE*100;
       }
 
       trades.push({
-        sym:sym,
-        conf:conf,
-        sig:+sig.toFixed(1),
-        rsi:Math.round(taR.rsi),
-        trend:taR.trend,
-        macdCross:macdR&&macdR.cross,
-        divergence:taR.divergence,
-        volRatio:+volRatio.toFixed(2),
-        atrPct:+atrPct.toFixed(2),
-        hit:hit,
-        actualPct:+actualPct.toFixed(2),
-        hitDay:hitDay,
-        stopDay:stopDay
+        sym:sym,conf:r.conf,sig:+r.score.toFixed(1),
+        rsi:Math.round(taR.rsi),trend:taR.trend,
+        macdCross:macdR&&macdR.cross,divergence:taR.divergence,
+        volRatio:r.volRatio,atrPct:r.atrPct,
+        wyPhase:r.wyPhase,confluenceCount:r.confluenceCount,
+        achievable3d:r.achievable3d,volumeOK:r.volumeOK,
+        hit:hit,actualPct:+actualPct.toFixed(2),hitDay:hitDay,stopDay:stopDay
       });
     }
   });
