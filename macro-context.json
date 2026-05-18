@@ -1,40 +1,40 @@
 {
     "dxy":  99.39,
     "changeSummary":  "Tržište u slobodnom padu s $700M likvidacija, BTC klizi na $76.8K dok Iran-US napetosti i rate hike strahovi dominiraju sentimentom.",
-    "lastUpdated":  "2026-05-18T10:00:00Z",
+    "lastUpdated":  "2026-05-18T10:12:00Z",
     "warnings":  {
                      "ACT":  [
-
+                                 "Opći pad altcoin sektora, mali cap"
                              ],
                      "MEME":  [
-
+                                  "Meme coin, pojačan downside u bear momentu"
                               ],
                      "ANIME":  [
-
-                               ],
+                                    "Opći pad altcoin sektora uz FUD"
+                                ],
                      "XRP":  [
-
+                                 "Pad 2-7% uz tržišnu korekciju"
                              ],
                      "BNB":  [
                                  "Pad 2-7% uz masovne likvidacije"
                              ],
                      "SUI":  [
-
+                                 "Pad altcoina uz pojačanu volatilnost"
                              ],
                      "AVAX":  [
                                   "Pad uz ostatak tržišta"
                               ],
                      "PENGU":  [
-
-                               ],
+                                    "Opći pad, visoko rizičan mali cap token"
+                                ],
                      "BOME":  [
-
+                                  "Meme coin s pojačanim downside rizikom"
                               ],
                      "DOGS":  [
-
+                                  "Opći pad altcoin sektora uz FUD"
                               ],
                      "NOT":  [
-
+                                 "Opći pad altcoin sektora"
                              ],
                      "PEOPLE":  [
 
@@ -46,11 +46,11 @@
                                  "Pad 2-7% uz tržišni pritisak"
                              ],
                      "PNUT":  [
-
+                                  "Mali cap meme token, povećan rizik pada"
                               ],
                      "AIXBT":  [
-                                   "AI tokeni u masovnim likvidacijama"
-                               ],
+                                    "AI tokeni u masovnim likvidacijama"
+                                ],
                      "ETH":  [
                                  "Pad 4%, $700M likvidacija u 24h"
                              ],
@@ -58,11 +58,11 @@
                                   "Opći tržišni pritisak, pad altcoina"
                               ],
                      "PUMP":  [
-
+                                  "Visoko spekulativan, pojačan pad u FUD-u"
                               ],
                      "TRUMP":  [
-
-                               ],
+                                    "Meme coin, povećana volatilnost u FUD okružju"
+                                ],
                      "BTC":  [
                                  "Rate hike strahovi, whale profit-taking, $76.8K"
                              ]
@@ -129,38 +129,39 @@
 
                                 ],
                       "BTC":  [
-                                  "CLARITY Act napreduje u Senatu"
+                                  "CLARITY Act napreduje u Senatu",
+                                  "Long-term holderi drže 14.84M BTC, supply opada"
                               ]
                   },
     "fearGreed":  43,
     "macroPenalty":  1,
     "regime":  "VOLATILE",
     "sentimentScore":  {
-                           "ACT":  0,
-                           "MEME":  0,
-                           "ANIME":  0,
-                           "XRP":  0,
+                           "ACT":  -1,
+                           "MEME":  -2,
+                           "ANIME":  -1,
+                           "XRP":  1,
                            "BNB":  -1,
-                           "SUI":  0,
+                           "SUI":  -1,
                            "AVAX":  -1,
-                           "PENGU":  0,
-                           "BOME":  0,
-                           "DOGS":  0,
-                           "NOT":  0,
+                           "PENGU":  -1,
+                           "BOME":  -2,
+                           "DOGS":  -1,
+                           "NOT":  -1,
                            "PEOPLE":  1,
                            "SOL":  -1,
                            "ADA":  -1,
-                           "PNUT":  0,
+                           "PNUT":  -1,
                            "AIXBT":  -1,
                            "ETH":  -1,
                            "LINK":  -1,
-                           "PUMP":  0,
-                           "TRUMP":  0,
+                           "PUMP":  -1,
+                           "TRUMP":  -2,
                            "BTC":  -1
                        },
-    "aiSummary":  "DXY je na 99.39, tik ispod razine 100, što donosi blagi olakšaj za kripto ali ne zaustavlja pad. Fear & Greed indeks je pao na 43 (strah) uz $700M likvidacija u 24h, BTC klizi na $76.8K zbog Iran-US napetosti, rastućih cijena nafte i strahova od Fed rate hikea. Očekuje se nastavak volatilnosti; Bitcoin Season je aktivan s dominacijom na 59.5%, dok altcoini ostaju pod tlakom.",
+    "aiSummary":  "DXY je na 99.39, tik ispod razine 100, što donosi blagi olakšaj za kripto ali ne zaustavlja pad. Fear & Greed indeks je pao na 43 (strah) uz $700M likvidacija u 24h, BTC klizi na $76.8K zbog Iran-US napetosti, rastućih cijena nafte (~$107/bbl) i strahova od Fed rate hikea. Očekuje se nastavak volatilnosti; Bitcoin Season je aktivan s dominacijom na 59.5%, dok altcoini ostaju pod tlakom, iznimka je XRP koji ima regulatorno-legislativni katalizator (CLARITY Act).",
     "warActive":  true,
     "btcDom":  59.5,
     "stableDom":  11.7,
-    "oil":  88.0
+    "oil":  107.0
 }
