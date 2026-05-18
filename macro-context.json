@@ -1,7 +1,7 @@
 {
-    "dxy":  99.27,
-    "changeSummary":  "Fear & Greed indeks naglo pao s 43 na 27 (Strah), BTC ostaje na ~$78K podrški uz VOLATILE tržišno okruženje s 354 tokena u padu.",
-    "lastUpdated":  "2026-05-17T21:14:00Z",
+    "dxy":  99.39,
+    "changeSummary":  "BTC pao ispod 80K USD, F&G smanjen na 43 (strah), naftni šok zbog Hormuz-a i inflacijski pritisci podigli makro rizike te promijenili režim u VOLATILE.",
+    "lastUpdated":  "2026-05-18T12:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -19,10 +19,10 @@
 
                              ],
                      "SUI":  [
-
+                                 "Pad ~8%, najgori performer proteklog tjedna"
                              ],
                      "AVAX":  [
-
+                                  "Pad ~5% uz makro pritiske i likvidacije"
                               ],
                      "PENGU":  [
 
@@ -43,7 +43,7 @@
 
                              ],
                      "ADA":  [
-
+                                 "Pad ~5% uz makro pritiske"
                              ],
                      "PNUT":  [
 
@@ -52,19 +52,20 @@
 
                                ],
                      "ETH":  [
-
+                                 "Liquidacije >$360M, rizik daljnjeg pada"
                              ],
                      "LINK":  [
-
+                                  "Pad ~5%, makro pritisci"
                               ],
                      "PUMP":  [
 
                               ],
                      "TRUMP":  [
-                         "Pad FG na 27 - tržišni strah dominira, sentiment negativan"
+
                                ],
                      "BTC":  [
-                         "Rastuće obvezničke kamate vrše pritisak na rizičnu imovinu"
+                                 "ETF neto odljevi 13K BTC prošli tjedan",
+                                 "Fed može podići kamate — inflacija na 6%"
                              ]
                  },
     "catalysts":  {
@@ -78,7 +79,7 @@
 
                                 ],
                       "XRP":  [
-                          "Intesa Sanpaolo dodala $18M u Grayscale XRP Trust"
+                                  "Clarity Act povoljno za Ripple institucije"
                               ],
                       "BNB":  [
 
@@ -120,7 +121,7 @@
 
                               ],
                       "LINK":  [
-
+                                   "Clarity Act — bankarski sektor ulazi u blockchain"
                                ],
                       "PUMP":  [
 
@@ -129,11 +130,11 @@
 
                                 ],
                       "BTC":  [
-                          "Clarity Act napreduje prema punom glasanju u Senatu"
+                                  "Clarity Act prošao Senate Banking Committee"
                               ]
                   },
-    "fearGreed":  27,
-    "macroPenalty":  0,
+    "fearGreed":  43,
+    "macroPenalty":  1,
     "regime":  "VOLATILE",
     "sentimentScore":  {
                            "ACT":  0,
@@ -141,26 +142,26 @@
                            "ANIME":  0,
                            "XRP":  1,
                            "BNB":  0,
-                           "SUI":  0,
-                           "AVAX":  0,
+                           "SUI":  -1,
+                           "AVAX":  -1,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  0,
-                           "ADA":  0,
+                           "SOL":  -1,
+                           "ADA":  -1,
                            "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  0,
+                           "ETH":  -1,
                            "LINK":  0,
                            "PUMP":  0,
-                           "TRUMP":  -1,
-                           "BTC":  0
+                           "TRUMP":  0,
+                           "BTC":  -1
                        },
-    "aiSummary":  "DXY ostaje stabilan oko 99.27, ispod ključnog otpora 100, pružajući blagu makro podršku kriptotržištu. Fear & Greed indeks naglo je pao na 27 (Strah), signalizirajući povećanu paniku - znatan pad s 43 ranije danas - dok BTC konsolidira ~$78K uz pritisak rastućih prinosa obveznica i zatvorenog Hormuzovog tjesnaca koji drži naftu iznad $105. Tržište ulazi u VOLATILE fazu sa 354 tokena u padu, no Clarity Act napreduje prema punom senatorskom glasanju kao jedini pozitivni regulatorni katalizator.",
-    "warActive":  false,
-    "btcDom":  60.0,
-    "stableDom":  12.0,
-    "oil":  105.4
+    "aiSummary":  "DXY je na 99.39, ispod razine 100, što blago podupire kripto imovinu no Fed inflacijski pritisci (PPI +6%) i strah od podizanja kamata dominiraju tržištem. Fear & Greed indeks iznosi 43 (strah), BTC oscilira oko 77K USD uz likvidacije duge pozicije veće od 360 milijuna dolara. Naftni šok zbog zatvaranja Hormuzskog tjesnaca gura WTI iznad 107 USD, povećavajući rizik od stagflacije — očekuje se nastavak volatilnosti i potencijalni daljnji pad altkoinova.",
+    "warActive":  true,
+    "btcDom":  58.5,
+    "stableDom":  7.2,
+    "oil":  107.72
 }
