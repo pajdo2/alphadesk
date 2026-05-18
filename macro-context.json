@@ -1,13 +1,13 @@
 {
     "dxy":  99.39,
-    "changeSummary":  "Fear & Greed indeks pao s 43 na 27, BTC klizi prema $78K uz pojačane US-Iran napetosti dok DXY ostaje stabilan na 99.39.",
-    "lastUpdated":  "2026-05-18T12:00:00Z",
+    "changeSummary":  "Tržište u slobodnom padu s $700M likvidacija, BTC klizi na $76.8K dok Iran-US napetosti i rate hike strahovi dominiraju sentimentom.",
+    "lastUpdated":  "2026-05-18T10:00:00Z",
     "warnings":  {
                      "ACT":  [
 
                              ],
                      "MEME":  [
-                                 "Bearish tržište, meme tokeni bez katalizatora"
+
                               ],
                      "ANIME":  [
 
@@ -16,19 +16,19 @@
 
                              ],
                      "BNB":  [
-
+                                 "Pad 2-7% uz masovne likvidacije"
                              ],
                      "SUI":  [
 
                              ],
                      "AVAX":  [
-                                 "Pad uz šire tržište, makro pritisak ostaje"
+                                  "Pad uz ostatak tržišta"
                               ],
                      "PENGU":  [
 
                                ],
                      "BOME":  [
-                                 "Bearish, meme token bez temeljne vrijednosti"
+
                               ],
                      "DOGS":  [
 
@@ -40,32 +40,31 @@
 
                                 ],
                      "SOL":  [
-                                 "Pad 3.2% u 24h, nestabilno makro okruženje"
+                                 "Pad 2-7%, geopolitički makro stres"
                              ],
                      "ADA":  [
-
+                                 "Pad 2-7% uz tržišni pritisak"
                              ],
                      "PNUT":  [
-                                 "Bearish sentiment, meme token bez katalizatora"
+
                               ],
                      "AIXBT":  [
-
+                                   "AI tokeni u masovnim likvidacijama"
                                ],
                      "ETH":  [
-                                 "Gubitak konsolidacije od travnja, -3.8% u 24h"
+                                 "Pad 4%, $700M likvidacija u 24h"
                              ],
                      "LINK":  [
-
+                                  "Opći tržišni pritisak, pad altcoina"
                               ],
                      "PUMP":  [
 
                               ],
                      "TRUMP":  [
-                                 "Meme token u bearish tržištu — visok rizik pada"
+
                                ],
                      "BTC":  [
-                                 "Pad ispod $79K uz rastuće prinose US obveznica",
-                                 "88% altcoina u minusu, likvidacije > $360M"
+                                 "Rate hike strahovi, whale profit-taking, $76.8K"
                              ]
                  },
     "catalysts":  {
@@ -79,8 +78,7 @@
 
                                 ],
                       "XRP":  [
-                                  "Ripple osigurao $200M kredit za Prime ekspanziju",
-                                  "Spot XRP ETF priljevi na višemjesečnom maksimumu"
+                                  "CLARITY Act napreduje u Senatu"
                               ],
                       "BNB":  [
 
@@ -104,10 +102,10 @@
 
                               ],
                       "PEOPLE":  [
-
+                                     "CLARITY Act regulatorna jasnoća za kripto"
                                  ],
                       "SOL":  [
-                                  "XRP-SOL cross-chain DeFi integracija aktivna"
+
                               ],
                       "ADA":  [
 
@@ -131,39 +129,38 @@
 
                                 ],
                       "BTC":  [
-                                  "CLARITY Act prošao Senat — bipartizanska podrška",
-                                  "US-Iran diplomacija: potencijal za deeskalaciju"
+                                  "CLARITY Act napreduje u Senatu"
                               ]
                   },
-    "fearGreed":  27,
+    "fearGreed":  43,
     "macroPenalty":  1,
-    "regime":  "BEAR",
+    "regime":  "VOLATILE",
     "sentimentScore":  {
                            "ACT":  0,
-                           "MEME":  -1,
+                           "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  1,
-                           "BNB":  0,
+                           "XRP":  0,
+                           "BNB":  -1,
                            "SUI":  0,
                            "AVAX":  -1,
                            "PENGU":  0,
-                           "BOME":  -1,
+                           "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
-                           "PEOPLE":  0,
-                           "SOL":  0,
-                           "ADA":  0,
-                           "PNUT":  -1,
-                           "AIXBT":  0,
+                           "PEOPLE":  1,
+                           "SOL":  -1,
+                           "ADA":  -1,
+                           "PNUT":  0,
+                           "AIXBT":  -1,
                            "ETH":  -1,
-                           "LINK":  0,
-                           "PUMP":  -1,
-                           "TRUMP":  -1,
+                           "LINK":  -1,
+                           "PUMP":  0,
+                           "TRUMP":  0,
                            "BTC":  -1
                        },
-    "aiSummary":  "DXY se drži na 99.39, ispod razine 100, blago podupirući kripto-imovinu, no US-Iran geopolitičke napetosti i strah od podizanja Fed kamatnih stopa dominiraju tržištem. Fear & Greed indeks pao je na 27 (Strah), BTC klizi prema $78K uz snažne rasprodaje — 88% altcoina danas u minusu. Naftni šok (WTI ~$103) i inflacijski pritisci povećavaju rizik stagflacije, preporuča se oprez i smanjenje izloženosti rizičnim meme tokenima.",
+    "aiSummary":  "DXY je na 99.39, tik ispod razine 100, što donosi blagi olakšaj za kripto ali ne zaustavlja pad. Fear & Greed indeks je pao na 43 (strah) uz $700M likvidacija u 24h, BTC klizi na $76.8K zbog Iran-US napetosti, rastućih cijena nafte i strahova od Fed rate hikea. Očekuje se nastavak volatilnosti; Bitcoin Season je aktivan s dominacijom na 59.5%, dok altcoini ostaju pod tlakom.",
     "warActive":  true,
-    "btcDom":  58.9,
-    "stableDom":  11.9,
-    "oil":  103.24
+    "btcDom":  59.5,
+    "stableDom":  11.7,
+    "oil":  88.0
 }
