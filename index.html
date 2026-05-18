@@ -278,7 +278,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.16</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.17</span></div>
       <div class="hd-sub" id="hdsub">Učitavam top 100 tokena…</div>
       <div class="hd-claude" id="claude-update" style="display:flex;align-items:center;gap:6px">
         <span id="claude-update-txt">🤖 Claude analiza: —</span>
@@ -437,7 +437,10 @@ var stateAPI = {
       u[key] = !u[key];
       this._write();
       return u[key];
-    }
+    },
+    // Generic key/value store (za regime picker, sort prefs, itd.) — nije boolean
+    getValue: function(key){return this._read()[key];},
+    setValue: function(key, val){this._read()[key] = val; this._write();}
   },
   migrate: function(){
     if(localStorage.getItem("ad3d_v")===String(STATE_VERSION))return;
@@ -3059,12 +3062,40 @@ try{
   }
 }catch(e){predTracker=[];}
 
-// ── ADAPTIVE SIGNAL WEIGHTS ──────────────────────────────────────
-var signalWeights={};
-try{var _sw=JSON.parse(localStorage.getItem("ad3d_weights")||"{}");if(_sw&&typeof _sw==="object")signalWeights=_sw;}catch(e){}
+// ── ADAPTIVE SIGNAL WEIGHTS (regime-aware od v5.17) ──────────────
+// Struktura: {[regime]: {field: weight}, _global: {field: weight}}
+// Lookup hijerarhija: trenutni regime → _global → default
+// Razlog: RSI oversold u BEAR marketu je death trap, u BULL je odlican
+// signal. Funding rate je vazniji u BULL nego u CRAB. Wyckoff Spring
+// vrijedi vise nakon kapitulacije. Globalne tezine ne mogu uhvatiti
+// ove razlike — treba per-regime kalibracija.
+var signalWeights={_global:{}};
+try{
+  var _sw=JSON.parse(localStorage.getItem("ad3d_weights")||"{}");
+  if(_sw&&typeof _sw==="object"){
+    // Migracija starih flat weights u {_global: {...}}
+    if(_sw._global||_sw.BULL||_sw.BEAR||_sw.CRAB){
+      signalWeights=_sw; // vec novi format
+    } else {
+      // Stari flat format — migrate u _global
+      signalWeights={_global:_sw};
+      try{localStorage.setItem("ad3d_weights",JSON.stringify(signalWeights));}catch(e){}
+    }
+  }
+}catch(e){}
 
-// Helper: apliciraj naučenu težinu ili vrati default
-function wt(field,def){var m=signalWeights[field];return(typeof m==="number"?def*m:def);}
+// Helper: apliciraj nauceni weight za TRENUTNI regime, fallback na _global, fallback default
+function wt(field,def){
+  var curRegime=MACRO.claudeRegime||"NEUTRAL";
+  // 1. Probaj regime-specific weight
+  var regWeights=signalWeights[curRegime];
+  if(regWeights&&typeof regWeights[field]==="number")return def*regWeights[field];
+  // 2. Fallback na global weight
+  var glob=signalWeights._global;
+  if(glob&&typeof glob[field]==="number")return def*glob[field];
+  // 3. Default (untouched)
+  return def;
+}
 
 // Snapshot stanja indikatora u trenutku trackinga
 function buildSnap(sym){
@@ -3091,55 +3122,84 @@ function buildSnap(sym){
     volSpike:      !!(vs&&vs.ratio>1.4),
     mtfAllUp:      bc===3,
     fgExtremeFear: MACRO.fg<20,
-    fgFear:        MACRO.fg>=20&&MACRO.fg<35
+    fgFear:        MACRO.fg>=20&&MACRO.fg<35,
+    // ── REGIME u trenutku predikcije (za regime-aware weight learning) ──
+    // Spremamo i Claude regime i derived regime, fallback na NEUTRAL
+    regime:        MACRO.claudeRegime||(typeof getMarketRegime==="function"?getMarketRegime():"NEUTRAL")||"NEUTRAL"
   };
 }
 
 // Izračun lift-based težina iz zatvorenih predikcija
-// Unaprijeđeno: time-decay (zadnjih 30 dana = 2x weight), min 5 uzoraka, jači Bayesian prior
+// v5.17: regime-aware — računa zasebne weights za BULL/BEAR/CRAB + _global fallback
 function computeSignalWeights(){
   var now=Date.now();
   var DAY30=30*24*3600*1000;
   var closed=predTracker.filter(function(p){return p.status!=="AKTIVAN"&&p.snap;});
   if(closed.length<8)return null;
 
-  // Vagani base rate — novije predikcije važnije (time-decay)
-  var baseHits=0,baseTotal=0;
-  closed.forEach(function(p){
-    var w=((p.timestamp&&now-p.timestamp<DAY30)?2:1); // zadnjih 30 dana = dvostruka težina
-    baseTotal+=w;
-    if(p.status==="POGODAK")baseHits+=w;
-  });
-  var baseRate=baseHits/baseTotal;
-  if(baseRate===0||baseRate===1)return null;
-
   var FIELDS=["rsiOversold","rsiOverbought","trendUp","trendDown","bbBelow","divBullish",
     "divBearish","macdBullCross","macdBearCross","lsRatioBull","lsRatioExtreme",
     "basisBack","takerSell","btcDomHigh","btcDomLow","volSpike","mtfAllUp","fgExtremeFear","fgFear"];
-  var weights={};
-  FIELDS.forEach(function(f){
-    var sub=closed.filter(function(p){return p.snap[f];});
-    // Povećan minimum: 5 uzoraka (bio 3) — smanjuje statistički šum
-    if(sub.length<5){weights[f]=1.0;return;}
-    var hits=0,total=0;
-    sub.forEach(function(p){
+
+  // Helper: izračun weight za podskup predikcija
+  function computeForSubset(preds){
+    if(preds.length<5)return null;
+    var bh=0,bt=0;
+    preds.forEach(function(p){
       var w=((p.timestamp&&now-p.timestamp<DAY30)?2:1);
-      total+=w;
-      if(p.status==="POGODAK")hits+=w;
+      bt+=w;
+      if(p.status==="POGODAK")bh+=w;
     });
-    var rate=hits/total;
-    var lift=rate/baseRate;
-    // Bayesian smooth prema 1.0 (prior snaga = 8 pseudo-uzoraka, povećano s 5)
-    // Jači prior = sporija promjena težina = manje overfittinga na mali uzorak
-    var smoothed=(lift*sub.length+1.0*8)/(sub.length+8);
-    weights[f]=+Math.max(0.3,Math.min(2.0,smoothed)).toFixed(3);
+    var baseRate=bh/bt;
+    if(baseRate===0||baseRate===1)return null;
+    var weights={};
+    FIELDS.forEach(function(f){
+      var sub=preds.filter(function(p){return p.snap[f];});
+      if(sub.length<5){weights[f]=1.0;return;}
+      var hits=0,total=0;
+      sub.forEach(function(p){
+        var w=((p.timestamp&&now-p.timestamp<DAY30)?2:1);
+        total+=w;
+        if(p.status==="POGODAK")hits+=w;
+      });
+      var rate=hits/total;
+      var lift=rate/baseRate;
+      // Bayesian smooth prema 1.0 (prior 8) — sporija promjena, manje overfit
+      var smoothed=(lift*sub.length+1.0*8)/(sub.length+8);
+      weights[f]=+Math.max(0.3,Math.min(2.0,smoothed)).toFixed(3);
+    });
+    return weights;
+  }
+
+  var result={};
+  // ── _global weights (sve zatvorene predikcije) ──────────────────
+  var globalW=computeForSubset(closed);
+  if(globalW)result._global=globalW;
+
+  // ── Per-regime weights — grupiramo po snap.regime ────────────────
+  // Treba ≥8 predikcija po regime-u da se računa zasebno
+  var regimes={};
+  closed.forEach(function(p){
+    var r=(p.snap&&p.snap.regime)||"UNKNOWN";
+    if(!regimes[r])regimes[r]=[];
+    regimes[r].push(p);
   });
-  return weights;
+  Object.keys(regimes).forEach(function(r){
+    if(r==="UNKNOWN")return;
+    if(regimes[r].length<8)return; // ≥8 uzoraka za regime-specific weight
+    var rw=computeForSubset(regimes[r]);
+    if(rw)result[r]=rw;
+  });
+
+  return result;
 }
 
 function refreshWeights(){
   var w=computeSignalWeights();
-  if(w){signalWeights=w;try{localStorage.setItem("ad3d_weights",JSON.stringify(w));}catch(e){}}
+  if(w){
+    signalWeights=w;
+    try{localStorage.setItem("ad3d_weights",JSON.stringify(w));}catch(e){}
+  }
 }
 
 // ── NEURAL NETWORK MODEL — logistička regresija nad signal snap-ovima
@@ -4432,25 +4492,52 @@ function renderWeightsPanel(){
     mtfAllUp:"MTF svi UP",volSpike:"Volume spike",
     btcDomLow:"BTC Dom nizak",fgExtremeFear:"F&G Extreme Fear",fgFear:"F&G Fear"
   };
-  var entries=Object.keys(signalWeights).filter(function(f){return LABELS[f];})
-    .map(function(f){return{f:f,w:signalWeights[f]};})
+  // ── REGIME PICKER — koji regime weights gledamo? ─────────────────
+  // Default: trenutni regime ako postoji, inače _global
+  var curRegime=MACRO.claudeRegime||"NEUTRAL";
+  var availableRegimes=Object.keys(signalWeights).filter(function(r){
+    return signalWeights[r]&&typeof signalWeights[r]==="object"&&Object.keys(signalWeights[r]).length>0;
+  });
+  if(!availableRegimes.length)return'';
+  // Preferiraj selected regime iz UI state-a, fallback na trenutni live regime
+  var selRegime=stateAPI.ui.getValue?(stateAPI.ui.getValue("wpReg")||(availableRegimes.indexOf(curRegime)>-1?curRegime:availableRegimes[0])):availableRegimes[0];
+  if(availableRegimes.indexOf(selRegime)<0)selRegime=availableRegimes[0];
+  var activeWeights=signalWeights[selRegime]||{};
+
+  var entries=Object.keys(activeWeights).filter(function(f){return LABELS[f];})
+    .map(function(f){return{f:f,w:activeWeights[f]};})
     .sort(function(a,b){return b.w-a.w;});
   if(!entries.length)return'';
 
-  // ── Izračun stvarnih hit-rateova po signalu (walk-forward validacija) ──
-  var baseHits=closed.filter(function(p){return p.status==="POGODAK";}).length;
-  var baseRate=closed.length?Math.round(baseHits/closed.length*100):0;
+  // ── Izračun stvarnih hit-rateova po signalu, FILTRIRANO po selected regime ──
+  var regimeClosed=selRegime==="_global"?closed:closed.filter(function(p){
+    return p.snap&&p.snap.regime===selRegime;
+  });
+  var baseHits=regimeClosed.filter(function(p){return p.status==="POGODAK";}).length;
+  var baseRate=regimeClosed.length?Math.round(baseHits/regimeClosed.length*100):0;
   var signalStats={};
   Object.keys(LABELS).forEach(function(f){
-    var sub=closed.filter(function(p){return p.snap&&p.snap[f];});
+    var sub=regimeClosed.filter(function(p){return p.snap&&p.snap[f];});
     var hits=sub.filter(function(p){return p.status==="POGODAK";}).length;
     signalStats[f]={count:sub.length,hits:hits,rate:sub.length?Math.round(hits/sub.length*100):null};
   });
 
   var h='<div style="background:var(--s1);border-radius:16px;padding:14px 16px;margin-bottom:12px;border:.5px solid rgba(255,234,0,.15)">';
-  h+='<div style="font-size:11px;font-weight:700;color:var(--ye);text-transform:uppercase;letter-spacing:.08em;margin-bottom:2px">🧠 Naučene težine signala</div>';
-  h+='<div style="font-size:10px;color:var(--t3);margin-bottom:2px">Iz '+closed.length+' zatvorenih predikcija (zadnjih 30 u kalibraciji) · Time-decay: noviji = 2x težina</div>';
-  h+='<div style="font-size:10px;color:rgba(255,255,255,.25);margin-bottom:10px">Base rate (bez filtera): <strong style="color:var(--t2)">'+baseRate+'%</strong> — signali koji nadmašuju bazu su korisni</div>';
+  h+='<div class="row-between" style="margin-bottom:2px">';
+  h+='<span style="font-size:11px;font-weight:700;color:var(--ye);text-transform:uppercase;letter-spacing:.08em">🧠 Naučene težine signala</span>';
+  // Regime picker buttons
+  if(availableRegimes.length>1){
+    h+='<span style="display:flex;gap:3px">';
+    availableRegimes.forEach(function(r){
+      var lbl=r==="_global"?"Sve":r.substring(0,5);
+      var act=r===selRegime;
+      h+='<button onclick="stateAPI.ui.setValue(\'wpReg\',\''+r+'\');render()" style="padding:2px 7px;background:'+(act?"rgba(255,234,0,.2)":"rgba(255,255,255,.04)")+';border:.5px solid '+(act?"rgba(255,234,0,.4)":"var(--sep)")+';border-radius:5px;font-size:9px;color:'+(act?"var(--ye)":"var(--t3)")+';cursor:pointer;font-family:inherit;font-weight:var(--fw-b)">'+lbl+'</button>';
+    });
+    h+='</span>';
+  }
+  h+='</div>';
+  h+='<div style="font-size:10px;color:var(--t3);margin-bottom:2px">Iz '+regimeClosed.length+' zatvorenih predikcija'+(selRegime!=="_global"?" u regime-u <strong style=\"color:var(--ye)\">"+selRegime+"</strong>":"")+' · Time-decay: noviji = 2x</div>';
+  h+='<div style="font-size:10px;color:rgba(255,255,255,.25);margin-bottom:10px">Base rate: <strong style="color:var(--t2)">'+baseRate+'%</strong> — signali koji nadmašuju bazu su korisni'+(curRegime!==selRegime&&selRegime!=="_global"?' · <span style="color:var(--info)">📍 Live regime: '+curRegime+'</span>':'')+'</div>';
   h+='<div style="display:flex;flex-direction:column;gap:6px">';
   entries.forEach(function(e){
     var col=e.w>=1.3?"var(--gr)":e.w>=0.85?"var(--ye)":"var(--re)";
