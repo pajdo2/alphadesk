@@ -272,13 +272,151 @@ svg.sp{overflow:visible;display:block}
   /* Modal input font */
   .inp{font-size:16px} /* Sprječava auto-zoom na iOS */
 }
+
+/* ═══════════════════════════════════════════════════════════
+   VISUAL UPGRADE — gradient borders, rings, animations
+   ══════════════════════════════════════════════════════════ */
+
+/* ── ANIMATED GRADIENT BORDER for t90 ── */
+@keyframes borderGlow{
+  0%,100%{box-shadow:0 0 0 0 rgba(0,230,118,0),0 4px 24px rgba(0,230,118,.10)}
+  50%{box-shadow:0 0 0 1px rgba(0,230,118,.18),0 4px 28px rgba(0,230,118,.18)}
+}
+.opp.t90{animation:borderGlow 3s ease-in-out infinite}
+
+/* ── TIER LEFT ACCENT BAR ── */
+.opp{position:relative}
+.opp::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;border-radius:0 0 0 var(--r-xl);opacity:0;transition:opacity .2s}
+.opp.t60::before{background:var(--info);opacity:.6}
+.opp.t70::before{background:rgba(41,121,255,.9);opacity:.8}
+.opp.t80::before{background:var(--warn);opacity:.9}
+.opp.t90::before{background:var(--bull);opacity:1;box-shadow:0 0 8px rgba(0,230,118,.5)}
+.opp.hot::before{background:var(--warn);opacity:.7}
+
+/* ── CARD SHADOWS by tier ── */
+.opp.t70{box-shadow:0 2px 16px rgba(41,121,255,.06)}
+.opp.t80{box-shadow:0 2px 20px rgba(255,167,38,.1),0 1px 0 rgba(255,167,38,.12) inset}
+.opp.t90{box-shadow:0 4px 32px rgba(0,230,118,.14),0 1px 0 rgba(0,230,118,.12) inset}
+
+/* ── PILL TABS — zamjena za underline stilove ── */
+.filter-wrap{padding:6px 14px!important;border-bottom:.5px solid var(--sep2)!important;background:rgba(10,10,13,.95)!important}
+.tab-row{gap:4px;padding:4px 0}
+.tab{
+  padding:7px 14px!important;
+  font-size:12px!important;
+  border-radius:20px!important;
+  border:.5px solid transparent!important;
+  border-bottom:none!important;
+  color:var(--t3)!important;
+  transition:background .15s,color .15s,border-color .15s!important;
+  letter-spacing:.01em
+}
+.tab:hover{background:rgba(255,255,255,.06)!important;color:var(--t2)!important}
+.tab.on{
+  background:rgba(255,213,79,.12)!important;
+  border-color:rgba(255,213,79,.35)!important;
+  color:var(--ye)!important;
+  font-weight:700!important
+}
+@media(min-width:600px){.filter-wrap{flex-direction:row!important;padding:6px 16px!important}}
+
+/* ── HEADER GLASS ── */
+.hd{
+  background:linear-gradient(180deg,rgba(10,10,13,.97) 0%,rgba(14,14,20,.93) 100%)!important;
+  border-bottom:.5px solid rgba(255,255,255,.07)!important;
+  box-shadow:0 1px 0 rgba(255,255,255,.03),0 4px 20px rgba(0,0,0,.6)!important
+}
+
+/* ── LIVE PILL upgrade ── */
+.live-pill{background:rgba(0,230,118,.06)!important;border:.5px solid rgba(0,230,118,.18)!important;box-shadow:0 0 8px rgba(0,230,118,.07)}
+
+/* ── STAT BOX upgrade ── */
+.stat-box{
+  background:linear-gradient(135deg,var(--s2) 0%,rgba(34,34,44,.8) 100%)!important;
+  border:.5px solid rgba(255,255,255,.07)!important;
+  box-shadow:0 1px 8px rgba(0,0,0,.3)!important;
+  transition:transform .15s,box-shadow .15s!important
+}
+.stat-box:hover{transform:translateY(-1px);box-shadow:0 3px 12px rgba(0,0,0,.4)!important}
+
+/* ── PANEL upgrade ── */
+.panel{box-shadow:0 1px 8px rgba(0,0,0,.25)!important}
+
+/* ── SIGNAL CHIPS upgrade ── */
+.sig-chip{border-radius:8px!important;font-size:10px!important;padding:4px 9px!important;letter-spacing:.02em!important}
+.sig-chip.bull{background:rgba(0,230,118,.1)!important;border-color:rgba(0,230,118,.3)!important}
+.sig-chip.bear{background:rgba(255,23,68,.1)!important;border-color:rgba(255,23,68,.28)!important}
+.sig-chip.warn{background:rgba(255,213,79,.1)!important;border-color:rgba(255,213,79,.28)!important}
+
+/* ── SECTOR RS PILL ── */
+.sec-pill{display:flex;align-items:center;gap:6px;background:var(--s2);border:.5px solid var(--sep);border-radius:10px;padding:5px 10px;flex-shrink:0;min-width:80px}
+.sec-pill.top{border-color:rgba(0,230,118,.3);background:rgba(0,230,118,.06)}
+.sec-pill.bot{border-color:rgba(255,23,68,.28);background:rgba(255,23,68,.06)}
+
+/* ── CONF RING container ── */
+.conf-ring-wrap{flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:2px}
+.conf-ring-lbl{font-size:9px;color:var(--t4);letter-spacing:.05em;text-transform:uppercase;font-weight:600}
+
+/* ── VERDICT BAR upgrade ── */
+.v-bar-entry{background:linear-gradient(90deg,rgba(0,230,118,.1) 0%,rgba(0,230,118,.03) 100%)}
+.v-bar-warn{background:linear-gradient(90deg,rgba(255,167,38,.1) 0%,rgba(255,167,38,.03) 100%)}
+.v-bar-info{background:linear-gradient(90deg,rgba(41,121,255,.09) 0%,rgba(41,121,255,.02) 100%)}
+
+/* ── TOKEN ICON gradient ── */
+.tok-ico{
+  background:linear-gradient(135deg,var(--tok-c,#333)22 0%,var(--tok-c,#333)08 100%)!important;
+  border:.5px solid var(--tok-c,#333)!important;
+  opacity:1!important
+}
+
+/* ── MACRO METRIC CARD ── */
+.macro-card{
+  background:linear-gradient(135deg,var(--s2) 0%,rgba(26,26,34,.6) 100%);
+  border:.5px solid var(--sep);
+  border-radius:var(--r-md);
+  padding:8px 10px;
+  text-align:center;
+  min-width:0;
+  flex:1
+}
+.macro-card.bull-card{border-color:rgba(0,230,118,.25);background:linear-gradient(135deg,rgba(0,230,118,.08) 0%,rgba(0,230,118,.02) 100%)}
+.macro-card.bear-card{border-color:rgba(255,23,68,.22);background:linear-gradient(135deg,rgba(255,23,68,.08) 0%,rgba(255,23,68,.02) 100%)}
+.macro-card.warn-card{border-color:rgba(255,167,38,.25);background:linear-gradient(135deg,rgba(255,167,38,.08) 0%,rgba(255,167,38,.02) 100%)}
+.macro-card-ico{font-size:14px;line-height:1;margin-bottom:3px}
+.macro-card-val{font-size:15px;font-weight:800;letter-spacing:-.5px;line-height:1.1}
+.macro-card-lbl{font-size:9px;color:var(--t4);font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-top:2px}
+
+/* ── DAILY RECS section header ── */
+.section-header{
+  display:flex;align-items:center;gap:8px;margin-bottom:10px;padding-bottom:8px;
+  border-bottom:.5px solid var(--sep2)
+}
+.section-header-line{flex:1;height:.5px;background:linear-gradient(90deg,var(--sep) 0%,transparent 100%)}
+
+/* ── ACTION BUTTONS upgrade ── */
+.act-btn.primary{
+  background:linear-gradient(135deg,rgba(41,121,255,.18) 0%,rgba(41,121,255,.10) 100%)!important;
+  box-shadow:0 1px 8px rgba(41,121,255,.12)!important
+}
+.act-btn.warn{
+  background:linear-gradient(135deg,rgba(255,167,38,.16) 0%,rgba(255,167,38,.08) 100%)!important;
+  box-shadow:0 1px 8px rgba(255,167,38,.10)!important
+}
+
+/* ── SCROLLBAR thin style (desktop) ── */
+@media(min-width:600px){
+  .sc{scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.08) transparent}
+  .sc::-webkit-scrollbar{display:block;width:4px}
+  .sc::-webkit-scrollbar-track{background:transparent}
+  .sc::-webkit-scrollbar-thumb{background:rgba(255,255,255,.08);border-radius:2px}
+}
 </style>
 </head>
 <body>
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.19</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.20</span></div>
       <div class="hd-sub" id="hdsub">Učitavam top 100 tokena…</div>
       <div class="hd-claude" id="claude-update" style="display:flex;align-items:center;gap:6px">
         <span id="claude-update-txt">🤖 Claude analiza: —</span>
@@ -1221,19 +1359,19 @@ function renderRefreshStatus(){
     {lbl:"DXY",ts:lastRefresh.dxy,m:1800},
     {lbl:"News",ts:lastRefresh.news,m:1200}
   ];
-  var h='<div style="background:rgba(255,255,255,.025);border-radius:12px;padding:8px 12px;margin-bottom:12px;border:.5px solid rgba(255,255,255,.05)">';
+  var h='<div style="background:rgba(255,255,255,.02);border-radius:12px;padding:8px 12px;margin-bottom:12px;border:.5px solid rgba(255,255,255,.05);box-shadow:0 1px 6px rgba(0,0,0,.2)">';
   h+='<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">';
-  h+='<span style="font-size:9px;font-weight:800;color:rgba(255,255,255,.2);letter-spacing:.15em;text-transform:uppercase">Zadnji refresh</span>';
-  h+='<span style="font-size:12px;font-weight:700;color:rgba(255,255,255,.35);font-family:monospace">'+clk+'</span>';
+  h+='<span style="font-size:9px;font-weight:800;color:rgba(255,255,255,.22);letter-spacing:.15em;text-transform:uppercase">⚡ Data status</span>';
+  h+='<span style="font-size:11px;font-weight:700;color:rgba(255,255,255,.3);font-family:monospace;background:rgba(255,255,255,.05);padding:2px 7px;border-radius:6px">'+clk+'</span>';
   h+='</div>';
   h+='<div style="display:flex;flex-wrap:wrap;gap:4px">';
   allSrcs.forEach(function(s){
     var f=s.ts?Math.min(1,(Date.now()-s.ts)/1000/s.m):1;
     var c=f<0.35?"#00e676":f<0.70?"#ffab00":"#ff1744";
     var ago=s.ts?fmtTsAgo(s.ts):"—";
-    h+='<div style="display:flex;align-items:center;gap:4px;background:rgba(255,255,255,.035);border:.5px solid rgba(255,255,255,.06);border-radius:20px;padding:3px 8px">';
-    h+='<span style="width:5px;height:5px;border-radius:50%;background:'+c+';display:inline-block;flex-shrink:0"></span>';
-    h+='<span style="font-size:10px;color:rgba(255,255,255,.38)">'+s.lbl+'</span>';
+    h+='<div style="display:flex;align-items:center;gap:4px;background:rgba(255,255,255,.03);border:.5px solid rgba(255,255,255,.05);border-radius:20px;padding:3px 9px">';
+    h+='<span style="width:5px;height:5px;border-radius:50%;background:'+c+';display:inline-block;flex-shrink:0;box-shadow:0 0 4px '+c+'88"></span>';
+    h+='<span style="font-size:10px;color:rgba(255,255,255,.35)">'+s.lbl+'</span>';
     h+='<span style="font-size:10px;color:'+c+';font-weight:700;font-family:monospace">'+ago+'</span>';
     h+='</div>';
   });
@@ -2751,9 +2889,9 @@ function renderOpp(o){
   // ── KOMBINIRANI HEADER (verdict + token + conf u 1 vizualnoj jedinici) ─
   // Verdict bar na vrhu — boja = signal jasnoća
   var vCol=isWatchYellow?"var(--warn)":isWatchBlue?"var(--info)":"var(--bull)";
-  var vBg=isWatchYellow?"rgba(255,167,38,.08)":isWatchBlue?"rgba(41,121,255,.06)":"rgba(0,230,118,.07)";
+  var vBgClass=isWatchYellow?"v-bar-warn":isWatchBlue?"v-bar-info":"v-bar-entry";
 
-  h+='<div style="background:'+vBg+';padding:10px 16px;border-bottom:.5px solid '+vCol+'33;display:flex;align-items:center;justify-content:space-between;gap:12px">';
+  h+='<div class="'+vBgClass+'" style="padding:10px 16px;border-bottom:.5px solid '+vCol+'22;display:flex;align-items:center;justify-content:space-between;gap:12px">';
   h+='<div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;flex:1;min-width:0">';
   // ── PRIMARY ROW: verdict + status chips (MTF, TIER, PRAĆEN) ────
   h+='<span style="font-size:var(--text-sm);font-weight:var(--fw-x);color:'+vCol+';margin-right:2px">'+o.verdict+'</span>';
@@ -2848,19 +2986,34 @@ function renderOpp(o){
     h+=chip("🐋 "+(bull?"+":"-")+fmtM(net),col,bg,tip,9);
   })();
   h+='</div>';
-  // Conf big number desno + meaning indikator ispod
-  var confCol=o.conf>=70?"var(--bull)":o.conf>=60?"var(--info)":o.conf>=48?"var(--warn)":"var(--bear)";
-  h+='<div style="text-align:right;flex-shrink:0">';
-  h+='<div style="font-size:24px;font-weight:var(--fw-x);color:'+confCol+';letter-spacing:-1.5px;line-height:1">'+o.conf+'%</div>';
-  // Mini score meaning text — pomaze novom user-u (sklanja se na manjim sirinama)
-  var confDesc=o.conf>=70?"jako":o.conf>=60?"dobro":o.conf>=48?"slabo":"loše";
-  h+='<div style="font-size:9px;color:var(--t4);margin-top:1px;letter-spacing:.04em;text-transform:uppercase">'+confDesc+'</div>';
-  h+='</div>';
+  // ── CONFIDENCE RING (SVG circular progress) ─────────────────
+  (function(){
+    var c=o.conf;
+    var col=c>=70?"#00e676":c>=60?"#2979ff":c>=48?"#ffa726":"#ff1744";
+    var r=18,cx=22,cy=22,stroke=3;
+    var circ=2*Math.PI*r;
+    var dash=circ*(c/100);
+    var gap=circ-dash;
+    // Track circle (dim) + progress arc
+    var svg='<svg width="44" height="44" viewBox="0 0 44 44" style="transform:rotate(-90deg)">'
+      +'<circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="'+stroke+'"/>'
+      +'<circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="none" stroke="'+col+'" stroke-width="'+stroke+'" stroke-linecap="round"'
+      +' stroke-dasharray="'+dash.toFixed(1)+' '+gap.toFixed(1)+'" style="transition:stroke-dasharray .4s ease"/>'
+      +'</svg>';
+    var confDesc=c>=80?"JAKO":c>=70?"DOBRO":c>=60?"SOLIDAN":c>=48?"SLABO":"—";
+    h+='<div class="conf-ring-wrap" style="position:relative">'
+      +svg
+      +'<div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1">'
+      +'<span style="font-size:11px;font-weight:800;color:'+col+';letter-spacing:-.5px">'+c+'</span>'
+      +'</div>'
+      +'<div class="conf-ring-lbl">'+confDesc+'</div>'
+      +'</div>';
+  })();
   h+='</div>';
 
   // ── TOKEN INFO ───────────────────────────────────────────────
   h+='<div style="padding:12px 16px;display:flex;align-items:center;gap:12px;border-bottom:.5px solid var(--sep2)">';
-  h+='<div class="tok-ico" style="color:'+cfg.c+';background:'+cfg.c+'15">'+cfg.i+'</div>';
+  h+='<div class="tok-ico" style="--tok-c:'+cfg.c+';color:'+cfg.c+';background:linear-gradient(135deg,'+cfg.c+'26 0%,'+cfg.c+'0d 100%);border:.5px solid '+cfg.c+'3a;box-shadow:0 2px 10px '+cfg.c+'18">'+cfg.i+'</div>';
   h+='<div style="flex:1;min-width:0">';
   h+='<div style="font-size:var(--text-md);font-weight:var(--fw-x);color:var(--t1);letter-spacing:-.3px">'+o.sym;
   h+='<span style="font-size:11px;color:var(--t3);font-weight:var(--fw-r);margin-left:6px">'+cfg.cn+'</span></div>';
@@ -3062,7 +3215,7 @@ try{
   }
 }catch(e){predTracker=[];}
 
-// ── ADAPTIVE SIGNAL WEIGHTS (regime-aware od v5.19) ──────────────
+// ── ADAPTIVE SIGNAL WEIGHTS (regime-aware od v5.20) ──────────────
 // Struktura: {[regime]: {field: weight}, _global: {field: weight}}
 // Lookup hijerarhija: trenutni regime → _global → default
 // Razlog: RSI oversold u BEAR marketu je death trap, u BULL je odlican
@@ -3130,7 +3283,7 @@ function buildSnap(sym){
 }
 
 // Izračun lift-based težina iz zatvorenih predikcija
-// v5.19: regime-aware — računa zasebne weights za BULL/BEAR/CRAB + _global fallback
+// v5.20: regime-aware — računa zasebne weights za BULL/BEAR/CRAB + _global fallback
 function computeSignalWeights(){
   var now=Date.now();
   var DAY30=30*24*3600*1000;
@@ -5353,34 +5506,74 @@ function render(){
     var rCol=regimeCol[regime2]||"var(--t2)";
     var sess=getTradingSession();
     var pad2=function(n){return n<10?"0"+n:n;};
-    h+='<div class="panel panel-tight" style="margin-bottom:12px;border-color:'+rCol+'33;background:rgba(255,255,255,.02)">';
-    h+='<div class="row-wrap" style="gap:14px;font-size:12px;font-weight:var(--fw-x)">';
-    h+='<span class="row" style="gap:5px"><span class="txt-t4">Režim</span><span style="color:'+rCol+'">'+(regimeLbl[regime2]||regime2)+'</span></span>';
-    h+='<span class="row" style="gap:5px"><span class="txt-t4">F&G</span><span style="color:'+fgCol+'">'+MACRO.fg+'</span></span>';
-    h+='<span class="row" style="gap:5px"><span class="txt-t4">BTC Dom</span><span style="color:'+btcDomCol+'">'+MACRO.btcDom+'%</span></span>';
-    if(MACRO.dxy)h+='<span class="row" style="gap:5px"><span class="txt-t4">DXY</span><span style="color:'+(MACRO.dxy>106?"var(--bear)":MACRO.dxy<100?"var(--bull)":"var(--t2)")+'">'+MACRO.dxy.toFixed(1)+'</span></span>';
-    if(MACRO.oil)h+='<span class="row" style="gap:5px"><span class="txt-t4">Oil</span><span style="color:'+(MACRO.oil>110?"var(--bear)":MACRO.oil<90?"var(--bull)":"var(--t2)")+'">$'+MACRO.oil+'</span></span>';
-    // ── Sesija ─────────────────────────────────────────────────────
-    h+='<span class="row" style="gap:5px" title="'+sess.desc+'">';
-    h+='<span class="txt-t4">Sesija</span>';
-    h+='<span style="color:'+sess.col+';cursor:help">'+sess.ico+' '+sess.session+'</span>';
-    h+='<span class="txt-t4" style="font-size:10px">'+pad2(sess.utcH)+':'+pad2(sess.utcM)+'</span>';
-    h+='</span>';
-    // ── Funding countdown ──────────────────────────────────────────
+    // ── MACRO PANEL — kartica s režimom + 5 metrika u grid ──
+    var dxyVal=MACRO.dxy||0;var dxyCol=dxyVal>106?"var(--bear)":dxyVal<100?"var(--bull)":"var(--t2)";
+    var oilVal=MACRO.oil||0;var oilCol=oilVal>110?"var(--bear)":oilVal<90?"var(--bull)":"var(--t2)";
+    // Regime hero header
+    h+='<div style="background:linear-gradient(135deg,'+rCol+'18 0%,'+rCol+'06 100%);border:.5px solid '+rCol+'44;border-radius:var(--r-lg);padding:11px 14px;margin-bottom:12px">';
+    h+='<div class="row-between" style="margin-bottom:10px">';
+    h+='<div>';
+    h+='<div style="font-size:16px;font-weight:800;color:'+rCol+';letter-spacing:-.3px">'+(regimeLbl[regime2]||regime2)+'</div>';
+    h+='<div style="font-size:10px;color:var(--t4);margin-top:1px">'+sess.ico+' '+sess.session+' · '+pad2(sess.utcH)+':'+pad2(sess.utcM)+' UTC</div>';
+    h+='</div>';
+    // F&G donut mini
+    (function(){
+      var fg=MACRO.fg||0;
+      var col=fg<25?"var(--bull)":fg<45?"#2979ff":fg>75?"var(--bear)":"var(--warn)";
+      var lbl=fg<25?"Strah":fg<45?"Strah":fg<55?"Neutralno":fg<75?"Pohlepa":"Ekstr. pohlepa";
+      var r=14,circ=2*Math.PI*r;
+      var dash=circ*(fg/100);
+      h+='<div style="display:flex;flex-direction:column;align-items:center;gap:2px">';
+      h+='<div style="position:relative;width:36px;height:36px">';
+      h+='<svg width="36" height="36" viewBox="0 0 36 36" style="transform:rotate(-90deg)">'
+        +'<circle cx="18" cy="18" r="'+r+'" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="3"/>'
+        +'<circle cx="18" cy="18" r="'+r+'" fill="none" stroke="'+col+'" stroke-width="3" stroke-linecap="round"'
+        +' stroke-dasharray="'+dash.toFixed(1)+' '+(circ-dash).toFixed(1)+'" />'
+        +'</svg>';
+      h+='<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:'+col+'">'+fg+'</div>';
+      h+='</div>';
+      h+='<div style="font-size:8px;color:var(--t4);letter-spacing:.04em;text-transform:uppercase">F&amp;G</div>';
+      h+='</div>';
+    })();
+    h+='</div>';
+    // Metric row — 4 kartica
     var fc=getNextFunding();
     var fcCol=fc.nearImpending?"var(--warn)":"var(--t3)";
-    var fcTip=fc.nearImpending?"⚠️ Funding za <30min — moguća volatilnost":"Sljedeći Binance funding (00/08/16 UTC)";
-    h+='<span class="row" style="gap:5px" title="'+fcTip+'">';
-    h+='<span class="txt-t4">Funding</span>';
-    h+='<span style="color:'+fcCol+';cursor:help">⏱ '+fc.str+'</span>';
-    h+='</span>';
+    h+='<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px">';
+    // BTC Dom
+    var btcDomCardCls=MACRO.btcDom>60?"bear-card":MACRO.btcDom<45?"bull-card":"";
+    h+='<div class="macro-card '+btcDomCardCls+'">';
+    h+='<div class="macro-card-ico">₿</div>';
+    h+='<div class="macro-card-val" style="color:'+btcDomCol+'">'+MACRO.btcDom+'%</div>';
+    h+='<div class="macro-card-lbl">BTC Dom</div></div>';
+    // DXY
+    if(dxyVal){
+      var dxyCardCls=dxyVal>106?"bear-card":dxyVal<100?"bull-card":"";
+      h+='<div class="macro-card '+dxyCardCls+'">';
+      h+='<div class="macro-card-ico">💵</div>';
+      h+='<div class="macro-card-val" style="color:'+dxyCol+'">'+dxyVal.toFixed(1)+'</div>';
+      h+='<div class="macro-card-lbl">DXY</div></div>';
+    }
+    // Oil
+    if(oilVal){
+      var oilCardCls=oilVal>110?"bear-card":oilVal<90?"bull-card":"";
+      h+='<div class="macro-card '+oilCardCls+'">';
+      h+='<div class="macro-card-ico">🛢️</div>';
+      h+='<div class="macro-card-val" style="color:'+oilCol+'">'+(oilVal>=100?"$"+Math.round(oilVal):"$"+oilVal)+'</div>';
+      h+='<div class="macro-card-lbl">Oil/bbl</div></div>';
+    }
+    // Funding countdown
+    h+='<div class="macro-card" title="Sljedeći Binance funding">';
+    h+='<div class="macro-card-ico">⏱</div>';
+    h+='<div class="macro-card-val" style="color:'+fcCol+';font-size:13px">'+fc.str+'</div>';
+    h+='<div class="macro-card-lbl">Funding</div></div>';
     h+='</div>';
-    // ── Sesija napomena (jednoredna, samo ako je loša ili peak) ────
+    // ── Sesija napomena ────
     if(sess.scoreAdj<=-0.5||sess.scoreAdj>=0.5){
       var sNote=sess.scoreAdj>=0.5
         ?'<span style="color:var(--bull)">✓ Peak likvidnost</span> — breakouti pouzdaniji, institucije aktivne'
         :'<span style="color:var(--warn)">⚠ Thin market</span> — '+sess.desc;
-      h+='<div style="font-size:10px;color:var(--t3);padding:5px 0 2px;border-top:.5px solid var(--sep2);margin-top:6px;line-height:1.5">'+sNote+'</div>';
+      h+='<div style="font-size:10px;color:var(--t3);padding-top:8px;margin-top:6px;border-top:.5px solid rgba(255,255,255,.05);line-height:1.5">'+sNote+'</div>';
     }
     h+='</div>';
 
@@ -5390,10 +5583,18 @@ function render(){
     var hot=all.filter(function(x){return x.isHot;}).length;
     var visible=opps.length;
     h+='<div class="grid-4" style="margin-bottom:14px">';
-    h+='<div class="stat-box"><div class="stat-num-sm txt-info">'+scanSyms.length+'</div><div class="stat-lbl">Skenirano</div></div>';
-    h+='<div class="stat-box"><div class="stat-num-sm txt-warn">'+visible+'</div><div class="stat-lbl">Prilike</div></div>';
-    h+='<div class="stat-box"><div class="stat-num-sm txt-bull">'+hot+'</div><div class="stat-lbl">🔥 Vrući</div></div>';
-    h+='<div class="stat-box"><div class="stat-num-sm txt-t1">+'+settings.targetPct+'%</div><div class="stat-lbl">Target</div></div>';
+    h+='<div class="stat-box" style="border-color:rgba(41,121,255,.18)">';
+    h+='<div style="font-size:11px;margin-bottom:2px">📡</div>';
+    h+='<div class="stat-num-sm txt-info">'+scanSyms.length+'</div><div class="stat-lbl">Skenirano</div></div>';
+    h+='<div class="stat-box" style="border-color:'+(visible>0?"rgba(255,167,38,.25)":"rgba(255,255,255,.06)")+'">';
+    h+='<div style="font-size:11px;margin-bottom:2px">🎯</div>';
+    h+='<div class="stat-num-sm txt-warn">'+visible+'</div><div class="stat-lbl">Prilike</div></div>';
+    h+='<div class="stat-box" style="border-color:'+(hot>0?"rgba(255,167,38,.35)":"rgba(255,255,255,.06)")+'">';
+    h+='<div style="font-size:11px;margin-bottom:2px">🔥</div>';
+    h+='<div class="stat-num-sm txt-bull">'+hot+'</div><div class="stat-lbl">Vrući</div></div>';
+    h+='<div class="stat-box" style="border-color:rgba(0,230,118,.18)">';
+    h+='<div style="font-size:11px;margin-bottom:2px">📈</div>';
+    h+='<div class="stat-num-sm txt-bull">+'+settings.targetPct+'%</div><div class="stat-lbl">Target</div></div>';
     h+='</div>';
 
     // ── 3. "VIŠE" expand — sve sekundarno (macro detalji, AI, legenda) ──
@@ -5416,8 +5617,12 @@ function render(){
       h+='</div>';
       // AI sažetak
       if(MACRO.aiSummary){
-        h+='<div class="txt-bull" style="margin-top:10px;padding:8px 11px;background:rgba(0,230,118,.05);border:.5px solid rgba(0,230,118,.15);border-radius:10px;font-size:11px;line-height:1.6">';
-        h+='🤖 '+MACRO.aiSummary;
+        h+='<div style="margin-top:10px;padding:10px 12px;background:linear-gradient(135deg,rgba(0,230,118,.07) 0%,rgba(0,230,118,.02) 100%);border:.5px solid rgba(0,230,118,.2);border-radius:10px;font-size:11px;line-height:1.65;color:var(--t2)">';
+        h+='<div style="display:flex;align-items:center;gap:5px;margin-bottom:5px">';
+        h+='<span style="font-size:12px">🤖</span>';
+        h+='<span style="font-size:9px;font-weight:700;color:rgba(0,230,118,.7);text-transform:uppercase;letter-spacing:.07em">Claude AI · Makro analiza</span>';
+        h+='</div>';
+        h+=MACRO.aiSummary;
         h+='</div>';
       }
       h+='</div>';
@@ -5434,21 +5639,29 @@ function render(){
     h+='<span style="font-size:11px;font-weight:var(--fw-b);color:var(--t3)">📊 Sektorska relativna snaga (24h)</span>';
     h+='<span style="font-size:10px;color:var(--t4)">'+srs.length+' sektora</span>';
     h+='</div>';
-    h+='<div style="display:flex;gap:6px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none">';
+    h+='<div style="display:flex;gap:5px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none">';
+    // Nađi max abs za relativni bar
+    var maxAbs=srs.reduce(function(m,r){return Math.max(m,Math.abs(r.avg));},0.1);
     srs.forEach(function(r){
       var pos=r.avg>=0;
       var col=r.avg>2?"var(--bull)":r.avg>0?"#69f0ae":r.avg>-2?"#ff7043":"var(--bear)";
-      var bg=r.avg>0?"rgba(0,230,118,.08)":"rgba(255,23,68,.08)";
-      var border=r.avg>0?"rgba(0,230,118,.2)":"rgba(255,23,68,.15)";
-      // Top 2 zelena, bottom 2 crvena markirana jače
-      if(r.rank===1){bg="rgba(0,230,118,.15)";border="rgba(0,230,118,.4)";}
-      if(r.rank===srs.length){bg="rgba(255,23,68,.15)";border="rgba(255,23,68,.35)";}
-      h+='<div style="flex-shrink:0;background:'+bg+';border:.5px solid '+border+';border-radius:8px;padding:5px 9px;text-align:center;min-width:56px">';
-      h+='<div style="font-size:13px">'+( secIco[r.sec]||"•")+'</div>';
-      h+='<div style="font-size:10px;color:var(--t2);font-weight:var(--fw-b);margin:1px 0">'+r.sec+'</div>';
-      h+='<div style="font-size:11px;font-weight:var(--fw-x);color:'+col+'">'+(pos?"+":"")+r.avg+'%</div>';
-      if(r.rank===1)h+='<div style="font-size:9px;color:var(--bull)">🔥HOT</div>';
-      if(r.rank===srs.length)h+='<div style="font-size:9px;color:var(--bear)">❄COLD</div>';
+      var topCls=r.rank===1?" top":r.rank===srs.length?" bot":"";
+      var barW=Math.round(Math.abs(r.avg)/maxAbs*100);
+      var barCol=pos?"rgba(0,230,118,.55)":"rgba(255,23,68,.55)";
+      h+='<div class="sec-pill'+topCls+'" style="flex-direction:column;align-items:flex-start;gap:2px;min-width:72px">';
+      // Header row
+      h+='<div style="display:flex;align-items:center;justify-content:space-between;width:100%">';
+      h+='<span style="font-size:11px">'+(secIco[r.sec]||"•")+'</span>';
+      h+='<span style="font-size:11px;font-weight:800;color:'+col+'">'+(pos?"+":"")+r.avg+'%</span>';
+      h+='</div>';
+      // Sector name
+      h+='<div style="font-size:9px;color:var(--t3);font-weight:600;white-space:nowrap">'+r.sec+'</div>';
+      // Mini bar
+      h+='<div style="width:100%;height:3px;background:rgba(255,255,255,.07);border-radius:2px;margin-top:2px">';
+      h+='<div style="height:3px;width:'+barW+'%;background:'+barCol+';border-radius:2px"></div>';
+      h+='</div>';
+      if(r.rank===1)h+='<div style="font-size:8px;color:var(--bull);font-weight:700;letter-spacing:.04em">🔥 TOP</div>';
+      if(r.rank===srs.length)h+='<div style="font-size:8px;color:var(--bear);font-weight:700;letter-spacing:.04em">❄ COLD</div>';
       h+='</div>';
     });
     h+='</div>';
@@ -5558,15 +5771,27 @@ function render(){
       var yellowPart=opps.filter(function(x){return x.verdict.indexOf("🟡")===0;});
       var bluePart=opps.filter(function(x){return x.verdict.indexOf("🔵")===0;});
       if(ulazPart.length){
-        h+='<div class="sec-lbl txt-bull" style="margin-bottom:8px;color:var(--bull)">✅ Ulazi — spremno za trade</div>';
+        h+='<div class="section-header" style="margin-bottom:10px">';
+        h+='<span style="font-size:11px;font-weight:800;color:var(--bull);letter-spacing:.04em;text-transform:uppercase;white-space:nowrap">✅ Ulazi</span>';
+        h+='<span style="font-size:10px;color:rgba(0,230,118,.5);background:rgba(0,230,118,.1);border:.5px solid rgba(0,230,118,.25);border-radius:10px;padding:1px 7px">'+ulazPart.length+'</span>';
+        h+='<div class="section-header-line" style="background:linear-gradient(90deg,rgba(0,230,118,.25) 0%,transparent 100%)"></div>';
+        h+='</div>';
         ulazPart.forEach(function(o){h+=renderOpp(o);});
       }
       if(yellowPart.length){
-        h+='<div class="sec-lbl txt-warn" style="margin:14px 0 8px;color:var(--warn)">🟡 Oprez — čekaj potvrdu</div>';
+        h+='<div class="section-header" style="margin-bottom:10px;margin-top:14px">';
+        h+='<span style="font-size:11px;font-weight:800;color:var(--warn);letter-spacing:.04em;text-transform:uppercase;white-space:nowrap">🟡 Oprez</span>';
+        h+='<span style="font-size:10px;color:rgba(255,167,38,.6);background:rgba(255,167,38,.1);border:.5px solid rgba(255,167,38,.25);border-radius:10px;padding:1px 7px">'+yellowPart.length+'</span>';
+        h+='<div class="section-header-line" style="background:linear-gradient(90deg,rgba(255,167,38,.25) 0%,transparent 100%)"></div>';
+        h+='</div>';
         yellowPart.forEach(function(o){h+=renderOpp(o);});
       }
       if(bluePart.length){
-        h+='<div class="sec-lbl txt-info" style="margin:14px 0 8px;color:var(--info)">🔵 Spekulativno — visok rizik</div>';
+        h+='<div class="section-header" style="margin-bottom:10px;margin-top:14px">';
+        h+='<span style="font-size:11px;font-weight:800;color:var(--info);letter-spacing:.04em;text-transform:uppercase;white-space:nowrap">🔵 Spekulativno</span>';
+        h+='<span style="font-size:10px;color:rgba(41,121,255,.6);background:rgba(41,121,255,.1);border:.5px solid rgba(41,121,255,.25);border-radius:10px;padding:1px 7px">'+bluePart.length+'</span>';
+        h+='<div class="section-header-line" style="background:linear-gradient(90deg,rgba(41,121,255,.25) 0%,transparent 100%)"></div>';
+        h+='</div>';
         bluePart.forEach(function(o){h+=renderOpp(o);});
       }
     } else {
