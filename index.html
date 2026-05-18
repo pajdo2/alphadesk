@@ -278,7 +278,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.12</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.13</span></div>
       <div class="hd-sub" id="hdsub">Učitavam top 100 tokena…</div>
       <div class="hd-claude" id="claude-update" style="display:flex;align-items:center;gap:6px">
         <span id="claude-update-txt">🤖 Claude analiza: —</span>
@@ -2751,39 +2751,55 @@ function renderOpp(o){
   var vBg=isWatchYellow?"rgba(255,167,38,.08)":isWatchBlue?"rgba(41,121,255,.06)":"rgba(0,230,118,.07)";
 
   h+='<div style="background:'+vBg+';padding:10px 16px;border-bottom:.5px solid '+vCol+'33;display:flex;align-items:center;justify-content:space-between;gap:12px">';
-  h+='<div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;flex:1;min-width:0">';
-  h+='<span style="font-size:var(--text-sm);font-weight:var(--fw-x);color:'+vCol+'">'+o.verdict+'</span>';
-  // MTF + tier kao mali badges, sve u jednoj liniji
+  h+='<div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;flex:1;min-width:0">';
+  // ── PRIMARY ROW: verdict + status chips (MTF, TIER, PRAĆEN) ────
+  h+='<span style="font-size:var(--text-sm);font-weight:var(--fw-x);color:'+vCol+';margin-right:2px">'+o.verdict+'</span>';
+  // Unified chip style helper
+  function chip(txt,col,bg,tip,size){
+    var fs=size||10;
+    return'<span'+(tip?' title="'+tip+'"':'')+' style="font-size:'+fs+'px;font-weight:var(--fw-b);color:'+col+';background:'+bg+';padding:2px 7px;border-radius:6px;line-height:1.6;white-space:nowrap'+(tip?';cursor:help':'')+'">'+txt+'</span>';
+  }
   if(o.mtfInfo&&o.mtfInfo.count>=2){
     var mc=o.mtfInfo.count===3?"var(--bull)":"var(--warn)";
-    h+='<span style="font-size:10px;font-weight:var(--fw-b);color:'+mc+';background:'+(o.mtfInfo.count===3?'rgba(0,230,118,.1)':'rgba(255,167,38,.1)')+';padding:2px 7px;border-radius:6px">MTF '+o.mtfInfo.count+'/3</span>';
+    var mb=o.mtfInfo.count===3?"rgba(0,230,118,.1)":"rgba(255,167,38,.1)";
+    h+=chip("MTF "+o.mtfInfo.count+"/3",mc,mb,"Multi-timeframe (1h+4h+1d) trend up");
   }
   if(o.conf>=70){
     var tierLbl=o.conf>=90?"ELITNI":o.conf>=80?"JAK":"DOBAR";
     var tierCol=o.conf>=90?"var(--bull)":o.conf>=80?"var(--warn)":"var(--info)";
-    h+='<span style="font-size:10px;font-weight:var(--fw-x);color:'+tierCol+';letter-spacing:.04em;background:rgba(255,255,255,.05);padding:2px 7px;border-radius:6px">'+tierLbl+'</span>';
+    h+=chip(tierLbl,tierCol,"rgba(255,255,255,.05)","Tier prema confidence");
   }
-  if(alreadyTracked)h+='<span style="font-size:10px;background:rgba(0,230,118,.12);color:var(--bull);border-radius:6px;padding:2px 7px;font-weight:var(--fw-b)">PRAĆEN</span>';
+  if(alreadyTracked)h+=chip("PRAĆEN","var(--bull)","rgba(0,230,118,.12)","Vec u Trackeru kao aktivan trade");
+  // ── CONFLUENCE COUNT — vidljiv pokazatelj kvalitete setupa ─────
+  if(o.confluenceCount!=null){
+    var cc=o.confluenceCount;
+    var ccCol=cc>=5?"var(--bull)":cc>=4?"#69f0ae":cc>=3?"var(--info)":cc>=2?"var(--warn)":"var(--t3)";
+    var ccBg=cc>=4?"rgba(0,230,118,.1)":cc>=3?"rgba(41,121,255,.08)":"rgba(255,167,38,.06)";
+    h+=chip("⚡ "+cc+"/6",ccCol,ccBg,"Confluence: "+cc+" od 6 kategorija potvrdjuje setup (trend/momentum/volume/macro/orderflow/divergence)");
+  }
+  // ── VISUAL SEPARATOR između status i context chips ─────────────
+  h+='<span style="width:1px;height:14px;background:rgba(255,255,255,.08);margin:0 2px"></span>';
   // ── WYCKOFF faza badge (4h primarno, daily fallback) ──────────
   (function(){
     var wy=wyckoff4h[o.sym]||wyckoffData[o.sym];
     if(!wy||!wy.phase)return;
     var pMap={
-      SPRING:    {ico:"🌱",lbl:"Spring",     col:"var(--bull)",  bg:"rgba(0,230,118,.12)", tip:"Phase C — proboj podrške + oporavak. Najjači akumulacijski signal."},
-      SOS:       {ico:"🚀",lbl:"SOS",        col:"var(--bull)",  bg:"rgba(0,230,118,.10)", tip:"Sign of Strength — proboj otpora s volumenom. Markup faza počinje."},
-      LPS:       {ico:"📍",lbl:"LPS",        col:"#69f0ae",      bg:"rgba(105,240,174,.10)",tip:"Last Point of Support — pullback na podršku, volumen presušuje. Re-entry zona."},
-      ACCUMULATION:{ico:"⏳",lbl:"Akumul.",  col:"var(--info)",  bg:"rgba(41,121,255,.10)", tip:"Donji dio raspona, neutralan volumen. Čekaj Spring ili SOS potvrdu."},
-      UTAD:      {ico:"⚠️",lbl:"UTAD",       col:"var(--bear)",  bg:"rgba(255,23,68,.10)",  tip:"Upthrust After Distribution — lažni breakout gore. Distribucija, izbjegavaj long."},
-      SOW:       {ico:"📉",lbl:"SOW",        col:"var(--bear)",  bg:"rgba(255,23,68,.10)",  tip:"Sign of Weakness — proboj podrške s volumenom. Markdown faza."},
-      LPSY:      {ico:"🔻",lbl:"LPSY",       col:"#ff7043",      bg:"rgba(255,112,67,.10)", tip:"Last Point of Supply — slab bounce bez kupaca. Prodavači dominiraju."},
-      DISTRIBUTION:{ico:"🔴",lbl:"Distribuc.",col:"var(--bear)", bg:"rgba(255,23,68,.10)",  tip:"Gornji dio raspona. Pametni novac distribuira pozicije."}
+      SPRING:    {ico:"🌱",lbl:"Spring",     col:"var(--bull)",  bg:"rgba(0,230,118,.12)", tip:"Phase C — proboj podrske + oporavak. Najjaci akumulacijski signal."},
+      SOS:       {ico:"🚀",lbl:"SOS",        col:"var(--bull)",  bg:"rgba(0,230,118,.10)", tip:"Sign of Strength — proboj otpora s volumenom. Markup faza pocinje."},
+      LPS:       {ico:"📍",lbl:"LPS",        col:"#69f0ae",      bg:"rgba(105,240,174,.10)",tip:"Last Point of Support — pullback na podrsku. Re-entry zona."},
+      ACCUMULATION:{ico:"⏳",lbl:"Akumul.",  col:"var(--info)",  bg:"rgba(41,121,255,.10)", tip:"Donji dio raspona. Cekaj Spring ili SOS potvrdu."},
+      UTAD:      {ico:"⚠️",lbl:"UTAD",       col:"var(--bear)",  bg:"rgba(255,23,68,.10)",  tip:"Upthrust After Distribution — lazni breakout gore. Izbjegavaj long."},
+      SOW:       {ico:"📉",lbl:"SOW",        col:"var(--bear)",  bg:"rgba(255,23,68,.10)",  tip:"Sign of Weakness — proboj podrske s volumenom. Markdown faza."},
+      LPSY:      {ico:"🔻",lbl:"LPSY",       col:"#ff7043",      bg:"rgba(255,112,67,.10)", tip:"Last Point of Supply — slab bounce bez kupaca."},
+      DISTRIBUTION:{ico:"🔴",lbl:"Distrib.",col:"var(--bear)", bg:"rgba(255,23,68,.10)",  tip:"Gornji dio raspona. Pametni novac distribuira."}
     };
     var p=pMap[wy.phase];
     if(!p)return;
     var tf=wyckoff4h[o.sym]?"4h":"1d";
-    h+='<span title="'+p.tip+' ('+tf+')" style="font-size:10px;font-weight:var(--fw-b);color:'+p.col+';background:'+p.bg+';padding:2px 7px;border-radius:6px;cursor:help">'+p.ico+' '+p.lbl+'</span>';
+    h+=chip(p.ico+" "+p.lbl,p.col,p.bg,p.tip+" ("+tf+")");
   })();
-  // ── MULTI-TF RSI HEATMAP — vidiš sve TF-ove na prvi pogled ────
+  // ── MULTI-TF RSI HEATMAP — samo kad imamo ekstrem ili divergenciju ──
+  // Skrivaj kad su sva 3 TF u srednjem rangu (40-60) — nema vrijednosti za signal
   (function(){
     var t1h=ta[o.sym],t4h=ta4h[o.sym],tDay=taDaily[o.sym];
     if(!t1h&&!t4h&&!tDay)return;
@@ -2791,23 +2807,27 @@ function renderOpp(o){
     function rsiVal(t){return t&&t.rsi!=null?Math.round(t.rsi):null;}
     var tfs=[{l:"1h",r:rsiVal(t1h)},{l:"4h",r:rsiVal(t4h)},{l:"1d",r:rsiVal(tDay)}].filter(function(x){return x.r!=null;});
     if(!tfs.length)return;
+    // Skriva ako su sve vrijednosti u rangu [40, 65] — neutralno, ne pomaze za signal
+    var hasInteresting=tfs.some(function(x){return x.r<40||x.r>65;});
+    if(!hasInteresting)return;
     var tip="RSI po timeframe-u: "+tfs.map(function(x){return x.l+" "+x.r;}).join(", ");
-    h+='<span title="'+tip+'" style="display:inline-flex;gap:2px;font-size:9px;font-weight:var(--fw-b);background:rgba(255,255,255,.04);padding:2px 5px;border-radius:6px;cursor:help">';
-    tfs.forEach(function(x){h+='<span style="color:'+rsiCol(x.r)+'">'+x.l+' '+x.r+'</span>';});
-    h+='</span>';
+    var inner='<span title="'+tip+'" style="display:inline-flex;gap:3px;font-size:9px;font-weight:var(--fw-b);background:rgba(255,255,255,.04);padding:2px 6px;border-radius:6px;cursor:help;line-height:1.6;white-space:nowrap">';
+    tfs.forEach(function(x){inner+='<span style="color:'+rsiCol(x.r)+'">'+x.l+' '+x.r+'</span>';});
+    inner+='</span>';
+    h+=inner;
   })();
   // ── SENTIMENT DELTA chip — 24h smjer (samo ako ima history) ──
   (function(){
     var sd=getSentimentDelta(o.sym,24);
-    if(!sd||Math.abs(sd.scoreDelta)<3)return; // <3 = noise
+    if(!sd||Math.abs(sd.scoreDelta)<3)return;
     var rising=sd.scoreDelta>0;
     var strong=Math.abs(sd.scoreDelta)>=10;
     var col=rising?(strong?"var(--bull)":"#69f0ae"):(strong?"var(--bear)":"#ff7043");
     var bg=rising?"rgba(0,230,118,.10)":"rgba(255,23,68,.08)";
     var ico=rising?"📈":"📉";
-    var tip="Social score "+sd.oldEntry.score+" → "+sd.current.score+" (Δ "+( rising?"+":"")+sd.scoreDelta+" u "+sd.hoursActual+"h)";
+    var tip="Social score "+sd.oldEntry.score+" → "+sd.current.score+" (Δ "+(rising?"+":"")+sd.scoreDelta+" u "+sd.hoursActual+"h)";
     if(sd.volumeChangePct!==0)tip+=" · volume "+(sd.volumeChangePct>0?"+":"")+sd.volumeChangePct.toFixed(0)+"%";
-    h+='<span title="'+tip+'" style="font-size:9px;font-weight:var(--fw-b);color:'+col+';background:'+bg+';padding:2px 6px;border-radius:6px;cursor:help">'+ico+' '+(rising?"+":"")+sd.scoreDelta+'</span>';
+    h+=chip(ico+" "+(rising?"+":"")+sd.scoreDelta,col,bg,tip,9);
   })();
   // ── WHALE ALERT badge — uvijek vidljiv ako ima recent transakcija ──
   (function(){
@@ -2816,18 +2836,23 @@ function renderOpp(o){
     var inflowUsd=0,outflowUsd=0;
     txs.forEach(function(tx){if(tx.type==="in")inflowUsd+=tx.amount;else if(tx.type==="out")outflowUsd+=tx.amount;});
     var net=outflowUsd-inflowUsd;
-    if(Math.abs(net)<500000)return; // <$0.5M = noise
+    if(Math.abs(net)<500000)return;
     var fmtM=function(v){return"$"+(Math.abs(v)/1e6).toFixed(1)+"M";};
     var bull=net>0;
     var col=bull?"var(--bull)":"var(--bear)";
     var bg=bull?"rgba(0,230,118,.12)":"rgba(255,23,68,.10)";
-    var tip=bull?"Whale outflow "+fmtM(net)+" — akumuliraju u cold wallets (zadnjih 60min)":"Whale inflow "+fmtM(net)+" — pripremaju prodaju (zadnjih 60min)";
-    h+='<span title="'+tip+'" style="font-size:9px;font-weight:var(--fw-b);color:'+col+';background:'+bg+';padding:2px 6px;border-radius:6px;cursor:help">🐋 '+(bull?"+":"-")+fmtM(net)+'</span>';
+    var tip=bull?"Whale outflow "+fmtM(net)+" — akumuliraju u cold wallets (60min)":"Whale inflow "+fmtM(net)+" — pripremaju prodaju (60min)";
+    h+=chip("🐋 "+(bull?"+":"-")+fmtM(net),col,bg,tip,9);
   })();
   h+='</div>';
-  // Conf big number desno
+  // Conf big number desno + meaning indikator ispod
   var confCol=o.conf>=70?"var(--bull)":o.conf>=60?"var(--info)":o.conf>=48?"var(--warn)":"var(--bear)";
-  h+='<div style="font-size:24px;font-weight:var(--fw-x);color:'+confCol+';letter-spacing:-1.5px;line-height:1;flex-shrink:0">'+o.conf+'%</div>';
+  h+='<div style="text-align:right;flex-shrink:0">';
+  h+='<div style="font-size:24px;font-weight:var(--fw-x);color:'+confCol+';letter-spacing:-1.5px;line-height:1">'+o.conf+'%</div>';
+  // Mini score meaning text — pomaze novom user-u (sklanja se na manjim sirinama)
+  var confDesc=o.conf>=70?"jako":o.conf>=60?"dobro":o.conf>=48?"slabo":"loše";
+  h+='<div style="font-size:9px;color:var(--t4);margin-top:1px;letter-spacing:.04em;text-transform:uppercase">'+confDesc+'</div>';
+  h+='</div>';
   h+='</div>';
 
   // ── TOKEN INFO ───────────────────────────────────────────────
@@ -5970,6 +5995,52 @@ function renderDebugLogs(){
   el.innerHTML=h;
 }
 function closeModal(){document.getElementById("modal").classList.remove("open");}
+
+// ── WELCOME MODAL — pokazuje se jednom za nove user-e ────────────
+function showWelcomeModal(){
+  if(lsGet("ad3d_welcomed")==="1")return;
+  var w=document.createElement("div");
+  w.id="welcome-overlay";
+  w.style.cssText="position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(8px)";
+  w.innerHTML=
+    '<div style="max-width:480px;background:linear-gradient(180deg,#1a1f2e 0%,#0d1117 100%);border:.5px solid rgba(0,230,118,.3);border-radius:20px;padding:28px 26px;font-family:inherit;color:#fff;box-shadow:0 20px 60px rgba(0,230,118,.15)">'
+    +'<div style="text-align:center;margin-bottom:20px">'
+    +  '<div style="font-size:38px;margin-bottom:8px">⚡</div>'
+    +  '<div style="font-size:20px;font-weight:900;letter-spacing:-.5px;margin-bottom:4px">Dobrodošao u Alpha Desk</div>'
+    +  '<div style="font-size:12px;color:rgba(255,255,255,.5)">3-dnevni crypto signal scanner s 30+ izvora podataka</div>'
+    +'</div>'
+    +'<div style="background:rgba(255,255,255,.03);border-radius:12px;padding:14px;margin-bottom:14px">'
+    +  '<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px">📊 Kako čitati signal</div>'
+    +  '<div style="display:flex;flex-direction:column;gap:8px;font-size:12px;line-height:1.5">'
+    +    '<div><span style="color:#00e676;font-weight:700">✅ Ulaz</span> — sve provjere prošle (conf ≥60%, confluence ≥2/6, volume OK, BTC stabilan)</div>'
+    +    '<div><span style="color:#ffa726;font-weight:700">🟡 Oprez</span> — dobar signal ali nedostaje 1 gate. Čekaj potvrdu.</div>'
+    +    '<div><span style="color:#2979ff;font-weight:700">🔵 Spek</span> — spekulativan ulaz, visok rizik. Manja pozicija.</div>'
+    +  '</div>'
+    +'</div>'
+    +'<div style="background:rgba(255,255,255,.03);border-radius:12px;padding:14px;margin-bottom:14px">'
+    +  '<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px">🎯 Tabovi</div>'
+    +  '<div style="display:flex;flex-direction:column;gap:6px;font-size:12px;line-height:1.5">'
+    +    '<div>📊 <strong>Pregled</strong> — macro kontekst, sektor RS, top signal</div>'
+    +    '<div>⚡ <strong>Signali</strong> — sve trade prilike (filtriraj po tier-u)</div>'
+    +    '<div>🐸 <strong>Meme</strong> — agresivniji 6% setupi za meme coine</div>'
+    +    '<div>📝 <strong>Tracker</strong> — historija + win rate + AI insights</div>'
+    +  '</div>'
+    +'</div>'
+    +'<div style="background:rgba(41,121,255,.05);border:.5px solid rgba(41,121,255,.2);border-radius:10px;padding:11px;margin-bottom:18px;font-size:11px;color:rgba(255,255,255,.7);line-height:1.5">'
+    +  '💡 <strong>Tip:</strong> Klikni <strong>Detalji</strong> na kartici da vidiš zašto je conf takav kakav je. Sve chips imaju tooltips na hover.'
+    +'</div>'
+    +'<button onclick="dismissWelcome()" style="width:100%;padding:12px;background:linear-gradient(90deg,#00e676,#69f0ae);border:none;border-radius:11px;font-size:14px;font-weight:800;color:#0d1117;cursor:pointer;font-family:inherit;letter-spacing:.02em">Krećem ▸</button>'
+    +'<div style="text-align:center;margin-top:10px"><a onclick="dismissWelcome()" style="font-size:11px;color:rgba(255,255,255,.35);cursor:pointer;text-decoration:underline">Preskoči</a></div>'
+    +'</div>';
+  document.body.appendChild(w);
+}
+function dismissWelcome(){
+  var w=document.getElementById("welcome-overlay");
+  if(w)w.remove();
+  lsSet("ad3d_welcomed","1");
+}
+// Pokreni welcome modal nakon kratkog delay-a (da se app stigne učitati)
+setTimeout(showWelcomeModal,1500);
 function applySettings(){
   settings.minConf=parseInt(document.getElementById("s-conf").value)||40;
   settings.targetPct=parseFloat(document.getElementById("s-tgt").value)||6;

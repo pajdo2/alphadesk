@@ -1,13 +1,13 @@
 {
     "dxy":  99.39,
-    "changeSummary":  "BTC pao ispod 80K USD, F&G smanjen na 43 (strah), naftni šok zbog Hormuz-a i inflacijski pritisci podigli makro rizike te promijenili režim u VOLATILE.",
+    "changeSummary":  "Fear & Greed indeks pao s 43 na 27, BTC klizi prema $78K uz pojačane US-Iran napetosti dok DXY ostaje stabilan na 99.39.",
     "lastUpdated":  "2026-05-18T12:00:00Z",
     "warnings":  {
                      "ACT":  [
 
                              ],
                      "MEME":  [
-
+                                 "Bearish tržište, meme tokeni bez katalizatora"
                               ],
                      "ANIME":  [
 
@@ -19,16 +19,16 @@
 
                              ],
                      "SUI":  [
-                                 "Pad ~8%, najgori performer proteklog tjedna"
+
                              ],
                      "AVAX":  [
-                                  "Pad ~5% uz makro pritiske i likvidacije"
+                                 "Pad uz šire tržište, makro pritisak ostaje"
                               ],
                      "PENGU":  [
 
                                ],
                      "BOME":  [
-
+                                 "Bearish, meme token bez temeljne vrijednosti"
                               ],
                      "DOGS":  [
 
@@ -40,32 +40,32 @@
 
                                 ],
                      "SOL":  [
-
+                                 "Pad 3.2% u 24h, nestabilno makro okruženje"
                              ],
                      "ADA":  [
-                                 "Pad ~5% uz makro pritiske"
+
                              ],
                      "PNUT":  [
-
+                                 "Bearish sentiment, meme token bez katalizatora"
                               ],
                      "AIXBT":  [
 
                                ],
                      "ETH":  [
-                                 "Liquidacije >$360M, rizik daljnjeg pada"
+                                 "Gubitak konsolidacije od travnja, -3.8% u 24h"
                              ],
                      "LINK":  [
-                                  "Pad ~5%, makro pritisci"
+
                               ],
                      "PUMP":  [
 
                               ],
                      "TRUMP":  [
-
+                                 "Meme token u bearish tržištu — visok rizik pada"
                                ],
                      "BTC":  [
-                                 "ETF neto odljevi 13K BTC prošli tjedan",
-                                 "Fed može podići kamate — inflacija na 6%"
+                                 "Pad ispod $79K uz rastuće prinose US obveznica",
+                                 "88% altcoina u minusu, likvidacije > $360M"
                              ]
                  },
     "catalysts":  {
@@ -79,7 +79,8 @@
 
                                 ],
                       "XRP":  [
-                                  "Clarity Act povoljno za Ripple institucije"
+                                  "Ripple osigurao $200M kredit za Prime ekspanziju",
+                                  "Spot XRP ETF priljevi na višemjesečnom maksimumu"
                               ],
                       "BNB":  [
 
@@ -106,7 +107,7 @@
 
                                  ],
                       "SOL":  [
-
+                                  "XRP-SOL cross-chain DeFi integracija aktivna"
                               ],
                       "ADA":  [
 
@@ -121,7 +122,7 @@
 
                               ],
                       "LINK":  [
-                                   "Clarity Act — bankarski sektor ulazi u blockchain"
+
                                ],
                       "PUMP":  [
 
@@ -130,38 +131,39 @@
 
                                 ],
                       "BTC":  [
-                                  "Clarity Act prošao Senate Banking Committee"
+                                  "CLARITY Act prošao Senat — bipartizanska podrška",
+                                  "US-Iran diplomacija: potencijal za deeskalaciju"
                               ]
                   },
-    "fearGreed":  43,
+    "fearGreed":  27,
     "macroPenalty":  1,
-    "regime":  "VOLATILE",
+    "regime":  "BEAR",
     "sentimentScore":  {
                            "ACT":  0,
-                           "MEME":  0,
+                           "MEME":  -1,
                            "ANIME":  0,
                            "XRP":  1,
                            "BNB":  0,
-                           "SUI":  -1,
+                           "SUI":  0,
                            "AVAX":  -1,
                            "PENGU":  0,
-                           "BOME":  0,
+                           "BOME":  -1,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  -1,
-                           "ADA":  -1,
-                           "PNUT":  0,
+                           "SOL":  0,
+                           "ADA":  0,
+                           "PNUT":  -1,
                            "AIXBT":  0,
                            "ETH":  -1,
                            "LINK":  0,
-                           "PUMP":  0,
-                           "TRUMP":  0,
+                           "PUMP":  -1,
+                           "TRUMP":  -1,
                            "BTC":  -1
                        },
-    "aiSummary":  "DXY je na 99.39, ispod razine 100, što blago podupire kripto imovinu no Fed inflacijski pritisci (PPI +6%) i strah od podizanja kamata dominiraju tržištem. Fear & Greed indeks iznosi 43 (strah), BTC oscilira oko 77K USD uz likvidacije duge pozicije veće od 360 milijuna dolara. Naftni šok zbog zatvaranja Hormuzskog tjesnaca gura WTI iznad 107 USD, povećavajući rizik od stagflacije — očekuje se nastavak volatilnosti i potencijalni daljnji pad altkoinova.",
+    "aiSummary":  "DXY se drži na 99.39, ispod razine 100, blago podupirući kripto-imovinu, no US-Iran geopolitičke napetosti i strah od podizanja Fed kamatnih stopa dominiraju tržištem. Fear & Greed indeks pao je na 27 (Strah), BTC klizi prema $78K uz snažne rasprodaje — 88% altcoina danas u minusu. Naftni šok (WTI ~$103) i inflacijski pritisci povećavaju rizik stagflacije, preporuča se oprez i smanjenje izloženosti rizičnim meme tokenima.",
     "warActive":  true,
-    "btcDom":  58.5,
-    "stableDom":  7.2,
-    "oil":  107.72
+    "btcDom":  58.9,
+    "stableDom":  11.9,
+    "oil":  103.24
 }
