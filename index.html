@@ -278,7 +278,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.4</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.6</span></div>
       <div class="hd-sub" id="hdsub">Učitavam top 100 tokena…</div>
       <div class="hd-claude" id="claude-update" style="display:flex;align-items:center;gap:6px">
         <span id="claude-update-txt">🤖 Claude analiza: —</span>
@@ -2623,7 +2623,8 @@ function getOpportunities(){
   // HARD min conf — RL bandit predlaze optimalni threshold (ako ima dovoljno data ≥5 trade)
   var bestArm=typeof confBandit!=="undefined"?confBandit.bestArm():null;
   // dynamicFloor: 44 default (bio 52 — jednako warCap-u, blokirao sve u CRAB+war uvjetima)
-  var dynamicFloor=bestArm?bestArm.threshold:44;
+  // Clamp na [20, 75] — sprječava bandit od preagresivnog filtriranja ako threshold poludi
+  var dynamicFloor=bestArm?Math.min(75,Math.max(20,bestArm.threshold)):44;
   var minConf=activeFilter==="signali"?Math.max(dynamicFloor,settings.minConf):settings.minConf;
   var syms=TOP100.filter(function(s){
     if(!px[s]||!px[s].p||px[s].p<=0||KNOWN_MEME.indexOf(s)>-1)return false;
@@ -6659,8 +6660,15 @@ function fetchNewsData(){
 // Simulira kako bi naš signal engine radio na prošlim podacima
 // Koristi samo tehničke signale (RSI, MACD, EMA, BB, divergencija)
 // jer futures/orderbook podaci nisu dostupni historijski
+//
+// CONCURRENCY GUARD — paralelni pozivi pišu u isti signalBacktest/walkForwardResults
+// objekt i scramble rezultate. Flag _btRunning blokira ponovni poziv dok nije gotov.
+var _btRunning={regular:false,signal:false,walkforward:false};
 function runBacktest(){
+  if(_btRunning.regular){showToast("⏳ Backtest već radi, pričekaj…");return;}
+  _btRunning.regular=true;
   var btSyms=["BTC","ETH","SOL","XRP","BNB","ADA","LINK","AVAX","SUI","DOGE"];
+  var btDone=0;
   btSyms.forEach(function(sym,idx){
     setTimeout(function(){
       safeFetch("https://api.binance.com/api/v3/klines?symbol="+sym+"USDT&interval=1d&limit=120")
@@ -6707,7 +6715,11 @@ function runBacktest(){
             n:results.length,hits:nHits,
             recent:results.slice(-15),ts:Date.now()
           };
-        }).catch(function(){});
+        }).catch(function(){})
+        .then(function(){
+          btDone++;
+          if(btDone===btSyms.length)_btRunning.regular=false;
+        });
     },idx*700);
   });
 }
@@ -6716,12 +6728,14 @@ function runBacktest(){
 // Mjeri koliko svaki signal poboljšava (ili smanjuje) win rate vs. baseline
 // Koristi iste daily klines (closes+volume+high+low) za 10 tokena, 120 dana
 function runSignalBacktest(){
+  if(_btRunning.signal){showToast("⏳ Signal backtest već radi, pričekaj…");return;}
+  _btRunning.signal=true;
   var btSyms=["BTC","ETH","SOL","XRP","BNB","ADA","LINK","AVAX","SUI","DOGE"];
   var allData={};
   var loaded=0;
   function tryProcess(){
     loaded++;
-    if(loaded===btSyms.length)processSignalBacktest(allData);
+    if(loaded===btSyms.length){processSignalBacktest(allData);_btRunning.signal=false;}
   }
   btSyms.forEach(function(sym,idx){
     setTimeout(function(){
@@ -6860,10 +6874,12 @@ var walkForwardResults=null;
 try{walkForwardResults=JSON.parse(localStorage.getItem("ad3d_walkforward")||"null");}catch(e){}
 
 function runWalkForwardBacktest(){
+  if(_btRunning.walkforward){showToast("⏳ Walk-forward backtest već radi, pričekaj…");return;}
+  _btRunning.walkforward=true;
   var syms=["BTC","ETH","SOL","XRP","BNB","ADA","LINK","AVAX","DOGE","SUI","NEAR","DOT","UNI","ATOM","OP"];
   var allData={};
   var loaded=0;
-  function done(){loaded++;if(loaded===syms.length)processWalkForward(allData);}
+  function done(){loaded++;if(loaded===syms.length){processWalkForward(allData);_btRunning.walkforward=false;}}
   syms.forEach(function(sym,idx){
     setTimeout(function(){
       safeFetch("https://api.binance.com/api/v3/klines?symbol="+sym+"USDT&interval=1d&limit=200")
