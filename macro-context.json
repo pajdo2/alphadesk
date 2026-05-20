@@ -1,7 +1,7 @@
 {
-    "dxy":  99.08,
-    "changeSummary":  "Nafta je skočila s $103.54 na $110.12/bbl jer Trump ponovo zaprijetio Iranu, warActive se aktivirao i podigao macroPenalty na 2, dok DXY i F&G ostaju nepromijenjeni.",
-    "lastUpdated":  "2026-05-19T17:00:00Z",
+    "dxy":  99.4,
+    "changeSummary":  "Nafta je pala s $110.12 na ~$103/bbl nakon što je Trump poništio napad na Iran, DXY blago porastao s 99.08 na 99.4, Fear & Greed ostao u strahu (30→31), BTC dominacija porasla na 60% uz nastavak klizanja cijena.",
+    "lastUpdated":  "2026-05-20T09:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -13,7 +13,7 @@
 
                                ],
                      "XRP":  [
-                                 "100+ amandmana u Senatu odgađaju CLARITY Act"
+
                              ],
                      "BNB":  [
 
@@ -22,7 +22,7 @@
 
                              ],
                      "AVAX":  [
-                                  "Slabost altcoina, nema jasnog katalizatora"
+
                               ],
                      "PENGU":  [
 
@@ -40,7 +40,7 @@
 
                                 ],
                      "SOL":  [
-                                 "Dnevni pad -4%, slab momentum uz tržišnom slabošću"
+
                              ],
                      "ADA":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-                                 "$650M likvidacija predvodi altcoin slabost"
+                               "Odlasci ključnih developera iz Ethereum Foundation"
                              ],
                      "LINK":  [
 
@@ -61,10 +61,10 @@
 
                               ],
                      "TRUMP":  [
-
+                                "TRUMP token volatilan uz geopolitičke promjene"
                                ],
                      "BTC":  [
-                                 "Iran-SAD napetosti drže rizičnu imovinu pod pritiskom"
+                               "BTC na najnižoj razini od 1. svibnja (~$77K)"
                              ]
                  },
     "catalysts":  {
@@ -78,10 +78,10 @@
 
                                 ],
                       "XRP":  [
-                                   "CLARITY Act prošao Senate Banking Committee 15-9"
+                                "CLARITY Act napreduje u Senate Banking Committee"
                               ],
                       "BNB":  [
-                                   "BSC kvantna sigurnost testirana uspješno"
+
                               ],
                       "SUI":  [
 
@@ -114,10 +114,10 @@
 
                                ],
                       "AIXBT":  [
-                                    "AI narrativ jača, institucionalni interes raste"
+
                                 ],
                       "ETH":  [
-                                   "DeFi ekviti perp pokrenut s Nasdaq podacima"
+
                               ],
                       "LINK":  [
 
@@ -129,38 +129,38 @@
 
                                 ],
                       "BTC":  [
-                                   "CLARITY Act katalizator za regulatornu jasnoću"
+                                "Trump poništio napad na Iran, de-eskalacija geopolitike"
                               ]
                   },
-    "fearGreed":  30,
-    "macroPenalty":  2,
+    "fearGreed":  31,
+    "macroPenalty":  1,
     "regime":  "VOLATILE",
     "sentimentScore":  {
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  2,
+                           "XRP":  1,
                            "BNB":  0,
                            "SUI":  0,
-                           "AVAX":  -1,
+                           "AVAX":  0,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  -1,
+                           "SOL":  0,
                            "ADA":  0,
                            "PNUT":  0,
-                           "AIXBT":  1,
+                           "AIXBT":  0,
                            "ETH":  -1,
                            "LINK":  0,
                            "PUMP":  0,
-                           "TRUMP":  0,
+                           "TRUMP":  -1,
                            "BTC":  1
                        },
-    "aiSummary":  "DXY ostaje stabilan na 99.08, ispod razine 100, pružajući blagi dolar-olakšaj kriptima, no nafta je skočila na $110.12/bbl jer je Trump ponovo zaprijetio Iranu s porukom 'sat otkucava', što je aktiviralo warActive i podiglo macroPenalty na 2. Fear & Greed indeks zadržava se u zoni straha na 30 dok Bitcoin klizi na ~$77K uz $650M likvidacija na weekendu predvođenih ETH-om. CLARITY Act prošao je Senate Banking Committee 15-9 što je pozitivan signal za BTC i XRP, ali 100+ amandmana uvode rizik odgode regulatorne jasnoće.",
+    "aiSummary":  "DXY je blago porastao na 99.4 ostajući ispod razine 100 što pruža umjeren dolar-olakšaj kriptima, dok je Trump poništio planirani napad na Iran čime je nafta pala s $107 na ~$103/bbl smanjujući energetske inflacijske pritiske. Fear & Greed indeks ostaje u zoni straha na 31, Bitcoin klizi na ~$77K dostigavši najniže razine od 1. svibnja, uz ETH na najnižoj točki od 7. travnja usred odlazaka ključnih developera iz Ethereum Foundationa. Očekuje se nastavak volatilnosti uz ograničen oporavak sve dok geopolitička nesigurnost i regulatorna pitanja oko tržišne strukture kriptima ostanu neriješena.",
     "warActive":  true,
-    "btcDom":  59.5,
-    "stableDom":  6.5,
-    "oil":  110.12
+    "btcDom":  60.0,
+    "stableDom":  11.9,
+    "oil":  103.0
 }
