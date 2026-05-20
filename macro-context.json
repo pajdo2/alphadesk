@@ -1,7 +1,7 @@
 {
     "dxy":  99.4,
-    "changeSummary":  "Nafta je pala s $110.12 na ~$103/bbl nakon što je Trump poništio napad na Iran, DXY blago porastao s 99.08 na 99.4, Fear & Greed ostao u strahu (30→31), BTC dominacija porasla na 60% uz nastavak klizanja cijena.",
-    "lastUpdated":  "2026-05-20T09:00:00Z",
+    "changeSummary":  "Fear & Greed indeks pao je s 31 na 25 (Extreme Fear), dok BTC nastavlja klizanje prema $77K uz zadržanu BTC dominaciju od 60% i nepromijenjeni DXY od ~99.4.",
+    "lastUpdated":  "2026-05-20T10:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-                               "Odlasci ključnih developera iz Ethereum Foundation"
+                                 "Odlasci ključnih developera iz Ethereum Foundationa"
                              ],
                      "LINK":  [
 
@@ -61,10 +61,10 @@
 
                               ],
                      "TRUMP":  [
-                                "TRUMP token volatilan uz geopolitičke promjene"
+
                                ],
                      "BTC":  [
-                               "BTC na najnižoj razini od 1. svibnja (~$77K)"
+                                 "Extreme Fear 25, BTC klizi na ~$77K, visoka volatilnost"
                              ]
                  },
     "catalysts":  {
@@ -78,7 +78,7 @@
 
                                 ],
                       "XRP":  [
-                                "CLARITY Act napreduje u Senate Banking Committee"
+                                  "SEC/CFTC digitalna taksonomija - regulatorna jasnoća"
                               ],
                       "BNB":  [
 
@@ -117,7 +117,7 @@
 
                                 ],
                       "ETH":  [
-
+                                  "Bitmine proširio holdings na 5.21M ETH (~$13.4B, 4.3% supply)"
                               ],
                       "LINK":  [
 
@@ -129,10 +129,10 @@
 
                                 ],
                       "BTC":  [
-                                "Trump poništio napad na Iran, de-eskalacija geopolitike"
+                                  "Trump poništio napad na Iran, nafta blago popušta s vrhova"
                               ]
                   },
-    "fearGreed":  31,
+    "fearGreed":  25,
     "macroPenalty":  1,
     "regime":  "VOLATILE",
     "sentimentScore":  {
@@ -152,15 +152,15 @@
                            "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  -1,
+                           "ETH":  1,
                            "LINK":  0,
                            "PUMP":  0,
-                           "TRUMP":  -1,
-                           "BTC":  1
+                           "TRUMP":  0,
+                           "BTC":  -1
                        },
-    "aiSummary":  "DXY je blago porastao na 99.4 ostajući ispod razine 100 što pruža umjeren dolar-olakšaj kriptima, dok je Trump poništio planirani napad na Iran čime je nafta pala s $107 na ~$103/bbl smanjujući energetske inflacijske pritiske. Fear & Greed indeks ostaje u zoni straha na 31, Bitcoin klizi na ~$77K dostigavši najniže razine od 1. svibnja, uz ETH na najnižoj točki od 7. travnja usred odlazaka ključnih developera iz Ethereum Foundationa. Očekuje se nastavak volatilnosti uz ograničen oporavak sve dok geopolitička nesigurnost i regulatorna pitanja oko tržišne strukture kriptima ostanu neriješena.",
+    "aiSummary":  "DXY ostaje ispod 100 na razini 99.4 pružajući umjeren dolar-olakšaj kriptima, dok je nafta i dalje visoka oko $107/bbl zbog zatvorenog Hormuškog prolaza i geopolitičkih tenzija s Iranom. Fear & Greed indeks potonuo je na 25 (Extreme Fear) s prethodnih 31, BTC klizi na ~$77K uz dominaciju od 60% dok su altcoini pod povećanim pritiskom. Očekuje se nastavak volatilnosti uz ograničen oporavak sve dok geopolitička neizvjesnost i visoke cijene energenata ne popuste.",
     "warActive":  true,
     "btcDom":  60.0,
-    "stableDom":  11.9,
-    "oil":  103.0
+    "stableDom":  11.8,
+    "oil":  107.0
 }
