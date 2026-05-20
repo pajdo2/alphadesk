@@ -416,7 +416,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.25</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.26</span></div>
       <div class="hd-sub" id="hdsub">Učitavam top 100 tokena…</div>
       <div class="hd-claude" id="claude-update" style="display:flex;align-items:center;gap:6px">
         <span id="claude-update-txt">🤖 Claude analiza: —</span>
@@ -2413,8 +2413,11 @@ function computeConfidence(score,sym,targetPct){
   if(calCap!==null)conf=Math.min(conf,calCap);
   var tokAcc=getTokenAccuracy(sym,targetPct||6);
   if(tokAcc!==null){
-    var tokCap=Math.round((tokAcc*100+12)/5)*5;
-    conf=Math.min(conf,Math.max(25,tokCap));
+    // Min 55: per-token accuracy cap ne smije blokirati sve signale za taj token.
+    // Svrha je reducirati conf za loše tokene, ne blokirati ih potpuno.
+    // 55% min dozvoljava da token pokaže Watch (48-59%) čak i s lošom historijom.
+    var tokCap=Math.round((tokAcc*100+20)/5)*5;
+    conf=Math.min(conf,Math.max(55,tokCap));
   }
   return conf;
 }
@@ -3215,7 +3218,7 @@ try{
   }
 }catch(e){predTracker=[];}
 
-// ── ADAPTIVE SIGNAL WEIGHTS (regime-aware od v5.25) ──────────────
+// ── ADAPTIVE SIGNAL WEIGHTS (regime-aware od v5.26) ──────────────
 // Struktura: {[regime]: {field: weight}, _global: {field: weight}}
 // Lookup hijerarhija: trenutni regime → _global → default
 // Razlog: RSI oversold u BEAR marketu je death trap, u BULL je odlican
@@ -3283,7 +3286,7 @@ function buildSnap(sym){
 }
 
 // Izračun lift-based težina iz zatvorenih predikcija
-// v5.25: regime-aware — računa zasebne weights za BULL/BEAR/CRAB + _global fallback
+// v5.26: regime-aware — računa zasebne weights za BULL/BEAR/CRAB + _global fallback
 function computeSignalWeights(){
   var now=Date.now();
   var DAY30=30*24*3600*1000;
@@ -3639,50 +3642,80 @@ function statsForGroup(preds){
 
 // ── HISTORIJSKA KALIBRACIJA CONFIDENCE SCORE-A ───────────────────
 // Ako je prošla točnost X%, engine kalibrira buduće confidence score-ove
-// Primjer: conf=70% ali točnost=45% → cap confidence na 52% (45+7 buffer)
 // Filtrira po targetPct da kalibracija bude specifična za svaki target
-// Unaprijeđeno: sliding window zadnjih 30 predikcija (sprječava feedback loop s davnom poviješću)
+// Sliding window zadnjih 30 predikcija (sprječava feedback loop s davnom poviješću)
+//
+// VAŽNO — MIN CAP = 62 (ne 40):
+// calCap ne smije potpuno blokirati signale (passesAllGates treba conf>=60).
+// Svrha kalibracije je ograničiti VISOKE conf score-ove (80-88%), ne spriječiti
+// pojavu bilo kakvih signala. Minimum 62 osigurava da engine ostaje aktivan
+// čak i u lošim periodima — signal se tada prikaže s niskim conf.
+//
+// ANTI-BULK: Isključuje predikcije batch-close operacija (isti timestamp u sekundi)
+// — to su force-close/reset unosi, ne organski trade-ovi, i lažno truju kalibraciju.
 function getConfCalibrationCap(targetPct){
   var pct=targetPct||settings.targetPct;
   var allClosed=predTracker.filter(function(p){return p.status!=="AKTIVAN";});
-  // Sliding window: samo zadnjih 30 zatvorenih (predTracker je newest-first)
-  // Recency bias je poželjno — stariji podaci reflektiraju drugačiji tržišni režim
-  var recent=allClosed.slice(0,30);
+  // Anti-bulk: detektira timestamps koji se ponavljaju (batch import/reset)
+  // Ako 3+ predikcija dijele isti timestamp do sekunde → isključi ih
+  var tsCounts={};
+  allClosed.forEach(function(p){
+    var tsSec=p.timestamp?Math.floor(p.timestamp/1000):0;
+    if(tsSec>0)tsCounts[tsSec]=(tsCounts[tsSec]||0)+1;
+  });
+  var organic=allClosed.filter(function(p){
+    var tsSec=p.timestamp?Math.floor(p.timestamp/1000):0;
+    return tsSec===0||(tsCounts[tsSec]||0)<3; // <3 = nije bulk batch
+  });
+  // Ako nema dovoljno organskih, koristi sve (ne penaliziraj)
+  var pool=organic.length>=8?organic:allClosed;
+  // Sliding window: zadnjih 30
+  var recent=pool.slice(0,30);
   var closed=recent.filter(function(p){
     if(p.status==="AKTIVAN")return false;
     if(targetPct==="meme")return p.type==="meme"||(p.targetPct===10);
-    // 6% i 5% se tretiraju kao isti standardni engine (backward compat)
     var match=targetPct===6?(p.targetPct===5||p.targetPct===6||!p.targetPct):p.targetPct===targetPct;
     return match&&p.type!=="meme";
   });
   // Fallback na sve iz recent prozora ako nema dovoljno za ovaj target
   if(closed.length<8){
-    if(recent.length<8)return null;
+    if(recent.length<8)return null; // premalo podataka — ne kalibrirati
     closed=recent;
   }
   var hits=closed.filter(function(p){return p.status==="POGODAK";});
   var realAcc=hits.length/closed.length*100;
-  var cap=Math.round((realAcc+12)/5)*5;
-  return Math.max(40,Math.min(88,cap));
+  // Buffer 20pt (bio 12): buffer 20 osigurava da 40% win rate daje cap=60
+  // Formula: 40%+20=60 → round(12)*5=60 ✅ engine ostaje aktivan
+  var cap=Math.round((realAcc+20)/5)*5;
+  // Min 62: nikad ne blokirati ✅ signal completely (passesAllGates treba 60)
+  return Math.max(62,Math.min(88,cap));
 }
 
 // ── KALIBRACIJA PO TOKENU ────────────────────────────────────────
 function getTokenAccuracy(sym,tPct){
   var pct=tPct||settings.targetPct;
-  // Prvo traži podatke za ovaj specifičan target
-  // pct=6 uključuje i stare 5% predikcije (isti engine, backward compat)
   var tokenPreds=predTracker.filter(function(p){
     if(p.sym!==sym||p.status==="AKTIVAN")return false;
     var tp=p.targetPct||6;
     return pct===6?(tp===5||tp===6):tp===pct;
   });
-  // Fallback na sve podatke za token ako nema dovoljno
   if(tokenPreds.length<5){
     tokenPreds=predTracker.filter(function(p){return p.sym===sym&&p.status!=="AKTIVAN";});
     if(tokenPreds.length<5)return null;
   }
-  var hits=tokenPreds.filter(function(p){return p.status==="POGODAK";});
-  return hits.length/tokenPreds.length;
+  // Anti-bulk: isključi batch-close unose (isti timestamp do sekunde)
+  var tsCounts={};
+  tokenPreds.forEach(function(p){
+    var tsSec=p.timestamp?Math.floor(p.timestamp/1000):0;
+    if(tsSec>0)tsCounts[tsSec]=(tsCounts[tsSec]||0)+1;
+  });
+  var organic=tokenPreds.filter(function(p){
+    var tsSec=p.timestamp?Math.floor(p.timestamp/1000):0;
+    return tsSec===0||(tsCounts[tsSec]||0)<3;
+  });
+  var pool=organic.length>=3?organic:tokenPreds;
+  var hits=pool.filter(function(p){return p.status==="POGODAK";});
+  return hits.length/pool.length;
 }
 
 // ── PER-TOKEN BLOCK GATE ─────────────────────────────────────────
