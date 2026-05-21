@@ -90,26 +90,34 @@ function Invoke-ClaudeAnalysis {
     }
     Write-Log "Claude se pokrece (prompt $($prompt.Length) znakova)..."
     $startTime = Get-Date
+    # Zapamti LastWriteTime PRIJE poziva — 1c je vec upisao skeleton,
+    # pa "svjezina" mora biti novija od ovog trenutka (ne od 1c upisivanja).
+    $preCallTime = $startTime.AddSeconds(-1)  # 1s tolerancija za sat
+    if (Test-Path $JSON_PATH) {
+        $preCallTime = (Get-Item $JSON_PATH).LastWriteTime
+    }
+
     # KLJUC: --dangerously-skip-permissions je obavezan za non-interactive Write tool
-    # (Bez toga Claude tiho fejla i samo printa markdown na stdout)
-    # $null | signalizira "nema stdin" (Claude CLI v2 inace ceka 3s)
+    # -p = --print (non-interactive, izlaz na stdout)
+    # --tools: ogranicicemo na potrebne alate (WebSearch, WebFetch, Read, Write)
     # 2>&1 spaja stderr sa stdout — bez toga PS5.1 postavlja LASTEXITCODE=1 kad ima stderr writes
-    # Read je obavezan: Claude CLI v2 zahtijeva Read prije Write (sigurnosna provjera prepisa)
-    $null | & $claudeExe --tools "WebSearch,WebFetch,Read,Write" --dangerously-skip-permissions -p $prompt 2>&1 | Out-Null
+    $null | & $claudeExe --dangerously-skip-permissions -p $prompt --tools WebSearch WebFetch Read Write 2>&1 | Out-Null
     $exitCode = $LASTEXITCODE
     $elapsed = ((Get-Date) - $startTime).TotalSeconds
-    # Provjeri stvarni uspjeh: je li JSON datoteka stvorena/azurirana
+
+    # Provjeri stvarni uspjeh: je li JSON azuriran NAKON sto je Claude pokrenut
     $jsonExists = Test-Path $JSON_PATH
     $jsonFresh = $false
     if ($jsonExists) {
-        $age = (Get-Date) - (Get-Item $JSON_PATH).LastWriteTime
-        $jsonFresh = $age.TotalSeconds -lt ($elapsed + 60)
+        $fileTime = (Get-Item $JSON_PATH).LastWriteTime
+        $jsonFresh = $fileTime -gt $preCallTime
     }
     if (-not $jsonFresh) {
-        Write-Log "[ERROR] Claude exit $exitCode i JSON nije svjez (trajalo $($elapsed.ToString('F1'))s)" "Red"
+        Write-Log "[ERROR] Claude exit $exitCode ali JSON NIJE azuriran nakon poziva (trajalo $($elapsed.ToString('F1'))s)" "Red"
+        Write-Log "        preCallTime: $preCallTime | fileTime: $((Get-Item $JSON_PATH -ErrorAction SilentlyContinue).LastWriteTime)" "Red"
         return $false
     }
-    Write-Log "Claude zavrsen (trajalo $($elapsed.ToString('F1'))s, JSON svjez)" "Green"
+    Write-Log "Claude zavrsen (trajalo $($elapsed.ToString('F1'))s, JSON azuriran)" "Green"
     return $true
 }
 
