@@ -1,7 +1,7 @@
 {
     "dxy":  99.4,
-    "changeSummary":  "Sentiment blago poboljšan - Fear & Greed porastao s 31 na 40, BTC stabiliziran oko $77K uz institucionalnu kupnju Strategija.",
-    "lastUpdated":  "2026-05-21T10:00:00Z",
+    "changeSummary":  "DXY i Fear&Greed ostali stabilni (~99.4 i 40), nafta porasla s $97 na ~$101 zbog trajnih Hormuz tenzija dok BTC konsolidira oko $77.7K s dominacijom na 58.5%.",
+    "lastUpdated":  "2026-05-21T10:30:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -61,10 +61,10 @@
 
                               ],
                      "TRUMP":  [
-                                   "WLFI holdings uzrokovali $271M gubitak AI Financial"
+
                                ],
                      "BTC":  [
-                                 "Geopolitika: Hormuz napetosti, nafta volatilna -6.5%"
+                                 "Konsolidacija ispod $80K, geopoliticke Hormuz napetosti"
                              ]
                  },
     "catalysts":  {
@@ -78,7 +78,7 @@
 
                                 ],
                       "XRP":  [
-                                  "Clarity Act regulatorna jasnoća SEC/CFTC podjela"
+
                               ],
                       "BNB":  [
 
@@ -105,7 +105,7 @@
 
                                  ],
                       "SOL":  [
-                                  "Clarity Act pozitivan za SOL ekosustav"
+
                               ],
                       "ADA":  [
 
@@ -114,13 +114,13 @@
 
                                ],
                       "AIXBT":  [
-                                    "AI narrativ dominantan u 2026, pozitivno za AI tokene"
+
                                 ],
                       "ETH":  [
-                                  "Bitmine drzi 5.21M ETH (~$13.4B) - institucijsko povjerenje"
+                                  "Institucionalni ETF pritjeci, Bitmine drzi 5.28M ETH"
                               ],
                       "LINK":  [
-
+                                   "LINK bilježi pozitivan rast u svibnju 2026"
                                ],
                       "PUMP":  [
 
@@ -129,8 +129,7 @@
 
                                 ],
                       "BTC":  [
-                                  "Strategy kupila $2B BTC, ukupno 843K BTC u trezoru",
-                                  "Clarity Act prosao Senat - regulatorna jasno ca"
+                                  "Institucionalni ETF pritjeci $2.4B u travnju"
                               ]
                   },
     "fearGreed":  40,
@@ -140,7 +139,7 @@
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  1,
+                           "XRP":  0,
                            "BNB":  0,
                            "SUI":  0,
                            "AVAX":  0,
@@ -149,19 +148,19 @@
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  1,
+                           "SOL":  0,
                            "ADA":  0,
                            "PNUT":  0,
-                           "AIXBT":  1,
+                           "AIXBT":  0,
                            "ETH":  1,
-                           "LINK":  0,
+                           "LINK":  2,
                            "PUMP":  0,
-                           "TRUMP":  -1,
-                           "BTC":  2
+                           "TRUMP":  0,
+                           "BTC":  1
                        },
-    "aiSummary":  "DXY oko 99.4 ostaje ispod 100 sto je umjereno povoljno za kripto imovinu. Fear & Greed indeks na 40 (Strah) ukazuje na oprezan sentiment unatoc pozitivnim katalizatorima poput Clarity Act-a i Strategyjevih kupnji. Nafta volatilna zbog Hormuz napetosti, a BTC konsolidira oko $77K - ocekuje se daljnja volatilnost dok geopoliticka situacija ostaje nerijesena.",
+    "aiSummary":  "DXY ostaje stabilan na ~99.4, ispod razine 100 sto je umjereno povoljno za kriptoimovinu. Fear & Greed indeks na 40 (Strah) odrazava opreznost ulagaca unatoc pozitivnim institucijskim ETF pritjecajima dok BTC konsolidira oko $77.7K. Nafta je porasla na ~$101 zbog trajnih geopolitickih tenzija na Hormuzkom prolazu, no iran optimizam signalizira moguce smirenje i daljnju volatilnost u kratkom roku.",
     "warActive":  true,
-    "btcDom":  58.2,
-    "stableDom":  11.8,
-    "oil":  97.33
+    "btcDom":  58.5,
+    "stableDom":  11.9,
+    "oil":  101.0
 }
