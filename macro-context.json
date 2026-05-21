@@ -1,7 +1,7 @@
 {
-    "dxy":  99.4,
-    "changeSummary":  "DXY i Fear&Greed ostali stabilni (~99.4 i 40), nafta porasla s $97 na ~$101 zbog trajnih Hormuz tenzija dok BTC konsolidira oko $77.7K s dominacijom na 58.5%.",
-    "lastUpdated":  "2026-05-21T10:30:00Z",
+    "dxy":  99.3,
+    "changeSummary":  "BTC se odbio od podrske na ~$76K dok DXY blago pao na 99.3, Fear & Greed nepromijenjen na 40, a XRP i SOL biljeze svjeze institucionalne pritjecaje ukupno $122M.",
+    "lastUpdated":  "2026-05-21T11:30:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-
+                                 "Slabi YTD prinos vs altcoini (+21% vs XRP +400%)"
                              ],
                      "LINK":  [
 
@@ -61,10 +61,10 @@
 
                               ],
                      "TRUMP":  [
-
+                                   "Meme token visoka volatilnost, FUD rizik"
                                ],
                      "BTC":  [
-                                 "Konsolidacija ispod $80K, geopoliticke Hormuz napetosti"
+                                 "ETF odljevi ~$1B prosli tjedan, rotacija prema altcoinima"
                              ]
                  },
     "catalysts":  {
@@ -78,7 +78,8 @@
 
                                 ],
                       "XRP":  [
-
+                                  "Spot ETF pritjecaji $1.21B ukupno, rekordni rast",
+                                  "CLARITY Act napreduje u Senatu 15-9"
                               ],
                       "BNB":  [
 
@@ -105,7 +106,8 @@
 
                                  ],
                       "SOL":  [
-
+                                  "Institucionalni pritjecaji $55M tjedan, jaki on-chain",
+                                  "Najjaci L1 on-chain podaci u industriji"
                               ],
                       "ADA":  [
 
@@ -117,10 +119,10 @@
 
                                 ],
                       "ETH":  [
-                                  "Institucionalni ETF pritjeci, Bitmine drzi 5.28M ETH"
+                                  "Institucionalni kapital cuva ETH kao blue-chip"
                               ],
                       "LINK":  [
-                                   "LINK bilježi pozitivan rast u svibnju 2026"
+
                                ],
                       "PUMP":  [
 
@@ -129,7 +131,8 @@
 
                                 ],
                       "BTC":  [
-                                  "Institucionalni ETF pritjeci $2.4B u travnju"
+                                  "Odboj od $76K podrske, prvi oporavak u 3 tjedna",
+                                  "Institucionalni ETF fondovi i dalje operativni"
                               ]
                   },
     "fearGreed":  40,
@@ -139,7 +142,7 @@
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  0,
+                           "XRP":  2,
                            "BNB":  0,
                            "SUI":  0,
                            "AVAX":  0,
@@ -148,19 +151,19 @@
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  0,
+                           "SOL":  2,
                            "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
                            "ETH":  1,
-                           "LINK":  2,
+                           "LINK":  0,
                            "PUMP":  0,
-                           "TRUMP":  0,
+                           "TRUMP":  -1,
                            "BTC":  1
                        },
-    "aiSummary":  "DXY ostaje stabilan na ~99.4, ispod razine 100 sto je umjereno povoljno za kriptoimovinu. Fear & Greed indeks na 40 (Strah) odrazava opreznost ulagaca unatoc pozitivnim institucijskim ETF pritjecajima dok BTC konsolidira oko $77.7K. Nafta je porasla na ~$101 zbog trajnih geopolitickih tenzija na Hormuzkom prolazu, no iran optimizam signalizira moguce smirenje i daljnju volatilnost u kratkom roku.",
+    "aiSummary":  "DXY ostaje stabilan ispod razine 100 na 99.3, sto je umjereno povoljno za kripto unatoc Iranskim tenzijama koje podizu inflacijske brige i drzе naftu na ~$101. Fear & Greed ostaje na 40 (Strah) dok BTC pokusava prvi znacajan odboj od kriticne podrske ~$76K nakon tjednog pada s $82K, uz BTC dominanciju na 58.2%. XRP i SOL biljeze snazne institucionalne pritjecaje ($67.6M/$55.1M tjedno), dok Bitcoin ETF fondovi biljeze odljeve ~$1B, sto signalizira rotaciju kapitala prema odabranim altcoinima — osobito XRP-u koji vodi s CLARITY Act regulatornim napretkom.",
     "warActive":  true,
-    "btcDom":  58.5,
-    "stableDom":  11.9,
+    "btcDom":  58.2,
+    "stableDom":  8.5,
     "oil":  101.0
 }
