@@ -1,7 +1,7 @@
 {
     "dxy":  99.3,
-    "changeSummary":  "Makro uvjeti ostaju gotovo nepromijenjeni u odnosu na jutarnju analizu — DXY drži 99.3, FG i BTC dominacija stagniraju, dok SOL i LINK iskaču pozitivnim katalizatorima (ETF priljevi, DTCC integracija).",
-    "lastUpdated":  "2026-05-25T14:00:00Z",
+    "changeSummary":  "BTC pada prema potpori $74K pod pritiskom ETF odljeva dok macroPenalty raste s 0 na 1 zbog obnove iranskih napetosti, a DXY (99.3) i Fear & Greed (39) ostaju nepromijenjeni.",
+    "lastUpdated":  "2026-05-25T16:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -22,7 +22,7 @@
 
                              ],
                      "AVAX":  [
-                                 "Binance delisting para — smanjen likviditet"
+
                               ],
                      "PENGU":  [
 
@@ -43,7 +43,7 @@
 
                              ],
                      "ADA":  [
-                                "Binance delisting para — smanjen likviditet"
+
                              ],
                      "PNUT":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-                                "ETF tjedni odljev $75.94M — kraj 10-dnevnih priljeva"
+
                              ],
                      "LINK":  [
 
@@ -64,7 +64,7 @@
 
                                ],
                      "BTC":  [
-
+                                 "ETF odljevi pritišću BTC prema potpori $74K"
                              ]
                  },
     "catalysts":  {
@@ -78,11 +78,10 @@
 
                                 ],
                       "XRP":  [
-                                 "CLARITY Act prošao Senat 15-9, XRP commodity status",
-                                 "ETF priljevi rastu unatoč slabosti tržišta"
+                                  "CLARITY Act napreduje, povoljno za XRP"
                               ],
                       "BNB":  [
-
+                                  "BNB Agent SDK lansiran danas"
                               ],
                       "SUI":  [
 
@@ -106,8 +105,7 @@
 
                                  ],
                       "SOL":  [
-                                 "Novi Fed predsjednik drži SOL — institucionalni signal",
-                                 "ETF tjedno $33M priljevi, dev-rast +45%"
+                                  "$33M ETF priljevi, Fed predsjednik Warsh drži SOL"
                               ],
                       "ADA":  [
 
@@ -119,11 +117,10 @@
 
                                 ],
                       "ETH":  [
-                                 "Glamsterdam upgrade u pripremi — kratkoročni katalizator"
+                                  "Glamsterdam upgrade - kratkoročni okidač rasta"
                               ],
                       "LINK":  [
-                                  "DTCC integracija za upravljanje kolateralom (live)",
-                                  "SVR upgrade — 80%+ oracle MEV recapture"
+                                   "DTCC integracija + SVR upgrade dvostruki katalizator"
                                ],
                       "PUMP":  [
 
@@ -132,38 +129,38 @@
 
                                 ],
                       "BTC":  [
-                                 "Nafta -5% tjedno — risk-on za azijske equitije i kripto"
+
                               ]
                   },
     "fearGreed":  39,
-    "macroPenalty":  0,
+    "macroPenalty":  1,
     "regime":  "VOLATILE",
     "sentimentScore":  {
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
                            "XRP":  1,
-                           "BNB":  0,
+                           "BNB":  1,
                            "SUI":  0,
-                           "AVAX":  -1,
+                           "AVAX":  0,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
                            "SOL":  2,
-                           "ADA":  -1,
+                           "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  0,
+                           "ETH":  1,
                            "LINK":  2,
                            "PUMP":  0,
                            "TRUMP":  0,
-                           "BTC":  1
+                           "BTC":  -1
                        },
-    "aiSummary":  "DXY ostaje ispod 100 (oko 99.3) što zadržava povoljne uvjete za kripto, dok nafta (WTI ~$92) nastavlja tjedni pad od -5% zbog napretka pregovora SAD-Iran, pozitivno utječući na risk-on apetit. Fear & Greed indeks stagnira na 39 (Strah) uz BTC koji konsolidira oko $77K s dominacijom od ~59%, a SOL prednjači s $33M ETF prilivima i činjenicom da novi Fed predsjednik Warsh javno drži SOL i BTC. LINK bilježi dvostruki katalizator (DTCC integracija + SVR upgrade), XRP profitira od napredka CLARITY Act-a, dok ETH čeka Glamsterdam upgrade kao potencijalni kratkoročni okidač rasta.",
-    "warActive":  false,
-    "btcDom":  59.0,
-    "stableDom":  10.0,
+    "aiSummary":  "DXY stagnira treći tjedan zaredom ispod 100 (99.3) što zadržava blago povoljne uvjete za kripto, ali Fear & Greed ostaje na 39 (Strah) dok BTC testira kritičnu potporu $74K pod pritiskom teških ETF odljeva. Iranske napetosti vraćaju se kao faktor (nafta ~$92, tjedni pad -4%), što podiže macroPenalty na 1 uz warActive=true; kratkoročno se očekuje nastavak volatilnosti s mogućim odbitkom od $74K potpore uz SOL i LINK kao relativno jake altcoine.",
+    "warActive":  true,
+    "btcDom":  58.5,
+    "stableDom":  12.4,
     "oil":  92.1
 }

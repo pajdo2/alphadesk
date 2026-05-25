@@ -416,7 +416,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.40</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.41</span></div>
       <div class="hd-sub" id="hdsub">Učitavam top 100 tokena…</div>
       <div class="hd-claude" id="claude-update" style="display:flex;align-items:center;gap:6px">
         <span id="claude-update-txt">🤖 Claude analiza: —</span>
@@ -1096,6 +1096,7 @@ var polyRaw=[];   // raw lista aktivnih kripto marketa s Polymarketa
 var cvdData={};      // {sym:{cvd,trend,divergence}} — Cumulative Volume Delta (skrivena akumulacija)
 var relStrength={};  // {sym:{rs24h,rs7d,leading,lagging}} — relativna snaga vs BTC
 var swingLevels={};  // {sym:{supports:[],resistances:[]}} — swing high/low S/R nivoi
+var marketStructure={};  // {sym:{trend,bos,choch,lastH,lastL,prevH,prevL,fib}} — BoS/CHoCH + Fib levels
 var adxData={};      // {sym:{adx,trending}} — ADX 14 trending strength
 var marketBreadth={bullCount:0,bearCount:0,neutralCount:0,total:0,ts:0}; // multi-token sentiment
 var coinbasePremium={value:null,trend:null,ts:0}; // CB BTC vs Binance BTC premium %
@@ -2248,6 +2249,87 @@ function scoreVolProfile(price,vp,signals,warnings){
   signals.push({txt:"Unutar VA, POC: "+fp(vp.poc),type:"bull"});return 0.5;
 }
 
+// ── MARKET STRUCTURE — BoS/CHoCH scoring ────────────────────────
+// BoS Bullish = trend continuation, snazan bull signal (+2)
+// CHoCH Bullish = early reversal up nakon downtrenda (+2.5, najveca vrijednost)
+// CHoCH Bearish = trend break down nakon uptrenda (-2.5, hard warning za spot)
+// Trend bonus/penalty samo ako nema CHoCH (CHoCH preglasava staru strukturu)
+function scoreMarketStructure(sym,signals,warnings){
+  var ms=marketStructure[sym];
+  if(!ms)return 0;
+  var s=0;
+  if(ms.bos==='BULLISH'){s+=2;signals.push({txt:"📈 BoS Bullish — proboj iznad swing high $"+fp(ms.lastH)+", trend potvrden",type:"bull"});}
+  if(ms.bos==='BEARISH'){s-=1.5;warnings.push({txt:"📉 BoS Bearish — proboj ispod swing low $"+fp(ms.lastL),type:"bear"});}
+  if(ms.choch==='BULLISH'){s+=2.5;signals.push({txt:"🔄 CHoCH Bullish — change of character, RANA reversal nakon downtrenda",type:"bull"});}
+  if(ms.choch==='BEARISH'){s-=2.5;warnings.push({txt:"⚠️ CHoCH Bearish — promjena karaktera, MOGUCI TOP, blokira ulaz",type:"bear"});}
+  if(!ms.choch){
+    if(ms.trend==='UP')s+=0.5;
+    else if(ms.trend==='DOWN')s-=1;
+  }
+  return s;
+}
+
+// ── FIBONACCI CONFLUENCE — bonus samo kad fib level overlap s VAL/swing low ──
+// Self-fulfilling prophecy: vrijedi tek kad se confluence (vise institucija na istoj zoni)
+// Golden pocket = 0.5-0.618, jak re-entry kad coincidence s drugim S/R
+function scoreFibConfluence(sym,price,signals){
+  var ms=marketStructure[sym];
+  if(!ms||!ms.fib||!price)return 0;
+  var fib=ms.fib;
+  if(price>fib.high||price<fib.low)return 0; // izvan range-a, fib irelevantan
+  // Provjeri blizinu 0.5/0.618 razine (golden pocket)
+  var d618=Math.abs(price-fib.f618)/price;
+  var d500=Math.abs(price-fib.f500)/price;
+  var inGoldenPocket=d618<0.02||d500<0.02;
+  if(!inGoldenPocket)return 0;
+  // Confluence check: fib se poklapa s VAL ili swing supportom
+  var sw=swingLevels[sym],vp=volProfile[sym];
+  var fibLvl=d618<d500?fib.f618:fib.f500;
+  var lblLvl=d618<d500?'0.618 (golden)':'0.500';
+  var hasVAL=vp&&vp.valueAreaLow&&Math.abs(fibLvl-vp.valueAreaLow)/fibLvl<0.018;
+  var hasSwSup=sw&&sw.supports&&sw.supports.some(function(sp){return Math.abs(fibLvl-sp)/fibLvl<0.018;});
+  if(hasVAL||hasSwSup){
+    signals.push({txt:"🎯 Fib "+lblLvl+" + "+(hasVAL?"VAL":"swing low")+" confluence — institucionalna re-entry zona",type:"bull"});
+    return 1.5;
+  }
+  // Standalone fib zone — manji bonus
+  signals.push({txt:"📐 Cijena u Fib "+lblLvl+" zoni",type:"bull"});
+  return 0.5;
+}
+
+// ── DAILY CANDLE PATTERN — hammer/engulfing za swing reversal ──
+// Za SPOT 1-3D trade-ove, daily reversal candle je jak signal
+// Treba imati daily OHLC. Trazi se s ta4h ili daily klines (taD)
+function scoreDailyCandle(sym,signals,warnings){
+  var daily=taDaily[sym];
+  if(!daily||!daily.ohlc||daily.ohlc.length<2)return 0;
+  var ohlc=daily.ohlc;
+  var curr=ohlc[ohlc.length-1],prev=ohlc[ohlc.length-2];
+  if(!curr||!prev)return 0;
+  var body=Math.abs(curr.c-curr.o);
+  var rng=curr.h-curr.l;
+  if(rng<=0)return 0;
+  var bodyRatio=body/rng;
+  var upWick=curr.h-Math.max(curr.o,curr.c);
+  var loWick=Math.min(curr.o,curr.c)-curr.l;
+  // Hammer: body <33% ranga, lower wick >2× body, mali upper wick
+  if(bodyRatio<0.33&&loWick>body*2&&upWick<body*0.5&&curr.c>curr.o){
+    signals.push({txt:"🔨 Daily Hammer — bullish reversal candle, jak swing signal",type:"bull"});
+    return 1.5;
+  }
+  // Bullish Engulfing: prev red, curr green, curr body proguta prev body
+  if(prev.c<prev.o&&curr.c>curr.o&&curr.o<prev.c&&curr.c>prev.o){
+    signals.push({txt:"🟢 Daily Bullish Engulfing — institucionalni preokret",type:"bull"});
+    return 2;
+  }
+  // Shooting Star: gornji wick >2× body, mali donji wick, bearish
+  if(bodyRatio<0.33&&upWick>body*2&&loWick<body*0.5&&curr.c<curr.o){
+    warnings.push({txt:"⭐ Daily Shooting Star — bearish reversal candle, oprez za long",type:"bear"});
+    return -1;
+  }
+  return 0;
+}
+
 // Volume boost — direktni bonus za vol spike (povrh scoreMarketSignals)
 function scoreVolumeBoost(vs,signals,warnings){
   if(!vs)return 0;
@@ -3230,7 +3312,7 @@ try{
   }
 }catch(e){predTracker=[];}
 
-// ── ADAPTIVE SIGNAL WEIGHTS (regime-aware od v5.40) ──────────────
+// ── ADAPTIVE SIGNAL WEIGHTS (regime-aware od v5.41) ──────────────
 // Struktura: {[regime]: {field: weight}, _global: {field: weight}}
 // Lookup hijerarhija: trenutni regime → _global → default
 // Razlog: RSI oversold u BEAR marketu je death trap, u BULL je odlican
@@ -3298,7 +3380,7 @@ function buildSnap(sym){
 }
 
 // Izračun lift-based težina iz zatvorenih predikcija
-// v5.40: regime-aware — računa zasebne weights za BULL/BEAR/CRAB + _global fallback
+// v5.41: regime-aware — računa zasebne weights za BULL/BEAR/CRAB + _global fallback
 function computeSignalWeights(){
   var now=Date.now();
   var DAY30=30*24*3600*1000;
@@ -6197,7 +6279,14 @@ function doSearch(){
     }
     if(found.klinesDaily){
       var closesDaily=found.klinesDaily.map(function(k){return parseFloat(k[4]);});
-      var taDailyR=compTA(closesDaily); if(taDailyR)taDaily[sym]=taDailyR;
+      var taDailyR=compTA(closesDaily);
+      if(taDailyR){
+        // OHLC za daily candle pattern (hammer/engulfing/shooting star)
+        taDailyR.ohlc=found.klinesDaily.slice(-3).map(function(k){
+          return {o:parseFloat(k[1]),h:parseFloat(k[2]),l:parseFloat(k[3]),c:parseFloat(k[4])};
+        });
+        taDaily[sym]=taDailyR;
+      }
     }
     // Volume spike
     if(vols.length>=20){
@@ -6659,7 +6748,7 @@ function fetchVP3D(){
         // ── SWING HIGH/LOW — Support & Resistance nivoi ───────────
         // Swing high: lokalni maksimum u prozoru ±4 kandli
         var SW=4;var lastClose=closes[closes.length-1];
-        var swH=[],swL=[];
+        var swH=[],swL=[],swSeq=[]; // swSeq pamti redoslijed s indexom za market structure
         for(var si=SW;si<closes.length-SW;si++){
           var isH=true,isL=true;
           for(var sj=si-SW;sj<=si+SW;sj++){
@@ -6667,13 +6756,49 @@ function fetchVP3D(){
             if(closes[sj]>=closes[si])isH=false;
             if(closes[sj]<=closes[si])isL=false;
           }
-          if(isH)swH.push(closes[si]);
-          if(isL)swL.push(closes[si]);
+          if(isH){swH.push(closes[si]);swSeq.push({i:si,v:closes[si],t:'H'});}
+          if(isL){swL.push(closes[si]);swSeq.push({i:si,v:closes[si],t:'L'});}
         }
         swingLevels[sym]={
           resistances:swH.slice(-6).filter(function(l){return l>lastClose*1.003;}),
           supports:swL.slice(-6).filter(function(l){return l<lastClose*0.997;})
         };
+
+        // ── MARKET STRUCTURE — BoS (Break of Structure) + CHoCH (Change of Character) ──
+        // Pronadji posljednja 2 H i 2 L svinga (od kraja)
+        var lastH=null,prevH=null,lastL=null,prevL=null;
+        for(var sk=swSeq.length-1;sk>=0;sk--){
+          var sv=swSeq[sk];
+          if(sv.t==='H'){if(!lastH)lastH=sv;else if(!prevH){prevH=sv;}}
+          else{if(!lastL)lastL=sv;else if(!prevL){prevL=sv;}}
+          if(lastH&&prevH&&lastL&&prevL)break;
+        }
+        if(lastH&&prevH&&lastL&&prevL){
+          // Odredi trend strukture: HH+HL = UP, LH+LL = DOWN, ostalo = RANGE
+          var trendMS=(lastH.v>prevH.v&&lastL.v>prevL.v)?'UP'
+                     :(lastH.v<prevH.v&&lastL.v<prevL.v)?'DOWN':'RANGE';
+          // BoS = trend continuation (cijena probija prema trendu)
+          var bos=null;
+          if(trendMS==='UP'&&lastClose>lastH.v)bos='BULLISH';
+          if(trendMS==='DOWN'&&lastClose<lastL.v)bos='BEARISH';
+          // CHoCH = trend reversal (cijena probija PROTIV trenda — rani warning)
+          var choch=null;
+          if(trendMS==='UP'&&lastClose<lastL.v)choch='BEARISH';
+          if(trendMS==='DOWN'&&lastClose>lastH.v)choch='BULLISH';
+          // Fibonacci levels iz major swing range
+          var fHi=Math.max(lastH.v,prevH.v),fLo=Math.min(lastL.v,prevL.v);
+          var fRange=fHi-fLo;
+          var fib=fRange>0?{
+            f382:fHi-fRange*0.382, f500:fHi-fRange*0.500,
+            f618:fHi-fRange*0.618, f786:fHi-fRange*0.786,
+            high:fHi, low:fLo
+          }:null;
+          marketStructure[sym]={
+            trend:trendMS, bos:bos, choch:choch,
+            lastH:lastH.v, lastL:lastL.v, prevH:prevH.v, prevL:prevL.v,
+            fib:fib
+          };
+        }
 
         // ── WYCKOFF PRICE CYCLE — 1h klines ──────────────────────
         var wyRes=detectWyckoff(closes,vols);
