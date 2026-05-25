@@ -1,7 +1,7 @@
 {
-    "dxy":  99.4,
-    "changeSummary":  "Nafta pala s $101 na ~$98.5 zbog pregovora SAD-Iran, BTC dominacija porasla s 58.2% na 59.9%, dok DXY i Fear & Greed ostaju nepromijenjeni na 99.4 i 40.",
-    "lastUpdated":  "2026-05-22T10:30:00Z",
+    "dxy":  99.3,
+    "changeSummary":  "Fear & Greed pao s 40 na 39, BTC ostaje oko $77K uz rotaciju kapitala prema SOL i XRP ETF-ovima, dok nafta pada -4.25% na $92 zbog napretka pregovora SAD-Iran.",
+    "lastUpdated":  "2026-05-25T12:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -52,19 +52,19 @@
 
                                ],
                      "ETH":  [
-                                 "ETF odljevi, investor moral na dnu"
+                                 "8 istraživača napustilo Ethereum Foundation u 2026"
                              ],
                      "LINK":  [
-
+                                  "19M LINK unlock u travnju — supply headwind"
                               ],
                      "PUMP":  [
 
                               ],
                      "TRUMP":  [
-                                   "Trump Media povukao SEC zahtjev za BTC/ETH ETF"
+
                                ],
                      "BTC":  [
-                                 "ETF odljevi; Mark Cuban prodao BTC pozicije"
+                                 "Fear & Greed = 39, sentiment ostaje u strahu"
                              ]
                  },
     "catalysts":  {
@@ -78,7 +78,7 @@
 
                                 ],
                       "XRP":  [
-                                  "+4.300 novih novčanika/dan, ETF priljevi"
+                                  "12 dana pozitivnih ETF priljeva, CLARITY Act pozit."
                               ],
                       "BNB":  [
 
@@ -105,7 +105,7 @@
 
                                  ],
                       "SOL":  [
-                                  "SOL ETF pozitivan tok priljeva"
+                                  "Goldman i Schwab ulaze, $55M institucijskih priljeva"
                               ],
                       "ADA":  [
 
@@ -114,13 +114,13 @@
 
                                ],
                       "AIXBT":  [
-
+                                    "AI agenti koriste kripto rails kao platni sloj"
                                 ],
                       "ETH":  [
-                                  "72.8M aktivnih korisnika/mj. - rekord"
+                                  "Glamsterdam upgrade dolazi, rekordni ETF priljevi"
                               ],
                       "LINK":  [
-
+                                   "CCIP V1.5 mainnet rollout, kitovi povlace 2.8M LINK"
                                ],
                       "PUMP":  [
 
@@ -129,11 +129,11 @@
 
                                 ],
                       "BTC":  [
-                                  "Bitcoin Pizza Day - 16. godišnjica BTC plaćanja"
+                                  "ETF priljevi se obnavljaju, BTC konsolidira $77K"
                               ]
                   },
-    "fearGreed":  40,
-    "macroPenalty":  1,
+    "fearGreed":  39,
+    "macroPenalty":  0,
     "regime":  "VOLATILE",
     "sentimentScore":  {
                            "ACT":  0,
@@ -148,19 +148,19 @@
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  1,
+                           "SOL":  2,
                            "ADA":  0,
                            "PNUT":  0,
-                           "AIXBT":  0,
-                           "ETH":  -1,
-                           "LINK":  0,
+                           "AIXBT":  1,
+                           "ETH":  1,
+                           "LINK":  1,
                            "PUMP":  0,
-                           "TRUMP":  -1,
-                           "BTC":  -1
+                           "TRUMP":  0,
+                           "BTC":  1
                        },
-    "aiSummary":  "DXY se stabilizirao na ~99.4 ispod razine 100 što je marginalno povoljno za kripto, a nafta (WTI ~$98.5) pada zbog mogućih pregovora SAD-Iran i ublažavanja geopolitičkih tenzija. Fear & Greed ostaje na 40 (Strah) uz BTC koji konsolidira oko $77K s poraslom dominacijom na 59.9% — ETF odljevi za BTC i ETH traju, dok XRP prednjači s +4.300 novih novčanika/dan i pozitivnim ETF prilivima. Tržište ostaje u VOLATILE režimu bez jasnog smjera, ali Bitcoin Pizza Day i potencijalni SAD-Iran dogovor mogli bi biti kratkoročni katalizatori.",
-    "warActive":  true,
-    "btcDom":  59.9,
-    "stableDom":  13.0,
-    "oil":  98.5
+    "aiSummary":  "DXY pada na 99.3 ispod razine 100 što je povoljno za kripto, dok nafta (WTI ~$92) pada -4.25% zbog napretka pregovora SAD-Iran o nuklearnom dogovoru. Fear & Greed ostaje na 39 (Strah) uz BTC koji konsolidira oko $76-77K s dominacijom od ~59%, a rotacija kapitala vidljiva je prema SOL i XRP ETF-ovima koji bilježe uzastopne pozitivne priljeve. Tržište ostaje u VOLATILE režimu, ali Ethereum Glamsterdam upgrade i institucionalni ulazak (Goldman, Schwab) u SOL ekosustav mogli bi biti kratkoročni katalizatori.",
+    "warActive":  false,
+    "btcDom":  59.0,
+    "stableDom":  12.4,
+    "oil":  92.1
 }
