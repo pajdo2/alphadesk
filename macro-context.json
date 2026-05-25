@@ -1,7 +1,7 @@
 {
     "dxy":  99.3,
-    "changeSummary":  "Fear & Greed pao s 40 na 39, BTC ostaje oko $77K uz rotaciju kapitala prema SOL i XRP ETF-ovima, dok nafta pada -4.25% na $92 zbog napretka pregovora SAD-Iran.",
-    "lastUpdated":  "2026-05-25T12:00:00Z",
+    "changeSummary":  "Makro uvjeti ostaju gotovo nepromijenjeni u odnosu na jutarnju analizu — DXY drži 99.3, FG i BTC dominacija stagniraju, dok SOL i LINK iskaču pozitivnim katalizatorima (ETF priljevi, DTCC integracija).",
+    "lastUpdated":  "2026-05-25T14:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -22,7 +22,7 @@
 
                              ],
                      "AVAX":  [
-
+                                 "Binance delisting para — smanjen likviditet"
                               ],
                      "PENGU":  [
 
@@ -43,7 +43,7 @@
 
                              ],
                      "ADA":  [
-
+                                "Binance delisting para — smanjen likviditet"
                              ],
                      "PNUT":  [
 
@@ -52,10 +52,10 @@
 
                                ],
                      "ETH":  [
-                                 "8 istraživača napustilo Ethereum Foundation u 2026"
+                                "ETF tjedni odljev $75.94M — kraj 10-dnevnih priljeva"
                              ],
                      "LINK":  [
-                                  "19M LINK unlock u travnju — supply headwind"
+
                               ],
                      "PUMP":  [
 
@@ -64,7 +64,7 @@
 
                                ],
                      "BTC":  [
-                                 "Fear & Greed = 39, sentiment ostaje u strahu"
+
                              ]
                  },
     "catalysts":  {
@@ -78,7 +78,8 @@
 
                                 ],
                       "XRP":  [
-                                  "12 dana pozitivnih ETF priljeva, CLARITY Act pozit."
+                                 "CLARITY Act prošao Senat 15-9, XRP commodity status",
+                                 "ETF priljevi rastu unatoč slabosti tržišta"
                               ],
                       "BNB":  [
 
@@ -105,7 +106,8 @@
 
                                  ],
                       "SOL":  [
-                                  "Goldman i Schwab ulaze, $55M institucijskih priljeva"
+                                 "Novi Fed predsjednik drži SOL — institucionalni signal",
+                                 "ETF tjedno $33M priljevi, dev-rast +45%"
                               ],
                       "ADA":  [
 
@@ -114,13 +116,14 @@
 
                                ],
                       "AIXBT":  [
-                                    "AI agenti koriste kripto rails kao platni sloj"
+
                                 ],
                       "ETH":  [
-                                  "Glamsterdam upgrade dolazi, rekordni ETF priljevi"
+                                 "Glamsterdam upgrade u pripremi — kratkoročni katalizator"
                               ],
                       "LINK":  [
-                                   "CCIP V1.5 mainnet rollout, kitovi povlace 2.8M LINK"
+                                  "DTCC integracija za upravljanje kolateralom (live)",
+                                  "SVR upgrade — 80%+ oracle MEV recapture"
                                ],
                       "PUMP":  [
 
@@ -129,7 +132,7 @@
 
                                 ],
                       "BTC":  [
-                                  "ETF priljevi se obnavljaju, BTC konsolidira $77K"
+                                 "Nafta -5% tjedno — risk-on za azijske equitije i kripto"
                               ]
                   },
     "fearGreed":  39,
@@ -139,28 +142,28 @@
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  2,
+                           "XRP":  1,
                            "BNB":  0,
                            "SUI":  0,
-                           "AVAX":  0,
+                           "AVAX":  -1,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
                            "SOL":  2,
-                           "ADA":  0,
+                           "ADA":  -1,
                            "PNUT":  0,
-                           "AIXBT":  1,
-                           "ETH":  1,
-                           "LINK":  1,
+                           "AIXBT":  0,
+                           "ETH":  0,
+                           "LINK":  2,
                            "PUMP":  0,
                            "TRUMP":  0,
                            "BTC":  1
                        },
-    "aiSummary":  "DXY pada na 99.3 ispod razine 100 što je povoljno za kripto, dok nafta (WTI ~$92) pada -4.25% zbog napretka pregovora SAD-Iran o nuklearnom dogovoru. Fear & Greed ostaje na 39 (Strah) uz BTC koji konsolidira oko $76-77K s dominacijom od ~59%, a rotacija kapitala vidljiva je prema SOL i XRP ETF-ovima koji bilježe uzastopne pozitivne priljeve. Tržište ostaje u VOLATILE režimu, ali Ethereum Glamsterdam upgrade i institucionalni ulazak (Goldman, Schwab) u SOL ekosustav mogli bi biti kratkoročni katalizatori.",
+    "aiSummary":  "DXY ostaje ispod 100 (oko 99.3) što zadržava povoljne uvjete za kripto, dok nafta (WTI ~$92) nastavlja tjedni pad od -5% zbog napretka pregovora SAD-Iran, pozitivno utječući na risk-on apetit. Fear & Greed indeks stagnira na 39 (Strah) uz BTC koji konsolidira oko $77K s dominacijom od ~59%, a SOL prednjači s $33M ETF prilivima i činjenicom da novi Fed predsjednik Warsh javno drži SOL i BTC. LINK bilježi dvostruki katalizator (DTCC integracija + SVR upgrade), XRP profitira od napredka CLARITY Act-a, dok ETH čeka Glamsterdam upgrade kao potencijalni kratkoročni okidač rasta.",
     "warActive":  false,
     "btcDom":  59.0,
-    "stableDom":  12.4,
+    "stableDom":  10.0,
     "oil":  92.1
 }
