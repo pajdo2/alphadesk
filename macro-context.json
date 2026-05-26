@@ -1,7 +1,7 @@
 {
     "dxy":  98.96,
-    "changeSummary":  "DXY i Fear & Greed ostali nepromijenjeni (98.96 / 40), nafta pala ~5% na ~$92 zbog Iran pregovora, SEC odobrio Nasdaq BTC indeksne opcije.",
-    "lastUpdated":  "2026-05-26T14:30:00.000Z",
+    "changeSummary":  "Vojni udari SAD na Iran aktivirali warActive i podigli macroPenalty na +1, dok DXY, Fear&Greed i BTC cijena ostaju gotovo nepromijenjeni.",
+    "lastUpdated":  "2026-05-26T16:00:00.000Z",
     "warnings":  {
                      "ACT":  [
 
@@ -61,10 +61,10 @@
 
                               ],
                      "TRUMP":  [
-                                 "CLARITY Act rezidualnost + politicki FUD"
+                         "Vojni udari SAD na Iran, geopoliticki rizik raste"
                                ],
                      "BTC":  [
-
+                         "Rekordni tjedni ETF odljevi od $1.47B u 2026"
                              ]
                  },
     "catalysts":  {
@@ -78,7 +78,8 @@
 
                                 ],
                       "XRP":  [
-
+                          "XRPL v3.2.0 + Lending Protocol aktivacija",
+                          "Fund pritoci $67.6M, SEC/CFTC commodity status"
                               ],
                       "BNB":  [
 
@@ -105,7 +106,7 @@
 
                                  ],
                       "SOL":  [
-
+                          "Fund pritok $55.1M, snazni developer ekosustav"
                               ],
                       "ADA":  [
 
@@ -117,10 +118,11 @@
 
                                 ],
                       "ETH":  [
-
+                          "SEC/CFTC klasificirao ETH kao digital commodity",
+                          "Glamsterdam upgrade planiran za sredinu 2026"
                               ],
                       "LINK":  [
-
+                          "CCIP $18B mj. transfer, $75B TVL secured"
                                ],
                       "PUMP":  [
 
@@ -129,18 +131,17 @@
 
                                 ],
                       "BTC":  [
-                                "SEC: Nasdaq BTC indeksne opcije odobrene",
-                                "Nafta -5% potice risk-on poboljsanje"
+                          "SEC odobrio Nasdaq BTC indeksne opcije"
                               ]
                   },
     "fearGreed":  40,
-    "macroPenalty":  0,
+    "macroPenalty":  1,
     "regime":  "VOLATILE",
     "sentimentScore":  {
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  0,
+                           "XRP":  2,
                            "BNB":  0,
                            "SUI":  0,
                            "AVAX":  0,
@@ -149,19 +150,19 @@
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  0,
+                           "SOL":  1,
                            "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  0,
-                           "LINK":  0,
+                           "ETH":  1,
+                           "LINK":  1,
                            "PUMP":  0,
                            "TRUMP":  -1,
-                           "BTC":  1
+                           "BTC":  0
                        },
-    "aiSummary":  "DXY se zadrzao na 98.96, dolar ostaje slab i blago podrzava kripto sentiment uz BTC koji oscilira oko $77K. Fear & Greed indeks stabilan na 40 (Strah), dok potencijalni Iran-SAD dogovor i pad nafte pruza risk-on impuls. SEC odobrenje Nasdaq BTC indeksnih opcija pozitivan je katalizator za institucionalne tokove u kratkorocnom horizontu.",
-    "warActive":  false,
-    "btcDom":  58.2,
-    "stableDom":  7.5,
-    "oil":  92.0
+    "aiSummary":  "DXY se zadrzao nepromijenjeno na 98.96, slab dolar nastavlja blagom podrškom kripto sentimentu, no eskalacija Iran-SAD vojnih napetosti aktivirala je warActive i podigla geopolitički rizik uz naftu (Brent) prema $98. Fear & Greed indeks ostaje u zoni Straha (40) dok BTC oscilira između $74.5K-$78K uz rekordne tjedne ETF odljeve od $1.47B koji stvaraju prodajni pritisak. SEC odobrenje Nasdaq BTC opcija i regulatorna jasnoća (XRP/ETH commodity status) ostaju ključni pozitivni katalizatori za institucionalne tokove.",
+    "warActive":  true,
+    "btcDom":  59.5,
+    "stableDom":  12.6,
+    "oil":  92.45
 }
