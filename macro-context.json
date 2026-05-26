@@ -1,7 +1,7 @@
 {
     "dxy":  98.96,
-    "changeSummary":  "Fear & Greed porastao s 30 na 40, DXY stabiliziran oko 99, macroPenalty ispravljen na 0 uz nastavak volatilnog režima.",
-    "lastUpdated":  "2026-05-26T12:00:00.000Z",
+    "changeSummary":  "DXY i Fear & Greed ostali nepromijenjeni (98.96 / 40), nafta pala ~5% na ~$92 zbog Iran pregovora, SEC odobrio Nasdaq BTC indeksne opcije.",
+    "lastUpdated":  "2026-05-26T14:30:00.000Z",
     "warnings":  {
                      "ACT":  [
 
@@ -61,10 +61,10 @@
 
                               ],
                      "TRUMP":  [
-
+                                 "CLARITY Act rezidualnost + politicki FUD"
                                ],
                      "BTC":  [
-                                 "CLARITY Act izazvao tržišnu rasprodaju"
+
                              ]
                  },
     "catalysts":  {
@@ -129,8 +129,8 @@
 
                                 ],
                       "BTC":  [
-                                  "SEC odobrio Bitcoin index opcije na Nasdaq",
-                                  "Nasdaq QBTC derivati cekaju CFTC odobrenje"
+                                "SEC: Nasdaq BTC indeksne opcije odobrene",
+                                "Nafta -5% potice risk-on poboljsanje"
                               ]
                   },
     "fearGreed":  40,
@@ -156,12 +156,12 @@
                            "ETH":  0,
                            "LINK":  0,
                            "PUMP":  0,
-                           "TRUMP":  0,
+                           "TRUMP":  -1,
                            "BTC":  1
                        },
-    "aiSummary":  "DXY je stabiliziran oko 99, drži dolar slabim i blago podržava kripto tržište. Fear & Greed indeks je porastao na 40 (Strah), ali BTC još oscilira oko $77k uz visoku volatilnost nakon CLARITY Act rasprodaje. Nasdaq QBTC derivati i SEC odobrenja pružaju pozitivne katalizatore za srednji rok.",
+    "aiSummary":  "DXY se zadrzao na 98.96, dolar ostaje slab i blago podrzava kripto sentiment uz BTC koji oscilira oko $77K. Fear & Greed indeks stabilan na 40 (Strah), dok potencijalni Iran-SAD dogovor i pad nafte pruza risk-on impuls. SEC odobrenje Nasdaq BTC indeksnih opcija pozitivan je katalizator za institucionalne tokove u kratkorocnom horizontu.",
     "warActive":  false,
-    "btcDom":  58.5,
-    "stableDom":  12.1,
-    "oil":  89.5
+    "btcDom":  58.2,
+    "stableDom":  7.5,
+    "oil":  92.0
 }
