@@ -416,7 +416,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.55</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.56</span></div>
       <div class="hd-sub" id="hdsub">Učitavam top 100 tokena…</div>
       <div class="hd-claude" id="claude-update" style="display:flex;align-items:center;gap:6px">
         <span id="claude-update-txt">🤖 Claude analiza: —</span>
@@ -2905,6 +2905,14 @@ function _analyze3DUncached(sym){
   }
   // Spremi verdict u history za hysteresis sljedeceg poziva
   _verdictHist[sym]={v:verdict, ts:Date.now()};
+  // Periodic cleanup: ukloni stare entries (>5min stare nikad nece biti relevantne za 90s hysteresis)
+  // Random check da ne radi every call - 1% sansa po pozivu, dovoljno za TOP100
+  if(Math.random()<0.01){
+    var _now=Date.now();
+    Object.keys(_verdictHist).forEach(function(k){
+      if(_now-_verdictHist[k].ts>300000)delete _verdictHist[k];
+    });
+  }
   // Dodaj MTF info na objekt za prikaz u kartici
   var mtfInfo={count:mtfBullCount,h1:!!(t1hV&&t1hV.trend==="UP"),h4:!!(t4hV&&t4hV.trend==="UP"),daily:!!(tDayV&&tDayV.trend==="UP")};
 
@@ -3357,7 +3365,7 @@ try{
   }
 }catch(e){predTracker=[];}
 
-// ── ADAPTIVE SIGNAL WEIGHTS (regime-aware od v5.55) ──────────────
+// ── ADAPTIVE SIGNAL WEIGHTS (regime-aware od v5.56) ──────────────
 // Struktura: {[regime]: {field: weight}, _global: {field: weight}}
 // Lookup hijerarhija: trenutni regime → _global → default
 // Razlog: RSI oversold u BEAR marketu je death trap, u BULL je odlican
@@ -3425,7 +3433,7 @@ function buildSnap(sym){
 }
 
 // Izračun lift-based težina iz zatvorenih predikcija
-// v5.55: regime-aware — računa zasebne weights za BULL/BEAR/CRAB + _global fallback
+// v5.56: regime-aware — računa zasebne weights za BULL/BEAR/CRAB + _global fallback
 function computeSignalWeights(){
   var now=Date.now();
   var DAY30=30*24*3600*1000;
@@ -8519,16 +8527,20 @@ function emitEntryNotif(o){
 }
 
 // ── EXIT NOTIFICATION — SAMO 2 TIPA (po korisnikovom zahtjevu) ──
-// 1. PRODAJ U PROFITU: target hit ili trailing stop u profitu
-// 2. BEAR REVERSAL EXIT: reversal signal mid-trade u profitu
-// Sve ostalo (stop-loss, time exit, milestone) - NEMA notifikacije
+// 1. PRODAJ U PROFITU: target hit ili trailing stop u profitu (closePct > 0)
+// 2. BEAR REVERSAL EXIT: reversal signal mid-trade u profitu (closePct > 0)
+// Sve ostalo (stop-loss, time exit, milestone, breakeven) - NEMA notifikacije
 function emitExitNotif(p, reason, isWin){
   if(!notifState.enabled||!("Notification" in window)||Notification.permission!=="granted")return;
 
-  // FILTER: salji samo za 2 specificna razloga
-  var isProfit=isWin&&(reason.indexOf("Target")>-1||reason.indexOf("Trailing")>-1||reason.indexOf("čuvam")>-1);
+  // VAZNO: closePct mora biti STVARNO pozitivan (>0.5%) - trailing stop moze hitati na -0.5% pa lazirat
+  var realProfit=p.closePct!=null&&p.closePct>0.5;
+  if(!realProfit)return;
+
+  // FILTER: salji samo za 2 specificna razloga (i samo ako je stvarni profit)
+  var isProfit=reason.indexOf("Target")>-1||reason.indexOf("Trailing")>-1||reason.indexOf("čuvam")>-1;
   var isBearRev=reason.indexOf("reversal")>-1||reason.indexOf("Reversal")>-1;
-  if(!isProfit&&!isBearRev)return; // ignor stop hit, time exit, isteklo
+  if(!isProfit&&!isBearRev)return;
 
   var key="exit_"+p.id;
   if(notifState.seen[key])return;
