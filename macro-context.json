@@ -1,7 +1,7 @@
 {
-    "dxy":  99.15,
-    "changeSummary":  "Strah na tržištu porastao (FG: 40→30) uz aktivne geopolitičke tenzije koje su podigle macroPenalty na 1, dok su DXY i cijena nafte neznatno pale.",
-    "lastUpdated":  "2026-05-27T10:00:00Z",
+    "dxy":  99.24,
+    "changeSummary":  "DXY stabilan na 99.24, Fear & Greed nepromijenjen na 30, XRP Ledger 3.1.3 upgrade i ETH ETF priljevi ($101M) su pozitivni katalizatori uz nastavak volatile makro okoline.",
+    "lastUpdated":  "2026-05-27T10:30:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -16,7 +16,7 @@
 
                              ],
                      "BNB":  [
-
+                                 "Binance delistira 5 altcoina 27.5. u 03:00 UTC"
                              ],
                      "SUI":  [
 
@@ -61,10 +61,10 @@
 
                               ],
                      "TRUMP":  [
-                                 "Geopolitičke tenzije Iran/US utječu na sentiment"
+
                                ],
                      "BTC":  [
-                               "Rizik pada ispod $75K, ETF outflows zabilježeni"
+                                 "US-Iran napetosti, pregovori o produzenju primirja"
                              ]
                  },
     "catalysts":  {
@@ -78,7 +78,8 @@
 
                                 ],
                       "XRP":  [
-                                "XRP Ledger upgrade v3.1.3 na mainnet danas"
+                                  "XRP Ledger 3.1.3 upgrade aktivan danas",
+                                  "Spot XRP ETF $1.21B kumulativnih priljeva"
                               ],
                       "BNB":  [
 
@@ -105,7 +106,7 @@
 
                                  ],
                       "SOL":  [
-
+                                  "All-time TVL, 2 protokol upgradea cekaju H2 2026"
                               ],
                       "ADA":  [
 
@@ -114,10 +115,11 @@
 
                                ],
                       "AIXBT":  [
-                                  "AI tokeni outperformaju tržište ovaj tjedan"
+
                                 ],
                       "ETH":  [
-                                "Bitmine kupio 111,942 ETH (~$237M) institucijsko"
+                                  "ETF priljevi $101M jednodnevno, 33% supply stakan",
+                                  "Bitmine institucionalna kupovina"
                               ],
                       "LINK":  [
 
@@ -129,7 +131,7 @@
 
                                 ],
                       "BTC":  [
-                                "Whale akumulacija na ~$76K razini potvrđena"
+                                  "Whale akumulacija, institucionalna potraznja stabilna"
                               ]
                   },
     "fearGreed":  30,
@@ -139,7 +141,7 @@
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  1,
+                           "XRP":  2,
                            "BNB":  0,
                            "SUI":  0,
                            "AVAX":  0,
@@ -148,19 +150,19 @@
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  0,
+                           "SOL":  1,
                            "ADA":  0,
                            "PNUT":  0,
-                           "AIXBT":  1,
+                           "AIXBT":  0,
                            "ETH":  2,
                            "LINK":  0,
                            "PUMP":  0,
-                           "TRUMP":  -1,
+                           "TRUMP":  0,
                            "BTC":  1
                        },
-    "aiSummary":  "DXY pada na 99.15 što je blago pozitivno za kripto, no Fear & Greed indeks strmo pada s 40 na 30 uz aktivne geopolitičke tenzije (US-Izrael napadi, iranska prijetnja Hormuz prolazu). BTC drži ~$76.5K uz whale akumulaciju, ETH bilježi snažnu institucionalnu kupovinu (Bitmine $237M); očekujemo nastavak volatile kretanja s downside rizicima ako eskaliraju geopolitičke tenzije.",
+    "aiSummary":  "DXY stabilan na ~99.24 sto je blago pozitivno za kripto, no Fear & Greed ostaje na razini straha (30) uz geopoliticke napetosti (US-Iran pregovori o primirju, nafta blizu $99). BTC drzi ~$76.8K uz whale akumulaciju, ETH biljezi snazne ETF priljeve ($101M u jednom danu), a XRP Ledger uvodi upgrade 3.1.3 danas; ocekujemo nastavak volatile kretanja s mogucim pozitivnim impulsom ako se US-Iran sporazum formalizira.",
     "warActive":  true,
     "btcDom":  58.2,
     "stableDom":  12.1,
-    "oil":  93.12
+    "oil":  93.0
 }
