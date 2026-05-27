@@ -416,7 +416,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.54</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.55</span></div>
       <div class="hd-sub" id="hdsub">Učitavam top 100 tokena…</div>
       <div class="hd-claude" id="claude-update" style="display:flex;align-items:center;gap:6px">
         <span id="claude-update-txt">🤖 Claude analiza: —</span>
@@ -1097,6 +1097,7 @@ var cvdData={};      // {sym:{cvd,trend,divergence}} — Cumulative Volume Delta
 var relStrength={};  // {sym:{rs24h,rs7d,leading,lagging}} — relativna snaga vs BTC
 var swingLevels={};  // {sym:{supports:[],resistances:[]}} — swing high/low S/R nivoi
 var marketStructure={};  // {sym:{trend,bos,choch,lastH,lastL,prevH,prevL,fib}} — BoS/CHoCH + Fib levels
+var _verdictHist={};  // {sym:{v:verdict, ts:Date.now()}} — za hysteresis (anti-flicker)
 var adxData={};      // {sym:{adx,trending}} — ADX 14 trending strength
 var marketBreadth={bullCount:0,bearCount:0,neutralCount:0,total:0,ts:0}; // multi-token sentiment
 var coinbasePremium={value:null,trend:null,ts:0}; // CB BTC vs Binance BTC premium %
@@ -2856,9 +2857,20 @@ function _analyze3DUncached(sym){
   // 2. CHoCH Bearish blocker: change of character down nakon uptrenda = mogući top
   var chochBearBlock=ms3d&&ms3d.choch==='BEARISH';
 
-  // ✅ zahtijeva: high conf, score, confluence ≥2, volume OK, BTC nije u danger zoni, Wyckoff nije distribucija,
-  //             HTF daily nije DOWN (osim CHoCH Bull iznimka), nema CHoCH Bear
-  var passesAllGates=conf>=60&&score>=2&&confluenceCount>=2&&volumeOK&&!btcCtx.danger&&!wyBlocker
+  // ── HYSTERESIS (anti-flicker) — asimetricni pragovi ──
+  // Schmitt trigger princip: visi prag za ULAZAK u verdict, nizi za OSTANAK
+  // Sprjecava brzi flip ✅↔🟡 kad je conf na granici 60
+  // History valja samo 90s — nakon toga svjez izracun (gate svaki put)
+  var _vh=_verdictHist[sym];
+  var _wasUlaz=_vh&&_vh.v==="✅ Ulazi"&&(Date.now()-_vh.ts<90000);
+  var _wasOprez=_vh&&_vh.v==="🟡 Oprez"&&(Date.now()-_vh.ts<90000);
+
+  // Pragovi za ENTRY u ✅: conf>=60, score>=2, confluence>=2 (kao prije)
+  // Pragovi za STAY u ✅: conf>=56, score>=1.5, confluence>=2 (relax)
+  var confTh=_wasUlaz?56:60;
+  var scoreTh=_wasUlaz?1.5:2;
+
+  var passesAllGates=conf>=confTh&&score>=scoreTh&&confluenceCount>=2&&volumeOK&&!btcCtx.danger&&!wyBlocker
                     &&!htfDownBlock&&!chochBearBlock;
   if(passesAllGates){
     // Kratak verdict — bez šuma. Detalji u expand.
@@ -2877,7 +2889,8 @@ function _analyze3DUncached(sym){
     if(htfDownBlock)blockers.push("Daily trend DOWN (ne hvataj pad)");
     if(chochBearBlock)blockers.push("CHoCH Bearish (mogući top)");
     verdictWhy="Blokirano: "+blockers.join(" · ")+riskSuffix;
-  } else if(conf>=48){
+  } else if(conf>=(_wasOprez?44:48)){
+    // Hysteresis za 🟡: enter na 48, stay na 44
     verdict="🟡 Oprez";
     var stopPriceWhy=+(price*(1-(settings.targetPct===10?0.03:settings.maxRisk/100))).toFixed(4);
     var atrConfirmPct2=+(Math.max(0.8,Math.min(2.5,atrPctDaily*0.1))).toFixed(1);
@@ -2890,6 +2903,8 @@ function _analyze3DUncached(sym){
     verdict="🔴 Preskoči";
     verdictWhy=topWarnSignal||"Premalo bullish faktora";
   }
+  // Spremi verdict u history za hysteresis sljedeceg poziva
+  _verdictHist[sym]={v:verdict, ts:Date.now()};
   // Dodaj MTF info na objekt za prikaz u kartici
   var mtfInfo={count:mtfBullCount,h1:!!(t1hV&&t1hV.trend==="UP"),h4:!!(t4hV&&t4hV.trend==="UP"),daily:!!(tDayV&&tDayV.trend==="UP")};
 
@@ -3342,7 +3357,7 @@ try{
   }
 }catch(e){predTracker=[];}
 
-// ── ADAPTIVE SIGNAL WEIGHTS (regime-aware od v5.54) ──────────────
+// ── ADAPTIVE SIGNAL WEIGHTS (regime-aware od v5.55) ──────────────
 // Struktura: {[regime]: {field: weight}, _global: {field: weight}}
 // Lookup hijerarhija: trenutni regime → _global → default
 // Razlog: RSI oversold u BEAR marketu je death trap, u BULL je odlican
@@ -3410,7 +3425,7 @@ function buildSnap(sym){
 }
 
 // Izračun lift-based težina iz zatvorenih predikcija
-// v5.54: regime-aware — računa zasebne weights za BULL/BEAR/CRAB + _global fallback
+// v5.55: regime-aware — računa zasebne weights za BULL/BEAR/CRAB + _global fallback
 function computeSignalWeights(){
   var now=Date.now();
   var DAY30=30*24*3600*1000;
