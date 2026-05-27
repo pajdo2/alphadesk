@@ -1,7 +1,7 @@
 {
-    "dxy":  99.24,
-    "changeSummary":  "DXY blago porastao na 99.24 sa 98.96, Fear & Greed ostao stabilan na 40, BTC nastavlja volatile kretanje oko $76.5K.",
-    "lastUpdated":  "2026-05-27T09:00:00Z",
+    "dxy":  99.15,
+    "changeSummary":  "Strah na tržištu porastao (FG: 40→30) uz aktivne geopolitičke tenzije koje su podigle macroPenalty na 1, dok su DXY i cijena nafte neznatno pale.",
+    "lastUpdated":  "2026-05-27T10:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -61,10 +61,10 @@
 
                               ],
                      "TRUMP":  [
-
+                                 "Geopolitičke tenzije Iran/US utječu na sentiment"
                                ],
                      "BTC":  [
-                                 "Rizik daljnjeg pada ispod $75K razine"
+                               "Rizik pada ispod $75K, ETF outflows zabilježeni"
                              ]
                  },
     "catalysts":  {
@@ -78,7 +78,7 @@
 
                                 ],
                       "XRP":  [
-                                  "XRP Ledger v3.1.3 upgrade - 27.05.2026 live"
+                                "XRP Ledger upgrade v3.1.3 na mainnet danas"
                               ],
                       "BNB":  [
 
@@ -114,10 +114,10 @@
 
                                ],
                       "AIXBT":  [
-
+                                  "AI tokeni outperformaju tržište ovaj tjedan"
                                 ],
                       "ETH":  [
-
+                                "Bitmine kupio 111,942 ETH (~$237M) institucijsko"
                               ],
                       "LINK":  [
 
@@ -129,17 +129,17 @@
 
                                 ],
                       "BTC":  [
-                                  "Whales tiho akumuliraju oko $75K podrske"
+                                "Whale akumulacija na ~$76K razini potvrđena"
                               ]
                   },
-    "fearGreed":  40,
-    "macroPenalty":  0,
+    "fearGreed":  30,
+    "macroPenalty":  1,
     "regime":  "VOLATILE",
     "sentimentScore":  {
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  2,
+                           "XRP":  1,
                            "BNB":  0,
                            "SUI":  0,
                            "AVAX":  0,
@@ -151,16 +151,16 @@
                            "SOL":  0,
                            "ADA":  0,
                            "PNUT":  0,
-                           "AIXBT":  0,
-                           "ETH":  0,
+                           "AIXBT":  1,
+                           "ETH":  2,
                            "LINK":  0,
                            "PUMP":  0,
-                           "TRUMP":  0,
+                           "TRUMP":  -1,
                            "BTC":  1
                        },
-    "aiSummary":  "DXY pada ispod 100 (99.24) što je blago pozitivno za kriptovalute, no Fear & Greed indeks na 40 signalizira strah u tržištu. BTC drži razinu oko $76.5K uz whale akumulaciju, ali dominacija od 58% potvrđuje da altcoini i dalje zaostaju. Očekujemo nastavak volatile kretanja s potencijalnim oscilacijama u oba smjera.",
-    "warActive":  false,
+    "aiSummary":  "DXY pada na 99.15 što je blago pozitivno za kripto, no Fear & Greed indeks strmo pada s 40 na 30 uz aktivne geopolitičke tenzije (US-Izrael napadi, iranska prijetnja Hormuz prolazu). BTC drži ~$76.5K uz whale akumulaciju, ETH bilježi snažnu institucionalnu kupovinu (Bitmine $237M); očekujemo nastavak volatile kretanja s downside rizicima ako eskaliraju geopolitičke tenzije.",
+    "warActive":  true,
     "btcDom":  58.2,
-    "stableDom":  11.2,
-    "oil":  94.0
+    "stableDom":  12.1,
+    "oil":  93.12
 }
