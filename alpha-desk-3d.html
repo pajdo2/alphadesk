@@ -416,7 +416,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.59</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.60</span></div>
       <div class="hd-sub" id="hdsub">Učitavam top 100 tokena…</div>
       <div class="hd-claude" id="claude-update" style="display:flex;align-items:center;gap:6px">
         <span id="claude-update-txt">🤖 Claude analiza: —</span>
@@ -480,6 +480,8 @@ svg.sp{overflow:visible;display:block}
     <div><label class="inp-lbl">Target profit (%)</label><input id="s-tgt" class="inp" type="number" value="6" min="2" max="20" step="0.5"></div>
     <div><label class="inp-lbl">Max rizik (%)</label><input id="s-risk" class="inp" type="number" value="2" min="1" max="10" step="0.5"></div>
     <div><label class="inp-lbl">Min R/R omjer</label><input id="s-rr" class="inp" type="number" value="1.2" min="0.8" max="5" step="0.1"></div>
+    <div><label class="inp-lbl">Account size (USD)</label><input id="s-acct" class="inp" type="number" value="1000" min="100" max="1000000" step="100"></div>
+    <div><label class="inp-lbl">Risk po trade (%)</label><input id="s-rpt" class="inp" type="number" value="1" min="0.25" max="5" step="0.25"></div>
   </div>
   <div style="margin-bottom:10px;padding:10px 12px;background:rgba(255,255,255,.04);border-radius:10px;border:.5px solid var(--sep)">
     <div class="row-between" style="margin-bottom:6px">
@@ -686,7 +688,7 @@ function getMemeSYMS(){
 }
 
 // Settings
-var settings={minConf:45,targetPct:6,maxRisk:2,minRR:1.2};
+var settings={minConf:45,targetPct:6,maxRisk:2,minRR:1.2,accountSize:1000,maxRiskPerTrade:1};
 try{var ss=JSON.parse(lsGet("ad3d_s")||"{}");if(ss.minConf)settings=ss;}catch(e){}
 // Migracija: stari settings sa targetPct=5 se updateaju na 6 (default)
 // (10% mode UKLONJEN, ako je korisnik bio na 10% prebaci na 6)
@@ -1956,15 +1958,27 @@ function scoreMarketSignals(sym,signals,warnings){
     if(nearSup.length){delta+=1.5;signals.push({txt:"🔵 Na swing podršci "+fp(nearSup[0])+" — historijska bounce zona",type:"bull"});}
     if(nearRes.length){delta-=1;warnings.push({txt:"🔴 Blizu swing otpora "+fp(nearRes[0])+" — zona distribucije",type:"warn"});}
   }
-  // 23. NEWS SENTIMENT (CryptoPanic — ako dostupno)
+  // 23. NEWS SENTIMENT (CryptoPanic — POJACANO) — recent 4h ima vecu tezinu
   var news=newsData[sym];
   if(news&&news.length){
-    var recent48h=news.filter(function(n){return Date.now()-n.ts<48*3600000;});
-    var bullNews=recent48h.filter(function(n){return n.sentiment==="positive";}).length;
-    var bearNews=recent48h.filter(function(n){return n.sentiment==="negative";}).length;
-    if(bullNews>=2&&bullNews>bearNews){delta+=1;signals.push({txt:"📰 "+bullNews+" bullish vijesti (48h) — pozitivan news flow",type:"bull"});}
-    else if(bearNews>=2&&bearNews>bullNews){delta-=1.5;warnings.push({txt:"📰 "+bearNews+" negativnih vijesti (48h) — FUD ili fundamentalni problem",type:"bear"});}
-    else if(bearNews>=1&&bullNews===0){delta-=0.5;warnings.push({txt:"📰 Negativna vijest u zadnja 48h",type:"warn"});}
+    var now=Date.now();
+    var recent4h=news.filter(function(n){return now-n.ts<4*3600000;});
+    var recent48h=news.filter(function(n){return now-n.ts<48*3600000;});
+    // 4h burst (super-svjeze) — najveca tezina
+    var bull4=recent4h.filter(function(n){return n.sentiment==="positive";}).length;
+    var bear4=recent4h.filter(function(n){return n.sentiment==="negative";}).length;
+    if(bull4>=3){delta+=2.5;signals.push({txt:"📰 "+bull4+" bullish vijesti u 4h — JAK news momentum",type:"bull"});}
+    else if(bull4>=2){delta+=1.5;signals.push({txt:"📰 "+bull4+" bullish vijesti u 4h — pozitivan news burst",type:"bull"});}
+    else if(bear4>=2){delta-=3;warnings.push({txt:"📰 "+bear4+" negativnih vijesti u 4h — JAK FUD, izbjegavaj",type:"bear"});}
+    else if(bear4>=1&&bull4===0){delta-=1.5;warnings.push({txt:"📰 Negativna vijest u 4h — oprez",type:"warn"});}
+    // 48h kontekst — slabiji utjecaj (samo ako 4h nije ulovio)
+    else {
+      var bullNews=recent48h.filter(function(n){return n.sentiment==="positive";}).length;
+      var bearNews=recent48h.filter(function(n){return n.sentiment==="negative";}).length;
+      if(bullNews>=3&&bullNews>bearNews){delta+=1.5;signals.push({txt:"📰 "+bullNews+" bullish vijesti (48h) — pozitivan news flow",type:"bull"});}
+      else if(bullNews>=2&&bullNews>bearNews){delta+=0.8;signals.push({txt:"📰 "+bullNews+" bullish vijesti (48h)",type:"bull"});}
+      else if(bearNews>=2&&bearNews>bullNews){delta-=2;warnings.push({txt:"📰 "+bearNews+" negativnih vijesti (48h) — FUD",type:"bear"});}
+    }
   }
   // 24. FUNDING FEE SENTIMENT — agregirani market-wide sentiment (kontrarian signal)
   var fs=getFundingSentiment();
@@ -2242,6 +2256,111 @@ function scoreOptions(opt,price,signals,warnings){
   return delta;
 }
 
+// ── REGIME MULTIPLIER — conditional scoring po regimu ──
+// BULL: momentum signali pojačani, mean reversion oslabljeni
+// CRAB: mean reversion pojačan, momentum signali normalni
+// BEAR: defenzivni signali pojačani, oversold sumnjiv
+// VOLATILE: sve signale lagano oslabiti (povecan rizik faketa)
+function regimeMultiplier(signalType){
+  var r=MACRO.claudeRegime||'NEUTRAL';
+  if(r==='BULL'||r==='STRONG_BULL'){
+    if(signalType==='momentum')return 1.25;
+    if(signalType==='breakout')return 1.3;
+    if(signalType==='oversold')return 0.85; // u bull-u oversold rijetko, signal manje vrijedi
+    if(signalType==='reversal')return 0.9;
+  }
+  if(r==='CRAB'||r==='NEUTRAL'){
+    if(signalType==='oversold')return 1.2; // mean reversion radi
+    if(signalType==='reversal')return 1.15;
+    if(signalType==='momentum')return 0.9; // momentum slabi u rangu
+    if(signalType==='breakout')return 0.85; // fakeouts cesti
+  }
+  if(r==='BEAR'||r==='WEAK_BEAR'){
+    if(signalType==='oversold')return 0.7; // moze pasti jos
+    if(signalType==='momentum')return 0.6;
+    if(signalType==='breakout')return 0.5;
+    if(signalType==='defensive')return 1.4;
+  }
+  if(r==='VOLATILE'){
+    return 0.9; // sve signali oslabljeni (false signals cesti)
+  }
+  return 1.0; // default
+}
+
+// ── POSITION SIZING CALCULATOR ──
+// Returns: {dollarAmount, percentOfAccount, maxLoss, sharesUnits, reason}
+// Logic: risk-fixed - svaki trade rizicira ISTU $ kolicinu (maxRiskPerTrade % od accounta)
+// Pozicija = (account * maxRiskPerTrade%) / stopLossPct
+// Modifikatori po conf, RR, broj aktivnih trade-ova
+function calcPositionSize(opp){
+  if(!opp||!opp.price||!opp.stopPrice||opp.stopPrice<=0)return null;
+  var account=settings.accountSize||1000;
+  var maxRiskPct=settings.maxRiskPerTrade||1; // % po trade-u (default 1%)
+  var stopPct=(opp.price-opp.stopPrice)/opp.price; // 0.02 = 2%
+  if(stopPct<=0||stopPct>0.1)return null; // sanity guard
+
+  // Baza: koliko USD smije izgubiti = account * maxRiskPct%
+  var maxLossUsd=account*maxRiskPct/100;
+  // Pozicija = maxLoss / stopPct (matematicki cista risk parity)
+  var basePosUsd=maxLossUsd/stopPct;
+
+  // MODIFIKATORI:
+  // 1. Conf bonus: 60-65 = 0.8x, 65-72 = 1.0x, 72-80 = 1.15x, 80+ = 1.3x
+  var confMult=opp.conf>=80?1.3:opp.conf>=72?1.15:opp.conf>=65?1.0:opp.conf>=60?0.8:0.5;
+  // 2. RR bonus: lose RR = manja pozicija
+  var rrMult=opp.rr>=2.5?1.15:opp.rr>=1.5?1.0:opp.rr>=1.2?0.85:0.6;
+  // 3. Already active alt longs: ako >=2 vec aktivna, smanji novi za 30%
+  var activeAlts=predTracker.filter(function(p){
+    return p.status==="AKTIVAN"&&p.direction!=="SHORT"&&p.sym!=="BTC";
+  }).length;
+  var diversifyMult=activeAlts>=3?0.5:activeAlts>=2?0.7:activeAlts>=1?0.9:1.0;
+
+  // 4. Volatility cap: ako daily ATR >10%, smanji 30% (visok rizik)
+  var atrMult=opp.atrPct>15?0.6:opp.atrPct>10?0.75:1.0;
+
+  // Finalna pozicija
+  var finalUsd=basePosUsd*confMult*rrMult*diversifyMult*atrMult;
+  // Cap na 25% accounta (single trade ne smije biti vise od 1/4 kapitala)
+  finalUsd=Math.min(finalUsd, account*0.25);
+
+  var pctOfAccount=(finalUsd/account)*100;
+  var realMaxLoss=finalUsd*stopPct;
+  var sharesUnits=finalUsd/opp.price;
+
+  return{
+    usd: Math.round(finalUsd),
+    pct: +pctOfAccount.toFixed(1),
+    maxLoss: +realMaxLoss.toFixed(2),
+    units: +sharesUnits.toFixed(opp.price<1?2:4),
+    multipliers: {conf:confMult, rr:rrMult, diversify:diversifyMult, atr:atrMult}
+  };
+}
+
+// ── RISK-ADJUSTED TRADE SCORE ──
+// Combinira conf + RR + regime + ATR penalty u jedinstvenu metriku za rangiranje
+// tradeScore = (conf/100) * min(RR,3) * regimeMult * (1 - atrPenalty)
+function calcTradeScore(opp){
+  if(!opp||!opp.conf)return 0;
+  var confNorm=opp.conf/100; // 0-1
+  var rrCapped=Math.min(opp.rr||0, 3); // cap na 3 - ne nagradjuj nerealne RR
+  var regimeMult=1.0;
+  var r=MACRO.claudeRegime||'NEUTRAL';
+  if(r==='BULL'||r==='STRONG_BULL')regimeMult=1.15;
+  else if(r==='CRAB'||r==='NEUTRAL')regimeMult=1.0;
+  else if(r==='BEAR'||r==='WEAK_BEAR')regimeMult=0.75;
+  else if(r==='VOLATILE')regimeMult=0.85;
+  // ATR penalty: visok ATR = veci rizik, manja pouzdanost da target dostize
+  var atrPct=opp.atrPct||5;
+  var atrPenalty=atrPct>15?0.3:atrPct>10?0.15:atrPct>7?0.05:0;
+  // Bonus za jak MarketStructure: BoS Bullish +10%, CHoCH Bullish +15%
+  var msBonus=1.0;
+  if(opp.marketStructure){
+    if(opp.marketStructure.bos==='BULLISH')msBonus=1.10;
+    else if(opp.marketStructure.choch==='BULLISH')msBonus=1.15;
+  }
+  return +(confNorm * rrCapped * regimeMult * msBonus * (1-atrPenalty)).toFixed(3);
+}
+
 // Volume Profile — POC, Value Area
 function scoreVolProfile(price,vp,signals,warnings){
   if(!vp||!price)return 0;
@@ -2332,10 +2451,12 @@ function scoreDailyCandle(sym,signals,warnings){
 }
 
 // Volume boost — direktni bonus za vol spike (povrh scoreMarketSignals)
+// Regime multiplier: vol spike u BULL je pravi breakout, u CRAB cesto fake
 function scoreVolumeBoost(vs,signals,warnings){
   if(!vs)return 0;
-  if(vs.ratio>4){signals.push({txt:"🔥 Volume "+vs.ratio.toFixed(1)+"× avg — jak momentum, setup ojačan",type:"bull"});return 2.5;}
-  if(vs.ratio>2.5){signals.push({txt:"📊 Volume "+vs.ratio.toFixed(1)+"× avg — momentum potvrđen",type:"bull"});return 1.5;}
+  var _rmBO=regimeMultiplier('breakout');
+  if(vs.ratio>4){signals.push({txt:"🔥 Volume "+vs.ratio.toFixed(1)+"× avg — jak momentum, setup ojačan",type:"bull"});return 2.5*_rmBO;}
+  if(vs.ratio>2.5){signals.push({txt:"📊 Volume "+vs.ratio.toFixed(1)+"× avg — momentum potvrđen",type:"bull"});return 1.5*_rmBO;}
   if(vs.weak){warnings.push({txt:"📉 Volume slab — nema momentum potvrde, preskoči ili čekaj",type:"warn"});return -1.5;}
   return 0;
 }
@@ -2528,6 +2649,8 @@ function analyze3D(sym){
     return cached.result; // <5s old, ista cijena/macro/settings → reuse
   }
   var result=_analyze3DUncached(sym);
+  // Risk-adjusted score (rangiranje umjesto samo conf)
+  if(result)result.tradeScore=calcTradeScore(result);
   _a3dCache[sym]={result:result,ts:now,key:_a3dGetCacheKey(sym)};
   return result;
 }
@@ -2554,8 +2677,10 @@ function _analyze3DUncached(sym){
     } else if(t.trend==="UP"){
       score+=wt("trendUp",1.5);signals.push({txt:"Iznad EMA50 — trend potvrđen",type:"bull"});
     }
-    if(t.rsi<32){score+=wt("rsiOversold",3);signals.push({txt:"RSI "+t.rsi.toFixed(0)+" — jako oversold",type:"bull"});}
-    else if(t.rsi<42){score+=wt("rsiOversold",1.5);signals.push({txt:"RSI "+t.rsi.toFixed(0)+" — oversold",type:"bull"});}
+    // RSI s regime multiplier — oversold u BULL = manji bonus (rijetko), u CRAB = veci (mean reversion radi)
+    var _rmOS=regimeMultiplier('oversold');
+    if(t.rsi<32){score+=wt("rsiOversold",3)*_rmOS;signals.push({txt:"RSI "+t.rsi.toFixed(0)+" — jako oversold",type:"bull"});}
+    else if(t.rsi<42){score+=wt("rsiOversold",1.5)*_rmOS;signals.push({txt:"RSI "+t.rsi.toFixed(0)+" — oversold",type:"bull"});}
     else if(t.rsi>72){score-=3;warnings.push({txt:"RSI "+t.rsi.toFixed(0)+" — overbought",type:"bear"});}
     // Bollinger
     if(t.bb&&price<t.bb.l){score+=wt("bbBelow",2);signals.push({txt:"Ispod Bollinger dna — mean reversion signal",type:"bull"});}
@@ -2966,7 +3091,9 @@ function _analyze3DUncached(sym){
     // Market structure + HTF gates (za diagnostics)
     marketStructure:ms3d||null,
     htfDownBlock:htfDownBlock,
-    chochBearBlock:chochBearBlock
+    chochBearBlock:chochBearBlock,
+    // Risk-adjusted trade score (za rangiranje umjesto samo conf)
+    tradeScore:0  // postavlja se ispod nakon sto je result spreman
   };
 }
 
@@ -2998,7 +3125,9 @@ function getOpportunities(){
   if(ulazSortMode==="rr"){
     all.sort(function(a,b){return b.rr-a.rr||b.conf-a.conf;});
   } else {
-    all.sort(function(a,b){return b.conf-a.conf||b.score-a.score;});
+    // PROMJENA: sortiramo po tradeScore (risk-adjusted), ne samo po conf
+    // tradeScore uzima u obzir conf + RR + regime + ATR penalty + MarketStructure bonus
+    all.sort(function(a,b){return (b.tradeScore||0)-(a.tradeScore||0)||b.conf-a.conf;});
   }
 
   // SIGNALI tab — unificiran ulaz+watch s chip filterom
@@ -3190,6 +3319,18 @@ function renderOpp(o){
   h+='<div style="text-align:right"><div style="font-size:var(--text-xs);color:var(--bull);font-weight:var(--fw-b);margin-bottom:3px">Target +'+o.targetPct+'%</div><div style="font-size:var(--text-md);font-weight:var(--fw-x);color:var(--bull)">'+fp(o.targetPrice)+'</div></div>';
   h+='</div>';
 
+  // ── POSITION SIZING (vidljiv samo za ✅ i 🟡 — kvalitetne setupe) ──
+  if(o.verdict&&(o.verdict.indexOf('✅')>-1||o.verdict.indexOf('🟡')>-1)){
+    var ps=calcPositionSize(o);
+    if(ps&&ps.usd>0){
+      h+='<div style="display:grid;grid-template-columns:auto 1fr auto;align-items:center;padding:8px 16px;background:rgba(99,102,241,.04);border-bottom:.5px solid var(--sep2);gap:10px;font-size:11px">';
+      h+='<span style="color:var(--t3);font-weight:var(--fw-b);text-transform:uppercase;letter-spacing:.4px">💼 Pozicija</span>';
+      h+='<span style="color:var(--t1);font-weight:var(--fw-x)">$'+ps.usd+' <span style="color:var(--t4);font-weight:var(--fw-b)">('+ps.pct+'% accounta)</span></span>';
+      h+='<span style="color:var(--bear);font-weight:var(--fw-b)">Max gubitak: -$'+ps.maxLoss+'</span>';
+      h+='</div>';
+    }
+  }
+
   // ── WATCH: promotion gap (uvijek vidljivo, kompakt) ────────────
   if((isWatchYellow||isWatchBlue)&&o.promotionGap>0){
     var pgCol=isWatchYellow?"var(--warn)":"var(--info)";
@@ -3366,7 +3507,7 @@ try{
   }
 }catch(e){predTracker=[];}
 
-// ── ADAPTIVE SIGNAL WEIGHTS (regime-aware od v5.59) ──────────────
+// ── ADAPTIVE SIGNAL WEIGHTS (regime-aware od v5.60) ──────────────
 // Struktura: {[regime]: {field: weight}, _global: {field: weight}}
 // Lookup hijerarhija: trenutni regime → _global → default
 // Razlog: RSI oversold u BEAR marketu je death trap, u BULL je odlican
@@ -3434,7 +3575,7 @@ function buildSnap(sym){
 }
 
 // Izračun lift-based težina iz zatvorenih predikcija
-// v5.59: regime-aware — računa zasebne weights za BULL/BEAR/CRAB + _global fallback
+// v5.60: regime-aware — računa zasebne weights za BULL/BEAR/CRAB + _global fallback
 function computeSignalWeights(){
   var now=Date.now();
   var DAY30=30*24*3600*1000;
@@ -6475,6 +6616,9 @@ function openSettings(){
   if(st)st.value=settings.targetPct||6;
   if(sr)sr.value=settings.maxRisk||2;
   if(srr)srr.value=settings.minRR||1.2;
+  var sacct=document.getElementById("s-acct");var srpt=document.getElementById("s-rpt");
+  if(sacct)sacct.value=settings.accountSize||1000;
+  if(srpt)srpt.value=settings.maxRiskPerTrade||1;
   // Popuni API ključeve
   var cq=document.getElementById("s-cq");var lc=document.getElementById("s-lc");var gh=document.getElementById("s-gh");var cp=document.getElementById("s-cp");var wa=document.getElementById("s-wa");
   if(cq&&apiKeys.cryptoquant)cq.value=apiKeys.cryptoquant;
@@ -6570,6 +6714,8 @@ function applySettings(){
   settings.targetPct=parseFloat(document.getElementById("s-tgt").value)||6;
   settings.maxRisk=parseFloat(document.getElementById("s-risk").value)||2;
   settings.minRR=parseFloat(document.getElementById("s-rr").value)||1.2;
+  var acctEl=document.getElementById("s-acct");if(acctEl)settings.accountSize=parseFloat(acctEl.value)||1000;
+  var rptEl=document.getElementById("s-rpt");if(rptEl)settings.maxRiskPerTrade=parseFloat(rptEl.value)||1;
   settings._cacheV=(settings._cacheV||0)+1; // invalidate analyze3D cache
   // Sync activePct sa novim target-om iz settings (UI toggle UKLONJEN)
   activePct=settings.targetPct;
