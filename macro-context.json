@@ -1,13 +1,13 @@
 {
-    "dxy":  99.15,
-    "changeSummary":  "DXY lagano pao na 99.15, BTC korigirao na ~$75.7K uz ETF odljeve od -$105M dnevno, dok Fear & Greed minimalno porastao s 30 na 32 — sentiment ostaje u zoni straha.",
-    "lastUpdated":  "2026-05-27T12:00:00Z",
+    "dxy":  99.28,
+    "changeSummary":  "Inicijalno punjenje podataka - BTC pada na ~74.5k uz Fear & Greed od 28 i DXY ispod 100, tržište u strahu.",
+    "lastUpdated":  "2026-05-28T12:00:00Z",
     "warnings":  {
                      "ACT":  [
 
                              ],
                      "MEME":  [
-
+                                 "Sentiment negativan, altcoini pod pritiskom"
                               ],
                      "ANIME":  [
 
@@ -16,7 +16,7 @@
 
                              ],
                      "BNB":  [
-                                 "Binance delistira 5 tokena (ATA, FARM, MLN, PHB, SYS)"
+
                              ],
                      "SUI":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-                                 "Negativni ETF odljevi, kontrarijanski signal opreznosti"
+                                "USDT/USDC dominance raste - traderi biraju stablecoins"
                              ],
                      "LINK":  [
 
@@ -61,11 +61,11 @@
 
                               ],
                      "TRUMP":  [
-
+                                  "US-Izrael napadi - politička volatilnost tokena"
                                ],
                      "BTC":  [
-                                 "BTC ETF odljevi -$105M dnevno, -$1.42B tjedno",
-                                 "Dva uzastopna neuspjela oporavka, $75K kljucna razina"
+                                "Analitičar predviđa crash do $52k - H&S formacija",
+                                "Fear & Greed na 28 - tržište u strahu"
                              ]
                  },
     "catalysts":  {
@@ -79,7 +79,7 @@
 
                                 ],
                       "XRP":  [
-                                  "XRP Ledger 3.1.3 upgrade mainnet live danas"
+
                               ],
                       "BNB":  [
 
@@ -115,10 +115,10 @@
 
                                ],
                       "AIXBT":  [
-                                    "AI narativa: NEAR +15%, Worldcoin +17%, Render +15%"
+                                    "AI tokeni outperformaju šire tržište"
                                 ],
                       "ETH":  [
-                                  "Long/short ratio 72.2% long - kontrarijanski bullish"
+
                               ],
                       "LINK":  [
 
@@ -130,18 +130,19 @@
 
                                 ],
                       "BTC":  [
-                                  "Whale akumulacija na $75K razini podrske"
+                                  "US-Iran mirovni pregovori - pozitivno za risk-on",
+                                  "Core PCE podaci danas - mogući kratkoročni katalizator"
                               ]
                   },
-    "fearGreed":  32,
+    "fearGreed":  28,
     "macroPenalty":  1,
-    "regime":  "VOLATILE",
+    "regime":  "BEAR",
     "sentimentScore":  {
                            "ACT":  0,
-                           "MEME":  0,
+                           "MEME":  -1,
                            "ANIME":  0,
-                           "XRP":  1,
-                           "BNB":  -1,
+                           "XRP":  0,
+                           "BNB":  0,
                            "SUI":  0,
                            "AVAX":  0,
                            "PENGU":  0,
@@ -153,15 +154,15 @@
                            "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  1,
-                           "ETH":  0,
+                           "ETH":  -1,
                            "LINK":  0,
                            "PUMP":  0,
-                           "TRUMP":  0,
-                           "BTC":  0
+                           "TRUMP":  -1,
+                           "BTC":  -1
                        },
-    "aiSummary":  "DXY ostaje stabilan oko 99.15 dok US-Iran pregovori o Hormuzskom tjesnacu smanjuju inflacijski pritisak, sto je blago pozitivno za kripto. Fear & Greed indeks je na 32 (strah) uz BTC koji se bori s razinom podrske na $75K nakon dvaju uzastopnih neuspjelih oporavaka i dnevnih ETF odljeva od -$105M. Ocekuje se nastavak volatile kretanja; XRP Ledger upgrade danas i AI token rally pozitivni su katalizatori, no institucijski oprez ostaje visok.",
+    "aiSummary":  "DXY je na 99.28 ispod ključne razine 100, što je blago pozitivno za kripto imovinu. Fear & Greed indeks je na 28 (Strah), signalizirajući pesimizam i bijeg u stablecoins - USDT+USDC dominance raste na ~10.5%. Očekujte nastavak pritiska na altcoine uz mogući kratkoročni BTC oporavak ako se potvrdi US-Iran mirovni sporazum.",
     "warActive":  true,
-    "btcDom":  58.2,
-    "stableDom":  8.5,
-    "oil":  93.0
+    "btcDom":  59.0,
+    "stableDom":  10.5,
+    "oil":  90.35
 }
