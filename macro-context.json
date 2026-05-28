@@ -1,7 +1,7 @@
 {
     "dxy":  99.28,
-    "changeSummary":  "Fear & Greed pao s 37 na 25 (Ekstremni Strah), BTC probio $73K prema dolje uz ETF odljeve od $733M i nastavak US-Iran geopoliticke krize.",
-    "lastUpdated":  "2026-05-28T18:00:00Z",
+    "changeSummary":  "Fear & Greed pao s 37 na 30, BTC nastavlja pad ispod $73K uz rekordne ETF odljeve od $733M i vojnu eskalaciju SAD-Iran, dok SUI bilježi drugi mrežni zastoj ove godine.",
+    "lastUpdated":  "2026-05-28T20:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -19,7 +19,7 @@
 
                              ],
                      "SUI":  [
-
+                                 "Mrežni zastoj mainnet, pad 8%, drugi put ove god."
                              ],
                      "AVAX":  [
 
@@ -43,7 +43,7 @@
 
                              ],
                      "ADA":  [
-
+                                 "Pad 4% danas, gubi podršku"
                              ],
                      "PNUT":  [
 
@@ -52,10 +52,10 @@
 
                                ],
                      "ETH":  [
-                                 "ETF odljevi 11 dana zaredom, -$401M u svibnju"
+                                 "ETH pao ispod $2.000, 11 uzast. dana ETF odljeva"
                              ],
                      "LINK":  [
-
+                                  "Pad 3.24% danas"
                               ],
                      "PUMP":  [
 
@@ -64,7 +64,7 @@
 
                                ],
                      "BTC":  [
-                                 "ETF odljevi $733M - najveci jednodnevni odljev u mjesecima"
+                                 "Rekordni ETF odljevi $733M u jednom danu"
                              ]
                  },
     "catalysts":  {
@@ -78,7 +78,7 @@
 
                                 ],
                       "XRP":  [
-
+                                  "XRPL v3.1.3 aktiviran, AMM v2 upgrade"
                               ],
                       "BNB":  [
 
@@ -90,10 +90,10 @@
 
                                ],
                       "PENGU":  [
-
+                                    "Whale akumulacija nastavlja se"
                                 ],
                       "BOME":  [
-
+                                   "Rast nakon Solana ETF najave"
                                ],
                       "DOGS":  [
 
@@ -105,7 +105,7 @@
 
                                  ],
                       "SOL":  [
-
+                                  "Rast +0.4% unatoč negativnom tržištu"
                               ],
                       "ADA":  [
 
@@ -129,38 +129,38 @@
 
                                 ],
                       "BTC":  [
-                                  "Samsung Securities $200M ulaganje u Dunamu kripto burzu"
+
                               ]
                   },
-    "fearGreed":  25,
+    "fearGreed":  30,
     "macroPenalty":  1,
     "regime":  "VOLATILE",
     "sentimentScore":  {
                            "ACT":  -1,
                            "MEME":  -1,
                            "ANIME":  -1,
-                           "XRP":  -1,
+                           "XRP":  0,
                            "BNB":  -1,
-                           "SUI":  -1,
+                           "SUI":  -2,
                            "AVAX":  -1,
-                           "PENGU":  -1,
-                           "BOME":  -1,
+                           "PENGU":  0,
+                           "BOME":  0,
                            "DOGS":  -1,
                            "NOT":  -1,
                            "PEOPLE":  -1,
-                           "SOL":  -1,
+                           "SOL":  0,
                            "ADA":  -1,
                            "PNUT":  -1,
                            "AIXBT":  -1,
-                           "ETH":  -2,
+                           "ETH":  -1,
                            "LINK":  -1,
                            "PUMP":  -1,
                            "TRUMP":  -1,
-                           "BTC":  -2
+                           "BTC":  -1
                        },
-    "aiSummary":  "DXY ostaje stabilan na 99.28 ispod kljucne razine 100, ali Fear & Greed indeks pao je na 25 (Ekstremni Strah) uslijed eskalacije US-Iran sukoba i rekordnih BTC ETF odljeva od $733M u jednom danu. BTC je pao ispod $73K, a ETH ostaje ispod $2000 uz 11 uzastopnih dana ETF odljeva i $401M mjesecnih odljeva. Ocekuje se nastavak volatilnog bear-trzista dok se geopoliticka situacija oko Hormuz prolaza ne razrijesi.",
+    "aiSummary":  "DXY ostaje stabilan na 99.28 ispod razine 100, dok Fear & Greed pada na 30 (Strah) uslijed vojnih akcija SAD-a protiv iranskih dronova u Hormuz prolazu. BTC je pao ispod $73.5K uz rekordne dnevne ETF odljeve od $733M, ETH tone ispod $2.000 s 11 uzastopnih dana odljeva, a SUI mreža doživjela je drugi mainnet zastoj ove godine uz pad od 8%. Očekuje se nastavak volatilnog bear-tržišta dok se geopolitička situacija oko Hormuz prolaza ne razriješi.",
     "warActive":  true,
-    "btcDom":  58.0,
-    "stableDom":  12.3,
-    "oil":  90.35
+    "btcDom":  58.5,
+    "stableDom":  12.8,
+    "oil":  89.53
 }
