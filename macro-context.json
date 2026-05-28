@@ -1,7 +1,7 @@
 {
     "dxy":  99.28,
-    "changeSummary":  "Fear & Greed porastao s 25 na 37, BTC pao ispod $73K uz rekordne ETF outflowe od $733M i eskalaciju US-Iran vojnih sukoba.",
-    "lastUpdated":  "2026-05-28T14:00:00Z",
+    "changeSummary":  "Fear & Greed pao s 37 na 25 (Ekstremni Strah), BTC probio $73K prema dolje uz ETF odljeve od $733M i nastavak US-Iran geopoliticke krize.",
+    "lastUpdated":  "2026-05-28T18:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-                                 "ETH probio ispod $2000 podrske - bearish signal"
+                                 "ETF odljevi 11 dana zaredom, -$401M u svibnju"
                              ],
                      "LINK":  [
 
@@ -64,8 +64,7 @@
 
                                ],
                      "BTC":  [
-                                 "ETF outflowi $733M - rekordni dnevni izlaz",
-                                 "US-Iran sukobi - geopoliticki rizik Hormuz"
+                                 "ETF odljevi $733M - najveci jednodnevni odljev u mjesecima"
                              ]
                  },
     "catalysts":  {
@@ -130,10 +129,10 @@
 
                                 ],
                       "BTC":  [
-
+                                  "Samsung Securities $200M ulaganje u Dunamu kripto burzu"
                               ]
                   },
-    "fearGreed":  37,
+    "fearGreed":  25,
     "macroPenalty":  1,
     "regime":  "VOLATILE",
     "sentimentScore":  {
@@ -157,11 +156,11 @@
                            "LINK":  -1,
                            "PUMP":  -1,
                            "TRUMP":  -1,
-                           "BTC":  -1
+                           "BTC":  -2
                        },
-    "aiSummary":  "DXY ostaje stabilno na 99.28 ispod razine 100, no geopoliticka eskalacija dominira - US vojni udari na Iran blizu Hormuz prolaza tjera investitore u bijeg od rizika uz rekordne BTC ETF outflowe od $733M u jednom danu. Fear & Greed indeks oporavio se s 25 na 37 (Strah), ali BTC je pao ispod $73K, a ETH probio kriticnu podrsku na $2000. Ocekuje se nastavak volatilnosti i pritisak na cijelo trziste dok geopoliticka neizvjesnost oko Hormuz prolaza i daljih US-Iran pregovora ne splasne.",
+    "aiSummary":  "DXY ostaje stabilan na 99.28 ispod kljucne razine 100, ali Fear & Greed indeks pao je na 25 (Ekstremni Strah) uslijed eskalacije US-Iran sukoba i rekordnih BTC ETF odljeva od $733M u jednom danu. BTC je pao ispod $73K, a ETH ostaje ispod $2000 uz 11 uzastopnih dana ETF odljeva i $401M mjesecnih odljeva. Ocekuje se nastavak volatilnog bear-trzista dok se geopoliticka situacija oko Hormuz prolaza ne razrijesi.",
     "warActive":  true,
     "btcDom":  58.0,
-    "stableDom":  9.0,
-    "oil":  90.5
+    "stableDom":  12.3,
+    "oil":  90.35
 }
