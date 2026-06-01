@@ -1,19 +1,19 @@
 {
     "dxy":  99.0,
-    "changeSummary":  "BTC je pao ispod $73.5K uz rekordne ETF odljeve od $2.3B u svibnju, F&G ostao u strahu (29→28), DXY stabilan oko 99, dok se geopolitička situacija blago smiruje uz SAD-Iran privremeno primirje.",
-    "lastUpdated":  "2026-06-01T08:15:00Z",
+    "changeSummary":  "macroPenalty ispravljen na 0 (prethodno pogrešno -1); SAD zaplijenio $1B u iranskom kriptu, FG stabilan na 29, DXY i BTC dom nepromijenjeni (~99 i 59.1%).",
+    "lastUpdated":  "2026-06-01T10:00:00Z",
     "warnings":  {
                      "ACT":  [
 
                              ],
                      "MEME":  [
-
+                                "Tržišni strah (FG=29) pritišće meme coince"
                               ],
                      "ANIME":  [
 
                                ],
                      "XRP":  [
-
+                               "XRP pao na $1.32, 15-tjedni minimum"
                              ],
                      "BNB":  [
 
@@ -37,7 +37,7 @@
 
                              ],
                      "PEOPLE":  [
-
+                                  "Jamie Dimon kritizira CLARITY zakon"
                                 ],
                      "SOL":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-                                 "Borba ispod $2,050 podrške uz slabi volumen"
+
                              ],
                      "LINK":  [
 
@@ -61,11 +61,11 @@
 
                               ],
                      "TRUMP":  [
-
+                                 "SAD zaplijenio $1B u iranskom kriptu - geopolitički pritisak"
                                ],
                      "BTC":  [
-                                 "ETF odljevi $2.3B u svibnju - rekord 2026",
-                                 "BlackRock IBIT prodaja $1.26B u jednom danu"
+                               "ETF odljevi $2.3B u svibnju, rekord 2026.",
+                               "LTH pozicije u padu (-7.69%)"
                              ]
                  },
     "catalysts":  {
@@ -79,8 +79,7 @@
 
                                 ],
                       "XRP":  [
-                                  "CLARITY Act napreduje, potpis do 4.7.2026.",
-                                  "Niske XRP inflow na Binance - bullish supply"
+                                "XRP se stabilizira na $1.36 nakon 15-tjednog dna"
                               ],
                       "BNB":  [
 
@@ -101,7 +100,7 @@
 
                                ],
                       "NOT":  [
-
+                                "TON ekosustav aktivan, Telegram igre rastu"
                               ],
                       "PEOPLE":  [
 
@@ -110,7 +109,7 @@
 
                               ],
                       "ADA":  [
-                                  "CME Crypto Index futures uključuje ADA 8.6."
+
                               ],
                       "PNUT":  [
 
@@ -119,13 +118,10 @@
 
                                 ],
                       "ETH":  [
-                                  "Whale akumulacija ispod $2K razine"
+
                               ],
                       "LINK":  [
-                                   "DTCC Collateral AppChain integracija LINK-a",
-                                   "AWS Marketplace lansiranje LINK-a 25.5.2026",
-                                   "CME Crypto Index futures uključuje LINK 8.6.",
-                                   "TVS rekord $110B, CCIP v1.5 mainnet stiže"
+
                                ],
                       "PUMP":  [
 
@@ -134,38 +130,39 @@
 
                                 ],
                       "BTC":  [
-                                  "CME Nasdaq Crypto Index futures lansiranje 8.6."
+                                "CME Crypto Index futures 8. lipnja",
+                                "Potencijalni CLARITY zakon do 4. srpnja"
                               ]
                   },
-    "fearGreed":  28,
+    "fearGreed":  29,
     "macroPenalty":  0,
     "regime":  "VOLATILE",
     "sentimentScore":  {
                            "ACT":  0,
-                           "MEME":  0,
+                           "MEME":  -1,
                            "ANIME":  0,
-                           "XRP":  1,
+                           "XRP":  -1,
                            "BNB":  0,
                            "SUI":  0,
                            "AVAX":  0,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
-                           "NOT":  0,
-                           "PEOPLE":  0,
+                           "NOT":  1,
+                           "PEOPLE":  -1,
                            "SOL":  0,
-                           "ADA":  1,
+                           "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
                            "ETH":  0,
-                           "LINK":  2,
+                           "LINK":  0,
                            "PUMP":  0,
-                           "TRUMP":  0,
+                           "TRUMP":  -1,
                            "BTC":  -1
                        },
-    "aiSummary":  "DXY je stabilan ispod 100 (99.0) uz privremeno SAD-Iran primirje koje slabi dolar i blago povoljno djeluje na kriptovalute. Fear & Greed ostaje u Strahu (28) dok BTC tone na $73.3K s rekordnim ETF odljevima od $2.3B u svibnju 2026, a BTC dominacija raste prema 60%. Tržište ostaje volatilno bez jasnog katalista za preokret - ključni eventi su CME Crypto Index futures 8. lipnja i potencijalni potpis CLARITY zakona do 4. srpnja.",
+    "aiSummary":  "DXY ostaje stabilan ispod 100 (~99.0) uz privremeni SAD-Iran mir koji slabi dolar i blago pogoduje kriptovalutama. Fear & Greed drži se na 29 (Strah), BTC na ~$73.3K pod pritiskom rekordnih ETF odljeva od $2.3B u svibnju i povlačenja dugoročnih holdara, dok je SAD danas zaplijenio $1B u iranskom kriptu što unosi geopolitičku neizvjesnost. Tržište ostaje volatilno bez jasnog preokreta; ključni katalizatori su CME Crypto Index futures 8. lipnja i mogući potpis CLARITY zakona do 4. srpnja.",
     "warActive":  false,
-    "btcDom":  59.5,
-    "stableDom":  12.8,
+    "btcDom":  59.1,
+    "stableDom":  13.2,
     "oil":  88.94
 }
