@@ -1,7 +1,7 @@
 {
     "dxy":  99.0,
-    "changeSummary":  "DXY blago pao s 99.28 na 99.0 uz primirje SAD-Iran produženo 60 dana, oil porastao na $90.35, BTC dominacija pala na 57.3% dok F&G tone na 29.",
-    "lastUpdated":  "2026-05-28T21:00:00Z",
+    "changeSummary":  "BTC je pao ispod $73.5K uz rekordne ETF odljeve od $2.3B u svibnju, F&G ostao u strahu (29→28), DXY stabilan oko 99, dok se geopolitička situacija blago smiruje uz SAD-Iran privremeno primirje.",
+    "lastUpdated":  "2026-06-01T08:15:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -19,7 +19,7 @@
 
                              ],
                      "SUI":  [
-                         "Rizik ponovnog zastoja mreže"
+
                              ],
                      "AVAX":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-                         "Ispod $2,050 ključne podrške"
+                                 "Borba ispod $2,050 podrške uz slabi volumen"
                              ],
                      "LINK":  [
 
@@ -64,7 +64,8 @@
 
                                ],
                      "BTC":  [
-                         "ETF odljevi nastavljaju se, geopolitički rizik"
+                                 "ETF odljevi $2.3B u svibnju - rekord 2026",
+                                 "BlackRock IBIT prodaja $1.26B u jednom danu"
                              ]
                  },
     "catalysts":  {
@@ -78,7 +79,8 @@
 
                                 ],
                       "XRP":  [
-                          "CLARITY Act mogući katalizator za XRP"
+                                  "CLARITY Act napreduje, potpis do 4.7.2026.",
+                                  "Niske XRP inflow na Binance - bullish supply"
                               ],
                       "BNB":  [
 
@@ -105,10 +107,10 @@
 
                                  ],
                       "SOL":  [
-                          "Alpenglow upgrade - 150ms potvrda transakcija"
+
                               ],
                       "ADA":  [
-
+                                  "CME Crypto Index futures uključuje ADA 8.6."
                               ],
                       "PNUT":  [
 
@@ -117,10 +119,13 @@
 
                                 ],
                       "ETH":  [
-                          "Standard Chartered potvrđuje cilj $10K do 2027"
+                                  "Whale akumulacija ispod $2K razine"
                               ],
                       "LINK":  [
-
+                                   "DTCC Collateral AppChain integracija LINK-a",
+                                   "AWS Marketplace lansiranje LINK-a 25.5.2026",
+                                   "CME Crypto Index futures uključuje LINK 8.6.",
+                                   "TVS rekord $110B, CCIP v1.5 mainnet stiže"
                                ],
                       "PUMP":  [
 
@@ -129,38 +134,38 @@
 
                                 ],
                       "BTC":  [
-                          "Iran-SAD primirje produženo 60 dana"
+                                  "CME Nasdaq Crypto Index futures lansiranje 8.6."
                               ]
                   },
-    "fearGreed":  29,
-    "macroPenalty":  1,
+    "fearGreed":  28,
+    "macroPenalty":  0,
     "regime":  "VOLATILE",
     "sentimentScore":  {
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  0,
+                           "XRP":  1,
                            "BNB":  0,
-                           "SUI":  -1,
+                           "SUI":  0,
                            "AVAX":  0,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  1,
-                           "ADA":  0,
+                           "SOL":  0,
+                           "ADA":  1,
                            "PNUT":  0,
                            "AIXBT":  0,
                            "ETH":  0,
-                           "LINK":  0,
+                           "LINK":  2,
                            "PUMP":  0,
                            "TRUMP":  0,
                            "BTC":  -1
                        },
-    "aiSummary":  "DXY je blago pao na 99.0 zbog produženja primirja SAD-Iran za 60 dana i slabijih PCE podataka, dok oil raste na $90.35 uz geopolitički oprez oko Hormuz prolaza. Fear & Greed pada na 29 (Strah) dok BTC tone ispod $73.5K s nastavljenim ETF odljevima, a ETH se bori ispod $2,050 podrške uz whale akumulaciju. Očekuje se nastavak volatilnog tržišta bez jasnog katalista za preokret, uz ključni nadzor Iran-SAD pregovora.",
-    "warActive":  true,
-    "btcDom":  57.3,
-    "stableDom":  8.5,
-    "oil":  90.35
+    "aiSummary":  "DXY je stabilan ispod 100 (99.0) uz privremeno SAD-Iran primirje koje slabi dolar i blago povoljno djeluje na kriptovalute. Fear & Greed ostaje u Strahu (28) dok BTC tone na $73.3K s rekordnim ETF odljevima od $2.3B u svibnju 2026, a BTC dominacija raste prema 60%. Tržište ostaje volatilno bez jasnog katalista za preokret - ključni eventi su CME Crypto Index futures 8. lipnja i potencijalni potpis CLARITY zakona do 4. srpnja.",
+    "warActive":  false,
+    "btcDom":  59.5,
+    "stableDom":  12.8,
+    "oil":  88.94
 }
