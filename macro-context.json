@@ -1,19 +1,19 @@
 {
-    "dxy":  99.0,
-    "changeSummary":  "macroPenalty ispravljen na 0 (prethodno pogrešno -1); SAD zaplijenio $1B u iranskom kriptu, FG stabilan na 29, DXY i BTC dom nepromijenjeni (~99 i 59.1%).",
-    "lastUpdated":  "2026-06-01T10:00:00Z",
+    "dxy":  98.94,
+    "changeSummary":  "Uvjeti gotovo nepromijenjeni – DXY ~98.9, FG 29, BTC lagano raste na $73.5K – Coinbase otvara INR rails za Indiju kao novi katalizator, macroPenalty ispravljen na 0 (min. granica).",
+    "lastUpdated":  "2026-06-01T14:00:00Z",
     "warnings":  {
                      "ACT":  [
 
                              ],
                      "MEME":  [
-                                "Tržišni strah (FG=29) pritišće meme coince"
+
                               ],
                      "ANIME":  [
 
                                ],
                      "XRP":  [
-                               "XRP pao na $1.32, 15-tjedni minimum"
+                                 "15-tjedni minimum, trguje ispod $1.30"
                              ],
                      "BNB":  [
 
@@ -28,7 +28,7 @@
 
                                ],
                      "BOME":  [
-
+                                  "Pad 87% od vrhunca, tržišna kap. $137M"
                               ],
                      "DOGS":  [
 
@@ -37,7 +37,7 @@
 
                              ],
                      "PEOPLE":  [
-                                  "Jamie Dimon kritizira CLARITY zakon"
+
                                 ],
                      "SOL":  [
 
@@ -46,7 +46,7 @@
 
                              ],
                      "PNUT":  [
-
+                                  "Pad 80%+ od prosinca 2024, bez oporavka"
                               ],
                      "AIXBT":  [
 
@@ -61,11 +61,11 @@
 
                               ],
                      "TRUMP":  [
-                                 "SAD zaplijenio $1B u iranskom kriptu - geopolitički pritisak"
+                                   "Pad 96% od ATH, slaba kupovna aktivnost"
                                ],
                      "BTC":  [
-                               "ETF odljevi $2.3B u svibnju, rekord 2026.",
-                               "LTH pozicije u padu (-7.69%)"
+                                 "Rekordni ETF odljevi u svibnju ($2.3B)",
+                                 "Dugoročni holdari nastavljaju prodaju"
                              ]
                  },
     "catalysts":  {
@@ -79,16 +79,16 @@
 
                                 ],
                       "XRP":  [
-                                "XRP se stabilizira na $1.36 nakon 15-tjednog dna"
+                                  "CME uveo 24/7 XRP futures od 29. svibnja"
                               ],
                       "BNB":  [
 
                               ],
                       "SUI":  [
-
+                                  "SUI futures dostupni, raste dubina tržišta"
                               ],
                       "AVAX":  [
-
+                                   "Progmat migrira $2.8B imovine na Avalanche L1"
                                ],
                       "PENGU":  [
 
@@ -100,16 +100,16 @@
 
                                ],
                       "NOT":  [
-                                "TON ekosustav aktivan, Telegram igre rastu"
+
                               ],
                       "PEOPLE":  [
 
                                  ],
                       "SOL":  [
-
+                                  "Alpenglow upgrade: finalizacija blokova u 150ms"
                               ],
                       "ADA":  [
-
+                                  "CME proširio futures na ADA (od 29. svibnja)"
                               ],
                       "PNUT":  [
 
@@ -118,10 +118,11 @@
 
                                 ],
                       "ETH":  [
-
+                                  "ETF optimizam i rast L2 (Arbitrum, Base)",
+                                  "Whitehat vratio $2M iz 2016 ICO ugovora"
                               ],
                       "LINK":  [
-
+                                   "CME proširio futures na LINK (od 29. svibnja)"
                                ],
                       "PUMP":  [
 
@@ -130,8 +131,7 @@
 
                                 ],
                       "BTC":  [
-                                "CME Crypto Index futures 8. lipnja",
-                                "Potencijalni CLARITY zakon do 4. srpnja"
+                                  "Coinbase otvara INR rails – indijsko tržište"
                               ]
                   },
     "fearGreed":  29,
@@ -139,30 +139,30 @@
     "regime":  "VOLATILE",
     "sentimentScore":  {
                            "ACT":  0,
-                           "MEME":  -1,
+                           "MEME":  0,
                            "ANIME":  0,
                            "XRP":  -1,
                            "BNB":  0,
-                           "SUI":  0,
-                           "AVAX":  0,
+                           "SUI":  1,
+                           "AVAX":  2,
                            "PENGU":  0,
-                           "BOME":  0,
+                           "BOME":  -1,
                            "DOGS":  0,
-                           "NOT":  1,
-                           "PEOPLE":  -1,
-                           "SOL":  0,
-                           "ADA":  0,
-                           "PNUT":  0,
+                           "NOT":  0,
+                           "PEOPLE":  0,
+                           "SOL":  2,
+                           "ADA":  1,
+                           "PNUT":  -1,
                            "AIXBT":  0,
-                           "ETH":  0,
-                           "LINK":  0,
+                           "ETH":  1,
+                           "LINK":  1,
                            "PUMP":  0,
                            "TRUMP":  -1,
                            "BTC":  -1
                        },
-    "aiSummary":  "DXY ostaje stabilan ispod 100 (~99.0) uz privremeni SAD-Iran mir koji slabi dolar i blago pogoduje kriptovalutama. Fear & Greed drži se na 29 (Strah), BTC na ~$73.3K pod pritiskom rekordnih ETF odljeva od $2.3B u svibnju i povlačenja dugoročnih holdara, dok je SAD danas zaplijenio $1B u iranskom kriptu što unosi geopolitičku neizvjesnost. Tržište ostaje volatilno bez jasnog preokreta; ključni katalizatori su CME Crypto Index futures 8. lipnja i mogući potpis CLARITY zakona do 4. srpnja.",
+    "aiSummary":  "DXY nastavlja slabiti (~98.9, ispod 100) što blago pogoduje kriptovalutama, dok Fear & Greed ostaje u zoni Straha (29) bez znakova preokreta. BTC se stabilizira oko $73.5K uz i dalje prisutan pritisak od ETF odljeva i prodaje dugoročnih holdara, dok Coinbase uvođenjem INR rails-a otvara indijsko tržište kao potencijalni novi katalizator u lipnju. SOL (Alpenglow) i AVAX (Progmat $2.8B) predvode altcoin prilike, a ključni event ostaje CME Crypto Index futures 8. lipnja.",
     "warActive":  false,
-    "btcDom":  59.1,
-    "stableDom":  13.2,
-    "oil":  88.94
+    "btcDom":  59.3,
+    "stableDom":  13.1,
+    "oil":  89.20
 }
