@@ -1,7 +1,7 @@
 {
-    "dxy":  98.94,
-    "changeSummary":  "Uvjeti gotovo nepromijenjeni – DXY ~98.9, FG 29, BTC lagano raste na $73.5K – Coinbase otvara INR rails za Indiju kao novi katalizator, macroPenalty ispravljen na 0 (min. granica).",
-    "lastUpdated":  "2026-06-01T14:00:00Z",
+    "dxy":  99.19,
+    "changeSummary":  "DXY blago porastao (98.94→99.19), BTC pao ispod $73K uz rekordne ETF odljeve od $2.97B u 10 dana, dok Fear & Greed ostaje na 29.",
+    "lastUpdated":  "2026-06-02T12:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -13,7 +13,7 @@
 
                                ],
                      "XRP":  [
-                                 "15-tjedni minimum, trguje ispod $1.30"
+
                              ],
                      "BNB":  [
 
@@ -28,7 +28,7 @@
 
                                ],
                      "BOME":  [
-                                  "Pad 87% od vrhunca, tržišna kap. $137M"
+
                               ],
                      "DOGS":  [
 
@@ -40,32 +40,32 @@
 
                                 ],
                      "SOL":  [
-
+                         "Goldman Sachs izlaz iz SOL ETF pozicija"
                              ],
                      "ADA":  [
 
                              ],
                      "PNUT":  [
-                                  "Pad 80%+ od prosinca 2024, bez oporavka"
+
                               ],
                      "AIXBT":  [
 
                                ],
                      "ETH":  [
-
+                         "Hyperliquid preuzima promet od ETH i SOL"
                              ],
                      "LINK":  [
 
                               ],
                      "PUMP":  [
-
+                         "Pump.fun tokeni u padu, prodajni pritisak raste"
                               ],
                      "TRUMP":  [
-                                   "Pad 96% od ATH, slaba kupovna aktivnost"
+
                                ],
                      "BTC":  [
-                                 "Rekordni ETF odljevi u svibnju ($2.3B)",
-                                 "Dugoročni holdari nastavljaju prodaju"
+                         "ETF odljevi $2.97B u 10 dana, rekordni niz",
+                         "$571M likvidirano, 75.6% long pozicija"
                              ]
                  },
     "catalysts":  {
@@ -79,16 +79,16 @@
 
                                 ],
                       "XRP":  [
-                                  "CME uveo 24/7 XRP futures od 29. svibnja"
+                          "RLUSD rast, Ripple bankarska partnerstva šire se"
                               ],
                       "BNB":  [
 
                               ],
                       "SUI":  [
-                                  "SUI futures dostupni, raste dubina tržišta"
+
                               ],
                       "AVAX":  [
-                                   "Progmat migrira $2.8B imovine na Avalanche L1"
+
                                ],
                       "PENGU":  [
 
@@ -106,10 +106,10 @@
 
                                  ],
                       "SOL":  [
-                                  "Alpenglow upgrade: finalizacija blokova u 150ms"
+                          "Alpenglow: potvrda transakcija 100-150ms Q3 2026"
                               ],
                       "ADA":  [
-                                  "CME proširio futures na ADA (od 29. svibnja)"
+
                               ],
                       "PNUT":  [
 
@@ -118,11 +118,10 @@
 
                                 ],
                       "ETH":  [
-                                  "ETF optimizam i rast L2 (Arbitrum, Base)",
-                                  "Whitehat vratio $2M iz 2016 ICO ugovora"
+                          "Glamsterdam upgrade cilja 10K TPS, lipanj/Q3 2026"
                               ],
                       "LINK":  [
-                                   "CME proširio futures na LINK (od 29. svibnja)"
+
                                ],
                       "PUMP":  [
 
@@ -131,7 +130,7 @@
 
                                 ],
                       "BTC":  [
-                                  "Coinbase otvara INR rails – indijsko tržište"
+                          "MEXC RealStocks: dionice na kripto platformi"
                               ]
                   },
     "fearGreed":  29,
@@ -141,28 +140,28 @@
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  -1,
+                           "XRP":  1,
                            "BNB":  0,
-                           "SUI":  1,
-                           "AVAX":  2,
+                           "SUI":  0,
+                           "AVAX":  0,
                            "PENGU":  0,
-                           "BOME":  -1,
+                           "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  2,
-                           "ADA":  1,
-                           "PNUT":  -1,
+                           "SOL":  0,
+                           "ADA":  0,
+                           "PNUT":  0,
                            "AIXBT":  0,
                            "ETH":  1,
-                           "LINK":  1,
-                           "PUMP":  0,
+                           "LINK":  0,
+                           "PUMP":  -1,
                            "TRUMP":  -1,
                            "BTC":  -1
                        },
-    "aiSummary":  "DXY nastavlja slabiti (~98.9, ispod 100) što blago pogoduje kriptovalutama, dok Fear & Greed ostaje u zoni Straha (29) bez znakova preokreta. BTC se stabilizira oko $73.5K uz i dalje prisutan pritisak od ETF odljeva i prodaje dugoročnih holdara, dok Coinbase uvođenjem INR rails-a otvara indijsko tržište kao potencijalni novi katalizator u lipnju. SOL (Alpenglow) i AVAX (Progmat $2.8B) predvode altcoin prilike, a ključni event ostaje CME Crypto Index futures 8. lipnja.",
+    "aiSummary":  "DXY ostaje ispod 100 (99.19) što blago pogoduje kriptovalutama, no Fear & Greed ostaje u zoni straha (29) bez znakova preokreta. BTC pada ispod $73K uz rekordne ETF odljeve od $2.97B u 10 dana i likvidacijom $571M, dok nafta raste iznad $92 zbog geopolitičkih tenzija s Iranom. ETH (Glamsterdam upgrade Q3) i XRP (RLUSD ekspanzija) predvode altcoin prilike, dok PUMP i TRUMP ostaju pod pritiskom u VOLATILE režimu.",
     "warActive":  false,
-    "btcDom":  59.3,
-    "stableDom":  13.1,
-    "oil":  89.20
+    "btcDom":  59.2,
+    "stableDom":  13.2,
+    "oil":  92.42
 }
