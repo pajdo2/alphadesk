@@ -416,7 +416,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.71</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.72</span></div>
       <div class="hd-sub" id="hdsub">Učitavam top 100 tokena…</div>
       <div class="hd-claude" id="claude-update" style="display:flex;align-items:center;gap:6px">
         <span id="claude-update-txt">🤖 Claude analiza: —</span>
@@ -3097,6 +3097,23 @@ function _analyze3DUncached(sym){
   };
 }
 
+// ── STABLECOIN DETEKCIJA (dinamicka — hvata i nove/yield stablecoine) ──
+// Stablecoin se NE moze pomaknuti +6% u 3 dana → besmislen kao trade signal
+// Detekcija: poznata lista ILI naziv (USD/EUR/DAI) ILI cijena ~$1 s niskim ATR
+var _knownStables={U:1,BFUSD:1,RLUSD:1,USYC:1,USDG:1,OUSG:1,USD0:1,USDE:1,USDX:1,USDY:1,GHO:1,FDUSD:1,PYUSD:1,USDD:1,FRAX:1,LUSD:1,CRVUSD:1,USDB:1,EURC:1,EURS:1};
+function isStablecoin(sym){
+  if(!sym)return false;
+  if(typeof STABLES!=='undefined'&&STABLES.has(sym))return true;
+  if(_knownStables[sym])return true;
+  // Naziv pattern: zavrsava na USD/EUR ili sadrzi USDT/USDC/DAI
+  if(/USD$|USDT|USDC|^DAI$|^EUR|USD[0-9TCDPYBX]/.test(sym))return true;
+  // Cijena ~$1 (peg) + vrlo nizak daily ATR (<1.5%) = stablecoin koji se ne mice
+  var p=px[sym]?px[sym].p:0;
+  var a=atr[sym]?parseFloat(atr[sym].pct)*24:99; // daily ATR
+  if(p>=0.97&&p<=1.03&&a<1.5)return true;
+  return false;
+}
+
 // ── FILTER & SORT ────────────────────────────────────────────────
 function getOpportunities(){
   var analyzeFn=analyze3D;
@@ -3108,6 +3125,7 @@ function getOpportunities(){
   var minConf=activeFilter==="signali"?Math.max(dynamicFloor,settings.minConf):settings.minConf;
   var syms=TOP100.filter(function(s){
     if(!px[s]||!px[s].p||px[s].p<=0||KNOWN_MEME.indexOf(s)>-1)return false;
+    if(isStablecoin(s))return false; // stablecoini ne mogu +6% — izbaci iz signala
     if(ta4hReady&&!ta4h[s]&&!ta[s])return false;
     return true;
   });
@@ -3507,7 +3525,7 @@ try{
   }
 }catch(e){predTracker=[];}
 
-// ── ADAPTIVE SIGNAL WEIGHTS (regime-aware od v5.71) ──────────────
+// ── ADAPTIVE SIGNAL WEIGHTS (regime-aware od v5.72) ──────────────
 // Struktura: {[regime]: {field: weight}, _global: {field: weight}}
 // Lookup hijerarhija: trenutni regime → _global → default
 // Razlog: RSI oversold u BEAR marketu je death trap, u BULL je odlican
@@ -3575,7 +3593,7 @@ function buildSnap(sym){
 }
 
 // Izračun lift-based težina iz zatvorenih predikcija
-// v5.71: regime-aware — računa zasebne weights za BULL/BEAR/CRAB + _global fallback
+// v5.72: regime-aware — računa zasebne weights za BULL/BEAR/CRAB + _global fallback
 function computeSignalWeights(){
   var now=Date.now();
   var DAY30=30*24*3600*1000;
