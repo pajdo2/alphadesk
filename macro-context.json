@@ -1,7 +1,7 @@
 {
     "dxy":  99.1,
-    "changeSummary":  "Fear & Greed pao s 29 na 23 (Extreme Fear), BTC drži se ispod $70K uz Iran geopolitičke tenzije koje su podigle macroPenalty na 1.",
-    "lastUpdated":  "2026-06-03T08:00:00Z",
+    "changeSummary":  "Nafta skočila s $91.5 na ~$95.9 (WTI) zbog zastoja Iran mirovnih pregovora dok BTC pao na ~$67K uz nepromijenjen Fear & Greed (23) i stabilan DXY (99.1).",
+    "lastUpdated":  "2026-06-03T10:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -58,13 +58,14 @@
 
                               ],
                      "PUMP":  [
-                                 "Visoki rizik u VOLATILE režimu"
+                         "Pojačan pritisak u bearish uvjetima"
                               ],
                      "TRUMP":  [
-                                  "Politička volatilnost, VOLATILE nepovoljan"
+                         "Politički rizik, bearish tržište, regulatorni pritisak"
                                ],
                      "BTC":  [
-                                "Pad ispod $70K, extreme fear F&G=23"
+                         "Klizi na $67K, fear gauge +20%, geopolitički rizik",
+                         "OFAC sankcionirao iranske kripto mjenjačnice"
                              ]
                  },
     "catalysts":  {
@@ -78,7 +79,7 @@
 
                                 ],
                       "XRP":  [
-                                  "RLUSD ekspanzija širi se na nova tržišta"
+                          "RLUSD ekspanzija nastavlja rast"
                               ],
                       "BNB":  [
 
@@ -117,7 +118,7 @@
 
                                 ],
                       "ETH":  [
-                                  "Glamsterdam upgrade Q3 2026 u pripremi"
+                          "Glamsterdam upgrade Q3 2026 - ključni katalizator"
                               ],
                       "LINK":  [
 
@@ -129,7 +130,7 @@
 
                                 ],
                       "BTC":  [
-
+                          "Coinbase CEO: BTC $1M do 2030, preporučuje 5% izloženost"
                               ]
                   },
     "fearGreed":  23,
@@ -158,9 +159,9 @@
                            "TRUMP":  -1,
                            "BTC":  -1
                        },
-    "aiSummary":  "DXY ostaje ispod 100 (99.1) što blago pogoduje kriptovalutama, no Fear & Greed pada na 23 (Extreme Fear) uz BTC koji klizi ispod $70K i Iran geopolitičke tenzije koje drže naftu oko $91.5. VOLATILE režim ostaje dok BTC dominacija pada na 58.7%, a ETH (Glamsterdam Q3) i XRP (RLUSD ekspanzija) predvode altcoin prilike; PUMP i TRUMP ostaju pod pojačanim pritiskom.",
+    "aiSummary":  "DXY ostaje stabilan oko 99.1, no nafta (WTI) skočila na ~$95.9 zbog zastoja u mirovnim pregovorima SAD-Iran koji drže geopolitičku premiju i pojačavaju inflacijske rizike. Fear & Greed ostaje na 23 (Extreme Fear) dok BTC klizi na ~$67K uz 20% skok fear gauge-a — VOLATILE režim se nastavlja s macroPenalty 1 (-1 DXY<100, +2 warActive). OFAC je sankcionirao iranske kripto mjenjačnice, što pojačava FUD, dok ETH Glamsterdam (Q3) i XRP RLUSD ekspanzija ostaju ključni altcoin katalizatori.",
     "warActive":  true,
-    "btcDom":  58.7,
-    "stableDom":  13.5,
-    "oil":  91.5
+    "btcDom":  59.2,
+    "stableDom":  8.0,
+    "oil":  95.9
 }
