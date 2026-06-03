@@ -1,19 +1,19 @@
 {
-    "dxy":  99.1,
-    "changeSummary":  "Nafta skočila s $91.5 na ~$95.9 (WTI) zbog zastoja Iran mirovnih pregovora dok BTC pao na ~$67K uz nepromijenjen Fear & Greed (23) i stabilan DXY (99.1).",
-    "lastUpdated":  "2026-06-03T10:00:00Z",
+    "dxy":  99.4,
+    "changeSummary":  "DXY lagano porastao na 99.4, nafta stabilna oko $95, BTC zadržao ~$67K — VOLATILE režim i F&G 23 ostaju nepromijenjeni vs prethodne analize.",
+    "lastUpdated":  "2026-06-03T14:00:00Z",
     "warnings":  {
                      "ACT":  [
-
+                             "AI meme token ranjiv u extreme fear okruženju"
                              ],
                      "MEME":  [
-
+                              "Bijeg kapitala u stablecoine — FUD dominira tržištem"
                               ],
                      "ANIME":  [
-
+                               "Niche token, nizak volumen u trenutnom sentimentu"
                                ],
                      "XRP":  [
-
+                             "Cijena pada unatoč bullish fundamentalima"
                              ],
                      "BNB":  [
 
@@ -25,19 +25,19 @@
 
                               ],
                      "PENGU":  [
-
+                               "NFT/meme sektor pod pritiskom niskog sentimenta"
                                ],
                      "BOME":  [
-
+                              "Meme volatilnost visoka, exit liquidity rizik"
                               ],
                      "DOGS":  [
-
+                              "Niska likvidnost meme tokena u medvjeđem tržištu"
                               ],
                      "NOT":  [
-
+                             "Telegram gaming tokeni pod pritiskom sentimenta"
                              ],
                      "PEOPLE":  [
-
+                                "Politički meme — geopolitika pojačava FUD"
                                 ],
                      "SOL":  [
 
@@ -46,26 +46,26 @@
 
                              ],
                      "PNUT":  [
-
+                              "Meme tokeni ranjivi u extreme fear okruženju"
                               ],
                      "AIXBT":  [
 
                                ],
                      "ETH":  [
-
+                             "Fed možda diže kamate — inflacijski rizik za altcoine"
                              ],
                      "LINK":  [
 
                               ],
                      "PUMP":  [
-                         "Pojačan pritisak u bearish uvjetima"
+                              "Špekulativni tokeni pod jakim pritiskom u FUD fazi"
                               ],
                      "TRUMP":  [
-                         "Politički rizik, bearish tržište, regulatorni pritisak"
+                               "US-Iran pregovori stagnirani — rizik eskalacije"
                                ],
                      "BTC":  [
-                         "Klizi na $67K, fear gauge +20%, geopolitički rizik",
-                         "OFAC sankcionirao iranske kripto mjenjačnice"
+                             "Prediction mkts: 66% šanse za pad ispod $55K",
+                             "Fear gauge skočio 20% — ekstremni strah dominira"
                              ]
                  },
     "catalysts":  {
@@ -79,13 +79,13 @@
 
                                 ],
                       "XRP":  [
-                          "RLUSD ekspanzija nastavlja rast"
+                              "RLUSD stablecoin ekspanzija na globalnoj razini"
                               ],
                       "BNB":  [
-
+                              "Gate.io + Alpaca partnerstvo za dioničko tržište"
                               ],
                       "SUI":  [
-
+                              "SUI ekosustav stabilan, razvoj se nastavlja"
                               ],
                       "AVAX":  [
 
@@ -106,7 +106,7 @@
 
                                  ],
                       "SOL":  [
-
+                              "TVL raste unatoč korekciji tržišta"
                               ],
                       "ADA":  [
 
@@ -115,13 +115,13 @@
 
                                ],
                       "AIXBT":  [
-
+                                "AI kripto narrativ jak — Franklin Templeton signal"
                                 ],
                       "ETH":  [
-                          "Glamsterdam upgrade Q3 2026 - ključni katalizator"
+                              "Glamsterdam upgrade planiran za Q3 2026"
                               ],
                       "LINK":  [
-
+                               "Franklin Templeton bullish na blockchain infrastrukturu"
                                ],
                       "PUMP":  [
 
@@ -130,38 +130,38 @@
 
                                 ],
                       "BTC":  [
-                          "Coinbase CEO: BTC $1M do 2030, preporučuje 5% izloženost"
+                              "MEXC RealStocks — 0% naknada za US dionice na kripto burzi"
                               ]
                   },
     "fearGreed":  23,
     "macroPenalty":  1,
     "regime":  "VOLATILE",
     "sentimentScore":  {
-                           "ACT":  0,
-                           "MEME":  0,
-                           "ANIME":  0,
-                           "XRP":  1,
+                           "ACT":  -1,
+                           "MEME":  -2,
+                           "ANIME":  -1,
+                           "XRP":  -1,
                            "BNB":  0,
                            "SUI":  0,
                            "AVAX":  0,
-                           "PENGU":  0,
-                           "BOME":  0,
-                           "DOGS":  0,
-                           "NOT":  0,
-                           "PEOPLE":  0,
+                           "PENGU":  -1,
+                           "BOME":  -2,
+                           "DOGS":  -2,
+                           "NOT":  -1,
+                           "PEOPLE":  -1,
                            "SOL":  0,
                            "ADA":  0,
-                           "PNUT":  0,
+                           "PNUT":  -2,
                            "AIXBT":  0,
-                           "ETH":  1,
-                           "LINK":  0,
-                           "PUMP":  -1,
+                           "ETH":  0,
+                           "LINK":  1,
+                           "PUMP":  -2,
                            "TRUMP":  -1,
                            "BTC":  -1
                        },
-    "aiSummary":  "DXY ostaje stabilan oko 99.1, no nafta (WTI) skočila na ~$95.9 zbog zastoja u mirovnim pregovorima SAD-Iran koji drže geopolitičku premiju i pojačavaju inflacijske rizike. Fear & Greed ostaje na 23 (Extreme Fear) dok BTC klizi na ~$67K uz 20% skok fear gauge-a — VOLATILE režim se nastavlja s macroPenalty 1 (-1 DXY<100, +2 warActive). OFAC je sankcionirao iranske kripto mjenjačnice, što pojačava FUD, dok ETH Glamsterdam (Q3) i XRP RLUSD ekspanzija ostaju ključni altcoin katalizatori.",
+    "aiSummary":  "DXY ostaje stabilan oko 99.4 uz blagi rast, dok BTC pada na ~$67K (-6% dnevno) uz Fear & Greed na 23 (Extreme Fear) — prediction marketi impliciraju 66% šanse za daljnji pad ispod $55K. Nafta (WTI) stabilizirana oko $95 zbog geopolitičkih premija vezanih za stagnirane SAD-Iran pregovore, a kapital bježi u stablecoine. VOLATILE režim nastavlja se s macroPenalty 1 (+2 warActive, -1 DXY<100); LINK i ETH Glamsterdam (Q3) ostaju katalisti, dok MEME/PUMP/BOME/PNUT sektori pate od ekstremnog straha.",
     "warActive":  true,
-    "btcDom":  59.2,
-    "stableDom":  8.0,
-    "oil":  95.9
+    "btcDom":  58.5,
+    "stableDom":  8.5,
+    "oil":  95.0
 }
