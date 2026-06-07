@@ -1,167 +1,150 @@
 {
-    "dxy":  99.4,
-    "changeSummary":  "DXY lagano porastao na 99.4, nafta stabilna oko $95, BTC zadržao ~$67K — VOLATILE režim i F&G 23 ostaju nepromijenjeni vs prethodne analize.",
-    "lastUpdated":  "2026-06-03T14:00:00Z",
+    "dxy":  100.1,
+    "changeSummary":  "BTC srušen na intraday minimum $59.2K uz DXY proboj iznad 100 zbog snažnog izvještaja o tržištu rada, dok Fear & Greed ostaje u 'Strahu' na 33 — SOL i ADA posebno pogođeni institucionalnim prodajama.",
+    "lastUpdated":  "2026-06-07T12:00:00Z",
     "warnings":  {
                      "ACT":  [
-                             "AI meme token ranjiv u extreme fear okruženju"
+                             "VOLATILE regime; izbjegavaj leverage u strahu"
                              ],
                      "MEME":  [
-                              "Bijeg kapitala u stablecoine — FUD dominira tržištem"
+                              "Meme sektor najranjiviji u VOLATILE/Fear okruzenju"
                               ],
                      "ANIME":  [
-                               "Niche token, nizak volumen u trenutnom sentimentu"
+                               "Altcoin strah; bez katalizatora u negativnom sentimentu"
                                ],
                      "XRP":  [
-                             "Cijena pada unatoč bullish fundamentalima"
                              ],
                      "BNB":  [
-
                              ],
                      "SUI":  [
-
                              ],
                      "AVAX":  [
-
+                              "Tržišni pad; podrška testirana uz rastuci DXY"
                               ],
                      "PENGU":  [
-                               "NFT/meme sektor pod pritiskom niskog sentimenta"
+                               "Meme sektor pod pritiskom; visok rizik daljnjeg pada"
                                ],
                      "BOME":  [
-                              "Meme volatilnost visoka, exit liquidity rizik"
+                              "Meme sektor pati u VOLATILE/Bear okruzenju"
                               ],
                      "DOGS":  [
-                              "Niska likvidnost meme tokena u medvjeđem tržištu"
+                              "Meme token; strah dominira; nema podrske"
                               ],
                      "NOT":  [
-                             "Telegram gaming tokeni pod pritiskom sentimenta"
+                             "TON ekosustav pod pritiskom; meme token rizik"
                              ],
                      "PEOPLE":  [
-                                "Politički meme — geopolitika pojačava FUD"
+                                "Meme token; ekstremni strah; bez katalizatora"
                                 ],
                      "SOL":  [
-
+                             "Goldman sold $108M SOL ETF; 624K token unlock 7.6.",
+                             "SOL na 2026 niskom $62; $90M likvidacija u 1 danu"
                              ],
                      "ADA":  [
-
+                             "Hoskinson odlazi; -19% crash; $0.15 razina iz 2021.",
+                             "Fundamentalni rizik raste; bez kratkorocnih katalizatora"
                              ],
                      "PNUT":  [
-                              "Meme tokeni ranjivi u extreme fear okruženju"
+                              "Meme sektor pati; izbjegavaj u Fear okruzenju"
                               ],
                      "AIXBT":  [
-
+                               "AI token pod pritiskom; tržišni sentiment negativan"
                                ],
                      "ETH":  [
-                             "Fed možda diže kamate — inflacijski rizik za altcoine"
+                             "Probij ispod $2000; likvidacijski rizik raste"
                              ],
                      "LINK":  [
-
                               ],
                      "PUMP":  [
-                              "Špekulativni tokeni pod jakim pritiskom u FUD fazi"
+                              "Visok rizik u strahu; izbjegavaj leverage pozicije"
                               ],
                      "TRUMP":  [
-                               "US-Iran pregovori stagnirani — rizik eskalacije"
+                               "Meme/politicki token; strah smanjuje spekulativni apetit"
                                ],
                      "BTC":  [
-                             "Prediction mkts: 66% šanse za pad ispod $55K",
-                             "Fear gauge skočio 20% — ekstremni strah dominira"
+                             "Intraday pad na $59.2K; rizik retesta $58K podrske",
+                             "ETF odljevi $4.4B; jobs report pokrenuo USD rally"
                              ]
                  },
     "catalysts":  {
                       "ACT":  [
-
                               ],
                       "MEME":  [
-
                                ],
                       "ANIME":  [
-
                                 ],
                       "XRP":  [
-                              "RLUSD stablecoin ekspanzija na globalnoj razini"
+                              "DTCC Stellar integracija pozitivna za L1 sentiment"
                               ],
                       "BNB":  [
-                              "Gate.io + Alpaca partnerstvo za dioničko tržište"
+                              "BNB Chain ekosustav stabilan; DEX volumen raste"
                               ],
                       "SUI":  [
-                              "SUI ekosustav stabilan, razvoj se nastavlja"
+                              "Ekosustav raste; gaming i DeFi integracije aktivne"
                               ],
                       "AVAX":  [
-
                                ],
                       "PENGU":  [
-
                                 ],
                       "BOME":  [
-
                                ],
                       "DOGS":  [
-
                                ],
                       "NOT":  [
-
                               ],
                       "PEOPLE":  [
-
                                  ],
                       "SOL":  [
-                              "TVL raste unatoč korekciji tržišta"
                               ],
                       "ADA":  [
-
                               ],
                       "PNUT":  [
-
                                ],
                       "AIXBT":  [
-                                "AI kripto narrativ jak — Franklin Templeton signal"
                                 ],
                       "ETH":  [
-                              "Glamsterdam upgrade planiran za Q3 2026"
+                              "Glamsterdam upgrade Q3 2026 — ZK scaling katalist"
                               ],
                       "LINK":  [
-                               "Franklin Templeton bullish na blockchain infrastrukturu"
+                               "Glamsterdam DeFi integracije; oracle ecosystem update"
                                ],
                       "PUMP":  [
-
                                ],
                       "TRUMP":  [
-
                                 ],
                       "BTC":  [
-                              "MEXC RealStocks — 0% naknada za US dionice na kripto burzi"
+                              "Halving efekt aktivan; institucionalni ETF bid prisutan"
                               ]
                   },
-    "fearGreed":  23,
-    "macroPenalty":  1,
+    "fearGreed":  33,
+    "macroPenalty":  2,
     "regime":  "VOLATILE",
     "sentimentScore":  {
                            "ACT":  -1,
-                           "MEME":  -2,
+                           "MEME":  -1,
                            "ANIME":  -1,
-                           "XRP":  -1,
+                           "XRP":  0,
                            "BNB":  0,
                            "SUI":  0,
-                           "AVAX":  0,
+                           "AVAX":  -1,
                            "PENGU":  -1,
-                           "BOME":  -2,
-                           "DOGS":  -2,
+                           "BOME":  -1,
+                           "DOGS":  -1,
                            "NOT":  -1,
                            "PEOPLE":  -1,
-                           "SOL":  0,
-                           "ADA":  0,
-                           "PNUT":  -2,
-                           "AIXBT":  0,
-                           "ETH":  0,
+                           "SOL":  -2,
+                           "ADA":  -2,
+                           "PNUT":  -1,
+                           "AIXBT":  -1,
+                           "ETH":  -1,
                            "LINK":  1,
-                           "PUMP":  -2,
+                           "PUMP":  -1,
                            "TRUMP":  -1,
                            "BTC":  -1
                        },
-    "aiSummary":  "DXY ostaje stabilan oko 99.4 uz blagi rast, dok BTC pada na ~$67K (-6% dnevno) uz Fear & Greed na 23 (Extreme Fear) — prediction marketi impliciraju 66% šanse za daljnji pad ispod $55K. Nafta (WTI) stabilizirana oko $95 zbog geopolitičkih premija vezanih za stagnirane SAD-Iran pregovore, a kapital bježi u stablecoine. VOLATILE režim nastavlja se s macroPenalty 1 (+2 warActive, -1 DXY<100); LINK i ETH Glamsterdam (Q3) ostaju katalisti, dok MEME/PUMP/BOME/PNUT sektori pate od ekstremnog straha.",
+    "aiSummary":  "DXY probio 100.1 nakon snažnog izvještaja o tržištu rada (172K novih radnih mjesta vs. 85K očekivanih), što je pokrenulo USD rally i srušilo BTC na intraday minimum $59.2K uz $1.5B likvidacija. Fear & Greed indeks na 33 (Strah), SOL na 2026 niskom $62 zbog Goldman prodaje ETF-a i 624K token unloka, dok ADA pada 19% nakon Hoskinsonove objave odlaska. VOLATILE režim se nastavlja s macroPenalty 2; LINK i ETH Glamsterdam (Q3) ostaju jedini pozitivni katalizatori, dok meme sektori i SOL/ADA pate od fundamentalnih i institucionalnih pritisaka.",
     "warActive":  true,
-    "btcDom":  58.5,
-    "stableDom":  8.5,
-    "oil":  95.0
+    "btcDom":  56.0,
+    "stableDom":  10.5,
+    "oil":  92.0
 }

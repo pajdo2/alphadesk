@@ -416,7 +416,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.74</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.75</span></div>
       <div class="hd-sub" id="hdsub">Učitavam top 100 tokena…</div>
       <div class="hd-claude" id="claude-update" style="display:flex;align-items:center;gap:6px">
         <span id="claude-update-txt">🤖 Claude analiza: —</span>
@@ -1100,6 +1100,7 @@ var relStrength={};  // {sym:{rs24h,rs7d,leading,lagging}} — relativna snaga v
 var swingLevels={};  // {sym:{supports:[],resistances:[]}} — swing high/low S/R nivoi
 var marketStructure={};  // {sym:{trend,bos,choch,lastH,lastL,prevH,prevL,fib}} — BoS/CHoCH + Fib levels
 var _verdictHist={};  // {sym:{v:verdict, ts:Date.now()}} — za hysteresis (anti-flicker)
+var _confHist={};     // {sym:{smoothed, ts}} — za confidence smoothing (EMA, anti-spike)
 var adxData={};      // {sym:{adx,trending}} — ADX 14 trending strength
 var marketBreadth={bullCount:0,bearCount:0,neutralCount:0,total:0,ts:0}; // multi-token sentiment
 var coinbasePremium={value:null,trend:null,ts:0}; // CB BTC vs Binance BTC premium %
@@ -3548,7 +3549,7 @@ try{
   }
 }catch(e){predTracker=[];}
 
-// ── ADAPTIVE SIGNAL WEIGHTS (regime-aware od v5.74) ──────────────
+// ── ADAPTIVE SIGNAL WEIGHTS (regime-aware od v5.75) ──────────────
 // Struktura: {[regime]: {field: weight}, _global: {field: weight}}
 // Lookup hijerarhija: trenutni regime → _global → default
 // Razlog: RSI oversold u BEAR marketu je death trap, u BULL je odlican
@@ -3616,7 +3617,7 @@ function buildSnap(sym){
 }
 
 // Izračun lift-based težina iz zatvorenih predikcija
-// v5.74: regime-aware — računa zasebne weights za BULL/BEAR/CRAB + _global fallback
+// v5.75: regime-aware — računa zasebne weights za BULL/BEAR/CRAB + _global fallback
 function computeSignalWeights(){
   var now=Date.now();
   var DAY30=30*24*3600*1000;
