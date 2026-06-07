@@ -423,7 +423,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.77</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.78</span></div>
       <div class="hd-sub" id="hdsub">Učitavam top 100 tokena…</div>
       <div class="hd-claude" id="claude-update" style="display:flex;align-items:center;gap:6px">
         <span id="claude-update-txt">🤖 Claude analiza: —</span>
@@ -450,6 +450,7 @@ svg.sp{overflow:visible;display:block}
         <button class="tab" id="tab-signali" onclick="setTab('signali')">🎯 Signali</button>
         <button class="tab" id="tab-meme" onclick="setTab('meme')">🎰 Meme</button>
         <button class="tab" id="tab-rezultati" onclick="setTab('rezultati')">📈 Rezultati</button>
+        <button class="tab" id="tab-hodl" onclick="setTab('hodl')">💎 HODL</button>
       </div>
     </div>
   </div>
@@ -1453,6 +1454,8 @@ function renderRefreshStatus(){
 }
 function fp(n){if(!n||isNaN(n))return"—";if(n>=10000)return"$"+Math.round(n).toLocaleString("en");if(n>=100)return"$"+n.toFixed(2);if(n>=1)return"$"+n.toFixed(3);if(n>=0.01)return"$"+n.toFixed(5);return"$"+n.toFixed(8);}
 function fc(n){return n==null?"—":(n>=0?"+":"")+n.toFixed(2)+"%";}
+// fmtNum — broj bez $ prefiksa, s thousand separatorom + smart decimale (za HODL tab)
+function fmtNum(n){if(n==null||isNaN(n))return"0";if(n>=10000)return Math.round(n).toLocaleString("en");if(n>=100)return n.toFixed(2);if(n>=1)return n.toFixed(2);if(n>=0.01)return n.toFixed(4);return n.toFixed(8);}
 function gc(n){return n>=0?"var(--gr)":"var(--re)";}
 function spk(data,col,w,h){w=w||52;h=h||16;if(!data||data.length<3)return"";var mn=Math.min.apply(null,data),mx=Math.max.apply(null,data),rng=mx-mn||1;var pts=data.map(function(v,i){return(i/(data.length-1)*w)+","+(h-((v-mn)/rng*(h-2))+1);}).join(" ");return'<svg class="sp" width="'+w+'" height="'+h+'"><polyline points="'+pts+'" fill="none" stroke="'+col+'" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';}
 function pr(pct,col,h){return'<div class="prog"><div class="prog-f" style="width:'+Math.min(100,Math.max(0,pct||0))+'%;height:'+(h||3)+'px;background:'+col+'"></div></div>';}
@@ -3615,6 +3618,32 @@ function renderOpp(o){
 // ── PREDICTION TRACKER ──────────────────────────────────────────
 var predTracker=[];
 var _tradeSourceFilter='all'; // 'all'|'manual'|'auto' — Rezultati tab chip filter
+
+// ── HODL TRACKER (Saylor-style dugorocna akumulacija, odvojeno od swing trade-ova) ──
+// [{id, sym, usd, units, price, date}] — "never sell" pozicije
+var hodlTracker=[];
+try{var _hodl=JSON.parse(localStorage.getItem("ad3d_hodl")||"[]");if(Array.isArray(_hodl))hodlTracker=_hodl;}catch(e){}
+function _saveHodl(){try{localStorage.setItem("ad3d_hodl",JSON.stringify(hodlTracker));}catch(e){}}
+function addHodl(){
+  var symEl=document.getElementById("hodl-sym");
+  var usdEl=document.getElementById("hodl-usd");
+  if(!symEl||!usdEl)return;
+  var sym=(symEl.value||"BTC").toUpperCase().trim();
+  var usd=parseFloat(usdEl.value);
+  if(!usd||usd<=0){showToast("Unesi USD iznos",true);return;}
+  var price=px[sym]?px[sym].p:null;
+  if(!price){showToast(sym+" nema live cijenu",true);return;}
+  hodlTracker.unshift({id:Date.now()+"_"+sym,sym:sym,usd:usd,units:usd/price,price:price,date:new Date().toISOString()});
+  _saveHodl();
+  usdEl.value="";
+  showToast("💎 +"+(usd/price).toFixed(6)+" "+sym+" akumulirano");
+  render();
+}
+function removeHodl(id){
+  if(!confirm("Obrisati ovaj HODL unos?"))return;
+  hodlTracker=hodlTracker.filter(function(h){return h.id!==id;});
+  _saveHodl();render();
+}
 try{
   var savedTrack=JSON.parse(localStorage.getItem("ad3d_track")||"[]");
   if(savedTrack.length>0){predTracker=savedTrack;}
@@ -3624,7 +3653,7 @@ try{
   }
 }catch(e){predTracker=[];}
 
-// ── ADAPTIVE SIGNAL WEIGHTS (regime-aware od v5.77) ──────────────
+// ── ADAPTIVE SIGNAL WEIGHTS (regime-aware od v5.78) ──────────────
 // Struktura: {[regime]: {field: weight}, _global: {field: weight}}
 // Lookup hijerarhija: trenutni regime → _global → default
 // Razlog: RSI oversold u BEAR marketu je death trap, u BULL je odlican
@@ -3692,7 +3721,7 @@ function buildSnap(sym){
 }
 
 // Izračun lift-based težina iz zatvorenih predikcija
-// v5.77: regime-aware — računa zasebne weights za BULL/BEAR/CRAB + _global fallback
+// v5.78: regime-aware — računa zasebne weights za BULL/BEAR/CRAB + _global fallback
 function computeSignalWeights(){
   var now=Date.now();
   var DAY30=30*24*3600*1000;
@@ -5475,6 +5504,133 @@ function renderDailyRec(){
   return h;
 }
 
+// ── HODL TAB (Saylor-style dugorocna akumulacija) ──────────────
+function rHodl(){
+  var h='<div class="pg">';
+
+  // ── INTRO ──
+  h+='<div style="background:linear-gradient(135deg,rgba(255,167,38,.08),rgba(255,167,38,.02));border:.5px solid rgba(255,167,38,.25);border-radius:14px;padding:14px 16px;margin-bottom:14px">';
+  h+='<div style="font-size:15px;font-weight:800;color:var(--ye);margin-bottom:4px">💎 HODL — dugoročna akumulacija</div>';
+  h+='<div style="font-size:11.5px;color:var(--t3);line-height:1.5">Saylor-stil: kupuj redovito (DCA), nikad ne prodaji, prati kolino kriptovaluta akumuliraš. Odvojeno od swing signala.</div>';
+  h+='</div>';
+
+  // ── BTC AKUMULACIJSKA ZONA (vs SMA200) ──
+  (function(){
+    var btcP=px['BTC']?px['BTC'].p:null;
+    var sma=MACRO.btcSma200;
+    if(!btcP||!sma)return;
+    var diff=((btcP-sma)/sma*100);
+    var below=diff<0;
+    var col=below?"var(--bull)":diff<15?"var(--warn)":"var(--bear)";
+    var bg=below?"rgba(0,230,118,.08)":"rgba(255,167,38,.06)";
+    var zona=below?"🟢 AKUMULACIJSKA ZONA — ispod 200D":diff<15?"🟡 FER VRIJEDNOST":"🔴 PREMIUM — iznad 200D";
+    var savjet=below?"Saylor bi agresivno kupovao. Povijesno najbolje DCA prilike.":diff<15?"Normalna zona za DCA. Nastavi redovito.":"Skupo vs trend. DCA da, ali manje agresivno.";
+    h+='<div data-tip="200-dnevni prosjek|SMA200 je glavni bull/bear razdjelnik. BTC ispod = povijesno odlične kupovne prilike (kao 2022). Iznad +15% = pregrijano." style="background:'+bg+';border:.5px solid '+col+'33;border-radius:14px;padding:13px 16px;margin-bottom:14px;cursor:help">';
+    h+='<div style="font-size:13px;font-weight:800;color:'+col+';margin-bottom:5px">'+zona+'</div>';
+    h+='<div style="font-size:11px;color:var(--t3);line-height:1.5">BTC $'+fmtNum(btcP)+' vs 200D $'+fmtNum(sma)+' ('+(diff>=0?"+":"")+diff.toFixed(1)+'%)<br>'+savjet+'</div>';
+    h+='</div>';
+  })();
+
+  // ── DCA KALKULATOR / UNOS ──
+  h+='<div style="background:var(--s1);border:.5px solid var(--sep);border-radius:14px;padding:14px 16px;margin-bottom:14px">';
+  h+='<div style="font-size:12px;font-weight:700;color:var(--t2);margin-bottom:10px">➕ Dodaj akumulaciju (DCA)</div>';
+  h+='<div style="display:grid;grid-template-columns:1fr 1.3fr auto;gap:8px;align-items:end">';
+  h+='<div><label style="font-size:10px;color:var(--t3);display:block;margin-bottom:4px">Token</label>';
+  h+='<select id="hodl-sym" class="inp" style="padding:9px">';
+  ['BTC','ETH','SOL','BNB'].forEach(function(s){h+='<option value="'+s+'">'+s+'</option>';});
+  h+='</select></div>';
+  h+='<div><label style="font-size:10px;color:var(--t3);display:block;margin-bottom:4px">Iznos (USD)</label>';
+  h+='<input id="hodl-usd" class="inp" type="number" placeholder="100" min="1" step="10" style="padding:9px"></div>';
+  h+='<button onclick="addHodl()" style="padding:10px 16px;background:var(--ye);border:none;border-radius:10px;font-size:13px;font-weight:800;color:#1a1d24;cursor:pointer;font-family:inherit">Dodaj</button>';
+  h+='</div>';
+  // Live preview koliko dobiva
+  h+='<div id="hodl-preview" style="font-size:10px;color:var(--t4);margin-top:8px"></div>';
+  h+='</div>';
+
+  // ── PORTFOLIO PO TOKENU ──
+  if(hodlTracker.length===0){
+    h+='<div style="text-align:center;padding:30px 16px;color:var(--t4)">';
+    h+='<div style="font-size:40px;margin-bottom:10px">💎</div>';
+    h+='<div style="font-size:13px;color:var(--t3)">Još nema HODL pozicija.<br>Dodaj prvu akumulaciju gore.</div></div>';
+    h+='</div>';return h;
+  }
+
+  // Grupiraj po tokenu
+  var byToken={};
+  hodlTracker.forEach(function(e){
+    if(!byToken[e.sym])byToken[e.sym]={sym:e.sym,totalUsd:0,totalUnits:0,entries:[]};
+    byToken[e.sym].totalUsd+=e.usd;
+    byToken[e.sym].totalUnits+=e.units;
+    byToken[e.sym].entries.push(e);
+  });
+
+  // Ukupni portfolio
+  var totalInvested=0,totalValue=0;
+  Object.values(byToken).forEach(function(t){
+    totalInvested+=t.totalUsd;
+    var cur=px[t.sym]?px[t.sym].p:t.totalUsd/t.totalUnits;
+    totalValue+=t.totalUnits*cur;
+  });
+  var totalPnl=totalValue-totalInvested;
+  var totalPnlPct=totalInvested>0?(totalPnl/totalInvested*100):0;
+  var pnlCol=totalPnl>=0?"var(--bull)":"var(--bear)";
+
+  // Summary kartice
+  h+='<div class="grid-4" style="margin-bottom:14px">';
+  h+='<div class="stat-box"><div class="stat-num-lg" style="color:var(--t1)">$'+fmtNum(totalValue)+'</div><div class="stat-lbl">Vrijednost</div></div>';
+  h+='<div class="stat-box"><div class="stat-num-lg" style="color:var(--t3)">$'+fmtNum(totalInvested)+'</div><div class="stat-lbl">Uloženo</div></div>';
+  h+='<div class="stat-box" style="border-color:'+pnlCol+'22"><div class="stat-num-lg" style="color:'+pnlCol+'">'+(totalPnl>=0?"+":"")+totalPnlPct.toFixed(1)+'%</div><div class="stat-lbl">P&L</div></div>';
+  h+='<div class="stat-box"><div class="stat-num-lg" style="color:var(--t1)">'+hodlTracker.length+'</div><div class="stat-lbl">Kupnji</div></div>';
+  h+='</div>';
+
+  // Po tokenu
+  Object.values(byToken).sort(function(a,b){return b.totalUsd-a.totalUsd;}).forEach(function(t){
+    var cfg=getCfg(t.sym);
+    var avgPrice=t.totalUsd/t.totalUnits;
+    var cur=px[t.sym]?px[t.sym].p:avgPrice;
+    var value=t.totalUnits*cur;
+    var pnl=value-t.totalUsd;
+    var pnlPct=t.totalUsd>0?(pnl/t.totalUsd*100):0;
+    var pc=pnl>=0?"var(--bull)":"var(--bear)";
+
+    h+='<div style="background:var(--s1);border:.5px solid var(--sep);border-radius:14px;padding:13px 15px;margin-bottom:10px">';
+    // Header
+    h+='<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">';
+    h+='<div class="tok-ico" style="--tok-c:'+cfg.c+';color:'+cfg.c+';background:linear-gradient(135deg,'+cfg.c+'26,'+cfg.c+'0d);border:.5px solid '+cfg.c+'3a;width:34px;height:34px;font-size:15px">'+cfg.i+'</div>';
+    h+='<div style="flex:1"><div style="font-size:15px;font-weight:800;color:var(--t1)">'+t.totalUnits.toFixed(t.sym==="BTC"?5:3)+' '+t.sym+'</div>';
+    h+='<div style="font-size:10px;color:var(--t4)">'+t.entries.length+' kupnji · avg $'+fmtNum(avgPrice)+'</div></div>';
+    h+='<div style="text-align:right"><div style="font-size:15px;font-weight:800;color:'+pc+'">'+(pnl>=0?"+":"")+pnlPct.toFixed(1)+'%</div>';
+    h+='<div style="font-size:10px;color:var(--t4)">$'+fmtNum(value)+'</div></div>';
+    h+='</div>';
+    // Mini detalji: avg cost vs current
+    h+='<div style="display:flex;gap:8px;font-size:10px;color:var(--t3)">';
+    h+='<span data-tip="Prosječna nabavna cijena|Tvoj prosjek svih kupnji. Dok je trenutna cijena iznad ovog, u plusu si." style="cursor:help">Avg $'+fmtNum(avgPrice)+' ⓘ</span><span>·</span>';
+    h+='<span>Sad $'+fmtNum(cur)+'</span><span>·</span>';
+    h+='<span style="color:'+pc+'">'+(pnl>=0?"+$":"-$")+fmtNum(Math.abs(pnl))+'</span>';
+    h+='</div>';
+    // Entries lista (collapsed by default — prikazi zadnje 3)
+    var shown=t.entries.slice(0,3);
+    h+='<div style="margin-top:8px;border-top:.5px solid var(--sep2);padding-top:8px">';
+    shown.forEach(function(e){
+      var d=new Date(e.date);
+      var dstr=d.getDate()+"."+(d.getMonth()+1)+"."+(""+d.getFullYear()).slice(2);
+      var ePnl=(px[e.sym]?px[e.sym].p:e.price)/e.price-1;
+      h+='<div style="display:flex;justify-content:space-between;align-items:center;font-size:10px;color:var(--t4);padding:2px 0">';
+      h+='<span>'+dstr+' · $'+fmtNum(e.usd)+' @ $'+fmtNum(e.price)+'</span>';
+      h+='<span style="display:flex;gap:8px;align-items:center"><span style="color:'+(ePnl>=0?"var(--bull)":"var(--bear)")+'">'+(ePnl>=0?"+":"")+(ePnl*100).toFixed(0)+'%</span>';
+      h+='<span onclick="removeHodl(\''+e.id+'\')" style="cursor:pointer;color:var(--t4);padding:0 4px">✕</span></span>';
+      h+='</div>';
+    });
+    if(t.entries.length>3)h+='<div style="font-size:10px;color:var(--t4);text-align:center;margin-top:4px">+'+(t.entries.length-3)+' starijih kupnji</div>';
+    h+='</div>';
+    h+='</div>';
+  });
+
+  h+='<div style="font-size:10px;color:var(--t4);margin-top:10px;text-align:center;line-height:1.5">💎 HODL = dugoročno držanje. Ove pozicije se NE prate za prodaju.<br>Nije financijski savjet.</div>';
+  h+='</div>';
+  return h;
+}
+
 function rTracker(){
   autoClosePreds();
   var h='<div class="pg">';
@@ -5932,6 +6088,7 @@ function render(){
   var sc=document.getElementById("sc");
   if(activeFilter==="tracker"){sc.innerHTML=rTracker();return;}
   if(activeFilter==="meme"){sc.innerHTML=rMeme();return;}
+  if(activeFilter==="hodl"){sc.innerHTML=rHodl();return;}
   var opps=getOpportunities();
 
   var isPregled=activeFilter==="all";
@@ -6422,6 +6579,7 @@ function setTab(t){
   else if(t==="signali")   activeFilter="signali";
   else if(t==="meme")      activeFilter="meme";
   else if(t==="rezultati") activeFilter="tracker";
+  else if(t==="hodl")      activeFilter="hodl";
   render();
 }
 // Chip filter unutar Signali taba
