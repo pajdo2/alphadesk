@@ -416,7 +416,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.73</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.74</span></div>
       <div class="hd-sub" id="hdsub">Učitavam top 100 tokena…</div>
       <div class="hd-claude" id="claude-update" style="display:flex;align-items:center;gap:6px">
         <span id="claude-update-txt">🤖 Claude analiza: —</span>
@@ -2670,12 +2670,20 @@ function _analyze3DUncached(sym){
   // Stablecoin dominance
   if(MACRO.stableDom>7){score+=1;signals.push({txt:"Stablecoin dom "+MACRO.stableDom+"% — likvidnost čeka",type:"bull"});}
 
-  // RSI + EMA50 trend filter
+  // RSI + EMA50 trend filter — S DEADZONE (±0.5%) protiv flickeranja
+  // Bez deadzone: cijena lebdi oko EMA50 → trend flick UP↔DOWN → conf skace ±3.5pt u sekundama
+  // Deadzone: token mora biti JASNO iznad/ispod (>0.5%) da dobije/izgubi bodove
   if(t){
-    if(t.trend==="DOWN"){
-      score-=2;warnings.push({txt:"Ispod EMA50 — bear trend aktivan, oversold signali nepouzdani",type:"bear"});
-    } else if(t.trend==="UP"){
-      score+=wt("trendUp",1.5);signals.push({txt:"Iznad EMA50 — trend potvrđen",type:"bull"});
+    var _emaDist=t.ema50?(price-t.ema50)/t.ema50:0; // npr. -0.0112 = 1.12% ispod
+    if(_emaDist<-0.005){
+      // Jasno ispod EMA50 (>0.5%) — bear trend
+      score-=2;warnings.push({txt:"Ispod EMA50 ("+(_emaDist*100).toFixed(1)+"%) — bear trend, oversold nepouzdan",type:"bear"});
+    } else if(_emaDist>0.005){
+      // Jasno iznad EMA50 (>0.5%) — bull trend
+      score+=wt("trendUp",1.5);signals.push({txt:"Iznad EMA50 ("+(_emaDist*100).toFixed(1)+"%) — trend potvrđen",type:"bull"});
+    } else {
+      // Unutar ±0.5% — neodlučna zona, bez bonusa/penala (sprjecava flicker)
+      signals.push({txt:"Cijena na EMA50 — neodlučna zona, čekaj smjer",type:"neutral"});
     }
     // RSI s regime multiplier — oversold u BULL = manji bonus (rijetko), u CRAB = veci (mean reversion radi)
     var _rmOS=regimeMultiplier('oversold');
@@ -2953,19 +2961,26 @@ function _analyze3DUncached(sym){
   }
 
   // 4. DYNAMIC TARGET iz swing levels (ako postoji reasonable resistance)
+  // Swing R koristimo SAMO ako je BLIZE od ATR targeta (realniji prvi otpor).
+  // Ako je swing R dalji od dynTgtPct cap-a, swing je nedostizan u 3 dana → ostani na ATR targetu.
   var dynTarget=getDynamicTarget(sym,price,dynTgtPct);
   var actualTargetPct=dynTgtPct;
   if(dynTarget){
-    var _prec3=price<0.001?8:price<1?6:4;
-    var _r3=function(v){return +v.toFixed(_prec3);};
-    d3Price=_r3(dynTarget);
-    actualTargetPct=(dynTarget-price)/price*100;
-    rr=actualTargetPct/(stopPct3*100);
-    // Reskala D1/D2 da budu proporcionalni s novim D3
-    var _newTgt=actualTargetPct/100;
-    d1Price=_r3(price*(1+_newTgt*0.35));
-    d2Price=_r3(price*(1+_newTgt*0.70));
-    signals.push({txt:"🎯 Dinamički target $"+fp(dynTarget).slice(1)+" (swing R, "+actualTargetPct.toFixed(1)+"%)",type:"bull"});
+    var _swingPct=(dynTarget-price)/price*100;
+    // KLJUCNO: swing target ne smije prijeci ATR-realan cap (dynTgtPct)
+    // Token se u 3 dana ne moze pomaknuti vise nego sto mu volatilnost dopusta
+    if(_swingPct<=dynTgtPct&&_swingPct>=3){
+      var _prec3=price<0.001?8:price<1?6:4;
+      var _r3=function(v){return +v.toFixed(_prec3);};
+      d3Price=_r3(dynTarget);
+      actualTargetPct=_swingPct;
+      rr=actualTargetPct/(stopPct3*100);
+      var _newTgt=actualTargetPct/100;
+      d1Price=_r3(price*(1+_newTgt*0.35));
+      d2Price=_r3(price*(1+_newTgt*0.70));
+      signals.push({txt:"🎯 Swing target $"+fp(dynTarget).slice(1)+" ("+actualTargetPct.toFixed(1)+"% — prvi otpor)",type:"bull"});
+    }
+    // else: swing R predaleko (>"+dynTgtPct+"%) — koristi ATR target, ne mijenjaj d3
   }
 
   // Hot or safe classification — radi za sve tokene (ne samo hardkodirane)
@@ -3533,7 +3548,7 @@ try{
   }
 }catch(e){predTracker=[];}
 
-// ── ADAPTIVE SIGNAL WEIGHTS (regime-aware od v5.73) ──────────────
+// ── ADAPTIVE SIGNAL WEIGHTS (regime-aware od v5.74) ──────────────
 // Struktura: {[regime]: {field: weight}, _global: {field: weight}}
 // Lookup hijerarhija: trenutni regime → _global → default
 // Razlog: RSI oversold u BEAR marketu je death trap, u BULL je odlican
@@ -3601,7 +3616,7 @@ function buildSnap(sym){
 }
 
 // Izračun lift-based težina iz zatvorenih predikcija
-// v5.73: regime-aware — računa zasebne weights za BULL/BEAR/CRAB + _global fallback
+// v5.74: regime-aware — računa zasebne weights za BULL/BEAR/CRAB + _global fallback
 function computeSignalWeights(){
   var now=Date.now();
   var DAY30=30*24*3600*1000;
