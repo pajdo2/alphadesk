@@ -1,150 +1,167 @@
 {
-    "dxy":  100.1,
-    "changeSummary":  "BTC srušen na intraday minimum $59.2K uz DXY proboj iznad 100 zbog snažnog izvještaja o tržištu rada, dok Fear & Greed ostaje u 'Strahu' na 33 — SOL i ADA posebno pogođeni institucionalnim prodajama.",
-    "lastUpdated":  "2026-06-07T12:00:00Z",
+    "dxy":  100.05,
+    "changeSummary":  "Fear & Greed drastično pao s 33 na 12 (Ekstremni Strah), BTC drži $60.9K uz $1.8B likvidacija i ETF odljeve, DXY stabilan na 100.05, ali aktivni rat (Hormuz) i nafta $96.7 mijenjaju režim iz VOLATILE u BEAR.",
+    "lastUpdated":  "2026-06-08T12:00:00Z",
     "warnings":  {
                      "ACT":  [
-                             "VOLATILE regime; izbjegavaj leverage u strahu"
+
                              ],
                      "MEME":  [
-                              "Meme sektor najranjiviji u VOLATILE/Fear okruzenju"
+
                               ],
                      "ANIME":  [
-                               "Altcoin strah; bez katalizatora u negativnom sentimentu"
+
                                ],
                      "XRP":  [
+
                              ],
                      "BNB":  [
+
                              ],
                      "SUI":  [
+
                              ],
                      "AVAX":  [
-                              "Tržišni pad; podrška testirana uz rastuci DXY"
+
                               ],
                      "PENGU":  [
-                               "Meme sektor pod pritiskom; visok rizik daljnjeg pada"
+
                                ],
                      "BOME":  [
-                              "Meme sektor pati u VOLATILE/Bear okruzenju"
+
                               ],
                      "DOGS":  [
-                              "Meme token; strah dominira; nema podrske"
+
                               ],
                      "NOT":  [
-                             "TON ekosustav pod pritiskom; meme token rizik"
+
                              ],
                      "PEOPLE":  [
-                                "Meme token; ekstremni strah; bez katalizatora"
+
                                 ],
                      "SOL":  [
-                             "Goldman sold $108M SOL ETF; 624K token unlock 7.6.",
-                             "SOL na 2026 niskom $62; $90M likvidacija u 1 danu"
+                                 "ETF problemi, niske razine 2026"
                              ],
                      "ADA":  [
-                             "Hoskinson odlazi; -19% crash; $0.15 razina iz 2021.",
-                             "Fundamentalni rizik raste; bez kratkorocnih katalizatora"
+                                 "Hoskinson: val bankrota, 4-god minimum <20c"
                              ],
                      "PNUT":  [
-                              "Meme sektor pati; izbjegavaj u Fear okruzenju"
+
                               ],
                      "AIXBT":  [
-                               "AI token pod pritiskom; tržišni sentiment negativan"
+                                   "AI sektor slabi, kapital odlazi iz kriptoa"
                                ],
                      "ETH":  [
-                             "Probij ispod $2000; likvidacijski rizik raste"
+
                              ],
                      "LINK":  [
+
                               ],
                      "PUMP":  [
-                              "Visok rizik u strahu; izbjegavaj leverage pozicije"
+
                               ],
                      "TRUMP":  [
-                               "Meme/politicki token; strah smanjuje spekulativni apetit"
+
                                ],
                      "BTC":  [
-                             "Intraday pad na $59.2K; rizik retesta $58K podrske",
-                             "ETF odljevi $4.4B; jobs report pokrenuo USD rally"
+                                 "ETF masovni odljevi, $1.8B likvidacija",
+                                 "BTC pao na $59.2K overnight, oporavak krhak"
                              ]
                  },
     "catalysts":  {
                       "ACT":  [
+
                               ],
                       "MEME":  [
+
                                ],
                       "ANIME":  [
+
                                 ],
                       "XRP":  [
-                              "DTCC Stellar integracija pozitivna za L1 sentiment"
+
                               ],
                       "BNB":  [
-                              "BNB Chain ekosustav stabilan; DEX volumen raste"
+
                               ],
                       "SUI":  [
-                              "Ekosustav raste; gaming i DeFi integracije aktivne"
+
                               ],
                       "AVAX":  [
+
                                ],
                       "PENGU":  [
+
                                 ],
                       "BOME":  [
+
                                ],
                       "DOGS":  [
+
                                ],
                       "NOT":  [
+
                               ],
                       "PEOPLE":  [
+
                                  ],
                       "SOL":  [
+
                               ],
                       "ADA":  [
+
                               ],
                       "PNUT":  [
+
                                ],
                       "AIXBT":  [
+
                                 ],
                       "ETH":  [
-                              "Glamsterdam upgrade Q3 2026 — ZK scaling katalist"
+                                  "Glamsterdam upgrade Q3 - pozitivan katalizator"
                               ],
                       "LINK":  [
-                               "Glamsterdam DeFi integracije; oracle ecosystem update"
+                                   "Glamsterdam DeFi integracija, rast partnerstava"
                                ],
                       "PUMP":  [
+
                                ],
                       "TRUMP":  [
+
                                 ],
                       "BTC":  [
-                              "Halving efekt aktivan; institucionalni ETF bid prisutan"
+
                               ]
                   },
-    "fearGreed":  33,
-    "macroPenalty":  2,
-    "regime":  "VOLATILE",
+    "fearGreed":  12,
+    "macroPenalty":  1,
+    "regime":  "BEAR",
     "sentimentScore":  {
-                           "ACT":  -1,
-                           "MEME":  -1,
-                           "ANIME":  -1,
+                           "ACT":  0,
+                           "MEME":  0,
+                           "ANIME":  0,
                            "XRP":  0,
                            "BNB":  0,
                            "SUI":  0,
-                           "AVAX":  -1,
-                           "PENGU":  -1,
-                           "BOME":  -1,
-                           "DOGS":  -1,
-                           "NOT":  -1,
-                           "PEOPLE":  -1,
-                           "SOL":  -2,
+                           "AVAX":  0,
+                           "PENGU":  0,
+                           "BOME":  0,
+                           "DOGS":  0,
+                           "NOT":  0,
+                           "PEOPLE":  0,
+                           "SOL":  -1,
                            "ADA":  -2,
-                           "PNUT":  -1,
+                           "PNUT":  0,
                            "AIXBT":  -1,
-                           "ETH":  -1,
+                           "ETH":  1,
                            "LINK":  1,
-                           "PUMP":  -1,
-                           "TRUMP":  -1,
+                           "PUMP":  0,
+                           "TRUMP":  0,
                            "BTC":  -1
                        },
-    "aiSummary":  "DXY probio 100.1 nakon snažnog izvještaja o tržištu rada (172K novih radnih mjesta vs. 85K očekivanih), što je pokrenulo USD rally i srušilo BTC na intraday minimum $59.2K uz $1.5B likvidacija. Fear & Greed indeks na 33 (Strah), SOL na 2026 niskom $62 zbog Goldman prodaje ETF-a i 624K token unloka, dok ADA pada 19% nakon Hoskinsonove objave odlaska. VOLATILE režim se nastavlja s macroPenalty 2; LINK i ETH Glamsterdam (Q3) ostaju jedini pozitivni katalizatori, dok meme sektori i SOL/ADA pate od fundamentalnih i institucionalnih pritisaka.",
+    "aiSummary":  "BTC pao na $60.9K uz Fear & Greed na 12 (Ekstremni Strah) i masovne ETF odljeve — snažan izvještaj o radnim mjestima srušio je Nasdaq 5% i povukao kripto, s $1.8B likvidacija i BTC intraday minimumom $59.2K. DXY stabilan na 100.05 bez valutnog pritiska, ali aktivni geopolitički sukob (blokada Hormuz) drži naftu na $96.7 i pojačava makro rizik uz warActive. Očekuj nastavak BEAR tržišta; ETH Glamsterdam (Q3) i LINK ostaju jedini pozitivni katalizatori, dok ADA (4-god minimum, Hoskinson upozorenje) i SOL nastavljaju fundamentalni pad.",
     "warActive":  true,
     "btcDom":  56.0,
-    "stableDom":  10.5,
-    "oil":  92.0
+    "stableDom":  13.6,
+    "oil":  96.71
 }
