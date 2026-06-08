@@ -1,22 +1,22 @@
 {
-    "dxy":  100.05,
-    "changeSummary":  "Situacija gotovo identična prethodnom scanu — BTC drži $62.9K uz kratkoročni bounce +2%, DXY blago pada s 100.07 na 100.05, nafta raste zbog eskalacije Israel-Libanon sukoba.",
-    "lastUpdated":  "2026-06-08T14:00:00Z",
+    "dxy":  100.1,
+    "changeSummary":  "Nema značajnih pomaka u makro indikatorima (DXY, F&G, BTC dom ostaju isti), ali negativan sentiment pojačan rekordnim ETF odljevima od $4.4B i prvom Strategy BTC prodajom.",
+    "lastUpdated":  "2026-06-08T17:30:00Z",
     "warnings":  {
                      "ACT":  [
 
                              ],
                      "MEME":  [
-
+                                 "Ekstremni strah, meme coini padaju brže od tržišta"
                               ],
                      "ANIME":  [
 
                                ],
                      "XRP":  [
-                                 "Pad 17% tjedno, $1.00 razina pod pritiskom"
+                                 "Ispod ključnog otpora usprkos Clarity Act"
                              ],
                      "BNB":  [
-                                 "Pada s tržištem, longs likvidirani"
+
                              ],
                      "SUI":  [
 
@@ -28,7 +28,7 @@
 
                                ],
                      "BOME":  [
-
+                                  "Visoka volatilnost, medvjeđa faza"
                               ],
                      "DOGS":  [
 
@@ -40,7 +40,7 @@
 
                                 ],
                      "SOL":  [
-                                 "Goldman izlaz, slaba mrežna aktivnost, $65"
+                                 "Podrška $65 kritična, medvjeđi trend"
                              ],
                      "ADA":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-                                 "Analitičari ciljaju $1,600 kao sljedeću podršku"
+                                 "ETF odljevi, ispod SMA200, medvjeđi momentum"
                              ],
                      "LINK":  [
 
@@ -61,10 +61,10 @@
 
                               ],
                      "TRUMP":  [
-                                   "Teamski sell-off, gubici retaila od post-launch"
+                                  "USD1 delistiran na HTX, zamrznuti WLF walleti"
                                ],
                      "BTC":  [
-                                 "$1.1B likvidacija, ETF odljevi nastavljaju"
+                                 "$4.4B ETF odljevi u 13 dana, Strategy prodala BTC"
                              ]
                  },
     "catalysts":  {
@@ -78,7 +78,7 @@
 
                                 ],
                       "XRP":  [
-                                  "Bounce od $1.14, ključna razina $1.00 drži"
+                                  "Clarity Act prošao odbor, ETF priljevi rastu"
                               ],
                       "BNB":  [
 
@@ -87,7 +87,7 @@
 
                               ],
                       "AVAX":  [
-                                   "CME AVAX futures — institucionalni pristup"
+
                                ],
                       "PENGU":  [
 
@@ -105,7 +105,7 @@
 
                                  ],
                       "SOL":  [
-                                  "Solana ETF (BSOL, FSOL) >$1B imovine"
+
                               ],
                       "ADA":  [
 
@@ -117,10 +117,10 @@
 
                                 ],
                       "ETH":  [
-                                  "Bounce od $1,677 uz 5.5% dnevni rast"
+
                               ],
                       "LINK":  [
-                                   "Grayscale GLNK spot ETF lansiran — bullish katalizator"
+
                                ],
                       "PUMP":  [
 
@@ -129,7 +129,7 @@
 
                                 ],
                       "BTC":  [
-                                  "ETF odljevi se usporavaju, tražnja na $62K razini"
+                                  "Strategy dugoročno akumulira, Clarity Act napreduje"
                               ]
                   },
     "fearGreed":  12,
@@ -139,10 +139,10 @@
                            "ACT":  -1,
                            "MEME":  -1,
                            "ANIME":  -1,
-                           "XRP":  -1,
+                           "XRP":  1,
                            "BNB":  -1,
-                           "SUI":  0,
-                           "AVAX":  0,
+                           "SUI":  -1,
+                           "AVAX":  -1,
                            "PENGU":  -1,
                            "BOME":  -1,
                            "DOGS":  -1,
@@ -151,16 +151,16 @@
                            "SOL":  -1,
                            "ADA":  -1,
                            "PNUT":  -1,
-                           "AIXBT":  -1,
+                           "AIXBT":  0,
                            "ETH":  -1,
-                           "LINK":  1,
+                           "LINK":  -1,
                            "PUMP":  -1,
-                           "TRUMP":  -1,
-                           "BTC":  -1
+                           "TRUMP":  -2,
+                           "BTC":  -2
                        },
-    "aiSummary":  "BTC konsolidira oko $62.9K uz Fear & Greed 12 (Ekstremni Strah) — tržište ostaje u BEAR režimu s ETF odljevima i $1.1B likvidacija. DXY stabilan na 100.05 bez valutnog pritiska, dok nafta raste na $93.6 zbog izraelskih udara na Libanon i blokade Hormuzkog tjesnaca. Ključne razine podrške: SOL $65, XRP $1.00, ETH $1,600 — kratkoročni bounce moguć ali medvjeđa struktura ostaje.",
+    "aiSummary":  "BTC oscilira oko $63K uz rekordne ETF odljeve od $4.4B u 13 dana i simboličnu prvu Strategy BTC prodaju — tržište ostaje u dubokom BEAR režimu s Fear & Greed 12 (Ekstremni Strah). DXY stabilan na 100.1, nafta blago raste na $94.4 zbog blokade Hormuz tjesnaca, dok Iran-Izrael sukobi nastavljaju pritiskati rizičnu imovinu. Clarity Act prošao odbor (pozitivno za XRP), ali medvjeđa struktura dominira — ključne podrške: SOL $65, XRP $1.00, ETH $1,600.",
     "warActive":  true,
     "btcDom":  56.0,
-    "stableDom":  8.0,
-    "oil":  93.63
+    "stableDom":  14.6,
+    "oil":  94.4
 }
