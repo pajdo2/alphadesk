@@ -1,118 +1,135 @@
 {
-    "dxy":  100.07,
-    "changeSummary":  "BTC ostaje na $60.9K uz isti Fear & Greed (12) i BEAR režim, nafta blago pada na $93.6 (s $96.7), DXY stabilan na 100.07 bez promjene makro slike.",
-    "lastUpdated":  "2026-06-08T12:00:00Z",
+    "dxy":  100.05,
+    "changeSummary":  "Situacija gotovo identična prethodnom scanu — BTC drži $62.9K uz kratkoročni bounce +2%, DXY blago pada s 100.07 na 100.05, nafta raste zbog eskalacije Israel-Libanon sukoba.",
+    "lastUpdated":  "2026-06-08T14:00:00Z",
     "warnings":  {
                      "ACT":  [
-                             "Makro bear tržište tlači sve altcoine"
+
                              ],
                      "MEME":  [
-                              "Makro bear tržište tlači meme tokene"
+
                               ],
                      "ANIME":  [
-                               "Makro bear tržište tlači male tokene"
+
                                ],
                      "XRP":  [
-                             "Pao na $1.08, razina $1.0 pod pritiskom"
+                                 "Pad 17% tjedno, $1.00 razina pod pritiskom"
                              ],
                      "BNB":  [
+                                 "Pada s tržištem, longs likvidirani"
                              ],
                      "SUI":  [
+
                              ],
                      "AVAX":  [
-                              "Negativan tjedni trend, makro pritisak"
+
                               ],
                      "PENGU":  [
-                               "Makro bear tržište tlači male tokene"
+
                                ],
                      "BOME":  [
-                              "Makro bear tržište tlači meme tokene"
+
                               ],
                      "DOGS":  [
-                              "Makro bear tržište tlači meme tokene"
+
                               ],
                      "NOT":  [
-                             "Makro bear tržište tlači male tokene"
+
                              ],
                      "PEOPLE":  [
-                                "Makro bear tržište tlači male tokene"
+
                                 ],
                      "SOL":  [
-                             "Goldman Sachs izlazi, pad prema $75",
-                             "Slaba mrežna aktivnost pojačava prodajni pritisak"
+                                 "Goldman izlaz, slaba mrežna aktivnost, $65"
                              ],
                      "ADA":  [
-                             "4-godišnji minimum, ispod $0.20",
-                             "Hoskinson upozorenje — fundamentalni pad"
+
                              ],
                      "PNUT":  [
-                              "Makro bear tržište tlači meme tokene"
+
                               ],
                      "AIXBT":  [
-                               "AI tokeni pod pritiskom u bear tržištu"
+
                                ],
                      "ETH":  [
-                             "Rizik pada na $1,600 uz negativan tjedni trend"
+                                 "Analitičari ciljaju $1,600 kao sljedeću podršku"
                              ],
                      "LINK":  [
-                              "Pada 82% od ATH od $52.99"
+
                               ],
                      "PUMP":  [
-                              "Makro bear tržište tlači male tokene"
+
                               ],
                      "TRUMP":  [
-                               "Meme tokeni pod makro pritiskom"
+                                   "Teamski sell-off, gubici retaila od post-launch"
                                ],
                      "BTC":  [
-                             "ETF odljevi $4.4B u 13 uzastopnih sesija",
-                             "Najgori tjedni pad od FTX kolapsa"
+                                 "$1.1B likvidacija, ETF odljevi nastavljaju"
                              ]
                  },
     "catalysts":  {
                       "ACT":  [
+
                               ],
                       "MEME":  [
+
                                ],
                       "ANIME":  [
+
                                 ],
                       "XRP":  [
-                              "SEC commodity klasifikacija završena"
+                                  "Bounce od $1.14, ključna razina $1.00 drži"
                               ],
                       "BNB":  [
+
                               ],
                       "SUI":  [
+
                               ],
                       "AVAX":  [
+                                   "CME AVAX futures — institucionalni pristup"
                                ],
                       "PENGU":  [
+
                                 ],
                       "BOME":  [
+
                                ],
                       "DOGS":  [
+
                                ],
                       "NOT":  [
+
                               ],
                       "PEOPLE":  [
+
                                  ],
                       "SOL":  [
+                                  "Solana ETF (BSOL, FSOL) >$1B imovine"
                               ],
                       "ADA":  [
+
                               ],
                       "PNUT":  [
+
                                ],
                       "AIXBT":  [
+
                                 ],
                       "ETH":  [
-                              "Glamsterdam upgrade planiran za Q3 2026"
+                                  "Bounce od $1,677 uz 5.5% dnevni rast"
                               ],
                       "LINK":  [
-                               "Jeftina procjena — analitičari vide potencijal"
+                                   "Grayscale GLNK spot ETF lansiran — bullish katalizator"
                                ],
                       "PUMP":  [
+
                                ],
                       "TRUMP":  [
+
                                 ],
                       "BTC":  [
+                                  "ETF odljevi se usporavaju, tražnja na $62K razini"
                               ]
                   },
     "fearGreed":  12,
@@ -125,25 +142,25 @@
                            "XRP":  -1,
                            "BNB":  -1,
                            "SUI":  0,
-                           "AVAX":  -1,
+                           "AVAX":  0,
                            "PENGU":  -1,
                            "BOME":  -1,
                            "DOGS":  -1,
                            "NOT":  -1,
                            "PEOPLE":  -1,
-                           "SOL":  -2,
-                           "ADA":  -2,
+                           "SOL":  -1,
+                           "ADA":  -1,
                            "PNUT":  -1,
                            "AIXBT":  -1,
                            "ETH":  -1,
-                           "LINK":  -1,
+                           "LINK":  1,
                            "PUMP":  -1,
                            "TRUMP":  -1,
                            "BTC":  -1
                        },
-    "aiSummary":  "BTC pada na $60.9K uz Fear & Greed 12 (Ekstremni Strah) i najgori tjedni pad od FTX kolapsa — ETF odljevi dosežu $4.4B u 13 sesija uz $1.76B likvidacija. DXY stabilan na 100.07 bez valutnog pritiska, nafta pada na $93.6 unatoč aktualnoj blokadi Hormuzkog tjesnaca. BEAR tržište se nastavlja; SOL $75 i XRP $1.0 su ključne razine podrške koje treba pratiti.",
+    "aiSummary":  "BTC konsolidira oko $62.9K uz Fear & Greed 12 (Ekstremni Strah) — tržište ostaje u BEAR režimu s ETF odljevima i $1.1B likvidacija. DXY stabilan na 100.05 bez valutnog pritiska, dok nafta raste na $93.6 zbog izraelskih udara na Libanon i blokade Hormuzkog tjesnaca. Ključne razine podrške: SOL $65, XRP $1.00, ETH $1,600 — kratkoročni bounce moguć ali medvjeđa struktura ostaje.",
     "warActive":  true,
     "btcDom":  56.0,
-    "stableDom":  14.7,
+    "stableDom":  8.0,
     "oil":  93.63
 }
