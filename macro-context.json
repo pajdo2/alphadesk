@@ -1,7 +1,7 @@
 {
     "dxy":  100.1,
-    "changeSummary":  "Fear & Greed pao s 12 na 8, BTC blago pao na $62.8K, dok DXY i nafta ostaju gotovo nepromijenjeni uz nastavak Iran-Izrael sukoba.",
-    "lastUpdated":  "2026-06-09T10:00:00Z",
+    "changeSummary":  "Uvjeti ostaju gotovo nepromijenjeni — BEAR nastavlja, BTC blago oporavljen na $63.4K (+1%), FG indeks i DXY stagniraju na prethodnim razinama.",
+    "lastUpdated":  "2026-06-09T12:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-                                 "Pad ispod ključne potpore $1,600"
+
                              ],
                      "LINK":  [
 
@@ -61,10 +61,10 @@
 
                               ],
                      "TRUMP":  [
-                                   "SBF traži predsjednički pomilovanje"
+                                   "SBF podnio zahtjev za pomilovanje Trumpu"
                                ],
                      "BTC":  [
-                                 "Nastavljaju se ETF odljevi, medvjeđi sentiment"
+                                 "Iran-Izrael sukobi drže geopolitički pritisak"
                              ]
                  },
     "catalysts":  {
@@ -78,7 +78,7 @@
 
                                 ],
                       "XRP":  [
-                                  "Clarity Act prošao odbor - regulatorna jasnoća"
+
                               ],
                       "BNB":  [
 
@@ -117,7 +117,7 @@
 
                                 ],
                       "ETH":  [
-                                  "Bitmine kupio 127K ETH (~$214M) - korporativna kupnja"
+                                  "Bitmine kupio 127K ETH (~$214M) korporativna potražnja"
                               ],
                       "LINK":  [
 
@@ -129,7 +129,7 @@
 
                                 ],
                       "BTC":  [
-                                  "BTC pri realiziranoj vrijednosti - signal mogućeg dna"
+                                  "Cijena blizu realized value — potencijalni signal dna"
                               ]
                   },
     "fearGreed":  8,
@@ -139,7 +139,7 @@
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  1,
+                           "XRP":  0,
                            "BNB":  0,
                            "SUI":  0,
                            "AVAX":  0,
@@ -148,7 +148,7 @@
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  -1,
+                           "SOL":  0,
                            "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
@@ -156,11 +156,11 @@
                            "LINK":  0,
                            "PUMP":  0,
                            "TRUMP":  -1,
-                           "BTC":  -1
+                           "BTC":  0
                        },
-    "aiSummary":  "BTC oscilira oko $62.8K uz Fear & Greed indeks na 8 (Ekstremni Strah) — tržište ostaje u dubokom BEAR režimu s BTC ispod SMA200. DXY stabilan na 100.1, nafta na $94.4 uz nastavak Iran-Izrael sukoba i blokade Hormuz tjesnaca. Bitmine kupio 127K ETH kao pozitivan signal korporativne potražnje, ali medvjeđa struktura dominira — ključne podrške: SOL $65, XRP $1.00, ETH $1,600.",
+    "aiSummary":  "BTC se stabilizira oko $63.4K dok Fear & Greed indeks ostaje na 8 (Ekstremni Strah) — tržište je duboko u BEAR režimu s BTC ispod SMA200. DXY stabilan oko 100.1, nafta na $94 uz nastavak Iran-Izrael sukoba koji zadržava warActive. Korporativna potražnja prisutna (Bitmine 127K ETH), ali bez jasnog okidača za preokret — ključne podrške: SOL $65, XRP $1.00, ETH $1,600.",
     "warActive":  true,
     "btcDom":  56.0,
-    "stableDom":  13,
-    "oil":  94.43
+    "stableDom":  13.5,
+    "oil":  94.0
 }
