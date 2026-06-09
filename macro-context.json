@@ -1,7 +1,7 @@
 {
     "dxy":  100.1,
-    "changeSummary":  "Uvjeti ostaju gotovo nepromijenjeni — BEAR nastavlja, BTC blago oporavljen na $63.4K (+1%), FG indeks i DXY stagniraju na prethodnim razinama.",
-    "lastUpdated":  "2026-06-09T12:00:00Z",
+    "changeSummary":  "Makro situacija ostaje gotovo nepromijenjena — BTC na $63.4K, Fear & Greed zadržan na 8, ali LINK dobiva katalizator uvrštavanjem u CME Nasdaq kripto indeks futures dok SOL ubrzava pad prema $75.",
+    "lastUpdated":  "2026-06-09T14:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -13,7 +13,7 @@
 
                                ],
                      "XRP":  [
-
+                                 "Pad 17% tjedno, razina $1.00 pod pritiskom"
                              ],
                      "BNB":  [
 
@@ -40,7 +40,7 @@
 
                                 ],
                      "SOL":  [
-
+                                 "Goldman Sachs izlaz — selloff ubrzava prema $75"
                              ],
                      "ADA":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-
+                                 "Analitičari ciljaju $1,600 kao ključnu podršku"
                              ],
                      "LINK":  [
 
@@ -61,10 +61,10 @@
 
                               ],
                      "TRUMP":  [
-                                   "SBF podnio zahtjev za pomilovanje Trumpu"
+
                                ],
                      "BTC":  [
-                                 "Iran-Izrael sukobi drže geopolitički pritisak"
+
                              ]
                  },
     "catalysts":  {
@@ -78,7 +78,7 @@
 
                                 ],
                       "XRP":  [
-
+                                  "Ripple Prime ušao u Goldman/JPM pilot za namiru VP"
                               ],
                       "BNB":  [
 
@@ -108,7 +108,7 @@
 
                               ],
                       "ADA":  [
-
+                                  "Van Rossem hard fork planiran za kraj lipnja"
                               ],
                       "PNUT":  [
 
@@ -117,10 +117,10 @@
 
                                 ],
                       "ETH":  [
-                                  "Bitmine kupio 127K ETH (~$214M) korporativna potražnja"
+                                  "Bitmine kupio 127K ETH vrijednih ~$214M"
                               ],
                       "LINK":  [
-
+                                   "Uvrštavanje u CME Nasdaq kripto indeks futures"
                                ],
                       "PUMP":  [
 
@@ -129,7 +129,7 @@
 
                                 ],
                       "BTC":  [
-                                  "Cijena blizu realized value — potencijalni signal dna"
+                                  "Strategy dodao BTC razrjeđivanjem od $181M"
                               ]
                   },
     "fearGreed":  8,
@@ -139,7 +139,7 @@
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  0,
+                           "XRP":  1,
                            "BNB":  0,
                            "SUI":  0,
                            "AVAX":  0,
@@ -148,19 +148,19 @@
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  0,
-                           "ADA":  0,
+                           "SOL":  -1,
+                           "ADA":  1,
                            "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  1,
-                           "LINK":  0,
+                           "ETH":  0,
+                           "LINK":  2,
                            "PUMP":  0,
-                           "TRUMP":  -1,
-                           "BTC":  0
+                           "TRUMP":  0,
+                           "BTC":  1
                        },
-    "aiSummary":  "BTC se stabilizira oko $63.4K dok Fear & Greed indeks ostaje na 8 (Ekstremni Strah) — tržište je duboko u BEAR režimu s BTC ispod SMA200. DXY stabilan oko 100.1, nafta na $94 uz nastavak Iran-Izrael sukoba koji zadržava warActive. Korporativna potražnja prisutna (Bitmine 127K ETH), ali bez jasnog okidača za preokret — ključne podrške: SOL $65, XRP $1.00, ETH $1,600.",
+    "aiSummary":  "BTC se stabilizira oko $63.4K uz Fear & Greed od 8 (Ekstremni Strah) — BEAR režim se produbljuje s paralelnim spadom ETH (~$1,770), SOL (~$75), XRP (~$1.14) i ADA. DXY stabilan oko 100.1, nafta na $94 uz nastavak Iran-Izrael sukoba koji zadržava warActive aktivnim. LINK dobiva pozitivan katalizator uvrštavanjem u CME Nasdaq kripto indeks futures, a ADA priprema Van Rossem hard fork za kraj lipnja.",
     "warActive":  true,
     "btcDom":  56.0,
-    "stableDom":  13.5,
+    "stableDom":  12.5,
     "oil":  94.0
 }
