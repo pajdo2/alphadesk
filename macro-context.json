@@ -1,19 +1,19 @@
 {
     "dxy":  100.1,
-    "changeSummary":  "Nema značajnih pomaka u makro indikatorima (DXY, F&G, BTC dom ostaju isti), ali negativan sentiment pojačan rekordnim ETF odljevima od $4.4B i prvom Strategy BTC prodajom.",
-    "lastUpdated":  "2026-06-08T17:30:00Z",
+    "changeSummary":  "Fear & Greed pao s 12 na 8, BTC blago pao na $62.8K, dok DXY i nafta ostaju gotovo nepromijenjeni uz nastavak Iran-Izrael sukoba.",
+    "lastUpdated":  "2026-06-09T10:00:00Z",
     "warnings":  {
                      "ACT":  [
 
                              ],
                      "MEME":  [
-                                 "Ekstremni strah, meme coini padaju brže od tržišta"
+
                               ],
                      "ANIME":  [
 
                                ],
                      "XRP":  [
-                                 "Ispod ključnog otpora usprkos Clarity Act"
+
                              ],
                      "BNB":  [
 
@@ -28,7 +28,7 @@
 
                                ],
                      "BOME":  [
-                                  "Visoka volatilnost, medvjeđa faza"
+
                               ],
                      "DOGS":  [
 
@@ -40,7 +40,7 @@
 
                                 ],
                      "SOL":  [
-                                 "Podrška $65 kritična, medvjeđi trend"
+
                              ],
                      "ADA":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-                                 "ETF odljevi, ispod SMA200, medvjeđi momentum"
+                                 "Pad ispod ključne potpore $1,600"
                              ],
                      "LINK":  [
 
@@ -61,10 +61,10 @@
 
                               ],
                      "TRUMP":  [
-                                  "USD1 delistiran na HTX, zamrznuti WLF walleti"
+                                   "SBF traži predsjednički pomilovanje"
                                ],
                      "BTC":  [
-                                 "$4.4B ETF odljevi u 13 dana, Strategy prodala BTC"
+                                 "Nastavljaju se ETF odljevi, medvjeđi sentiment"
                              ]
                  },
     "catalysts":  {
@@ -78,7 +78,7 @@
 
                                 ],
                       "XRP":  [
-                                  "Clarity Act prošao odbor, ETF priljevi rastu"
+                                  "Clarity Act prošao odbor - regulatorna jasnoća"
                               ],
                       "BNB":  [
 
@@ -117,7 +117,7 @@
 
                                 ],
                       "ETH":  [
-
+                                  "Bitmine kupio 127K ETH (~$214M) - korporativna kupnja"
                               ],
                       "LINK":  [
 
@@ -129,38 +129,38 @@
 
                                 ],
                       "BTC":  [
-                                  "Strategy dugoročno akumulira, Clarity Act napreduje"
+                                  "BTC pri realiziranoj vrijednosti - signal mogućeg dna"
                               ]
                   },
-    "fearGreed":  12,
+    "fearGreed":  8,
     "macroPenalty":  1,
     "regime":  "BEAR",
     "sentimentScore":  {
-                           "ACT":  -1,
-                           "MEME":  -1,
-                           "ANIME":  -1,
+                           "ACT":  0,
+                           "MEME":  0,
+                           "ANIME":  0,
                            "XRP":  1,
-                           "BNB":  -1,
-                           "SUI":  -1,
-                           "AVAX":  -1,
-                           "PENGU":  -1,
-                           "BOME":  -1,
-                           "DOGS":  -1,
-                           "NOT":  -1,
-                           "PEOPLE":  -1,
+                           "BNB":  0,
+                           "SUI":  0,
+                           "AVAX":  0,
+                           "PENGU":  0,
+                           "BOME":  0,
+                           "DOGS":  0,
+                           "NOT":  0,
+                           "PEOPLE":  0,
                            "SOL":  -1,
-                           "ADA":  -1,
-                           "PNUT":  -1,
+                           "ADA":  0,
+                           "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  -1,
-                           "LINK":  -1,
-                           "PUMP":  -1,
-                           "TRUMP":  -2,
-                           "BTC":  -2
+                           "ETH":  1,
+                           "LINK":  0,
+                           "PUMP":  0,
+                           "TRUMP":  -1,
+                           "BTC":  -1
                        },
-    "aiSummary":  "BTC oscilira oko $63K uz rekordne ETF odljeve od $4.4B u 13 dana i simboličnu prvu Strategy BTC prodaju — tržište ostaje u dubokom BEAR režimu s Fear & Greed 12 (Ekstremni Strah). DXY stabilan na 100.1, nafta blago raste na $94.4 zbog blokade Hormuz tjesnaca, dok Iran-Izrael sukobi nastavljaju pritiskati rizičnu imovinu. Clarity Act prošao odbor (pozitivno za XRP), ali medvjeđa struktura dominira — ključne podrške: SOL $65, XRP $1.00, ETH $1,600.",
+    "aiSummary":  "BTC oscilira oko $62.8K uz Fear & Greed indeks na 8 (Ekstremni Strah) — tržište ostaje u dubokom BEAR režimu s BTC ispod SMA200. DXY stabilan na 100.1, nafta na $94.4 uz nastavak Iran-Izrael sukoba i blokade Hormuz tjesnaca. Bitmine kupio 127K ETH kao pozitivan signal korporativne potražnje, ali medvjeđa struktura dominira — ključne podrške: SOL $65, XRP $1.00, ETH $1,600.",
     "warActive":  true,
     "btcDom":  56.0,
-    "stableDom":  14.6,
-    "oil":  94.4
+    "stableDom":  13,
+    "oil":  94.43
 }
