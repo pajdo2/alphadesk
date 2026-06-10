@@ -1,19 +1,19 @@
 {
-    "dxy":  99.7,
-    "changeSummary":  "BTC nastavlja pad prema $62K dok Fear & Greed ostaje na 8, nafta raste na $91.96 uslijed zatvorenog Hormuškog tjesnaca, a DXY se stabilizira ispod 100 na 99.7.",
+    "dxy":  99.9,
+    "changeSummary":  "BTC klizio s $62K na $61.5K uz rastuće geopolitičke napetosti (SAD udari na Iran) i rekordne ETF odljeve, dok F&G ostaje na razini ekstremnog straha (9) i warActive prelazi na true.",
     "lastUpdated":  "2026-06-10T14:00:00Z",
     "warnings":  {
                      "ACT":  [
-                             "Spekulativni token u dubokom BEAR tržištu"
+
                              ],
                      "MEME":  [
-                              "Meme token bez katalizatora u Ekstremnom Strahu"
+
                               ],
                      "ANIME":  [
-                               "Meme token u bear tržištu – visok rizik"
+
                                ],
                      "XRP":  [
-                             "Pad 5.29% danas – regulatorna neizvjesnost"
+                                 "Pad -5% danas, nastavak negativnog sentimenta"
                              ],
                      "BNB":  [
 
@@ -25,46 +25,46 @@
 
                               ],
                      "PENGU":  [
-                               "Meme NFT token – bear pritisak"
+
                                ],
                      "BOME":  [
-                              "Meme token bez podrške u bear fazi"
+
                               ],
                      "DOGS":  [
-                               "Meme token – bear tržište bez katalizatora"
+
                               ],
                      "NOT":  [
-                             "TON ekosustav pod pritiskom – bear faza"
+
                              ],
                      "PEOPLE":  [
-                                "Meme token – ekstremni strah pritišće cijenu"
+
                                 ],
                      "SOL":  [
-                             "Klizi prema $75 – slaba mrežna aktivnost"
+
                              ],
                      "ADA":  [
 
                              ],
                      "PNUT":  [
-                              "Meme token u dubokom bear tržištu"
+
                               ],
                      "AIXBT":  [
 
                                ],
                      "ETH":  [
-                             "Goldman Sachs izlaz – ETF odljevi nastavljaju"
+                                 "ETF odljevi nastavljeni, ETH ispod $1.650"
                              ],
                      "LINK":  [
 
                               ],
                      "PUMP":  [
-                              "Visokorizični spekulativni token – bear faza"
+
                               ],
                      "TRUMP":  [
-                               "Politički meme token – volatilnost u bear fazi"
+                                   "Reuters istraga: Trump obitelj $2.3B zarada — regulatorni rizik"
                                ],
                      "BTC":  [
-                             "ETF odljevi 13 uzastopnih sesija – $4.4B izlaz"
+                                 "ETF odljevi -$90M + -$70M uzastopno, BTC pad -17% tjedno"
                              ]
                  },
     "catalysts":  {
@@ -117,10 +117,10 @@
 
                                 ],
                       "ETH":  [
-                              "CME Nasdaq kripto indeks uključuje ETH"
+
                               ],
                       "LINK":  [
-                               "CME Nasdaq indeks uključuje LINK – dugoroc. +"
+
                                ],
                       "PUMP":  [
 
@@ -129,39 +129,38 @@
 
                                 ],
                       "BTC":  [
-                              "CME Nasdaq kripto indeks – dugorocni + katalizator",
-                              "Morpho: $175M od Paradigm i a16z – DeFi rast"
+                                  "CPI izvještaj danas — potencijalni katalizator oporavka"
                               ]
                   },
-    "fearGreed":  8,
+    "fearGreed":  9,
     "macroPenalty":  0,
     "regime":  "BEAR",
     "sentimentScore":  {
-                           "ACT":  -1,
-                           "MEME":  -1,
-                           "ANIME":  -1,
+                           "ACT":  0,
+                           "MEME":  0,
+                           "ANIME":  0,
                            "XRP":  -1,
                            "BNB":  0,
                            "SUI":  0,
-                           "AVAX":  0,
-                           "PENGU":  -1,
-                           "BOME":  -1,
-                           "DOGS":  -1,
-                           "NOT":  -1,
-                           "PEOPLE":  -1,
+                           "AVAX":  -1,
+                           "PENGU":  0,
+                           "BOME":  0,
+                           "DOGS":  0,
+                           "NOT":  0,
+                           "PEOPLE":  0,
                            "SOL":  -1,
-                           "ADA":  0,
-                           "PNUT":  -1,
+                           "ADA":  -1,
+                           "PNUT":  0,
                            "AIXBT":  0,
                            "ETH":  -1,
-                           "LINK":  1,
-                           "PUMP":  -1,
-                           "TRUMP":  -1,
+                           "LINK":  0,
+                           "PUMP":  0,
+                           "TRUMP":  -2,
                            "BTC":  -1
                        },
-    "aiSummary":  "BTC oscilira oko $62K uz Fear & Greed od 8 (Ekstremni Strah) — BEAR režim se nastavlja dok ETH pada na $1.628 i XRP na $1.11 uslijed nastavka ETF odljeva i usporenih BTC priljeva prema Bernsteinu. DXY se stabilizira na 99.7 dok nafta raste na $91.96 zbog zatvorenog Hormuškog tjesnaca, no Iran-Izrael primirje smanjuje rizik daljnje eskalacije. Kratkoročno tržište ostaje pod pritiskom, token unlock tjedan ($634M) donosi dodatnu ponudu.",
-    "warActive":  false,
-    "btcDom":  56.0,
-    "stableDom":  13.3,
-    "oil":  91.96
+    "aiSummary":  "BTC oscilira oko $61.5K uz Fear & Greed od 9 (Ekstremni Strah) — BEAR režim se nastavlja dok DXY stagnira na 99.9, a SAD vojni udari na Iran drže geopolitički pritisak visoko. Nafta WTI raste na $88.8, BTC dominance je na 57.6% uz rekordne ETF odljeve koji guše svaki oporavak. CPI izvještaj danas može biti kratkoročni katalizator, no fundamentalna slika ostaje negativna.",
+    "warActive":  true,
+    "btcDom":  57.6,
+    "stableDom":  14.5,
+    "oil":  88.8
 }
