@@ -423,7 +423,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.93</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.94</span></div>
       <div class="hd-sub" id="hdsub">Učitavam top 100 tokena…</div>
       <div class="hd-claude" id="claude-update" style="display:flex;align-items:center;gap:6px">
         <span id="claude-update-txt">🤖 Claude analiza: —</span>
@@ -447,6 +447,7 @@ svg.sp{overflow:visible;display:block}
     <div class="filter-top">
       <div class="tab-row">
         <button class="tab on" id="tab-pregled" onclick="setTab('pregled')">Pregled</button>
+        <button class="tab" id="tab-btc" onclick="setTab('btc')">₿ BTC</button>
         <button class="tab" id="tab-signali" onclick="setTab('signali')">🎯 Signali</button>
         <button class="tab" id="tab-meme" onclick="setTab('meme')">🎰 Meme</button>
         <button class="tab" id="tab-rezultati" onclick="setTab('rezultati')">📈 Rezultati</button>
@@ -6087,6 +6088,96 @@ function rMeme(){
   h+='</div>';return h;
 }
 
+// ── ₿ BTC TAB — posvećen samo Bitcoinu, koristi isti analyze3D engine ──
+function rBtc(){
+  var h='<div class="pg">';
+  var sym='BTC';
+  var d=px[sym];
+  var price=d&&d.p?d.p:0;
+  var c24=d&&d.c24!=null?d.c24:0;
+  var c24Col=c24>=0?'var(--bull)':'var(--bear)';
+  var bo='#f7931a'; // bitcoin narančasta
+
+  // ── HERO ──
+  h+='<div style="background:linear-gradient(135deg,'+bo+'1f 0%,'+bo+'06 100%);border:.5px solid '+bo+'55;border-radius:var(--r-lg);padding:14px 16px;margin-bottom:12px">';
+  h+='<div style="display:flex;align-items:center;justify-content:space-between;gap:10px">';
+  h+='<div style="display:flex;align-items:center;gap:11px">';
+  h+='<span style="font-size:30px;line-height:1;color:'+bo+'">₿</span>';
+  h+='<div><div style="font-size:18px;font-weight:900;color:var(--t1);letter-spacing:-.3px">Bitcoin</div>';
+  h+='<div style="font-size:9.5px;color:var(--t4)">Posvećeni monitor · isti engine kao Signali</div></div>';
+  h+='</div>';
+  h+='<div style="text-align:right">';
+  h+='<div style="font-size:20px;font-weight:900;color:var(--t1)">$'+(price?fmtNum(price):'—')+'</div>';
+  h+='<div style="font-size:12px;font-weight:800;color:'+c24Col+'">'+(c24>=0?'+':'')+c24.toFixed(2)+'% 24h</div>';
+  h+='</div></div></div>';
+
+  if(!price){
+    h+='<div class="empty"><div style="font-size:40px;margin-bottom:12px">⏳</div><div style="font-size:14px;color:var(--t3)">Čekam BTC live cijenu…</div></div>';
+    h+='</div>';return h;
+  }
+
+  // ── BTC KONTEKST GRID (4 kartice) ──
+  function bcard(lbl,val,col,tip){
+    var ta2=tip?' data-tip="'+tip.replace(/"/g,'&quot;')+'"':'';
+    var cur=tip?';cursor:help':'';
+    return'<div'+ta2+' style="background:var(--s1);border:.5px solid var(--sep);border-radius:12px;padding:10px 8px;text-align:center'+cur+'">'
+      +'<div style="font-size:15px;font-weight:900;color:'+col+'">'+val+'</div>'
+      +'<div style="font-size:9px;color:var(--t4);margin-top:2px">'+lbl+'</div></div>';
+  }
+  var sma=MACRO.btcSma200;
+  var smaDiff=sma?((price-sma)/sma*100):null;
+  var smaCol=smaDiff==null?'var(--t3)':smaDiff<0?'var(--bull)':smaDiff<15?'var(--warn)':'var(--bear)';
+  var smaLbl=smaDiff==null?'—':(smaDiff>=0?'+':'')+smaDiff.toFixed(1)+'%';
+  var domCol=MACRO.btcDom>60?'var(--bear)':MACRO.btcDom>55?'var(--warn)':MACRO.btcDom<45?'var(--bull)':'var(--t2)';
+  var btcFr=fr[sym]&&fr[sym].rate!=null?(fr[sym].rate*100):null;
+  var frCol=btcFr==null?'var(--t3)':btcFr>0.05?'var(--bear)':btcFr>0.01?'var(--warn)':btcFr<-0.01?'var(--bull)':'var(--t2)';
+  var frLbl=btcFr==null?'—':(btcFr>=0?'+':'')+btcFr.toFixed(3)+'%';
+  var fgCol=MACRO.fg<25?'var(--bull)':MACRO.fg<45?'var(--info)':MACRO.fg>70?'var(--bear)':'var(--t2)';
+  h+='<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-bottom:12px">';
+  h+=bcard('BTC Dom',MACRO.btcDom+'%',domCol,'BTC dominacija|Udio BTC-a u ukupnoj kripto kapitalizaciji. Visoko (>60%) = kapital bježi u BTC (altovi pate). Nisko (<45%) = alt season.');
+  h+=bcard('200D SMA',smaLbl,smaCol,'200-dnevni prosjek|Glavni bull/bear razdjelnik. BTC ispod (zeleno) = povijesno odlične kupovne prilike. Iznad +15% = pregrijano.');
+  h+=bcard('Funding',frLbl,frCol,'BTC funding rate|Cijena držanja long pozicije na perpetual ugovorima. Visok pozitivan (>0.05%) = longs preplaćeni (bearish). Negativan = shorts plaćaju (bullish).');
+  h+=bcard('F&G',''+MACRO.fg,fgCol,'Fear & Greed|Indeks raspoloženja 0-100. <25 ekstremni strah (kontrarian buy), >75 pohlepa (oprez).');
+  h+='</div>';
+
+  // ── MTF TREND STRIP (1h / 4h / 1d) ──
+  (function(){
+    var t1=ta[sym],t4=ta4h[sym],tD=taDaily[sym];
+    var rows=[{l:'1h',t:t1},{l:'4h',t:t4},{l:'1d',t:tD}].filter(function(x){return x.t&&x.t.trend;});
+    if(!rows.length)return;
+    var up=rows.filter(function(x){return x.t.trend==='UP';}).length;
+    h+='<div style="background:var(--s1);border:.5px solid var(--sep);border-radius:12px;padding:11px 14px;margin-bottom:12px">';
+    h+='<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">';
+    h+='<span style="font-size:11px;font-weight:700;color:var(--t3)">📊 Multi-timeframe trend</span>';
+    h+='<span style="font-size:10px;font-weight:800;color:'+(up===rows.length?'var(--bull)':up===0?'var(--bear)':'var(--warn)')+'">'+up+'/'+rows.length+' UP</span>';
+    h+='</div>';
+    h+='<div style="display:flex;gap:7px">';
+    rows.forEach(function(x){
+      var isUp=x.t.trend==='UP';
+      var col=isUp?'var(--bull)':'var(--bear)';
+      var bg=isUp?'rgba(0,230,118,.08)':'rgba(255,23,68,.07)';
+      var rsi=x.t.rsi!=null?Math.round(x.t.rsi):null;
+      h+='<div style="flex:1;background:'+bg+';border:.5px solid '+col+'33;border-radius:9px;padding:8px;text-align:center">';
+      h+='<div style="font-size:10px;color:var(--t4);margin-bottom:2px">'+x.l+'</div>';
+      h+='<div style="font-size:12px;font-weight:800;color:'+col+'">'+(isUp?'▲ UP':'▼ DOWN')+'</div>';
+      if(rsi!=null)h+='<div style="font-size:9px;color:var(--t4);margin-top:2px">RSI '+rsi+'</div>';
+      h+='</div>';
+    });
+    h+='</div></div>';
+  })();
+
+  // ── PUNA ANALIZA (isti renderOpp kao Signali) ──
+  var o=analyze3D(sym);
+  if(o){
+    h+=renderOpp(o);
+  } else {
+    h+='<div class="empty"><div style="font-size:40px;margin-bottom:12px">📊</div><div style="font-size:14px;color:var(--t3)">Analiza trenutno nedostupna.</div></div>';
+  }
+
+  h+='<div style="text-align:center;padding:8px 0 20px;font-size:11px;color:var(--t4)">₿ Isti engine kao Signali · Auto-refresh 10s · Nije financijski savjet</div>';
+  h+='</div>';return h;
+}
+
 function render(){
   lastRefresh.analysis=Date.now();
   computeSectorRS(); // Svaki render recomputa sektor RS iz trenutnih cijena
@@ -6094,6 +6185,7 @@ function render(){
   if(activeFilter==="tracker"){sc.innerHTML=rTracker();return;}
   if(activeFilter==="meme"){sc.innerHTML=rMeme();return;}
   if(activeFilter==="hodl"){sc.innerHTML=rHodl();return;}
+  if(activeFilter==="btc"){sc.innerHTML=rBtc();return;}
   var opps=getOpportunities();
 
   var isPregled=activeFilter==="all";
@@ -6624,6 +6716,7 @@ function setTab(t){
   else if(t==="meme")      activeFilter="meme";
   else if(t==="rezultati") activeFilter="tracker";
   else if(t==="hodl")      activeFilter="hodl";
+  else if(t==="btc")       activeFilter="btc";
   render();
 }
 // Chip filter unutar Signali taba
@@ -8990,7 +9083,7 @@ function disableNotifs(){
   showToast("Notifikacije isključene");render();
 }
 
-// emitEntryNotif uklonjen (v5.93) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
+// emitEntryNotif uklonjen (v5.94) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
 // Bila mrtva funkcija (nula poziva); uklonjena da se ne može slučajno ponovno spojiti.
 
 // ── EXIT NOTIFICATION — SAMO 2 TIPA (po korisnikovom zahtjevu) ──
