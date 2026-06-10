@@ -423,7 +423,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.94</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.95</span></div>
       <div class="hd-sub" id="hdsub">Učitavam top 100 tokena…</div>
       <div class="hd-claude" id="claude-update" style="display:flex;align-items:center;gap:6px">
         <span id="claude-update-txt">🤖 Claude analiza: —</span>
@@ -3627,6 +3627,78 @@ var _tradeSourceFilter='all'; // 'all'|'manual'|'auto' — Rezultati tab chip fi
 var hodlTracker=[];
 try{var _hodl=JSON.parse(localStorage.getItem("ad3d_hodl")||"[]");if(Array.isArray(_hodl))hodlTracker=_hodl;}catch(e){}
 function _saveHodl(){try{localStorage.setItem("ad3d_hodl",JSON.stringify(hodlTracker));}catch(e){}}
+
+// ── ₿ BTC DIRECTION-LOG — analitika uspjesnosti smjera BTC-a ─────────
+// Periodicni snapshot BTC predikcije (smjer iz score-a), pa se sam ocijeni
+// protiv stvarnog kretanja cijene nakon 24h. Neovisno o trade-entry gating-u
+// (BTC rijetko dobije ✅ pa predTracker ima ~1 BTC zapis — ovo daje gust skup).
+var BTC_LOG_SAMPLE_MS=30*60*1000;   // novi uzorak max svakih 30 min
+var BTC_LOG_GRADE_MS=24*60*60*1000; // ocjena nakon 24h
+var BTC_LOG_TH=0.5;                 // ±0.5% = znacajan pomak (manje = "flat")
+var BTC_LOG_MAX=400;                // cap zapisa
+var btcPredLog=[];
+try{var _bpl=JSON.parse(localStorage.getItem("ad3d_btc_predlog")||"[]");if(Array.isArray(_bpl))btcPredLog=_bpl;}catch(e){}
+function _saveBtcLog(){try{localStorage.setItem("ad3d_btc_predlog",JSON.stringify(btcPredLog));}catch(e){}}
+
+// Smjer iz analyze3D rezultata: score je cisti directional signal (moze biti <0)
+function _btcDirFromOpp(o){
+  if(!o||o.score==null)return null;
+  if(o.score>=1.5)return"UP";
+  if(o.score<=-1.5)return"DOWN";
+  return"NEUTRAL";
+}
+
+// Ocijeni sve dozrele (≥24h) jos neocijenjene zapise
+function _gradeBtcLog(){
+  var now=Date.now(),changed=false;
+  var curP=px['BTC']?px['BTC'].p:0;
+  btcPredLog.forEach(function(e){
+    if(e.graded||!e.price)return;
+    if(now-e.ts<BTC_LOG_GRADE_MS)return; // jos nije dozrelo
+    // Forward cijena: uzorak najblizi ts+24h (iz samog loga), fallback na trenutnu
+    var targetT=e.ts+BTC_LOG_GRADE_MS,best=null,bestDiff=Infinity;
+    btcPredLog.forEach(function(f){
+      if(!f.price||f.ts<e.ts)return; // samo kasniji uzorci
+      var diff=Math.abs(f.ts-targetT);
+      if(diff<bestDiff){bestDiff=diff;best=f;}
+    });
+    var fwd=(best&&bestDiff<=3*60*60*1000)?best.price:(curP||e.price);
+    var fwdPct=+(((fwd-e.price)/e.price)*100).toFixed(2);
+    var correct;
+    if(e.dir==="UP")correct=fwdPct>=BTC_LOG_TH;
+    else if(e.dir==="DOWN")correct=fwdPct<=-BTC_LOG_TH;
+    else correct=Math.abs(fwdPct)<BTC_LOG_TH; // NEUTRAL: ostalo flat
+    e.fwdPrice=+fwd.toFixed(2);e.fwdPct=fwdPct;e.correct=!!correct;e.graded=true;
+    changed=true;
+  });
+  return changed;
+}
+
+// Glavni tick — zove se iz render(): throttled sample + grade svih dozrelih
+function tickBtcLog(){
+  var changed=false;
+  var p=px['BTC']?px['BTC'].p:0;
+  if(p>0){
+    var last=btcPredLog.length?btcPredLog[btcPredLog.length-1]:null;
+    if(!last||(Date.now()-last.ts>=BTC_LOG_SAMPLE_MS)){
+      var o=typeof analyze3D==="function"?analyze3D('BTC'):null;
+      var dir=_btcDirFromOpp(o);
+      if(dir){
+        btcPredLog.push({
+          ts:Date.now(),price:+p.toFixed(2),dir:dir,
+          conf:o?o.conf:null,score:o?+o.score.toFixed(2):null,verdict:o?o.verdict:null,
+          graded:false,correct:null,fwdPrice:null,fwdPct:null
+        });
+        if(btcPredLog.length>BTC_LOG_MAX)btcPredLog=btcPredLog.slice(-BTC_LOG_MAX);
+        changed=true;
+      }
+    }
+  }
+  if(_gradeBtcLog())changed=true;
+  if(changed)_saveBtcLog();
+  return changed;
+}
+
 function addHodl(){
   var symEl=document.getElementById("hodl-sym");
   var usdEl=document.getElementById("hodl-usd");
@@ -6088,6 +6160,83 @@ function rMeme(){
   h+='</div>';return h;
 }
 
+// ── ₿ BTC ACCURACY CHART — cijena + tocke (zeleno=smjer pogodjen, crveno=ne) ──
+function btcAccuracyChart(){
+  var log=btcPredLog.slice();
+  var graded=log.filter(function(e){return e.graded;});
+  var correctN=graded.filter(function(e){return e.correct;}).length;
+  var acc=graded.length?Math.round(correctN/graded.length*100):null;
+  var pending=log.length-graded.length;
+  var accCol=acc==null?"var(--t4)":acc>=60?"var(--bull)":acc>=45?"var(--warn)":"var(--bear)";
+
+  var h='<div style="background:var(--s1);border:.5px solid var(--sep);border-radius:14px;padding:13px 15px;margin-bottom:12px">';
+  // Header + stat
+  h+='<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">';
+  h+='<span data-tip="Uspješnost smjera|Aplikacija svakih ~30min zabilježi BTC predikciju (rast/pad/flat) i nakon 24h provjeri je li cijena stvarno otišla u tom smjeru (prag ±0.5%). Zelena točka = smjer pogođen, crvena = pogrešan, siva = još se čeka 24h." style="font-size:12px;font-weight:800;color:var(--t2);cursor:help">📈 Uspješnost smjera BTC-a ⓘ</span>';
+  if(acc!=null)h+='<span style="background:'+accCol+'22;color:'+accCol+';border-radius:20px;padding:1px 9px;font-size:12px;font-weight:900">'+acc+'%</span>';
+  h+='</div>';
+
+  if(log.length<2){
+    h+='<div style="text-align:center;padding:18px 10px;color:var(--t4);font-size:11.5px;line-height:1.6">⏳ Graf se puni dok app radi ('+log.length+' '+(log.length===1?'uzorak':'uzoraka')+' do sad).<br>Prve ocjene smjera za <strong>~24h</strong>.<br><span style="font-size:10px;color:var(--t4)">Što češće otvoriš app, gušći i precizniji graf.</span></div>';
+    h+='</div>';return h;
+  }
+
+  // SVG: cijena (linija) + tocke obojene po tocnosti
+  var W=320,H=158,PL=44,PR=12,PT=12,PB=34;
+  var cW=W-PL-PR,cH=H-PT-PB;
+  var tss=log.map(function(e){return e.ts;});
+  var prices=log.map(function(e){return e.price;});
+  var minTs=Math.min.apply(null,tss),maxTs=Math.max.apply(null,tss),tR=maxTs-minTs||1;
+  var minP=Math.min.apply(null,prices),maxP=Math.max.apply(null,prices),pR=(maxP-minP)||1;
+  var pad=pR*0.14;minP-=pad;maxP+=pad;pR=maxP-minP||1;
+  function tx(ts){return log.length<2?PL+cW/2:PL+((ts-minTs)/tR)*cW;}
+  function py(p){return PT+cH-((p-minP)/pR*cH);}
+
+  var svg='<svg width="100%" viewBox="0 0 '+W+' '+H+'" style="overflow:visible;display:block">';
+  // y-grid (cijena)
+  [0,0.5,1].forEach(function(f){
+    var pv=minP+pR*f,y=py(pv);
+    svg+='<line x1="'+PL+'" y1="'+y.toFixed(1)+'" x2="'+(W-PR)+'" y2="'+y.toFixed(1)+'" stroke="rgba(255,255,255,.05)" stroke-width="1"/>';
+    svg+='<text x="'+(PL-5)+'" y="'+(y+3).toFixed(1)+'" font-size="8" fill="rgba(255,255,255,.28)" text-anchor="end">$'+fmtNum(pv)+'</text>';
+  });
+  // price line (bitcoin orange)
+  var dPath='';
+  log.forEach(function(e,i){dPath+=(i===0?'M':'L')+tx(e.ts).toFixed(1)+','+py(e.price).toFixed(1);});
+  svg+='<path d="'+dPath+'" fill="none" stroke="#f7931a" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round" opacity=".9"/>';
+  // dots — boja po tocnosti, oblik strelice po smjeru predikcije
+  log.forEach(function(e){
+    var cx=tx(e.ts),cy=py(e.price);
+    var col=!e.graded?'rgba(255,255,255,.32)':e.correct?'#00e676':'#ff1744';
+    svg+='<circle cx="'+cx.toFixed(1)+'" cy="'+cy.toFixed(1)+'" r="3.4" fill="rgba(0,0,0,.55)"/>';
+    svg+='<circle cx="'+cx.toFixed(1)+'" cy="'+cy.toFixed(1)+'" r="2.3" fill="'+col+'"/>';
+  });
+  // x-os: pocetak / kraj
+  var fmtD=function(ts){var d=new Date(ts);return d.toLocaleDateString("hr-HR",{day:"2-digit",month:"2-digit"})+" "+("0"+d.getHours()).slice(-2)+"h";};
+  svg+='<text x="'+PL+'" y="'+(H-6)+'" font-size="8" fill="rgba(255,255,255,.3)" text-anchor="start">'+fmtD(minTs)+'</text>';
+  svg+='<text x="'+(W-PR)+'" y="'+(H-6)+'" font-size="8" fill="rgba(255,255,255,.3)" text-anchor="end">'+fmtD(maxTs)+'</text>';
+  svg+='</svg>';
+  h+=svg;
+
+  // Stat row: tocnost / ocijenjeno / ceka
+  h+='<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:10px">';
+  [
+    {v:(acc!=null?acc+'%':'—'),l:'Točnost smjera',c:accCol},
+    {v:graded.length,l:'Ocijenjeno',c:'var(--t2)'},
+    {v:pending,l:'Čeka 24h',c:'var(--t3)'}
+  ].forEach(function(s){
+    h+='<div style="background:var(--s2,rgba(255,255,255,.03));border-radius:9px;padding:8px;text-align:center"><div style="font-size:14px;font-weight:900;color:'+s.c+'">'+s.v+'</div><div style="font-size:9px;color:var(--t4);margin-top:1px">'+s.l+'</div></div>';
+  });
+  h+='</div>';
+  // Legenda
+  h+='<div style="display:flex;gap:12px;justify-content:center;margin-top:9px;font-size:9px;color:var(--t4)">';
+  h+='<span><span style="color:#f7931a">━</span> BTC cijena</span>';
+  h+='<span><span style="color:#00e676">●</span> smjer ✓</span>';
+  h+='<span><span style="color:#ff1744">●</span> smjer ✗</span>';
+  h+='<span><span style="color:rgba(255,255,255,.4)">●</span> čeka</span>';
+  h+='</div>';
+  h+='</div>';return h;
+}
+
 // ── ₿ BTC TAB — posvećen samo Bitcoinu, koristi isti analyze3D engine ──
 function rBtc(){
   var h='<div class="pg">';
@@ -6166,6 +6315,9 @@ function rBtc(){
     h+='</div></div>';
   })();
 
+  // ── USPJEŠNOST SMJERA (graf cijena + točnost predikcija) ──
+  h+=btcAccuracyChart();
+
   // ── PUNA ANALIZA (isti renderOpp kao Signali) ──
   var o=analyze3D(sym);
   if(o){
@@ -6181,6 +6333,7 @@ function rBtc(){
 function render(){
   lastRefresh.analysis=Date.now();
   computeSectorRS(); // Svaki render recomputa sektor RS iz trenutnih cijena
+  try{tickBtcLog();}catch(e){} // BTC direction-log: throttled sample (30min) + grade dozrelih
   var sc=document.getElementById("sc");
   if(activeFilter==="tracker"){sc.innerHTML=rTracker();return;}
   if(activeFilter==="meme"){sc.innerHTML=rMeme();return;}
@@ -9083,7 +9236,7 @@ function disableNotifs(){
   showToast("Notifikacije isključene");render();
 }
 
-// emitEntryNotif uklonjen (v5.94) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
+// emitEntryNotif uklonjen (v5.95) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
 // Bila mrtva funkcija (nula poziva); uklonjena da se ne može slučajno ponovno spojiti.
 
 // ── EXIT NOTIFICATION — SAMO 2 TIPA (po korisnikovom zahtjevu) ──
