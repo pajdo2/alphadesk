@@ -423,7 +423,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.96</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.97</span></div>
       <div class="hd-sub" id="hdsub">Učitavam top 100 tokena…</div>
       <div class="hd-claude" id="claude-update" style="display:flex;align-items:center;gap:6px">
         <span id="claude-update-txt">🤖 Claude analiza: —</span>
@@ -3699,7 +3699,7 @@ function tickBtcLog(){
     }
   }
   if(_gradeBtcLog())changed=true;
-  if(changed)_saveBtcLog();
+  if(changed){_saveBtcLog();if(typeof syncToGH==="function")syncToGH();} // debounced push na GitHub
   return changed;
 }
 
@@ -6207,12 +6207,17 @@ function btcAccuracyChart(){
   var dPath='';
   log.forEach(function(e,i){dPath+=(i===0?'M':'L')+tx(e.ts).toFixed(1)+','+py(e.price).toFixed(1);});
   svg+='<path d="'+dPath+'" fill="none" stroke="#f7931a" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round" opacity=".9"/>';
-  // dots — boja po tocnosti, oblik strelice po smjeru predikcije
+  // markeri — OBLIK = smjer predikcije (▲UP/▼DOWN/◆NEUTRAL), BOJA = tocnost
   log.forEach(function(e){
-    var cx=tx(e.ts),cy=py(e.price);
-    var col=!e.graded?'rgba(255,255,255,.32)':e.correct?'#00e676':'#ff1744';
-    svg+='<circle cx="'+cx.toFixed(1)+'" cy="'+cy.toFixed(1)+'" r="3.4" fill="rgba(0,0,0,.55)"/>';
-    svg+='<circle cx="'+cx.toFixed(1)+'" cy="'+cy.toFixed(1)+'" r="2.3" fill="'+col+'"/>';
+    var cx=+tx(e.ts).toFixed(1),cy=+py(e.price).toFixed(1);
+    var col=!e.graded?'rgba(255,255,255,.38)':e.correct?'#00e676':'#ff1744';
+    var r=3.6;
+    var shape;
+    if(e.dir==='UP')      shape='<path d="M'+cx+','+(cy-r)+' L'+(cx-r)+','+(cy+r*0.8)+' L'+(cx+r)+','+(cy+r*0.8)+' Z"';
+    else if(e.dir==='DOWN')shape='<path d="M'+cx+','+(cy+r)+' L'+(cx-r)+','+(cy-r*0.8)+' L'+(cx+r)+','+(cy-r*0.8)+' Z"';
+    else                  shape='<rect x="'+(cx-r*0.7)+'" y="'+(cy-r*0.7)+'" width="'+(r*1.4)+'" height="'+(r*1.4)+'" transform="rotate(45 '+cx+' '+cy+')"';
+    // tamni obrub za kontrast + ispuna
+    svg+=shape+' fill="'+col+'" stroke="rgba(0,0,0,.6)" stroke-width="0.8"/>';
   });
   // x-os: pocetak / kraj
   var fmtD=function(ts){var d=new Date(ts);return d.toLocaleDateString("hr-HR",{day:"2-digit",month:"2-digit"})+" "+("0"+d.getHours()).slice(-2)+"h";};
@@ -6221,7 +6226,7 @@ function btcAccuracyChart(){
   svg+='</svg>';
   h+=svg;
 
-  // Stat row: tocnost / ocijenjeno / ceka
+  // Glavni stat row: tocnost / ocijenjeno / ceka
   h+='<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:10px">';
   [
     {v:(acc!=null?acc+'%':'—'),l:'Točnost smjera',c:accCol},
@@ -6231,12 +6236,31 @@ function btcAccuracyChart(){
     h+='<div style="background:var(--s2,rgba(255,255,255,.03));border-radius:9px;padding:8px;text-align:center"><div style="font-size:14px;font-weight:900;color:'+s.c+'">'+s.v+'</div><div style="font-size:9px;color:var(--t4);margin-top:1px">'+s.l+'</div></div>';
   });
   h+='</div>';
-  // Legenda
-  h+='<div style="display:flex;gap:12px;justify-content:center;margin-top:9px;font-size:9px;color:var(--t4)">';
-  h+='<span><span style="color:#f7931a">━</span> BTC cijena</span>';
-  h+='<span><span style="color:#00e676">●</span> smjer ✓</span>';
-  h+='<span><span style="color:#ff1744">●</span> smjer ✗</span>';
-  h+='<span><span style="color:rgba(255,255,255,.4)">●</span> čeka</span>';
+  // Baseline usporedba (coin-flip 50%) — pokazuje ima li app stvarni edge
+  if(acc!=null){
+    var edge=acc-50;
+    var eCol=edge>=5?'var(--bull)':edge<=-5?'var(--bear)':'var(--t3)';
+    h+='<div style="text-align:center;margin-top:7px;font-size:10px;color:var(--t4)">vs 50% slučajno: <strong style="color:'+eCol+'">'+(edge>=0?'+':'')+edge+'pp</strong> '+(edge>=5?'— ima edge ✓':edge<=-5?'— ispod slučajnog':'— neutralno')+'</div>';
+  }
+  // Razdvajanje po smjeru predikcije (UP/DOWN/NEUTRAL)
+  function dirStat(dir){var sub=graded.filter(function(e){return e.dir===dir;});var c=sub.filter(function(e){return e.correct;}).length;return{n:sub.length,acc:sub.length?Math.round(c/sub.length*100):null};}
+  if(graded.length>0){
+    h+='<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:8px">';
+    [{k:'UP',ico:'▲',col:'#00e676',lbl:'Rast'},{k:'DOWN',ico:'▼',col:'#ff1744',lbl:'Pad'},{k:'NEUTRAL',ico:'◆',col:'var(--t3)',lbl:'Flat'}].forEach(function(x){
+      var st=dirStat(x.k),ac=st.acc;
+      var acCol=ac==null?'var(--t4)':ac>=60?'var(--bull)':ac>=45?'var(--warn)':'var(--bear)';
+      h+='<div style="background:var(--s2,rgba(255,255,255,.03));border-radius:9px;padding:7px;text-align:center">';
+      h+='<div style="font-size:10px;color:'+x.col+';font-weight:800;margin-bottom:1px">'+x.ico+' '+x.lbl+'</div>';
+      h+='<div style="font-size:13px;font-weight:900;color:'+acCol+'">'+(ac!=null?ac+'%':'—')+'</div>';
+      h+='<div style="font-size:8px;color:var(--t4)">'+st.n+' uzor.</div></div>';
+    });
+    h+='</div>';
+  }
+  // Legenda (oblici + boje)
+  h+='<div style="display:flex;gap:11px;justify-content:center;margin-top:9px;font-size:9px;color:var(--t4);flex-wrap:wrap">';
+  h+='<span><span style="color:#f7931a">━</span> cijena</span>';
+  h+='<span>▲ rast · ▼ pad · ◆ flat</span>';
+  h+='<span><span style="color:#00e676">●</span>✓ · <span style="color:#ff1744">●</span>✗ · <span style="color:rgba(255,255,255,.45)">●</span>čeka</span>';
   h+='</div>';
   h+='</div>';return h;
 }
@@ -7684,6 +7708,19 @@ function syncFromGH(onDone){
         if(predTracker.length>200)predTracker=predTracker.slice(0,200);
         try{localStorage.setItem("ad3d_track",JSON.stringify(predTracker));}catch(e){}
         if(remote.signalWeights)signalWeights=remote.signalWeights;
+        // Merge BTC direction-log po ts (graded pobijedi ungraded; cross-device trajnost)
+        if(Array.isArray(remote.btcPredLog)){
+          var bById={};
+          remote.btcPredLog.forEach(function(b){if(b&&b.ts)bById[b.ts]=b;});
+          btcPredLog.forEach(function(b){
+            if(!b||!b.ts)return;
+            var rem=bById[b.ts];
+            if(!rem||b.graded||!rem.graded)bById[b.ts]=b; // novi, ili lokalni graded pobijedi
+          });
+          btcPredLog=Object.keys(bById).map(function(k){return bById[k];}).sort(function(a,b){return a.ts-b.ts;});
+          if(btcPredLog.length>BTC_LOG_MAX)btcPredLog=btcPredLog.slice(-BTC_LOG_MAX);
+          _saveBtcLog();
+        }
         ghSync.status="ok";ghSync.lastSync=Date.now();ghSync.error=null;
         if(onDone)onDone();
       });
@@ -7703,7 +7740,7 @@ function syncToGH(immediate){
 function _doSyncToGH(){
   _syncTimer=null;
   ghSync.status="syncing";
-  var payload={predictions:predTracker,signalWeights:signalWeights,updatedAt:new Date().toISOString()};
+  var payload={predictions:predTracker,signalWeights:signalWeights,btcPredLog:btcPredLog,updatedAt:new Date().toISOString()};
   var content=btoa(unescape(encodeURIComponent(JSON.stringify(payload,null,2))));
   var body={message:"sync: tracker "+new Date().toISOString().slice(0,16),content:content};
   if(ghSha)body.sha=ghSha;
@@ -9240,7 +9277,7 @@ function disableNotifs(){
   showToast("Notifikacije isključene");render();
 }
 
-// emitEntryNotif uklonjen (v5.96) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
+// emitEntryNotif uklonjen (v5.97) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
 // Bila mrtva funkcija (nula poziva); uklonjena da se ne može slučajno ponovno spojiti.
 
 // ── EXIT NOTIFICATION — SAMO 2 TIPA (po korisnikovom zahtjevu) ──
