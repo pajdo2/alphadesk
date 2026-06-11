@@ -1,19 +1,19 @@
 {
     "dxy":  100.0,
-    "changeSummary":  "BTC blago porastao na $62K, nafta skočila na $91.5 uz nastavak US vojnih udara na Iran, DXY dosegao granicu 100.0 pred Fed odluku.",
-    "lastUpdated":  "2026-06-11T12:00:00Z",
+    "changeSummary":  "Makroekonomski uvjeti ostaju nepromijenjeni — DXY na 100.0, F&G na 9, nafta na $91.5, war premium aktivan usprkos fragilnom primirju.",
+    "lastUpdated":  "2026-06-11T14:00:00Z",
     "warnings":  {
                      "ACT":  [
 
                              ],
                      "MEME":  [
-
+                                 "Ekstremni strah, high-risk meme token u BEAR tržištu"
                               ],
                      "ANIME":  [
 
                                ],
                      "XRP":  [
-                                 "XRP pada, bearish momentum se nastavlja"
+
                              ],
                      "BNB":  [
 
@@ -28,7 +28,7 @@
 
                                ],
                      "BOME":  [
-
+                                 "Visok rizik meme token u BEAR tržištu"
                               ],
                      "DOGS":  [
 
@@ -58,14 +58,13 @@
 
                               ],
                      "PUMP":  [
-
+                                 "Visok rizik u BEAR tržištu, nema katalysta"
                               ],
                      "TRUMP":  [
-
+                                   "Meme coin, ekstremni strah, SBF traži pomilovanje Trumpa"
                                ],
                      "BTC":  [
-                                 "US udari na Iran - nafta raste, risk-off pritisak",
-                                 "ETF odljevi guše svaki pokušaj oporavka"
+                                 "Strategy prva prodaja BTC-a u 4 god; 13 dana ETF odljeva"
                              ]
                  },
     "catalysts":  {
@@ -79,7 +78,7 @@
 
                                 ],
                       "XRP":  [
-
+                                  "SEC slučaj zatvoren, spot XRP ETF-ovi privlače priljeve"
                               ],
                       "BNB":  [
 
@@ -121,7 +120,7 @@
 
                               ],
                       "LINK":  [
-                                   "Mastercard+Coinbase AI payments integracija"
+
                                ],
                       "PUMP":  [
 
@@ -130,38 +129,38 @@
 
                                 ],
                       "BTC":  [
-                                  "Fed odluka o kamatama - potencijalni kratk. katalizator"
+
                               ]
                   },
     "fearGreed":  9,
     "macroPenalty":  1,
     "regime":  "BEAR",
     "sentimentScore":  {
-                           "ACT":  0,
-                           "MEME":  0,
-                           "ANIME":  0,
-                           "XRP":  -1,
+                           "ACT":  -1,
+                           "MEME":  -2,
+                           "ANIME":  -1,
+                           "XRP":  1,
                            "BNB":  0,
-                           "SUI":  0,
-                           "AVAX":  0,
-                           "PENGU":  0,
-                           "BOME":  0,
-                           "DOGS":  0,
-                           "NOT":  0,
-                           "PEOPLE":  0,
-                           "SOL":  0,
-                           "ADA":  0,
-                           "PNUT":  0,
-                           "AIXBT":  0,
-                           "ETH":  0,
-                           "LINK":  1,
-                           "PUMP":  0,
-                           "TRUMP":  0,
-                           "BTC":  0
+                           "SUI":  -1,
+                           "AVAX":  -1,
+                           "PENGU":  -1,
+                           "BOME":  -2,
+                           "DOGS":  -1,
+                           "NOT":  -1,
+                           "PEOPLE":  -1,
+                           "SOL":  -1,
+                           "ADA":  -1,
+                           "PNUT":  -1,
+                           "AIXBT":  -1,
+                           "ETH":  -1,
+                           "LINK":  0,
+                           "PUMP":  -2,
+                           "TRUMP":  -2,
+                           "BTC":  -1
                        },
-    "aiSummary":  "BTC oscilira oko $62K uz Fear & Greed od 9 (Ekstremni Strah) — BEAR režim se nastavlja dok DXY dostiže granicu 100.0 u iščekivanju Fed odluke o kamatnim stopama. Nafta WTI skočila na $91.5 zbog drugog dana US vojnih udara na Iran i gotovo potpunog zatvaranja Hormuških tjesnaca, što pojačava risk-off sentiment i guši kripto. Bez jasnog makro catalysta ili promjene Fed smjera, kratkoročni oporavak ostaje malo vjerojatan.",
+    "aiSummary":  "BTC oscilira oko $62K uz Fear & Greed od 9 (Ekstremni Strah) — BEAR režim se nastavlja dok DXY stagnira na 100.0, a Strategy je po prvi put u 4 godine prodala BTC praćena s 13 uzastopnih dana ETF odljeva. Hormuška kriza ostaje aktivna usprkos fragilnom primirju (nafta WTI na $91.5), a novi Fed predsjednik Warsh signalizira nula rezanja kamatnih stopa za 2026, što gasi svaki kratkoročni katalist za oporavak. Jedina pozitivna nota dolazi od XRP-a čiji spot ETF-ovi privlače priljeve nakon zatvaranja SEC slučaja.",
     "warActive":  true,
     "btcDom":  56.2,
-    "stableDom":  9.0,
+    "stableDom":  14.3,
     "oil":  91.5
 }
