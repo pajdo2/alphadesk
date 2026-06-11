@@ -423,7 +423,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.103</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.104</span></div>
       <div class="hd-sub" id="hdsub">Učitavam top 100 tokena…</div>
       <div class="hd-claude" id="claude-update" style="display:flex;align-items:center;gap:6px">
         <span id="claude-update-txt">🤖 Claude analiza: —</span>
@@ -759,6 +759,8 @@ var MACRO={
   aiSummary:null,    // 2-3 rečenice Claude makro sažetka — prikazano u Pregled tabu
   btcSma200:null,    // BTC 200-day SMA — SET u fetchVP3D(), korišten u getMarketRegime()
   btcAbove200:null,  // bool — je li BTC iznad SMA200 — SET u fetchVP3D()
+  btcTopDate:"2025-10-06", // datum cycle topa (ATH) — override moguć iz macro-context.json
+  btcTopPrice:126000,      // cijena na topu — za drawdown kontekst u bear-bottom panelu
   catalysts:{
     XRP:["Goldman $153.8M ETF","CLARITY Act 72% travanj","25% inst. planira XRP"],
     SOL:["25% inst. planira SOL","Alpenglow Q3","Mastercard SDP"],
@@ -6304,11 +6306,33 @@ function btcBearBottom(){
   if(anchors.length===0){center=price*(1-Math.max(0.06,Math.min(0.30,(atrD/100)*4)));anchors.push(center);} // ATR fallback
   else if(anchors.length>=2)center=anchors[0]*0.55+anchors[1]*0.45;
   else center=anchors[0];
+
+  // ── VREMENSKA KOMPONENTA: bear dno povijesno ~365d nakon cycle topa ──
+  // 2013→2015: ~410d · 2017→2018: ~363d · 2021→2022: ~376d (median ~365-375)
+  // Rano u bearu (<60% vremena) → dno statistički još dublje → spusti centar
+  var topTs=MACRO.btcTopDate?Date.parse(MACRO.btcTopDate):NaN;
+  var daysFromTop=isNaN(topTs)?null:Math.max(0,Math.round((Date.now()-topTs)/86400000));
+  var timeProgress=daysFromTop!=null?daysFromTop/365:null;
+  var timeAdj=1;
+  if(timeProgress!=null){
+    if(timeProgress<0.4)timeAdj=0.94;       // vrlo rano — kapitulacija tek dolazi
+    else if(timeProgress<0.6)timeAdj=0.97;  // sredina — još prostora dolje
+    else if(timeProgress<0.85)timeAdj=0.99; // kasna faza
+    // ≥0.85: vrijeme zrelo za dno — bez korekcije
+  }
+  center*=timeAdj;
+  var bottomDateMid=isNaN(topTs)?null:new Date(topTs+365*86400000);
+  var bottomDateMin=isNaN(topTs)?null:new Date(topTs+330*86400000);
+  var bottomDateMax=isNaN(topTs)?null:new Date(topTs+410*86400000);
+
   var allP=anchors.concat([center]);
   var low=Math.min.apply(null,allP),high=Math.max.apply(null,allP);
   if((high-low)/center<0.04){low=center*0.96;high=center*1.04;} // rasiri usku zonu ±4%
   return{price:price,center:center,low:low,high:high,downPct:(price-center)/price*100,
-    discount:discount,sma:sma,atrD:atrD,techBottom:techBottom,smaBottom:smaBottom,belowSmaZone:belowSmaZone};
+    discount:discount,sma:sma,atrD:atrD,techBottom:techBottom,smaBottom:smaBottom,belowSmaZone:belowSmaZone,
+    daysFromTop:daysFromTop,timeProgress:timeProgress,timeAdj:timeAdj,
+    bottomDateMid:bottomDateMid,bottomDateMin:bottomDateMin,bottomDateMax:bottomDateMax,
+    topPrice:MACRO.btcTopPrice||null};
 }
 
 function btcBearBottomPanel(){
@@ -6343,6 +6367,33 @@ function btcBearBottomPanel(){
   h+='<div style="display:flex;justify-content:space-between;font-size:8px;color:var(--t4)"><span>$'+fmtNum(lo)+'</span><span>$'+fmtNum(hi)+'</span></div>';
   h+='<div style="display:flex;gap:12px;justify-content:center;margin-top:6px;font-size:9px;color:var(--t4)"><span><span style="color:#f7931a">▎</span>trenutna</span>'+(sma?'<span><span style="color:#2979ff">▎</span>200D SMA</span>':'')+'<span><span style="color:rgba(255,23,68,.7)">▬</span>zona dna</span></div>';
 
+  // ── VREMENSKA TRAKA: top → danas → povijesni prozor dna (330-410d, median ~365d) ──
+  if(est.daysFromTop!=null){
+    var dTot=440; // skala trake (410d prozor + margina)
+    function tp(d2){return Math.max(0,Math.min(100,d2/dTot*100));}
+    var fmtDt=function(dt){return dt?dt.toLocaleDateString("hr-HR",{day:"numeric",month:"short",year:"2-digit"}):"—";};
+    var ripe=est.timeProgress>=0.85;
+    var dLeft=Math.max(0,365-est.daysFromTop);
+    h+='<div style="margin-top:11px;padding-top:10px;border-top:.5px solid rgba(255,255,255,.06)">';
+    h+='<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">';
+    h+='<span data-tip="Vremenska komponenta|BTC bear dno povijesno nastupa ~365 dana nakon cycle topa: 2013→2015 ~410d, 2017→2018 ~363d, 2021→2022 ~376d. Rano u bearu (<60% vremena) procjena cijene dna se spušta jer kapitulacija statistički tek dolazi." style="font-size:10px;font-weight:700;color:var(--t3);cursor:help">⏳ Dan <strong style="color:var(--t1)">'+est.daysFromTop+'</strong> od topa · dno tipično ~365d ⓘ</span>';
+    h+='<span style="font-size:9px;font-weight:800;color:'+(ripe?'var(--bull)':'var(--warn)')+'">'+Math.round(est.timeProgress*100)+'%</span>';
+    h+='</div>';
+    // traka: prozor dna (330-410) + marker danas
+    h+='<div style="position:relative;height:20px">';
+    h+='<div style="position:absolute;top:8px;left:0;right:0;height:4px;background:rgba(255,255,255,.08);border-radius:3px"></div>';
+    h+='<div style="position:absolute;top:6px;left:'+tp(330).toFixed(1)+'%;width:'+(tp(410)-tp(330)).toFixed(1)+'%;height:8px;background:rgba(0,230,118,.3);border-radius:3px" data-tip="Prozor dna|Povijesni raspon 330-410 dana od topa u kojem su nastupila bear dna."></div>';
+    h+='<div style="position:absolute;top:5px;left:'+tp(365).toFixed(1)+'%;width:2px;height:10px;background:var(--bull);transform:translateX(-1px)"></div>';
+    h+='<div style="position:absolute;top:1px;left:'+tp(est.daysFromTop).toFixed(1)+'%;width:2px;height:18px;background:#f7931a;transform:translateX(-1px)"></div>';
+    h+='</div>';
+    h+='<div style="display:flex;justify-content:space-between;font-size:8px;color:var(--t4)"><span>top '+(MACRO.btcTopDate?new Date(Date.parse(MACRO.btcTopDate)).toLocaleDateString("hr-HR",{day:"numeric",month:"short",year:"2-digit"}):"")+(est.topPrice?' ($'+fmtNum(est.topPrice)+')':'')+'</span><span>+440d</span></div>';
+    h+='<div style="text-align:center;font-size:10px;color:var(--t3);margin-top:6px">'+(ripe
+      ?'🟢 <strong style="color:var(--bull)">Vrijeme zrelo za dno</strong> — u povijesnom prozoru ('+fmtDt(est.bottomDateMin)+' – '+fmtDt(est.bottomDateMax)+')'
+      :'Procijenjeno dno oko <strong style="color:var(--t1)">'+fmtDt(est.bottomDateMid)+'</strong> (raspon '+fmtDt(est.bottomDateMin)+' – '+fmtDt(est.bottomDateMax)+') · još ~'+dLeft+'d')+'</div>';
+    if(est.timeAdj<1)h+='<div style="text-align:center;font-size:9px;color:var(--t4);margin-top:3px">⏬ '+(est.timeProgress<0.6?'Rana faza bear-a':'Dno statistički još nije dosegnuto')+' ('+Math.round(est.timeProgress*100)+'% vremena) — procjena cijene spuštena '+Math.round((1-est.timeAdj)*100)+'%</div>';
+    h+='</div>';
+  }
+
   // Driver chips — sto trenutno korigira procjenu
   h+='<div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:9px">';
   function dc(t){return'<span style="font-size:9px;color:var(--t3);background:rgba(255,255,255,.04);border-radius:6px;padding:2px 7px">'+t+'</span>';}
@@ -6351,6 +6402,7 @@ function btcBearBottomPanel(){
   if(est.techBottom)h+=dc('Support $'+fmtNum(est.techBottom));
   if(MACRO.warActive)h+=dc('⚔️ rat +rizik');
   h+=dc('ATR '+est.atrD.toFixed(1)+'%/d');
+  if(est.daysFromTop!=null)h+=dc('⏳ dan '+est.daysFromTop+'/365');
   h+='</div>';
   h+='<div style="font-size:9px;color:var(--t4);text-align:center;margin-top:8px">⚠️ Heuristička procjena — nije garancija ni financijski savjet</div>';
   h+='</div>';return h;
@@ -9116,6 +9168,8 @@ function fetchMacroContext(manual){
       // Nova polja v2 — signal-kompatibilna
       if(d.fearGreed!=null){MACRO.fearGreed=d.fearGreed;MACRO.fg=d.fearGreed;} // ažuriraj oba aliasa
       if(d.regime)MACRO.claudeRegime=d.regime;
+      if(d.btcTopDate)MACRO.btcTopDate=d.btcTopDate;   // korekcija cycle topa iz macro analize
+      if(d.btcTopPrice)MACRO.btcTopPrice=d.btcTopPrice;
       if(d.sentimentScore)MACRO.sentimentScore=d.sentimentScore;
       if(d.changeSummary)MACRO.changeSummary=d.changeSummary;
       MACRO._cacheV=(MACRO._cacheV||0)+1; // invalidate analyze3D cache
@@ -9371,7 +9425,7 @@ function disableNotifs(){
   showToast("Notifikacije isključene");render();
 }
 
-// emitEntryNotif uklonjen (v5.103) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
+// emitEntryNotif uklonjen (v5.104) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
 // Bila mrtva funkcija (nula poziva); uklonjena da se ne može slučajno ponovno spojiti.
 
 // ── EXIT NOTIFICATION — SAMO 2 TIPA (po korisnikovom zahtjevu) ──
