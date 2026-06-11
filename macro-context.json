@@ -1,7 +1,7 @@
 {
-    "dxy":  99.9,
-    "changeSummary":  "BTC klizio s $62K na $61.5K uz rastuće geopolitičke napetosti (SAD udari na Iran) i rekordne ETF odljeve, dok F&G ostaje na razini ekstremnog straha (9) i warActive prelazi na true.",
-    "lastUpdated":  "2026-06-10T14:00:00Z",
+    "dxy":  100.0,
+    "changeSummary":  "BTC blago porastao na $62K, nafta skočila na $91.5 uz nastavak US vojnih udara na Iran, DXY dosegao granicu 100.0 pred Fed odluku.",
+    "lastUpdated":  "2026-06-11T12:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -13,7 +13,7 @@
 
                                ],
                      "XRP":  [
-                                 "Pad -5% danas, nastavak negativnog sentimenta"
+                                 "XRP pada, bearish momentum se nastavlja"
                              ],
                      "BNB":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-                                 "ETF odljevi nastavljeni, ETH ispod $1.650"
+
                              ],
                      "LINK":  [
 
@@ -61,10 +61,11 @@
 
                               ],
                      "TRUMP":  [
-                                   "Reuters istraga: Trump obitelj $2.3B zarada — regulatorni rizik"
+
                                ],
                      "BTC":  [
-                                 "ETF odljevi -$90M + -$70M uzastopno, BTC pad -17% tjedno"
+                                 "US udari na Iran - nafta raste, risk-off pritisak",
+                                 "ETF odljevi guše svaki pokušaj oporavka"
                              ]
                  },
     "catalysts":  {
@@ -120,7 +121,7 @@
 
                               ],
                       "LINK":  [
-
+                                   "Mastercard+Coinbase AI payments integracija"
                                ],
                       "PUMP":  [
 
@@ -129,11 +130,11 @@
 
                                 ],
                       "BTC":  [
-                                  "CPI izvještaj danas — potencijalni katalizator oporavka"
+                                  "Fed odluka o kamatama - potencijalni kratk. katalizator"
                               ]
                   },
     "fearGreed":  9,
-    "macroPenalty":  0,
+    "macroPenalty":  1,
     "regime":  "BEAR",
     "sentimentScore":  {
                            "ACT":  0,
@@ -142,25 +143,25 @@
                            "XRP":  -1,
                            "BNB":  0,
                            "SUI":  0,
-                           "AVAX":  -1,
+                           "AVAX":  0,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  -1,
-                           "ADA":  -1,
+                           "SOL":  0,
+                           "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  -1,
-                           "LINK":  0,
+                           "ETH":  0,
+                           "LINK":  1,
                            "PUMP":  0,
-                           "TRUMP":  -2,
-                           "BTC":  -1
+                           "TRUMP":  0,
+                           "BTC":  0
                        },
-    "aiSummary":  "BTC oscilira oko $61.5K uz Fear & Greed od 9 (Ekstremni Strah) — BEAR režim se nastavlja dok DXY stagnira na 99.9, a SAD vojni udari na Iran drže geopolitički pritisak visoko. Nafta WTI raste na $88.8, BTC dominance je na 57.6% uz rekordne ETF odljeve koji guše svaki oporavak. CPI izvještaj danas može biti kratkoročni katalizator, no fundamentalna slika ostaje negativna.",
+    "aiSummary":  "BTC oscilira oko $62K uz Fear & Greed od 9 (Ekstremni Strah) — BEAR režim se nastavlja dok DXY dostiže granicu 100.0 u iščekivanju Fed odluke o kamatnim stopama. Nafta WTI skočila na $91.5 zbog drugog dana US vojnih udara na Iran i gotovo potpunog zatvaranja Hormuških tjesnaca, što pojačava risk-off sentiment i guši kripto. Bez jasnog makro catalysta ili promjene Fed smjera, kratkoročni oporavak ostaje malo vjerojatan.",
     "warActive":  true,
-    "btcDom":  57.6,
-    "stableDom":  14.5,
-    "oil":  88.8
+    "btcDom":  56.2,
+    "stableDom":  9.0,
+    "oil":  91.5
 }
