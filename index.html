@@ -423,7 +423,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.102</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.103</span></div>
       <div class="hd-sub" id="hdsub">Učitavam top 100 tokena…</div>
       <div class="hd-claude" id="claude-update" style="display:flex;align-items:center;gap:6px">
         <span id="claude-update-txt">🤖 Claude analiza: —</span>
@@ -6265,6 +6265,97 @@ function btcAccuracyChart(){
   h+='</div>';return h;
 }
 
+// ── ₿ BTC BEAR-BOTTOM ESTIMATOR — gdje bi BTC mogao naci dno u bear scenariju ──
+// Sidro 1: povijesni diskont ispod 200D SMA (prilagodjen F&G/rat/volatilnost)
+// Sidro 2: najdublji tehnicki support (swing low / value-area-low)
+// Sama se korigira sa svakim osvjezavanjem (SMA/F&G/ATR/supporti su live)
+function btcBearBottom(){
+  var price=px['BTC']?px['BTC'].p:0;
+  if(!price)return null;
+  var sma=MACRO.btcSma200||0;
+  var a=atr['BTC'];var atrD=a?parseFloat(a.pct)*24:0;
+
+  // ── Sidro 1: SMA-anchored diskont (historijski bear bottoms ~15-30% ispod 200D) ──
+  var smaBottom=null,discount=null;
+  if(sma>0){
+    var base=0.22; // povijesni prosjek
+    var fg=MACRO.fg!=null?MACRO.fg:50;
+    var fgAdj=fg<10?-0.06:fg<20?-0.03:fg<35?0:fg<50?0.03:0.06; // ekstremni strah = blize dnu
+    var stressAdj=(MACRO.warActive?0.04:0)+(((MACRO.macroPenalty||0)>=2)?0.03:0);
+    var volAdj=atrD>5?0.03:atrD>3?0.01:0;
+    discount=Math.max(0.08,Math.min(0.40,base+fgAdj+stressAdj+volAdj));
+    smaBottom=sma*(1-discount);
+  }
+
+  // ── Sidro 2: najdublji tehnicki support ispod cijene ──
+  var cand=[],sw=swingLevels['BTC'],vp=volProfile['BTC'];
+  if(sw&&sw.supports)sw.supports.forEach(function(s){if(s>0&&s<price*0.995)cand.push(s);});
+  if(vp&&vp.valueAreaLow&&vp.valueAreaLow<price*0.995)cand.push(vp.valueAreaLow);
+  var techBottom=cand.length?Math.min.apply(null,cand):null;
+
+  // ── Validna downside sidra (SAMO ispod trenutne cijene) → blend ──
+  // Ako je cijena vec ispod SMA-diskont dna (BTC pao dublje od povijesnog diskonta),
+  // SMA sidro se izbacuje (nije vise downside target), a cinjenica se flagira kao bullish
+  var belowSmaZone=!!(smaBottom&&price<smaBottom);
+  var anchors=[];
+  if(smaBottom&&smaBottom<price*0.995)anchors.push(smaBottom);
+  if(techBottom)anchors.push(techBottom); // vec filtriran <price
+  var center;
+  if(anchors.length===0){center=price*(1-Math.max(0.06,Math.min(0.30,(atrD/100)*4)));anchors.push(center);} // ATR fallback
+  else if(anchors.length>=2)center=anchors[0]*0.55+anchors[1]*0.45;
+  else center=anchors[0];
+  var allP=anchors.concat([center]);
+  var low=Math.min.apply(null,allP),high=Math.max.apply(null,allP);
+  if((high-low)/center<0.04){low=center*0.96;high=center*1.04;} // rasiri usku zonu ±4%
+  return{price:price,center:center,low:low,high:high,downPct:(price-center)/price*100,
+    discount:discount,sma:sma,atrD:atrD,techBottom:techBottom,smaBottom:smaBottom,belowSmaZone:belowSmaZone};
+}
+
+function btcBearBottomPanel(){
+  var est=btcBearBottom();
+  if(!est)return'';
+  var price=est.price,center=est.center,low=est.low,high=est.high,sma=est.sma;
+
+  var h='<div style="background:var(--s1);border:.5px solid var(--sep);border-radius:14px;padding:13px 15px;margin-bottom:12px">';
+  h+='<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">';
+  h+='<span data-tip="Procjena dna (bear scenarij)|Heuristička projekcija gdje bi BTC mogao naći dno AKO se bear nastavi. Računa se iz: povijesnog diskonta ispod 200D SMA (prilagođen Fear&amp;Greed, ratom, volatilnošću) + najdubljeg tehničkog supporta ispod cijene. Sama se korigira sa svakim osvježavanjem. NIJE garancija ni savjet." style="font-size:12px;font-weight:800;color:var(--t2);cursor:help">🎯 Procjena dna (bear) ⓘ</span>';
+  if(est.discount!=null)h+='<span style="font-size:9px;color:var(--t4)">−'+Math.round(est.discount*100)+'% isp. 200D</span>';
+  h+='</div>';
+
+  // Glavni broj — downside target ispod trenutne
+  h+='<div style="text-align:center;margin-bottom:8px"><div style="font-size:24px;font-weight:900;color:#ff9800">$'+fmtNum(center)+'</div><div style="font-size:11px;color:var(--bear);font-weight:700">'+est.downPct.toFixed(1)+'% niže od trenutne</div></div>';
+  // Bullish kontekst: vec ispod tipicne 200D-diskont zone
+  if(est.belowSmaZone&&sma){
+    var smaDisc=(sma-price)/sma*100;
+    h+='<div style="text-align:center;background:rgba(0,230,118,.08);border:.5px solid rgba(0,230,118,.2);border-radius:8px;padding:6px 10px;margin-bottom:8px;font-size:10px;color:var(--t2);line-height:1.5">🟢 BTC je već <strong style="color:var(--bull)">−'+smaDisc.toFixed(0)+'%</strong> ispod 200D SMA — ispod tipične povijesne bear-bottom zone (akumulacijski teritorij).</div>';
+  }
+  h+='<div style="text-align:center;font-size:10px;color:var(--t3);margin-bottom:8px">Zona dna: <strong style="color:var(--t2)">$'+fmtNum(low)+' – $'+fmtNum(high)+'</strong></div>';
+
+  // Horizontalni bar: zona dna (crveno) + markeri trenutna/SMA
+  var lo=Math.min(low,price,sma||price)*0.98,hi=Math.max(price,sma||price,high)*1.02,span=(hi-lo)||1;
+  function pp(v){return Math.max(0,Math.min(100,(v-lo)/span*100));}
+  h+='<div style="position:relative;height:28px;margin:4px 0 2px">';
+  h+='<div style="position:absolute;top:12px;left:0;right:0;height:4px;background:rgba(255,255,255,.08);border-radius:3px"></div>';
+  h+='<div style="position:absolute;top:10px;left:'+pp(low).toFixed(1)+'%;width:'+(pp(high)-pp(low)).toFixed(1)+'%;height:8px;background:rgba(255,23,68,.35);border-radius:3px"></div>';
+  if(sma)h+='<div style="position:absolute;top:5px;left:'+pp(sma).toFixed(1)+'%;width:2px;height:18px;background:#2979ff;transform:translateX(-1px)"></div>';
+  h+='<div style="position:absolute;top:3px;left:'+pp(price).toFixed(1)+'%;width:2px;height:22px;background:#f7931a;transform:translateX(-1px)"></div>';
+  h+='</div>';
+  h+='<div style="display:flex;justify-content:space-between;font-size:8px;color:var(--t4)"><span>$'+fmtNum(lo)+'</span><span>$'+fmtNum(hi)+'</span></div>';
+  h+='<div style="display:flex;gap:12px;justify-content:center;margin-top:6px;font-size:9px;color:var(--t4)"><span><span style="color:#f7931a">▎</span>trenutna</span>'+(sma?'<span><span style="color:#2979ff">▎</span>200D SMA</span>':'')+'<span><span style="color:rgba(255,23,68,.7)">▬</span>zona dna</span></div>';
+
+  // Driver chips — sto trenutno korigira procjenu
+  h+='<div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:9px">';
+  function dc(t){return'<span style="font-size:9px;color:var(--t3);background:rgba(255,255,255,.04);border-radius:6px;padding:2px 7px">'+t+'</span>';}
+  h+=dc('F&G '+(MACRO.fg!=null?MACRO.fg:'—'));
+  if(est.smaBottom)h+=dc('SMA dno $'+fmtNum(est.smaBottom));
+  if(est.techBottom)h+=dc('Support $'+fmtNum(est.techBottom));
+  if(MACRO.warActive)h+=dc('⚔️ rat +rizik');
+  h+=dc('ATR '+est.atrD.toFixed(1)+'%/d');
+  h+='</div>';
+  h+='<div style="font-size:9px;color:var(--t4);text-align:center;margin-top:8px">⚠️ Heuristička procjena — nije garancija ni financijski savjet</div>';
+  h+='</div>';return h;
+}
+
 // ── ₿ BTC TAB — posvećen samo Bitcoinu, koristi isti analyze3D engine ──
 function rBtc(){
   var h='<div class="pg">';
@@ -6342,6 +6433,9 @@ function rBtc(){
     });
     h+='</div></div>';
   })();
+
+  // ── PROCJENA DNA (bear scenarij, auto-korekcija) ──
+  h+=btcBearBottomPanel();
 
   // ── USPJEŠNOST SMJERA (graf cijena + točnost predikcija) ──
   h+=btcAccuracyChart();
@@ -9277,7 +9371,7 @@ function disableNotifs(){
   showToast("Notifikacije isključene");render();
 }
 
-// emitEntryNotif uklonjen (v5.102) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
+// emitEntryNotif uklonjen (v5.103) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
 // Bila mrtva funkcija (nula poziva); uklonjena da se ne može slučajno ponovno spojiti.
 
 // ── EXIT NOTIFICATION — SAMO 2 TIPA (po korisnikovom zahtjevu) ──
