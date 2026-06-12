@@ -423,7 +423,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.111</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.112</span></div>
       <div class="hd-sub" id="hdsub">Učitavam top 100 tokena…</div>
       <div class="hd-claude" id="claude-update" style="display:flex;align-items:center;gap:6px">
         <span id="claude-update-txt">🤖 Claude analiza: —</span>
@@ -8856,13 +8856,14 @@ function simulateScoreHistorical(ctx){
 function runBacktest(){
   if(_btRunning.regular){showToast("⏳ Backtest već radi, pričekaj…");return;}
   _btRunning.regular=true;
-  var btSyms=["BTC","ETH","SOL","XRP","BNB","ADA","LINK","AVAX","SUI","DOGE"];
+  // v5.x: prosireno na 15 tokena + 1 godina (365d) za statisticki robusniji uzorak
+  var btSyms=["BTC","ETH","SOL","XRP","BNB","ADA","LINK","AVAX","DOGE","SUI","NEAR","DOT","UNI","ATOM","OP"];
   // Skupimo sve klines da bismo mogli pratiti market breadth
   var allData={};
   var btDone=0;
   btSyms.forEach(function(sym,idx){
     setTimeout(function(){
-      safeFetch("https://api.binance.com/api/v3/klines?symbol="+sym+"USDT&interval=1d&limit=120")
+      safeFetch("https://api.binance.com/api/v3/klines?symbol="+sym+"USDT&interval=1d&limit=365")
         .then(function(data){
           if(data&&data.length>=30)allData[sym]=data;
         }).catch(function(){})
@@ -8954,7 +8955,8 @@ function processBacktest(allData){
 function runSignalBacktest(){
   if(_btRunning.signal){showToast("⏳ Signal backtest već radi, pričekaj…");return;}
   _btRunning.signal=true;
-  var btSyms=["BTC","ETH","SOL","XRP","BNB","ADA","LINK","AVAX","SUI","DOGE"];
+  // v5.x: prosireno na 15 tokena + 1 godina (365d) za robusniju per-signal atribuciju
+  var btSyms=["BTC","ETH","SOL","XRP","BNB","ADA","LINK","AVAX","DOGE","SUI","NEAR","DOT","UNI","ATOM","OP"];
   var allData={};
   var loaded=0;
   function tryProcess(){
@@ -8963,7 +8965,7 @@ function runSignalBacktest(){
   }
   btSyms.forEach(function(sym,idx){
     setTimeout(function(){
-      safeFetch("https://api.binance.com/api/v3/klines?symbol="+sym+"USDT&interval=1d&limit=120")
+      safeFetch("https://api.binance.com/api/v3/klines?symbol="+sym+"USDT&interval=1d&limit=365")
         .then(function(data){
           if(data&&data.length>=30)allData[sym]=data;
           tryProcess();
@@ -9595,7 +9597,7 @@ function disableNotifs(){
   showToast("Notifikacije isključene");render();
 }
 
-// emitEntryNotif uklonjen (v5.111) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
+// emitEntryNotif uklonjen (v5.112) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
 // Bila mrtva funkcija (nula poziva); uklonjena da se ne može slučajno ponovno spojiti.
 
 // ── EXIT NOTIFICATION — SAMO 2 TIPA (po korisnikovom zahtjevu) ──
