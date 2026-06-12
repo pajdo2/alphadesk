@@ -1,7 +1,7 @@
 {
-    "dxy":  99.80,
-    "changeSummary":  "Fear & Greed blago porastao s 9 na 12, BTC stabilan oko $63,592, Trump signalizira mirovni sporazum s Iranom što je naftu srušilo na $85.94 uz DXY nepromjenjen na 99.80.",
-    "lastUpdated":  "2026-06-12T09:30:00Z",
+    "dxy":  99.66,
+    "changeSummary":  "DXY lagano pao na 99.66 (s 99.80), nafta porasla na $86.65, F&G ostaje na 12 (ekstremni strah) uz BTC dominance stabilnu na 56% i AVAX Nasdaq listing kao jedini pozitivni signal dana.",
+    "lastUpdated":  "2026-06-12T10:15:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -52,10 +52,10 @@
 
                                ],
                      "ETH":  [
-                                 "Prati BTC u bear rezimu, bez katalizatora"
+
                              ],
                      "LINK":  [
-
+                                 "NFTfi gasi se do 31.08.2026 - NFT lending sektor slabi"
                               ],
                      "PUMP":  [
 
@@ -64,9 +64,8 @@
 
                                ],
                      "BTC":  [
-                                 "BEAR rezim, BTC ispod SMA200",
-                                 "FOMC 16-17.06. bez rezanja kamatne stope"
-                             ]
+                                "Core 31.0 privateBroadcast bug - ažuriraj na 31.1"
+                            ]
                  },
     "catalysts":  {
                       "ACT":  [
@@ -88,7 +87,7 @@
 
                               ],
                       "AVAX":  [
-
+                                   "Avalanche Treasury Co. debut na Nasdaq (AVAT, 15M AVAX)"
                                ],
                       "PENGU":  [
 
@@ -106,7 +105,7 @@
 
                                  ],
                       "SOL":  [
-                                  "SOL +2.6% danas, jači od BTC-a"
+
                               ],
                       "ADA":  [
 
@@ -118,7 +117,7 @@
 
                                 ],
                       "ETH":  [
-
+                                  "DeFi sektor raste +5.2% - pozitivno za ETH ekosustav"
                               ],
                       "LINK":  [
 
@@ -127,11 +126,10 @@
 
                                ],
                       "TRUMP":  [
-                                    "Trump mirovni sporazum s Iranom — sentiment pozitivan"
+
                                 ],
                       "BTC":  [
-                                  "Trump nagoviještava Iran mirovni sporazum ovog vikenda",
-                                  "SpaceX IPO tokeniziran na Bybitu — nova likvidnost"
+                                  "Tržište oporavak +1.7%, BTC +1.88% na $63,600"
                               ]
                   },
     "fearGreed":  12,
@@ -144,25 +142,25 @@
                            "XRP":  0,
                            "BNB":  0,
                            "SUI":  0,
-                           "AVAX":  0,
+                           "AVAX":  2,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  1,
+                           "SOL":  0,
                            "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  0,
-                           "LINK":  0,
+                           "ETH":  1,
+                           "LINK":  -1,
                            "PUMP":  0,
-                           "TRUMP":  1,
-                           "BTC":  1
+                           "TRUMP":  0,
+                           "BTC":  -1
                        },
-    "aiSummary":  "BTC se stabilizirao oko $63,592 dok Fear & Greed blago raste s 9 na 12 (ekstremni strah), a DXY ostaje na 99.80 uz nastavak iranskih tenzija i PPI iznad očekivanja. Trump signalizira mirovni sporazum s Iranom ovog vikenda što je naftu srušilo na $85.94 WTI, a SpaceX IPO tokeniziran na Bybitu donosi blago pozitivnu energiju za tržište. BEAR rezim se nastavlja uoči FOMC-a 16-17.06. bez očekivanih rezanja, ali potencijalni mirovni sporazum mogao bi biti kratkoročni katalizator rasta.",
-    "warActive":  true,
+    "aiSummary":  "DXY je pao na 99.66 čime blago podupire kriptovalute, ali Fear & Greed ostaje duboko u ekstremnom strahu (12) dok se BTC trguje oko $63,600 u nastavku BEAR režima. Nafta je porasla na $86.65 WTI unatoč potencijalnom iranskom mirovnom sporazumu, a jedini pravi katalizator je AVAX-ov Avalanche Treasury Co. koji je debitirao na Nasdaq burzi. Uoči FOMC-a (16-17.06.) bez očekivanih rezanja kamatnih stopa, tržište ostaje pod pritiskom - preporučuje se oprez uz selektivni pristup.",
+    "warActive":  false,
     "btcDom":  56.0,
-    "stableDom":  13.2,
-    "oil":  85.94
+    "stableDom":  12.5,
+    "oil":  86.65
 }
