@@ -423,7 +423,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.107</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.108</span></div>
       <div class="hd-sub" id="hdsub">Učitavam top 100 tokena…</div>
       <div class="hd-claude" id="claude-update" style="display:flex;align-items:center;gap:6px">
         <span id="claude-update-txt">🤖 Claude analiza: —</span>
@@ -3705,6 +3705,82 @@ function tickBtcLog(){
   return changed;
 }
 
+// ── SHADOW DIRECTION-LOG (top tokeni) — hrani ucenje weightova/NN ─────
+// Isti princip kao BTC log, ali za top N tokena i SA snap-om (koji su signali
+// bili aktivni u trenutku). Ocijenjeni zapisi ulaze u getLearningSet() →
+// brza kalibracija weightova/NN-a i kad realnih trade-ova ima malo.
+// Ostaje LOKALNO (localStorage) — sync bi prenapuhao tracker.json; nauceni
+// OUTPUT (signalWeights) se ionako sinkronizira postojecim mehanizmom.
+var SHADOW_SAMPLE_MS=4*60*60*1000;  // batch svakih 4h
+var SHADOW_GRADE_MS=24*60*60*1000;  // ocjena nakon 24h
+var SHADOW_MAX=2500;                // cap zapisa
+var SHADOW_TOKENS=30;               // top N tokena po batchu
+var shadowLog=[];
+var _lastShadowBatch=0;
+try{var _shl=JSON.parse(localStorage.getItem("ad3d_shadow")||"[]");if(Array.isArray(_shl))shadowLog=_shl;}catch(e){}
+try{_lastShadowBatch=shadowLog.length?shadowLog[shadowLog.length-1].ts:0;}catch(e){}
+function _saveShadowLog(){try{localStorage.setItem("ad3d_shadow",JSON.stringify(shadowLog));}catch(e){}}
+
+function _gradeShadowLog(){
+  var now=Date.now(),changed=false;
+  shadowLog.forEach(function(e){
+    if(e.graded||!e.price)return;
+    if(now-e.ts<SHADOW_GRADE_MS)return;
+    // forward cijena: najblizi uzorak ISTOM simbolu oko ts+24h, fallback na trenutnu
+    var targetT=e.ts+SHADOW_GRADE_MS,best=null,bestDiff=Infinity;
+    shadowLog.forEach(function(f){
+      if(f.sym!==e.sym||!f.price||f.ts<e.ts)return;
+      var diff=Math.abs(f.ts-targetT);
+      if(diff<bestDiff){bestDiff=diff;best=f;}
+    });
+    var curP=px[e.sym]?px[e.sym].p:0;
+    var fwd=(best&&bestDiff<=6*60*60*1000)?best.price:(curP||e.price);
+    var fwdPct=+(((fwd-e.price)/e.price)*100).toFixed(2);
+    var TH=e.th||0.5;
+    var correct;
+    if(e.dir==="UP")correct=fwdPct>=TH;
+    else if(e.dir==="DOWN")correct=fwdPct<=-TH;
+    else correct=Math.abs(fwdPct)<TH;
+    e.fwdPct=fwdPct;e.correct=!!correct;e.status=correct?"POGODAK":"PROMAŠAJ";e.graded=true;
+    changed=true;
+  });
+  return changed;
+}
+
+function tickShadowLog(){
+  var changed=false,now=Date.now();
+  if(now-_lastShadowBatch>=SHADOW_SAMPLE_MS&&typeof analyze3D==="function"&&typeof TOP100!=="undefined"){
+    _lastShadowBatch=now;
+    var n=0;
+    for(var i=0;i<TOP100.length&&n<SHADOW_TOKENS;i++){
+      var s=TOP100[i];
+      if(!px[s]||!px[s].p||px[s].p<=0)continue;
+      if(typeof isStablecoin==="function"&&isStablecoin(s))continue;
+      if(typeof KNOWN_MEME!=="undefined"&&KNOWN_MEME.indexOf(s)>-1)continue;
+      var o=analyze3D(s);
+      var dir=_btcDirFromOpp(o);
+      if(!o||!dir)continue;
+      var th=(o.atrPct)?Math.max(0.5,+(o.atrPct*0.4).toFixed(2)):0.5;
+      shadowLog.push({
+        sym:s,ts:now,timestamp:now,price:+(+px[s].p).toFixed(6),dir:dir,th:th,
+        snap:buildSnap(s),graded:false,correct:null,fwdPct:null,status:null
+      });
+      n++;changed=true;
+    }
+    if(shadowLog.length>SHADOW_MAX)shadowLog=shadowLog.slice(-SHADOW_MAX);
+  }
+  if(_gradeShadowLog())changed=true;
+  if(changed)_saveShadowLog(); // samo lokalno — bez GitHub sync (volumen)
+  return changed;
+}
+
+// Zajednicki skup za ucenje: realne zatvorene predikcije + ocijenjeni shadow
+function getLearningSet(){
+  var closed=predTracker.filter(function(p){return p.status!=="AKTIVAN"&&p.snap;});
+  var shadow=shadowLog.filter(function(e){return e.graded&&e.snap&&e.status;});
+  return closed.concat(shadow);
+}
+
 function addHodl(){
   var symEl=document.getElementById("hodl-sym");
   var usdEl=document.getElementById("hodl-usd");
@@ -3806,7 +3882,7 @@ function buildSnap(sym){
 function computeSignalWeights(){
   var now=Date.now();
   var DAY30=30*24*3600*1000;
-  var closed=predTracker.filter(function(p){return p.status!=="AKTIVAN"&&p.snap;});
+  var closed=getLearningSet(); // realne zatvorene + ocijenjeni shadow (vise uzoraka)
   if(closed.length<8)return null;
 
   var FIELDS=["rsiOversold","rsiOverbought","trendUp","trendDown","bbBelow","divBullish",
@@ -4022,7 +4098,7 @@ var aiModel = {
   // SGD training nad svim closed predikcijama
   // 50 epoha s shuffle, lr=0.05
   train: function(){
-    var closed=predTracker.filter(function(p){return p.status!=="AKTIVAN"&&p.snap;});
+    var closed=getLearningSet(); // realne zatvorene + ocijenjeni shadow zapisi
     if(closed.length<20){this.trained=false;return false;}
     // Inicijaliziraj weights za sve features
     var features={};
@@ -5185,9 +5261,35 @@ function renderCalibrationPanel(){
   return h;
 }
 
+function renderShadowPanel(){
+  if(typeof shadowLog==="undefined"||!shadowLog.length)return'';
+  var tot=shadowLog.length;
+  var graded=shadowLog.filter(function(e){return e.graded;});
+  var pend=tot-graded.length;
+  var correct=graded.filter(function(e){return e.correct;}).length;
+  var acc=graded.length?Math.round(correct/graded.length*100):null;
+  var accCol=acc==null?'var(--t4)':acc>=55?'var(--bull)':acc>=45?'var(--warn)':'var(--bear)';
+  var uniq={};shadowLog.forEach(function(e){uniq[e.sym]=1;});
+  var h='<div style="background:var(--s1);border-radius:14px;padding:12px 16px;margin-bottom:12px;border:.5px solid rgba(41,121,255,.15)">';
+  h+='<div class="row-between" style="margin-bottom:7px">';
+  h+='<span data-tip="Shadow učenje|App svaka 4h zabilježi smjer (rast/pad/flat) za top 30 tokena sa snapshotom aktivnih signala, pa nakon 24h provjeri je li smjer pogođen. Ti ocijenjeni uzorci hrane učenje težina signala i AI modela — puno brže nego što bi to sami trade-ovi mogli (kalibracija u tjednima umjesto mjesecima)." style="font-size:11px;font-weight:700;color:var(--info);text-transform:uppercase;letter-spacing:.06em;cursor:help">👥 Shadow učenje ⓘ</span>';
+  if(acc!=null)h+='<span style="background:'+accCol+'22;color:'+accCol+';border-radius:20px;padding:1px 8px;font-size:11px;font-weight:800">'+acc+'% smjer</span>';
+  h+='</div>';
+  h+='<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px">';
+  [{v:tot,l:'Uzoraka'},{v:graded.length,l:'Ocijenjeno'},{v:pend,l:'Čeka 24h'},{v:Object.keys(uniq).length,l:'Tokena'}].forEach(function(s){
+    h+='<div style="background:var(--s2,rgba(255,255,255,.03));border-radius:8px;padding:7px;text-align:center"><div style="font-size:14px;font-weight:900;color:var(--t2)">'+s.v+'</div><div style="font-size:9px;color:var(--t4)">'+s.l+'</div></div>';
+  });
+  h+='</div>';
+  h+='<div style="font-size:9px;color:var(--t4);margin-top:7px;text-align:center">Puni se +30 uzoraka / 4h · hrani težine signala i AI model</div>';
+  h+='</div>';
+  return h;
+}
+
 function renderWeightsPanel(){
-  var closed=predTracker.filter(function(p){return p.status!=="AKTIVAN"&&p.snap;});
-  if(closed.length<8)return'<div style="background:var(--s1);border-radius:14px;padding:12px 16px;margin-bottom:12px;border:.5px solid rgba(255,234,0,.1);text-align:center;color:var(--t3);font-size:12px">🧠 Model uči — treba min. 8 zatvorenih predikcija sa snapshotom (trenutno: '+closed.length+')</div>';
+  var closed=getLearningSet(); // realne zatvorene + ocijenjeni shadow zapisi
+  var _shN=(typeof shadowLog!=="undefined")?shadowLog.length:0;
+  var _shG=(typeof shadowLog!=="undefined")?shadowLog.filter(function(e){return e.graded;}).length:0;
+  if(closed.length<8)return'<div style="background:var(--s1);border-radius:14px;padding:12px 16px;margin-bottom:12px;border:.5px solid rgba(255,234,0,.1);text-align:center;color:var(--t3);font-size:12px">🧠 Model uči — treba min. 8 uzoraka (realni + shadow) sa snapshotom (trenutno: '+closed.length+')<br><span style="font-size:10px;color:var(--t4)">👥 Shadow log: '+_shN+' uzoraka, '+_shG+' ocijenjeno · puni se +30/4h, ocjena za 24h</span></div>';
   var LABELS={
     rsiOversold:"RSI Oversold",trendUp:"EMA50 Uptrend",bbBelow:"Ispod BB dna",
     divBullish:"RSI Divergencija",macdBullCross:"MACD Cross",
@@ -5240,7 +5342,7 @@ function renderWeightsPanel(){
     h+='</span>';
   }
   h+='</div>';
-  h+='<div style="font-size:10px;color:var(--t3);margin-bottom:2px">Iz '+regimeClosed.length+' zatvorenih predikcija'+(selRegime!=="_global"?" u regime-u <strong style=\"color:var(--ye)\">"+selRegime+"</strong>":"")+' · Time-decay: noviji = 2x</div>';
+  h+='<div style="font-size:10px;color:var(--t3);margin-bottom:2px">Iz '+regimeClosed.length+' uzoraka (realni + shadow)'+(selRegime!=="_global"?" u regime-u <strong style=\"color:var(--ye)\">"+selRegime+"</strong>":"")+' · Time-decay: noviji = 2x</div>';
   h+='<div style="font-size:10px;color:rgba(255,255,255,.25);margin-bottom:10px">Base rate: <strong style="color:var(--t2)">'+baseRate+'%</strong> — signali koji nadmašuju bazu su korisni'+(curRegime!==selRegime&&selRegime!=="_global"?' · <span style="color:var(--info)">📍 Live regime: '+curRegime+'</span>':'')+'</div>';
   h+='<div style="display:flex;flex-direction:column;gap:6px">';
   entries.forEach(function(e){
@@ -5873,6 +5975,7 @@ function rTracker(){
       h+=renderWalkForwardPanel();
       h+=renderBacktestPanel();
       h+=renderSignalBacktestPanel();
+      h+=renderShadowPanel();
       h+=renderWeightsPanel();
     }
     h+='</div>';
@@ -6508,6 +6611,7 @@ function render(){
   lastRefresh.analysis=Date.now();
   computeSectorRS(); // Svaki render recomputa sektor RS iz trenutnih cijena
   try{tickBtcLog();}catch(e){} // BTC direction-log: throttled sample (30min) + grade dozrelih
+  try{tickShadowLog();}catch(e){} // Shadow log top tokena (4h batch) → hrani ucenje weightova/NN
   var sc=document.getElementById("sc");
   if(activeFilter==="tracker"){sc.innerHTML=rTracker();return;}
   if(activeFilter==="meme"){sc.innerHTML=rMeme();return;}
@@ -9425,7 +9529,7 @@ function disableNotifs(){
   showToast("Notifikacije isključene");render();
 }
 
-// emitEntryNotif uklonjen (v5.107) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
+// emitEntryNotif uklonjen (v5.108) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
 // Bila mrtva funkcija (nula poziva); uklonjena da se ne može slučajno ponovno spojiti.
 
 // ── EXIT NOTIFICATION — SAMO 2 TIPA (po korisnikovom zahtjevu) ──
