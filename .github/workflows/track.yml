@@ -1,0 +1,43 @@
+name: Track predictions 24/7
+
+# Zatvara aktivne predikcije (stop/target/time) i kad je app zatvoren.
+# Komplementira app logiku — drzi win-rate zapis tocnim u trenutku dogadjaja.
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'   # svakih 30 min (best-effort; GitHub moze odgoditi)
+  workflow_dispatch: {}        # rucno pokretanje iz Actions taba
+
+permissions:
+  contents: write
+
+concurrency:
+  group: track-predictions
+  cancel-in-progress: false
+
+jobs:
+  track:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Auto-close predictions
+        run: node .github/scripts/track.mjs
+
+      - name: Commit ako ima promjena
+        run: |
+          if [ -n "$(git status --porcelain tracker.json)" ]; then
+            git config user.name "alphadesk-bot"
+            git config user.email "actions@users.noreply.github.com"
+            git add tracker.json
+            git commit -m "track: 24/7 auto-close $(date -u +%FT%TZ)"
+            # Pomiri se s app push-evima (contents API) prije push-a
+            git pull --rebase origin main || true
+            git push || (echo "Push odbijen — sljedeci run ce ponoviti." && exit 0)
+          else
+            echo "Nema promjena za commit."
+          fi
