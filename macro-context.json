@@ -1,7 +1,7 @@
 {
-    "dxy":  100.1,
-    "changeSummary":  "Stagnacija se nastavlja: DXY 100.1, FG i dalje 9, jedina pozitivna vijest je Bitmine ETH kupnja ($206M u 3 dana) i novi Kalshi XRP futures.",
-    "lastUpdated":  "2026-06-11T16:00:00Z",
+    "dxy":  99.86,
+    "changeSummary":  "DXY je pao ispod 100 (s 100.1 na 99.86) i nafta je znatno jeftinija ($91.6 -> $85.94) zbog Trumpove suspenzije napada na Iran, dok BTC i Fear & Greed ostaju stabilni na ~$63K i 9.",
+    "lastUpdated":  "2026-06-11T17:30:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -40,10 +40,11 @@
 
                                 ],
                      "SOL":  [
-                             "Tjedni pad dvostruke znamenke"
+                                 "Bearish flag, rizik retesta $60",
+                                 "Whale selling i token unlocks"
                              ],
                      "ADA":  [
-
+                                 "Na 5-godisnjim minimumima ($0.16)"
                              ],
                      "PNUT":  [
 
@@ -61,11 +62,12 @@
 
                               ],
                      "TRUMP":  [
-
+                                   "Dnevni unlock ~900K TRUMP tokena",
+                                   "Reuters: investitori s gubitcima >94%"
                                ],
                      "BTC":  [
-                             "Rekordni ETF odljevi, plitki odboji ne ponistavaju pad",
-                             "FOMC 16-17.06. - ocekuje se nula rezanja kamatnih stopa"
+                                 "ETF outflows $5.4B u zadnja 4 tjedna",
+                                 "FOMC 16-17.06. bez rezanja ocekivano"
                              ]
                  },
     "catalysts":  {
@@ -79,11 +81,10 @@
 
                                 ],
                       "XRP":  [
-                              "Kalshi uvodi XRP perpetual futures (0 naknada)",
-                              "CME Nasdaq Crypto Index: XRP udio 5.8%"
+                                  "Kalshi XRP perpetual futures aktivni"
                               ],
                       "BNB":  [
-
+                                  "Duboka integracija s Binance ekosistemom"
                               ],
                       "SUI":  [
 
@@ -110,7 +111,8 @@
 
                               ],
                       "ADA":  [
-
+                                  "Ouroboros Leios: 60x throughput upgrade",
+                                  "16M ADA izaslo s burzi - akumulacija"
                               ],
                       "PNUT":  [
 
@@ -119,7 +121,8 @@
 
                                 ],
                       "ETH":  [
-                              "Bitmine (Tom Lee) kupuje ETH: $206M u 3 dana"
+                                  "Tom Lee/Bitmine $206M ETH kupnja (3 dana)",
+                                  "BlackRock BITA drzi spot BTC i IBIT"
                               ],
                       "LINK":  [
 
@@ -131,18 +134,19 @@
 
                                 ],
                       "BTC":  [
-
+                                  "BlackRock BITA covered-call ETF filing",
+                                  "BTC recovery $61.4K -> $63K"
                               ]
                   },
     "fearGreed":  9,
-    "macroPenalty":  1,
+    "macroPenalty":  0,
     "regime":  "BEAR",
     "sentimentScore":  {
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
                            "XRP":  1,
-                           "BNB":  0,
+                           "BNB":  1,
                            "SUI":  0,
                            "AVAX":  0,
                            "PENGU":  0,
@@ -154,15 +158,15 @@
                            "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  1,
+                           "ETH":  2,
                            "LINK":  0,
                            "PUMP":  0,
-                           "TRUMP":  0,
-                           "BTC":  -1
+                           "TRUMP":  -2,
+                           "BTC":  1
                        },
-    "aiSummary":  "BTC oscilira oko $62K uz Fear & Greed od 9 (Ekstremni Strah) — BEAR rezim se nastavlja dok DXY stagnira na 100.1, a geopoliticke tenzije rastu uz drugi dan americkih napada na Iran koji drze naftu na $91.6. Jedini pozitivni signali dolaze od ETH (Bitmine kupnja od $206M u 3 dana) i XRP-a (Kalshi perpetual futures, CME Nasdaq Crypto Index). Svi pogledi usmjereni su prema FOMC-u 16-17.06. gdje se ne ocekuju rezanja kamatnih stopa.",
+    "aiSummary":  "BTC se oporavio na ~$63K dok Fear & Greed ostaje na ekstremalnom strahu (9), a DXY pada ispod 100 na 99.86 nakon Trumpove suspenzije napada na Iran koja je naftu srusila 4% na ~$86. Institutionalni interes za ETH raste (Bitmine $206M, BlackRock BITA ETF filing), ali spot BTC ETF odljev od $5.4B u 4 tjedna pokazuje slabost — BEAR rezim se nastavlja. Fokus ostaje na FOMC 16-17.06. bez ocekivanih rezanja kamatnih stopa.",
     "warActive":  true,
-    "btcDom":  56.2,
-    "stableDom":  14.0,
-    "oil":  91.6
+    "btcDom":  56.0,
+    "stableDom":  13.5,
+    "oil":  85.94
 }
