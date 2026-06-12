@@ -423,7 +423,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.113</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.114</span></div>
       <div class="hd-sub" id="hdsub">Učitavam top 100 tokena…</div>
       <div class="hd-claude" id="claude-update" style="display:flex;align-items:center;gap:6px">
         <span id="claude-update-txt">🤖 Claude analiza: —</span>
@@ -1440,7 +1440,7 @@ function renderRefreshStatus(){
     var gi=ghSync.status==="ok"?"✓":ghSync.status==="error"?"✗":ghSync.status==="syncing"?"↻":"·";
     var gt=ghSync.lastSync?fmtTsAgo(ghSync.lastSync):"—";
     h+='<div style="margin-top:6px;display:flex;justify-content:space-between;align-items:center">';
-    h+='<button onclick="syncFromGH(function(){render();showToast(\'↻ Sinkronizirano s GitHubom\');})" style="background:rgba(99,102,241,.12);border:.5px solid rgba(99,102,241,.25);border-radius:7px;color:#a5b4fc;font-size:10px;padding:3px 10px;cursor:pointer">↻ Sinkroniziraj</button>';
+    h+='<button onclick="syncFromGH(function(){render();showToast(\'↻ Sinkronizirano s GitHubom\');});if(typeof syncShadowFromGH===\'function\')syncShadowFromGH();" style="background:rgba(99,102,241,.12);border:.5px solid rgba(99,102,241,.25);border-radius:7px;color:#a5b4fc;font-size:10px;padding:3px 10px;cursor:pointer">↻ Sinkroniziraj</button>';
     h+='<div style="display:inline-flex;align-items:center;gap:5px;background:rgba(99,102,241,.07);border:.5px solid rgba(99,102,241,.15);border-radius:8px;padding:3px 10px">';
     h+='<span style="font-size:11px;color:'+gc2+';font-weight:900">'+gi+'</span>';
     h+='<span style="font-size:10px;color:rgba(255,255,255,.3)">GitHub sync</span>';
@@ -3783,7 +3783,7 @@ function tickShadowLog(){
     if(shadowLog.length>SHADOW_MAX)shadowLog=shadowLog.slice(-SHADOW_MAX);
   }
   if(_gradeShadowLog())changed=true;
-  if(changed)_saveShadowLog(); // samo lokalno — bez GitHub sync (volumen)
+  if(changed){_saveShadowLog();if(typeof syncShadowToGH==="function")syncShadowToGH();} // localStorage + shadow.json
   return changed;
 }
 
@@ -8072,6 +8072,55 @@ function _doSyncToGH(){
   });
 }
 
+// ── SHADOW LOG GITHUB SYNC — zaseban shadow.json (da ne napuhne tracker.json) ──
+// Trajnost cross-device za podatke ucenja (shadow direction-log). Merge po ts,
+// graded pobjedjuje ungraded. Kompaktni JSON (bez indentacije) radi velicine.
+var GH_SHADOW_FILE="shadow.json";
+var ghShaShadow=null;
+var _shadowSyncTimer=null;
+function syncShadowFromGH(onDone){
+  if(!apiKeys.github||typeof shadowLog==="undefined"){if(onDone)onDone();return;}
+  fetch("https://api.github.com/repos/"+GH_REPO+"/contents/"+GH_SHADOW_FILE,{headers:ghHeaders()})
+    .then(function(r){
+      if(r.status===404){ghShaShadow=null;if(onDone)onDone();return;}
+      return r.json().then(function(d){
+        ghShaShadow=d.sha;
+        var remote=JSON.parse(atob(d.content.replace(/\n/g,"")));
+        var arr=Array.isArray(remote)?remote:(remote&&Array.isArray(remote.shadowLog)?remote.shadowLog:[]);
+        var byTs={};
+        arr.forEach(function(e){if(e&&e.ts)byTs[e.ts]=e;});
+        shadowLog.forEach(function(e){
+          if(!e||!e.ts)return;
+          var rem=byTs[e.ts];
+          if(!rem||e.graded||!rem.graded)byTs[e.ts]=e; // novi, ili lokalni graded pobijedi
+        });
+        shadowLog=Object.keys(byTs).map(function(k){return byTs[k];}).sort(function(a,b){return a.ts-b.ts;});
+        if(shadowLog.length>SHADOW_MAX)shadowLog=shadowLog.slice(-SHADOW_MAX);
+        _saveShadowLog();
+        if(onDone)onDone();
+      });
+    }).catch(function(){if(onDone)onDone();});
+}
+function syncShadowToGH(immediate){
+  if(!apiKeys.github)return;
+  if(_shadowSyncTimer)clearTimeout(_shadowSyncTimer);
+  if(immediate){_doSyncShadowToGH();return;}
+  _shadowSyncTimer=setTimeout(_doSyncShadowToGH,8000); // deblji debounce (rjedje, veci file)
+}
+function _doSyncShadowToGH(){
+  _shadowSyncTimer=null;
+  if(typeof shadowLog==="undefined")return;
+  var content=btoa(unescape(encodeURIComponent(JSON.stringify(shadowLog)))); // kompaktno
+  var body={message:"shadow: "+new Date().toISOString().slice(0,16),content:content};
+  if(ghShaShadow)body.sha=ghShaShadow;
+  fetch("https://api.github.com/repos/"+GH_REPO+"/contents/"+GH_SHADOW_FILE,{
+    method:"PUT",headers:ghHeaders(),body:JSON.stringify(body)
+  }).then(function(r){return r.json();}).then(function(d){
+    if(d.content&&d.content.sha)ghShaShadow=d.content.sha;
+    else if(d.sha)ghShaShadow=d.sha;
+  }).catch(function(){});
+}
+
 // ── POLYMARKET — prediction markets (crowd intelligence s novcem) ────
 // Javni API, ne treba auth. Fetch aktivnih kripto marketa, mapiramo na tokene.
 // YES cijena = vjerojatnost (0-1). Vol u USDC = pouzdanost signala.
@@ -9597,7 +9646,7 @@ function disableNotifs(){
   showToast("Notifikacije isključene");render();
 }
 
-// emitEntryNotif uklonjen (v5.113) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
+// emitEntryNotif uklonjen (v5.114) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
 // Bila mrtva funkcija (nula poziva); uklonjena da se ne može slučajno ponovno spojiti.
 
 // ── EXIT NOTIFICATION — SAMO 2 TIPA (po korisnikovom zahtjevu) ──
@@ -9675,6 +9724,7 @@ function backgroundAutoTrack(){
 })();
 
 syncFromGH(function(){render();}); // učitaj sa GitHuba pri startu, pa renderiraj
+setTimeout(function(){if(typeof syncShadowFromGH==="function")syncShadowFromGH(function(){if(typeof render==="function")render();});},3000); // shadow.json zasebno (malo kasnije da ne gazi glavni sync)
 
 // Render je vrlo cest (10s) — ostaje kao native setInterval (UI responsiveness)
 setInterval(render, 10000);
