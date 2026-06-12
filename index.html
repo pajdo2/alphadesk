@@ -423,7 +423,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.109</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.110</span></div>
       <div class="hd-sub" id="hdsub">Učitavam top 100 tokena…</div>
       <div class="hd-claude" id="claude-update" style="display:flex;align-items:center;gap:6px">
         <span id="claude-update-txt">🤖 Claude analiza: —</span>
@@ -4469,20 +4469,43 @@ function autoClosePreds(){
         else if(bearReversal){reason="🔄 Bear reversal — exit u profitu";hit=pct>0;}
         else if(elapsed>=5*DAY){reason="⏰ 5 dana isteklo";hit=cur>=(p.entry*(1+0.05));}
       } else {
-        // Smart exit za 5% LONG: trailing stop nakon hit-a D1, soft time exit
-        var halfLongT=p.entry*(1+(p.targetPct||6)/2/100); // half target = +2.5%
-        var trailLongS=p.entry*(1-0.005); // trail na -0.5% ispod entry (čuvam break-even)
+        // ── SMART EXIT v2 (#4): parcijalni TP 50% na D1 + chandelier ATR trailing + CHoCH ──
+        var atrD=atr[p.sym]?parseFloat(atr[p.sym].pct)*24:3; // dnevni ATR %
+        var ms_x=(typeof marketStructure!=="undefined")?marketStructure[p.sym]:null;
+        var chochBear=ms_x&&ms_x.choch==='BEARISH';
         if(cur<=p.stop){reason="🛑 Stop-loss hit";hit=false;}
+        // PARCIJALNI TP: prodaj 50% na D1, podigni stop na breakeven, ostatak vozi dalje
+        else if(u.d1Hit&&!u.partialHit){
+          u.partialHit=true;
+          u.partialPrice=+cur.toFixed(8);
+          u.partialPct=+((cur-p.entry)/p.entry*100).toFixed(2);
+          u.stop=+Math.max(p.stop,p.entry).toFixed(8); // ostatak risk-free (breakeven)
+          changed=true; // bez reason-a → ostaje AKTIVAN, ostatak nastavlja
+        }
         else if(u.d3Hit){reason="🎯 Target D3 dostignut";hit=true;}
-        else if(u.d1Hit&&u.peakPrice>=halfLongT&&cur<=trailLongS){reason="🔒 Trailing stop (čuvam profit)";hit=true;}
-        else if(bearReversal){reason="🔄 Bear reversal — exit u profitu";hit=pct>0;}
-        else if(elapsed>=2*DAY&&pct<-0.5){reason="⏰ 2 dana, gubimo — soft exit";hit=false;}
-        else if(elapsed>=3*DAY){reason="⏰ 3 dana istekla";hit=cur>p.entry;}
+        // CHoCH Bearish → bezuvjetni izlaz (mogući top struktura puknula)
+        else if(chochBear&&pct>0){reason="🔄 CHoCH Bearish — exit (struktura puknula)";hit=true;}
+        // Chandelier ATR trailing (aktivno nakon partiala): peak − N×ATR, min breakeven
+        else if(u.partialHit){
+          var trailDistPct=Math.max(1.5,Math.min(3.5,atrD*0.4));
+          var chandStop=u.peakPrice*(1-trailDistPct/100);
+          var effStop=Math.max(p.entry,chandStop);
+          if(cur<=effStop){reason="🔒 Chandelier trailing (čuvam profit)";hit=true;}
+        }
+        if(!reason&&bearReversal){reason="🔄 Bear reversal — exit u profitu";hit=pct>0;}
+        if(!reason&&elapsed>=2*DAY&&pct<-0.5){reason="⏰ 2 dana, gubimo — soft exit";hit=false;}
+        else if(!reason&&elapsed>=3*DAY){reason="⏰ 3 dana istekla";hit=cur>p.entry;}
       }
     }
     if(reason){
       changed=true;
-      var closedTrade=Object.assign({},u,{status:hit?"POGODAK":"PROMAŠAJ",closePrice:cur,closePct:pct,autoClose:true,closeReason:reason});
+      var finalPct=pct;
+      if(u.partialHit&&u.partialPct!=null){
+        // 50% realizirano na D1 (partialPct) + 50% na ovom izlazu (pct)
+        finalPct=+(0.5*u.partialPct+0.5*pct).toFixed(2);
+        hit=finalPct>0; // net rezultat odlucuje (partial profit + ostatak)
+      }
+      var closedTrade=Object.assign({},u,{status:hit?"POGODAK":"PROMAŠAJ",closePrice:cur,closePct:finalPct,autoClose:true,closeReason:reason});
       // Posalji EXIT notifikaciju korisniku (mobitel vibrira, ostaje na ekranu)
       try{emitExitNotif(closedTrade, reason, hit);}catch(e){}
       // Update RL bandit s ovim trade rezultatom
@@ -5110,6 +5133,10 @@ function renderActiveCard(p){
   h+='<div style="text-align:right"><div class="stat-num-lg" style="color:'+pC+'">'+(curPct>=0?"+":"")+curPct+'%</div></div>';
   h+='</div>';
   h+='<div class="txt-warn" style="font-size:10px;margin-bottom:8px">⏱ '+timeStr+' · Target: '+(isShort?"-":"+")+p.targetPct+'%</div>';
+  // Parcijalni TP indikator (#4) — 50% prodano na D1, ostatak risk-free
+  if(p.partialHit){
+    h+='<div style="font-size:10px;color:var(--bull);background:rgba(0,230,118,.08);border-radius:8px;padding:5px 9px;margin-bottom:8px">🎯 50% uzeto na +'+(p.partialPct!=null?p.partialPct:'?')+'% · stop podignut na breakeven · ostatak vozi chandelier trailing</div>';
+  }
   h+='<div class="grid-3" style="margin-bottom:10px">';
   h+='<div class="stat-box"><div style="font-size:9px;font-weight:var(--fw-b);margin-bottom:2px;color:var(--info)">ULAZ</div><div style="font-size:12px;font-weight:var(--fw-x)">'+fp(p.entry)+'</div></div>';
   h+='<div class="stat-box"><div style="font-size:9px;font-weight:var(--fw-b);margin-bottom:2px;color:var(--bear)">STOP</div><div style="font-size:12px;font-weight:var(--fw-x)">'+fp(p.stop)+'</div></div>';
@@ -9568,7 +9595,7 @@ function disableNotifs(){
   showToast("Notifikacije isključene");render();
 }
 
-// emitEntryNotif uklonjen (v5.109) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
+// emitEntryNotif uklonjen (v5.110) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
 // Bila mrtva funkcija (nula poziva); uklonjena da se ne može slučajno ponovno spojiti.
 
 // ── EXIT NOTIFICATION — SAMO 2 TIPA (po korisnikovom zahtjevu) ──
