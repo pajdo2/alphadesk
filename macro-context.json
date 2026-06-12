@@ -1,16 +1,16 @@
 {
     "dxy":  99.80,
-    "changeSummary":  "Iran drone incidenti aktivirali warActive=true dok DXY klizi na 99.80, BTC drži $63K uz nepromijenjen F&G od 9 i Japan sprema kripto regulaciju za 2027.",
-    "lastUpdated":  "2026-06-12T08:00:00Z",
+    "changeSummary":  "Fear & Greed blago porastao s 9 na 12, BTC stabilan oko $63,592, Trump signalizira mirovni sporazum s Iranom što je naftu srušilo na $85.94 uz DXY nepromjenjen na 99.80.",
+    "lastUpdated":  "2026-06-12T09:30:00Z",
     "warnings":  {
                      "ACT":  [
-                             "Altcoini u padu, nema katalizatora"
+
                              ],
                      "MEME":  [
-                              "Meme sektor slabi u BEAR uvjetima"
+
                               ],
                      "ANIME":  [
-                               "Nema podrške, altcoini padaju"
+
                                ],
                      "XRP":  [
 
@@ -25,19 +25,19 @@
 
                               ],
                      "PENGU":  [
-                               "Meme token bez katalizatora"
+
                                ],
                      "BOME":  [
-                              "Meme token bez podrške"
+
                               ],
                      "DOGS":  [
-                              "Altcoin slabost se nastavlja"
+
                               ],
                      "NOT":  [
-                             "Altcoin slabost, BEAR tržište"
+
                              ],
                      "PEOPLE":  [
-                                "Altcoin slabost, BEAR tržište"
+
                                 ],
                      "SOL":  [
 
@@ -46,25 +46,26 @@
 
                              ],
                      "PNUT":  [
-                              "Mali altcoin bez katalizatora"
+
                               ],
                      "AIXBT":  [
 
                                ],
                      "ETH":  [
-
+                                 "Prati BTC u bear rezimu, bez katalizatora"
                              ],
                      "LINK":  [
 
                               ],
                      "PUMP":  [
-                              "Meme token, visok rizik u BEAR-u"
+
                               ],
                      "TRUMP":  [
 
                                ],
                      "BTC":  [
-                             "FOMC 16-17.06. bez očekivanih rezova"
+                                 "BEAR rezim, BTC ispod SMA200",
+                                 "FOMC 16-17.06. bez rezanja kamatne stope"
                              ]
                  },
     "catalysts":  {
@@ -105,7 +106,7 @@
 
                                  ],
                       "SOL":  [
-
+                                  "SOL +2.6% danas, jači od BTC-a"
                               ],
                       "ADA":  [
 
@@ -117,7 +118,7 @@
 
                                 ],
                       "ETH":  [
-                              "Raste institucionalni interes (Bitmine, BlackRock)"
+
                               ],
                       "LINK":  [
 
@@ -126,42 +127,42 @@
 
                                ],
                       "TRUMP":  [
-
+                                    "Trump mirovni sporazum s Iranom — sentiment pozitivan"
                                 ],
                       "BTC":  [
-                              "Trump-Iran mir moguć, BTC iznad $63K",
-                              "Coinbase perp futures odobren za US korisnike"
+                                  "Trump nagoviještava Iran mirovni sporazum ovog vikenda",
+                                  "SpaceX IPO tokeniziran na Bybitu — nova likvidnost"
                               ]
                   },
-    "fearGreed":  9,
+    "fearGreed":  12,
     "macroPenalty":  0,
     "regime":  "BEAR",
     "sentimentScore":  {
-                           "ACT":  -1,
-                           "MEME":  -1,
-                           "ANIME":  -1,
+                           "ACT":  0,
+                           "MEME":  0,
+                           "ANIME":  0,
                            "XRP":  0,
                            "BNB":  0,
                            "SUI":  0,
                            "AVAX":  0,
-                           "PENGU":  -1,
-                           "BOME":  -1,
-                           "DOGS":  -1,
-                           "NOT":  -1,
-                           "PEOPLE":  -1,
-                           "SOL":  0,
+                           "PENGU":  0,
+                           "BOME":  0,
+                           "DOGS":  0,
+                           "NOT":  0,
+                           "PEOPLE":  0,
+                           "SOL":  1,
                            "ADA":  0,
-                           "PNUT":  -1,
+                           "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  1,
+                           "ETH":  0,
                            "LINK":  0,
-                           "PUMP":  -1,
-                           "TRUMP":  0,
+                           "PUMP":  0,
+                           "TRUMP":  1,
                            "BTC":  1
                        },
-    "aiSummary":  "BTC drži razinu $63K dok Fear & Greed ostaje na ekstremnom strahu (9), a DXY pada na 99.80 uz iransku krizu — US je oborio iranske dronove kod Hormuza, ali Trump nagoviještava mirovni sporazum ovog vikenda što je naftu srušilo na $85.91. BEAR rezim se nastavlja uoči FOMC-a 16-17.06. bez očekivanih rezanja, dok Japan priprema kripto regulaciju poput dionica za 2027. i Coinbase dobiva odobrenje za perp futures za US korisnike.",
+    "aiSummary":  "BTC se stabilizirao oko $63,592 dok Fear & Greed blago raste s 9 na 12 (ekstremni strah), a DXY ostaje na 99.80 uz nastavak iranskih tenzija i PPI iznad očekivanja. Trump signalizira mirovni sporazum s Iranom ovog vikenda što je naftu srušilo na $85.94 WTI, a SpaceX IPO tokeniziran na Bybitu donosi blago pozitivnu energiju za tržište. BEAR rezim se nastavlja uoči FOMC-a 16-17.06. bez očekivanih rezanja, ali potencijalni mirovni sporazum mogao bi biti kratkoročni katalizator rasta.",
     "warActive":  true,
     "btcDom":  56.0,
-    "stableDom":  8.0,
-    "oil":  85.91
+    "stableDom":  13.2,
+    "oil":  85.94
 }
