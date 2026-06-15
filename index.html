@@ -423,7 +423,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.122</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.123</span></div>
       <div class="hd-sub" id="hdsub">Učitavam top 100 tokena…</div>
       <div class="hd-claude" id="claude-update" style="display:flex;align-items:center;gap:6px">
         <span id="claude-update-txt">🤖 Claude analiza: —</span>
@@ -1206,7 +1206,10 @@ function getSymSector(sym){return SYM_SECTOR[sym]||null;}
 
 // Sektor RS cache — recomputira se svaki refresh
 var sectorRS={}; // {sektor:{avg24h,count,syms,rank}}
+var _srsCache=null,_srsCacheTs=0;
 function computeSectorRS(){
+  // Memoizacija 3s — zove se 2× po renderu na Pregledu (render start + sektor strip)
+  if(_srsCache&&(Date.now()-_srsCacheTs<3000))return _srsCache;
   var data={};
   Object.keys(SECTOR_MAP).forEach(function(sec){data[sec]={sum:0,count:0,syms:[]};});
   // Za svaki token koji ima cijenu, dodaj c24 u sektor
@@ -1232,6 +1235,7 @@ function computeSectorRS(){
   results.forEach(function(r,i){r.rank=i+1;r.total=results.length;});
   sectorRS={};
   results.forEach(function(r){sectorRS[r.sec]=r;});
+  _srsCache=results;_srsCacheTs=Date.now();
   return results;
 }
 
@@ -9525,10 +9529,12 @@ function fetchMacroContext(manual){
         var dt=new Date(macroLastUpdated);
         var dStr=dt.toLocaleDateString("hr-HR",{day:"numeric",month:"short"});
         var tStr=dt.toLocaleTimeString("hr-HR",{hour:"2-digit",minute:"2-digit"});
+        // Guard: macro lastUpdated zna biti u buducnosti (AI upise zaokruzeno trzisno
+        // vrijeme) -> ageMs negativan -> ne prikazuj "-389min". Tad pokazi "upravo".
         var ageMs=Date.now()-dt.getTime();
-        var ageStr=ageMs<3600000?Math.round(ageMs/60000)+"min":Math.round(ageMs/3600000)+"h";
+        var ageStr=ageMs<60000?"upravo":ageMs<3600000?"prije "+Math.round(ageMs/60000)+" min":"prije "+Math.round(ageMs/3600000)+" h";
         var regimeBadge=MACRO.claudeRegime?(' <span style="opacity:.55;font-size:9px">· '+MACRO.claudeRegime+'</span>'):'';
-        txt.innerHTML='🤖 Claude analiza: '+dStr+' u '+tStr+' <span style="opacity:.6">('+ageStr+' ago)</span>'+regimeBadge;
+        txt.innerHTML='🤖 Claude analiza: '+dStr+' u '+tStr+' <span style="opacity:.6">('+ageStr+')</span>'+regimeBadge;
         if(wrap)wrap.style.display="flex";
       }
       // AI summary se prikazuje u Pregled tabu — re-render će ga ubaciti
@@ -9770,7 +9776,7 @@ function disableNotifs(){
   showToast("Notifikacije isključene");render();
 }
 
-// emitEntryNotif uklonjen (v5.122) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
+// emitEntryNotif uklonjen (v5.123) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
 // Bila mrtva funkcija (nula poziva); uklonjena da se ne može slučajno ponovno spojiti.
 
 // ── EXIT NOTIFICATION — SAMO 2 TIPA (po korisnikovom zahtjevu) ──
