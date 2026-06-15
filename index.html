@@ -423,7 +423,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.119</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.120</span></div>
       <div class="hd-sub" id="hdsub">Učitavam top 100 tokena…</div>
       <div class="hd-claude" id="claude-update" style="display:flex;align-items:center;gap:6px">
         <span id="claude-update-txt">🤖 Claude analiza: —</span>
@@ -2734,20 +2734,23 @@ function _analyze3DUncached(sym){
   // Stablecoin dominance
   if(MACRO.stableDom>7){score+=1;signals.push({txt:"Stablecoin dom "+MACRO.stableDom+"% — likvidnost čeka",type:"bull"});}
 
-  // RSI + EMA50 trend filter — S DEADZONE (±0.5%) protiv flickeranja
-  // Bez deadzone: cijena lebdi oko EMA50 → trend flick UP↔DOWN → conf skace ±3.5pt u sekundama
-  // Deadzone: token mora biti JASNO iznad/ispod (>0.5%) da dobije/izgubi bodove
+  // RSI + EMA50 trend filter — DEADZONE SKALIRAN PO VOLATILNOSTI (ATR)
+  // Fiksni ±0.5% je preuzak za volatilne tokene (SOL ~6% ATR pomakne 0.5% u par
+  // minuta → trend flipa UP↔DOWN → conf skace ±10pt). Zato deadzone = 0.25× dnevni
+  // ATR, clamp 0.5%–2.5%: SOL dobije ~1.5% zonu, mirni tokeni ostaju 0.5%.
   if(t){
     var _emaDist=t.ema50?(price-t.ema50)/t.ema50:0; // npr. -0.0112 = 1.12% ispod
-    if(_emaDist<-0.005){
-      // Jasno ispod EMA50 (>0.5%) — bear trend
+    var _atrD_dz=a?parseFloat(a.pct)*24:3;          // dnevni ATR %
+    var _dz=Math.max(0.005,Math.min(0.025,(_atrD_dz/100)*0.25)); // dinamicka zona
+    if(_emaDist<-_dz){
+      // Jasno ispod EMA50 — bear trend
       score-=2;warnings.push({txt:"Ispod EMA50 ("+(_emaDist*100).toFixed(1)+"%) — bear trend, oversold nepouzdan",type:"bear"});
-    } else if(_emaDist>0.005){
-      // Jasno iznad EMA50 (>0.5%) — bull trend
+    } else if(_emaDist>_dz){
+      // Jasno iznad EMA50 — bull trend
       score+=wt("trendUp",1.5);signals.push({txt:"Iznad EMA50 ("+(_emaDist*100).toFixed(1)+"%) — trend potvrđen",type:"bull"});
     } else {
-      // Unutar ±0.5% — neodlučna zona, bez bonusa/penala (sprjecava flicker)
-      signals.push({txt:"Cijena na EMA50 — neodlučna zona, čekaj smjer",type:"neutral"});
+      // Unutar ±deadzone — neodlučna zona, bez bonusa/penala (sprjecava flicker)
+      signals.push({txt:"Cijena na EMA50 (±"+(_dz*100).toFixed(1)+"%) — neodlučna zona, čekaj smjer",type:"neutral"});
     }
     // RSI s regime multiplier — oversold u BULL = manji bonus (rijetko), u CRAB = veci (mean reversion radi)
     var _rmOS=regimeMultiplier('oversold');
@@ -2892,12 +2895,12 @@ function _analyze3DUncached(sym){
   conf=eqRes.conf;
 
   // ── CONFIDENCE SMOOTHING (EMA preko mjerenja) — sprjecava nagle skokove conf broja ──
-  // Procjena je "3-dnevna" pa ne smije skakati 70→30 zbog 1h sumova
-  // EMA: 55% prethodni smoothed + 45% novi raw → spike se prigusi kroz ~4-5 ciklusa (~30s)
+  // Procjena je "3-dnevna" pa ne smije skakati 70→58 zbog 1h sumova
+  // EMA: 60% prethodni smoothed + 40% novi raw → spike se prigusi sporije/stabilnije
   // History valja 5min — nakon pauze (npr. zatvoren tab) krece svjeze
   var _ch=_confHist[sym];
   if(_ch&&(Date.now()-_ch.ts<300000)){
-    conf=Math.round(_ch.smoothed*0.55+conf*0.45);
+    conf=Math.round(_ch.smoothed*0.6+conf*0.4);
   }
   _confHist[sym]={smoothed:conf,ts:Date.now()};
   // Periodicni cleanup (1% sansa po pozivu) — ukloni stale entries
@@ -9684,7 +9687,7 @@ function disableNotifs(){
   showToast("Notifikacije isključene");render();
 }
 
-// emitEntryNotif uklonjen (v5.119) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
+// emitEntryNotif uklonjen (v5.120) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
 // Bila mrtva funkcija (nula poziva); uklonjena da se ne može slučajno ponovno spojiti.
 
 // ── EXIT NOTIFICATION — SAMO 2 TIPA (po korisnikovom zahtjevu) ──
