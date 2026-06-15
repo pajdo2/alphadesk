@@ -1,7 +1,7 @@
 {
-    "dxy":  99.58,
-    "changeSummary":  "BTC porastao 2.08% na $65,695 uz pad nafte na $80.73 zbog US-Iran mirovnog sporazuma, dok DXY i F&G ostaju nepromijenjeni.",
-    "lastUpdated":  "2026-06-15T16:00:00Z",
+    "dxy":  99.53,
+    "changeSummary":  "Fear & Greed blago porastao s 20 na 23, DXY minimalno pao na 99.53, BTC dominacija porasla na 56.7%, nafta na $81.06, a BTC oporavak na $65,695 uz ETF priljeve signalizira kratkoročnu stabilizaciju u BEAR fazi.",
+    "lastUpdated":  "2026-06-15T18:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -22,7 +22,7 @@
 
                              ],
                      "AVAX":  [
-
+                                 "AVAX $6.67, blizu godišnjih minimuma"
                               ],
                      "PENGU":  [
 
@@ -43,7 +43,7 @@
 
                              ],
                      "ADA":  [
-
+                                "ADA $0.1696, blizu godišnjih minimuma"
                              ],
                      "PNUT":  [
 
@@ -61,11 +61,11 @@
 
                               ],
                      "TRUMP":  [
-
+                                  "Geopolitički rizik oko mirovnih pregovora"
                                ],
                      "BTC":  [
-                         "BTC ispod SMA200 - BEAR trend nastavlja se",
-                         "FOMC sastanak 19.06. - rizik volatilnosti"
+                                "BTC ispod SMA200, BEAR potvrđen",
+                                "FOMC rizik 19.06 uz novim predsjednikom Warshom"
                              ]
                  },
     "catalysts":  {
@@ -79,7 +79,8 @@
 
                                 ],
                       "XRP":  [
-
+                                  "XRPL 3.2.0 upgrade 15.06",
+                                  "XRP ETF 6 tjedana uzastopnih priljeva"
                               ],
                       "BNB":  [
 
@@ -88,7 +89,7 @@
 
                               ],
                       "AVAX":  [
-
+                                   "SEC ETF odobrenje uključuje AVAX"
                                ],
                       "PENGU":  [
 
@@ -106,10 +107,10 @@
 
                                  ],
                       "SOL":  [
-
+                                  "SOL +5.41% uz oporavak tržišta"
                               ],
                       "ADA":  [
-
+                                  "SEC odobrio ETF koji uključuje ADA"
                               ],
                       "PNUT":  [
 
@@ -118,10 +119,10 @@
 
                                 ],
                       "ETH":  [
-
+                                  "Oporavak tržišta, ETH +3.26%"
                               ],
                       "LINK":  [
-
+                                   "LINK +4.26% uz opći oporavak tržišta"
                                ],
                       "PUMP":  [
 
@@ -130,39 +131,39 @@
 
                                 ],
                       "BTC":  [
-                          "ETF net inflow $85.8M - povratak inst. interesa",
-                          "US-Iran mirovni sporazum - poboljšan risk sentiment"
+                                  "ETF priljevi $85.8M, BTC raste 2.08%",
+                                  "US-Iran mir smanjuje geopolitički rizik"
                               ]
                   },
-    "fearGreed":  20,
-    "macroPenalty":  0,
+    "fearGreed":  23,
+    "macroPenalty":  1,
     "regime":  "BEAR",
     "sentimentScore":  {
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  0,
+                           "XRP":  2,
                            "BNB":  0,
                            "SUI":  0,
-                           "AVAX":  0,
+                           "AVAX":  1,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  0,
-                           "ADA":  0,
+                           "SOL":  1,
+                           "ADA":  1,
                            "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  0,
-                           "LINK":  0,
+                           "ETH":  1,
+                           "LINK":  1,
                            "PUMP":  0,
-                           "TRUMP":  0,
-                           "BTC":  1
+                           "TRUMP":  -1,
+                           "BTC":  2
                        },
-    "aiSummary":  "DXY ostaje stabilno ispod 100 (99.58) što je blago pozitivno za kripto, a nafta je pala na $80.73 zbog inicijalnog US-Iran mirovnog sporazuma koji se potpisuje 19. lipnja. Fear & Greed indeks zadržava razinu ekstremnog straha (20), no BTC je porastao 2.08% na $65,695 uz ETF priljeve od $85.8M što signalizira povratak institucionalnog interesa. Kratkoročno se očekuje nastavak BEAR faze dok BTC ne prođe SMA200, uz rizik volatilnosti oko FOMC sastanka 19.06. pod novim predsjednikom Warshom.",
-    "warActive":  false,
-    "btcDom":  56.0,
+    "aiSummary":  "DXY je blago pao na 99.53 što ostaje pozitivno za kripto, dok nafta oscilira oko $81 zahvaljujući očekivanom US-Iran mirovnom sporazumu koji bi mogao biti potpisan ovaj vikend. Fear & Greed indeks blago je porastao s 20 na 23 (ekstremni strah), a BTC je oporavio na $65,695 uz ETF priljeve od $85.8M i institucionalnu potporu, no ostaje ispod SMA200. BEAR faza nastavlja se uz ključni rizik FOMC sastanka 19.06. i moguću volatilnost oko potpisivanja mirovnog sporazuma.",
+    "warActive":  true,
+    "btcDom":  56.7,
     "stableDom":  13.3,
-    "oil":  80.73
+    "oil":  81.06
 }
