@@ -423,7 +423,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.121</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.122</span></div>
       <div class="hd-sub" id="hdsub">Učitavam top 100 tokena…</div>
       <div class="hd-claude" id="claude-update" style="display:flex;align-items:center;gap:6px">
         <span id="claude-update-txt">🤖 Claude analiza: —</span>
@@ -3275,6 +3275,61 @@ function getOpportunities(){
   return all;
 }
 
+// ── SMART MONEY FLOW — composite akumulacija/distribucija iz BESPLATNIH signala ──
+// Sintetizira CVD + OI + funding + perp taker + L/S + likvidacije u jedan
+// -100..+100 read (CryptoQuant-style netflow gauge, bez placenog API-ja).
+// SAMO PRIKAZ — ne dira analyze3D score (ti signali su vec zasebno bodovani).
+function computeFlowScore(sym){
+  var s=0,drivers=[],n=0;
+  // 1. CVD — direktan proxy za (skrivenu) akumulaciju/distribuciju, najveca tezina
+  var cvd=cvdData[sym];
+  if(cvd){ n++; var cv=0;
+    if(cvd.divergence==="STRONG_BULLISH")cv=40; else if(cvd.divergence==="BULLISH")cv=28;
+    else if(cvd.divergence==="STRONG_BEARISH")cv=-40; else if(cvd.divergence==="BEARISH")cv=-28;
+    else if(cvd.trend==="RISING_STRONG")cv=25; else if(cvd.trend==="RISING")cv=14;
+    else if(cvd.trend==="FALLING_STRONG")cv=-25; else if(cvd.trend==="FALLING")cv=-14;
+    s+=cv; if(cv>=14)drivers.push("CVD akumulacija"); else if(cv<=-14)drivers.push("CVD distribucija");
+  }
+  // 2. Open Interest + smjer cijene
+  var oi=openInterest[sym],p=px[sym];
+  if(oi&&p){ n++; var up=p.c24>1,dn=p.c24<-1,ov=0;
+    if(oi.trend==="RISING_FAST"&&up)ov=18; else if(oi.trend==="RISING"&&up)ov=10;
+    else if(oi.trend==="RISING_FAST"&&dn)ov=-18; else if(oi.trend==="FALLING_FAST"&&up)ov=-8;
+    s+=ov; if(ov>=10)drivers.push("OI potvrđuje rast"); else if(ov<=-10)drivers.push("OI bearish");
+  }
+  // 3. Funding (ekstremno negativan = shorts placaju = bullish kontrarian)
+  var fr_=fr[sym];
+  if(fr_&&fr_.rate!=null){ n++; var fv=0,rt=fr_.rate*100;
+    if(rt<-0.03)fv=18; else if(rt<-0.01)fv=10; else if(rt>0.06)fv=-15; else if(rt>0.03)fv=-8;
+    s+=fv; if(fv>=10)drivers.push("Shorts plaćaju funding"); else if(fv<=-10)drivers.push("Longs preplaćeni");
+  }
+  // 4. Perp taker ratio (agresivni tok)
+  var fd=futuresData[sym];
+  if(fd&&fd.takerRatio!=null){ var tv=0;
+    if(fd.takerRatio<0.75)tv=14; else if(fd.takerRatio<0.88)tv=7; else if(fd.takerRatio>1.5)tv=-6;
+    s+=tv;
+  }
+  // 5. L/S ratio (kontrarian pozicioniranje)
+  if(fd&&fd.lsRatio!=null){ var lv=0;
+    if(fd.lsRatio<0.7)lv=12; else if(fd.lsRatio<0.85)lv=6; else if(fd.lsRatio>2.5)lv=-10; else if(fd.lsRatio>1.8)lv=-5;
+    s+=lv;
+  }
+  // 6. Likvidacije (capitulation / squeeze)
+  var liq=liquidations[sym];
+  if(liq&&(liq.buyLiq+liq.sellLiq)>500000){
+    if(liq.sellLiq>liq.buyLiq*1.5){s+=8;drivers.push("Long likvidacije (capitulation)");}
+    else if(liq.buyLiq>liq.sellLiq*2.5){s+=6;drivers.push("Short squeeze");}
+  }
+  s=Math.max(-100,Math.min(100,Math.round(s)));
+  var label,col;
+  if(s>=45){label="Jaka akumulacija";col="var(--bull)";}
+  else if(s>=18){label="Akumulacija";col="#69f0ae";}
+  else if(s>-18){label="Neutralno";col="var(--t3)";}
+  else if(s>-45){label="Distribucija";col="#ff7043";}
+  else{label="Jaka distribucija";col="var(--bear)";}
+  return {score:s,label:label,col:col,drivers:drivers.slice(0,3),hasData:n>0};
+}
+
 // ── RENDER OPPORTUNITY CARD ──────────────────────────────────────
 function renderOpp(o){
   var cfg=getCfg(o.sym);
@@ -3324,6 +3379,14 @@ function renderOpp(o){
     var ccBg=cc>=4?"rgba(0,230,118,.1)":cc>=3?"rgba(41,121,255,.08)":"rgba(255,167,38,.06)";
     h+=chip("⚡ "+cc+"/6",ccCol,ccBg,"Confluence "+cc+"/6|Koliko od 6 kategorija potvrđuje setup: trend, momentum, volumen, makro, order-flow, divergencija. Više = pouzdanije. 4+ je jako.");
   }
+  // ── SMART MONEY FLOW chip — samo kad je JAK (|score|>=40), da ne zatrpa ─
+  (function(){
+    var fl=computeFlowScore(o.sym);
+    if(!fl.hasData||Math.abs(fl.score)<40)return;
+    var bull=fl.score>0;
+    var fbg=bull?"rgba(0,230,118,.12)":"rgba(255,23,68,.10)";
+    h+=chip("💰 "+(bull?"+":"")+fl.score,fl.col,fbg,"Smart Money Flow "+fl.score+"|"+fl.label+" — composite iz CVD/OI/funding/taker/L-S/likvidacija (besplatni netflow-proxy). "+(fl.drivers.length?"Pokretači: "+fl.drivers.join(", "):""),9);
+  })();
   // ── VISUAL SEPARATOR između status i context chips ─────────────
   h+='<span style="width:1px;height:14px;background:rgba(255,255,255,.08);margin:0 2px"></span>';
   // ── WYCKOFF faza badge (4h primarno, daily fallback) ──────────
@@ -6661,6 +6724,26 @@ function rBtc(){
   // ── PROCJENA DNA (bear scenarij, auto-korekcija) ──
   h+=btcBearBottomPanel();
 
+  // ── SMART MONEY FLOW gauge (besplatni netflow-proxy) ──
+  (function(){
+    var fl=computeFlowScore(sym);
+    if(!fl.hasData)return;
+    var pct=(fl.score+100)/2; // -100..100 -> 0..100 za poziciju strelice
+    h+='<div data-tip="Smart Money Flow|Composite akumulacije/distribucije iz BESPLATNIH signala (CVD, Open Interest, funding, taker flow, L/S ratio, likvidacije). Oponaša CryptoQuant netflow bez plaćenog API-ja. Pozitivno = pametni novac kupuje, negativno = prodaje." style="background:var(--s1);border:.5px solid '+fl.col+'44;border-radius:14px;padding:12px 15px;margin-bottom:12px;cursor:help">';
+    h+='<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">';
+    h+='<span style="font-size:12px;font-weight:800;color:var(--t2)">💰 Smart Money Flow ⓘ</span>';
+    h+='<span style="font-size:13px;font-weight:900;color:'+fl.col+'">'+(fl.score>0?"+":"")+fl.score+' · '+fl.label+'</span>';
+    h+='</div>';
+    // bipolarna traka: sredina = 0, lijevo distribucija, desno akumulacija
+    h+='<div style="position:relative;height:8px;background:linear-gradient(90deg,rgba(255,23,68,.25),rgba(255,255,255,.06) 50%,rgba(0,230,118,.25));border-radius:4px">';
+    h+='<div style="position:absolute;left:50%;top:-2px;width:1px;height:12px;background:rgba(255,255,255,.2)"></div>';
+    h+='<div style="position:absolute;left:'+pct.toFixed(1)+'%;top:-3px;width:3px;height:14px;background:'+fl.col+';border-radius:2px;transform:translateX(-1.5px);box-shadow:0 0 5px '+fl.col+'"></div>';
+    h+='</div>';
+    h+='<div style="display:flex;justify-content:space-between;font-size:8px;color:var(--t4);margin-top:3px"><span>distribucija</span><span>akumulacija</span></div>';
+    if(fl.drivers.length)h+='<div style="font-size:9.5px;color:var(--t3);margin-top:6px">Pokretači: '+fl.drivers.join(" · ")+'</div>';
+    h+='</div>';
+  })();
+
   // ── USPJEŠNOST SMJERA (graf cijena + točnost predikcija) ──
   h+=btcAccuracyChart();
 
@@ -9687,7 +9770,7 @@ function disableNotifs(){
   showToast("Notifikacije isključene");render();
 }
 
-// emitEntryNotif uklonjen (v5.121) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
+// emitEntryNotif uklonjen (v5.122) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
 // Bila mrtva funkcija (nula poziva); uklonjena da se ne može slučajno ponovno spojiti.
 
 // ── EXIT NOTIFICATION — SAMO 2 TIPA (po korisnikovom zahtjevu) ──
