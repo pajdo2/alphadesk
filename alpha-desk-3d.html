@@ -423,7 +423,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.123</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.124</span></div>
       <div class="hd-sub" id="hdsub">Učitavam top 100 tokena…</div>
       <div class="hd-claude" id="claude-update" style="display:flex;align-items:center;gap:6px">
         <span id="claude-update-txt">🤖 Claude analiza: —</span>
@@ -1416,12 +1416,12 @@ function renderRefreshStatus(){
     {lbl:"Futures",ts:lastRefresh.futures,m:360},
     {lbl:"OI",ts:lastRefresh.oi,m:720},
     {lbl:"Poly",ts:lastRefresh.polymarket,m:1200},
-    {lbl:"SPX",ts:lastRefresh.spx,m:2400},
+    {lbl:"SPX",ts:lastRefresh.spx,m:2400,opt:true},
     {lbl:"BTC Dom",ts:lastRefresh.btcDom,m:900},
     {lbl:"Oil",ts:lastRefresh.oil,m:1800},
     {lbl:"DXY",ts:lastRefresh.dxy,m:1800},
-    {lbl:"News",ts:lastRefresh.news,m:1200}
-  ];
+    {lbl:"News",ts:lastRefresh.news,m:1200,opt:true}
+  ].filter(function(s){return !(s.opt&&!s.ts);}); // skrij opcionalne (SPX/News) dok nemaju podatke
   var h='<div style="background:rgba(255,255,255,.02);border-radius:12px;padding:8px 12px;margin-bottom:12px;border:.5px solid rgba(255,255,255,.05);box-shadow:0 1px 6px rgba(0,0,0,.2)">';
   h+='<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">';
   h+='<span style="font-size:9px;font-weight:800;color:rgba(255,255,255,.22);letter-spacing:.15em;text-transform:uppercase">⚡ Data status</span>';
@@ -9507,9 +9507,9 @@ function fetchMacroContext(manual){
       if(!d)return;
       if(d.warActive!=null)MACRO.warActive=d.warActive;
       if(d.macroPenalty!=null)MACRO.macroPenalty=d.macroPenalty;
-      if(d.oil!=null)MACRO.oil=d.oil;
+      if(d.oil!=null){MACRO.oil=d.oil;lastRefresh.oil=Date.now();}     // oil dolazi iz macro-a → freshness odatle
       if(d.dxy!=null){MACRO.dxy=d.dxy;lastRefresh.dxy=Date.now();}
-      if(d.btcDom!=null)MACRO.btcDom=d.btcDom;
+      if(d.btcDom!=null){MACRO.btcDom=d.btcDom;lastRefresh.btcDom=Date.now();}
       if(d.stableDom!=null)MACRO.stableDom=d.stableDom;
       if(d.catalysts)MACRO.catalysts=Object.assign({},MACRO.catalysts,d.catalysts);
       if(d.warnings)MACRO.warnings=Object.assign({},MACRO.warnings,d.warnings);
@@ -9776,7 +9776,7 @@ function disableNotifs(){
   showToast("Notifikacije isključene");render();
 }
 
-// emitEntryNotif uklonjen (v5.123) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
+// emitEntryNotif uklonjen (v5.124) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
 // Bila mrtva funkcija (nula poziva); uklonjena da se ne može slučajno ponovno spojiti.
 
 // ── EXIT NOTIFICATION — SAMO 2 TIPA (po korisnikovom zahtjevu) ──
