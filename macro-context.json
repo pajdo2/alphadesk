@@ -1,7 +1,7 @@
 {
-    "dxy":  99.53,
-    "changeSummary":  "Fear & Greed blago porastao s 20 na 23, DXY minimalno pao na 99.53, BTC dominacija porasla na 56.7%, nafta na $81.06, a BTC oporavak na $65,695 uz ETF priljeve signalizira kratkoročnu stabilizaciju u BEAR fazi.",
-    "lastUpdated":  "2026-06-15T18:00:00Z",
+    "dxy":  99.80,
+    "changeSummary":  "BTC pao na $64,439 uz BlackRock BITA ETF koji danas počinje s trgovanjem, XRP i SOL bilježe jake gubitke, a nafta pada na $80.47 zbog US-Iran mirovnog sporazuma.",
+    "lastUpdated":  "2026-06-16T12:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -13,7 +13,7 @@
 
                                ],
                      "XRP":  [
-
+                                 "Tjedno -17%, $1.30 razina probjena prema dolje"
                              ],
                      "BNB":  [
 
@@ -22,7 +22,7 @@
 
                              ],
                      "AVAX":  [
-                                 "AVAX $6.67, blizu godišnjih minimuma"
+
                               ],
                      "PENGU":  [
 
@@ -40,10 +40,10 @@
 
                                 ],
                      "SOL":  [
-
+                                 "Goldman Sachs izlazi, pad prema $75, ETF odljevi"
                              ],
                      "ADA":  [
-                                "ADA $0.1696, blizu godišnjih minimuma"
+
                              ],
                      "PNUT":  [
 
@@ -61,11 +61,10 @@
 
                               ],
                      "TRUMP":  [
-                                  "Geopolitički rizik oko mirovnih pregovora"
+
                                ],
                      "BTC":  [
-                                "BTC ispod SMA200, BEAR potvrđen",
-                                "FOMC rizik 19.06 uz novim predsjednikom Warshom"
+
                              ]
                  },
     "catalysts":  {
@@ -79,17 +78,16 @@
 
                                 ],
                       "XRP":  [
-                                  "XRPL 3.2.0 upgrade 15.06",
-                                  "XRP ETF 6 tjedana uzastopnih priljeva"
+
                               ],
                       "BNB":  [
 
                               ],
                       "SUI":  [
-
+                                  "CME futures launch + T.Rowe Price ETF inkluzija"
                               ],
                       "AVAX":  [
-                                   "SEC ETF odobrenje uključuje AVAX"
+                                   "FIFA World Cup 2026 partnerstvo + CME futures"
                                ],
                       "PENGU":  [
 
@@ -107,10 +105,10 @@
 
                                  ],
                       "SOL":  [
-                                  "SOL +5.41% uz oporavak tržišta"
+
                               ],
                       "ADA":  [
-                                  "SEC odobrio ETF koji uključuje ADA"
+
                               ],
                       "PNUT":  [
 
@@ -119,10 +117,10 @@
 
                                 ],
                       "ETH":  [
-                                  "Oporavak tržišta, ETH +3.26%"
+                                  "SEC odobrio kripto ETF s BTC/ETH/XRP/SOL exp."
                               ],
                       "LINK":  [
-                                   "LINK +4.26% uz opći oporavak tržišta"
+                                   "FIFA World Cup 2026 partnerstvo"
                                ],
                       "PUMP":  [
 
@@ -131,39 +129,38 @@
 
                                 ],
                       "BTC":  [
-                                  "ETF priljevi $85.8M, BTC raste 2.08%",
-                                  "US-Iran mir smanjuje geopolitički rizik"
+                                  "BlackRock BITA ETF počinje s trgovanjem 16.06."
                               ]
                   },
-    "fearGreed":  23,
-    "macroPenalty":  1,
+    "fearGreed":  20,
+    "macroPenalty":  0,
     "regime":  "BEAR",
     "sentimentScore":  {
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  2,
-                           "BNB":  0,
-                           "SUI":  0,
+                           "XRP":  -1,
+                           "BNB":  1,
+                           "SUI":  2,
                            "AVAX":  1,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  1,
-                           "ADA":  1,
+                           "SOL":  -2,
+                           "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
                            "ETH":  1,
                            "LINK":  1,
                            "PUMP":  0,
-                           "TRUMP":  -1,
-                           "BTC":  2
+                           "TRUMP":  0,
+                           "BTC":  3
                        },
-    "aiSummary":  "DXY je blago pao na 99.53 što ostaje pozitivno za kripto, dok nafta oscilira oko $81 zahvaljujući očekivanom US-Iran mirovnom sporazumu koji bi mogao biti potpisan ovaj vikend. Fear & Greed indeks blago je porastao s 20 na 23 (ekstremni strah), a BTC je oporavio na $65,695 uz ETF priljeve od $85.8M i institucionalnu potporu, no ostaje ispod SMA200. BEAR faza nastavlja se uz ključni rizik FOMC sastanka 19.06. i moguću volatilnost oko potpisivanja mirovnog sporazuma.",
-    "warActive":  true,
-    "btcDom":  56.7,
-    "stableDom":  13.3,
-    "oil":  81.06
+    "aiSummary":  "DXY blago raste na 99.80, ostajući ispod 100 što je marginalno pozitivno za kripto, dok nafta pada na $80.47 zbog potpisanog US-Iran mirovnog sporazuma. Fear & Greed indeks ostaje u ekstremnom strahu (20), a BTC pada na ~$64,439 unatoč BlackRock BITA ETF lansiranju danas 16. lipnja. BEAR faza nastavlja se uz posebne rizike za XRP i SOL, dok SUI, AVAX i LINK bilježe relativnu snagu kroz CME futures i FIFA World Cup 2026 partnerstva.",
+    "warActive":  false,
+    "btcDom":  57.0,
+    "stableDom":  13.8,
+    "oil":  80.47
 }
