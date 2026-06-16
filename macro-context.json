@@ -1,166 +1,82 @@
 {
-    "dxy":  99.80,
-    "changeSummary":  "Tržište stagnira uz BTC stabilno na ~$66,000, DXY nepromijenjeno na 99.80, dok FOMC zasjedanje drži tržišta u neizvjesnosti do ishoda.",
-    "lastUpdated":  "2026-06-16T16:00:00Z",
+    "dxy":  99.56,
+    "changeSummary":  "FOMC zasjedanje otvorilo se uz BTC stabilan na $66k, Strategy dodala 1,587 BTC i BlackRock lansirao Yield ETF, dok FG blago raste (20→23) i DXY nastavlja padati (99.80→99.56).",
+    "lastUpdated":  "2026-06-16T18:30:00Z",
     "warnings":  {
-                     "ACT":  [
-
-                             ],
-                     "MEME":  [
-
-                              ],
-                     "ANIME":  [
-
-                               ],
-                     "XRP":  [
-
-                             ],
-                     "BNB":  [
-
-                             ],
-                     "SUI":  [
-
-                             ],
-                     "AVAX":  [
-
-                              ],
-                     "PENGU":  [
-
-                               ],
-                     "BOME":  [
-
-                              ],
-                     "DOGS":  [
-
-                              ],
-                     "NOT":  [
-                                 "TON preimenovan u GRAM - neizvjesnost za ekosustav"
-                             ],
-                     "PEOPLE":  [
-
-                                ],
-                     "SOL":  [
-
-                             ],
-                     "ADA":  [
-
-                             ],
-                     "PNUT":  [
-
-                              ],
-                     "AIXBT":  [
-
-                               ],
-                     "ETH":  [
-
-                             ],
-                     "LINK":  [
-
-                              ],
-                     "PUMP":  [
-
-                              ],
-                     "TRUMP":  [
-
-                               ],
-                     "BTC":  [
-                                 "FOMC danas - rizik pada ispod $64,000"
-                             ]
+                     "ACT":  [],
+                     "MEME":  ["Meme sektor u bear tržištu - visok rizik gubitka"],
+                     "ANIME":  ["Nema katalizatora, meme bear nastavlja"],
+                     "XRP":  ["FDIC/GAO regulatorni pritisak na kripto sektor"],
+                     "BNB":  [],
+                     "SUI":  [],
+                     "AVAX":  ["Pad volumena i macro pritisak"],
+                     "PENGU":  [],
+                     "BOME":  ["Solana meme bear - nizak sentiment"],
+                     "DOGS":  ["Nema katalizatora, meme bear nastavlja"],
+                     "NOT":  ["Nizak sentiment, nema katalizatora"],
+                     "PEOPLE":  [],
+                     "SOL":  [],
+                     "ADA":  ["Slabost u bear tržištu, nema katalizatora"],
+                     "PNUT":  [],
+                     "AIXBT":  [],
+                     "ETH":  [],
+                     "LINK":  [],
+                     "PUMP":  ["Osnivač potvrdio: airdrop nije uskoro", "Pravni problemi povećavaju rizik pada"],
+                     "TRUMP":  [],
+                     "BTC":  ["FOMC iznenađenje može uzrokovati snažnu volatilnost"]
                  },
     "catalysts":  {
-                      "ACT":  [
-
-                              ],
-                      "MEME":  [
-
-                               ],
-                      "ANIME":  [
-
-                                ],
-                      "XRP":  [
-                                  "BlackRock BITA ETF lansiran, XRP ETF spekulacija raste"
-                              ],
-                      "BNB":  [
-
-                              ],
-                      "SUI":  [
-                                  "CME SUI futures aktivni, $65B stablecoin transakcija"
-                              ],
-                      "AVAX":  [
-                                   "Outperforms u bear fazi, high-throughput L1 narrativa"
-                               ],
-                      "PENGU":  [
-
-                                ],
-                      "BOME":  [
-
-                               ],
-                      "DOGS":  [
-
-                               ],
-                      "NOT":  [
-
-                              ],
-                      "PEOPLE":  [
-
-                                 ],
-                      "SOL":  [
-                                  "Alpenglow upgrade - bolji finality i TPS"
-                              ],
-                      "ADA":  [
-
-                              ],
-                      "PNUT":  [
-
-                               ],
-                      "AIXBT":  [
-
-                                ],
-                      "ETH":  [
-
-                              ],
-                      "LINK":  [
-                                   "Oracle infrastruktura - stabilna potražnja, outperforms"
-                               ],
-                      "PUMP":  [
-
-                               ],
-                      "TRUMP":  [
-
-                                ],
-                      "BTC":  [
-                                  "Strategy kupuje 1,587 BTC, whale akumulacija s burzi"
-                              ]
+                      "ACT":  [],
+                      "MEME":  [],
+                      "ANIME":  [],
+                      "XRP":  ["Institucionalni priljevi + ETF demand prema $1.20", "XRPL nativni lending protokol - Q4 2026 launch"],
+                      "BNB":  ["GENIUS Act potpisan - pozitivno za CEX tokene"],
+                      "SUI":  ["CME futures + ekosustav boost"],
+                      "AVAX":  [],
+                      "PENGU":  ["Dominira meme sektor - snažna zajednica"],
+                      "BOME":  [],
+                      "DOGS":  [],
+                      "NOT":  [],
+                      "PEOPLE":  [],
+                      "SOL":  ["SOL probija $75 - tehnički proboj uz beta oporavak"],
+                      "ADA":  [],
+                      "PNUT":  [],
+                      "AIXBT":  [],
+                      "ETH":  ["ETH +10% na $1,841 - snažan beta oporavak uz BTC"],
+                      "LINK":  [],
+                      "PUMP":  [],
+                      "TRUMP":  ["GENIUS Act potpisan - direktan boost TRUMP tokenu"],
+                      "BTC":  ["Strategy kupuje 1,587 BTC - akumulacija nastavlja", "BlackRock Yield ETF lansiran - novi inst. produkt", "US-Iran primirje snizava macro rizik"]
                   },
-    "fearGreed":  20,
+    "fearGreed":  23,
     "macroPenalty":  0,
     "regime":  "BEAR",
     "sentimentScore":  {
                            "ACT":  0,
-                           "MEME":  0,
-                           "ANIME":  0,
-                           "XRP":  2,
-                           "BNB":  0,
-                           "SUI":  2,
-                           "AVAX":  1,
-                           "PENGU":  0,
-                           "BOME":  0,
-                           "DOGS":  0,
+                           "MEME":  -1,
+                           "ANIME":  -1,
+                           "XRP":  1,
+                           "BNB":  1,
+                           "SUI":  1,
+                           "AVAX":  -1,
+                           "PENGU":  1,
+                           "BOME":  -1,
+                           "DOGS":  -1,
                            "NOT":  -1,
                            "PEOPLE":  0,
                            "SOL":  1,
-                           "ADA":  0,
+                           "ADA":  -1,
                            "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  0,
-                           "LINK":  1,
-                           "PUMP":  0,
-                           "TRUMP":  0,
+                           "ETH":  1,
+                           "LINK":  0,
+                           "PUMP":  -2,
+                           "TRUMP":  1,
                            "BTC":  1
                        },
-    "aiSummary":  "DXY ostaje stabilan na 99.80, ispod ključne razine 100, što je marginalno pozitivno za kripto tržište. Fear & Greed indeks zadržava se u ekstremnom strahu (20), a BTC konsolidira oko $66,000 dok FOMC odlučuje o stopama - proboj iznad $68,000 ili povratak prema $64,000 određuje kratkoročni smjer. SUI bilježi snažan impuls zahvaljujući CME futures lansiranju i $65B stablecoin prijenosima, dok XRP profitira od BlackRock BITA ETF špekulacija.",
+    "aiSummary":  "DXY nastavlja padati na 99.56, ispod ključne razine 100, podupirući kripto tržište uz US-Iran primirje koje drži naftu ispod $81. FOMC zasjedanje pod novim predsjednikom Warshem ključni je događaj dana - signal o stopama određuje proboj prema $68k ili povratak na $64k, a BTC drži $66k uz ETF priljeve i Strategy akumulaciju od 1,587 BTC. BlackRock Yield ETF i Hyperliquid +10% signaliziraju selektivan institucionalni interes usprkos FG=23 i generalnom bear sentimentu.",
     "warActive":  false,
-    "btcDom":  57.0,
-    "stableDom":  12.9,
-    "oil":  80.50
+    "btcDom":  56.7,
+    "stableDom":  14,
+    "oil":  80.47
 }
