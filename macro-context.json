@@ -1,82 +1,168 @@
 {
-    "dxy":  99.56,
-    "changeSummary":  "FOMC zasjedanje otvorilo se uz BTC stabilan na $66k, Strategy dodala 1,587 BTC i BlackRock lansirao Yield ETF, dok FG blago raste (20→23) i DXY nastavlja padati (99.80→99.56).",
-    "lastUpdated":  "2026-06-16T18:30:00Z",
+    "dxy":  99.80,
+    "changeSummary":  "DXY blago porastao na 99.80 (bio 99.56), nafta pala na $80.41 uz US-Iran mirovni sporazum koji eliminira geopolitički rizik i mijenja warActive u false.",
+    "lastUpdated":  "2026-06-16T21:00:00Z",
     "warnings":  {
-                     "ACT":  [],
-                     "MEME":  ["Meme sektor u bear tržištu - visok rizik gubitka"],
-                     "ANIME":  ["Nema katalizatora, meme bear nastavlja"],
-                     "XRP":  ["FDIC/GAO regulatorni pritisak na kripto sektor"],
-                     "BNB":  [],
-                     "SUI":  [],
-                     "AVAX":  ["Pad volumena i macro pritisak"],
-                     "PENGU":  [],
-                     "BOME":  ["Solana meme bear - nizak sentiment"],
-                     "DOGS":  ["Nema katalizatora, meme bear nastavlja"],
-                     "NOT":  ["Nizak sentiment, nema katalizatora"],
-                     "PEOPLE":  [],
-                     "SOL":  [],
-                     "ADA":  ["Slabost u bear tržištu, nema katalizatora"],
-                     "PNUT":  [],
-                     "AIXBT":  [],
-                     "ETH":  [],
-                     "LINK":  [],
-                     "PUMP":  ["Osnivač potvrdio: airdrop nije uskoro", "Pravni problemi povećavaju rizik pada"],
-                     "TRUMP":  [],
-                     "BTC":  ["FOMC iznenađenje može uzrokovati snažnu volatilnost"]
+                     "ACT":  [
+
+                             ],
+                     "MEME":  [
+
+                              ],
+                     "ANIME":  [
+
+                               ],
+                     "XRP":  [
+
+                             ],
+                     "BNB":  [
+
+                             ],
+                     "SUI":  [
+
+                             ],
+                     "AVAX":  [
+
+                              ],
+                     "PENGU":  [
+
+                               ],
+                     "BOME":  [
+
+                              ],
+                     "DOGS":  [
+
+                              ],
+                     "NOT":  [
+
+                             ],
+                     "PEOPLE":  [
+
+                                ],
+                     "SOL":  [
+
+                             ],
+                     "ADA":  [
+
+                             ],
+                     "PNUT":  [
+
+                              ],
+                     "AIXBT":  [
+
+                               ],
+                     "ETH":  [
+                             "FTX dan isplate - rizik sell pressura na tržištu"
+                             ],
+                     "LINK":  [
+
+                              ],
+                     "PUMP":  [
+
+                              ],
+                     "TRUMP":  [
+
+                               ],
+                     "BTC":  [
+
+                             ]
                  },
     "catalysts":  {
-                      "ACT":  [],
-                      "MEME":  [],
-                      "ANIME":  [],
-                      "XRP":  ["Institucionalni priljevi + ETF demand prema $1.20", "XRPL nativni lending protokol - Q4 2026 launch"],
-                      "BNB":  ["GENIUS Act potpisan - pozitivno za CEX tokene"],
-                      "SUI":  ["CME futures + ekosustav boost"],
-                      "AVAX":  [],
-                      "PENGU":  ["Dominira meme sektor - snažna zajednica"],
-                      "BOME":  [],
-                      "DOGS":  [],
-                      "NOT":  [],
-                      "PEOPLE":  [],
-                      "SOL":  ["SOL probija $75 - tehnički proboj uz beta oporavak"],
-                      "ADA":  [],
-                      "PNUT":  [],
-                      "AIXBT":  [],
-                      "ETH":  ["ETH +10% na $1,841 - snažan beta oporavak uz BTC"],
-                      "LINK":  [],
-                      "PUMP":  [],
-                      "TRUMP":  ["GENIUS Act potpisan - direktan boost TRUMP tokenu"],
-                      "BTC":  ["Strategy kupuje 1,587 BTC - akumulacija nastavlja", "BlackRock Yield ETF lansiran - novi inst. produkt", "US-Iran primirje snizava macro rizik"]
+                      "ACT":  [
+
+                              ],
+                      "MEME":  [
+
+                               ],
+                      "ANIME":  [
+
+                                ],
+                      "XRP":  [
+
+                              ],
+                      "BNB":  [
+
+                              ],
+                      "SUI":  [
+
+                              ],
+                      "AVAX":  [
+
+                               ],
+                      "PENGU":  [
+
+                                ],
+                      "BOME":  [
+
+                               ],
+                      "DOGS":  [
+
+                               ],
+                      "NOT":  [
+                              "TON preimenovan u GRAM, ekosustav se razvija"
+                              ],
+                      "PEOPLE":  [
+
+                                 ],
+                      "SOL":  [
+
+                              ],
+                      "ADA":  [
+
+                              ],
+                      "PNUT":  [
+
+                               ],
+                      "AIXBT":  [
+
+                                ],
+                      "ETH":  [
+                              "ETH +4%, Bitmine akumulira ETH",
+                              "BlackRock Yield ETF lansiran"
+                              ],
+                      "LINK":  [
+
+                               ],
+                      "PUMP":  [
+
+                               ],
+                      "TRUMP":  [
+
+                                ],
+                      "BTC":  [
+                              "MARA kupila 1000 BTC, Strategy +1587 BTC",
+                              "US-Iran mir smanjio geopoliticki rizik"
+                              ]
                   },
     "fearGreed":  23,
     "macroPenalty":  0,
     "regime":  "BEAR",
     "sentimentScore":  {
                            "ACT":  0,
-                           "MEME":  -1,
-                           "ANIME":  -1,
-                           "XRP":  1,
-                           "BNB":  1,
-                           "SUI":  1,
-                           "AVAX":  -1,
-                           "PENGU":  1,
-                           "BOME":  -1,
-                           "DOGS":  -1,
-                           "NOT":  -1,
+                           "MEME":  0,
+                           "ANIME":  0,
+                           "XRP":  0,
+                           "BNB":  0,
+                           "SUI":  0,
+                           "AVAX":  0,
+                           "PENGU":  0,
+                           "BOME":  0,
+                           "DOGS":  0,
+                           "NOT":  1,
                            "PEOPLE":  0,
-                           "SOL":  1,
-                           "ADA":  -1,
+                           "SOL":  0,
+                           "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
                            "ETH":  1,
                            "LINK":  0,
-                           "PUMP":  -2,
-                           "TRUMP":  1,
-                           "BTC":  1
+                           "PUMP":  0,
+                           "TRUMP":  0,
+                           "BTC":  2
                        },
-    "aiSummary":  "DXY nastavlja padati na 99.56, ispod ključne razine 100, podupirući kripto tržište uz US-Iran primirje koje drži naftu ispod $81. FOMC zasjedanje pod novim predsjednikom Warshem ključni je događaj dana - signal o stopama određuje proboj prema $68k ili povratak na $64k, a BTC drži $66k uz ETF priljeve i Strategy akumulaciju od 1,587 BTC. BlackRock Yield ETF i Hyperliquid +10% signaliziraju selektivan institucionalni interes usprkos FG=23 i generalnom bear sentimentu.",
+    "aiSummary":  "DXY na 99.80 uz US-Iran mirovni sporazum koji je srušio naftu na $80.41 i eliminirao geopolitički rizik, no FG=23 (Ekstremni strah) zadržava BTC u BEAR režimu na $66k. Institucijska akumulacija (MARA 1000 BTC + Strategy 1587 BTC) i likvidacija $375M shorta signaliziraju pritisak prema $68k, ali FOMC zasjedanje pod Warshem ostaje ključni okidač za smjer.",
     "warActive":  false,
     "btcDom":  56.7,
-    "stableDom":  14,
-    "oil":  80.47
+    "stableDom":  8.0,
+    "oil":  80.41
 }
