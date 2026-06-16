@@ -1,7 +1,7 @@
 {
     "dxy":  99.80,
-    "changeSummary":  "BTC pao na $64,439 uz BlackRock BITA ETF koji danas počinje s trgovanjem, XRP i SOL bilježe jake gubitke, a nafta pada na $80.47 zbog US-Iran mirovnog sporazuma.",
-    "lastUpdated":  "2026-06-16T12:00:00Z",
+    "changeSummary":  "Tržište stagnira uz BTC stabilno na ~$66,000, DXY nepromijenjeno na 99.80, dok FOMC zasjedanje drži tržišta u neizvjesnosti do ishoda.",
+    "lastUpdated":  "2026-06-16T16:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -13,7 +13,7 @@
 
                                ],
                      "XRP":  [
-                                 "Tjedno -17%, $1.30 razina probjena prema dolje"
+
                              ],
                      "BNB":  [
 
@@ -34,13 +34,13 @@
 
                               ],
                      "NOT":  [
-
+                                 "TON preimenovan u GRAM - neizvjesnost za ekosustav"
                              ],
                      "PEOPLE":  [
 
                                 ],
                      "SOL":  [
-                                 "Goldman Sachs izlazi, pad prema $75, ETF odljevi"
+
                              ],
                      "ADA":  [
 
@@ -64,7 +64,7 @@
 
                                ],
                      "BTC":  [
-
+                                 "FOMC danas - rizik pada ispod $64,000"
                              ]
                  },
     "catalysts":  {
@@ -78,16 +78,16 @@
 
                                 ],
                       "XRP":  [
-
+                                  "BlackRock BITA ETF lansiran, XRP ETF spekulacija raste"
                               ],
                       "BNB":  [
 
                               ],
                       "SUI":  [
-                                  "CME futures launch + T.Rowe Price ETF inkluzija"
+                                  "CME SUI futures aktivni, $65B stablecoin transakcija"
                               ],
                       "AVAX":  [
-                                   "FIFA World Cup 2026 partnerstvo + CME futures"
+                                   "Outperforms u bear fazi, high-throughput L1 narrativa"
                                ],
                       "PENGU":  [
 
@@ -105,7 +105,7 @@
 
                                  ],
                       "SOL":  [
-
+                                  "Alpenglow upgrade - bolji finality i TPS"
                               ],
                       "ADA":  [
 
@@ -117,10 +117,10 @@
 
                                 ],
                       "ETH":  [
-                                  "SEC odobrio kripto ETF s BTC/ETH/XRP/SOL exp."
+
                               ],
                       "LINK":  [
-                                   "FIFA World Cup 2026 partnerstvo"
+                                   "Oracle infrastruktura - stabilna potražnja, outperforms"
                                ],
                       "PUMP":  [
 
@@ -129,7 +129,7 @@
 
                                 ],
                       "BTC":  [
-                                  "BlackRock BITA ETF počinje s trgovanjem 16.06."
+                                  "Strategy kupuje 1,587 BTC, whale akumulacija s burzi"
                               ]
                   },
     "fearGreed":  20,
@@ -139,28 +139,28 @@
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  -1,
-                           "BNB":  1,
+                           "XRP":  2,
+                           "BNB":  0,
                            "SUI":  2,
                            "AVAX":  1,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
-                           "NOT":  0,
+                           "NOT":  -1,
                            "PEOPLE":  0,
-                           "SOL":  -2,
+                           "SOL":  1,
                            "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  1,
+                           "ETH":  0,
                            "LINK":  1,
                            "PUMP":  0,
                            "TRUMP":  0,
-                           "BTC":  3
+                           "BTC":  1
                        },
-    "aiSummary":  "DXY blago raste na 99.80, ostajući ispod 100 što je marginalno pozitivno za kripto, dok nafta pada na $80.47 zbog potpisanog US-Iran mirovnog sporazuma. Fear & Greed indeks ostaje u ekstremnom strahu (20), a BTC pada na ~$64,439 unatoč BlackRock BITA ETF lansiranju danas 16. lipnja. BEAR faza nastavlja se uz posebne rizike za XRP i SOL, dok SUI, AVAX i LINK bilježe relativnu snagu kroz CME futures i FIFA World Cup 2026 partnerstva.",
+    "aiSummary":  "DXY ostaje stabilan na 99.80, ispod ključne razine 100, što je marginalno pozitivno za kripto tržište. Fear & Greed indeks zadržava se u ekstremnom strahu (20), a BTC konsolidira oko $66,000 dok FOMC odlučuje o stopama - proboj iznad $68,000 ili povratak prema $64,000 određuje kratkoročni smjer. SUI bilježi snažan impuls zahvaljujući CME futures lansiranju i $65B stablecoin prijenosima, dok XRP profitira od BlackRock BITA ETF špekulacija.",
     "warActive":  false,
     "btcDom":  57.0,
-    "stableDom":  13.8,
-    "oil":  80.47
+    "stableDom":  12.9,
+    "oil":  80.50
 }
