@@ -1,7 +1,7 @@
 {
-    "dxy":  99.44,
-    "changeSummary":  "DXY pao na 99.4, macroPenalty korigiran na 0 (klampiran), FOMC odluka stiže danas u 20h CET uz 98% šanse za pauzu kamatnih stopa.",
-    "lastUpdated":  "2026-06-17T13:00:00Z",
+    "dxy":  99.80,
+    "changeSummary":  "BTC pao s $65,829 na $64,881 uoči Warsheve FOMC press konferencije, rate hike odds za 2026 narasli na 50.5%, dok Strategy akumulira 1,587 BTC, a DXY i FG ostaju stabilni.",
+    "lastUpdated":  "2026-06-17T16:14:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -40,8 +40,7 @@
 
                                 ],
                      "SOL":  [
-                                 "Goldman izlazi - institucionalni pritisak prema dolje",
-                                 "Solana pada prema $75, slab on-chain aktivitet"
+
                              ],
                      "ADA":  [
 
@@ -53,7 +52,7 @@
 
                                ],
                      "ETH":  [
-                                 "Analitičari ciljaju $1,600 kao sljedeći support"
+
                              ],
                      "LINK":  [
 
@@ -65,8 +64,9 @@
 
                                ],
                      "BTC":  [
-                                 "BTC pao na $64k u liquidation cascade od $1.1B",
-                                 "Prošlih 8/9 FOMC-a BTC je pao - rizik ponavljanja"
+                                 "CPI 4.2% - inflacija iznad cilja",
+                                 "Historijski pad BTC nakon FOMC",
+                                 "Rate hike odds narasle na 50.5% za 2026"
                              ]
                  },
     "catalysts":  {
@@ -80,7 +80,7 @@
 
                                 ],
                       "XRP":  [
-                                  "Gate.io listira RLUSD - Ripple stablecoin dostupan"
+
                               ],
                       "BNB":  [
 
@@ -119,7 +119,7 @@
 
                                 ],
                       "ETH":  [
-                                  "Glamsterdam upgrade u finalnoj fazi testiranja"
+
                               ],
                       "LINK":  [
 
@@ -128,11 +128,12 @@
 
                                ],
                       "TRUMP":  [
-                                    "US-Iran mir potpisan 19.6. - smanjuje geopolitički rizik"
+                                    "US-Iran mirovni dogovor podrška"
                                 ],
                       "BTC":  [
-                                  "Strategy kupila 1,587 BTC - institucionalna akumulacija",
-                                  "FOMC pauza (98%) + Warsh dovish ton = potencijal za reli"
+                                  "Warsh FOMC pauza stopa (3.50-3.75%)",
+                                  "US-Iran mir, Hormuz otvoren",
+                                  "Strategy kupila 1,587 BTC danas"
                               ]
                   },
     "fearGreed":  23,
@@ -142,7 +143,7 @@
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  1,
+                           "XRP":  0,
                            "BNB":  0,
                            "SUI":  0,
                            "AVAX":  0,
@@ -151,7 +152,7 @@
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  -1,
+                           "SOL":  0,
                            "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
@@ -159,9 +160,9 @@
                            "LINK":  0,
                            "PUMP":  0,
                            "TRUMP":  1,
-                           "BTC":  -1
+                           "BTC":  1
                        },
-    "aiSummary":  "DXY pao na ~99.4 što smanjuje dolarski pritisak i blago podupire kripto, no tržište ostaje u Ekstremnom Strahu (FG 23) uoči FOMC odluke Kevina Warsha - pauza stopa (3.50-3.75%) gotovo je sigurna s 98% vjerojatnošću, ali ton o inflaciji je ključan. Historijski BTC pada nakon 8/9 FOMC-a, no Strategy akumulacija i US-Iran mir (19.6.) mogu biti okidači za proboj iznad $66,200 prema $67,500.",
+    "aiSummary":  "DXY ostaje stabilan na 99.80 (ispod 100) pružajući blagu makro podršku, no tržište je u Ekstremnom Strahu (FG 23) dok Warsh drži svoju prvu FOMC press konferenciju - stope zadržane na 3.50-3.75%, ali rate hike odds za 2026 narasli su na 50.5% što je dovelo BTC na ~$64,881. Strategy akumulacija od 1,587 BTC daje dugoročni bullish signal, no kratkoročni rizik od hawkish Warsh tona ostaje visok.",
     "warActive":  false,
     "btcDom":  56.7,
     "stableDom":  13.8,
