@@ -1,7 +1,7 @@
 {
-    "dxy":  99.80,
-    "changeSummary":  "DXY blago porastao na 99.80 (bio 99.56), nafta pala na $80.41 uz US-Iran mirovni sporazum koji eliminira geopolitički rizik i mijenja warActive u false.",
-    "lastUpdated":  "2026-06-16T21:00:00Z",
+    "dxy":  99.44,
+    "changeSummary":  "DXY pao na 99.4, macroPenalty korigiran na 0 (klampiran), FOMC odluka stiže danas u 20h CET uz 98% šanse za pauzu kamatnih stopa.",
+    "lastUpdated":  "2026-06-17T13:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -40,7 +40,8 @@
 
                                 ],
                      "SOL":  [
-
+                                 "Goldman izlazi - institucionalni pritisak prema dolje",
+                                 "Solana pada prema $75, slab on-chain aktivitet"
                              ],
                      "ADA":  [
 
@@ -52,7 +53,7 @@
 
                                ],
                      "ETH":  [
-                             "FTX dan isplate - rizik sell pressura na tržištu"
+                                 "Analitičari ciljaju $1,600 kao sljedeći support"
                              ],
                      "LINK":  [
 
@@ -64,7 +65,8 @@
 
                                ],
                      "BTC":  [
-
+                                 "BTC pao na $64k u liquidation cascade od $1.1B",
+                                 "Prošlih 8/9 FOMC-a BTC je pao - rizik ponavljanja"
                              ]
                  },
     "catalysts":  {
@@ -78,7 +80,7 @@
 
                                 ],
                       "XRP":  [
-
+                                  "Gate.io listira RLUSD - Ripple stablecoin dostupan"
                               ],
                       "BNB":  [
 
@@ -99,7 +101,7 @@
 
                                ],
                       "NOT":  [
-                              "TON preimenovan u GRAM, ekosustav se razvija"
+
                               ],
                       "PEOPLE":  [
 
@@ -117,8 +119,7 @@
 
                                 ],
                       "ETH":  [
-                              "ETH +4%, Bitmine akumulira ETH",
-                              "BlackRock Yield ETF lansiran"
+                                  "Glamsterdam upgrade u finalnoj fazi testiranja"
                               ],
                       "LINK":  [
 
@@ -127,11 +128,11 @@
 
                                ],
                       "TRUMP":  [
-
+                                    "US-Iran mir potpisan 19.6. - smanjuje geopolitički rizik"
                                 ],
                       "BTC":  [
-                              "MARA kupila 1000 BTC, Strategy +1587 BTC",
-                              "US-Iran mir smanjio geopoliticki rizik"
+                                  "Strategy kupila 1,587 BTC - institucionalna akumulacija",
+                                  "FOMC pauza (98%) + Warsh dovish ton = potencijal za reli"
                               ]
                   },
     "fearGreed":  23,
@@ -141,28 +142,28 @@
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  0,
+                           "XRP":  1,
                            "BNB":  0,
                            "SUI":  0,
                            "AVAX":  0,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
-                           "NOT":  1,
+                           "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  0,
+                           "SOL":  -1,
                            "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  1,
+                           "ETH":  0,
                            "LINK":  0,
                            "PUMP":  0,
-                           "TRUMP":  0,
-                           "BTC":  2
+                           "TRUMP":  1,
+                           "BTC":  -1
                        },
-    "aiSummary":  "DXY na 99.80 uz US-Iran mirovni sporazum koji je srušio naftu na $80.41 i eliminirao geopolitički rizik, no FG=23 (Ekstremni strah) zadržava BTC u BEAR režimu na $66k. Institucijska akumulacija (MARA 1000 BTC + Strategy 1587 BTC) i likvidacija $375M shorta signaliziraju pritisak prema $68k, ali FOMC zasjedanje pod Warshem ostaje ključni okidač za smjer.",
+    "aiSummary":  "DXY pao na ~99.4 što smanjuje dolarski pritisak i blago podupire kripto, no tržište ostaje u Ekstremnom Strahu (FG 23) uoči FOMC odluke Kevina Warsha - pauza stopa (3.50-3.75%) gotovo je sigurna s 98% vjerojatnošću, ali ton o inflaciji je ključan. Historijski BTC pada nakon 8/9 FOMC-a, no Strategy akumulacija i US-Iran mir (19.6.) mogu biti okidači za proboj iznad $66,200 prema $67,500.",
     "warActive":  false,
     "btcDom":  56.7,
-    "stableDom":  8.0,
-    "oil":  80.41
+    "stableDom":  13.8,
+    "oil":  75.47
 }
