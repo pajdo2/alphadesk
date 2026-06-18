@@ -1,7 +1,7 @@
 {
-    "dxy":  100.23,
-    "changeSummary":  "DXY je prešao razinu 100 (sa 99.71 na 100.23) smanjujući makro podršku kriptu, Fear & Greed ostaje na 23 (Ekstremni Strah), a BTC je blago pao s ~$65,500 na ~$65,200 uz FIFA WC kao jedini pozitivni katalizator dana.",
-    "lastUpdated":  "2026-06-18T14:00:00Z",
+    "dxy":  99.61,
+    "changeSummary":  "BTC blago pao na $64,527, DXY stabiliziran na 99.61 ispod 100, oil na $74.56, F&G i dalje na 23 — BEAR režim bez promjena.",
+    "lastUpdated":  "2026-06-18T16:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -13,7 +13,7 @@
 
                                ],
                      "XRP":  [
-
+                                 "Pad ispod $1.20 nakon zaustavljenog proboja otpora"
                              ],
                      "BNB":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-                                 "Makro pritisak, BTC dominacija 56.7% guši altcoine"
+                                 "ETF outflow $111M kombinirano s BTC ETF-om"
                              ],
                      "LINK":  [
 
@@ -64,7 +64,7 @@
 
                                ],
                      "BTC":  [
-                                 "Ekstremni Strah F&G 23, BTC stabilizira ispod SMA200"
+                                 "Hawkish Fed - Warsh signalizira zabrinutost zbog inflacije"
                              ]
                  },
     "catalysts":  {
@@ -78,7 +78,7 @@
 
                                 ],
                       "XRP":  [
-
+                                  "Uključen u novi T. Rowe Price kripto ETF (12.06.)"
                               ],
                       "BNB":  [
 
@@ -87,7 +87,7 @@
 
                               ],
                       "AVAX":  [
-                                   "FIFA WC live stress test za AVAX infrastrukturu"
+
                                ],
                       "PENGU":  [
 
@@ -105,7 +105,7 @@
 
                                  ],
                       "SOL":  [
-
+                                  "Uključen u novi T. Rowe Price multi-kripto ETF"
                               ],
                       "ADA":  [
 
@@ -117,10 +117,10 @@
 
                                 ],
                       "ETH":  [
-
+                                  "T. Rowe Price multi-kripto ETF odobren 12.06."
                               ],
                       "LINK":  [
-                                   "Chainlink napaja FIFA WC predikcijske markete"
+                                   "World Cup predikcijski marketi na Chainlink oraclima"
                                ],
                       "PUMP":  [
 
@@ -129,7 +129,7 @@
 
                                 ],
                       "BTC":  [
-                                  "Kraken = FIFA Official Crypto Exchange Supporter"
+                                  "FIFA WC 2026: Kraken službeni kripto sponzor"
                               ]
                   },
     "fearGreed":  23,
@@ -139,10 +139,10 @@
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  0,
+                           "XRP":  -1,
                            "BNB":  0,
                            "SUI":  0,
-                           "AVAX":  1,
+                           "AVAX":  0,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
@@ -153,14 +153,14 @@
                            "PNUT":  0,
                            "AIXBT":  0,
                            "ETH":  0,
-                           "LINK":  2,
+                           "LINK":  1,
                            "PUMP":  0,
                            "TRUMP":  0,
                            "BTC":  1
                        },
-    "aiSummary":  "DXY je prešao razinu 100 (100.23) što smanjuje makro podršku kriptu, dok Fear & Greed ostaje na 23 (Ekstremni Strah) bez znakova oporavka sentimenta. BTC se stabilizira oko $65,200 ispod SMA200 u BEAR režimu, a FIFA Svjetsko Prvenstvo 2026 donosi masovnu kripto integraciju kroz Kraken partnerstvo i Chainlink oracle infrastrukturu za predikcijske markete. Nafta raste na $75.54 uslijed iranskih tenzija bez eskalacije u aktivni rat.",
+    "aiSummary":  "DXY ostaje na 99.61 ispod razine 100 što pruža blagu makro podršku kriptu, no Fear & Greed zadržan na 23 (Ekstremni Strah) bez znakova oporavka. BTC konsolidira oko $64,500 ispod SMA200 u BEAR režimu dok nafta stagnira na $74.56 uz IEA upozorenja o višku ponude, a hawkish Fed pod Chairmanom Warshom i dalje gasi potencijalne rally signale. FIFA WC 2026 Kraken sponzorstvo i Chainlink oracle integracija za predikcijske markete ($2B+ volumena) jedini su pozitivni katalizatori tjedna.",
     "warActive":  false,
-    "btcDom":  56.7,
+    "btcDom":  56.0,
     "stableDom":  13.8,
-    "oil":  75.54
+    "oil":  74.56
 }
