@@ -1,7 +1,7 @@
 {
-    "dxy":  99.71,
-    "changeSummary":  "DXY blago porastao na 99.71 uz minimalni rast Fear & Greed indexa s 23 na 24, dok BTC stabilizira oko $65,500 uz Moody's integraciju kreditnih rejtinga na Solana mreži.",
-    "lastUpdated":  "2026-06-18T22:00:00Z",
+    "dxy":  100.23,
+    "changeSummary":  "DXY je prešao razinu 100 (sa 99.71 na 100.23) smanjujući makro podršku kriptu, Fear & Greed ostaje na 23 (Ekstremni Strah), a BTC je blago pao s ~$65,500 na ~$65,200 uz FIFA WC kao jedini pozitivni katalizator dana.",
+    "lastUpdated":  "2026-06-18T14:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-
+                                 "Makro pritisak, BTC dominacija 56.7% guši altcoine"
                              ],
                      "LINK":  [
 
@@ -64,8 +64,7 @@
 
                                ],
                      "BTC":  [
-                                 "Illinois uveo 0.2% porez na kripto poslovanje",
-                                 "SpaceX IPO izvlači rizični kapital iz kripta"
+                                 "Ekstremni Strah F&G 23, BTC stabilizira ispod SMA200"
                              ]
                  },
     "catalysts":  {
@@ -88,7 +87,7 @@
 
                               ],
                       "AVAX":  [
-
+                                   "FIFA WC live stress test za AVAX infrastrukturu"
                                ],
                       "PENGU":  [
 
@@ -106,7 +105,7 @@
 
                                  ],
                       "SOL":  [
-                                  "Moody's uveo kreditne rejtinge na Solana tokeniziranu imovinu"
+
                               ],
                       "ADA":  [
 
@@ -121,7 +120,7 @@
 
                               ],
                       "LINK":  [
-
+                                   "Chainlink napaja FIFA WC predikcijske markete"
                                ],
                       "PUMP":  [
 
@@ -130,10 +129,10 @@
 
                                 ],
                       "BTC":  [
-                                  "MARA kupila 1,000 BTC putem FalconX - obnova treasury"
+                                  "Kraken = FIFA Official Crypto Exchange Supporter"
                               ]
                   },
-    "fearGreed":  24,
+    "fearGreed":  23,
     "macroPenalty":  0,
     "regime":  "BEAR",
     "sentimentScore":  {
@@ -143,25 +142,25 @@
                            "XRP":  0,
                            "BNB":  0,
                            "SUI":  0,
-                           "AVAX":  0,
+                           "AVAX":  1,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  1,
+                           "SOL":  0,
                            "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
                            "ETH":  0,
-                           "LINK":  0,
+                           "LINK":  2,
                            "PUMP":  0,
                            "TRUMP":  0,
-                           "BTC":  0
+                           "BTC":  1
                        },
-    "aiSummary":  "DXY blago raste na 99.71 ostajući ispod ključne razine 100 što pruža minimalnu makro podršku kriptu, dok Fear & Greed lagano raste s 23 na 24 (Ekstremni Strah) bez značajnijeg poboljšanja sentimenta. BTC stabilizira oko $65,500 nakon odbijanja s lows na $59,375, a Fed je zadržao stope na 3.50-3.75% pod predsjedateljem Warshom. Moody's uvođenje kreditnih rejtinga na Solana mreži je pozitivan institucionalni signal, no Illinois kripto porez i SpaceX IPO koji odvlači rizični kapital ostaju ključni negativni faktori.",
+    "aiSummary":  "DXY je prešao razinu 100 (100.23) što smanjuje makro podršku kriptu, dok Fear & Greed ostaje na 23 (Ekstremni Strah) bez znakova oporavka sentimenta. BTC se stabilizira oko $65,200 ispod SMA200 u BEAR režimu, a FIFA Svjetsko Prvenstvo 2026 donosi masovnu kripto integraciju kroz Kraken partnerstvo i Chainlink oracle infrastrukturu za predikcijske markete. Nafta raste na $75.54 uslijed iranskih tenzija bez eskalacije u aktivni rat.",
     "warActive":  false,
     "btcDom":  56.7,
-    "stableDom":  6.5,
-    "oil":  75.49
+    "stableDom":  13.8,
+    "oil":  75.54
 }
