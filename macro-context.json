@@ -1,7 +1,7 @@
 {
-    "dxy":  99.65,
-    "changeSummary":  "DXY blago korigirao na 99.65 (s 99.80), Fear & Greed ostaje na 23 (Ekstremni Strah), nafta porasla na $76.44 uz US-Iran mirovne pregovore koji smanjuju geopolitičku premiju.",
-    "lastUpdated":  "2026-06-17T23:00:00Z",
+    "dxy":  99.70,
+    "changeSummary":  "DXY blago porastao na 99.70, nafta pala na $75.49 zbog US-Iran dogovora, BTC klizni na $64.5K dok Fear & Greed ostaje nepromijenjen na 23.",
+    "lastUpdated":  "2026-06-18T20:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -43,7 +43,7 @@
 
                              ],
                      "ADA":  [
-
+                                 "Underperformer -2.8%, bez katalizatora"
                              ],
                      "PNUT":  [
 
@@ -52,19 +52,19 @@
 
                                ],
                      "ETH":  [
-
+                                 "Pad 2.25%, bez kratkoročnog katalizatora"
                              ],
                      "LINK":  [
 
                               ],
                      "PUMP":  [
 
-                              ],
+                               ],
                      "TRUMP":  [
-
+                                   "Pad cijene, kontroverzije obitelji Trump"
                                ],
                      "BTC":  [
-                                 "Otpor na $66.9K, FOMC hawkish rizik"
+                                 "Illinois uveo 0.2% porez na kripto aktivnosti"
                              ]
                  },
     "catalysts":  {
@@ -78,16 +78,16 @@
 
                                 ],
                       "XRP":  [
-
+                                  "XRPL 3.2.0 upgrade, ETF pritjecanja $5.3M"
                               ],
                       "BNB":  [
-                                  "Binance MiCA licenca - update do 30.06."
+
                               ],
                       "SUI":  [
 
                               ],
                       "AVAX":  [
-
+                                   "ANZ tokenizacija, CCIP cross-chain integracija"
                                ],
                       "PENGU":  [
 
@@ -105,7 +105,7 @@
 
                                  ],
                       "SOL":  [
-
+                                  "Alpenglow konsenzus upgrade najava (Anza)"
                               ],
                       "ADA":  [
 
@@ -117,10 +117,10 @@
 
                                 ],
                       "ETH":  [
-
+                                  "ETF pritjecanja $9.59M 16.06."
                               ],
                       "LINK":  [
-
+                                   "FIFA World Cup prognoze partnerstvo"
                                ],
                       "PUMP":  [
 
@@ -129,7 +129,7 @@
 
                                 ],
                       "BTC":  [
-                                  "125K BTC institucijska akumulacija u lipnju 2026"
+                                  "Marathon Digital kupio 1000 BTC, institucionalna akumulacija"
                               ]
                   },
     "fearGreed":  23,
@@ -139,28 +139,28 @@
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  0,
-                           "BNB":  1,
+                           "XRP":  2,
+                           "BNB":  0,
                            "SUI":  0,
-                           "AVAX":  0,
+                           "AVAX":  1,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  0,
-                           "ADA":  0,
+                           "SOL":  1,
+                           "ADA":  -1,
                            "PNUT":  0,
                            "AIXBT":  0,
                            "ETH":  0,
-                           "LINK":  0,
+                           "LINK":  1,
                            "PUMP":  0,
-                           "TRUMP":  0,
-                           "BTC":  1
+                           "TRUMP":  -1,
+                           "BTC":  0
                        },
-    "aiSummary":  "DXY se stabilizirao na 99.65 ispod ključne razine 100 pružajući blagu makro podršku, dok Fear & Greed ostaje u Ekstremnom Strahu (23) bez poboljšanja sentimenta. Kevin Warsh drži prvu FOMC sjednicu uz gotovo sigurno zadržavanje stopa na 3.50-3.75%, a BTC konsolidira na $65K uz institucionalnu akumulaciju od 125K BTC u lipnju. US-Iran mirovni pregovori smanjuju naftnu premiju te se kratkoročno očekuje sideways kretanje kriptotržišta do jasnijeg signala Feda.",
+    "aiSummary":  "DXY blago porastao na 99.70 ostajući ispod ključne razine 100 što pruža minimalnu makro podršku, dok Fear & Greed stagniram na 23 (Ekstremni Strah) bez znakova poboljšanja. BTC klizi na $64.5K uz dnevni pad 2% dok nafta pada na $75.49 zbog US-Iran mirovnog dogovora, a Fed zadržava stope na 3.50-3.75% pod novim predsjedateljem Warshom. Kratkoročno se očekuje nastavak sideways do bear kretanja do jasnih makro signala, uz pozornost na Illinois kripto porez i daljnja institucionalna kretanja.",
     "warActive":  false,
-    "btcDom":  56.7,
-    "stableDom":  13.5,
-    "oil":  76.44
+    "btcDom":  56.0,
+    "stableDom":  15.0,
+    "oil":  75.49
 }
