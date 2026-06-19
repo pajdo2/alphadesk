@@ -1,19 +1,19 @@
 {
-    "dxy":  99.61,
-    "changeSummary":  "BTC blago pao na $64,527, DXY stabiliziran na 99.61 ispod 100, oil na $74.56, F&G i dalje na 23 — BEAR režim bez promjena.",
-    "lastUpdated":  "2026-06-18T16:00:00Z",
+    "dxy":  99.71,
+    "changeSummary":  "BTC dominance porasla na 58% (s 56%), DXY stabilan na 99.71, nafta blago na $74.62 dok potpisivanje mirovnog sporazuma SAD-Iran unosi kratkotrajni risk-on impuls, no F&G zadržan na 23 bez promjene BEAR režima.",
+    "lastUpdated":  "2026-06-19T10:00:00Z",
     "warnings":  {
                      "ACT":  [
 
                              ],
                      "MEME":  [
-
+                                "Meme sektor bez katalizatora, visok rizik u bear trendu"
                               ],
                      "ANIME":  [
 
                                ],
                      "XRP":  [
-                                 "Pad ispod $1.20 nakon zaustavljenog proboja otpora"
+
                              ],
                      "BNB":  [
 
@@ -28,7 +28,7 @@
 
                                ],
                      "BOME":  [
-
+                                "Visok rizik, niska likvidnost u BEAR fazi"
                               ],
                      "DOGS":  [
 
@@ -46,13 +46,13 @@
 
                              ],
                      "PNUT":  [
-
+                                "Visok rizik, niska likvidnost u BEAR fazi"
                               ],
                      "AIXBT":  [
 
                                ],
                      "ETH":  [
-                                 "ETF outflow $111M kombinirano s BTC ETF-om"
+                               "ETH/BTC racio slab, kapitulacija altcoin sektora"
                              ],
                      "LINK":  [
 
@@ -64,7 +64,8 @@
 
                                ],
                      "BTC":  [
-                                 "Hawkish Fed - Warsh signalizira zabrinutost zbog inflacije"
+                               "F&G 23, ekstremni strah - bez znakova oporavka",
+                               "BTC ispod SMA200, BEAR trend aktivan"
                              ]
                  },
     "catalysts":  {
@@ -78,7 +79,7 @@
 
                                 ],
                       "XRP":  [
-                                  "Uključen u novi T. Rowe Price kripto ETF (12.06.)"
+
                               ],
                       "BNB":  [
 
@@ -105,7 +106,7 @@
 
                                  ],
                       "SOL":  [
-                                  "Uključen u novi T. Rowe Price multi-kripto ETF"
+
                               ],
                       "ADA":  [
 
@@ -117,10 +118,10 @@
 
                                 ],
                       "ETH":  [
-                                  "T. Rowe Price multi-kripto ETF odobren 12.06."
+                                "Postupni oporavak, EVM aktivnost stabilna"
                               ],
                       "LINK":  [
-                                   "World Cup predikcijski marketi na Chainlink oraclima"
+                                 "Oracle integracija predikcijskog marketa, $2B+ vol."
                                ],
                       "PUMP":  [
 
@@ -129,7 +130,8 @@
 
                                 ],
                       "BTC":  [
-                                  "FIFA WC 2026: Kraken službeni kripto sponzor"
+                                "Mirovni sporazum SAD-Iran, risk-on signal",
+                                "SpaceX BTC rezerve $1.3B hodl signal"
                               ]
                   },
     "fearGreed":  23,
@@ -137,30 +139,30 @@
     "regime":  "BEAR",
     "sentimentScore":  {
                            "ACT":  0,
-                           "MEME":  0,
+                           "MEME":  -1,
                            "ANIME":  0,
-                           "XRP":  -1,
+                           "XRP":  0,
                            "BNB":  0,
                            "SUI":  0,
                            "AVAX":  0,
                            "PENGU":  0,
-                           "BOME":  0,
+                           "BOME":  -1,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
                            "SOL":  0,
                            "ADA":  0,
-                           "PNUT":  0,
+                           "PNUT":  -1,
                            "AIXBT":  0,
                            "ETH":  0,
                            "LINK":  1,
                            "PUMP":  0,
                            "TRUMP":  0,
-                           "BTC":  1
+                           "BTC":  0
                        },
-    "aiSummary":  "DXY ostaje na 99.61 ispod razine 100 što pruža blagu makro podršku kriptu, no Fear & Greed zadržan na 23 (Ekstremni Strah) bez znakova oporavka. BTC konsolidira oko $64,500 ispod SMA200 u BEAR režimu dok nafta stagnira na $74.56 uz IEA upozorenja o višku ponude, a hawkish Fed pod Chairmanom Warshom i dalje gasi potencijalne rally signale. FIFA WC 2026 Kraken sponzorstvo i Chainlink oracle integracija za predikcijske markete ($2B+ volumena) jedini su pozitivni katalizatori tjedna.",
+    "aiSummary":  "DXY se zadržava ispod 100 na razini 99.71 što pruža blagu makro podršku kriptu, no Fear & Greed ostaje na 23 (Ekstremni Strah) bez znakova oporavka. BTC konsolidira oko $64,410 ispod SMA200 u BEAR režimu dok nafta oscilira na $74.62; potpisivanje mirovnog sporazuma SAD-Iran donosi kratkotrajan risk-on impuls koji može potaknuti pump. Dominacija BTC-a porasla na 58% potvrđuje bijeg kapitala iz altova prema sigurnijoj imovini.",
     "warActive":  false,
-    "btcDom":  56.0,
-    "stableDom":  13.8,
-    "oil":  74.56
+    "btcDom":  58.0,
+    "stableDom":  14.0,
+    "oil":  74.62
 }
