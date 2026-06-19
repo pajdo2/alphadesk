@@ -1,13 +1,13 @@
 {
     "dxy":  99.71,
-    "changeSummary":  "BTC dominance porasla na 58% (s 56%), DXY stabilan na 99.71, nafta blago na $74.62 dok potpisivanje mirovnog sporazuma SAD-Iran unosi kratkotrajni risk-on impuls, no F&G zadržan na 23 bez promjene BEAR režima.",
+    "changeSummary":  "F&G pao s 23 na 19 (ekstremni strah), BTC oko 63K USD, DXY stabilan na 99.71, režim ostaje BEAR.",
     "lastUpdated":  "2026-06-19T10:00:00Z",
     "warnings":  {
                      "ACT":  [
 
                              ],
                      "MEME":  [
-                                "Meme sektor bez katalizatora, visok rizik u bear trendu"
+
                               ],
                      "ANIME":  [
 
@@ -28,7 +28,7 @@
 
                                ],
                      "BOME":  [
-                                "Visok rizik, niska likvidnost u BEAR fazi"
+
                               ],
                      "DOGS":  [
 
@@ -46,26 +46,25 @@
 
                              ],
                      "PNUT":  [
-                                "Visok rizik, niska likvidnost u BEAR fazi"
+
                               ],
                      "AIXBT":  [
 
                                ],
                      "ETH":  [
-                               "ETH/BTC racio slab, kapitulacija altcoin sektora"
+
                              ],
                      "LINK":  [
 
                               ],
                      "PUMP":  [
 
-                              ],
+                               ],
                      "TRUMP":  [
-
+                                 "Inflacija veća od očekivane, negativan sentiment"
                                ],
                      "BTC":  [
-                               "F&G 23, ekstremni strah - bez znakova oporavka",
-                               "BTC ispod SMA200, BEAR trend aktivan"
+                                "Inflacija jača od očekivane - Fed zadržava kamate"
                              ]
                  },
     "catalysts":  {
@@ -82,7 +81,7 @@
 
                               ],
                       "BNB":  [
-
+                                "CLARITY Act - debate o yield stabilcoinima i OCC"
                               ],
                       "SUI":  [
 
@@ -118,10 +117,10 @@
 
                                 ],
                       "ETH":  [
-                                "Postupni oporavak, EVM aktivnost stabilna"
+                                "Glamsterdam devnet live - 10 EIP-ova, paralel. izvr."
                               ],
                       "LINK":  [
-                                 "Oracle integracija predikcijskog marketa, $2B+ vol."
+
                                ],
                       "PUMP":  [
 
@@ -130,39 +129,38 @@
 
                                 ],
                       "BTC":  [
-                                "Mirovni sporazum SAD-Iran, risk-on signal",
-                                "SpaceX BTC rezerve $1.3B hodl signal"
+                                "BITCOIN Act - moguća državna kupnja BTC u Q4 2026"
                               ]
                   },
-    "fearGreed":  23,
+    "fearGreed":  19,
     "macroPenalty":  0,
     "regime":  "BEAR",
     "sentimentScore":  {
                            "ACT":  0,
-                           "MEME":  -1,
+                           "MEME":  0,
                            "ANIME":  0,
                            "XRP":  0,
-                           "BNB":  0,
+                           "BNB":  1,
                            "SUI":  0,
                            "AVAX":  0,
                            "PENGU":  0,
-                           "BOME":  -1,
+                           "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
                            "SOL":  0,
                            "ADA":  0,
-                           "PNUT":  -1,
+                           "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  0,
-                           "LINK":  1,
+                           "ETH":  1,
+                           "LINK":  0,
                            "PUMP":  0,
-                           "TRUMP":  0,
+                           "TRUMP":  -1,
                            "BTC":  0
                        },
-    "aiSummary":  "DXY se zadržava ispod 100 na razini 99.71 što pruža blagu makro podršku kriptu, no Fear & Greed ostaje na 23 (Ekstremni Strah) bez znakova oporavka. BTC konsolidira oko $64,410 ispod SMA200 u BEAR režimu dok nafta oscilira na $74.62; potpisivanje mirovnog sporazuma SAD-Iran donosi kratkotrajan risk-on impuls koji može potaknuti pump. Dominacija BTC-a porasla na 58% potvrđuje bijeg kapitala iz altova prema sigurnijoj imovini.",
+    "aiSummary":  "DXY stabilan na 99.71, ispod 100 što je blago pozitivno za kripto, ali F&G indeks na kritičnih 19 (ekstremni strah) signalizira nastavak bearish pritiska. BTC trguje oko 63K USD s dominacijom od 58%, dok je tržišni sentiment narušen višim inflacijskim podacima koji zadržavaju Fed kamate na istoj razini. Očekuje se nastavak konsolidacije uz mogući kratkoročni oporavak ako inflacijski pritisci popuste.",
     "warActive":  false,
     "btcDom":  58.0,
-    "stableDom":  14.0,
-    "oil":  74.62
+    "stableDom":  14.3,
+    "oil":  77.15
 }
