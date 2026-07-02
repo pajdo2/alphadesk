@@ -105,8 +105,8 @@
       "d3Hit": false,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 80.65,
-      "peakPct": 0.02
+      "peakPrice": 80.66,
+      "peakPct": 0.04
     },
     {
       "id": "1783022709361_UNI",
@@ -9669,5 +9669,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-07-02T20:06:20.141Z"
+  "updatedAt": "2026-07-02T20:07:47.904Z"
 }
