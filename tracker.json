@@ -1,6 +1,31 @@
 {
   "predictions": [
     {
+      "id": "1783162200297",
+      "timestamp": 1783162200297,
+      "sym": "ACT",
+      "type": "meme",
+      "direction": "LONG",
+      "date": "4. srp",
+      "entry": 0.00994,
+      "target": 0.0105364,
+      "d1Target": 0.01014874,
+      "d2Target": 0.01035748,
+      "d3Target": 0.0105364,
+      "stop": -0.00332394,
+      "conf": 70,
+      "targetPct": 6,
+      "status": "AKTIVAN",
+      "closePrice": null,
+      "closePct": null,
+      "autoClose": false,
+      "d1Hit": false,
+      "d2Hit": false,
+      "d3Hit": false,
+      "peakPrice": 0.00994,
+      "peakPct": 0
+    },
+    {
       "id": "1783103000278",
       "timestamp": 1783103000278,
       "sym": "DOGE",
@@ -8807,59 +8832,6 @@
       "peakPrice": 11.06,
       "peakPct": 0.09,
       "closeReason": "â° 5 dana isteklo"
-    },
-    {
-      "id": "1776425579984_USDTB",
-      "timestamp": 1776425579984,
-      "sym": "USDTB",
-      "type": "regular",
-      "date": "17. tra",
-      "entry": 0.999739,
-      "target": 1.0997,
-      "d1Target": 1.0197,
-      "d2Target": 1.0397,
-      "d4Target": 1.0797,
-      "d5Target": 1.0997,
-      "d3Target": 1.0597,
-      "stop": 0.9697,
-      "conf": 45,
-      "score": -4,
-      "targetPct": 10,
-      "status": "PROMAÅ AJ",
-      "closePrice": 1,
-      "closePct": 0.03,
-      "autoClose": true,
-      "autoTrack": true,
-      "autoSource": "watch",
-      "snap": {
-        "rsiOversold": false,
-        "rsiOverbought": false,
-        "trendUp": false,
-        "trendDown": false,
-        "bbBelow": false,
-        "divBullish": false,
-        "divBearish": false,
-        "macdBullCross": false,
-        "macdBearCross": false,
-        "lsRatioBull": false,
-        "lsRatioExtreme": false,
-        "basisBack": false,
-        "takerSell": false,
-        "btcDomHigh": true,
-        "btcDomLow": false,
-        "volSpike": false,
-        "mtfAllUp": false,
-        "fgExtremeFear": false,
-        "fgFear": true
-      },
-      "d1Hit": false,
-      "d2Hit": false,
-      "d3Hit": false,
-      "d4Hit": false,
-      "d5Hit": false,
-      "peakPrice": 1,
-      "peakPct": 0.03,
-      "closeReason": "â° 5 dana isteklo"
     }
   ],
   "signalWeights": {
@@ -9644,5 +9616,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-07-04T10:49:28.391Z"
+  "updatedAt": "2026-07-04T10:50:04.421Z"
 }
