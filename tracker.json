@@ -22,8 +22,8 @@
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
-      "peakPrice": 0.00994,
-      "peakPct": 0
+      "peakPrice": 0.01004,
+      "peakPct": 1.01
     },
     {
       "id": "1783103000278",
@@ -75,8 +75,8 @@
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
-      "peakPrice": 0.00278,
-      "peakPct": 0
+      "peakPrice": 0.00283,
+      "peakPct": 1.8
     },
     {
       "id": "1783102995668",
@@ -9655,5 +9655,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-07-04T15:38:02.078Z"
+  "updatedAt": "2026-07-04T15:38:09.662Z"
 }
