@@ -1,7 +1,7 @@
 {
-    "dxy":  100.88,
-    "changeSummary":  "Inicijalna popuna: BTC na ~$63k, DXY 100.9, Fear & Greed 30 (strah), BTC dominacija 55.5%.",
-    "lastUpdated":  "2026-07-06T08:00:00Z",
+    "dxy":  100.83,
+    "changeSummary":  "BTC skočio s $63k na ~$100k uz oporavak F&G s 30 na 53 (Neutral), režim prelazi s BEAR u VOLATILE uz stabilan DXY ~100.8.",
+    "lastUpdated":  "2026-07-06T12:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -61,10 +61,10 @@
 
                               ],
                      "TRUMP":  [
-                                  "CLARITY Act - Senat nema 60 glasova za cloture"
+
                                ],
                      "BTC":  [
-                                 "Najkrhkije tržište od FTX bear ciklusa, zid oko $63k"
+                                 "CZ upozorava: kvantno računalstvo prijetnja Satoshi BTC-u"
                              ]
                  },
     "catalysts":  {
@@ -78,7 +78,7 @@
 
                                 ],
                       "XRP":  [
-                                  "XRP +5% u 24h, vodi gainove medu kripto majorima"
+                                  "XRP +8% predvodi altcoin oporavak u srpnju"
                               ],
                       "BNB":  [
 
@@ -105,7 +105,7 @@
 
                                  ],
                       "SOL":  [
-
+                                  "SOL dio altcoin rotacije u srpnju uz BTC oporavak"
                               ],
                       "ADA":  [
 
@@ -117,7 +117,7 @@
 
                                 ],
                       "ETH":  [
-                                  "Glamsterdam upgrade H2 2026, Devnet-5 testiranje aktivno"
+                                  "ETH prati BTC oporavak, poboljšan tržišni sentiment"
                               ],
                       "LINK":  [
 
@@ -129,38 +129,38 @@
 
                                 ],
                       "BTC":  [
-                                  "BTC odskok iznad $63k, reverse end-lipanjskih gubitaka"
+                                  "BTC probio $100k - oporavak s lipanjskog dna od $60k"
                               ]
                   },
-    "fearGreed":  30,
+    "fearGreed":  53,
     "macroPenalty":  0,
-    "regime":  "BEAR",
+    "regime":  "VOLATILE",
     "sentimentScore":  {
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  1,
-                           "BNB":  0,
-                           "SUI":  0,
-                           "AVAX":  0,
+                           "XRP":  2,
+                           "BNB":  1,
+                           "SUI":  1,
+                           "AVAX":  1,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  0,
-                           "ADA":  0,
+                           "SOL":  1,
+                           "ADA":  1,
                            "PNUT":  0,
                            "AIXBT":  0,
                            "ETH":  1,
-                           "LINK":  0,
+                           "LINK":  1,
                            "PUMP":  0,
-                           "TRUMP":  -1,
-                           "BTC":  0
+                           "TRUMP":  0,
+                           "BTC":  2
                        },
-    "aiSummary":  "DXY se drži oko 100.9, ispod ključnih razina, što blago podupire kriptovalute. Bitcoin se stabilizira u zoni $63k nakon što je krajem lipnja nakratko pao ispod $60k, dok Fear & Greed index signalizira strah (~30). Očekujemo nastavak volatilnosti uz mogući oporavak altcoina ako BTC zadrži podršku na $62k.",
+    "aiSummary":  "BTC je probio razinu $100k uz nagli oporavak s lipanjskog dna oko $60k, dok Fear & Greed indeks signalizira neutralno tržište (53). DXY ostaje stabilan ispod 101 što nastavlja podupirati kriptovalute, a XRP predvodi altcoin oporavak s +8%. Očekujemo povišenu volatilnost - tržište je u VOLATILE režimu s potencijalom prelaska u BULL ako BTC zadrži $100k i F&G poraste iznad 55.",
     "warActive":  false,
     "btcDom":  55.5,
-    "stableDom":  14,
+    "stableDom":  10,
     "oil":  68
 }
