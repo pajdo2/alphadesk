@@ -15,15 +15,16 @@
       "stop": -0.00332394,
       "conf": 70,
       "targetPct": 6,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "PROMAŠAJ",
+      "closePrice": 0.00921,
+      "closePct": -7.34,
+      "autoClose": true,
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
       "peakPrice": 0.01004,
-      "peakPct": 1.01
+      "peakPct": 1.01,
+      "closeReason": "⏰ 2 dana, gubimo — soft exit"
     },
     {
       "id": "1783103000278",
@@ -69,15 +70,16 @@
       "stop": 0.00240637,
       "conf": 52,
       "targetPct": 6,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "PROMAŠAJ",
+      "closePrice": 0.00273,
+      "closePct": -1.8,
+      "autoClose": true,
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
       "peakPrice": 0.00283,
-      "peakPct": 1.8
+      "peakPct": 1.8,
+      "closeReason": "⏰ 2 dana, gubimo — soft exit"
     },
     {
       "id": "1783102995668",
@@ -9718,5 +9720,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-07-06T11:32:24.396Z"
+  "updatedAt": "2026-07-06T11:32:46.416Z"
 }
