@@ -1,7 +1,7 @@
 {
-    "dxy":  100.72,
-    "changeSummary":  "DXY porastao s 99.71 na 100.72, BTC pao na ~62.5K uslijed hawkish Fed signala i visoke inflacije, F&G ostaje u ekstremnom strahu (19), a BITCOIN Act donosi potencijalni dugoročni katalizator.",
-    "lastUpdated":  "2026-06-19T13:00:00Z",
+    "dxy":  100.88,
+    "changeSummary":  "Inicijalna popuna: BTC na ~$63k, DXY 100.9, Fear & Greed 30 (strah), BTC dominacija 55.5%.",
+    "lastUpdated":  "2026-07-06T08:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -61,11 +61,10 @@
 
                               ],
                      "TRUMP":  [
-
+                                  "CLARITY Act - Senat nema 60 glasova za cloture"
                                ],
                      "BTC":  [
-                         "Fed hawkish - moguće rate hikove u 2026.",
-                         "BTC pao s 67.3K na 62.5K, inflacija iznad očekivanja"
+                                 "Najkrhkije tržište od FTX bear ciklusa, zid oko $63k"
                              ]
                  },
     "catalysts":  {
@@ -79,7 +78,7 @@
 
                                 ],
                       "XRP":  [
-
+                                  "XRP +5% u 24h, vodi gainove medu kripto majorima"
                               ],
                       "BNB":  [
 
@@ -118,7 +117,7 @@
 
                                 ],
                       "ETH":  [
-
+                                  "Glamsterdam upgrade H2 2026, Devnet-5 testiranje aktivno"
                               ],
                       "LINK":  [
 
@@ -130,18 +129,17 @@
 
                                 ],
                       "BTC":  [
-                          "BITCOIN Act - Treasury kupnja BTC u Q4 2026",
-                          "US-Iran mir smanjuje geopolitički rizik"
+                                  "BTC odskok iznad $63k, reverse end-lipanjskih gubitaka"
                               ]
                   },
-    "fearGreed":  19,
+    "fearGreed":  30,
     "macroPenalty":  0,
     "regime":  "BEAR",
     "sentimentScore":  {
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  0,
+                           "XRP":  1,
                            "BNB":  0,
                            "SUI":  0,
                            "AVAX":  0,
@@ -154,15 +152,15 @@
                            "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  0,
+                           "ETH":  1,
                            "LINK":  0,
                            "PUMP":  0,
-                           "TRUMP":  0,
-                           "BTC":  1
+                           "TRUMP":  -1,
+                           "BTC":  0
                        },
-    "aiSummary":  "DXY je porastao na 100.72, prelazi 100 i signalizira jači dolar uz blagi negativan pritisak na kripto tržište. F&G indeks ostaje u ekstremnom strahu (19), a BTC je pao s 67.3K na ~62.5K uslijed viših inflacijskih podataka i hawkish Fed signala koji najavljuju moguće rate hikove u 2026. Potencijalni katalizator je BITCOIN Act (Treasury kupnja BTC u Q4 2026) i deeskalacija US-Iran sukoba, no kratkoročno se očekuje nastavak konsolidacije u BEAR režimu.",
+    "aiSummary":  "DXY se drži oko 100.9, ispod ključnih razina, što blago podupire kriptovalute. Bitcoin se stabilizira u zoni $63k nakon što je krajem lipnja nakratko pao ispod $60k, dok Fear & Greed index signalizira strah (~30). Očekujemo nastavak volatilnosti uz mogući oporavak altcoina ako BTC zadrži podršku na $62k.",
     "warActive":  false,
-    "btcDom":  56.0,
-    "stableDom":  14.3,
-    "oil":  76.60
+    "btcDom":  55.5,
+    "stableDom":  14,
+    "oil":  68
 }
