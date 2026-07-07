@@ -8876,25 +8876,25 @@
   ],
   "signalWeights": {
     "_global": {
-      "rsiOversold": 0.903,
+      "rsiOversold": 0.876,
       "rsiOverbought": 1,
-      "trendUp": 0.491,
-      "trendDown": 1.795,
+      "trendUp": 0.542,
+      "trendDown": 1.689,
       "bbBelow": 1,
-      "divBullish": 1.194,
-      "divBearish": 0.509,
+      "divBullish": 1.318,
+      "divBearish": 0.5,
       "macdBullCross": 1,
       "macdBearCross": 1,
       "lsRatioBull": 1,
       "lsRatioExtreme": 1,
-      "basisBack": 0.943,
+      "basisBack": 0.908,
       "takerSell": 1,
       "btcDomHigh": 1,
       "btcDomLow": 1,
-      "volSpike": 1.423,
-      "mtfAllUp": 0.436,
-      "fgExtremeFear": 1.183,
-      "fgFear": 0.579
+      "volSpike": 1.334,
+      "mtfAllUp": 0.51,
+      "fgExtremeFear": 1.313,
+      "fgFear": 0.545
     },
     "BEAR": {
       "rsiOversold": 1,
@@ -9715,11 +9715,24 @@
       "conf": 40,
       "score": 0.65,
       "verdict": "🔵 Spekulativno",
+      "graded": true,
+      "correct": true,
+      "fwdPrice": 68456,
+      "fwdPct": 0
+    },
+    {
+      "ts": 1783450862814,
+      "price": 68456,
+      "dir": "DOWN",
+      "th": 2.4,
+      "conf": 32,
+      "score": -2.45,
+      "verdict": "🔴 Preskoči",
       "graded": false,
       "correct": null,
       "fwdPrice": null,
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-07-06T11:46:39.182Z"
+  "updatedAt": "2026-07-07T19:01:05.908Z"
 }
