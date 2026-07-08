@@ -17,10 +17,10 @@
       "conf": 70,
       "score": 12.463,
       "targetPct": 10,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "PROMAŠAJ",
+      "closePrice": 463.79,
+      "closePct": -6.61,
+      "autoClose": true,
       "direction": "LONG",
       "autoTrack": true,
       "autoSource": "ulaz",
@@ -52,7 +52,8 @@
       "d4Hit": false,
       "d5Hit": false,
       "peakPrice": 496.61,
-      "peakPct": 0
+      "peakPct": 0,
+      "closeReason": "🛑 Stop-loss (24/7)"
     },
     {
       "id": "1783338396179_ATOM",
@@ -9736,5 +9737,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-07-07T19:17:55.990Z"
+  "updatedAt": "2026-07-08T09:54:44.845Z"
 }
