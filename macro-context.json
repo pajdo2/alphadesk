@@ -1,7 +1,7 @@
 {
-    "dxy":  101.07,
-    "changeSummary":  "F&G indeks pao s 53 na 24 (ekstremni strah), a DXY blago porastao na 101.07, što zajedno signalizira prelazak iz VOLATILE u BEAR režim.",
-    "lastUpdated":  "2026-07-06T12:30:00Z",
+    "dxy":  101.0,
+    "changeSummary":  "Prva prava analiza: BTC ~$63.7K u oporavku, DXY ~101, F&G pao na 24 (Ekstremni strah) uz rotaciju kapitala iz BTC-a u altcoine.",
+    "lastUpdated":  "2026-07-08T12:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -13,7 +13,7 @@
 
                                ],
                      "XRP":  [
-
+                                 "Pad 7% na četveromjesečne minimume"
                              ],
                      "BNB":  [
 
@@ -61,11 +61,10 @@
 
                               ],
                      "TRUMP":  [
-                                   "TRUMP koin pao 97% od ATH, trguje na ~$400M"
+                                   "97% pad od vrha, ~990K investitora izgubilo $3.81B"
                                ],
                      "BTC":  [
-                                 "F&G na 24 - ekstremni strah, moguć nastavak pada",
-                                 "Tržišna kap ispod $1.3T - medvjeđi signal"
+                                 "Otvoreni interes opada, dovodi u pitanje oporavak"
                              ]
                  },
     "catalysts":  {
@@ -73,25 +72,25 @@
 
                               ],
                       "MEME":  [
-                                   "Meme2.0 trend: projekti grade dugoročne brendove"
+
                                ],
                       "ANIME":  [
 
                                 ],
                       "XRP":  [
-                                  "Spot XRP ETF: kontinuirani neto priljevi fondova"
+                                  "MiCA regulatorna usklađenost u Europi"
                               ],
                       "BNB":  [
 
                               ],
                       "SUI":  [
-
+                                  "Robinhood Europe perpetualni ugovori prošireni"
                               ],
                       "AVAX":  [
 
                                ],
                       "PENGU":  [
-                                    "Canary Capital podnio zahtjev za PENGU ETF"
+
                                 ],
                       "BOME":  [
 
@@ -103,13 +102,13 @@
 
                               ],
                       "PEOPLE":  [
-                                     "CLARITY Act u Senatu - glasanje očekivano uskoro"
+
                                  ],
                       "SOL":  [
-                                  "Alpenglow consensus upgrade: Q3 2026, 150ms"
+                                  "Rekordna on-chain aktivnost, tokenizirana imovina ATH"
                               ],
                       "ADA":  [
-
+                                  "Robinhood Europe perpetualni ugovori prošireni"
                               ],
                       "PNUT":  [
 
@@ -118,11 +117,10 @@
 
                                 ],
                       "ETH":  [
-                                  "Glamsterdam upgrade planiran za H2 2026",
-                                  "Vitalik roadmap: kvantna otpornost"
+                                  "Tokenizacija S&P 500 ETF i dionica na Ethereumu"
                               ],
                       "LINK":  [
-
+                                   "Robinhood Europe perpetualni ugovori prošireni"
                                ],
                       "PUMP":  [
 
@@ -131,7 +129,7 @@
 
                                 ],
                       "BTC":  [
-                                  "SEC javna komentarisanja o novel ETF-ovima do 23.7."
+                                  "Pozitivni ETF priljevi, Fed rezanje kamate u igri"
                               ]
                   },
     "fearGreed":  24,
@@ -139,30 +137,30 @@
     "regime":  "BEAR",
     "sentimentScore":  {
                            "ACT":  0,
-                           "MEME":  1,
+                           "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  2,
+                           "XRP":  1,
                            "BNB":  0,
-                           "SUI":  0,
+                           "SUI":  1,
                            "AVAX":  0,
-                           "PENGU":  2,
+                           "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
-                           "PEOPLE":  1,
-                           "SOL":  1,
-                           "ADA":  0,
+                           "PEOPLE":  0,
+                           "SOL":  2,
+                           "ADA":  1,
                            "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  1,
-                           "LINK":  0,
+                           "ETH":  2,
+                           "LINK":  1,
                            "PUMP":  0,
-                           "TRUMP":  -1,
-                           "BTC":  -1
+                           "TRUMP":  -2,
+                           "BTC":  1
                        },
-    "aiSummary":  "BTC trguje oko $63.500 dok F&G indeks pada na 24 (ekstremni strah), potvrđujući prelazak u BEAR režim uz DXY koji blago raste na 101.07. Oil je stabilan na $68 bez značajnijeg makro pritiska, a stablecoin tržišna kap od $290B ukazuje na bijeg investitora u sigurna sredstva. Ključna razina podrške za BTC je $60k - zadržavanje te razine uvjet je za potencijalni oporavak, dok proboj ispod donosi rizik daljnjeg pada.",
+    "aiSummary":  "DXY drži ispod 101 pod pritiskom slabih podataka o radnim mjestima koji pojačavaju nade za rezanje kamate Fed-a. Fear & Greed indeks je na razini 24 (Ekstremni strah), ali BTC se vraća iznad $63K uz pozitivne ETF priljeve BlackRocka. Altcoini poput SOL-a i ETH-a pokazuju znakove rotacije kapitala uz fundamentalne katalizatore.",
     "warActive":  false,
     "btcDom":  55.5,
-    "stableDom":  13,
-    "oil":  68
+    "stableDom":  7.0,
+    "oil":  69.0
 }
