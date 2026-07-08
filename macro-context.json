@@ -1,7 +1,7 @@
 {
-    "dxy":  101.0,
-    "changeSummary":  "Prva prava analiza: BTC ~$63.7K u oporavku, DXY ~101, F&G pao na 24 (Ekstremni strah) uz rotaciju kapitala iz BTC-a u altcoine.",
-    "lastUpdated":  "2026-07-08T12:00:00Z",
+    "dxy":  100.9,
+    "changeSummary":  "Makro uvjeti ostaju gotovo nepromijenjeni - DXY blago pao na 100.9, Fear & Greed i BTC dominance zadržavaju prethodne razine, dok XRP bilježi regulatorni proboj u svih 30 EEA zemalja.",
+    "lastUpdated":  "2026-07-08T14:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -13,7 +13,7 @@
 
                                ],
                      "XRP":  [
-                                 "Pad 7% na četveromjesečne minimume"
+
                              ],
                      "BNB":  [
 
@@ -61,10 +61,10 @@
 
                               ],
                      "TRUMP":  [
-                                   "97% pad od vrha, ~990K investitora izgubilo $3.81B"
+                                 "TRUMP memecoin investitori kumulativno izgubili $3.8B"
                                ],
                      "BTC":  [
-                                 "Otvoreni interes opada, dovodi u pitanje oporavak"
+                               "Strategy prodao 3.588 BTC za $216M, BTC pao ~$1K"
                              ]
                  },
     "catalysts":  {
@@ -78,13 +78,13 @@
 
                                 ],
                       "XRP":  [
-                                  "MiCA regulatorna usklađenost u Europi"
+                                "Ripple odobren u svih 30 zemalja EEA za kripto plaćanja"
                               ],
                       "BNB":  [
 
                               ],
                       "SUI":  [
-                                  "Robinhood Europe perpetualni ugovori prošireni"
+
                               ],
                       "AVAX":  [
 
@@ -105,10 +105,10 @@
 
                                  ],
                       "SOL":  [
-                                  "Rekordna on-chain aktivnost, tokenizirana imovina ATH"
+                               "Rotacija kapitala iz BTC-a u altcoins, SOL profitira"
                               ],
                       "ADA":  [
-                                  "Robinhood Europe perpetualni ugovori prošireni"
+
                               ],
                       "PNUT":  [
 
@@ -117,10 +117,10 @@
 
                                 ],
                       "ETH":  [
-                                  "Tokenizacija S&P 500 ETF i dionica na Ethereumu"
+                               "ETH skočio 5%+ na najavama rezanja kamate Fed-a"
                               ],
                       "LINK":  [
-                                   "Robinhood Europe perpetualni ugovori prošireni"
+
                                ],
                       "PUMP":  [
 
@@ -129,7 +129,7 @@
 
                                 ],
                       "BTC":  [
-                                  "Pozitivni ETF priljevi, Fed rezanje kamate u igri"
+                               "Fed rate cut nade podupiru BTC oporavak iznad $63K"
                               ]
                   },
     "fearGreed":  24,
@@ -139,28 +139,28 @@
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  1,
+                           "XRP":  2,
                            "BNB":  0,
-                           "SUI":  1,
+                           "SUI":  0,
                            "AVAX":  0,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  2,
-                           "ADA":  1,
+                           "SOL":  1,
+                           "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  2,
-                           "LINK":  1,
+                           "ETH":  1,
+                           "LINK":  0,
                            "PUMP":  0,
                            "TRUMP":  -2,
-                           "BTC":  1
+                           "BTC":  -1
                        },
-    "aiSummary":  "DXY drži ispod 101 pod pritiskom slabih podataka o radnim mjestima koji pojačavaju nade za rezanje kamate Fed-a. Fear & Greed indeks je na razini 24 (Ekstremni strah), ali BTC se vraća iznad $63K uz pozitivne ETF priljeve BlackRocka. Altcoini poput SOL-a i ETH-a pokazuju znakove rotacije kapitala uz fundamentalne katalizatore.",
+    "aiSummary":  "DXY ostaje ispod 101 na razini 100.9, pod pritiskom slabih podataka o radnim mjestima koji pojačavaju nade za rezanje kamate Fed-a u rujnu. Fear & Greed indeks zadržava razinu 24 (Ekstremni strah), dok se BTC stabilizirao oko $63.5K unatoč Strategy prodaji od 3.588 BTC. XRP bilježi regulatorni proboj s odobrenjem za svih 30 EEA zemalja, dok altcoini ETH i SOL pokazuju relativnu snagu uz rotaciju kapitala.",
     "warActive":  false,
     "btcDom":  55.5,
-    "stableDom":  7.0,
-    "oil":  69.0
+    "stableDom":  13.0,
+    "oil":  70.0
 }
