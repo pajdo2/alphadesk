@@ -1,7 +1,7 @@
 {
     "dxy":  100.9,
-    "changeSummary":  "Makro uvjeti ostaju gotovo nepromijenjeni - DXY blago pao na 100.9, Fear & Greed i BTC dominance zadržavaju prethodne razine, dok XRP bilježi regulatorni proboj u svih 30 EEA zemalja.",
-    "lastUpdated":  "2026-07-08T14:00:00Z",
+    "changeSummary":  "BTC pao na ~$62K uz rekordno niske Coinbase premije i US-Iran geopolitički rizik, no Bitcoin ETF-ovi prekidaju 10-dnevni niz gubitaka ($221M), a Intesa Sanpaolo ulaže $18M u XRP.",
+    "lastUpdated":  "2026-07-08T18:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -13,7 +13,7 @@
 
                                ],
                      "XRP":  [
-
+                         "XRP stagnira na $1.14, slabi volumen"
                              ],
                      "BNB":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-
+                         "ETH -1.3%, nestabilan nakon spot prodaje"
                              ],
                      "LINK":  [
 
@@ -61,10 +61,11 @@
 
                               ],
                      "TRUMP":  [
-                                 "TRUMP memecoin investitori kumulativno izgubili $3.8B"
+                         "Kumulativni gubitak investitora: $3.8B"
                                ],
                      "BTC":  [
-                               "Strategy prodao 3.588 BTC za $216M, BTC pao ~$1K"
+                         "Coinbase Premium na rekordnim minimumima",
+                         "BTC pao na $62K, slaba US potražnja"
                              ]
                  },
     "catalysts":  {
@@ -78,7 +79,8 @@
 
                                 ],
                       "XRP":  [
-                                "Ripple odobren u svih 30 zemalja EEA za kripto plaćanja"
+                          "Intesa Sanpaolo $18M ulaganje u Grayscale XRP",
+                          "EEA regulatorno odobrenje za 30 EU zemalja"
                               ],
                       "BNB":  [
 
@@ -105,7 +107,7 @@
 
                                  ],
                       "SOL":  [
-                               "Rotacija kapitala iz BTC-a u altcoins, SOL profitira"
+
                               ],
                       "ADA":  [
 
@@ -117,7 +119,7 @@
 
                                 ],
                       "ETH":  [
-                               "ETH skočio 5%+ na najavama rezanja kamate Fed-a"
+
                               ],
                       "LINK":  [
 
@@ -129,17 +131,18 @@
 
                                 ],
                       "BTC":  [
-                               "Fed rate cut nade podupiru BTC oporavak iznad $63K"
+                          "BTC ETF ulivanje $221M - prekid 10 dana gubitaka",
+                          "Fed rezanje kamate u rujnu - nade rastu"
                               ]
                   },
     "fearGreed":  24,
-    "macroPenalty":  0,
+    "macroPenalty":  2,
     "regime":  "BEAR",
     "sentimentScore":  {
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  2,
+                           "XRP":  1,
                            "BNB":  0,
                            "SUI":  0,
                            "AVAX":  0,
@@ -148,19 +151,19 @@
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  1,
+                           "SOL":  0,
                            "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  1,
+                           "ETH":  -1,
                            "LINK":  0,
                            "PUMP":  0,
-                           "TRUMP":  -2,
-                           "BTC":  -1
+                           "TRUMP":  -1,
+                           "BTC":  0
                        },
-    "aiSummary":  "DXY ostaje ispod 101 na razini 100.9, pod pritiskom slabih podataka o radnim mjestima koji pojačavaju nade za rezanje kamate Fed-a u rujnu. Fear & Greed indeks zadržava razinu 24 (Ekstremni strah), dok se BTC stabilizirao oko $63.5K unatoč Strategy prodaji od 3.588 BTC. XRP bilježi regulatorni proboj s odobrenjem za svih 30 EEA zemalja, dok altcoini ETH i SOL pokazuju relativnu snagu uz rotaciju kapitala.",
-    "warActive":  false,
+    "aiSummary":  "DXY zadržava razinu 100.9 pod pritiskom slabih podataka o zapošljavanju, pojačavajući nade za rezanje kamate Fed-a u rujnu dok je US-Iran geopolitička napetost podigla rizik averziju. Fear & Greed ostaje na 24 (Ekstremni strah), BTC kruži oko $62-63K uz rekordno niske Coinbase premije, no US spot Bitcoin ETF-ovi prekidaju 10-dnevni niz gubitaka s $221M ulivanja. XRP dobiva institucionalnu potporu od Intesa Sanpaolo ($18M), dok EU razmatra strožu regulaciju, a SEC-ova pozitivna agenda nudi dugoročni optimizam.",
+    "warActive":  true,
     "btcDom":  55.5,
-    "stableDom":  13.0,
+    "stableDom":  10.5,
     "oil":  70.0
 }
