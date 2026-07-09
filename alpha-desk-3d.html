@@ -423,7 +423,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.150</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.151</span></div>
       <div class="hd-sub" id="hdsub">Učitavam top 100 tokena…</div>
       <div class="hd-claude" id="claude-update" style="display:flex;align-items:center;gap:6px">
         <span id="claude-update-txt">🤖 Claude analiza: —</span>
@@ -4917,41 +4917,54 @@ function hcDayMilestones(sorted){
 }
 
 // ── CONFIDENCE BUCKET KALIBRACIJA ────────────────────────────────
-// Prikazuje jesu li prognozirana conf% konzistentna sa stvarnom točnošću
-// Idealno: predikcija s conf 70% treba imati ~70% win rate
+// Prikazuje KOLIKO je bilo točnih pogodaka po rasponu procjene pouzdanosti.
+// Tri glavna raspona (50-60, 60-70, 70-80) UVIJEK se prikazuju — i kad nema
+// podataka — plus rubni 40-50 i 80%+ kad imaju barem 1 trade.
+// Idealno: predikcija s conf 70% treba imati ~70% win rate.
 function hcConfBuckets(sorted){
-  if(sorted.length<5)return'';
+  if(sorted.length<3)return'';
   var buckets=[
-    {label:"40-49%",min:40,max:50,hits:0,total:0},
-    {label:"50-59%",min:50,max:60,hits:0,total:0},
-    {label:"60-69%",min:60,max:70,hits:0,total:0},
-    {label:"70-79%",min:70,max:80,hits:0,total:0},
-    {label:"80%+",  min:80,max:101,hits:0,total:0}
+    {label:"40–50%",min:40,max:50,hits:0,total:0,core:false},
+    {label:"50–60%",min:50,max:60,hits:0,total:0,core:true},
+    {label:"60–70%",min:60,max:70,hits:0,total:0,core:true},
+    {label:"70–80%",min:70,max:80,hits:0,total:0,core:true},
+    {label:"80%+",  min:80,max:101,hits:0,total:0,core:false}
   ];
   sorted.forEach(function(p){
     var c=p.conf||0;
     buckets.forEach(function(b){if(c>=b.min&&c<b.max){b.total++;if(p.status==="POGODAK")b.hits++;}});
   });
-  var valid=buckets.filter(function(b){return b.total>=2;});
-  if(!valid.length)return'';
-  var h='<div style="margin-bottom:14px"><div style="font-size:10px;color:var(--t3);font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px">Kalibracija confidence (prognoza vs stvarnost)</div>';
-  valid.forEach(function(b){
+  // Uvijek prikaži 3 glavna raspona; rubne (40-50, 80+) samo kad imaju uzorke
+  var show=buckets.filter(function(b){return b.core||b.total>0;});
+  if(!show.length)return'';
+  var h='<div style="margin-bottom:14px"><div style="font-size:10px;color:var(--t3);font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px">Točnost pogodaka po procjeni</div>';
+  show.forEach(function(b){
+    if(b.total===0){
+      // Nema tradova u ovom rasponu — prikaži prazan red da korisnik zna da raspon postoji
+      h+='<div style="display:flex;align-items:center;gap:8px;margin-bottom:5px;opacity:.45">';
+      h+='<div style="width:46px;font-size:10px;font-weight:700;color:var(--t3)">'+b.label+'</div>';
+      h+='<div style="flex:1;height:16px;background:var(--s3);border-radius:4px"></div>';
+      h+='<div style="width:30px;font-size:11px;font-weight:800;color:var(--t4);text-align:right">—</div>';
+      h+='<div style="font-size:10px;color:var(--t4);width:70px;text-align:right">0 tradova</div>';
+      h+='</div>';
+      return;
+    }
     var actual=b.hits/b.total*100;
     var midConf=(b.min+Math.min(b.max-1,b.min+9))/2;
     var diff=actual-midConf;
     var accCol=actual>=60?"#00e676":actual>=40?"#ffea00":"#ff1744";
-    var diffStr=diff>5?'<span style="color:#ff6d00;font-size:9px"> ▲ precijenjeno</span>':diff<-5?'<span style="color:#2979ff;font-size:9px"> ▼ konzervativno</span>':'<span style="color:#00e676;font-size:9px"> ✓ kalibirano</span>';
+    var diffStr=b.total<3?'<span style="color:var(--t4);font-size:9px"> malo uzoraka</span>':diff>5?'<span style="color:#ff6d00;font-size:9px"> ▲ precijenjeno</span>':diff<-5?'<span style="color:#2979ff;font-size:9px"> ▼ konzervativno</span>':'<span style="color:#00e676;font-size:9px"> ✓ kalibirano</span>';
     h+='<div style="display:flex;align-items:center;gap:8px;margin-bottom:5px">';
-    h+='<div style="width:40px;font-size:10px;font-weight:700;color:var(--t3)">'+b.label+'</div>';
+    h+='<div style="width:46px;font-size:10px;font-weight:700;color:var(--t3)">'+b.label+'</div>';
     h+='<div style="flex:1;height:16px;background:var(--s3);border-radius:4px;overflow:hidden;position:relative">';
     h+='<div style="height:100%;width:'+actual.toFixed(0)+'%;background:'+accCol+';opacity:.6;border-radius:4px"></div>';
     h+='</div>';
-    h+='<div style="width:32px;font-size:11px;font-weight:800;color:'+accCol+';text-align:right">'+actual.toFixed(0)+'%</div>';
-    h+='<div style="font-size:10px;color:var(--t4);width:24px;text-align:right">'+b.hits+'/'+b.total+'</div>';
+    h+='<div style="width:30px;font-size:11px;font-weight:800;color:'+accCol+';text-align:right">'+actual.toFixed(0)+'%</div>';
+    h+='<div style="font-size:10px;color:var(--t4);width:70px;text-align:right">'+b.hits+'/'+b.total+' pogodaka</div>';
     h+=diffStr;
     h+='</div>';
   });
-  h+='<div style="font-size:10px;color:var(--t4);margin-top:4px">Idealno: conf 60-69% → ~60% pogodaka · conf 70-79% → ~70% pogodaka</div>';
+  h+='<div style="font-size:10px;color:var(--t4);margin-top:4px">Idealno: procjena 60–70% → ~60% pogodaka · 70–80% → ~70% pogodaka</div>';
   h+='</div>';
   return h;
 }
@@ -5056,7 +5069,6 @@ function renderMiniSuccessChart(sorted){
   // Sub-analiza odmah ispod grafa — D-milestoni, conf kalibracija, token perf, insights
   if(sorted.length>=3){
     h+=hcDayMilestones(sorted);
-    h+=hcConfCalib(sorted);
     h+=hcConfBuckets(sorted);
     h+=hcTokenPerf(sorted);
     h+=hcInsights(sorted);
@@ -9776,7 +9788,7 @@ function disableNotifs(){
   showToast("Notifikacije isključene");render();
 }
 
-// emitEntryNotif uklonjen (v5.150) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
+// emitEntryNotif uklonjen (v5.151) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
 // Bila mrtva funkcija (nula poziva); uklonjena da se ne može slučajno ponovno spojiti.
 
 // ── EXIT NOTIFICATION — SAMO 2 TIPA (po korisnikovom zahtjevu) ──
