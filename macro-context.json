@@ -1,6 +1,6 @@
 {
-    "dxy":  100.9,
-    "changeSummary":  "BTC pao na ~$62K uz rekordno niske Coinbase premije i US-Iran geopolitički rizik, no Bitcoin ETF-ovi prekidaju 10-dnevni niz gubitaka ($221M), a Intesa Sanpaolo ulaže $18M u XRP.",
+    "dxy":  101.2,
+    "changeSummary":  "US-Iran sukobi eskalirali do vojnih udaraca, nafta skočila 5% na $74, DXY ojačao na 101.2, BTC klizao na ~$62K uz nepromijenjeni strah od 24.",
     "lastUpdated":  "2026-07-08T18:00:00Z",
     "warnings":  {
                      "ACT":  [
@@ -13,7 +13,7 @@
 
                                ],
                      "XRP":  [
-                         "XRP stagnira na $1.14, slabi volumen"
+
                              ],
                      "BNB":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-                         "ETH -1.3%, nestabilan nakon spot prodaje"
+                               "ETH spot rasprodaja, cijena pala na $1,733"
                              ],
                      "LINK":  [
 
@@ -61,11 +61,10 @@
 
                               ],
                      "TRUMP":  [
-                         "Kumulativni gubitak investitora: $3.8B"
+                                "Geopolitička napetost US-Iran negativna za meme tokene"
                                ],
                      "BTC":  [
-                         "Coinbase Premium na rekordnim minimumima",
-                         "BTC pao na $62K, slaba US potražnja"
+                               "US-Iran vojni udari podižu rizik averziju, BTC pada"
                              ]
                  },
     "catalysts":  {
@@ -79,8 +78,7 @@
 
                                 ],
                       "XRP":  [
-                          "Intesa Sanpaolo $18M ulaganje u Grayscale XRP",
-                          "EEA regulatorno odobrenje za 30 EU zemalja"
+                                "SEC 2026 regulatorna agenda pozitivna za XRP"
                               ],
                       "BNB":  [
 
@@ -131,8 +129,7 @@
 
                                 ],
                       "BTC":  [
-                          "BTC ETF ulivanje $221M - prekid 10 dana gubitaka",
-                          "Fed rezanje kamate u rujnu - nade rastu"
+                                "SEC 2026 regulatorna agenda pozitivna za kripto dugoročno"
                               ]
                   },
     "fearGreed":  24,
@@ -159,11 +156,11 @@
                            "LINK":  0,
                            "PUMP":  0,
                            "TRUMP":  -1,
-                           "BTC":  0
+                           "BTC":  -1
                        },
-    "aiSummary":  "DXY zadržava razinu 100.9 pod pritiskom slabih podataka o zapošljavanju, pojačavajući nade za rezanje kamate Fed-a u rujnu dok je US-Iran geopolitička napetost podigla rizik averziju. Fear & Greed ostaje na 24 (Ekstremni strah), BTC kruži oko $62-63K uz rekordno niske Coinbase premije, no US spot Bitcoin ETF-ovi prekidaju 10-dnevni niz gubitaka s $221M ulivanja. XRP dobiva institucionalnu potporu od Intesa Sanpaolo ($18M), dok EU razmatra strožu regulaciju, a SEC-ova pozitivna agenda nudi dugoročni optimizam.",
+    "aiSummary":  "DXY je porastao na 101.2 uslijed eskalacije US-Iran sukoba – američki vojni udari na Iran pokrenuli su skok naftinih cijena za 5% na $74/bbl i jačanje dolara kao sigurnog utočišta. Fear & Greed ostaje u ekstremnom strahu (24), BTC je klizao na ~$62K uz dominantnu rizik averziju, no SEC-ova pozitivna regulatorna agenda za 2026. pruža dugoročni optimizam za sektor. Kratkoročno, geopolitička eskalacija i rast inflacijskih pritisaka dominiraju sentimentom uz povećan rizik daljnjih padova.",
     "warActive":  true,
     "btcDom":  55.5,
-    "stableDom":  10.5,
-    "oil":  70.0
+    "stableDom":  8.5,
+    "oil":  74.0
 }
