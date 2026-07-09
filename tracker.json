@@ -22,8 +22,8 @@
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
-      "peakPrice": 0.00877,
-      "peakPct": 0
+      "peakPrice": 0.0088,
+      "peakPct": 0.34
     },
     {
       "id": "1783599101116",
@@ -47,8 +47,8 @@
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
-      "peakPrice": 0.00877,
-      "peakPct": 0
+      "peakPrice": 0.0088,
+      "peakPct": 0.34
     },
     {
       "id": "1783599097591",
@@ -72,8 +72,8 @@
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
-      "peakPrice": 0.0427,
-      "peakPct": 0
+      "peakPrice": 0.0428,
+      "peakPct": 0.23
     },
     {
       "id": "1783451963567_QNT",
@@ -7184,25 +7184,25 @@
   ],
   "signalWeights": {
     "_global": {
-      "rsiOversold": 0.858,
+      "rsiOversold": 0.904,
       "rsiOverbought": 1,
-      "trendUp": 0.516,
-      "trendDown": 1.622,
+      "trendUp": 0.515,
+      "trendDown": 1.618,
       "bbBelow": 1,
-      "divBullish": 1.288,
+      "divBullish": 1.285,
       "divBearish": 0.519,
       "macdBullCross": 1,
       "macdBearCross": 1,
       "lsRatioBull": 1,
       "lsRatioExtreme": 1,
-      "basisBack": 0.887,
+      "basisBack": 0.831,
       "takerSell": 1,
       "btcDomHigh": 1,
       "btcDomLow": 1,
-      "volSpike": 1.303,
+      "volSpike": 1.314,
       "mtfAllUp": 0.476,
-      "fgExtremeFear": 1.259,
-      "fgFear": 0.556
+      "fgExtremeFear": 1.256,
+      "fgFear": 0.548
     },
     "BEAR": {
       "rsiOversold": 1,
@@ -8066,7 +8066,33 @@
       "correct": null,
       "fwdPrice": null,
       "fwdPct": null
+    },
+    {
+      "ts": 1783601030440,
+      "price": 62782.68,
+      "dir": "DOWN",
+      "th": 2.3,
+      "conf": 28,
+      "score": -4.33,
+      "verdict": "🔴 Preskoči",
+      "graded": false,
+      "correct": null,
+      "fwdPrice": null,
+      "fwdPct": null
+    },
+    {
+      "ts": 1783603440696,
+      "price": 62839.3,
+      "dir": "NEUTRAL",
+      "th": 2.59,
+      "conf": 38,
+      "score": 0.67,
+      "verdict": "🔵 Spekulativno",
+      "graded": false,
+      "correct": null,
+      "fwdPrice": null,
+      "fwdPct": null
     }
   ],
-  "updatedAt": "2026-07-09T12:11:47.756Z"
+  "updatedAt": "2026-07-09T13:24:20.377Z"
 }
