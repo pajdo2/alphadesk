@@ -1,6 +1,6 @@
 {
     "dxy":  101.1,
-    "changeSummary":  "BTC pao na ~$59,700 (pad ~$2,400 vs jučer), F&G oslabio na 22, geopolitička eskalacija US-Iran nastavlja pritiskati tržište uz produbljivanje bear trenda.",
+    "changeSummary":  "Makro ostaje gotovo nepromijenjen - DXY stabilan na 101.1, FG i dalje 22 uz Bear rezim, no BTC se oporavio na ~$62,000 zahvaljujuci ETF influksima od $221M.",
     "lastUpdated":  "2026-07-09T12:00:00Z",
     "warnings":  {
                      "ACT":  [
@@ -13,7 +13,7 @@
 
                                ],
                      "XRP":  [
-
+                                 "Pad 3.9% u 24h uz SEC regulatorni pritisak"
                              ],
                      "BNB":  [
 
@@ -40,7 +40,7 @@
 
                                 ],
                      "SOL":  [
-                             "Pad -5.2% za 24h - najslabiji Large Cap danas"
+                                 "Pad 5.2% u 24h - najjaci pad medu top tokenima"
                              ],
                      "ADA":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-
+                                 "Pad 2.3% u 24h uz slab trzisni sentiment"
                              ],
                      "LINK":  [
 
@@ -61,10 +61,10 @@
 
                               ],
                      "TRUMP":  [
-                               "Geopoliticka neizvjesnost - Iran udari negativni"
+                                   "Trumpove Iran prijetnje pojacavaju geopoliticki rizik"
                                ],
                      "BTC":  [
-                             "Pad na $59,700 - gubitak podrske $62K razine"
+                                 "US-Iran vojni udari dize warActive premiju"
                              ]
                  },
     "catalysts":  {
@@ -78,7 +78,7 @@
 
                                 ],
                       "XRP":  [
-                              "MiCA compliance - Ripple puna EU regulatorna dozvola"
+                                  "Clearstream XRP custody - institucionalna Europa MiCAR"
                               ],
                       "BNB":  [
 
@@ -87,7 +87,7 @@
 
                               ],
                       "AVAX":  [
-
+                                   "Clearstream AVAX custody - institucionalci"
                                ],
                       "PENGU":  [
 
@@ -105,10 +105,10 @@
 
                                  ],
                       "SOL":  [
-
+                                  "Clearstream SOL custody - institucionalci"
                               ],
                       "ADA":  [
-
+                                  "Clearstream ADA custody - institucionalci"
                               ],
                       "PNUT":  [
 
@@ -117,7 +117,7 @@
 
                                 ],
                       "ETH":  [
-                              "SEC Reg Crypto agenda - regulatorna jasnoca srpanj 2026"
+                                  "Clearstream ETH custody - EUR 22T imovina institucionalaca"
                               ],
                       "LINK":  [
 
@@ -129,7 +129,8 @@
 
                                 ],
                       "BTC":  [
-                              "ETF influksi $221M - lomljenje 10-dnevnog niza gubitaka"
+                                  "ETF influksi $221M - najveci u 2 mj; streak prekinut",
+                                  "SEC Regulation Crypto agenda - srpanj 2026"
                               ]
                   },
     "fearGreed":  22,
@@ -139,10 +140,10 @@
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  2,
+                           "XRP":  0,
                            "BNB":  0,
                            "SUI":  0,
-                           "AVAX":  0,
+                           "AVAX":  1,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
@@ -152,15 +153,15 @@
                            "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  0,
+                           "ETH":  -1,
                            "LINK":  0,
                            "PUMP":  0,
                            "TRUMP":  -1,
                            "BTC":  1
                        },
-    "aiSummary":  "DXY ostaje stabilan oko 101.1 dok geopoliticka napetost zbog US-Iran vojnih udara drzi warActive premiju i gusi apetit za rizicnom imovinom. Fear & Greed pada na 22 (ekstremni strah), BTC klizi na ~$59,700 no institucionalni ETF influksi od $221M i SEC-ova Regulation Crypto agenda za srpanj signaliziraju dugorocni optimizam. Kratkorocno bear trend dominira uz macroPenalty od 2, a daljnja geopoliticka eskalacija ostaje kljucni rizik.",
+    "aiSummary":  "DXY ostaje stabilan oko 101.1 dok US-Iran napetost eskalira novim vojnim udarima i prijetnjom blokade naftnih luka, drzeci warActive premiju na macroPenalty. Fear & Greed indeks ostaje na 22 (ekstremni strah) uz BTC na ~$62,000 - oporavak od $59,700 zahvaljujuci ETF influksima od $221M koji su prekinuli 10-dnevni niz odljeva. Bear rezim dominira uz macroPenalty od 2, dok SEC Regulation Crypto agenda za srpanj i Clearstream institucionalni custody (XRP, SOL, ADA, AVAX) donose dugorocni optimizam.",
     "warActive":  true,
     "btcDom":  55.5,
-    "stableDom":  14.1,
-    "oil":  76.0
+    "stableDom":  13.6,
+    "oil":  78.2
 }
