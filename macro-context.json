@@ -1,7 +1,7 @@
 {
     "dxy":  101.1,
-    "changeSummary":  "BTC se oporavio iznad $63K, BNB Chain najavljuje novi Layer-1 za agentno trading, dok AscendEX gasi operacije zbog MiCA - macro i sentiment ostaju nepromijenjeni.",
-    "lastUpdated":  "2026-07-09T13:00:00Z",
+    "changeSummary":  "Oil blago porastao na $79.3 (Brent) zbog daljnje eskalacije US-Iran napetosti, dok DXY, Fear & Greed i bear rezim ostaju nepromijenjeni uz iste razine macroPenalty.",
+    "lastUpdated":  "2026-07-09T13:30:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-                               "Zapper DeFi platforma gasi se 3. kolovoza"
+                               "Pad -1.5%, bearish makro sentiment"
                              ],
                      "LINK":  [
 
@@ -61,11 +61,10 @@
 
                               ],
                      "TRUMP":  [
-
+                                "US-Iran napetosti povecavaju volatilnost"
                                ],
                      "BTC":  [
-                               "US-Iran napetosti drze geopoliticki pritisak",
-                               "Coinbase Premium negativan 50+ dana - slaba US potraznja"
+                               "Coinbase Premium negativan 50+ dana, slaba US potraznja"
                              ]
                  },
     "catalysts":  {
@@ -79,16 +78,16 @@
 
                                 ],
                       "XRP":  [
-                                "Clearstream institucionalni custody podrska"
+                                "Clearstream custody + Robinhood EU perps lansiranje"
                               ],
                       "BNB":  [
-                                "Novi Layer-1 blockchain za agentno trading <50ms"
+                                "Novi Layer-1 za agentno trading ispod 50ms"
                               ],
                       "SUI":  [
 
                               ],
                       "AVAX":  [
-                                "Clearstream institucionalni custody podrska"
+                                "Clearstream custody prosirenje u Europi"
                                ],
                       "PENGU":  [
 
@@ -106,10 +105,10 @@
 
                                  ],
                       "SOL":  [
-                               "Clearstream institucionalni custody podrska"
+                                "MoneyGram validator + OUSD stablecoin na Solani"
                               ],
                       "ADA":  [
-                               "Clearstream institucionalni custody podrska"
+                                "Grayscale GADA ETF filing + van Rossem hard fork"
                               ],
                       "PNUT":  [
 
@@ -130,9 +129,8 @@
 
                                 ],
                       "BTC":  [
-                               "ETF inflows $221M prekinuli 10-dnevni niz odljeva",
-                               "Oporavak iznad $63K nakon geopoliticke panike"
-                             ]
+                                "Oporavak iznad $63K unatoc geopolitickim napetostima"
+                              ]
                   },
     "fearGreed":  22,
     "macroPenalty":  2,
@@ -142,7 +140,7 @@
                            "MEME":  0,
                            "ANIME":  0,
                            "XRP":  1,
-                           "BNB":  1,
+                           "BNB":  2,
                            "SUI":  0,
                            "AVAX":  1,
                            "PENGU":  0,
@@ -150,19 +148,19 @@
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  1,
+                           "SOL":  2,
                            "ADA":  1,
                            "PNUT":  0,
                            "AIXBT":  0,
                            "ETH":  0,
                            "LINK":  0,
                            "PUMP":  0,
-                           "TRUMP":  0,
+                           "TRUMP":  -1,
                            "BTC":  1
                        },
-    "aiSummary":  "DXY ostaje stabilan oko 101.1 dok US-Iran napetosti nastavljaju drzati warActive premiju na macroPenalty od 2. Fear & Greed indeks na 22 (ekstremni strah) uz BTC koji se oporavio iznad $63,000 - bear rezim ostaje nepromijenjen uz slabu US potranznju (Coinbase Premium negativan 50+ dana). BNB Chain najavljuje novi Layer-1 za agentno trading ispod 50ms, a Clearstream podrska za XRP/SOL/ADA/AVAX donosi dugorocni institucionalni optimizam.",
+    "aiSummary":  "DXY stabilno oko 101.1 bez dodatnog pritiska na kriptotrziste, dok eskalacija US-Iran napetosti (warActive) drzi macroPenalty na 2 i gura Brent naftu na $79.3. Fear & Greed ostaje na 22 (ekstremni strah) uz BTC koji se drzi iznad $63K ali bear rezim traje - Coinbase Premium negativan 50+ dana signalizira slabu US potraznju. Institucionalni katalizatori (Clearstream za XRP/SOL/ADA/AVAX, MoneyGram na Solani, Grayscale GADA ETF, BNB Layer-1) nude dugorocni optimizam no kratkorocno dominiraju geopoliticki rizici.",
     "warActive":  true,
-    "btcDom":  56.0,
-    "stableDom":  13.1,
-    "oil":  78.2
+    "btcDom":  56.1,
+    "stableDom":  13.2,
+    "oil":  79.3
 }
