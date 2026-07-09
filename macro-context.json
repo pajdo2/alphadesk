@@ -1,7 +1,7 @@
 {
     "dxy":  101.1,
-    "changeSummary":  "Makro ostaje gotovo nepromijenjen - DXY stabilan na 101.1, FG i dalje 22 uz Bear rezim, no BTC se oporavio na ~$62,000 zahvaljujuci ETF influksima od $221M.",
-    "lastUpdated":  "2026-07-09T12:00:00Z",
+    "changeSummary":  "BTC se oporavio iznad $63K, BNB Chain najavljuje novi Layer-1 za agentno trading, dok AscendEX gasi operacije zbog MiCA - macro i sentiment ostaju nepromijenjeni.",
+    "lastUpdated":  "2026-07-09T13:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -13,7 +13,7 @@
 
                                ],
                      "XRP":  [
-                                 "Pad 3.9% u 24h uz SEC regulatorni pritisak"
+
                              ],
                      "BNB":  [
 
@@ -40,7 +40,7 @@
 
                                 ],
                      "SOL":  [
-                                 "Pad 5.2% u 24h - najjaci pad medu top tokenima"
+
                              ],
                      "ADA":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-                                 "Pad 2.3% u 24h uz slab trzisni sentiment"
+                               "Zapper DeFi platforma gasi se 3. kolovoza"
                              ],
                      "LINK":  [
 
@@ -61,10 +61,11 @@
 
                               ],
                      "TRUMP":  [
-                                   "Trumpove Iran prijetnje pojacavaju geopoliticki rizik"
+
                                ],
                      "BTC":  [
-                                 "US-Iran vojni udari dize warActive premiju"
+                               "US-Iran napetosti drze geopoliticki pritisak",
+                               "Coinbase Premium negativan 50+ dana - slaba US potraznja"
                              ]
                  },
     "catalysts":  {
@@ -78,16 +79,16 @@
 
                                 ],
                       "XRP":  [
-                                  "Clearstream XRP custody - institucionalna Europa MiCAR"
+                                "Clearstream institucionalni custody podrska"
                               ],
                       "BNB":  [
-
+                                "Novi Layer-1 blockchain za agentno trading <50ms"
                               ],
                       "SUI":  [
 
                               ],
                       "AVAX":  [
-                                   "Clearstream AVAX custody - institucionalci"
+                                "Clearstream institucionalni custody podrska"
                                ],
                       "PENGU":  [
 
@@ -105,10 +106,10 @@
 
                                  ],
                       "SOL":  [
-                                  "Clearstream SOL custody - institucionalci"
+                               "Clearstream institucionalni custody podrska"
                               ],
                       "ADA":  [
-                                  "Clearstream ADA custody - institucionalci"
+                               "Clearstream institucionalni custody podrska"
                               ],
                       "PNUT":  [
 
@@ -117,7 +118,7 @@
 
                                 ],
                       "ETH":  [
-                                  "Clearstream ETH custody - EUR 22T imovina institucionalaca"
+
                               ],
                       "LINK":  [
 
@@ -129,9 +130,9 @@
 
                                 ],
                       "BTC":  [
-                                  "ETF influksi $221M - najveci u 2 mj; streak prekinut",
-                                  "SEC Regulation Crypto agenda - srpanj 2026"
-                              ]
+                               "ETF inflows $221M prekinuli 10-dnevni niz odljeva",
+                               "Oporavak iznad $63K nakon geopoliticke panike"
+                             ]
                   },
     "fearGreed":  22,
     "macroPenalty":  2,
@@ -140,8 +141,8 @@
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  0,
-                           "BNB":  0,
+                           "XRP":  1,
+                           "BNB":  1,
                            "SUI":  0,
                            "AVAX":  1,
                            "PENGU":  0,
@@ -149,19 +150,19 @@
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  -1,
-                           "ADA":  0,
+                           "SOL":  1,
+                           "ADA":  1,
                            "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  -1,
+                           "ETH":  0,
                            "LINK":  0,
                            "PUMP":  0,
-                           "TRUMP":  -1,
+                           "TRUMP":  0,
                            "BTC":  1
                        },
-    "aiSummary":  "DXY ostaje stabilan oko 101.1 dok US-Iran napetost eskalira novim vojnim udarima i prijetnjom blokade naftnih luka, drzeci warActive premiju na macroPenalty. Fear & Greed indeks ostaje na 22 (ekstremni strah) uz BTC na ~$62,000 - oporavak od $59,700 zahvaljujuci ETF influksima od $221M koji su prekinuli 10-dnevni niz odljeva. Bear rezim dominira uz macroPenalty od 2, dok SEC Regulation Crypto agenda za srpanj i Clearstream institucionalni custody (XRP, SOL, ADA, AVAX) donose dugorocni optimizam.",
+    "aiSummary":  "DXY ostaje stabilan oko 101.1 dok US-Iran napetosti nastavljaju drzati warActive premiju na macroPenalty od 2. Fear & Greed indeks na 22 (ekstremni strah) uz BTC koji se oporavio iznad $63,000 - bear rezim ostaje nepromijenjen uz slabu US potranznju (Coinbase Premium negativan 50+ dana). BNB Chain najavljuje novi Layer-1 za agentno trading ispod 50ms, a Clearstream podrska za XRP/SOL/ADA/AVAX donosi dugorocni institucionalni optimizam.",
     "warActive":  true,
-    "btcDom":  55.5,
-    "stableDom":  13.6,
+    "btcDom":  56.0,
+    "stableDom":  13.1,
     "oil":  78.2
 }
