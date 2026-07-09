@@ -1,7 +1,7 @@
 {
-    "dxy":  101.2,
-    "changeSummary":  "US-Iran sukobi eskalirali do vojnih udaraca, nafta skočila 5% na $74, DXY ojačao na 101.2, BTC klizao na ~$62K uz nepromijenjeni strah od 24.",
-    "lastUpdated":  "2026-07-08T18:00:00Z",
+    "dxy":  101.1,
+    "changeSummary":  "BTC pao na ~$59,700 (pad ~$2,400 vs jučer), F&G oslabio na 22, geopolitička eskalacija US-Iran nastavlja pritiskati tržište uz produbljivanje bear trenda.",
+    "lastUpdated":  "2026-07-09T12:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -40,7 +40,7 @@
 
                                 ],
                      "SOL":  [
-
+                             "Pad -5.2% za 24h - najslabiji Large Cap danas"
                              ],
                      "ADA":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-                               "ETH spot rasprodaja, cijena pala na $1,733"
+
                              ],
                      "LINK":  [
 
@@ -61,10 +61,10 @@
 
                               ],
                      "TRUMP":  [
-                                "Geopolitička napetost US-Iran negativna za meme tokene"
+                               "Geopoliticka neizvjesnost - Iran udari negativni"
                                ],
                      "BTC":  [
-                               "US-Iran vojni udari podižu rizik averziju, BTC pada"
+                             "Pad na $59,700 - gubitak podrske $62K razine"
                              ]
                  },
     "catalysts":  {
@@ -78,7 +78,7 @@
 
                                 ],
                       "XRP":  [
-                                "SEC 2026 regulatorna agenda pozitivna za XRP"
+                              "MiCA compliance - Ripple puna EU regulatorna dozvola"
                               ],
                       "BNB":  [
 
@@ -117,7 +117,7 @@
 
                                 ],
                       "ETH":  [
-
+                              "SEC Reg Crypto agenda - regulatorna jasnoca srpanj 2026"
                               ],
                       "LINK":  [
 
@@ -129,17 +129,17 @@
 
                                 ],
                       "BTC":  [
-                                "SEC 2026 regulatorna agenda pozitivna za kripto dugoročno"
+                              "ETF influksi $221M - lomljenje 10-dnevnog niza gubitaka"
                               ]
                   },
-    "fearGreed":  24,
+    "fearGreed":  22,
     "macroPenalty":  2,
     "regime":  "BEAR",
     "sentimentScore":  {
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  1,
+                           "XRP":  2,
                            "BNB":  0,
                            "SUI":  0,
                            "AVAX":  0,
@@ -148,19 +148,19 @@
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  0,
+                           "SOL":  -1,
                            "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  -1,
+                           "ETH":  0,
                            "LINK":  0,
                            "PUMP":  0,
                            "TRUMP":  -1,
-                           "BTC":  -1
+                           "BTC":  1
                        },
-    "aiSummary":  "DXY je porastao na 101.2 uslijed eskalacije US-Iran sukoba – američki vojni udari na Iran pokrenuli su skok naftinih cijena za 5% na $74/bbl i jačanje dolara kao sigurnog utočišta. Fear & Greed ostaje u ekstremnom strahu (24), BTC je klizao na ~$62K uz dominantnu rizik averziju, no SEC-ova pozitivna regulatorna agenda za 2026. pruža dugoročni optimizam za sektor. Kratkoročno, geopolitička eskalacija i rast inflacijskih pritisaka dominiraju sentimentom uz povećan rizik daljnjih padova.",
+    "aiSummary":  "DXY ostaje stabilan oko 101.1 dok geopoliticka napetost zbog US-Iran vojnih udara drzi warActive premiju i gusi apetit za rizicnom imovinom. Fear & Greed pada na 22 (ekstremni strah), BTC klizi na ~$59,700 no institucionalni ETF influksi od $221M i SEC-ova Regulation Crypto agenda za srpanj signaliziraju dugorocni optimizam. Kratkorocno bear trend dominira uz macroPenalty od 2, a daljnja geopoliticka eskalacija ostaje kljucni rizik.",
     "warActive":  true,
     "btcDom":  55.5,
-    "stableDom":  8.5,
-    "oil":  74.0
+    "stableDom":  14.1,
+    "oil":  76.0
 }
