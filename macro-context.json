@@ -1,61 +1,146 @@
 {
-    "dxy":  101.0,
-    "changeSummary":  "Prva analiza: BTC ~63.500$, F&G ekstremni strah (22), DXY oko 101, aktivni SAD-Iran sukob povećava makro rizik.",
-    "lastUpdated":  "2026-07-10T12:00:00Z",
+    "dxy":  100.9,
+    "changeSummary":  "BTC ETF okrenuo 10-dnevni odljev u priljeve (+221M$), cijena porasla na $64,340, nafta pala na $72 uz iznenađujuću zalihu, no F&G ostaje na 23.",
+    "lastUpdated":  "2026-07-10T14:00:00Z",
     "warnings":  {
-                     "ACT":  [],
-                     "MEME":  [],
-                     "ANIME":  [],
-                     "XRP":  [],
-                     "BNB":  [],
-                     "SUI":  [],
-                     "AVAX":  [],
-                     "PENGU":  [],
-                     "BOME":  [],
-                     "DOGS":  [],
-                     "NOT":  [],
-                     "PEOPLE":  [],
-                     "SOL":  [],
-                     "ADA":  [],
-                     "PNUT":  [],
-                     "AIXBT":  [],
-                     "ETH":  [],
-                     "LINK":  [],
-                     "PUMP":  [],
-                     "TRUMP":  ["Trump-Iran napetosti uzrokovale tržišnu volatilnost"],
-                     "BTC":  ["Geopolitički rizik: SAD-Iran sukobi i dalje aktivni"]
+                     "ACT":  [
+
+                             ],
+                     "MEME":  [
+
+                              ],
+                     "ANIME":  [
+
+                               ],
+                     "XRP":  [
+
+                             ],
+                     "BNB":  [
+
+                             ],
+                     "SUI":  [
+
+                             ],
+                     "AVAX":  [
+
+                              ],
+                     "PENGU":  [
+
+                               ],
+                     "BOME":  [
+
+                              ],
+                     "DOGS":  [
+
+                              ],
+                     "NOT":  [
+
+                             ],
+                     "PEOPLE":  [
+
+                                ],
+                     "SOL":  [
+
+                             ],
+                     "ADA":  [
+
+                             ],
+                     "PNUT":  [
+
+                              ],
+                     "AIXBT":  [
+
+                               ],
+                     "ETH":  [
+
+                             ],
+                     "LINK":  [
+
+                              ],
+                     "PUMP":  [
+
+                              ],
+                     "TRUMP":  [
+                                 "SAD-Iran geopolitička nestabilnost"
+                               ],
+                     "BTC":  [
+                               "SAD-Iran napadi - pritisak na sentiment"
+                             ]
                  },
     "catalysts":  {
-                      "ACT":  [],
-                      "MEME":  [],
-                      "ANIME":  [],
-                      "XRP":  [],
-                      "BNB":  [],
-                      "SUI":  [],
-                      "AVAX":  [],
-                      "PENGU":  [],
-                      "BOME":  [],
-                      "DOGS":  [],
-                      "NOT":  [],
-                      "PEOPLE":  [],
-                      "SOL":  ["Kapital rotira iz BTC dominance u SOL ekosustav"],
-                      "ADA":  [],
-                      "PNUT":  [],
-                      "AIXBT":  [],
-                      "ETH":  ["BTC ETF odljevni streak od 10 dana završen"],
-                      "LINK":  [],
-                      "PUMP":  [],
-                      "TRUMP":  [],
-                      "BTC":  ["ETF odljev streak završen; chip rally i slabost USD"]
+                      "ACT":  [
+
+                              ],
+                      "MEME":  [
+
+                               ],
+                      "ANIME":  [
+
+                                ],
+                      "XRP":  [
+                                "Regulatorna jasnoća - CLARITY Act na glasanju"
+                              ],
+                      "BNB":  [
+
+                              ],
+                      "SUI":  [
+
+                              ],
+                      "AVAX":  [
+
+                               ],
+                      "PENGU":  [
+
+                                ],
+                      "BOME":  [
+
+                               ],
+                      "DOGS":  [
+
+                               ],
+                      "NOT":  [
+
+                              ],
+                      "PEOPLE":  [
+
+                                 ],
+                      "SOL":  [
+                                "Rotacija kapitala u SOL ekosustav"
+                              ],
+                      "ADA":  [
+
+                              ],
+                      "PNUT":  [
+
+                               ],
+                      "AIXBT":  [
+
+                                ],
+                      "ETH":  [
+                                "CLARITY Act - regulatorni okvir na vidiku"
+                              ],
+                      "LINK":  [
+
+                               ],
+                      "PUMP":  [
+
+                               ],
+                      "TRUMP":  [
+
+                                ],
+                      "BTC":  [
+                                "ETF inflowi +221M$ - kraj 10-dnevnog odljeva",
+                                "BTC probija prema $65K"
+                              ]
                   },
-    "fearGreed":  22,
+    "fearGreed":  23,
     "macroPenalty":  2,
     "regime":  "BEAR",
     "sentimentScore":  {
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  0,
+                           "XRP":  1,
                            "BNB":  0,
                            "SUI":  0,
                            "AVAX":  0,
@@ -74,9 +159,9 @@
                            "TRUMP":  -1,
                            "BTC":  2
                        },
-    "aiSummary":  "DXY oscilira oko 101, što je blago pozitivno za kripto, no Fear & Greed na 22 signalizira ekstremni strah. BTC drži razinu ~63.500$ usprkos SAD-Iran geopolitičkim udarima i globalnoj rasprodaji obveznica. Završetak BTC ETF odljevnog streaka i slabljenje dolara mogu biti katalizatori za oporavak, ali oprez dok F&G ostaje ispod 30.",
+    "aiSummary":  "DXY se zadržava oko 100.9, blago pozitivno za kripto, dok F&G na 23 signalizira zadržani ekstremni strah. BTC ETF okrenuo 10-dnevni streak odljeva s najvećim dnevnim prilivom u dva mjeseca (+221M$), gurajući BTC prema $65K. Geopolitički rizici SAD-Iran i Fed-ova zabrinutost oko inflacije zadržavaju širu ekspanziju, ali ETF katalizator otvara mogućnost kratkoročnog oporavka.",
     "warActive":  true,
     "btcDom":  55.5,
-    "stableDom":  8.2,
-    "oil":  90
+    "stableDom":  7.5,
+    "oil":  72
 }
