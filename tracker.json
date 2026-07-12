@@ -65,15 +65,16 @@
       "stop": 0.03511648,
       "conf": 59,
       "targetPct": 6,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "PROMAŠAJ",
+      "closePrice": 0.0418,
+      "closePct": -2.11,
+      "autoClose": true,
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
       "peakPrice": 0.0428,
-      "peakPct": 0.23
+      "peakPct": 0.23,
+      "closeReason": "⏰ Vrijeme isteklo (24/7)"
     },
     {
       "id": "1783451963567_QNT",
@@ -8146,5 +8147,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-07-10T08:20:28.228Z"
+  "updatedAt": "2026-07-12T13:23:35.709Z"
 }
