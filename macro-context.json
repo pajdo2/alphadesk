@@ -1,7 +1,7 @@
 {
-    "dxy":  101.1,
-    "changeSummary":  "F&G blago porastao s 23 na 26, DXY stabilan na 101.1, BTC drži $64K uz Fed svjedočenje i CLARITY Act kao ključne katalizatore tjedna.",
-    "lastUpdated":  "2026-07-13T12:00:00Z",
+    "dxy":  101.2,
+    "changeSummary":  "BTC pao na $61.9K (-3.5%), F&G ostaje na 26, DXY blago porastao na 101.2 s tržištem u iščekivanju CPI/PPI podataka.",
+    "lastUpdated":  "2026-07-14T12:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -64,8 +64,7 @@
 
                                ],
                      "BTC":  [
-                                 "50-dana negativni Coinbase Premium streak",
-                                 "Obnovljeni sukobi Bliski istok — naftni risk"
+                                 "BTC pao -3.5%, ključna podrška $58-60K zona"
                              ]
                  },
     "catalysts":  {
@@ -79,7 +78,7 @@
 
                                 ],
                       "XRP":  [
-                                  "Ripple dobio punu MiCA sukladnost u EU"
+                                  "CLARITY Act u Kongresu - regulatorna jasnoća"
                               ],
                       "BNB":  [
 
@@ -103,10 +102,10 @@
 
                               ],
                       "PEOPLE":  [
-
+                                     "CLARITY Act - potencijalna regulatorna jasnoća"
                                  ],
                       "SOL":  [
-                                  "Rotacija kapitala iz BTC u altcoine/SOL"
+                                  "Rotacija kapitala u SOL ekosustav"
                               ],
                       "ADA":  [
 
@@ -130,12 +129,11 @@
 
                                 ],
                       "BTC":  [
-                                  "Fed Chair Warsh svjedoči u Kongresu ove sedmice",
-                                  "CLARITY Act glasanje — regulatorna klarifikacija"
+                                  "Iščekivanje CPI podataka - pozitivno iznenađenje moguće"
                               ]
                   },
     "fearGreed":  26,
-    "macroPenalty":  2,
+    "macroPenalty":  0,
     "regime":  "BEAR",
     "sentimentScore":  {
                            "ACT":  0,
@@ -158,11 +156,11 @@
                            "LINK":  0,
                            "PUMP":  0,
                            "TRUMP":  0,
-                           "BTC":  0
+                           "BTC":  -1
                        },
-    "aiSummary":  "DXY ostaje stabilan na 101.1, blago iznad prošlotjednih 100.9, bez značajnog pritiska na kripto, dok F&G na 26 bilježi blago poboljšanje ali tržište ostaje u zoni straha. BTC drži $64K uz dominance od 56.3%, s vidljivim znakovima rotacije kapitala u altcoine poput SOL-a. Ključni swing faktori ovog tjedna su svjedočenje Fed predsjednika Warsha u Kongresu i glasanje o CLARITY Actu — regulatorna klarifikacija bi mogla biti snažan katalizator za šire tržište.",
-    "warActive":  true,
-    "btcDom":  56.3,
-    "stableDom":  13,
+    "aiSummary":  "DXY blago porastao na 101.2 bez značajnijeg pritiska na kripto, dok Fear & Greed ostaje u zoni straha na 26, potvrđujući nastavak medvjeđeg sentimenta. BTC je pao ispod $62K (-3.5%) uz BTC dominance od 55.5%, s vidljivom rotacijom kapitala u altcoine poput SOL-a, dok tržište s oprezom čeka CPI/PPI inflacijske podatke koji bi mogli odrediti smjer Fed politike. Ključni katalizator ostaje CLARITY Act čije bi izglasavanje moglo pokrenuti snažan oporavak šireg tržišta.",
+    "warActive":  false,
+    "btcDom":  55.5,
+    "stableDom":  13.2,
     "oil":  74
 }
