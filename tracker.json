@@ -1,6 +1,31 @@
 {
   "predictions": [
     {
+      "id": "1784579549857",
+      "timestamp": 1784579549857,
+      "sym": "BONK",
+      "type": "meme",
+      "direction": "LONG",
+      "date": "20. srp",
+      "entry": 0.00000302,
+      "target": 0.0000032,
+      "d1Target": 0.00000308,
+      "d2Target": 0.00000315,
+      "d3Target": 0.0000032,
+      "stop": 7.3e-7,
+      "conf": 65,
+      "targetPct": 6,
+      "status": "AKTIVAN",
+      "closePrice": null,
+      "closePct": null,
+      "autoClose": false,
+      "d1Hit": false,
+      "d2Hit": false,
+      "d3Hit": false,
+      "peakPrice": 0.00000302,
+      "peakPct": 0
+    },
+    {
       "id": "1784579462181",
       "timestamp": 1784579462181,
       "sym": "PUMP",
@@ -8335,5 +8360,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-07-20T20:32:10.718Z"
+  "updatedAt": "2026-07-20T20:32:33.862Z"
 }
