@@ -1,7 +1,7 @@
 {
-    "dxy":  101.2,
-    "changeSummary":  "BTC pao na $61.9K (-3.5%), F&G ostaje na 26, DXY blago porastao na 101.2 s tržištem u iščekivanju CPI/PPI podataka.",
-    "lastUpdated":  "2026-07-14T12:00:00Z",
+    "dxy":  100.7,
+    "changeSummary":  "Sentiment se snažno oporavio - Fear & Greed porastao s 26 na 49, DXY pao na 100.7, a lansiranje E*TRADE spot tradinga i BTC ETF priljevi od $107M vraćaju optimizam unatoč napetostima SAD-Iran.",
+    "lastUpdated":  "2026-07-20T12:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -61,10 +61,10 @@
 
                               ],
                      "TRUMP":  [
-
+                                 "Politička neizvjesnost negativno utječe na TRUMP token"
                                ],
                      "BTC":  [
-                                 "BTC pao -3.5%, ključna podrška $58-60K zona"
+                                 "Napetosti SAD-Iran izazvale prodaju rizičnih sredstava"
                              ]
                  },
     "catalysts":  {
@@ -78,7 +78,7 @@
 
                                 ],
                       "XRP":  [
-                                  "CLARITY Act u Kongresu - regulatorna jasnoća"
+
                               ],
                       "BNB":  [
 
@@ -102,10 +102,10 @@
 
                               ],
                       "PEOPLE":  [
-                                     "CLARITY Act - potencijalna regulatorna jasnoća"
+
                                  ],
                       "SOL":  [
-                                  "Rotacija kapitala u SOL ekosustav"
+                                  "E*TRADE uvrstio SOL u spot trading ponudu"
                               ],
                       "ADA":  [
 
@@ -117,7 +117,8 @@
 
                                 ],
                       "ETH":  [
-
+                                  "E*TRADE lansirao spot ETH trading na Morgan Stanley",
+                                  "ETH +6% na hladnijim CPI podacima"
                               ],
                       "LINK":  [
 
@@ -129,17 +130,18 @@
 
                                 ],
                       "BTC":  [
-                                  "Iščekivanje CPI podataka - pozitivno iznenađenje moguće"
+                                  "Bitcoin ETF priljevi $107M od BlackRock i Fidelityja",
+                                  "E*TRADE lansirao spot BTC trading"
                               ]
                   },
-    "fearGreed":  26,
+    "fearGreed":  49,
     "macroPenalty":  0,
-    "regime":  "BEAR",
+    "regime":  "CRAB",
     "sentimentScore":  {
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  1,
+                           "XRP":  0,
                            "BNB":  0,
                            "SUI":  0,
                            "AVAX":  0,
@@ -152,15 +154,15 @@
                            "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  0,
+                           "ETH":  2,
                            "LINK":  0,
                            "PUMP":  0,
                            "TRUMP":  0,
-                           "BTC":  -1
+                           "BTC":  1
                        },
-    "aiSummary":  "DXY blago porastao na 101.2 bez značajnijeg pritiska na kripto, dok Fear & Greed ostaje u zoni straha na 26, potvrđujući nastavak medvjeđeg sentimenta. BTC je pao ispod $62K (-3.5%) uz BTC dominance od 55.5%, s vidljivom rotacijom kapitala u altcoine poput SOL-a, dok tržište s oprezom čeka CPI/PPI inflacijske podatke koji bi mogli odrediti smjer Fed politike. Ključni katalizator ostaje CLARITY Act čije bi izglasavanje moglo pokrenuti snažan oporavak šireg tržišta.",
+    "aiSummary":  "DXY je pao na 100.7, što smanjuje pritisak na kripto imovinu i potiče rizičniji apetit investitora. Fear & Greed indeks porastao je s 26 na 49 (Neutralno), signalizirajući izlazak iz medvjeđeg sentimenta i stabilizaciju tržišta. BTC se kreće oko $63K uz pozitivne ETF priljeve od $107M i lansiranje E*TRADE spot tradinga, no geopolitičke napetosti SAD-Iran ostaju kratkoročni rizik za šire tržište.",
     "warActive":  false,
-    "btcDom":  55.5,
-    "stableDom":  13.2,
+    "btcDom":  56.3,
+    "stableDom":  13.5,
     "oil":  74
 }
