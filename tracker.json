@@ -15,15 +15,16 @@
       "stop": 7.3e-7,
       "conf": 65,
       "targetPct": 6,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
-      "d1Hit": false,
-      "d2Hit": false,
-      "d3Hit": false,
-      "peakPrice": 0.00000302,
-      "peakPct": 0
+      "status": "POGODAK",
+      "closePrice": 0.00000323,
+      "closePct": 6.95,
+      "autoClose": true,
+      "d1Hit": true,
+      "d2Hit": true,
+      "d3Hit": true,
+      "peakPrice": 0.00000323,
+      "peakPct": 6.95,
+      "closeReason": "🎯 Target (24/7)"
     },
     {
       "id": "1784579462181",
@@ -90,15 +91,16 @@
       "stop": 7.3e-7,
       "conf": 62,
       "targetPct": 6,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
-      "d1Hit": false,
-      "d2Hit": false,
-      "d3Hit": false,
-      "peakPrice": 0.00000302,
-      "peakPct": 0
+      "status": "POGODAK",
+      "closePrice": 0.00000323,
+      "closePct": 6.95,
+      "autoClose": true,
+      "d1Hit": true,
+      "d2Hit": true,
+      "d3Hit": true,
+      "peakPrice": 0.00000323,
+      "peakPct": 6.95,
+      "closeReason": "🎯 Target (24/7)"
     },
     {
       "id": "1783599103846",
@@ -8360,5 +8362,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-07-20T20:32:33.862Z"
+  "updatedAt": "2026-07-20T21:41:21.344Z"
 }
