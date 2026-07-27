@@ -17,10 +17,10 @@
       "conf": 52,
       "score": 5.080499999999999,
       "targetPct": 4,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "POGODAK",
+      "closePrice": 1966.46,
+      "closePct": 4.22,
+      "autoClose": true,
       "direction": "LONG",
       "autoTrack": true,
       "autoSource": "watch",
@@ -46,13 +46,14 @@
         "fgFear": true,
         "regime": "CRAB"
       },
-      "d1Hit": false,
-      "d2Hit": false,
-      "d3Hit": false,
+      "d1Hit": true,
+      "d2Hit": true,
+      "d3Hit": true,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 1886.8,
-      "peakPct": 0
+      "peakPrice": 1966.46,
+      "peakPct": 4.22,
+      "closeReason": "🎯 Target (24/7)"
     },
     {
       "id": "1784579549857",
@@ -8483,5 +8484,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-07-26T11:52:52.124Z"
+  "updatedAt": "2026-07-27T08:00:19.228Z"
 }
