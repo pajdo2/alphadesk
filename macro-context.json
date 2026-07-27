@@ -1,7 +1,7 @@
 {
-    "dxy":  101.18,
-    "changeSummary":  "Tržište ostaje u CRAB fazi s BTC-om iznad $65K i Fear&Greed na 50, uz skok nafte s $74 na $92 i XRP protokol nadogradnjom kao glavnim katalizatorom tjedna.",
-    "lastUpdated":  "2026-07-27T10:00:00Z",
+    "dxy":  101.1,
+    "changeSummary":  "Nafta je pala s $92 na ~$86 zbog diplomatskih pregovora SAD-Iran, Fear & Greed korigirao s 50 na 44, dok BTC dominacija i DXY ostaju gotovo nepromijenjeni uz nastavak CRAB režima.",
+    "lastUpdated":  "2026-07-27T13:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -37,7 +37,7 @@
 
                              ],
                      "PEOPLE":  [
-                                    "CLARITY Act: prolaz smanjen na 30% šanse u 2026."
+
                                 ],
                      "SOL":  [
 
@@ -64,7 +64,7 @@
 
                                ],
                      "BTC":  [
-                                 "Nafta na $92 - makro pritisak na rizičnu imovinu"
+                                 "Viši US trezorski prinosi pritišću rizičnu imovinu"
                              ]
                  },
     "catalysts":  {
@@ -78,7 +78,7 @@
 
                                 ],
                       "XRP":  [
-                                  "Protokol nadogradnja: 6 novih amandmana čeka glasanje"
+                                  "XRP ETF dostigao novi rekord; RLUSD ekspanzija"
                               ],
                       "BNB":  [
 
@@ -87,7 +87,7 @@
 
                               ],
                       "AVAX":  [
-
+                                   "Clearstream (22T EUR aktiva) dodao AVAX u custody"
                                ],
                       "PENGU":  [
 
@@ -105,10 +105,10 @@
 
                                  ],
                       "SOL":  [
-                                  "Latinska Amerika kripto usvajanje ubrzava"
+                                  "E*TRADE pokrenuo spot SOL trading za retail"
                               ],
                       "ADA":  [
-
+                                  "Clearstream (22T EUR aktiva) dodao ADA u custody"
                               ],
                       "PNUT":  [
 
@@ -117,10 +117,10 @@
 
                                 ],
                       "ETH":  [
-                                  "DeFi aktivnost raste, ETH iznad $1,900"
+                                  "ETH probio 100-day EMA, bullish signal"
                               ],
                       "LINK":  [
-                                   "Analitičari: LINK podcijenjen uz snažne osnove"
+
                                ],
                       "PUMP":  [
 
@@ -129,38 +129,38 @@
 
                                 ],
                       "BTC":  [
-                                  "BTC iznad $65K, dominacija 56.6%, ETF priljevi pozitivni"
+                                  "BTC cilja $66K otpor, tržište +1.1% u 24h"
                               ]
                   },
-    "fearGreed":  50,
+    "fearGreed":  44,
     "macroPenalty":  0,
     "regime":  "CRAB",
     "sentimentScore":  {
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  2,
+                           "XRP":  1,
                            "BNB":  0,
                            "SUI":  0,
-                           "AVAX":  0,
+                           "AVAX":  1,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
-                           "PEOPLE":  -1,
-                           "SOL":  0,
-                           "ADA":  0,
+                           "PEOPLE":  0,
+                           "SOL":  2,
+                           "ADA":  1,
                            "PNUT":  0,
                            "AIXBT":  0,
                            "ETH":  1,
-                           "LINK":  1,
+                           "LINK":  0,
                            "PUMP":  0,
                            "TRUMP":  0,
                            "BTC":  1
                        },
-    "aiSummary":  "DXY je blago porastao na 101.18 (sa 100.7), no ostaje ispod kritičnih razina i ne stvara veći pritisak na kripto imovinu. Fear & Greed indeks stabilan je na 50 (Neutralno), BTC drži razinu iznad $65K uz dominaciju od 56.6%, što potvrđuje nastavak CRAB faze tržišta. Skok nafte na $92 (sa $74) i neizvjesnost oko CLARITY Acta su ključni rizici, dok XRP protokol nadogradnja (6 novih amandmana) i nastavak SAD-Iran primirja donose oprezni optimizam za ostatak tjedna.",
+    "aiSummary":  "DXY se stabilizirao na 101.1 bez većeg pritiska na kripto, dok nafta pada s $92 na ~$86 zbog diplomatskih signala oko SAD-Iran primirja. Fear & Greed na 44 (Neutralno), BTC drži iznad $65K uz dominaciju 56.3% — nastavlja se CRAB faza tržišta. Ključni pozitivni katalizatori su E*TRADE listing za SOL i Clearstream custody za AVAX/ADA/XRP, a rizik ostaje pritisak viših US trezorskih prinosa.",
     "warActive":  false,
-    "btcDom":  56.6,
-    "stableDom":  13.7,
-    "oil":  92
+    "btcDom":  56.3,
+    "stableDom":  8.0,
+    "oil":  86
 }
