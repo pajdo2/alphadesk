@@ -1,6 +1,31 @@
 {
   "predictions": [
     {
+      "id": "1785152549253",
+      "timestamp": 1785152549253,
+      "sym": "SHIB",
+      "type": "meme",
+      "direction": "LONG",
+      "date": "27. srp",
+      "entry": 0.00000504,
+      "target": 0.00000534,
+      "d1Target": 0.00000515,
+      "d2Target": 0.00000525,
+      "d3Target": 0.00000534,
+      "stop": 0.00000173,
+      "conf": 55,
+      "targetPct": 6,
+      "status": "AKTIVAN",
+      "closePrice": null,
+      "closePct": null,
+      "autoClose": false,
+      "d1Hit": false,
+      "d2Hit": false,
+      "d3Hit": false,
+      "peakPrice": 0.00000504,
+      "peakPct": 0
+    },
+    {
       "id": "1785152539436",
       "timestamp": 1785152539436,
       "sym": "SHIB",
@@ -8684,5 +8709,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-07-27T11:42:23.454Z"
+  "updatedAt": "2026-07-27T11:42:33.210Z"
 }
