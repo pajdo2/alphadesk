@@ -8690,10 +8690,10 @@
       "conf": 39,
       "score": 0.35,
       "verdict": "🔵 Spekulativno",
-      "graded": false,
-      "correct": null,
-      "fwdPrice": null,
-      "fwdPct": null
+      "graded": true,
+      "correct": false,
+      "fwdPrice": 68456,
+      "fwdPct": 2.75
     },
     {
       "ts": 1785151810005,
@@ -8707,7 +8707,20 @@
       "correct": null,
       "fwdPrice": null,
       "fwdPct": null
+    },
+    {
+      "ts": 1785178259774,
+      "price": 65150,
+      "dir": "NEUTRAL",
+      "th": 2.4,
+      "conf": 39,
+      "score": 0.55,
+      "verdict": "🔵 Spekulativno",
+      "graded": false,
+      "correct": null,
+      "fwdPrice": null,
+      "fwdPct": null
     }
   ],
-  "updatedAt": "2026-07-27T11:42:33.210Z"
+  "updatedAt": "2026-07-27T18:51:02.778Z"
 }
