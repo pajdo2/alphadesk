@@ -1,7 +1,7 @@
 {
     "dxy":  101.5,
-    "changeSummary":  "Fear & Greed pao s 47 na 29 (Strah), BTC se povukao s $65K na $63K uz FOMC neizvjesnost, dok nafta urušila 5.3% zbog US-Iran diplomacije.",
-    "lastUpdated":  "2026-07-28T10:00:00Z",
+    "changeSummary":  "Sentiment se blago oporavlja s F&G 29→33, nafta (Brent) raste na $86.6, DXY stabilan na 101.5, dok tržište čeka FOMC odluku sutra 29. srpnja.",
+    "lastUpdated":  "2026-07-28T14:30:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -16,7 +16,7 @@
 
                              ],
                      "BNB":  [
-
+                                 "BitMart burza najavila gašenje - negativno za BNB"
                              ],
                      "SUI":  [
 
@@ -40,7 +40,7 @@
 
                                 ],
                      "SOL":  [
-                                 "HYPE unlock $817M sutra - pritisak na altcoine"
+
                              ],
                      "ADA":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-                                 "ETH na $1.872, pad 4%; tržište slabi"
+
                              ],
                      "LINK":  [
 
@@ -64,7 +64,7 @@
 
                                ],
                      "BTC":  [
-                                 "Pad s $65K na $63K; FOMC rizik volatilnosti"
+                                 "FOMC sutra - očekivana povećana volatilnost BTC"
                              ]
                  },
     "catalysts":  {
@@ -78,6 +78,7 @@
 
                                 ],
                       "XRP":  [
+                                  "XRP Ledger ekosustav vodi dobitnice dana",
                                   "Clearstream dodao XRP u institucionalno skrbništvo"
                               ],
                       "BNB":  [
@@ -87,7 +88,7 @@
 
                               ],
                       "AVAX":  [
-                                   "Van de Poppe top pick; 3.87M dnevnih transakcija"
+                                   "Clearstream dodao AVAX u institucionalno skrbništvo"
                                ],
                       "PENGU":  [
 
@@ -105,10 +106,10 @@
 
                                  ],
                       "SOL":  [
-                                  "Clearstream SOL custody; Robinhood Europe perps"
+                                  "Clearstream dodao SOL u institucionalno skrbništvo"
                               ],
                       "ADA":  [
-                                  "Clearstream ADA custody - €22T institucija"
+                                  "Clearstream dodao ADA u institucionalno skrbništvo"
                               ],
                       "PNUT":  [
 
@@ -117,7 +118,7 @@
 
                                 ],
                       "ETH":  [
-
+                                  "ETH nadmašuje BTC kratkoročno, drži 9.98% tržišta"
                               ],
                       "LINK":  [
 
@@ -129,10 +130,10 @@
 
                                 ],
                       "BTC":  [
-                                  "FOMC odluka 28-29. srpnja - ključan katalizator"
+                                  "FOMC odluka 29. srpnja - potencijalni pozitivni katalizator"
                               ]
                   },
-    "fearGreed":  29,
+    "fearGreed":  33,
     "macroPenalty":  0,
     "regime":  "VOLATILE",
     "sentimentScore":  {
@@ -140,7 +141,7 @@
                            "MEME":  0,
                            "ANIME":  0,
                            "XRP":  1,
-                           "BNB":  0,
+                           "BNB":  -1,
                            "SUI":  0,
                            "AVAX":  1,
                            "PENGU":  0,
@@ -152,15 +153,15 @@
                            "ADA":  1,
                            "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  -1,
+                           "ETH":  0,
                            "LINK":  0,
                            "PUMP":  0,
                            "TRUMP":  0,
                            "BTC":  -1
                        },
-    "aiSummary":  "DXY ostaje stabilan na 101.5 bez direktnog pritiska na kripto, dok nafta urušava 5.3% na $84.6 zbog US-Iran diplomatskog napretka koji briše geopolitičku premiju. Fear & Greed indeks drastično je pao s 47 na 29 (Strah) uz BTC koji se povukao s $65K na $63K i ukupni pad tržišta od 1.6%. Ključni katalizator je FOMC sastanak 28-29. srpnja koji može donijeti veću volatilnost, dok Clearstream (€22T) dodavanjem XRP, SOL, ADA i AVAX u institucionalno skrbništvo pruža dugoročno pozitivan signal.",
+    "aiSummary":  "DXY ostaje stabilan oko 101.5 bez direktnog pritiska na kripto, dok nafta (Brent) raste na $86.6 uslijed daljnjeg smirenja US-Iran napetosti. Fear & Greed indeks blago se oporavlja s 29 na 33 (Strah), a BTC se drži oko $63-64K uz pad od 2.82% u 24h i ukupni tržišni pad od 1.6%. Ključni katalizator je FOMC sastanak 29. srpnja koji može donijeti obrat, dok XRP Ledger ekosustav vodi kratkoročne dobitnice uz kontinuirani pozitivni signal od Clearstream institucionalnog skrbništva XRP/SOL/ADA/AVAX.",
     "warActive":  false,
     "btcDom":  56.3,
-    "stableDom":  8,
-    "oil":  84.58
+    "stableDom":  14.0,
+    "oil":  86.58
 }
