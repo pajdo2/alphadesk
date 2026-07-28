@@ -67,10 +67,10 @@
       "conf": 55,
       "score": 7.328,
       "targetPct": 8.99,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "PROMAŠAJ",
+      "closePrice": 8.378,
+      "closePct": -4.36,
+      "autoClose": true,
       "direction": "LONG",
       "autoTrack": true,
       "autoSource": "watch",
@@ -102,7 +102,8 @@
       "d4Hit": false,
       "d5Hit": false,
       "peakPrice": 8.77,
-      "peakPct": 0.11
+      "peakPct": 0.11,
+      "closeReason": "🛑 Stop-loss (24/7)"
     },
     {
       "id": "1785152226032_BFUSD",
@@ -8722,5 +8723,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-07-27T18:51:02.778Z"
+  "updatedAt": "2026-07-28T00:05:41.202Z"
 }
