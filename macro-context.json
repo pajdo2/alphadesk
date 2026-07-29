@@ -1,19 +1,19 @@
 {
     "dxy":  101.5,
-    "changeSummary":  "Fear & Greed ostaje nepromijenjen na 29, DXY stabilan na 101.5, bez promjene režima — tržište čeka FOMC odluku 29. srpnja uz $600M+ likvidacija dugih pozicija.",
-    "lastUpdated":  "2026-07-28T16:00:00Z",
+    "changeSummary":  "Fear & Greed ostao na 29, BTC stabilan oko $64K s blagim oporavkom (+1%) pred FOMC odlukom 30.7., nafta skočila na $81 zbog svježih borbi na Bliskom istoku uz Houthi napade, a SparkKitty malware upozorava na sigurnosne rizike.",
+    "lastUpdated":  "2026-07-29T10:00:00Z",
     "warnings":  {
                      "ACT":  [
 
                              ],
                      "MEME":  [
-                                 "Opći tržišni pad -1.6% u 24h, sentiment slab"
+
                               ],
                      "ANIME":  [
 
                                ],
                      "XRP":  [
-
+                         "XRP pada prema ključnoj podršci na $1.00"
                              ],
                      "BNB":  [
 
@@ -40,7 +40,7 @@
 
                                 ],
                      "SOL":  [
-
+                         "Solflare kartični partner Kulipa ugasio poslovanje"
                              ],
                      "ADA":  [
 
@@ -59,13 +59,12 @@
                               ],
                      "PUMP":  [
 
-                               ],
+                              ],
                      "TRUMP":  [
-                                 "NFL poziva CFTC na strožu regulaciju prediction marketa"
+
                                ],
                      "BTC":  [
-                                 "Potencijalni retest $60K pred FOMC odlukom sutra",
-                                 "$600M+ likvidacija dugih pozicija u zadnja 24h"
+                         "SparkKitty malware krade seed fraze iz fotogalerije"
                              ]
                  },
     "catalysts":  {
@@ -79,7 +78,7 @@
 
                                 ],
                       "XRP":  [
-                                  "XRP Ledger ekosustav predvodi kratkoročne dobitnice"
+                          "XRP ETF kumulativni priljevi dostigli $1.5B"
                               ],
                       "BNB":  [
 
@@ -118,8 +117,7 @@
 
                                 ],
                       "ETH":  [
-                                  "ETH staking ratio doseže rekordnu razinu",
-                                  "Securitize dobiva SEC Adviser Status - DeFi pozitivno"
+                          "ETH +2.38% oporavak, rast pred FOMC odlukom"
                               ],
                       "LINK":  [
 
@@ -131,18 +129,17 @@
 
                                 ],
                       "BTC":  [
-                                  "FOMC rate hold očekivan sutra - potencijalni obrat",
-                                  "CLARITY Act regulatorni zakon još u procesu"
+                          "FOMC odluka 30.7. - očekivani rate hold"
                               ]
                   },
     "fearGreed":  29,
-    "macroPenalty":  0,
+    "macroPenalty":  2,
     "regime":  "VOLATILE",
     "sentimentScore":  {
                            "ACT":  0,
-                           "MEME":  -1,
+                           "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  1,
+                           "XRP":  -1,
                            "BNB":  0,
                            "SUI":  0,
                            "AVAX":  0,
@@ -151,19 +148,19 @@
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  0,
+                           "SOL":  -1,
                            "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
                            "ETH":  1,
                            "LINK":  0,
                            "PUMP":  0,
-                           "TRUMP":  -1,
-                           "BTC":  -1
+                           "TRUMP":  0,
+                           "BTC":  0
                        },
-    "aiSummary":  "DXY ostaje stabilan na 101.5 bez direktnog pritiska na kripto, dok Fear & Greed indeks ostaje nepromijenjen na 29 (Strah) uz BTC ~$63K koji testira podršku pred FOMC odlukom 29. srpnja — očekivani rate hold može donijeti kratkoročni obrat. ETH staking ratio doseže rekordnu razinu, XRP Ledger ekosustav predvodi dobitnice, ali $600M+ likvidacija dugih pozicija i prijetnja retesta $60K zadržavaju volatile okruženje.",
-    "warActive":  false,
-    "btcDom":  56.3,
-    "stableDom":  7.8,
-    "oil":  85.2
+    "aiSummary":  "DXY ostaje stabilan na 101.5 bez direktnog pritiska na kripto, dok Fear & Greed indeks ostaje nepromijenjeno na 29 (Strah) — tržište čeka FOMC odluku 30. srpnja uz široko očekivani rate hold koji bi mogao donijeti kratkoročni oporavak. BTC se stabilizira oko $64K (+1%), ETH bilježi snažan rast od +2.38%, no svježe borbe na Bliskom istoku s Houthi napadima na saudijska naftna postrojenja dižu naftu na ~$81 i aktiviraju geopolitički rizik. SparkKitty malware koji krade seed fraze iz fotogalerija i rekordna razina crypto exploita u H1 2026 zahtijevaju povećan oprez.",
+    "warActive":  true,
+    "btcDom":  56.5,
+    "stableDom":  13.4,
+    "oil":  81.0
 }
