@@ -1,6 +1,6 @@
 {
-    "dxy":  101.5,
-    "changeSummary":  "Fear & Greed ostao na 29, BTC stabilan oko $64K s blagim oporavkom (+1%) pred FOMC odlukom 30.7., nafta skočila na $81 zbog svježih borbi na Bliskom istoku uz Houthi napade, a SparkKitty malware upozorava na sigurnosne rizike.",
+    "dxy":  101.3,
+    "changeSummary":  "Fear & Greed blago porastao s 29 na 33, DXY pao s 101.5 na 101.3 u iščekivanju FOMC-a 30.7., nafta ~$81.5, BTC dominance stabilna na 56.3%.",
     "lastUpdated":  "2026-07-29T10:00:00Z",
     "warnings":  {
                      "ACT":  [
@@ -13,7 +13,7 @@
 
                                ],
                      "XRP":  [
-                         "XRP pada prema ključnoj podršci na $1.00"
+
                              ],
                      "BNB":  [
 
@@ -40,7 +40,7 @@
 
                                 ],
                      "SOL":  [
-                         "Solflare kartični partner Kulipa ugasio poslovanje"
+
                              ],
                      "ADA":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-
+                                 "Wash sale rules prijedlog u Kongresu - porezni rizik"
                              ],
                      "LINK":  [
 
@@ -61,10 +61,10 @@
 
                               ],
                      "TRUMP":  [
-
+                                   "Wash sale rules prijedlog u Kongresu - porezni rizik"
                                ],
                      "BTC":  [
-                         "SparkKitty malware krade seed fraze iz fotogalerije"
+                                 "SparkKitty malware krade seed fraze iz fotogalerija"
                              ]
                  },
     "catalysts":  {
@@ -78,7 +78,7 @@
 
                                 ],
                       "XRP":  [
-                          "XRP ETF kumulativni priljevi dostigli $1.5B"
+
                               ],
                       "BNB":  [
 
@@ -108,7 +108,7 @@
 
                               ],
                       "ADA":  [
-
+                                  "ADA +6% u 24h, nadmašuje tržište pred FOMC odluku"
                               ],
                       "PNUT":  [
 
@@ -117,7 +117,7 @@
 
                                 ],
                       "ETH":  [
-                          "ETH +2.38% oporavak, rast pred FOMC odlukom"
+                                  "ETH +2.38% oporavak, jači rast od BTC-a"
                               ],
                       "LINK":  [
 
@@ -129,17 +129,17 @@
 
                                 ],
                       "BTC":  [
-                          "FOMC odluka 30.7. - očekivani rate hold"
+                                  "FOMC rate hold očekivan 30.7, moguć kratkoročni rast"
                               ]
                   },
-    "fearGreed":  29,
+    "fearGreed":  33,
     "macroPenalty":  2,
     "regime":  "VOLATILE",
     "sentimentScore":  {
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  -1,
+                           "XRP":  0,
                            "BNB":  0,
                            "SUI":  0,
                            "AVAX":  0,
@@ -148,19 +148,19 @@
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  -1,
-                           "ADA":  0,
+                           "SOL":  0,
+                           "ADA":  2,
                            "PNUT":  0,
                            "AIXBT":  0,
                            "ETH":  1,
                            "LINK":  0,
                            "PUMP":  0,
                            "TRUMP":  0,
-                           "BTC":  0
+                           "BTC":  1
                        },
-    "aiSummary":  "DXY ostaje stabilan na 101.5 bez direktnog pritiska na kripto, dok Fear & Greed indeks ostaje nepromijenjeno na 29 (Strah) — tržište čeka FOMC odluku 30. srpnja uz široko očekivani rate hold koji bi mogao donijeti kratkoročni oporavak. BTC se stabilizira oko $64K (+1%), ETH bilježi snažan rast od +2.38%, no svježe borbe na Bliskom istoku s Houthi napadima na saudijska naftna postrojenja dižu naftu na ~$81 i aktiviraju geopolitički rizik. SparkKitty malware koji krade seed fraze iz fotogalerija i rekordna razina crypto exploita u H1 2026 zahtijevaju povećan oprez.",
+    "aiSummary":  "DXY pada blago na 101.3 dok tržište čeka FOMC odluku 30. srpnja uz široko očekivani rate hold koji bi mogao potaknuti kratkoročni oporavak kripto tržišta. Fear & Greed indeks blago se oporavio s 29 na 33 (Strah), BTC drži podršku oko $64K dok ETH bilježi +2.38% i ADA skače +6% pred Fed odluku. Houthi napadi na saudijska naftna postrojenja drže naftu na ~$81.5 i održavaju geopolitički rizik aktivan, a SparkKitty malware koji OCR-om krade seed fraze iz fotogalerija zahtijeva povećan sigurnosni oprez.",
     "warActive":  true,
-    "btcDom":  56.5,
-    "stableDom":  13.4,
-    "oil":  81.0
+    "btcDom":  56.3,
+    "stableDom":  13.0,
+    "oil":  81.5
 }
