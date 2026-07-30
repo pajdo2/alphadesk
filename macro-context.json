@@ -1,7 +1,7 @@
 {
-    "dxy":  101.3,
-    "changeSummary":  "Fear & Greed pao s 33 na 28, SOL dobio veliki katalizator (Morgan Stanley ETP $14B), dok DXY i BTC dominanca ostaju stabilni na 101.3 i 56.3%.",
-    "lastUpdated":  "2026-07-30T12:00:00Z",
+    "dxy":  100.98,
+    "changeSummary":  "Geopolitička eskalacija (iranski napad na SAD i dronovi na saudijske naftne objekte) podigla naftu na $88.5 i aktivirala warActive, dok F&G i BTC ostaju gotovo nepromijenjeni na 28 i $64K.",
+    "lastUpdated":  "2026-07-30T14:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -13,7 +13,7 @@
 
                                ],
                      "XRP":  [
-
+                                 "XRP ispod $1.08, slaba potražnja kupaca"
                              ],
                      "BNB":  [
 
@@ -22,7 +22,7 @@
 
                              ],
                      "AVAX":  [
-
+                                  "DeFi sektor -11.5%, rizik daljnjih gubitaka"
                               ],
                      "PENGU":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-                                 "DeFi sektor pao -11.5%, pritisak na ETH ekosustav"
+
                              ],
                      "LINK":  [
 
@@ -64,7 +64,7 @@
 
                                ],
                      "BTC":  [
-                                 "FG pao s 33 na 28, pojačan strah prije Fed odluke"
+                                 "Geopolitički rizik (Iran-SAD) koči oporavak"
                              ]
                  },
     "catalysts":  {
@@ -105,10 +105,10 @@
 
                                  ],
                       "SOL":  [
-                                  "Morgan Stanley lansirao SOL ETP na NYSE Arca ($14B)"
+
                               ],
                       "ADA":  [
-                                  "Oporavak nakon +6% rasta jučer"
+
                               ],
                       "PNUT":  [
 
@@ -117,7 +117,7 @@
 
                                 ],
                       "ETH":  [
-                                  "Skroman rast uz stabilizaciju tržišta"
+                                  "ETH bilježi blagi rast u negativnom tržištu"
                               ],
                       "LINK":  [
 
@@ -129,27 +129,27 @@
 
                                 ],
                       "BTC":  [
-                                  "FOMC hold očekivan 30.7, potencijalni kratkoročni rast"
+                                  "BTC drži $64K potporu unatoč geopolitičkom pritisku"
                               ]
                   },
     "fearGreed":  28,
-    "macroPenalty":  0,
+    "macroPenalty":  2,
     "regime":  "VOLATILE",
     "sentimentScore":  {
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  0,
+                           "XRP":  -1,
                            "BNB":  0,
                            "SUI":  0,
-                           "AVAX":  0,
+                           "AVAX":  -1,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  2,
-                           "ADA":  1,
+                           "SOL":  0,
+                           "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
                            "ETH":  1,
@@ -158,9 +158,9 @@
                            "TRUMP":  0,
                            "BTC":  0
                        },
-    "aiSummary":  "DXY stagnira na 101.3 dok tržište iščekuje FOMC odluku 30. srpnja uz visoku vjerojatnost hold-a kamatnih stopa, a Fear & Greed pao je na 28 (strah) zbog opreznog sentimenta uoči objave. BTC se stabilizira oko $63.9K uz nepromijenjenu dominancu od 56.3%, dok je SOL dobio ključni katalizator - Morgan Stanley lansirao Solana ETP na NYSE Arca vrijedan $14 milijardi. Volatilnost je visoka oko FOMC objave - hold bi mogao pokrenuti kratkoročni oporavak, posebno za SOL i ETH.",
-    "warActive":  false,
+    "aiSummary":  "DXY blago pao na 101.0 nakon FOMC hold odluke, no iranski vojni napad na US vojnike i drone na saudijske naftne objekte guraju Brent naftu na $88.5 uz aktiviranje geopolitičkog rizika. Fear & Greed ostaje na 28 (strah) uz BTC stabilan oko $64K i dominancu od 56.3%, dok DeFi sektor pada 11.5% (ENA -6%, AAVE -6%). Kratkoročno se očekuje nastavak visoke volatilnosti — geopolitička eskalacija može dodatno oslabiti altcoin pozicije, posebno DeFi segment.",
+    "warActive":  true,
     "btcDom":  56.3,
     "stableDom":  13.2,
-    "oil":  81.0
+    "oil":  88.5
 }
