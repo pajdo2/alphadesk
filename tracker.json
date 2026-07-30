@@ -72,8 +72,8 @@
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
-      "peakPrice": 0.00002036,
-      "peakPct": 0
+      "peakPrice": 0.00002039,
+      "peakPct": 0.15
     },
     {
       "id": "1785393088196",
@@ -8837,7 +8837,20 @@
       "correct": null,
       "fwdPrice": null,
       "fwdPct": null
+    },
+    {
+      "ts": 1785395101818,
+      "price": 64051.82,
+      "dir": "NEUTRAL",
+      "th": 3.46,
+      "conf": 45,
+      "score": 1.43,
+      "verdict": "🔵 Spekulativno",
+      "graded": false,
+      "correct": null,
+      "fwdPrice": null,
+      "fwdPct": null
     }
   ],
-  "updatedAt": "2026-07-30T06:32:56.280Z"
+  "updatedAt": "2026-07-30T07:05:18.121Z"
 }
