@@ -1,6 +1,32 @@
 {
   "predictions": [
     {
+      "id": "1785405984555",
+      "timestamp": 1785405984555,
+      "sym": "1MBABYDOGE",
+      "type": "meme",
+      "direction": "LONG",
+      "date": "30. srp",
+      "entry": 0.0003013,
+      "target": 0.00031938,
+      "d1Target": 0.00030763,
+      "d2Target": 0.00031395,
+      "d3Target": 0.00031938,
+      "stop": 0.00024634,
+      "conf": 59,
+      "targetPct": 6,
+      "status": "AKTIVAN",
+      "closePrice": null,
+      "closePct": null,
+      "autoClose": false,
+      "engineVer": "v5.174",
+      "d1Hit": false,
+      "d2Hit": false,
+      "d3Hit": false,
+      "peakPrice": 0.0003013,
+      "peakPct": 0
+    },
+    {
       "id": "1785393101808",
       "timestamp": 1785393101808,
       "sym": "ACT",
@@ -8863,7 +8889,20 @@
       "correct": null,
       "fwdPrice": null,
       "fwdPct": null
+    },
+    {
+      "ts": 1785405962498,
+      "price": 68456,
+      "dir": "DOWN",
+      "th": 2.4,
+      "conf": 27,
+      "score": -4.35,
+      "verdict": "🔴 Preskoči",
+      "graded": false,
+      "correct": null,
+      "fwdPrice": null,
+      "fwdPct": null
     }
   ],
-  "updatedAt": "2026-07-30T07:42:28.661Z"
+  "updatedAt": "2026-07-30T10:06:28.930Z"
 }
