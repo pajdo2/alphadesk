@@ -1,19 +1,19 @@
 {
     "dxy":  100.98,
-    "changeSummary":  "Geopolitička eskalacija (iranski napad na SAD i dronovi na saudijske naftne objekte) podigla naftu na $88.5 i aktivirala warActive, dok F&G i BTC ostaju gotovo nepromijenjeni na 28 i $64K.",
-    "lastUpdated":  "2026-07-30T14:00:00Z",
+    "changeSummary":  "Situacija ostaje gotovo nepromjenjena vs 14:00 — DXY stabilan na 100.98, BTC oko $64K uz BlackRock ETF inflow-ove, Fear & Greed i dalje na 28, dok SOL dobiva novi institucionalni katalizator Morgan Stanleyevim ETP-om.",
+    "lastUpdated":  "2026-07-30T16:30:00Z",
     "warnings":  {
                      "ACT":  [
 
                              ],
                      "MEME":  [
-
+                                 "Opći risk-off sentiment, altcoini pod pritiskom"
                               ],
                      "ANIME":  [
 
                                ],
                      "XRP":  [
-                                 "XRP ispod $1.08, slaba potražnja kupaca"
+
                              ],
                      "BNB":  [
 
@@ -22,7 +22,7 @@
 
                              ],
                      "AVAX":  [
-                                  "DeFi sektor -11.5%, rizik daljnjih gubitaka"
+
                               ],
                      "PENGU":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-
+                                 "DeFi sektor -11.5%, rizik za DeFi protokole"
                              ],
                      "LINK":  [
 
@@ -61,10 +61,10 @@
 
                               ],
                      "TRUMP":  [
-
+                                   "Geopolitička eskalacija, Iran/SAD tenzije"
                                ],
                      "BTC":  [
-                                 "Geopolitički rizik (Iran-SAD) koči oporavak"
+
                              ]
                  },
     "catalysts":  {
@@ -105,7 +105,7 @@
 
                                  ],
                       "SOL":  [
-
+                                  "Morgan Stanley lansira $MSOL ETP na NYSE Arca ($381M)"
                               ],
                       "ADA":  [
 
@@ -117,7 +117,7 @@
 
                                 ],
                       "ETH":  [
-                                  "ETH bilježi blagi rast u negativnom tržištu"
+
                               ],
                       "LINK":  [
 
@@ -129,7 +129,7 @@
 
                                 ],
                       "BTC":  [
-                                  "BTC drži $64K potporu unatoč geopolitičkom pritisku"
+                                  "BlackRock kupuje $89.8M BTC, ETF inflow streak nastavljen"
                               ]
                   },
     "fearGreed":  28,
@@ -137,30 +137,30 @@
     "regime":  "VOLATILE",
     "sentimentScore":  {
                            "ACT":  0,
-                           "MEME":  0,
+                           "MEME":  -1,
                            "ANIME":  0,
-                           "XRP":  -1,
+                           "XRP":  0,
                            "BNB":  0,
                            "SUI":  0,
-                           "AVAX":  -1,
+                           "AVAX":  0,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  0,
+                           "SOL":  2,
                            "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  1,
+                           "ETH":  -1,
                            "LINK":  0,
                            "PUMP":  0,
-                           "TRUMP":  0,
-                           "BTC":  0
+                           "TRUMP":  -1,
+                           "BTC":  1
                        },
-    "aiSummary":  "DXY blago pao na 101.0 nakon FOMC hold odluke, no iranski vojni napad na US vojnike i drone na saudijske naftne objekte guraju Brent naftu na $88.5 uz aktiviranje geopolitičkog rizika. Fear & Greed ostaje na 28 (strah) uz BTC stabilan oko $64K i dominancu od 56.3%, dok DeFi sektor pada 11.5% (ENA -6%, AAVE -6%). Kratkoročno se očekuje nastavak visoke volatilnosti — geopolitička eskalacija može dodatno oslabiti altcoin pozicije, posebno DeFi segment.",
+    "aiSummary":  "DXY ostaje stabilan na 100.98 dok geopolitička eskalacija (iranski napadi na US vojnike i saudijske naftne objekte) drži Brent naftu na $88.5 uz aktivan ratni rizik i macroPenalty od 2. Fear & Greed ostaje u strahu (28), BTC se drži oko $64K uz pozitivne ETF inflow-ove (BlackRock +$89.8M), no DeFi sektor gubi 11.5% dok Morgan Stanleyev $MSOL ETP daje SOL-u jaki institucionalni katalizator. Kratkoročno se očekuje nastavak volatilnosti — altcoin pozicije ostaju pod pritiskom izuzev SOL-a koji dobiva značajan institucionalni momentum.",
     "warActive":  true,
     "btcDom":  56.3,
-    "stableDom":  13.2,
-    "oil":  88.5
+    "stableDom":  13.8,
+    "oil":  88.51
 }
