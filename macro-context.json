@@ -1,7 +1,7 @@
 {
     "dxy":  100.98,
-    "changeSummary":  "Fear & Greed skočio s 28 na 50 nakon Fed-ove pauze na kamatama, BTC ojačao prema $64.8K dok Brent nafta raste na $91 zbog novih US napada na Iran.",
-    "lastUpdated":  "2026-07-30T14:48:00Z",
+    "changeSummary":  "BTC porastao na ~$65K uz nastavak Fed pauze, tržišna kap dostigla $2.3T, dok F&G ostaje na 50 i warActive perzistira zbog eskalacije sukoba SAD-Iran.",
+    "lastUpdated":  "2026-07-31T08:07:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -13,7 +13,7 @@
 
                                ],
                      "XRP":  [
-
+                                 "XRP u uskom rangu $1.064-$1.092, bez breakouta"
                              ],
                      "BNB":  [
 
@@ -40,10 +40,10 @@
 
                                 ],
                      "SOL":  [
-                                 "Altcoini pod pritiskom, SOL blizu ključne podrške"
+
                              ],
                      "ADA":  [
-                                 "ADA pod pritiskom, bearish momentum ispod EMA"
+
                              ],
                      "PNUT":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-
+                                 "ETH blokiran ispod $1,933 otpora"
                              ],
                      "LINK":  [
 
@@ -64,7 +64,7 @@
 
                                ],
                      "BTC":  [
-
+                                 "Ratni rizik SAD-Iran, warActive aktivan"
                              ]
                  },
     "catalysts":  {
@@ -78,7 +78,7 @@
 
                                 ],
                       "XRP":  [
-                                  "XRP ETF inflowi se vraćaju, odboj prema $1.10"
+
                               ],
                       "BNB":  [
 
@@ -87,7 +87,8 @@
 
                               ],
                       "AVAX":  [
-                                   "KB Kookmin Bank koristi Avalanche za cross-border"
+                                   "KB Kookmin Bank integrira Avalanche za settlement",
+                                   "AVAX +8% kratki squeeze, break konsolidacije"
                                ],
                       "PENGU":  [
 
@@ -105,10 +106,10 @@
 
                                  ],
                       "SOL":  [
-                                  "Clearstream proširio crypto custody na SOL"
+                                  "SOL +1.9% na $76.42, rast nastavljen"
                               ],
                       "ADA":  [
-                                  "Clearstream proširio crypto custody na ADA"
+
                               ],
                       "PNUT":  [
 
@@ -120,16 +121,18 @@
 
                               ],
                       "LINK":  [
-
+                                   "Kitovi akumuliraju 14M LINK, CCIP migracija $7B",
+                                   "WLFI (Trump) integrira Chainlink oracle"
                                ],
                       "PUMP":  [
 
                                ],
                       "TRUMP":  [
-
+                                    "WLFI projekt aktivan, Trump 2025 kripto $1.4B"
                                 ],
                       "BTC":  [
-                                  "Fed zadržao kamate 3.50-3.75%, BTC raste prema $64.8K"
+                                  "Fed zadržao kamate 3.50-3.75%, BTC raste prema $65K",
+                                  "ETF priljevi nastavljeni, tržišna kap $2.3T"
                               ]
                   },
     "fearGreed":  50,
@@ -139,28 +142,28 @@
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  1,
+                           "XRP":  0,
                            "BNB":  0,
                            "SUI":  0,
-                           "AVAX":  1,
+                           "AVAX":  2,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  0,
-                           "ADA":  -1,
+                           "SOL":  1,
+                           "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
                            "ETH":  0,
-                           "LINK":  0,
+                           "LINK":  2,
                            "PUMP":  0,
-                           "TRUMP":  0,
+                           "TRUMP":  1,
                            "BTC":  1
                        },
-    "aiSummary":  "Fear & Greed indeks skočio s 28 na 50 (neutralno) nakon što je Fed zadržao kamate na 3.50-3.75% (glas 9-3), što je potaknulo BTC rast prema $64.8K uz ukupnu tržišnu kapitalizaciju od $2.27T. DXY ostaje stabilan oko 100.98 dok Brent nafta raste na ~$91 zbog novih američkih zračnih udara na Iran, što zadržava warActive i macroPenalty na 2. Altcoin sektor ostaje pod pritiskom (DeFi -11.5%), no XRP i AVAX dobivaju pozitivne institucijalne katalizatore.",
+    "aiSummary":  "Fear & Greed ostaje na 50 (neutralno) dok BTC raste prema $65K nakon što je Fed zadržao kamate na 3.50-3.75%, uz DXY stabilan na ~100.98 i Brent naftu na ~$90 — warActive ostaje aktivan zbog eskalacije SAD-Iran sukoba koji drži macroPenalty na 2. Altcoini pokazuju selektivnu snagu: AVAX +8% (short squeeze, KB Kookmin Bank integracija), SOL +1.9%, LINK whale akumulacija i CCIP migracija $7B, dok ETH i XRP ostaju zarobljeni u uskim rangima bez jasnog breakouta.",
     "warActive":  true,
     "btcDom":  56.3,
-    "stableDom":  12.8,
-    "oil":  90.46
+    "stableDom":  13.0,
+    "oil":  90.04
 }
