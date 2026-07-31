@@ -1,13 +1,13 @@
 {
     "dxy":  100.98,
-    "changeSummary":  "Situacija ostaje gotovo nepromjenjena vs 14:00 — DXY stabilan na 100.98, BTC oko $64K uz BlackRock ETF inflow-ove, Fear & Greed i dalje na 28, dok SOL dobiva novi institucionalni katalizator Morgan Stanleyevim ETP-om.",
-    "lastUpdated":  "2026-07-30T16:30:00Z",
+    "changeSummary":  "Fear & Greed skočio s 28 na 50 nakon Fed-ove pauze na kamatama, BTC ojačao prema $64.8K dok Brent nafta raste na $91 zbog novih US napada na Iran.",
+    "lastUpdated":  "2026-07-30T14:48:00Z",
     "warnings":  {
                      "ACT":  [
 
                              ],
                      "MEME":  [
-                                 "Opći risk-off sentiment, altcoini pod pritiskom"
+
                               ],
                      "ANIME":  [
 
@@ -40,10 +40,10 @@
 
                                 ],
                      "SOL":  [
-
+                                 "Altcoini pod pritiskom, SOL blizu ključne podrške"
                              ],
                      "ADA":  [
-
+                                 "ADA pod pritiskom, bearish momentum ispod EMA"
                              ],
                      "PNUT":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-                                 "DeFi sektor -11.5%, rizik za DeFi protokole"
+
                              ],
                      "LINK":  [
 
@@ -61,7 +61,7 @@
 
                               ],
                      "TRUMP":  [
-                                   "Geopolitička eskalacija, Iran/SAD tenzije"
+
                                ],
                      "BTC":  [
 
@@ -78,7 +78,7 @@
 
                                 ],
                       "XRP":  [
-
+                                  "XRP ETF inflowi se vraćaju, odboj prema $1.10"
                               ],
                       "BNB":  [
 
@@ -87,7 +87,7 @@
 
                               ],
                       "AVAX":  [
-
+                                   "KB Kookmin Bank koristi Avalanche za cross-border"
                                ],
                       "PENGU":  [
 
@@ -105,10 +105,10 @@
 
                                  ],
                       "SOL":  [
-                                  "Morgan Stanley lansira $MSOL ETP na NYSE Arca ($381M)"
+                                  "Clearstream proširio crypto custody na SOL"
                               ],
                       "ADA":  [
-
+                                  "Clearstream proširio crypto custody na ADA"
                               ],
                       "PNUT":  [
 
@@ -129,38 +129,38 @@
 
                                 ],
                       "BTC":  [
-                                  "BlackRock kupuje $89.8M BTC, ETF inflow streak nastavljen"
+                                  "Fed zadržao kamate 3.50-3.75%, BTC raste prema $64.8K"
                               ]
                   },
-    "fearGreed":  28,
+    "fearGreed":  50,
     "macroPenalty":  2,
     "regime":  "VOLATILE",
     "sentimentScore":  {
                            "ACT":  0,
-                           "MEME":  -1,
+                           "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  0,
+                           "XRP":  1,
                            "BNB":  0,
                            "SUI":  0,
-                           "AVAX":  0,
+                           "AVAX":  1,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  2,
-                           "ADA":  0,
+                           "SOL":  0,
+                           "ADA":  -1,
                            "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  -1,
+                           "ETH":  0,
                            "LINK":  0,
                            "PUMP":  0,
-                           "TRUMP":  -1,
+                           "TRUMP":  0,
                            "BTC":  1
                        },
-    "aiSummary":  "DXY ostaje stabilan na 100.98 dok geopolitička eskalacija (iranski napadi na US vojnike i saudijske naftne objekte) drži Brent naftu na $88.5 uz aktivan ratni rizik i macroPenalty od 2. Fear & Greed ostaje u strahu (28), BTC se drži oko $64K uz pozitivne ETF inflow-ove (BlackRock +$89.8M), no DeFi sektor gubi 11.5% dok Morgan Stanleyev $MSOL ETP daje SOL-u jaki institucionalni katalizator. Kratkoročno se očekuje nastavak volatilnosti — altcoin pozicije ostaju pod pritiskom izuzev SOL-a koji dobiva značajan institucionalni momentum.",
+    "aiSummary":  "Fear & Greed indeks skočio s 28 na 50 (neutralno) nakon što je Fed zadržao kamate na 3.50-3.75% (glas 9-3), što je potaknulo BTC rast prema $64.8K uz ukupnu tržišnu kapitalizaciju od $2.27T. DXY ostaje stabilan oko 100.98 dok Brent nafta raste na ~$91 zbog novih američkih zračnih udara na Iran, što zadržava warActive i macroPenalty na 2. Altcoin sektor ostaje pod pritiskom (DeFi -11.5%), no XRP i AVAX dobivaju pozitivne institucijalne katalizatore.",
     "warActive":  true,
     "btcDom":  56.3,
-    "stableDom":  13.8,
-    "oil":  88.51
+    "stableDom":  12.8,
+    "oil":  90.46
 }
