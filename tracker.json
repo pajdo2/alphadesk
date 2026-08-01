@@ -15,16 +15,17 @@
       "stop": 0.00024634,
       "conf": 59,
       "targetPct": 6,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "POGODAK",
+      "closePrice": 0.000302,
+      "closePct": 0.23,
+      "autoClose": true,
       "engineVer": "v5.174",
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
-      "peakPrice": 0.0003013,
-      "peakPct": 0
+      "peakPrice": 0.0003039,
+      "peakPct": 0.86,
+      "closeReason": "🔄 CHoCH Bearish — exit (struktura puknula)"
     },
     {
       "id": "1785393101808",
@@ -89,18 +90,22 @@
       "d1Target": 0.00002079,
       "d2Target": 0.00002122,
       "d3Target": 0.00002158,
-      "stop": 0.00001567,
+      "stop": 0.00002036,
       "conf": 59,
       "targetPct": 6,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
-      "d1Hit": false,
-      "d2Hit": false,
-      "d3Hit": false,
-      "peakPrice": 0.00002044,
-      "peakPct": 0.39
+      "status": "POGODAK",
+      "closePrice": 0.000091,
+      "closePct": 346.95,
+      "autoClose": true,
+      "d1Hit": true,
+      "d2Hit": true,
+      "d3Hit": true,
+      "peakPrice": 0.000091,
+      "peakPct": 346.95,
+      "partialHit": true,
+      "partialPrice": 0.000091,
+      "partialPct": 346.95,
+      "closeReason": "🎯 Target D3 dostignut"
     },
     {
       "id": "1785393088196",
@@ -124,8 +129,8 @@
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
-      "peakPrice": 0.00000277,
-      "peakPct": 0.73
+      "peakPrice": 0.00000276,
+      "peakPct": 0.36
     },
     {
       "id": "1785152549253",
@@ -251,10 +256,10 @@
       "conf": 58,
       "score": 5.566,
       "targetPct": 4,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "PROMAŠAJ",
+      "closePrice": 0.99808,
+      "closePct": -0.06,
+      "autoClose": true,
       "direction": "LONG",
       "autoTrack": true,
       "autoSource": "watch",
@@ -286,7 +291,8 @@
       "d4Hit": false,
       "d5Hit": false,
       "peakPrice": 0.998711,
-      "peakPct": 0
+      "peakPct": 0,
+      "closeReason": "⏰ 3 dana istekla"
     },
     {
       "id": "1785152226030_ETH",
@@ -7696,46 +7702,46 @@
   ],
   "signalWeights": {
     "_global": {
-      "rsiOversold": 0.905,
+      "rsiOversold": 0.923,
       "rsiOverbought": 1,
-      "trendUp": 0.718,
-      "trendDown": 0.861,
+      "trendUp": 0.667,
+      "trendDown": 0.882,
       "bbBelow": 1,
-      "divBullish": 1.297,
-      "divBearish": 0.474,
+      "divBullish": 1.234,
+      "divBearish": 0.48,
       "macdBullCross": 1,
       "macdBearCross": 1,
       "lsRatioBull": 1,
       "lsRatioExtreme": 1,
-      "basisBack": 1.148,
+      "basisBack": 1.182,
       "takerSell": 1,
       "btcDomHigh": 1,
       "btcDomLow": 1,
-      "volSpike": 0.94,
-      "mtfAllUp": 0.705,
-      "fgExtremeFear": 1.113,
-      "fgFear": 0.645
+      "volSpike": 0.926,
+      "mtfAllUp": 0.576,
+      "fgExtremeFear": 1.015,
+      "fgFear": 0.66
     },
     "BEAR": {
       "rsiOversold": 1,
       "rsiOverbought": 1,
-      "trendUp": 1.056,
+      "trendUp": 0.903,
       "trendDown": 1,
       "bbBelow": 1,
-      "divBullish": 1.583,
+      "divBullish": 1.623,
       "divBearish": 1,
       "macdBullCross": 1,
       "macdBearCross": 1,
       "lsRatioBull": 1,
       "lsRatioExtreme": 1,
-      "basisBack": 0.831,
+      "basisBack": 0.859,
       "takerSell": 1,
       "btcDomHigh": 1,
       "btcDomLow": 1,
-      "volSpike": 1.286,
+      "volSpike": 1.408,
       "mtfAllUp": 1,
-      "fgExtremeFear": 1.222,
-      "fgFear": 0.788
+      "fgExtremeFear": 1.203,
+      "fgFear": 0.843
     },
     "BTC_DOMINANCE_FEAR": {
       "rsiOversold": 1,
@@ -8860,10 +8866,10 @@
       "conf": 25,
       "score": -5.15,
       "verdict": "🔴 Preskoči",
-      "graded": false,
-      "correct": null,
-      "fwdPrice": null,
-      "fwdPct": null
+      "graded": true,
+      "correct": false,
+      "fwdPrice": 68456,
+      "fwdPct": 0
     },
     {
       "ts": 1785395101818,
@@ -8873,10 +8879,10 @@
       "conf": 45,
       "score": 1.43,
       "verdict": "🔵 Spekulativno",
-      "graded": false,
-      "correct": null,
-      "fwdPrice": null,
-      "fwdPct": null
+      "graded": true,
+      "correct": false,
+      "fwdPrice": 68456,
+      "fwdPct": 6.88
     },
     {
       "ts": 1785397335717,
@@ -8886,10 +8892,10 @@
       "conf": 38,
       "score": -0.15,
       "verdict": "🔵 Spekulativno",
-      "graded": false,
-      "correct": null,
-      "fwdPrice": null,
-      "fwdPct": null
+      "graded": true,
+      "correct": false,
+      "fwdPrice": 68456,
+      "fwdPct": 6.94
     },
     {
       "ts": 1785405962498,
@@ -8899,10 +8905,10 @@
       "conf": 27,
       "score": -4.35,
       "verdict": "🔴 Preskoči",
-      "graded": false,
-      "correct": null,
-      "fwdPrice": null,
-      "fwdPct": null
+      "graded": true,
+      "correct": false,
+      "fwdPrice": 68456,
+      "fwdPct": 0
     },
     {
       "ts": 1785411705319,
@@ -8912,11 +8918,24 @@
       "conf": 40,
       "score": 0.65,
       "verdict": "🔵 Spekulativno",
+      "graded": true,
+      "correct": false,
+      "fwdPrice": 68456,
+      "fwdPct": 6.11
+    },
+    {
+      "ts": 1785619807072,
+      "price": 68456,
+      "dir": "DOWN",
+      "th": 2.4,
+      "conf": 31,
+      "score": -2.75,
+      "verdict": "🔴 Preskoči",
       "graded": false,
       "correct": null,
       "fwdPrice": null,
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-07-30T20:12:29.883Z"
+  "updatedAt": "2026-08-01T21:30:26.663Z"
 }
