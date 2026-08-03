@@ -1,7 +1,7 @@
 {
-    "dxy":  100.19,
-    "changeSummary":  "Fear & Greed pao s 28 na 25 (Ekstremni strah), BTC zadržava raspon $63,549-$65,328 uz ETF odljeve i eskalaciju US-Iran rata koji gura naftu na $92.",
-    "lastUpdated":  "2026-07-31T16:30:00Z",
+    "dxy":  99.72,
+    "changeSummary":  "DXY pao ispod 100 (99.72) smanjujući macroPenalty s 2 na 1, no Coldcard hack od $70M negativno utječe na BTC sentiment dok Oil pada s $92 na $90 zbog geopolitičke deeskalacije US-Iran.",
+    "lastUpdated":  "2026-08-03T12:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -13,7 +13,7 @@
 
                                ],
                      "XRP":  [
-
+                                 "CLARITY Act odgođen — Senat stavio na čekanje"
                              ],
                      "BNB":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-                               "Cijene ETH padaju ujutro, slab momentum"
+
                              ],
                      "LINK":  [
 
@@ -64,8 +64,7 @@
 
                                ],
                      "BTC":  [
-                               "ETF odljevi i Fed neizvjesnost pritišću cijenu",
-                               "Options expiry end-of-month volatilnost"
+                                 "Coldcard hack $70M — 1196 novčanika kompromitirano"
                              ]
                  },
     "catalysts":  {
@@ -79,10 +78,10 @@
 
                                 ],
                       "XRP":  [
-                                "XRP Ledger ekosustav top gainer danas"
+                                  "XRP Ledger v3.3.0 — onboarding za banke i platforme"
                               ],
                       "BNB":  [
-                                "Binance US razmatra ulazak u prediction markets"
+
                               ],
                       "SUI":  [
 
@@ -106,7 +105,7 @@
 
                                  ],
                       "SOL":  [
-
+                                  "Alpenglow upgrade — finality 150ms vs dosadašnjih 12.8s"
                               ],
                       "ADA":  [
 
@@ -121,8 +120,8 @@
 
                               ],
                       "LINK":  [
-
-                               ],
+                                  "Tehnička podrška — potencijalni katalisti za rast"
+                              ],
                       "PUMP":  [
 
                                ],
@@ -133,15 +132,15 @@
 
                               ]
                   },
-    "fearGreed":  25,
-    "macroPenalty":  2,
+    "fearGreed":  33,
+    "macroPenalty":  1,
     "regime":  "VOLATILE",
     "sentimentScore":  {
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  1,
-                           "BNB":  1,
+                           "XRP":  0,
+                           "BNB":  0,
                            "SUI":  0,
                            "AVAX":  0,
                            "PENGU":  0,
@@ -149,19 +148,19 @@
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  0,
+                           "SOL":  1,
                            "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  -1,
-                           "LINK":  0,
+                           "ETH":  0,
+                           "LINK":  1,
                            "PUMP":  0,
                            "TRUMP":  0,
                            "BTC":  -1
                        },
-    "aiSummary":  "Fear & Greed pao na 25 (Ekstremni strah) dok BTC oscilira između $63,549-$65,328 uz ETF odljeve i Fed neizvjesnost — DXY stabilan na 100.19, ali eskalacija US-Iran rata tjera naftu (Brent) na $92, najjači mjesečni rast od ožujka. WarActive potvrđen s macroPenalty 2; altcoini bez jasnog smjera osim XRP Ledger ekosustava koji bilježi pozitivne signale — preporučen selektivan pristup s fokusom na BTC.",
+    "aiSummary":  "DXY pao ispod 100 na 99.72 smanjujući makro pritisak, dok Fear & Greed indeks stagnira na 33 (Strah) uz BTC na ~$62,500 i dominancijom od 58.5% — Coldcard hardware wallet hack od $70M drenirao je 1,196 novčanika u 41 minuti čime se negativni sentiment za BTC pojačao. Oil pada s $92 na $90 zbog diplomatskog napretka US-Iran što postupno rastapa ratnu premiju, no warActive ostaje aktivan. Preporučen selektivan pristup s naglaskom na SOL (Alpenglow upgrade) uz oprez oko BTC hardware wallet izloženosti i izbjegavanje XRP dok CLARITY Act stoji u Senatu.",
     "warActive":  true,
-    "btcDom":  56.3,
-    "stableDom":  13.7,
-    "oil":  92.0
+    "btcDom":  58.5,
+    "stableDom":  8.0,
+    "oil":  90.0
 }
