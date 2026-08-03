@@ -1,7 +1,7 @@
 {
     "dxy":  99.72,
-    "changeSummary":  "DXY pao ispod 100 (99.72) smanjujući macroPenalty s 2 na 1, no Coldcard hack od $70M negativno utječe na BTC sentiment dok Oil pada s $92 na $90 zbog geopolitičke deeskalacije US-Iran.",
-    "lastUpdated":  "2026-08-03T12:00:00Z",
+    "changeSummary":  "Oil dramatično pao s $90 na $81 zbog Iran geopolitičke de-eskalacije, DXY stagnira na 99.72, dok novi val Coldcard napada (389 BTC) zadržava F&G u zoni straha (~35).",
+    "lastUpdated":  "2026-08-03T14:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -13,7 +13,7 @@
 
                                ],
                      "XRP":  [
-                                 "CLARITY Act odgođen — Senat stavio na čekanje"
+
                              ],
                      "BNB":  [
 
@@ -64,7 +64,8 @@
 
                                ],
                      "BTC":  [
-                                 "Coldcard hack $70M — 1196 novčanika kompromitirano"
+                                 "Coldcard hack val 4: 389 BTC ukradeno",
+                                 "ETF outflowi + US Treasury prinos raste"
                              ]
                  },
     "catalysts":  {
@@ -78,7 +79,7 @@
 
                                 ],
                       "XRP":  [
-                                  "XRP Ledger v3.3.0 — onboarding za banke i platforme"
+                                  "CLARITY Act prošao Senate Banking 15-9"
                               ],
                       "BNB":  [
 
@@ -105,10 +106,11 @@
 
                                  ],
                       "SOL":  [
-                                  "Alpenglow upgrade — finality 150ms vs dosadašnjih 12.8s"
+                                  "95% tokenized equity vol rekord $1.29B",
+                                  "E*TRADE spot trading dostupan"
                               ],
                       "ADA":  [
-
+                                  "ADA +11% tjedan, one-month high"
                               ],
                       "PNUT":  [
 
@@ -117,11 +119,12 @@
 
                                 ],
                       "ETH":  [
-
+                                  "Glamsterdam upgrade u Q3 2026",
+                                  "$43B DeFi TVL podrška"
                               ],
                       "LINK":  [
-                                  "Tehnička podrška — potencijalni katalisti za rast"
-                              ],
+                                   "$75B vrijednosti osigurano CCIP $18B/mj"
+                               ],
                       "PUMP":  [
 
                                ],
@@ -132,14 +135,14 @@
 
                               ]
                   },
-    "fearGreed":  33,
+    "fearGreed":  35,
     "macroPenalty":  1,
     "regime":  "VOLATILE",
     "sentimentScore":  {
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  0,
+                           "XRP":  1,
                            "BNB":  0,
                            "SUI":  0,
                            "AVAX":  0,
@@ -148,19 +151,19 @@
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  1,
-                           "ADA":  0,
+                           "SOL":  2,
+                           "ADA":  1,
                            "PNUT":  0,
                            "AIXBT":  0,
                            "ETH":  0,
                            "LINK":  1,
                            "PUMP":  0,
                            "TRUMP":  0,
-                           "BTC":  -1
+                           "BTC":  -2
                        },
-    "aiSummary":  "DXY pao ispod 100 na 99.72 smanjujući makro pritisak, dok Fear & Greed indeks stagnira na 33 (Strah) uz BTC na ~$62,500 i dominancijom od 58.5% — Coldcard hardware wallet hack od $70M drenirao je 1,196 novčanika u 41 minuti čime se negativni sentiment za BTC pojačao. Oil pada s $92 na $90 zbog diplomatskog napretka US-Iran što postupno rastapa ratnu premiju, no warActive ostaje aktivan. Preporučen selektivan pristup s naglaskom na SOL (Alpenglow upgrade) uz oprez oko BTC hardware wallet izloženosti i izbjegavanje XRP dok CLARITY Act stoji u Senatu.",
+    "aiSummary":  "DXY stagnira na 99.72 ispod razine 100 smanjujući makro pritisak, no FED je ostavio kamate nepromijenjene peti put zaredom pojačavajući neizvjesnost oko inflacije. Oil je dramatično pao s $90 na ~$81 zbog Iran geopolitičke de-eskalacije koja vraća nove barrel kapacitete na tržište i topi ratnu premiju. BTC ostaje pod pritiskom četvrtog vala Coldcard hack napada (389 BTC) i ETF odljeva, dok SOL (tokenized equity rekord $1.29B + E*TRADE listing) i ADA (+11% tjedan) pokazuju relativnu snagu — preporučen selektivan pristup uz izbjegavanje BTC hardware wallet izloženosti.",
     "warActive":  true,
     "btcDom":  58.5,
-    "stableDom":  8.0,
-    "oil":  90.0
+    "stableDom":  8.5,
+    "oil":  81.0
 }
