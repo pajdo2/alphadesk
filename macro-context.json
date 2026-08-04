@@ -1,7 +1,7 @@
 {
-    "dxy":  99.72,
-    "changeSummary":  "Oil dramatično pao s $90 na $81 zbog Iran geopolitičke de-eskalacije, DXY stagnira na 99.72, dok novi val Coldcard napada (389 BTC) zadržava F&G u zoni straha (~35).",
-    "lastUpdated":  "2026-08-03T14:00:00Z",
+    "dxy":  99.8,
+    "changeSummary":  "DXY lagano porastao na 99.8, BTC korigirao na ~$62,600 uz pojačan prodajni pritisak od Trump Media i Strategy te najavu ruskog bana rudarenja u Moskvi od kolovoza.",
+    "lastUpdated":  "2026-08-03T16:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -13,7 +13,7 @@
 
                                ],
                      "XRP":  [
-
+                                 "CLARITY Act odgoda u Senatu — regulatorni rizik"
                              ],
                      "BNB":  [
 
@@ -61,11 +61,11 @@
 
                               ],
                      "TRUMP":  [
-
+                                   "Trump Media prebacio 2628 BTC na Crypto.com — prodajni signal"
                                ],
                      "BTC":  [
-                                 "Coldcard hack val 4: 389 BTC ukradeno",
-                                 "ETF outflowi + US Treasury prinos raste"
+                                 "Rusija brani rudarenje u Moskvi od 15.8. do 2032.",
+                                 "Trump Media i Strategy zajedno prodali 4266 BTC"
                              ]
                  },
     "catalysts":  {
@@ -79,7 +79,7 @@
 
                                 ],
                       "XRP":  [
-                                  "CLARITY Act prošao Senate Banking 15-9"
+
                               ],
                       "BNB":  [
 
@@ -106,11 +106,10 @@
 
                                  ],
                       "SOL":  [
-                                  "95% tokenized equity vol rekord $1.29B",
-                                  "E*TRADE spot trading dostupan"
+                                  "Tokenized equity momentum — relativna snaga vs BTC"
                               ],
                       "ADA":  [
-                                  "ADA +11% tjedan, one-month high"
+
                               ],
                       "PNUT":  [
 
@@ -119,11 +118,10 @@
 
                                 ],
                       "ETH":  [
-                                  "Glamsterdam upgrade u Q3 2026",
-                                  "$43B DeFi TVL podrška"
+
                               ],
                       "LINK":  [
-                                   "$75B vrijednosti osigurano CCIP $18B/mj"
+
                                ],
                       "PUMP":  [
 
@@ -135,14 +133,14 @@
 
                               ]
                   },
-    "fearGreed":  35,
-    "macroPenalty":  1,
+    "fearGreed":  33,
+    "macroPenalty":  0,
     "regime":  "VOLATILE",
     "sentimentScore":  {
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  1,
+                           "XRP":  -1,
                            "BNB":  0,
                            "SUI":  0,
                            "AVAX":  0,
@@ -151,19 +149,19 @@
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  2,
-                           "ADA":  1,
+                           "SOL":  1,
+                           "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  0,
-                           "LINK":  1,
+                           "ETH":  -1,
+                           "LINK":  0,
                            "PUMP":  0,
-                           "TRUMP":  0,
+                           "TRUMP":  -1,
                            "BTC":  -2
                        },
-    "aiSummary":  "DXY stagnira na 99.72 ispod razine 100 smanjujući makro pritisak, no FED je ostavio kamate nepromijenjene peti put zaredom pojačavajući neizvjesnost oko inflacije. Oil je dramatično pao s $90 na ~$81 zbog Iran geopolitičke de-eskalacije koja vraća nove barrel kapacitete na tržište i topi ratnu premiju. BTC ostaje pod pritiskom četvrtog vala Coldcard hack napada (389 BTC) i ETF odljeva, dok SOL (tokenized equity rekord $1.29B + E*TRADE listing) i ADA (+11% tjedan) pokazuju relativnu snagu — preporučen selektivan pristup uz izbjegavanje BTC hardware wallet izloženosti.",
-    "warActive":  true,
+    "aiSummary":  "DXY je blago porastao na 99.8 no ostaje ispod razine 100 dok FED drži kamate nepromijenjene i investitori parcijalno izlaze iz dolara. Strah & Pohlepa indeks pao na 33, BTC korigira na ~$62,600 uz pojačan prodajni pritisak — Trump Media prebacio 2,628 BTC na burzu, Strategy prodao 1,638 BTC, a Rusija objavljuje ban rudarenja u Moskvi od 15. kolovoza do 2032. Preporuča se oprezan pristup; SOL zadržava relativnu snagu kroz tokenized equity narativ.",
+    "warActive":  false,
     "btcDom":  58.5,
-    "stableDom":  8.5,
-    "oil":  81.0
+    "stableDom":  7.5,
+    "oil":  79.5
 }
