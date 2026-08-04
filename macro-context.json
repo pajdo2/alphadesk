@@ -1,7 +1,7 @@
 {
     "dxy":  99.97,
-    "changeSummary":  "BTC oporavio na $63,776 (+1.1%), DXY blago porastao na 99.97, dok hawkish Fed i $70M hardware wallet hack drže F&G na 33.",
-    "lastUpdated":  "2026-08-04T16:00:00Z",
+    "changeSummary":  "Oil se blago oporavlja na $80.1, Fear & Greed neznatno raste na 34, dok CLARITY Act gubi parlamentarnu podršku (30%) što dodatno pritišće tržišni sentiment.",
+    "lastUpdated":  "2026-08-04T16:30:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -43,7 +43,7 @@
 
                              ],
                      "ADA":  [
-
+                                 "Bearish bias, 2-3% pad, otpor na SMA"
                              ],
                      "PNUT":  [
 
@@ -64,9 +64,8 @@
 
                                ],
                      "BTC":  [
-                                 "Hawkish Fed hold uz restriktivan signal",
-                                 "Hardware wallet hack $70M - sigurnosni rizik",
-                                 "ETF redempcije krajem srpnja"
+                                 "Hardware wallet hack $70M, ETF redempcije",
+                                 "CLARITY Act prolaz pao na 30% po Galaxy Research"
                              ]
                  },
     "catalysts":  {
@@ -80,7 +79,7 @@
 
                                 ],
                       "XRP":  [
-
+                                  "Clearstream proširio crypto custody na XRP"
                               ],
                       "BNB":  [
 
@@ -89,7 +88,7 @@
 
                               ],
                       "AVAX":  [
-
+                                   "Helicon upgrade na Fuji testnetu, sub-5s settlement"
                                ],
                       "PENGU":  [
 
@@ -107,7 +106,7 @@
 
                                  ],
                       "SOL":  [
-                                  "Tokenized equity narativ, ciljanje $100 razine"
+
                               ],
                       "ADA":  [
 
@@ -131,27 +130,27 @@
 
                                 ],
                       "BTC":  [
-                                  "Iransko-US mirovni pregovori, pad geopolitičkog rizika"
+                                  "ISM PMI 4-god. maks., BTC +1% recovery na $63,780"
                               ]
                   },
-    "fearGreed":  33,
+    "fearGreed":  34,
     "macroPenalty":  0,
     "regime":  "VOLATILE",
     "sentimentScore":  {
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  0,
+                           "XRP":  1,
                            "BNB":  0,
                            "SUI":  0,
-                           "AVAX":  0,
+                           "AVAX":  1,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  1,
-                           "ADA":  0,
+                           "SOL":  0,
+                           "ADA":  -1,
                            "PNUT":  0,
                            "AIXBT":  0,
                            "ETH":  0,
@@ -160,9 +159,9 @@
                            "TRUMP":  0,
                            "BTC":  -1
                        },
-    "aiSummary":  "DXY ostaje neposredno ispod 100 na razini 99.97 dok Fed drži restriktivan stav uz hawkish signal, a nastavak iransko-američkih mirovnih pregovora srušio je naftu za ~6% na $79.6 — pozitivan makro signal za smanjenje geopolitičkog rizika. BTC se blago oporavlja na $63,776 no Fear & Greed ostaje u zoni straha na 33 uslijed hardware wallet hacka ($70M) i ETF redempcija krajem srpnja. Preporuča se oprezan pristup uz selektivnu ekspoziciju u projektima s fundamentalnom snagom poput SOL-a.",
+    "aiSummary":  "DXY stagnira na 99.97 ispod psihološke razine 100 pružajući neutralno-pozitivan makro signal dok Fed drži restriktivan stav (macroPenalty 0 nakon korekcije klampanja). BTC oscilira stabilno oko $63,780 uz Fear & Greed na 34 — zona straha — opterećen Coldcard hakom ($70M) i CLARITY Act-om koji gubi parlamentarnu podršku na 30%. Oil se blago oporavlja na $80.1 dok geopolitička slika s Iranom ostaje nestabilna; preporuča se selektivna ekspozicija s fokusom na AVAX (Helicon upgrade) i XRP (Clearstream custody).",
     "warActive":  false,
     "btcDom":  58.5,
-    "stableDom":  8.5,
-    "oil":  79.6
+    "stableDom":  13.3,
+    "oil":  80.1
 }
