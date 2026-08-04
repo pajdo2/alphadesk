@@ -42,10 +42,10 @@
       "stop": 0.00849,
       "conf": 53,
       "targetPct": 6,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "PROMAŠAJ",
+      "closePrice": 0.00849,
+      "closePct": 0,
+      "autoClose": true,
       "d1Hit": true,
       "d2Hit": false,
       "d3Hit": false,
@@ -53,7 +53,8 @@
       "peakPct": 2.71,
       "partialHit": true,
       "partialPrice": 0.00872,
-      "partialPct": 2.71
+      "partialPct": 2.71,
+      "closeReason": "⏰ Isteklo — nema live cijene"
     },
     {
       "id": "1785393097716",
@@ -7706,46 +7707,46 @@
   ],
   "signalWeights": {
     "_global": {
-      "rsiOversold": 0.923,
+      "rsiOversold": 0.91,
       "rsiOverbought": 1,
-      "trendUp": 0.667,
-      "trendDown": 0.882,
+      "trendUp": 0.651,
+      "trendDown": 0.867,
       "bbBelow": 1,
-      "divBullish": 1.234,
-      "divBearish": 0.48,
+      "divBullish": 1.202,
+      "divBearish": 0.476,
       "macdBullCross": 1,
       "macdBearCross": 1,
       "lsRatioBull": 1,
       "lsRatioExtreme": 1,
-      "basisBack": 1.182,
+      "basisBack": 1.158,
       "takerSell": 1,
       "btcDomHigh": 1,
       "btcDomLow": 1,
-      "volSpike": 0.926,
-      "mtfAllUp": 0.576,
-      "fgExtremeFear": 1.015,
-      "fgFear": 0.66
+      "volSpike": 0.901,
+      "mtfAllUp": 0.567,
+      "fgExtremeFear": 1.029,
+      "fgFear": 0.641
     },
     "BEAR": {
       "rsiOversold": 1,
       "rsiOverbought": 1,
-      "trendUp": 0.903,
+      "trendUp": 0.893,
       "trendDown": 1,
       "bbBelow": 1,
-      "divBullish": 1.623,
+      "divBullish": 1.59,
       "divBearish": 1,
       "macdBullCross": 1,
       "macdBearCross": 1,
       "lsRatioBull": 1,
       "lsRatioExtreme": 1,
-      "basisBack": 0.859,
+      "basisBack": 0.853,
       "takerSell": 1,
       "btcDomHigh": 1,
       "btcDomLow": 1,
-      "volSpike": 1.408,
+      "volSpike": 1.382,
       "mtfAllUp": 1,
-      "fgExtremeFear": 1.203,
-      "fgFear": 0.843
+      "fgExtremeFear": 1.233,
+      "fgFear": 0.831
     },
     "BTC_DOMINANCE_FEAR": {
       "rsiOversold": 1,
@@ -8954,5 +8955,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-08-04T19:47:52.478Z"
+  "updatedAt": "2026-08-04T19:48:00.172Z"
 }
