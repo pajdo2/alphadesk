@@ -39,18 +39,21 @@
       "d1Target": 0.00866829,
       "d2Target": 0.00884658,
       "d3Target": 0.0089994,
-      "stop": 0.00690067,
+      "stop": 0.00849,
       "conf": 53,
       "targetPct": 6,
       "status": "AKTIVAN",
       "closePrice": null,
       "closePct": null,
       "autoClose": false,
-      "d1Hit": false,
+      "d1Hit": true,
       "d2Hit": false,
       "d3Hit": false,
-      "peakPrice": 0.00849,
-      "peakPct": 0
+      "peakPrice": 0.00872,
+      "peakPct": 2.71,
+      "partialHit": true,
+      "partialPrice": 0.00872,
+      "partialPct": 2.71
     },
     {
       "id": "1785393097716",
@@ -8932,11 +8935,24 @@
       "conf": 31,
       "score": -2.75,
       "verdict": "🔴 Preskoči",
+      "graded": true,
+      "correct": false,
+      "fwdPrice": 68456,
+      "fwdPct": 0
+    },
+    {
+      "ts": 1785872869477,
+      "price": 68456,
+      "dir": "NEUTRAL",
+      "th": 2.4,
+      "conf": 39,
+      "score": 0.55,
+      "verdict": "🔵 Spekulativno",
       "graded": false,
       "correct": null,
       "fwdPrice": null,
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-08-02T07:30:18.556Z"
+  "updatedAt": "2026-08-04T19:47:52.478Z"
 }
