@@ -18,18 +18,27 @@ function readJson() {
 
 async function fetchPrice(sym) {
   const pair = String(sym).replace(/USDT$/, '') + 'USDT';
+  // data-api.binance.vision = Binanceov javni market-data endpoint, NIJE geo-blokiran
+  // s cloud/CI IP-eva (api.binance.com često vraća 451/visi s GitHub Actions runnera).
   const urls = [
+    `https://data-api.binance.vision/api/v3/ticker/price?symbol=${pair}`,
     `https://api.binance.com/api/v3/ticker/price?symbol=${pair}`,
     `https://api.binance.us/api/v3/ticker/price?symbol=${pair}`
   ];
   for (const u of urls) {
     try {
-      const r = await fetch(u);
+      // KLJUČNO: timeout na fetch — bez ovoga blokiran/spor endpoint visi
+      // na TCP timeoutu (minute), pa se cijeli job otegne i biva otkazan.
+      const ctrl = new AbortController();
+      const timer = setTimeout(() => ctrl.abort(), 8000);
+      let r;
+      try { r = await fetch(u, { signal: ctrl.signal }); }
+      finally { clearTimeout(timer); }
       if (!r.ok) continue;
       const d = await r.json();
       const p = parseFloat(d.price);
       if (p > 0) return p;
-    } catch (e) { /* probaj sljedeci */ }
+    } catch (e) { /* timeout ili blok — probaj sljedeci */ }
   }
   return null;
 }
