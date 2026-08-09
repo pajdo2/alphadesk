@@ -15,16 +15,17 @@
       "stop": 0.02955264,
       "conf": 58,
       "targetPct": 6,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "POGODAK",
+      "closePrice": 0.0411,
+      "closePct": 7.03,
+      "autoClose": true,
       "engineVer": "v5.186",
       "d1Hit": true,
-      "d2Hit": false,
-      "d3Hit": false,
-      "peakPrice": 0.04,
-      "peakPct": 4.17
+      "d2Hit": true,
+      "d3Hit": true,
+      "peakPrice": 0.0411,
+      "peakPct": 7.03,
+      "closeReason": "🎯 Target (24/7)"
     },
     {
       "id": "1786140664169",
@@ -9086,5 +9087,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-08-08T14:28:58.150Z"
+  "updatedAt": "2026-08-09T15:58:09.456Z"
 }
