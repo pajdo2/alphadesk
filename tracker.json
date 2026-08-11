@@ -1,6 +1,32 @@
 {
   "predictions": [
     {
+      "id": "1786445764012",
+      "timestamp": 1786445764012,
+      "sym": "NEIRO",
+      "type": "meme",
+      "direction": "LONG",
+      "date": "11. kol",
+      "entry": 0.00006797,
+      "target": 0.00007205,
+      "d1Target": 0.0000694,
+      "d2Target": 0.00007082,
+      "d3Target": 0.00007205,
+      "stop": 0.00003469,
+      "conf": 61,
+      "targetPct": 6,
+      "status": "AKTIVAN",
+      "closePrice": null,
+      "closePct": null,
+      "autoClose": false,
+      "engineVer": "v5.186",
+      "d1Hit": false,
+      "d2Hit": false,
+      "d3Hit": false,
+      "peakPrice": 0.00006797,
+      "peakPct": 0
+    },
+    {
       "id": "1786140668063",
       "timestamp": 1786140668063,
       "sym": "PNUT",
@@ -9102,5 +9128,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-08-11T10:55:51.809Z"
+  "updatedAt": "2026-08-11T10:56:07.918Z"
 }
