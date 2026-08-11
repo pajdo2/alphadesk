@@ -1,6 +1,32 @@
 {
   "predictions": [
     {
+      "id": "1786445785905",
+      "timestamp": 1786445785905,
+      "sym": "PENGU",
+      "type": "meme",
+      "direction": "LONG",
+      "date": "11. kol",
+      "entry": 0.006494,
+      "target": 0.00688364,
+      "d1Target": 0.00663037,
+      "d2Target": 0.00676675,
+      "d3Target": 0.00688364,
+      "stop": 0.00462373,
+      "conf": 52,
+      "targetPct": 6,
+      "status": "AKTIVAN",
+      "closePrice": null,
+      "closePct": null,
+      "autoClose": false,
+      "engineVer": "v5.186",
+      "d1Hit": false,
+      "d2Hit": false,
+      "d3Hit": false,
+      "peakPrice": 0.006494,
+      "peakPct": 0
+    },
+    {
       "id": "1786445779932",
       "timestamp": 1786445779932,
       "sym": "BONK",
@@ -9154,5 +9180,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-08-11T10:56:24.174Z"
+  "updatedAt": "2026-08-11T10:56:29.897Z"
 }
