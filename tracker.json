@@ -9083,11 +9083,24 @@
       "conf": 26,
       "score": -4.75,
       "verdict": "🔴 Preskoči",
+      "graded": true,
+      "correct": false,
+      "fwdPrice": 68456,
+      "fwdPct": 0
+    },
+    {
+      "ts": 1786445748807,
+      "price": 68456,
+      "dir": "DOWN",
+      "th": 2.4,
+      "conf": 32,
+      "score": -2.35,
+      "verdict": "🔴 Preskoči",
       "graded": false,
       "correct": null,
       "fwdPrice": null,
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-08-10T22:33:44.213Z"
+  "updatedAt": "2026-08-11T10:55:51.809Z"
 }
