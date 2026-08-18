@@ -1,19 +1,19 @@
 {
-    "dxy":  99.5,
-    "changeSummary":  "Sentiment blago poboljšan (F&G 35→37), BTC porastao na 64.3K$ (+1.8%), dominacija stabilna na 56.5%, macroPenalty ispravljen na 0.",
-    "lastUpdated":  "2026-08-18T14:00:00Z",
+    "dxy":  99.75,
+    "changeSummary":  "Eskalacija US-Iran napetosti (istekom primirja) aktivirala je ratni rizik, podigla naftu na $85 i povećala macroPenalty s -1 na 1, dok BTC stabiliziran iznad $64K uz blago ublažen strah (F&G 40 vs. 41).",
+    "lastUpdated":  "2026-08-18T12:00:00Z",
     "warnings":  {
                      "ACT":  [
 
                              ],
                      "MEME":  [
-                                 "Altcoini visoko volatilni u bear market fazi"
+
                               ],
                      "ANIME":  [
 
                                ],
                      "XRP":  [
-
+                                 "Brani ključnu razinu $1, rizik proboja prema dolje"
                              ],
                      "BNB":  [
 
@@ -22,7 +22,7 @@
 
                              ],
                      "AVAX":  [
-
+                                  "Gubitak developera na Solanu i Sui"
                               ],
                      "PENGU":  [
 
@@ -40,10 +40,10 @@
 
                                 ],
                      "SOL":  [
-
+                                 "28.83% stakovanog SOL-a delikventno zbog greške"
                              ],
                      "ADA":  [
-
+                                 "Cijena pada 10.6% tjedno, slab momentum"
                              ],
                      "PNUT":  [
 
@@ -52,21 +52,24 @@
 
                                ],
                      "ETH":  [
-                                 "ETH/BTC omjer slab - kapital ostaje u BTC-u"
+                                 "Bori se ispod razine $1,900, slab otpor"
                              ],
                      "LINK":  [
-
+                                  "Kitovi prenijeli $9.2M LINK-a na Coinbase"
                               ],
                      "PUMP":  [
 
                               ],
                      "TRUMP":  [
-                                  "CLARITY Act - vjerojatnost pada na 10% za 2026."
+
                                ],
                      "BTC":  [
-                                 "Analitičari dovode u pitanje dno bear marketa"
+                                 "US-Iran napetosti: nafta $85+, geopolitički rizik aktivan"
                              ]
                  },
+    "sp500Ret5d":  1.2,
+    "fearGreed":  40,
+    "macroPenalty":  1,
     "catalysts":  {
                       "ACT":  [
 
@@ -78,7 +81,7 @@
 
                                 ],
                       "XRP":  [
-                                  "XRP ekosustav među top gainerima dana"
+                                  "ETF glasine za XRP rastu, interes institucionala"
                               ],
                       "BNB":  [
 
@@ -87,7 +90,7 @@
 
                               ],
                       "AVAX":  [
-
+                                   "FIFA SP 2026 koristi Avalanche blockchain"
                                ],
                       "PENGU":  [
 
@@ -105,10 +108,12 @@
 
                                  ],
                       "SOL":  [
-                                  "Tržište altcoina se oporavlja uz BTC kao sidro"
+                                  "MoneyGram integracija u 170+ zemalja",
+                                  "ETF priljevi $8.8M, kitovi zatvaraju shortove"
                               ],
                       "ADA":  [
-
+                                  "120M ADA odobreno za DeFi projekte",
+                                  "USDM stablecoin lansiran na Midnight lancu"
                               ],
                       "PNUT":  [
 
@@ -117,10 +122,11 @@
 
                                 ],
                       "ETH":  [
-                                  "BTC rast podiže cijeli tržišni sentiment"
+                                  "ETH prešao $1,900, rast 2.18% u 24h"
                               ],
                       "LINK":  [
-
+                                   "Bijela kuća kripto regulatorni summit",
+                                   "Futures volumen +123%, rast derivata i ETF-ova"
                                ],
                       "PUMP":  [
 
@@ -129,12 +135,10 @@
 
                                 ],
                       "BTC":  [
-                                  "Fed minutesi srijeda - signali putanje kamatnih stopa",
-                                  "White House kripto summit s industrijskim liderima"
+                                  "Goldman Sachs akvizicija NEOS bitcoin ETF fonda",
+                                  "BTC skočio iznad $64K, kupci se vraćaju na dnu"
                               ]
                   },
-    "fearGreed":  37,
-    "macroPenalty":  0,
     "regime":  "CRAB",
     "sentimentScore":  {
                            "ACT":  0,
@@ -143,25 +147,25 @@
                            "XRP":  1,
                            "BNB":  0,
                            "SUI":  0,
-                           "AVAX":  0,
+                           "AVAX":  1,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
                            "SOL":  0,
-                           "ADA":  0,
+                           "ADA":  -1,
                            "PNUT":  0,
                            "AIXBT":  0,
                            "ETH":  0,
-                           "LINK":  0,
+                           "LINK":  -1,
                            "PUMP":  0,
-                           "TRUMP":  -1,
+                           "TRUMP":  0,
                            "BTC":  1
                        },
-    "aiSummary":  "DXY je pao na 99.5 što pozitivno djeluje na rizičnu imovinu, ali kriptotržište ostaje u zoni straha (F&G 37) s BTC-om na 64.3K$. BTC dominacija od 56.5% potvrđuje da kapital gravitira prema Bitcoinu nauštrb altcoina. Predstojeći Fed minutesi i White House kripto summit mogu povećati volatilnost, dok pad šanse CLARITY Acta na 10% tlači regulatorni sentiment.",
-    "warActive":  false,
+    "aiSummary":  "DXY ostaje ispod 100 (99.75) pružajući blagu potporu kripto imovini, ali istekom US-Iran primirja geopolitički rizik je porastao, a nafta skočila na $85+, čime macroPenalty raste na 1. Indeks straha i pohlepe iznosi 40 (strah), BTC se oporavlja iznad $64K uz dominanciju od 56.5%, a ETH je tek prešao $1,900 — tržište ostaje u CRAB fazi. Ključni rizici su geopolitička eskalacija oko Hormuškog tjesnaca i moguće ETF odljevi, dok pozitivne katalite pruža Goldman Sachs BTC ETF akvizicija i FIFA/Avalanche partnerstvo.",
+    "warActive":  true,
     "btcDom":  56.5,
-    "stableDom":  13.8,
-    "oil":  82.4
+    "stableDom":  12.5,
+    "oil":  85.1
 }
