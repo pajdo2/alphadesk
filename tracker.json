@@ -9418,7 +9418,46 @@
       "correct": null,
       "fwdPrice": null,
       "fwdPct": null
+    },
+    {
+      "ts": 1787057987742,
+      "price": 64298.01,
+      "dir": "UP",
+      "th": 1.54,
+      "conf": 58,
+      "score": 7.35,
+      "verdict": "🟡 Oprez",
+      "graded": false,
+      "correct": null,
+      "fwdPrice": null,
+      "fwdPct": null
+    },
+    {
+      "ts": 1787060286868,
+      "price": 64181.71,
+      "dir": "UP",
+      "th": 1.63,
+      "conf": 62,
+      "score": 7.87,
+      "verdict": "🟡 Oprez",
+      "graded": false,
+      "correct": null,
+      "fwdPrice": null,
+      "fwdPct": null
+    },
+    {
+      "ts": 1787067097692,
+      "price": 68456,
+      "dir": "UP",
+      "th": 2.4,
+      "conf": 47,
+      "score": 3.45,
+      "verdict": "🔵 Spekulativno",
+      "graded": false,
+      "correct": null,
+      "fwdPrice": null,
+      "fwdPct": null
     }
   ],
-  "updatedAt": "2026-08-18T12:30:04.706Z"
+  "updatedAt": "2026-08-18T15:31:40.694Z"
 }
