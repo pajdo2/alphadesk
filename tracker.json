@@ -1,6 +1,59 @@
 {
   "predictions": [
     {
+      "id": "1787039154592_AVAX",
+      "timestamp": 1787039154592,
+      "sym": "AVAX",
+      "type": "regular",
+      "date": "18. kol",
+      "entry": 6.329,
+      "target": 6.77,
+      "d1Target": 6.4833,
+      "d2Target": 6.6377,
+      "d4Target": 6.77,
+      "d5Target": 6.77,
+      "d3Target": 6.77,
+      "stop": 6.0758,
+      "conf": 61,
+      "score": 11.624,
+      "targetPct": 6.97,
+      "status": "AKTIVAN",
+      "closePrice": null,
+      "closePct": null,
+      "autoClose": false,
+      "direction": "LONG",
+      "autoTrack": true,
+      "autoSource": "watch",
+      "engineVer": "v5.189",
+      "snap": {
+        "rsiOversold": false,
+        "rsiOverbought": false,
+        "trendUp": false,
+        "trendDown": false,
+        "bbBelow": false,
+        "divBullish": true,
+        "divBearish": false,
+        "macdBullCross": false,
+        "macdBearCross": false,
+        "lsRatioBull": false,
+        "lsRatioExtreme": false,
+        "basisBack": true,
+        "takerSell": false,
+        "btcDomHigh": true,
+        "btcDomLow": false,
+        "volSpike": false,
+        "mtfAllUp": false,
+        "fgExtremeFear": false,
+        "fgFear": false,
+        "regime": "CRAB"
+      },
+      "d1Hit": false,
+      "d2Hit": false,
+      "d3Hit": false,
+      "d4Hit": false,
+      "d5Hit": false
+    },
+    {
       "id": "1787034600118",
       "timestamp": 1787034600118,
       "sym": "1MBABYDOGE",
@@ -9285,7 +9338,20 @@
       "correct": null,
       "fwdPrice": null,
       "fwdPct": null
+    },
+    {
+      "ts": 1787039131542,
+      "price": 64393.99,
+      "dir": "UP",
+      "th": 1.63,
+      "conf": 51,
+      "score": 3.05,
+      "verdict": "🟡 Oprez",
+      "graded": false,
+      "correct": null,
+      "fwdPrice": null,
+      "fwdPct": null
     }
   ],
-  "updatedAt": "2026-08-18T06:31:48.778Z"
+  "updatedAt": "2026-08-18T07:45:57.595Z"
 }
