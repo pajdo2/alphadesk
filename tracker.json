@@ -1,6 +1,32 @@
 {
   "predictions": [
     {
+      "id": "1787034600118",
+      "timestamp": 1787034600118,
+      "sym": "1MBABYDOGE",
+      "type": "meme",
+      "direction": "LONG",
+      "date": "18. kol",
+      "entry": 0.0003236,
+      "target": 0.00034302,
+      "d1Target": 0.0003304,
+      "d2Target": 0.00033719,
+      "d3Target": 0.00034302,
+      "stop": 0.00024128,
+      "conf": 70,
+      "targetPct": 6,
+      "status": "AKTIVAN",
+      "closePrice": null,
+      "closePct": null,
+      "autoClose": false,
+      "engineVer": "v5.186",
+      "d1Hit": false,
+      "d2Hit": false,
+      "d3Hit": false,
+      "peakPrice": 0.0003236,
+      "peakPct": 0
+    },
+    {
       "id": "1786445785905",
       "timestamp": 1786445785905,
       "sym": "PENGU",
@@ -9261,5 +9287,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-08-18T06:29:46.427Z"
+  "updatedAt": "2026-08-18T06:30:04.348Z"
 }
