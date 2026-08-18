@@ -1,19 +1,19 @@
 {
-    "dxy":  99.97,
-    "changeSummary":  "DXY stabilan na 99.97, BTC konsolidira na ~$63,600 uz Fear & Greed 34, bez materijalne promjene vs prethodni snimak.",
-    "lastUpdated":  "2026-08-04T18:30:00Z",
+    "dxy":  99.5,
+    "changeSummary":  "Sentiment blago poboljšan (F&G 35→37), BTC porastao na 64.3K$ (+1.8%), dominacija stabilna na 56.5%, macroPenalty ispravljen na 0.",
+    "lastUpdated":  "2026-08-18T14:00:00Z",
     "warnings":  {
                      "ACT":  [
 
                              ],
                      "MEME":  [
-
+                                 "Altcoini visoko volatilni u bear market fazi"
                               ],
                      "ANIME":  [
 
                                ],
                      "XRP":  [
-                                 "CLARITY Act bez zakazanog glasanja u Senatu"
+
                              ],
                      "BNB":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-                                 "Institucionalni pritisak prodaje"
+                                 "ETH/BTC omjer slab - kapital ostaje u BTC-u"
                              ],
                      "LINK":  [
 
@@ -61,10 +61,10 @@
 
                               ],
                      "TRUMP":  [
-                                   "CLARITY Act neizvjesnost, Warren kritika Aug 3"
+                                  "CLARITY Act - vjerojatnost pada na 10% za 2026."
                                ],
                      "BTC":  [
-                                 "Coldcard hack $70M u tijeku, 5. dan"
+                                 "Analitičari dovode u pitanje dno bear marketa"
                              ]
                  },
     "catalysts":  {
@@ -78,7 +78,7 @@
 
                                 ],
                       "XRP":  [
-                                  "Clearstream custody + ETF priljevi"
+                                  "XRP ekosustav među top gainerima dana"
                               ],
                       "BNB":  [
 
@@ -87,7 +87,7 @@
 
                               ],
                       "AVAX":  [
-                                   "Helicon upgrade na Fuji testnetu (SAE)"
+
                                ],
                       "PENGU":  [
 
@@ -105,7 +105,7 @@
 
                                  ],
                       "SOL":  [
-                                  "E*TRADE spot listing + record perp dex vol"
+                                  "Tržište altcoina se oporavlja uz BTC kao sidro"
                               ],
                       "ADA":  [
 
@@ -117,10 +117,10 @@
 
                                 ],
                       "ETH":  [
-
+                                  "BTC rast podiže cijeli tržišni sentiment"
                               ],
                       "LINK":  [
-                                   "Integriran u SOL World prediction market"
+
                                ],
                       "PUMP":  [
 
@@ -129,12 +129,13 @@
 
                                 ],
                       "BTC":  [
-                                  "ETF institucionalni priljevi nastavljeni"
+                                  "Fed minutesi srijeda - signali putanje kamatnih stopa",
+                                  "White House kripto summit s industrijskim liderima"
                               ]
                   },
-    "fearGreed":  34,
+    "fearGreed":  37,
     "macroPenalty":  0,
-    "regime":  "VOLATILE",
+    "regime":  "CRAB",
     "sentimentScore":  {
                            "ACT":  0,
                            "MEME":  0,
@@ -142,25 +143,25 @@
                            "XRP":  1,
                            "BNB":  0,
                            "SUI":  0,
-                           "AVAX":  1,
+                           "AVAX":  0,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  1,
+                           "SOL":  0,
                            "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  -1,
-                           "LINK":  1,
+                           "ETH":  0,
+                           "LINK":  0,
                            "PUMP":  0,
                            "TRUMP":  -1,
-                           "BTC":  -1
+                           "BTC":  1
                        },
-    "aiSummary":  "DXY stagnira na 99.97 ispod psihološke razine 100 pružajući neutralno-pozitivan makro signal dok Fed drži restriktivan stav (macroPenalty 0). BTC oscilira oko $63,600 uz Fear & Greed na 34 (strah) opterećen petim danom Coldcard hakata ($70M) i neizvjesnošću CLARITY Act-a dok senator Warren pojačava kritiku; geopolitičke napetosti s Iranom blago smirene. Preporuča se selektivna ekspozicija s fokusom na SOL (E*TRADE spot listing) i AVAX (Helicon upgrade na Fuji testnetu).",
+    "aiSummary":  "DXY je pao na 99.5 što pozitivno djeluje na rizičnu imovinu, ali kriptotržište ostaje u zoni straha (F&G 37) s BTC-om na 64.3K$. BTC dominacija od 56.5% potvrđuje da kapital gravitira prema Bitcoinu nauštrb altcoina. Predstojeći Fed minutesi i White House kripto summit mogu povećati volatilnost, dok pad šanse CLARITY Acta na 10% tlači regulatorni sentiment.",
     "warActive":  false,
-    "btcDom":  58.5,
-    "stableDom":  13.3,
-    "oil":  79.5
+    "btcDom":  56.5,
+    "stableDom":  13.8,
+    "oil":  82.4
 }
