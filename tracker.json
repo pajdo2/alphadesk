@@ -1,6 +1,58 @@
 {
   "predictions": [
     {
+      "id": "1787056200902",
+      "timestamp": 1787056200902,
+      "sym": "ASTER",
+      "type": "regular",
+      "direction": "LONG",
+      "date": "18. kol",
+      "entry": 0.601,
+      "target": 0.64307,
+      "d1Target": 0.615725,
+      "d2Target": 0.630449,
+      "d3Target": 0.64307,
+      "stop": 0.585855,
+      "conf": 55,
+      "targetPct": 7,
+      "status": "AKTIVAN",
+      "closePrice": null,
+      "closePct": null,
+      "autoClose": false,
+      "engineVer": "v5.189",
+      "d1Hit": false,
+      "d2Hit": false,
+      "d3Hit": false,
+      "peakPrice": 0.601,
+      "peakPct": 0
+    },
+    {
+      "id": "1787056197544",
+      "timestamp": 1787056197544,
+      "sym": "AAVE",
+      "type": "regular",
+      "direction": "LONG",
+      "date": "18. kol",
+      "entry": 89.57,
+      "target": 98.527,
+      "d1Target": 92.7049,
+      "d2Target": 95.8399,
+      "d3Target": 98.527,
+      "stop": 85.9872,
+      "conf": 63,
+      "targetPct": 10,
+      "status": "AKTIVAN",
+      "closePrice": null,
+      "closePct": null,
+      "autoClose": false,
+      "engineVer": "v5.189",
+      "d1Hit": false,
+      "d2Hit": false,
+      "d3Hit": false,
+      "peakPrice": 89.57,
+      "peakPct": 0
+    },
+    {
       "id": "1787039154592_AVAX",
       "timestamp": 1787039154592,
       "sym": "AVAX",
@@ -51,7 +103,9 @@
       "d2Hit": false,
       "d3Hit": false,
       "d4Hit": false,
-      "d5Hit": false
+      "d5Hit": false,
+      "peakPrice": 6.328,
+      "peakPct": -0.02
     },
     {
       "id": "1787034600118",
@@ -9351,7 +9405,20 @@
       "correct": null,
       "fwdPrice": null,
       "fwdPct": null
+    },
+    {
+      "ts": 1787056178182,
+      "price": 64248.01,
+      "dir": "UP",
+      "th": 1.44,
+      "conf": 55,
+      "score": 5.15,
+      "verdict": "🟡 Oprez",
+      "graded": false,
+      "correct": null,
+      "fwdPrice": null,
+      "fwdPct": null
     }
   ],
-  "updatedAt": "2026-08-18T07:45:57.595Z"
+  "updatedAt": "2026-08-18T12:30:04.706Z"
 }
