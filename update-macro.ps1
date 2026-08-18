@@ -101,8 +101,28 @@ function Invoke-ClaudeAnalysis {
     # -p = --print (non-interactive, izlaz na stdout)
     # --tools: ogranicicemo na potrebne alate (WebSearch, WebFetch, Read, Write)
     # 2>&1 spaja stderr sa stdout — bez toga PS5.1 postavlja LASTEXITCODE=1 kad ima stderr writes
-    $null | & $claudeExe --dangerously-skip-permissions -p $prompt --tools WebSearch WebFetch Read Write 2>&1 | Out-Null
-    $exitCode = $LASTEXITCODE
+    # TIMEOUT: poziv se vrti u Job-u s hard limitom. Bez ovoga, ako auth istekne,
+    # CLI radi 11 retryja s backoffom i moze visiti SATIMA (zabiljezen 15h hang).
+    # Job + kill po isteku osigurava da task nikad ne visi.
+    $TIMEOUT_SEC = 300
+    $preExisting = @(Get-Process claude -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Id)
+    $job = Start-Job -ScriptBlock {
+        param($exe, $p)
+        $null | & $exe --dangerously-skip-permissions -p $p --tools WebSearch WebFetch Read Write 2>&1 | Out-Null
+        $LASTEXITCODE
+    } -ArgumentList $claudeExe, $prompt
+    if (Wait-Job $job -Timeout $TIMEOUT_SEC) {
+        $exitCode = Receive-Job $job
+        if ($exitCode -is [array]) { $exitCode = $exitCode[-1] }
+        if ($null -eq $exitCode) { $exitCode = 0 }
+    } else {
+        Write-Log "[ERROR] Claude CLI timeout ($TIMEOUT_SEC s) — prekidam (vjerojatno istekao auth token)" "Red"
+        Stop-Job $job -ErrorAction SilentlyContinue
+        # Ubij SAMO claude procese pokrenute nakon starta (ne diraj postojece/interaktivne)
+        Get-Process claude -ErrorAction SilentlyContinue | Where-Object { $preExisting -notcontains $_.Id } | ForEach-Object { try { Stop-Process -Id $_.Id -Force } catch {} }
+        $exitCode = 124
+    }
+    Remove-Job $job -Force -ErrorAction SilentlyContinue
     $elapsed = ((Get-Date) - $startTime).TotalSeconds
 
     # Provjeri stvarni uspjeh: je li JSON azuriran NAKON sto je Claude pokrenut
