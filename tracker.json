@@ -23,8 +23,8 @@
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
-      "peakPrice": 0.0003236,
-      "peakPct": 0
+      "peakPrice": 0.0003237,
+      "peakPct": 0.03
     },
     {
       "id": "1786445785905",
@@ -7922,46 +7922,46 @@
   ],
   "signalWeights": {
     "_global": {
-      "rsiOversold": 0.929,
+      "rsiOversold": 0.916,
       "rsiOverbought": 1,
-      "trendUp": 0.687,
-      "trendDown": 0.889,
+      "trendUp": 0.67,
+      "trendDown": 0.874,
       "bbBelow": 1,
-      "divBullish": 1.158,
-      "divBearish": 0.482,
+      "divBullish": 1.129,
+      "divBearish": 0.478,
       "macdBullCross": 1,
       "macdBearCross": 1,
       "lsRatioBull": 1,
       "lsRatioExtreme": 1,
-      "basisBack": 1.193,
+      "basisBack": 1.169,
       "takerSell": 1,
       "btcDomHigh": 1,
       "btcDomLow": 1,
-      "volSpike": 0.864,
-      "mtfAllUp": 0.594,
-      "fgExtremeFear": 1.065,
-      "fgFear": 0.643
+      "volSpike": 0.841,
+      "mtfAllUp": 0.585,
+      "fgExtremeFear": 1.041,
+      "fgFear": 0.637
     },
     "BEAR": {
       "rsiOversold": 1,
       "rsiOverbought": 1,
-      "trendUp": 0.96,
+      "trendUp": 0.933,
       "trendDown": 1,
       "bbBelow": 1,
-      "divBullish": 1.527,
+      "divBullish": 1.455,
       "divBearish": 1,
       "macdBullCross": 1,
       "macdBearCross": 1,
       "lsRatioBull": 1,
       "lsRatioExtreme": 1,
-      "basisBack": 0.862,
+      "basisBack": 0.846,
       "takerSell": 1,
       "btcDomHigh": 1,
       "btcDomLow": 1,
-      "volSpike": 1.263,
+      "volSpike": 1.211,
       "mtfAllUp": 1,
-      "fgExtremeFear": 1.267,
-      "fgFear": 0.745
+      "fgExtremeFear": 1.208,
+      "fgFear": 0.773
     },
     "BTC_DOMINANCE_FEAR": {
       "rsiOversold": 1,
@@ -9287,5 +9287,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-08-18T06:30:04.348Z"
+  "updatedAt": "2026-08-18T06:31:48.778Z"
 }
