@@ -423,7 +423,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.188</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.189</span></div>
       <div class="hd-sub" id="hdsub">Učitavam top 100 tokena…</div>
       <div class="hd-claude" id="claude-update" style="display:flex;align-items:center;gap:6px">
         <span id="claude-update-txt">🤖 Claude analiza: —</span>
@@ -741,7 +741,7 @@ function getMemeSYMS(){
 
 // Engine verzija — tag na svaku predikciju za mjerenje win-rate po verziji.
 // Pre-commit hook (sed s/v5.x/.../g) automatski drži ovo u sinku s headerom.
-var APP_VER="v5.188";
+var APP_VER="v5.189";
 
 // Settings
 var settings={minConf:45,targetPct:6,maxRisk:2,minRR:1.2,accountSize:1000,maxRiskPerTrade:1};
@@ -4274,7 +4274,9 @@ if(typeof window!=='undefined')window.aiModel=aiModel;
 refreshWeights();
 
 function recordPred(sym,entryPrice,targetPrice,stopPrice,conf,forcePct,d1T,d2T,direction){
-  var dir=direction||"LONG";
+  // SPOT-ONLY: SHORT (futures trgovanje) uklonjen — app bilježi samo kupovne pozicije.
+  // Staro zatvaranje SHORT-ova u povijesti i dalje radi (isShort logika ostaje).
+  var dir="LONG";
   var pct=forcePct||settings.targetPct;
   var isMeme=KNOWN_MEME.indexOf(sym)>-1;
   // Za SHORT: preračunaj target (ispod ulaza) i stop (iznad ulaza)
@@ -8809,8 +8811,29 @@ function fetchOrderBooks(){
   });
 }
 
+// ── SPOT-ONLY WHITELIST — Binance SPOT-tradeable base assets ──────
+// Filtrira tokene koji postoje SAMO kao perpetual futures (nemaju spot par);
+// spot investor ih ne moze kupiti. Fallback: ako fetch padne, ne filtrira.
+var SPOT_ASSETS = null, _spotAttempted = false;
+function fetchSpotAssets(cb){
+  safeFetch("https://data-api.binance.vision/api/v3/exchangeInfo?permissions=SPOT")
+    .then(function(d){
+      if(d&&d.symbols&&d.symbols.length){
+        var s=new Set();
+        d.symbols.forEach(function(x){
+          if(x.status==="TRADING"&&x.quoteAsset==="USDT"&&x.isSpotTradingAllowed!==false)s.add(x.baseAsset);
+        });
+        if(s.size>50)SPOT_ASSETS=s;
+      }
+      if(cb)cb();
+    }).catch(function(){if(cb)cb();});
+}
+function isSpotToken(sym){return !SPOT_ASSETS||SPOT_ASSETS.has(sym);}
+
 // ── LOAD TOP 100 (CoinGecko → inicijalizira tokene + WS) ─────────
 function loadTop100(){
+  // Prvo osiguraj spot whitelist (jednom), pa filtriraj futures-only tokene
+  if(!_spotAttempted){_spotAttempted=true;fetchSpotAssets(function(){loadTop100();});return;}
   safeFetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=7d,30d")
     .then(function(data){
       if(!data||!data.length)return;
@@ -8818,6 +8841,7 @@ function loadTop100(){
       data.forEach(function(coin){
         var sym=coin.symbol.toUpperCase();
         if(STABLES.has(sym)||WRAPPED.has(sym))return; // preskoči stablecoine i wrapped tokene
+        if(!isSpotToken(sym))return; // SPOT-ONLY: preskoči futures-only tokene (nema spot para)
         // Inicijaliziraj CFG za nepoznate tokene
         getCfg(sym);
         CFG[sym].cn=coin.name;
@@ -8837,7 +8861,7 @@ function loadTop100(){
       // Zadrži custom watchlist tokene (korisnik je odlucio pratiti)
       try{
         var wl=JSON.parse(localStorage.getItem("ad3d_watchlist")||"[]");
-        wl.forEach(function(s){if(TOP100.indexOf(s)<0)TOP100.push(s);});
+        wl.forEach(function(s){if(TOP100.indexOf(s)<0&&isSpotToken(s))TOP100.push(s);});
       }catch(e){}
       TOP100_LOADED=true;
       computeRelStrength(); // izračunaj relativnu snagu čim imamo CG podatke
@@ -9862,7 +9886,7 @@ function disableNotifs(){
   showToast("Notifikacije isključene");render();
 }
 
-// emitEntryNotif uklonjen (v5.188) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
+// emitEntryNotif uklonjen (v5.189) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
 // Bila mrtva funkcija (nula poziva); uklonjena da se ne može slučajno ponovno spojiti.
 
 // ── EXIT NOTIFICATION — SAMO 2 TIPA (po korisnikovom zahtjevu) ──
