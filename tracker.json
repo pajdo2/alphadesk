@@ -9203,13 +9203,52 @@
       "conf": 30,
       "score": -3.05,
       "verdict": "🔴 Preskoči",
-      "graded": false,
-      "correct": null,
-      "fwdPrice": null,
-      "fwdPct": null
+      "graded": true,
+      "correct": true,
+      "fwdPrice": 63878,
+      "fwdPct": -6.69
     },
     {
       "ts": 1786606435835,
+      "price": 68456,
+      "dir": "DOWN",
+      "th": 2.4,
+      "conf": 30,
+      "score": -3.15,
+      "verdict": "🔴 Preskoči",
+      "graded": true,
+      "correct": true,
+      "fwdPrice": 63878,
+      "fwdPct": -6.69
+    },
+    {
+      "ts": 1786613661188,
+      "price": 63878,
+      "dir": "NEUTRAL",
+      "th": 2.4,
+      "conf": 40,
+      "score": 0.65,
+      "verdict": "🔵 Spekulativno",
+      "graded": true,
+      "correct": true,
+      "fwdPrice": 63878,
+      "fwdPct": 0
+    },
+    {
+      "ts": 1786897018739,
+      "price": 63878,
+      "dir": "NEUTRAL",
+      "th": 2.4,
+      "conf": 39,
+      "score": 0.25,
+      "verdict": "🔵 Spekulativno",
+      "graded": true,
+      "correct": false,
+      "fwdPrice": 68456,
+      "fwdPct": 7.17
+    },
+    {
+      "ts": 1787034583425,
       "price": 68456,
       "dir": "DOWN",
       "th": 2.4,
@@ -9220,20 +9259,7 @@
       "correct": null,
       "fwdPrice": null,
       "fwdPct": null
-    },
-    {
-      "ts": 1786613661188,
-      "price": 63878,
-      "dir": "NEUTRAL",
-      "th": 2.4,
-      "conf": 40,
-      "score": 0.65,
-      "verdict": "🔵 Spekulativno",
-      "graded": false,
-      "correct": null,
-      "fwdPrice": null,
-      "fwdPct": null
     }
   ],
-  "updatedAt": "2026-08-14T11:41:45.220Z"
+  "updatedAt": "2026-08-18T06:29:46.427Z"
 }
