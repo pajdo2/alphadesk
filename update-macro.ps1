@@ -157,6 +157,7 @@ $skeletonJson = @{
     macroPenalty = 0
     oil = 0
     dxy = 0
+    sp500Ret5d = 0
     btcDom = 0
     stableDom = 0
     fearGreed = 50
@@ -193,9 +194,10 @@ Datum: $today
 3. **WebSearch**: crypto fear greed index today
 4. **WebSearch**: DXY dollar index today
 5. **WebSearch**: bitcoin dominance today
-6. **WebSearch**: crypto news today
+6. **WebSearch**: S&P 500 index weekly change percent
+7. **WebSearch**: crypto news today
 $PREV_CONTEXT
-7. **Write tool**: file_path = "$JSON_PATH"
+8. **Write tool**: file_path = "$JSON_PATH"
 
 ## KLJUCNO PRAVILO: Datoteka koju citas IMA TOCAN FORMAT. Tvoj zadatak je samo POPUNITI vrijednosti, NE mijenjati strukturu.
 
@@ -215,6 +217,8 @@ Smijes:
 regime izbor: BULL (BTC>SMA200,FG>55) | BEAR (BTC<SMA200,FG<30) | ALT_SEASON (BTC dom<45%) | CRAB (sideways,FG 35-55) | VOLATILE (veliki swingovi) | NEUTRAL (default)
 
 macroPenalty (zbroji u 0-6): +2 warActive, +2 DXY>108, +1 DXY 106-108, -1 DXY<100, +1 oil>110, +2 oil>125, +1 FG>75, -1 FG<20
+
+sp500Ret5d: S&P 500 tjedni (5-dnevni) povrat u % kao BROJ (npr. -3.2 ili 1.8). Risk-on/off signal za kripto — pad burze = kripto pati.
 
 sentimentScore (-3..+3): -3=SEC/hack, -2=regulatorni rizik, -1=FUD, 0=neutral, +1=update, +2=listing/proboj, +3=ETF/halving
 
