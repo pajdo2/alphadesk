@@ -1,13 +1,13 @@
 {
-    "dxy":  99.6,
-    "changeSummary":  "FOMC zapisnici objavljeni uz tri disidenta za povišenje stopa, dok Trumpov White House kripto sastanak s Coinbase, Ripple i Kraken daje snažan bullish ton regulatornoj jasnoći.",
-    "lastUpdated":  "2026-08-19T18:00:00Z",
+    "dxy":  99.8,
+    "changeSummary":  "DXY je blago porastao s 99.6 na 99.8, strah se produbio s 43 na 40, BTC dominancija porasla s 56.1% na 56.5%, dok macroPenalty ostaje na 0 a CRAB režim ostaje nepromijenjen.",
+    "lastUpdated":  "2026-08-19T22:00:00Z",
     "warnings":  {
                      "ACT":  [
 
                              ],
                      "MEME":  [
-
+                                  "Strah na 40, meme tokeni osjetljivi na negativan sentiment"
                               ],
                      "ANIME":  [
 
@@ -19,13 +19,13 @@
 
                              ],
                      "SUI":  [
-                                 "Nastavak slabosti ispod ključne podrške"
+
                              ],
                      "AVAX":  [
 
                               ],
                      "PENGU":  [
-
+                                   "Geopolitička napetost (Iran) kao kratkoročni rizik"
                                ],
                      "BOME":  [
 
@@ -43,7 +43,7 @@
 
                              ],
                      "ADA":  [
-
+                                 "ADA na ključnoj razini podrške, čeka proboj"
                              ],
                      "PNUT":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-
+                                 "ETH na ključnim razinama podrške, strah dominira"
                              ],
                      "LINK":  [
 
@@ -64,11 +64,11 @@
 
                                ],
                      "BTC":  [
-                                 "S&P 500 pada od rekorda uz rast prinosa obveznica"
+                                 "Analitičari dovode u pitanje timing dna medvjeđeg tržišta"
                              ]
                  },
-    "sp500Ret5d":  -0.8,
-    "fearGreed":  43,
+    "sp500Ret5d":  -1.2,
+    "fearGreed":  40,
     "macroPenalty":  0,
     "catalysts":  {
                       "ACT":  [
@@ -81,7 +81,7 @@
 
                                 ],
                       "XRP":  [
-                                  "Ripple zastupan na Trump White House kripto sastanku"
+                                  "XRP Ledger ekosustav vodeći tjedni dobitnik na tržištu"
                               ],
                       "BNB":  [
 
@@ -120,49 +120,48 @@
 
                                 ],
                       "ETH":  [
-                                  "JPMorgan prihvaća ETH kao kredit kolateral"
+                                  "ETH stabilan uz 10.1% tržišni udio, $2.29T tržište"
                               ],
                       "LINK":  [
-                                   "Chainlink zastupan na White House kripto sastanku"
+
                                ],
                       "PUMP":  [
 
                                ],
                       "TRUMP":  [
-                                    "Trumpov susret s kripto izvršiteljima u Bijeloj kući"
+
                                 ],
                       "BTC":  [
-                                  "Trump sa Coinbase/Ripple/Kraken u Bijeloj kući 19.8.",
-                                  "FOMC zapisnici: Fed na pauzi 3.50-3.75%, 3 disidenta"
+                                  "BTC drži $64.4K uz dominanciju 56.5% i kap. $1.29T"
                               ]
                   },
     "regime":  "CRAB",
     "sentimentScore":  {
                            "ACT":  0,
-                           "MEME":  0,
+                           "MEME":  -1,
                            "ANIME":  0,
                            "XRP":  1,
                            "BNB":  0,
-                           "SUI":  -1,
+                           "SUI":  0,
                            "AVAX":  0,
-                           "PENGU":  0,
-                           "BOME":  0,
-                           "DOGS":  0,
-                           "NOT":  0,
-                           "PEOPLE":  0,
+                           "PENGU":  -1,
+                           "BOME":  -1,
+                           "DOGS":  -1,
+                           "NOT":  -1,
+                           "PEOPLE":  -1,
                            "SOL":  0,
                            "ADA":  0,
-                           "PNUT":  0,
+                           "PNUT":  -1,
                            "AIXBT":  0,
-                           "ETH":  1,
-                           "LINK":  1,
-                           "PUMP":  0,
-                           "TRUMP":  2,
-                           "BTC":  2
+                           "ETH":  0,
+                           "LINK":  0,
+                           "PUMP":  -1,
+                           "TRUMP":  0,
+                           "BTC":  0
                        },
-    "aiSummary":  "DXY se drži stabilno na 99.6 ispod granice 100 pružajući umjerenu potporu kripto tržištu, a Brent nafta ostaje na $91 uz geopolitičku napetost u Hormuškom tjesnacu. Indeks straha i pohlepe iznosi 43 (strah), BTC ostaje oko $64.3K uz dominanciju od 56.1%, dok Trumpov White House sastanak s Coinbase, Ripple i Kraken te objavljeni FOMC zapisnici (Fed na pauzi, 3 disidenta za povišenje) daju pozitivan regulatorni signal. S&P 500 bilježi blagi pad od rekordnih razina uz rast prinosa obveznica, a kripto tržište ostaje u CRAB fazi s potencijalom za kratkoročnu volatilnost.",
+    "aiSummary":  "DXY ostaje ispod razine 100 (99.8) što pruža umjerenu potporu kripto tržištu, dok iranski zastoj nastavlja pritiskati geopolitičku napetost i zadržavati naftu povišenom oko $92. Indeks straha i pohlepe pao je na 40 (strah), BTC oscilira oko $64.4K uz dominanciju od 56.5%, a tržište nastavlja CRAB fazu uz iščekivanje jasnog proboja ključnih razina podrške.",
     "warActive":  false,
-    "btcDom":  56.1,
-    "stableDom":  12.9,
-    "oil":  91.0
+    "btcDom":  56.5,
+    "stableDom":  6.8,
+    "oil":  92.0
 }
