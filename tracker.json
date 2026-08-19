@@ -23,8 +23,8 @@
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
-      "peakPrice": 0.601,
-      "peakPct": 0
+      "peakPrice": 0.602,
+      "peakPct": 0.17
     },
     {
       "id": "1787056197544",
@@ -9470,7 +9470,20 @@
       "correct": null,
       "fwdPrice": null,
       "fwdPct": null
+    },
+    {
+      "ts": 1787112718605,
+      "price": 64816.32,
+      "dir": "UP",
+      "th": 1.82,
+      "conf": 51,
+      "score": 5.25,
+      "verdict": "🟡 Oprez",
+      "graded": false,
+      "correct": null,
+      "fwdPrice": null,
+      "fwdPct": null
     }
   ],
-  "updatedAt": "2026-08-18T18:37:18.235Z"
+  "updatedAt": "2026-08-19T04:12:01.606Z"
 }
