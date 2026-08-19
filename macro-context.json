@@ -1,7 +1,7 @@
 {
-    "dxy":  99.75,
-    "changeSummary":  "Eskalacija US-Iran napetosti (istekom primirja) aktivirala je ratni rizik, podigla naftu na $85 i povećala macroPenalty s -1 na 1, dok BTC stabiliziran iznad $64K uz blago ublažen strah (F&G 40 vs. 41).",
-    "lastUpdated":  "2026-08-18T12:00:00Z",
+    "dxy":  99.5,
+    "changeSummary":  "Nafta je skočila na $91 Brent (s $85.1) uslijed zastoja US-Iran pregovora, DXY blago pao na 99.50, F&G porastao na 41, a SUI probio ključnu podršku s padom od 4.67% — režim CRAB i macroPenalty od 1 ostaju nepromijenjeni.",
+    "lastUpdated":  "2026-08-18T18:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -13,16 +13,16 @@
 
                                ],
                      "XRP":  [
-                                 "Brani ključnu razinu $1, rizik proboja prema dolje"
+                                 "Cijena ispod $1, blizu psihološke granice"
                              ],
                      "BNB":  [
 
                              ],
                      "SUI":  [
-
+                                 "Proboj ključne podrške na $0.64, pad -4.67%"
                              ],
                      "AVAX":  [
-                                  "Gubitak developera na Solanu i Sui"
+                                  "Drift ispod ključnih razina, oslabljen momentum"
                               ],
                      "PENGU":  [
 
@@ -40,10 +40,10 @@
 
                                 ],
                      "SOL":  [
-                                 "28.83% stakovanog SOL-a delikventno zbog greške"
+
                              ],
                      "ADA":  [
-                                 "Cijena pada 10.6% tjedno, slab momentum"
+
                              ],
                      "PNUT":  [
 
@@ -52,10 +52,10 @@
 
                                ],
                      "ETH":  [
-                                 "Bori se ispod razine $1,900, slab otpor"
+                                 "Cijena pala s $1,911 na $1,895 ujutro"
                              ],
                      "LINK":  [
-                                  "Kitovi prenijeli $9.2M LINK-a na Coinbase"
+
                               ],
                      "PUMP":  [
 
@@ -64,11 +64,11 @@
 
                                ],
                      "BTC":  [
-                                 "US-Iran napetosti: nafta $85+, geopolitički rizik aktivan"
+                                 "Geopolitički rizik - Iran blokira Hormuz, nafta $91"
                              ]
                  },
-    "sp500Ret5d":  1.2,
-    "fearGreed":  40,
+    "sp500Ret5d":  -1.5,
+    "fearGreed":  41,
     "macroPenalty":  1,
     "catalysts":  {
                       "ACT":  [
@@ -81,16 +81,16 @@
 
                                 ],
                       "XRP":  [
-                                  "ETF glasine za XRP rastu, interes institucionala"
+
                               ],
                       "BNB":  [
 
                               ],
                       "SUI":  [
-
+                                  "NAVI Protocol pokrenuo institucijsko posuđivanje"
                               ],
                       "AVAX":  [
-                                   "FIFA SP 2026 koristi Avalanche blockchain"
+
                                ],
                       "PENGU":  [
 
@@ -108,12 +108,10 @@
 
                                  ],
                       "SOL":  [
-                                  "MoneyGram integracija u 170+ zemalja",
-                                  "ETF priljevi $8.8M, kitovi zatvaraju shortove"
+
                               ],
                       "ADA":  [
-                                  "120M ADA odobreno za DeFi projekte",
-                                  "USDM stablecoin lansiran na Midnight lancu"
+
                               ],
                       "PNUT":  [
 
@@ -122,11 +120,10 @@
 
                                 ],
                       "ETH":  [
-                                  "ETH prešao $1,900, rast 2.18% u 24h"
+                                  "CFTC snizio margin zahtjeve za ETH OTC hedging"
                               ],
                       "LINK":  [
-                                   "Bijela kuća kripto regulatorni summit",
-                                   "Futures volumen +123%, rast derivata i ETF-ova"
+
                                ],
                       "PUMP":  [
 
@@ -135,8 +132,8 @@
 
                                 ],
                       "BTC":  [
-                                  "Goldman Sachs akvizicija NEOS bitcoin ETF fonda",
-                                  "BTC skočio iznad $64K, kupci se vraćaju na dnu"
+                                  "Jane Street otkrila $990M BTC ETF poziciju",
+                                  "BTC ETF neto priljevi u ponedjeljak"
                               ]
                   },
     "regime":  "CRAB",
@@ -144,28 +141,28 @@
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  1,
+                           "XRP":  0,
                            "BNB":  0,
-                           "SUI":  0,
-                           "AVAX":  1,
+                           "SUI":  -1,
+                           "AVAX":  -1,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
                            "SOL":  0,
-                           "ADA":  -1,
+                           "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  0,
-                           "LINK":  -1,
+                           "ETH":  1,
+                           "LINK":  0,
                            "PUMP":  0,
                            "TRUMP":  0,
                            "BTC":  1
                        },
-    "aiSummary":  "DXY ostaje ispod 100 (99.75) pružajući blagu potporu kripto imovini, ali istekom US-Iran primirja geopolitički rizik je porastao, a nafta skočila na $85+, čime macroPenalty raste na 1. Indeks straha i pohlepe iznosi 40 (strah), BTC se oporavlja iznad $64K uz dominanciju od 56.5%, a ETH je tek prešao $1,900 — tržište ostaje u CRAB fazi. Ključni rizici su geopolitička eskalacija oko Hormuškog tjesnaca i moguće ETF odljevi, dok pozitivne katalite pruža Goldman Sachs BTC ETF akvizicija i FIFA/Avalanche partnerstvo.",
+    "aiSummary":  "DXY se stabilizirao ispod 100 (99.50) pružajući umjerenu potporu kripto imovini, no Brent nafta je porasla na $91 uslijed zastoja US-Iran pregovora i ograničenja plovidbe Hormuskim tjesnacem. Indeks straha i pohlepe iznosi 41 (strah), BTC se drži oko $64.3K uz dominanciju od 56.1%, a SUI bilježi oštar pad od 4.67% probivši ključnu podršku. Tržište ostaje u CRAB fazi uz povišene geopolitičke rizike i rekordne prinose US obveznica (10Y: 4.73%), dok Jane Street otkrivanje $990M BTC ETF pozicije i neto priljevi daju blagu pozitivnu notu za BTC.",
     "warActive":  true,
-    "btcDom":  56.5,
-    "stableDom":  12.5,
-    "oil":  85.1
+    "btcDom":  56.1,
+    "stableDom":  6.0,
+    "oil":  91.0
 }
