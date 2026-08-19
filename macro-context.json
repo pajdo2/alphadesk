@@ -1,7 +1,7 @@
 {
-    "dxy":  99.5,
-    "changeSummary":  "Nafta je skočila na $91 Brent (s $85.1) uslijed zastoja US-Iran pregovora, DXY blago pao na 99.50, F&G porastao na 41, a SUI probio ključnu podršku s padom od 4.67% — režim CRAB i macroPenalty od 1 ostaju nepromijenjeni.",
-    "lastUpdated":  "2026-08-18T18:00:00Z",
+    "dxy":  99.6,
+    "changeSummary":  "FOMC zapisnici objavljeni uz tri disidenta za povišenje stopa, dok Trumpov White House kripto sastanak s Coinbase, Ripple i Kraken daje snažan bullish ton regulatornoj jasnoći.",
+    "lastUpdated":  "2026-08-19T18:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -13,16 +13,16 @@
 
                                ],
                      "XRP":  [
-                                 "Cijena ispod $1, blizu psihološke granice"
+
                              ],
                      "BNB":  [
 
                              ],
                      "SUI":  [
-                                 "Proboj ključne podrške na $0.64, pad -4.67%"
+                                 "Nastavak slabosti ispod ključne podrške"
                              ],
                      "AVAX":  [
-                                  "Drift ispod ključnih razina, oslabljen momentum"
+
                               ],
                      "PENGU":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-                                 "Cijena pala s $1,911 na $1,895 ujutro"
+
                              ],
                      "LINK":  [
 
@@ -64,12 +64,12 @@
 
                                ],
                      "BTC":  [
-                                 "Geopolitički rizik - Iran blokira Hormuz, nafta $91"
+                                 "S&P 500 pada od rekorda uz rast prinosa obveznica"
                              ]
                  },
-    "sp500Ret5d":  -1.5,
-    "fearGreed":  41,
-    "macroPenalty":  1,
+    "sp500Ret5d":  -0.8,
+    "fearGreed":  43,
+    "macroPenalty":  0,
     "catalysts":  {
                       "ACT":  [
 
@@ -81,13 +81,13 @@
 
                                 ],
                       "XRP":  [
-
+                                  "Ripple zastupan na Trump White House kripto sastanku"
                               ],
                       "BNB":  [
 
                               ],
                       "SUI":  [
-                                  "NAVI Protocol pokrenuo institucijsko posuđivanje"
+
                               ],
                       "AVAX":  [
 
@@ -120,20 +120,20 @@
 
                                 ],
                       "ETH":  [
-                                  "CFTC snizio margin zahtjeve za ETH OTC hedging"
+                                  "JPMorgan prihvaća ETH kao kredit kolateral"
                               ],
                       "LINK":  [
-
+                                   "Chainlink zastupan na White House kripto sastanku"
                                ],
                       "PUMP":  [
 
                                ],
                       "TRUMP":  [
-
+                                    "Trumpov susret s kripto izvršiteljima u Bijeloj kući"
                                 ],
                       "BTC":  [
-                                  "Jane Street otkrila $990M BTC ETF poziciju",
-                                  "BTC ETF neto priljevi u ponedjeljak"
+                                  "Trump sa Coinbase/Ripple/Kraken u Bijeloj kući 19.8.",
+                                  "FOMC zapisnici: Fed na pauzi 3.50-3.75%, 3 disidenta"
                               ]
                   },
     "regime":  "CRAB",
@@ -141,10 +141,10 @@
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  0,
+                           "XRP":  1,
                            "BNB":  0,
                            "SUI":  -1,
-                           "AVAX":  -1,
+                           "AVAX":  0,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
@@ -155,14 +155,14 @@
                            "PNUT":  0,
                            "AIXBT":  0,
                            "ETH":  1,
-                           "LINK":  0,
+                           "LINK":  1,
                            "PUMP":  0,
-                           "TRUMP":  0,
-                           "BTC":  1
+                           "TRUMP":  2,
+                           "BTC":  2
                        },
-    "aiSummary":  "DXY se stabilizirao ispod 100 (99.50) pružajući umjerenu potporu kripto imovini, no Brent nafta je porasla na $91 uslijed zastoja US-Iran pregovora i ograničenja plovidbe Hormuskim tjesnacem. Indeks straha i pohlepe iznosi 41 (strah), BTC se drži oko $64.3K uz dominanciju od 56.1%, a SUI bilježi oštar pad od 4.67% probivši ključnu podršku. Tržište ostaje u CRAB fazi uz povišene geopolitičke rizike i rekordne prinose US obveznica (10Y: 4.73%), dok Jane Street otkrivanje $990M BTC ETF pozicije i neto priljevi daju blagu pozitivnu notu za BTC.",
-    "warActive":  true,
+    "aiSummary":  "DXY se drži stabilno na 99.6 ispod granice 100 pružajući umjerenu potporu kripto tržištu, a Brent nafta ostaje na $91 uz geopolitičku napetost u Hormuškom tjesnacu. Indeks straha i pohlepe iznosi 43 (strah), BTC ostaje oko $64.3K uz dominanciju od 56.1%, dok Trumpov White House sastanak s Coinbase, Ripple i Kraken te objavljeni FOMC zapisnici (Fed na pauzi, 3 disidenta za povišenje) daju pozitivan regulatorni signal. S&P 500 bilježi blagi pad od rekordnih razina uz rast prinosa obveznica, a kripto tržište ostaje u CRAB fazi s potencijalom za kratkoročnu volatilnost.",
+    "warActive":  false,
     "btcDom":  56.1,
-    "stableDom":  6.0,
+    "stableDom":  12.9,
     "oil":  91.0
 }
