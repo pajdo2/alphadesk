@@ -1,140 +1,168 @@
 {
-    "dxy":  99.2,
-    "changeSummary":  "BTC iskusio short squeeze od +8% na ~$69.5K potaknut SEC regulatornim najavama i White House sastankom s kripto industrijom, dok kraj SAD-Iran primirja uvodi warActive i podiže naftu na ~$92.",
-    "lastUpdated":  "2026-08-19T17:00:00Z",
+    "dxy":  99.6,
+    "changeSummary":  "Tržište je zabilježilo snažan oporavak s BTC-om +5.7% do $68.200 uz masovne short likvidacije od $1.74B i SEC-ov prijedlog regulatornog okvira, dok DXY i btcDom ostaju stabilni ispod ključnih razina.",
+    "lastUpdated":  "2026-08-20T17:00:00Z",
     "warnings":  {
                      "ACT":  [
-                             "Nizak likvidnost, visoki spread"
+
                              ],
                      "MEME":  [
-                              "Oprez: geopolitika utječe na rizične tokene"
+
                               ],
                      "ANIME":  [
+
                                ],
                      "XRP":  [
+
                              ],
                      "BNB":  [
+
                              ],
                      "SUI":  [
+
                              ],
                      "AVAX":  [
+
                               ],
                      "PENGU":  [
-                               "Nizak likvidnost, oprez pri ulasku"
+
                                ],
                      "BOME":  [
-                              "Nizak volumen, visoka volatilnost"
+
                               ],
                      "DOGS":  [
-                              "Nizak volumen, visoka volatilnost"
+
                               ],
                      "NOT":  [
-                             "Nizak likvidnost TON ekosustav"
+
                              ],
                      "PEOPLE":  [
-                                "Nizak volumen, spekulativni token"
+
                                 ],
                      "SOL":  [
+
                              ],
                      "ADA":  [
+
                              ],
                      "PNUT":  [
-                              "Nizak likvidnost, oprez pri ulasku"
+
                               ],
                      "AIXBT":  [
+
                                ],
                      "ETH":  [
+                         "Volatilnost visoka, ETH još ispod ključnih razina"
                              ],
                      "LINK":  [
+
                               ],
                      "PUMP":  [
-                              "Visoki rizik likvidacije, nizak volumen"
+
                               ],
                      "TRUMP":  [
-                               "Geopolitička napetost SAD-Iran povećava volatilnost"
+                         "Politički token s visokom volatilnošću"
                                ],
                      "BTC":  [
+                         "BTC ispod SMA200 na ~$71.6K, otpor iznad"
                              ]
                  },
-    "sp500Ret5d":  1.8,
-    "fearGreed":  52,
+    "sp500Ret5d":  1.2,
+    "fearGreed":  57,
     "macroPenalty":  1,
     "catalysts":  {
                       "ACT":  [
+
                               ],
                       "MEME":  [
+                          "Meme tokeni rastu u risk-on bull sesiji"
                                ],
                       "ANIME":  [
+
                                 ],
                       "XRP":  [
-                              "SEC regulatorni okvir - regulatorna jasnoća za XRP"
+                          "SEC 'Regulation Crypto Assets' pozitivno za XRP"
                               ],
                       "BNB":  [
+                          "Opći rast tržišta, BNB prati altcoin val"
                               ],
                       "SUI":  [
+
                               ],
                       "AVAX":  [
+
                                ],
                       "PENGU":  [
+
                                 ],
                       "BOME":  [
+
                                ],
                       "DOGS":  [
+
                                ],
                       "NOT":  [
+
                               ],
                       "PEOPLE":  [
+
                                  ],
                       "SOL":  [
-                              "Jupiter Portfolio v2 lansiran - nova DeFi funkcionalnost"
+                          "Kripto tržište iznad $2.32T, SOL prati rast"
                               ],
                       "ADA":  [
+
                               ],
                       "PNUT":  [
+
                                ],
                       "AIXBT":  [
+                          "AI+kripto narativ jak, risk-on sentiment"
                                 ],
                       "ETH":  [
-                              "SEC regulatorni okvir pozitivan za ETH ekosustav"
+                          "ETH +9% uz opći risk-on val tržišta"
                               ],
                       "LINK":  [
+                          "Risk-on okruženje, LINK oracle mreža raste"
                                ],
                       "PUMP":  [
+
                                ],
                       "TRUMP":  [
+                          "Politički token raste u risk-on okruženju"
                                 ],
                       "BTC":  [
-                              "SEC predložio regulatorni okvir za kripto kompanije",
-                              "White House sastanak s kripto industrijalcima"
+                          "Short squeeze, $1.74B kratkih pozicija likvidirano",
+                          "SEC predložio regulatorni okvir za kripto"
                               ]
                   },
     "regime":  "VOLATILE",
     "sentimentScore":  {
-                           "ACT":  -1,
-                           "MEME":  -1,
+                           "ACT":  0,
+                           "MEME":  1,
                            "ANIME":  0,
-                           "XRP":  2,
+                           "XRP":  1,
                            "BNB":  1,
                            "SUI":  1,
                            "AVAX":  1,
-                           "PENGU":  -1,
-                           "BOME":  -1,
-                           "DOGS":  -1,
-                           "NOT":  -1,
-                           "PEOPLE":  -1,
-                           "SOL":  1,
+                           "PENGU":  0,
+                           "BOME":  0,
+                           "DOGS":  0,
+                           "NOT":  0,
+                           "PEOPLE":  0,
+                           "SOL":  2,
                            "ADA":  1,
-                           "PNUT":  -1,
-                           "AIXBT":  0,
+                           "PNUT":  0,
+                           "AIXBT":  1,
                            "ETH":  2,
                            "LINK":  1,
-                           "PUMP":  -2,
-                           "TRUMP":  -1,
+                           "PUMP":  0,
+                           "TRUMP":  1,
                            "BTC":  2
                        },
-    "aiSummary":  "DXY nastavlja slabiti na razini 99.2, ispod ključne razine 100, što pruža makroekonomsku potporu kripto tržištu. BTC je doživio kratki short squeeze od +8% na ~$69.5K potaknut SEC najavom regulatornog okvira za kripto i zakazanim White House sastankom s industrijom, dok Fear & Greed ostaje neutralan na 52. Kraj SAD-Iran primirja i poremećaj prometa kroz Hormuz podigao je Brent naftu na ~$92, uvodeći geopolitički rizik koji može usporiti daljnji rast rizičnih imovina.",
+    "aiSummary":  "DXY ostaje ispod ključne razine 100 na ~99.6, pružajući makroekonomsku potporu kripto tržištu uz daljnje slabljenje dolara. BTC je skočio +5.7% do ~$68.200 potaknut masovnim iskupom short pozicija ($1.74B likvidirano) i odlukom US Treasuryja da udvostruči otkup dugoročnih obveznica, dok SEC-ov prijedlog 'Regulation Crypto Assets' donosi pozitivnu regulatornu jasnoću za tržište. Fear & Greed ostaje neutralan na 57, ali geopolitički rizik perzistira s Brent naftom na ~$92 uslijed Hormuz krize.",
     "warActive":  true,
     "btcDom":  56.7,
-    "stableDom":  13.0,
+    "stableDom":  13.2,
     "oil":  91.9
 }
