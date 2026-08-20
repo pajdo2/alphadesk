@@ -1,7 +1,7 @@
 {
-    "dxy":  99.6,
-    "changeSummary":  "Tržište je zabilježilo snažan oporavak s BTC-om +5.7% do $68.200 uz masovne short likvidacije od $1.74B i SEC-ov prijedlog regulatornog okvira, dok DXY i btcDom ostaju stabilni ispod ključnih razina.",
-    "lastUpdated":  "2026-08-20T17:00:00Z",
+    "dxy":  98.8,
+    "changeSummary":  "FG je skočio s 57 na 62 uz BTC rast do $72.000, dok je DXY pao s 99.6 na 98.8, pojačavajući bullish makro okruženje uz nastavak Hormuz krize koja drži naftu na $95.",
+    "lastUpdated":  "2026-08-20T18:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -13,7 +13,7 @@
 
                                ],
                      "XRP":  [
-
+                                 "Otpor na 200d EMA na $1.38, prodaja moguća"
                              ],
                      "BNB":  [
 
@@ -22,7 +22,7 @@
 
                              ],
                      "AVAX":  [
-
+                                  "AVAX -2.4%, underperformance, otpor na $6.32"
                               ],
                      "PENGU":  [
 
@@ -43,7 +43,7 @@
 
                              ],
                      "ADA":  [
-
+                                 "Rizik gubitka nedavnih dobitaka iznad $0.19"
                              ],
                      "PNUT":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-                         "Volatilnost visoka, ETH još ispod ključnih razina"
+
                              ],
                      "LINK":  [
 
@@ -61,33 +61,33 @@
 
                               ],
                      "TRUMP":  [
-                         "Politički token s visokom volatilnošću"
+
                                ],
                      "BTC":  [
-                         "BTC ispod SMA200 na ~$71.6K, otpor iznad"
+                                 "Nafta $95 - Blizak istok, geopolitički rizik"
                              ]
                  },
-    "sp500Ret5d":  1.2,
-    "fearGreed":  57,
+    "sp500Ret5d":  2.2,
+    "fearGreed":  62,
     "macroPenalty":  1,
     "catalysts":  {
                       "ACT":  [
 
                               ],
                       "MEME":  [
-                          "Meme tokeni rastu u risk-on bull sesiji"
+                                   "Meme coini u zelenom, PEPE i SHIB rastu"
                                ],
                       "ANIME":  [
 
                                 ],
                       "XRP":  [
-                          "SEC 'Regulation Crypto Assets' pozitivno za XRP"
+                                  "Proboj $1.09, bullish iznad 50d EMA na $1.08"
                               ],
                       "BNB":  [
-                          "Opći rast tržišta, BNB prati altcoin val"
+                                  "Tržišni oporavak, risk-on sentiment"
                               ],
                       "SUI":  [
-
+                                  "Risk-on rally, bullish momentum"
                               ],
                       "AVAX":  [
 
@@ -99,7 +99,7 @@
 
                                ],
                       "DOGS":  [
-
+                                   "Meme coini zeleni uz Treasury stimulus"
                                ],
                       "NOT":  [
 
@@ -108,32 +108,32 @@
 
                                  ],
                       "SOL":  [
-                          "Kripto tržište iznad $2.32T, SOL prati rast"
+                                  "Bullish iznad 50d i 100d EMA, RSI 72"
                               ],
                       "ADA":  [
-
+                                  "ADA +10%, fundamentalni bullish katalizator"
                               ],
                       "PNUT":  [
 
                                ],
                       "AIXBT":  [
-                          "AI+kripto narativ jak, risk-on sentiment"
+                                    "AI kripto recovery u bullish sesiji"
                                 ],
                       "ETH":  [
-                          "ETH +9% uz opći risk-on val tržišta"
+                                  "+18% skok, ETH vodi altcoin rally prema $2.260"
                               ],
                       "LINK":  [
-                          "Risk-on okruženje, LINK oracle mreža raste"
+                                   "DeFi recovery, LINK prati opći tržišni rast"
                                ],
                       "PUMP":  [
 
                                ],
                       "TRUMP":  [
-                          "Politički token raste u risk-on okruženju"
+
                                 ],
                       "BTC":  [
-                          "Short squeeze, $1.74B kratkih pozicija likvidirano",
-                          "SEC predložio regulatorni okvir za kripto"
+                                  "US Treasury udvostručio otkup dugoročnih obveznica",
+                                  "Masovni short squeeze $1.74B likvidirano"
                               ]
                   },
     "regime":  "VOLATILE",
@@ -144,25 +144,25 @@
                            "XRP":  1,
                            "BNB":  1,
                            "SUI":  1,
-                           "AVAX":  1,
+                           "AVAX":  -1,
                            "PENGU":  0,
                            "BOME":  0,
-                           "DOGS":  0,
+                           "DOGS":  1,
                            "NOT":  0,
                            "PEOPLE":  0,
                            "SOL":  2,
                            "ADA":  1,
                            "PNUT":  0,
                            "AIXBT":  1,
-                           "ETH":  2,
+                           "ETH":  3,
                            "LINK":  1,
                            "PUMP":  0,
-                           "TRUMP":  1,
+                           "TRUMP":  0,
                            "BTC":  2
                        },
-    "aiSummary":  "DXY ostaje ispod ključne razine 100 na ~99.6, pružajući makroekonomsku potporu kripto tržištu uz daljnje slabljenje dolara. BTC je skočio +5.7% do ~$68.200 potaknut masovnim iskupom short pozicija ($1.74B likvidirano) i odlukom US Treasuryja da udvostruči otkup dugoročnih obveznica, dok SEC-ov prijedlog 'Regulation Crypto Assets' donosi pozitivnu regulatornu jasnoću za tržište. Fear & Greed ostaje neutralan na 57, ali geopolitički rizik perzistira s Brent naftom na ~$92 uslijed Hormuz krize.",
+    "aiSummary":  "DXY na ~98.8 ostaje ispod ključne razine 100, pružajući makroekonomsku potporu kripto tržištu uz nastavak slabljenja dolara. BTC je skočio +8% do ~$72.000 potaknut masovnim short squeeze-om ($1.74B likvidirano) i odlukom US Treasuryja da udvostruči otkup dugoročnih obveznica, dok ETH predvodi altcoin rally s +18% dobitkom. Fear & Greed indeks skočio je s 46 na 62 u jednom danu, signal snažnog risk-on sentimenta, ali geopolitički rizik perzistira s Brent naftom na ~$95 uslijed Hormuz krize.",
     "warActive":  true,
     "btcDom":  56.7,
-    "stableDom":  13.2,
-    "oil":  91.9
+    "stableDom":  12.9,
+    "oil":  95.4
 }
