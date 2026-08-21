@@ -1,7 +1,7 @@
 {
     "dxy":  99.75,
-    "changeSummary":  "DXY ostaje stabilan na 99.75, Fear & Greed na 72, Bitcoin potvrđuje razinu iznad $75.000 uz ETH +5% i snažnu potporu Trumpovog Clarity Act prijedloga.",
-    "lastUpdated":  "2026-08-21T14:00:00Z",
+    "changeSummary":  "BTC skočio na $78.198 uz kratki squeeze $3.8B i ETF priljeve $606M, a UAE-Iran napetosti aktiviraju warActive i podižu macroPenalty s 0 na 1.",
+    "lastUpdated":  "2026-08-21T08:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -43,7 +43,7 @@
 
                              ],
                      "ADA":  [
-
+                                 "ADA blizu ključnog otpora, rizik odbijanja"
                              ],
                      "PNUT":  [
 
@@ -55,45 +55,48 @@
 
                              ],
                      "LINK":  [
-
+                                  "LINK blizu ključnog otpora, pazi na lažni proboj"
                               ],
                      "PUMP":  [
 
                               ],
                      "TRUMP":  [
-
+                                   "TRUMP $1.69, investitori izgubili $3.81B kumulativno",
+                                   "Tržišna kap pala s $15B na $360M"
                                ],
                      "BTC":  [
-
+                                 "Geopolitički rizik UAE-Iran, nafta iznad $86"
                              ]
                  },
-    "sp500Ret5d":  1.2,
+    "sp500Ret5d":  -0.8,
     "fearGreed":  72,
-    "macroPenalty":  0,
+    "macroPenalty":  1,
     "catalysts":  {
                       "ACT":  [
 
                               ],
                       "MEME":  [
-
+                                   "Meme coin revival u tijeku, altseason signali"
                                ],
                       "ANIME":  [
 
                                 ],
                       "XRP":  [
-                                  "Globalna XRP ETF odobrenja kao katalizator"
+                                  "SEC Regulation Crypto Assets okvir - pozitivno",
+                                  "Ripple kvantna zaštita XRPL do 2028."
                               ],
                       "BNB":  [
-
+                                  "Tržišni reli +11-27%, BNB profitira"
                               ],
                       "SUI":  [
-
+                                  "NAVI Prime lansiran na Sui 21.8.",
+                                  "SUI +10.5% tehnički proboj i makro reli"
                               ],
                       "AVAX":  [
-
+                                   "Altcoin reli, kratki squeeze $3.8B"
                                ],
                       "PENGU":  [
-
+                                    "PENGU +5.17%, vol +70.81% socijalni hype"
                                 ],
                       "BOME":  [
 
@@ -108,61 +111,63 @@
 
                                  ],
                       "SOL":  [
-                                  "Solana priprema upgrade za brzinu blokova"
+                                  "SOL +19% tjedan, blizu 200-dnevnog EMA $89"
                               ],
                       "ADA":  [
-
+                                  "ADA blizu ključnog otpora nakon jakog relija"
                               ],
                       "PNUT":  [
 
                                ],
                       "AIXBT":  [
-                                    "AI tokeni prate bullish momentum tržišta"
+
                                 ],
                       "ETH":  [
-                                  "ETH +5% uz BTC rally i Clarity Act podršku"
+                                  "ETH +11%, spot ETF priljevi $221M",
+                                  "Kratki squeeze $3.8B, snažan momentum"
                               ],
                       "LINK":  [
-
+                                   "LINK blizu ključnog otpora, bullish outlook"
                                ],
                       "PUMP":  [
-
+                                   "PUMP trending meme coin, stabilan u vrhu"
                                ],
                       "TRUMP":  [
-                                    "Trump potiče Clarity Act kroz Kongres"
+
                                 ],
                       "BTC":  [
-                                  "Tjedni rast gotovo +20%, najveći od ožujka 2024.",
-                                  "Trump potiče Clarity Act — regulatorna jasnoća za kripto"
+                                  "Spot ETF priljevi $606M 20.8.",
+                                  "Kratki squeeze $3.8B u dva dana",
+                                  "BTC prešao $78K, bullish momentum"
                               ]
                   },
     "regime":  "BULL",
     "sentimentScore":  {
                            "ACT":  0,
-                           "MEME":  0,
+                           "MEME":  1,
                            "ANIME":  0,
                            "XRP":  2,
                            "BNB":  1,
-                           "SUI":  1,
+                           "SUI":  2,
                            "AVAX":  1,
-                           "PENGU":  0,
+                           "PENGU":  1,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  1,
+                           "SOL":  2,
                            "ADA":  1,
                            "PNUT":  0,
-                           "AIXBT":  1,
+                           "AIXBT":  0,
                            "ETH":  2,
                            "LINK":  1,
-                           "PUMP":  0,
-                           "TRUMP":  1,
+                           "PUMP":  1,
+                           "TRUMP":  -2,
                            "BTC":  2
                        },
-    "aiSummary":  "DXY ostaje stabilan na 99.75, ispod ključne razine 100, nastavljajući pružati makroekonomsku potporu kripto tržištu dok Trump aktivno potiče Clarity Act koji donosi regulatornu jasnoću za cijeli sektor. Bitcoin se konsolidira iznad $75.000 uz Fear & Greed na 72 (Pohlepa) i BTC dominanciju na 57.8%, dok ETH bilježi snažnih +5% uz tjedno ubrzanje prema $2.340. Bullish režim ostaje dominantan uz potencijal rasta prema $78K–$82K, dok je rotacija u altcoine ograničena dok BTC dominancija ostaje iznad 55%.",
-    "warActive":  false,
+    "aiSummary":  "DXY se stabilizirao na 99.75, ispod ključne razine 100, nastavljajući podržavati kripto tržište, dok UAE-Iran napetosti (balističke rakete) drže naftu iznad $86 i aktiviraju geopolitički rizik. Bitcoin je probio $78.000 uz rekordne spot ETF priljeve od $606M i masovni kratki squeeze od $3.8B, s Fear & Greed na 72 (Pohlepa) i BTC dominacijom stabilnom na 57.8%. Bullish režim se nastavlja uz potencijal prema $80K+, no rastući prinosi obveznica i geopolitički rizik mogu usporiti altseason dok BTC dominacija ostaje iznad 55%.",
+    "warActive":  true,
     "btcDom":  57.8,
-    "stableDom":  6.5,
+    "stableDom":  7.2,
     "oil":  86.2
 }
