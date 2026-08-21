@@ -1,7 +1,7 @@
 {
-    "dxy":  98.76,
-    "changeSummary":  "BTC je probio $75.000 uz tjedni rast gotovo +20%, dok DXY ostaje stabilan na 98.76, Fear & Greed nepromijenjeno na 73, a S&P 500 pada -1.9% tjedno uz porast prinosa obveznica.",
-    "lastUpdated":  "2026-08-21T08:00:00Z",
+    "dxy":  99.75,
+    "changeSummary":  "DXY ostaje stabilan na 99.75, Fear & Greed na 72, Bitcoin potvrđuje razinu iznad $75.000 uz ETH +5% i snažnu potporu Trumpovog Clarity Act prijedloga.",
+    "lastUpdated":  "2026-08-21T14:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -19,7 +19,7 @@
 
                              ],
                      "SUI":  [
-                         "SUI cijena na nižim razinama, bez jasnog katalizatora"
+
                              ],
                      "AVAX":  [
 
@@ -61,14 +61,14 @@
 
                               ],
                      "TRUMP":  [
-                         "Insider unlockovi do 2028., 80% supply kod Trump-ovih insidera"
+
                                ],
                      "BTC":  [
-                         "S&P 500 -1.9% tjedno, porast prinosa obveznica uvodi rizik"
+
                              ]
                  },
-    "sp500Ret5d":  -1.9,
-    "fearGreed":  73,
+    "sp500Ret5d":  1.2,
+    "fearGreed":  72,
     "macroPenalty":  0,
     "catalysts":  {
                       "ACT":  [
@@ -81,16 +81,16 @@
 
                                 ],
                       "XRP":  [
-                          "SEC odustao od žalbe, novi XRP ETF-ovi globalno odobreni"
+                                  "Globalna XRP ETF odobrenja kao katalizator"
                               ],
                       "BNB":  [
-                          "Opći bullish sentiment, BNB prati tržišni rally"
+
                               ],
                       "SUI":  [
 
                               ],
                       "AVAX":  [
-                          "Hyundai pilotira Avalanche za globalna stablecoin plaćanja"
+
                                ],
                       "PENGU":  [
 
@@ -108,31 +108,32 @@
 
                                  ],
                       "SOL":  [
-                          "Alpenglow upgrade zamjenjuje Proof of History i Tower BFT"
+                                  "Solana priprema upgrade za brzinu blokova"
                               ],
                       "ADA":  [
-                          "Opći bull sentiment, ADA prati tržišni rast"
+
                               ],
                       "PNUT":  [
 
                                ],
                       "AIXBT":  [
-
+                                    "AI tokeni prate bullish momentum tržišta"
                                 ],
                       "ETH":  [
-                          "SEC novi kripto regulatorni okvir, ETH reclaimed $2K +11%"
+                                  "ETH +5% uz BTC rally i Clarity Act podršku"
                               ],
                       "LINK":  [
-                          "Opći bull trend, LINK prati tržišni rast"
+
                                ],
                       "PUMP":  [
 
                                ],
                       "TRUMP":  [
-
+                                    "Trump potiče Clarity Act kroz Kongres"
                                 ],
                       "BTC":  [
-                          "BTC prešao $75K, best week +20% u posljednje 2 godine"
+                                  "Tjedni rast gotovo +20%, najveći od ožujka 2024.",
+                                  "Trump potiče Clarity Act — regulatorna jasnoća za kripto"
                               ]
                   },
     "regime":  "BULL",
@@ -142,7 +143,7 @@
                            "ANIME":  0,
                            "XRP":  2,
                            "BNB":  1,
-                           "SUI":  0,
+                           "SUI":  1,
                            "AVAX":  1,
                            "PENGU":  0,
                            "BOME":  0,
@@ -152,16 +153,16 @@
                            "SOL":  1,
                            "ADA":  1,
                            "PNUT":  0,
-                           "AIXBT":  0,
+                           "AIXBT":  1,
                            "ETH":  2,
                            "LINK":  1,
                            "PUMP":  0,
-                           "TRUMP":  -1,
+                           "TRUMP":  1,
                            "BTC":  2
                        },
-    "aiSummary":  "DXY ostaje ispod 99 (98.76), pružajući makroekonomsku potporu kripto tržištu dok US Treasury udvostručuje otkup dugoročnih obveznica i spušta prinose. Bitcoin je probio $75.000 uz tjedni rast gotovo +20% — najveći tjedni skok od ožujka 2024. — a Fear & Greed ostaje stabilan na 73 uz SEC-ove prijedloge regulatornog okvira i globalna XRP ETF odobrenja kao ključne katalizatore. Naftne cijene na $86 i pad S&P 500 od -1.9% tjedno unose umjerenu volatilnost, no dominantni bullish momentum sugerira nastavak rasta uz konsolidaciju između $72K–$78K.",
+    "aiSummary":  "DXY ostaje stabilan na 99.75, ispod ključne razine 100, nastavljajući pružati makroekonomsku potporu kripto tržištu dok Trump aktivno potiče Clarity Act koji donosi regulatornu jasnoću za cijeli sektor. Bitcoin se konsolidira iznad $75.000 uz Fear & Greed na 72 (Pohlepa) i BTC dominanciju na 57.8%, dok ETH bilježi snažnih +5% uz tjedno ubrzanje prema $2.340. Bullish režim ostaje dominantan uz potencijal rasta prema $78K–$82K, dok je rotacija u altcoine ograničena dok BTC dominancija ostaje iznad 55%.",
     "warActive":  false,
-    "btcDom":  56.2,
-    "stableDom":  13.5,
-    "oil":  86.19
+    "btcDom":  57.8,
+    "stableDom":  6.5,
+    "oil":  86.2
 }
