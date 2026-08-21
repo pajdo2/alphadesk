@@ -1,19 +1,19 @@
 {
     "dxy":  99.75,
-    "changeSummary":  "BTC skočio na $78.198 uz kratki squeeze $3.8B i ETF priljeve $606M, a UAE-Iran napetosti aktiviraju warActive i podižu macroPenalty s 0 na 1.",
-    "lastUpdated":  "2026-08-21T08:00:00Z",
+    "changeSummary":  "Nafta je eskalirala s $86 na $95 zbog US-Iran sukoba oko Hormuzkog tjesnaca, dok BTC ostaje stabilan oko $77K, a DXY i Fear & Greed ostaju nepromijenjeni.",
+    "lastUpdated":  "2026-08-21T14:00:00Z",
     "warnings":  {
                      "ACT":  [
 
                              ],
                      "MEME":  [
-
+                                 "Meme coini visoko rizični u turbulentnom tjednu"
                               ],
                      "ANIME":  [
 
                                ],
                      "XRP":  [
-
+                                 "Visoki RSI nakon +18%, moguća kratkoročna korekcija"
                              ],
                      "BNB":  [
 
@@ -28,7 +28,7 @@
 
                                ],
                      "BOME":  [
-
+                                  "BOME bez fundamenta, čisti meme rizik"
                               ],
                      "DOGS":  [
 
@@ -43,7 +43,7 @@
 
                              ],
                      "ADA":  [
-                                 "ADA blizu ključnog otpora, rizik odbijanja"
+                                 "Visoki RSI, kupci možda iscrpljeni nakon 3 dana rasta"
                              ],
                      "PNUT":  [
 
@@ -55,20 +55,19 @@
 
                              ],
                      "LINK":  [
-                                  "LINK blizu ključnog otpora, pazi na lažni proboj"
-                              ],
-                     "PUMP":  [
 
                               ],
+                     "PUMP":  [
+                                  "Osnivač odgodio airdrop, aktivne pravne komplikacije"
+                              ],
                      "TRUMP":  [
-                                   "TRUMP $1.69, investitori izgubili $3.81B kumulativno",
-                                   "Tržišna kap pala s $15B na $360M"
+
                                ],
                      "BTC":  [
-                                 "Geopolitički rizik UAE-Iran, nafta iznad $86"
+                                 "Rastući prinosi obveznica mogu usporiti daljnji rast"
                              ]
                  },
-    "sp500Ret5d":  -0.8,
+    "sp500Ret5d":  -1.1,
     "fearGreed":  72,
     "macroPenalty":  1,
     "catalysts":  {
@@ -76,27 +75,25 @@
 
                               ],
                       "MEME":  [
-                                   "Meme coin revival u tijeku, altseason signali"
+
                                ],
                       "ANIME":  [
 
                                 ],
                       "XRP":  [
-                                  "SEC Regulation Crypto Assets okvir - pozitivno",
-                                  "Ripple kvantna zaštita XRPL do 2028."
+                                  "XRP +18% tjedni rast, najsnažniji altcoin"
                               ],
                       "BNB":  [
-                                  "Tržišni reli +11-27%, BNB profitira"
+                                  "BNB raste uz opći bullish val tržišta"
                               ],
                       "SUI":  [
-                                  "NAVI Prime lansiran na Sui 21.8.",
-                                  "SUI +10.5% tehnički proboj i makro reli"
+
                               ],
                       "AVAX":  [
-                                   "Altcoin reli, kratki squeeze $3.8B"
+
                                ],
                       "PENGU":  [
-                                    "PENGU +5.17%, vol +70.81% socijalni hype"
+                                    "PENGU trending meme coin, raste s tržištem"
                                 ],
                       "BOME":  [
 
@@ -111,10 +108,10 @@
 
                                  ],
                       "SOL":  [
-                                  "SOL +19% tjedan, blizu 200-dnevnog EMA $89"
+                                  "SOL +6.5% uz BTC bull run"
                               ],
                       "ADA":  [
-                                  "ADA blizu ključnog otpora nakon jakog relija"
+                                  "ADA 3 dana rasta, testira ključni otpor"
                               ],
                       "PNUT":  [
 
@@ -123,22 +120,20 @@
 
                                 ],
                       "ETH":  [
-                                  "ETH +11%, spot ETF priljevi $221M",
-                                  "Kratki squeeze $3.8B, snažan momentum"
+                                  "ETH spot ETF uljevi $221M, ETH +11%"
                               ],
                       "LINK":  [
-                                   "LINK blizu ključnog otpora, bullish outlook"
+                                   "LINK probija otpor na $10.90"
                                ],
                       "PUMP":  [
-                                   "PUMP trending meme coin, stabilan u vrhu"
+
                                ],
                       "TRUMP":  [
-
+                                    "GENIUS Act potpisan, regulatorna jasnoća za kripto"
                                 ],
                       "BTC":  [
-                                  "Spot ETF priljevi $606M 20.8.",
-                                  "Kratki squeeze $3.8B u dva dana",
-                                  "BTC prešao $78K, bullish momentum"
+                                  "Spot ETF priljevi $606M u jednom danu",
+                                  "BTC iznad $77K, kratki squeeze $3.8B"
                               ]
                   },
     "regime":  "BULL",
@@ -148,26 +143,26 @@
                            "ANIME":  0,
                            "XRP":  2,
                            "BNB":  1,
-                           "SUI":  2,
+                           "SUI":  1,
                            "AVAX":  1,
                            "PENGU":  1,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  2,
+                           "SOL":  1,
                            "ADA":  1,
                            "PNUT":  0,
                            "AIXBT":  0,
                            "ETH":  2,
                            "LINK":  1,
-                           "PUMP":  1,
-                           "TRUMP":  -2,
+                           "PUMP":  -1,
+                           "TRUMP":  1,
                            "BTC":  2
                        },
-    "aiSummary":  "DXY se stabilizirao na 99.75, ispod ključne razine 100, nastavljajući podržavati kripto tržište, dok UAE-Iran napetosti (balističke rakete) drže naftu iznad $86 i aktiviraju geopolitički rizik. Bitcoin je probio $78.000 uz rekordne spot ETF priljeve od $606M i masovni kratki squeeze od $3.8B, s Fear & Greed na 72 (Pohlepa) i BTC dominacijom stabilnom na 57.8%. Bullish režim se nastavlja uz potencijal prema $80K+, no rastući prinosi obveznica i geopolitički rizik mogu usporiti altseason dok BTC dominacija ostaje iznad 55%.",
+    "aiSummary":  "DXY ostaje stabilan na 99.75 ispod ključne razine 100, nastavljajući podržavati kripto tržište, dok US-Iran sukob oko Hormuzkog tjesnaca gura naftu iznad $95 i podiže geopolitički rizik. Bitcoin se konsolidira iznad $77K uz Fear & Greed na 72 (Pohlepa), rekordne spot ETF priljeve od $606M i XRP koji predvodi altcoin rast s +18%, dok S&P 500 bilježi blag tjedni pad od -1.1% zbog rastućih prinosa obveznica. Bullish režim se nastavlja uz BTC dominaciju ~57.5% i potencijal prema $80K, no eskalacija na Bliskom Istoku i pritiski na dioničkim tržištima ostaju ključni rizici za altseason.",
     "warActive":  true,
-    "btcDom":  57.8,
-    "stableDom":  7.2,
-    "oil":  86.2
+    "btcDom":  57.5,
+    "stableDom":  8.0,
+    "oil":  95.3
 }
