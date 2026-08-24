@@ -1,7 +1,7 @@
 {
-    "dxy":  98.97,
-    "changeSummary":  "DXY je pao s 99.75 na 98.97, Fear & Greed blago porastao s 72 na 74, BTC ostaje stabilan oko $77.300 uz povećane ETF priljeve od $1.9B tjedno, dok altcoini (XRP, ADA, AVAX) bilježe oštriji pad od BTC-a u vikend pullbacku s $109M likvidacija.",
-    "lastUpdated":  "2026-08-23T23:00:00Z",
+    "dxy":  98.99,
+    "changeSummary":  "Ispravljen macroPenalty na 0 (DXY<100 clamped), AVAX skočio +9% uz $365M RWA transfera, SOL ojačan governance glasovanjem epohe 1021 i BSOL ETF-om.",
+    "lastUpdated":  "2026-08-24T14:00:00.000Z",
     "warnings":  {
                      "ACT":  [
 
@@ -13,7 +13,8 @@
 
                                ],
                      "XRP":  [
-                                 "Pad oštriji od BTC-a, geopolitički pritisak"
+                                 "XRPL prihodi pali 81.6% u H1 2026 - fundamentalni rizik",
+                                 "Ponuda XRP porasla 5.5% YoY - inflacijski pritisak"
                              ],
                      "BNB":  [
 
@@ -22,7 +23,7 @@
 
                              ],
                      "AVAX":  [
-                                  "Pad oštriji od BTC-a uz visoku volatilnost"
+
                               ],
                      "PENGU":  [
 
@@ -43,7 +44,7 @@
 
                              ],
                      "ADA":  [
-                                 "Pad oštriji od BTC-a, slabi fundamentali"
+
                              ],
                      "PNUT":  [
 
@@ -52,7 +53,7 @@
 
                                ],
                      "ETH":  [
-                                 "$32.8M likvidacija u vikend pullbacku"
+
                              ],
                      "LINK":  [
 
@@ -64,12 +65,12 @@
 
                                ],
                      "BTC":  [
-                                 "$109M likvidacija, 80% long pozicija likvidirano"
+                                 "S&P 500 tjedni pad -1.4% - risk-off pritisak na kripto"
                              ]
                  },
     "sp500Ret5d":  -1.4,
-    "fearGreed":  74,
-    "macroPenalty":  1,
+    "fearGreed":  73,
+    "macroPenalty":  0,
     "catalysts":  {
                       "ACT":  [
 
@@ -81,16 +82,18 @@
 
                                 ],
                       "XRP":  [
-
+                                  "XRP ETF priljevi $39.78M - rekordni tjedan od svibnja",
+                                  "White House kripto summit - XRP rally +30% za 2 dana"
                               ],
                       "BNB":  [
-
+                                  "BTC bullish impuls prenosi se na BNB"
                               ],
                       "SUI":  [
 
                               ],
                       "AVAX":  [
-
+                                   "+8.99% rally uz volumen $452M - AVAX se vraća",
+                                   "AVAX RWA transfera $365M u 30 dana - jaka adopcija"
                                ],
                       "PENGU":  [
 
@@ -108,7 +111,9 @@
 
                                  ],
                       "SOL":  [
-                                  "Skromni rast, snaga high-throughput mreže"
+                                  "SOL ETF priljevi $28.34M tjedno - jak interes institucija",
+                                  "Block time smanjen 12.5% - korak prema 200ms cilju",
+                                  "On-chain glasovanje epoha 1021 - Solana ustav"
                               ],
                       "ADA":  [
 
@@ -120,19 +125,21 @@
 
                                 ],
                       "ETH":  [
-                                  "ETF tjedni priljevi $697M, dnevni $184M"
+                                  "SEC pozitivan kripto prijedlog - podrška ETH ekosustavu",
+                                  "ETH iznad $2.400 - povratak ključnih razina"
                               ],
                       "LINK":  [
-
+                                   "World prediction market integrira Chainlink data feeds"
                                ],
                       "PUMP":  [
 
                                ],
                       "TRUMP":  [
-
+                                    "Trump podupro CLARITY Act - direktan bullish signal"
                                 ],
                       "BTC":  [
-                                  "ETF tjedni priljevi $1.9B, dnevni $307M"
+                                  "CLARITY Act Trumpova podrška - jak regulatorni optimizam",
+                                  "BTC probio sve ključne pokretne prosjeke - snažan impuls"
                               ]
                   },
     "regime":  "BULL",
@@ -140,28 +147,28 @@
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  -1,
-                           "BNB":  0,
+                           "XRP":  2,
+                           "BNB":  1,
                            "SUI":  0,
-                           "AVAX":  -1,
+                           "AVAX":  2,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  1,
-                           "ADA":  -1,
+                           "SOL":  2,
+                           "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  2,
-                           "LINK":  0,
+                           "ETH":  1,
+                           "LINK":  1,
                            "PUMP":  0,
-                           "TRUMP":  0,
-                           "BTC":  1
+                           "TRUMP":  2,
+                           "BTC":  2
                        },
-    "aiSummary":  "DXY pada na 98.97 ispod ključne razine 100, što nastavlja podržavati kripto tržište dok Fed-ov plan otkupa obveznica slabi dolar, a Fear & Greed indeks raste na 74 (Pohlepa) uz BTC koji se konsolidira oko $77.300 s tjednim ETF pritjecajima od $1.9 mlrd i ETH ETF-ovima koji privlače $697M tjedno. Bullish režim se nastavlja uz BTC dominaciju 57.9% i macroPenalty 1, no oštri vikend pullback s $109M likvidacija (80% long pozicija) te altcoini koji padaju jače od BTC-a (XRP, ADA, AVAX) uz S&P 500 tjedni pad od -1.4% ostaju ključni rizici za širi altseason.",
-    "warActive":  true,
-    "btcDom":  57.87,
-    "stableDom":  11.6,
-    "oil":  95.29
+    "aiSummary":  "Dolar (DXY 98.99) ostaje ispod razine 100, pružajući makro vjetar u leđa kripto tržištu dok S&P500 bilježi tjedni pad od -1.4% uz risk-off sentiment u dioničkim tržištima. Strah i pohlepa indeks stabilan na 73 (Pohlepa), BTC dominacija 56.6% i tjedni ETF priljevi od $2.6 milijardi potvrđuju BULL režim potaknut CLARITY Actom i institucionalnim interesom. AVAX se ističe +9% dnevnim rastom uz $365M RWA transfera, a SOL dobiva governance dimenziju s glasovanjem na epohi 1021.",
+    "warActive":  false,
+    "btcDom":  56.6,
+    "stableDom":  10.7,
+    "oil":  85.65
 }
