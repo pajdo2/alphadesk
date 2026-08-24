@@ -1,6 +1,32 @@
 {
   "predictions": [
     {
+      "id": "1787576665366",
+      "timestamp": 1787576665366,
+      "sym": "MORPHO",
+      "type": "regular",
+      "direction": "LONG",
+      "date": "24. kol",
+      "entry": 2.779,
+      "target": 3.0569,
+      "d1Target": 2.8763,
+      "d2Target": 2.9735,
+      "d3Target": 3.0569,
+      "stop": 2.6678,
+      "conf": 72,
+      "targetPct": 10,
+      "status": "AKTIVAN",
+      "closePrice": null,
+      "closePct": null,
+      "autoClose": false,
+      "engineVer": "v5.208",
+      "d1Hit": false,
+      "d2Hit": false,
+      "d3Hit": false,
+      "peakPrice": 2.779,
+      "peakPct": 0
+    },
+    {
       "id": "1787576432166",
       "timestamp": 1787576432166,
       "sym": "MORPHO",
@@ -7999,60 +8025,6 @@
       "peakPrice": 18.72,
       "peakPct": 0.59,
       "closeReason": "â° Isteklo â nema live cijene"
-    },
-    {
-      "id": "1776426516823_QNT",
-      "timestamp": 1776426516823,
-      "sym": "QNT",
-      "type": "regular",
-      "date": "17. tra",
-      "entry": 76.24,
-      "target": 80.052,
-      "d1Target": 77.5742,
-      "d2Target": 78.9084,
-      "d4Target": 80.052,
-      "d5Target": 80.052,
-      "d3Target": 80.052,
-      "stop": 74.7152,
-      "conf": 50,
-      "score": 2.75,
-      "targetPct": 5,
-      "status": "PROMAÅ AJ",
-      "closePrice": 69.62,
-      "closePct": -8.68,
-      "autoClose": true,
-      "direction": "LONG",
-      "autoTrack": true,
-      "autoSource": "watch",
-      "snap": {
-        "rsiOversold": false,
-        "rsiOverbought": false,
-        "trendUp": true,
-        "trendDown": false,
-        "bbBelow": false,
-        "divBullish": false,
-        "divBearish": false,
-        "macdBullCross": false,
-        "macdBearCross": false,
-        "lsRatioBull": false,
-        "lsRatioExtreme": false,
-        "basisBack": false,
-        "takerSell": false,
-        "btcDomHigh": true,
-        "btcDomLow": false,
-        "volSpike": false,
-        "mtfAllUp": false,
-        "fgExtremeFear": false,
-        "fgFear": true
-      },
-      "d1Hit": false,
-      "d2Hit": false,
-      "d3Hit": false,
-      "d4Hit": false,
-      "d5Hit": false,
-      "peakPrice": 76.51,
-      "peakPct": 0.35,
-      "closeReason": "ð Stop-loss hit"
     }
   ],
   "signalWeights": {
@@ -9560,5 +9532,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-08-24T13:03:56.556Z"
+  "updatedAt": "2026-08-24T13:04:30.181Z"
 }
