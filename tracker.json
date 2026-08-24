@@ -1,6 +1,32 @@
 {
   "predictions": [
     {
+      "id": "1787576407990",
+      "timestamp": 1787576407990,
+      "sym": "AVAX",
+      "type": "regular",
+      "direction": "LONG",
+      "date": "24. kol",
+      "entry": 7.595,
+      "target": 8.2746,
+      "d1Target": 7.8328,
+      "d2Target": 8.0707,
+      "d3Target": 8.2746,
+      "stop": 7.2912,
+      "conf": 66,
+      "targetPct": 8.95,
+      "status": "AKTIVAN",
+      "closePrice": null,
+      "closePct": null,
+      "autoClose": false,
+      "engineVer": "v5.208",
+      "d1Hit": false,
+      "d2Hit": false,
+      "d3Hit": false,
+      "peakPrice": 7.595,
+      "peakPct": 0
+    },
+    {
       "id": "1787576401299_BNB",
       "timestamp": 1787576401299,
       "sym": "BNB",
@@ -9591,5 +9617,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-08-24T13:00:04.346Z"
+  "updatedAt": "2026-08-24T13:00:13.452Z"
 }
