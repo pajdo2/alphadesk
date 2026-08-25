@@ -1,7 +1,7 @@
 {
-    "dxy":  98.99,
-    "changeSummary":  "Ispravljen macroPenalty na 0 (DXY<100 clamped), AVAX skočio +9% uz $365M RWA transfera, SOL ojačan governance glasovanjem epohe 1021 i BSOL ETF-om.",
-    "lastUpdated":  "2026-08-24T14:00:00.000Z",
+    "dxy":  98.96,
+    "changeSummary":  "Nafta lagano porasla na $85.67, BTC dominacija korigirala na 58.8%, a macroPenalty ispravljen na 0 — DXY (98.96), Fear & Greed (68) i BULL režim ostaju stabilni.",
+    "lastUpdated":  "2026-08-25T18:30:00.000Z",
     "warnings":  {
                      "ACT":  [
 
@@ -13,8 +13,7 @@
 
                                ],
                      "XRP":  [
-                                 "XRPL prihodi pali 81.6% u H1 2026 - fundamentalni rizik",
-                                 "Ponuda XRP porasla 5.5% YoY - inflacijski pritisak"
+                                 "XRP pullback -0.83% nakon tjednog rasta"
                              ],
                      "BNB":  [
 
@@ -44,7 +43,7 @@
 
                              ],
                      "ADA":  [
-
+                                 "ADA blagi pad -0.38%, bez jasnog katalizatora"
                              ],
                      "PNUT":  [
 
@@ -65,11 +64,11 @@
 
                                ],
                      "BTC":  [
-                                 "S&P 500 tjedni pad -1.4% - risk-off pritisak na kripto"
+
                              ]
                  },
     "sp500Ret5d":  -1.4,
-    "fearGreed":  73,
+    "fearGreed":  68,
     "macroPenalty":  0,
     "catalysts":  {
                       "ACT":  [
@@ -82,21 +81,19 @@
 
                                 ],
                       "XRP":  [
-                                  "XRP ETF priljevi $39.78M - rekordni tjedan od svibnja",
-                                  "White House kripto summit - XRP rally +30% za 2 dana"
+
                               ],
                       "BNB":  [
-                                  "BTC bullish impuls prenosi se na BNB"
+                                  "BNB Pasteur hard fork aktiviran 25. kolovoza"
                               ],
                       "SUI":  [
 
                               ],
                       "AVAX":  [
-                                   "+8.99% rally uz volumen $452M - AVAX se vraća",
-                                   "AVAX RWA transfera $365M u 30 dana - jaka adopcija"
+
                                ],
                       "PENGU":  [
-
+                                    "Pudgy Penguins plushie line dostupna u Target dućanima SAD"
                                 ],
                       "BOME":  [
 
@@ -111,35 +108,33 @@
 
                                  ],
                       "SOL":  [
-                                  "SOL ETF priljevi $28.34M tjedno - jak interes institucija",
-                                  "Block time smanjen 12.5% - korak prema 200ms cilju",
-                                  "On-chain glasovanje epoha 1021 - Solana ustav"
+                                  "SOL validators glasaju o network constitution i fee reformi",
+                                  "SOL +3.86% tjedno, stabilan rast uz BTC konsolidaciju"
                               ],
                       "ADA":  [
-
+                                  "ADA +10.49% tjedno, jaki altcoin performer"
                               ],
                       "PNUT":  [
-
+                                   "PNUT outperformira u altcoin rotaciji, pojačana soc. pažnja"
                                ],
                       "AIXBT":  [
 
                                 ],
                       "ETH":  [
-                                  "SEC pozitivan kripto prijedlog - podrška ETH ekosustavu",
-                                  "ETH iznad $2.400 - povratak ključnih razina"
+                                  "ETH čvrsto iznad $2,450, snažan tjedno"
                               ],
                       "LINK":  [
-                                   "World prediction market integrira Chainlink data feeds"
+                                   "LINK +1.72% uz pozitivan kripto sentiment"
                                ],
                       "PUMP":  [
 
                                ],
                       "TRUMP":  [
-                                    "Trump podupro CLARITY Act - direktan bullish signal"
+
                                 ],
                       "BTC":  [
-                                  "CLARITY Act Trumpova podrška - jak regulatorni optimizam",
-                                  "BTC probio sve ključne pokretne prosjeke - snažan impuls"
+                                  "ETF priljevi $1.92B, BTC konsolidira blizu $79K",
+                                  "US Treasury proširuje program otkupa obveznica, slabi USD"
                               ]
                   },
     "regime":  "BULL",
@@ -147,28 +142,28 @@
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  2,
-                           "BNB":  1,
+                           "XRP":  -1,
+                           "BNB":  2,
                            "SUI":  0,
-                           "AVAX":  2,
-                           "PENGU":  0,
+                           "AVAX":  0,
+                           "PENGU":  2,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
                            "SOL":  2,
-                           "ADA":  0,
-                           "PNUT":  0,
+                           "ADA":  1,
+                           "PNUT":  1,
                            "AIXBT":  0,
                            "ETH":  1,
                            "LINK":  1,
                            "PUMP":  0,
-                           "TRUMP":  2,
+                           "TRUMP":  0,
                            "BTC":  2
                        },
-    "aiSummary":  "Dolar (DXY 98.99) ostaje ispod razine 100, pružajući makro vjetar u leđa kripto tržištu dok S&P500 bilježi tjedni pad od -1.4% uz risk-off sentiment u dioničkim tržištima. Strah i pohlepa indeks stabilan na 73 (Pohlepa), BTC dominacija 56.6% i tjedni ETF priljevi od $2.6 milijardi potvrđuju BULL režim potaknut CLARITY Actom i institucionalnim interesom. AVAX se ističe +9% dnevnim rastom uz $365M RWA transfera, a SOL dobiva governance dimenziju s glasovanjem na epohi 1021.",
+    "aiSummary":  "Dolar (DXY 98.96) ostaje ispod razine 100 i nastavlja pružati makro potporu kripto tržištu dok Bitcoin konsolidira blizu $79K nakon snažnog tjednog rasta od 22% i ETF priljeva od $1.92 milijardi. Fear & Greed indeks na 68 (Pohlepa) i BTC dominacija od 58.8% potvrđuju stabilan BULL režim, a BNB Pasteur hard fork i SOL governance glasanje nastavljaju podupirati pozitivan altcoin sentiment. S&P 500 bilježi tjedni pad od -1.4%, no kripto tržište ostaje otporno zahvaljujući institucionalnom interesu i slabljenju dolara zbog proširenja US Treasury programa otkupa obveznica.",
     "warActive":  false,
-    "btcDom":  56.6,
-    "stableDom":  10.7,
-    "oil":  85.65
+    "btcDom":  58.8,
+    "stableDom":  6.2,
+    "oil":  85.67
 }
