@@ -123,16 +123,17 @@
       "stop": 7.2835,
       "conf": 76,
       "targetPct": 9.06,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "PROMAŠAJ",
+      "closePrice": 7.273,
+      "closePct": -4.14,
+      "autoClose": true,
       "engineVer": "v5.208",
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
       "peakPrice": 7.595,
-      "peakPct": 0.11
+      "peakPct": 0.11,
+      "closeReason": "🛑 Stop-loss (24/7)"
     },
     {
       "id": "1787576416292",
@@ -202,16 +203,17 @@
       "stop": 7.2912,
       "conf": 66,
       "targetPct": 8.95,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "PROMAŠAJ",
+      "closePrice": 7.273,
+      "closePct": -4.24,
+      "autoClose": true,
       "engineVer": "v5.208",
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
       "peakPrice": 7.595,
-      "peakPct": 0
+      "peakPct": 0,
+      "closeReason": "🛑 Stop-loss (24/7)"
     },
     {
       "id": "1787576401299_BNB",
@@ -9493,5 +9495,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-08-26T06:42:02.845Z"
+  "updatedAt": "2026-08-26T14:40:33.638Z"
 }
