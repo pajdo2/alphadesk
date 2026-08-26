@@ -1,7 +1,7 @@
 {
-    "dxy":  99.07,
-    "changeSummary":  "BTC dominacija porasla s 58.5% na 60.5% uz nastavak BULL režima, dok DXY ostaje stabilan oko 99 i Fear & Greed indeks blago raste na 74.",
-    "lastUpdated":  "2026-08-25T12:00:00.000Z",
+    "dxy":  98.99,
+    "changeSummary":  "Fear & Greed pao s 74 na 65, BTC dom smanjena s 60.5% na 58.8%, BTC konsolidira na ~$79K nakon proboja iznad $81K, a macroPenalty ostaje 0 uz DXY stabilno ispod 100.",
+    "lastUpdated":  "2026-08-26T12:00:00.000Z",
     "warnings":  {
                      "ACT":  [
 
@@ -13,7 +13,7 @@
 
                                ],
                      "XRP":  [
-                                 "Kitovi hedge $1.3B u XRP/BTC - rizik korekcije"
+                                 "Flash crash 37% prošli tjedan, visoka volatilnost"
                              ],
                      "BNB":  [
 
@@ -40,10 +40,10 @@
 
                                 ],
                      "SOL":  [
-
+                                 "Kylie Jenner hack Solana memecoin prijevara"
                              ],
                      "ADA":  [
-
+                                 "ADA u padu, underperformance vs ostatak tržišta"
                              ],
                      "PNUT":  [
 
@@ -64,33 +64,34 @@
 
                                ],
                      "BTC":  [
-                                 "Brzi oporavak +22% tjedno - moguća konsolidacija"
+
                              ]
                  },
-    "sp500Ret5d":  -1.5,
-    "fearGreed":  74,
+    "sp500Ret5d":  -1.4,
+    "fearGreed":  65,
     "macroPenalty":  0,
     "catalysts":  {
                       "ACT":  [
 
                               ],
                       "MEME":  [
-
+                                   "Tržišni rast potiče memecoin interes"
                                ],
                       "ANIME":  [
 
                                 ],
                       "XRP":  [
-                                  "JPMorgan XRPL - institucionalna tokenizacija aktiva"
+                                  "XRP ETF dostupan, +47% tjedni, CLARITY Act $8B",
+                                  "7 spot XRP ETF-a drže $1.49B imovine"
                               ],
                       "BNB":  [
-                                  "Pozitivan altcoin sentiment, BNB među favoritima"
+
                               ],
                       "SUI":  [
 
                               ],
                       "AVAX":  [
-                                   "RWA volumen +360%, staked AVAX kao kolateral"
+
                                ],
                       "PENGU":  [
 
@@ -108,7 +109,9 @@
 
                                  ],
                       "SOL":  [
-                                  "+6.24% tjedan - snažan momentum i interes"
+                                  "Bitwise SOL ETF >$1B priljeva, rekordni inflow",
+                                  "Slot time redukcija na 200ms, ubrzanje mreže",
+                                  "SOL ETF inflow streak 5+ dana, RWA ekosustav >$4B"
                               ],
                       "ADA":  [
 
@@ -120,10 +123,10 @@
 
                                 ],
                       "ETH":  [
-                                  "Rast uz BTC, proboj $2.4K - pozitivan signal"
+                                  "ETF dostupan, rast s BTC-om, +29% tjedni"
                               ],
                       "LINK":  [
-                                   "XRP/ETH/SOL/LINK jeftini - potencijal rasta"
+
                                ],
                       "PUMP":  [
 
@@ -132,37 +135,37 @@
 
                                 ],
                       "BTC":  [
-                                  "ETF priljevi $1.92B tjedno - rekord 2026",
-                                  "US Treasury bond buyback pokrenuo rally +22%"
+                                  "Treasury buyback kratki squeeze, ETF priljevi",
+                                  "Institucionalni interes, BTC ~$80K tromjesečni vrh"
                               ]
                   },
     "regime":  "BULL",
     "sentimentScore":  {
                            "ACT":  0,
-                           "MEME":  0,
+                           "MEME":  1,
                            "ANIME":  0,
-                           "XRP":  2,
-                           "BNB":  1,
+                           "XRP":  1,
+                           "BNB":  0,
                            "SUI":  0,
-                           "AVAX":  1,
+                           "AVAX":  0,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
                            "SOL":  2,
-                           "ADA":  0,
+                           "ADA":  -1,
                            "PNUT":  0,
                            "AIXBT":  0,
                            "ETH":  1,
-                           "LINK":  1,
+                           "LINK":  0,
                            "PUMP":  0,
                            "TRUMP":  0,
                            "BTC":  2
                        },
-    "aiSummary":  "Dolar (DXY 99.07) ostaje stabilno ispod razine 100 pružajući makro potporu kripto tržištu dok Bitcoin potvrđuje snažan BULL režim s tjednim rastom od 22% na ~$80K uz rekordne ETF priljeve od $1.92B i US Treasury bond buyback kao ključne katalizatore. Fear & Greed indeks na 74 (Pohlepa) i BTC dominacija od 60.5% potvrđuju nastavak BULL-a bez znakova alt sezone, a JPMorgan XRPL milestone i SOL +6.24% podupiru pozitivan altcoin sentiment. S&P 500 bilježi tjedni pad od oko -1.5% uslijed prodaje chip dionica i rasta prinosa, no kripto tržište ostaje otporno zahvaljujući institucionalnom interesu i slabljenju dolara.",
+    "aiSummary":  "Dolar (DXY 98.99) stabilno ispod 100 pruža makro potporu kripto tržištu, a macroPenalty je 0 jer se negativni DXY efekt kompenzira s neutralnim ostalim faktorima. Bitcoin konsolidira na ~$79K nakon tromjesečnog vrha od $81.2K s Fear & Greed indeksom na 65 (Pohlepa), dok BTC dominacija pada na 58.8% što naznačuje potencijal za altcoin rotaciju. SOL predvodi alts s ETF inflow streakom od 5+ dana i RWA ekosustavom >$4B, XRP bilježi +47% tjedni uz snažan ETF interes, dok ADA zaostaje s izraženim padom koji nadmašuje ostatak tržišta.",
     "warActive":  false,
-    "btcDom":  60.5,
-    "stableDom":  13.0,
-    "oil":  85.03
+    "btcDom":  58.8,
+    "stableDom":  11.2,
+    "oil":  80.78
 }
