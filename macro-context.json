@@ -1,117 +1,171 @@
 {
     "dxy":  99.0,
-    "changeSummary":  "Makro slika ostaje stabilna s DXY pri 99 i F&G na 65, dok nafta pada na $80.3 zbog iransko-omanskih mirovnih pregovora, BTC drži $79K nakon kratkog vrha $81.2K a BTC dominacija zadržava 58.8%.",
-    "lastUpdated":  "2026-08-26T16:00:00.000Z",
+    "changeSummary":  "Tržište se dramatično oporavilo — BTC skočio na ~$79K, Fear & Greed prešao iz straha (27) u pohlepu (68), a DXY oslabio ispod 100, što zajedno signalizira BULL režim.",
+    "lastUpdated":  "2026-08-27T12:00:00Z",
     "warnings":  {
-                     "ACT":  [],
-                     "MEME":  [],
-                     "ANIME":  [],
+                     "ACT":  [
+                             "Mali cap bez katalizatora, visoki rizik"
+                             ],
+                     "MEME":  [
+                              "Generički meme token, ekstreman rizik"
+                              ],
+                     "ANIME":  [
+                               "Nema katalizatora, spekulativno"
+                               ],
                      "XRP":  [
-                         "Korekcija -5% na $1.44 nakon snažnog tjednog +43%"
-                     ],
-                     "BNB":  [],
-                     "SUI":  [],
+                             "XRP pao -5% u jednom danu — volatilnost visoka"
+                             ],
+                     "BNB":  [
+                             "BNB ovisan o BTC kretanju"
+                             ],
+                     "SUI":  [
+                             "Alt rally nestabilan, moguća korekcija"
+                             ],
                      "AVAX":  [
-                         "Spor oporavak, zaostaje za tržištem"
-                     ],
-                     "PENGU":  [],
-                     "BOME":  [],
-                     "DOGS":  [],
-                     "NOT":  [],
-                     "PEOPLE":  [],
+                              "Nema jačeg katalizatora, slijedi BTC"
+                              ],
+                     "PENGU":  [
+                               "NFT/meme sektor bez podrške tržišta"
+                               ],
+                     "BOME":  [
+                              "Meme token, ekstreman rizik"
+                              ],
+                     "DOGS":  [
+                              "Meme token pod pritiskom BTC dominacije"
+                              ],
+                     "NOT":  [
+                             "BTC dominacija >58% guši male tokene"
+                             ],
+                     "PEOPLE":  [
+                                "Mali cap, bez katalizatora"
+                                ],
                      "SOL":  [
-                         "Dnevna korekcija -4.8% na $96.94"
-                     ],
+                             "SOL oscilira u širokom rangu $95-105"
+                             ],
                      "ADA":  [
-                         "Zaostaje za tržištem, ispod tjednog prosjeka"
-                     ],
-                     "PNUT":  [],
-                     "AIXBT":  [],
-                     "ETH":  [],
-                     "LINK":  [],
-                     "PUMP":  [],
-                     "TRUMP":  [],
+                             "Brzi rast može dovesti do korekcije"
+                             ],
+                     "PNUT":  [
+                              "Nema likvidnosti, ekstreman rizik"
+                              ],
+                     "AIXBT":  [
+                               "AI narativ bez novog pokretača"
+                               ],
+                     "ETH":  [
+                             "ETH prati BTC, nema samostalnog katalizatora"
+                             ],
+                     "LINK":  [
+                              "Prati alt rally bez vlastitog narativa"
+                              ],
+                     "PUMP":  [
+                              "Pump.fun token — spekulativan, visok rizik"
+                              ],
+                     "TRUMP":  [
+                               "Politički token — visoka volatilnost"
+                               ],
                      "BTC":  [
-                         "Profit-taking pri $79K, konsolidacija nakon vrha $81.2K"
-                     ]
+                             "Brz rast $65K→$80K, moguća korekcija"
+                             ]
                  },
-    "sp500Ret5d":  -1.4,
-    "fearGreed":  65,
+    "sp500Ret5d":  -0.8,
+    "fearGreed":  68,
     "macroPenalty":  0,
     "catalysts":  {
-                      "ACT":  [],
+                      "ACT":  [
+
+                              ],
                       "MEME":  [
-                          "Memecoini aktivni u tjednom rally-ju"
-                      ],
-                      "ANIME":  [],
+
+                               ],
+                      "ANIME":  [
+
+                                ],
                       "XRP":  [
-                          "ETF priljevi vode altcoin tržište: $39.78M",
-                          "Tjedni rast +43%, raste na 5. mjesto po tržišnoj kapi"
-                      ],
+                              "RLUSD širi se na institucijske koridore",
+                              "XRP +43% tjedno — jaka potražnja"
+                              ],
                       "BNB":  [
-                          "Opći tržišni momentum"
-                      ],
+                              "BNB +15% tjedno, bull momentum nastavlja"
+                              ],
                       "SUI":  [
-                          "GameFi izloženost, oporavak s tržištem"
-                      ],
-                      "AVAX":  [],
-                      "PENGU":  [],
-                      "BOME":  [],
-                      "DOGS":  [],
-                      "NOT":  [],
-                      "PEOPLE":  [],
+                              "SUI prati snažni alt season rally"
+                              ],
+                      "AVAX":  [
+
+                               ],
+                      "PENGU":  [
+
+                                ],
+                      "BOME":  [
+
+                               ],
+                      "DOGS":  [
+
+                               ],
+                      "NOT":  [
+
+                              ],
+                      "PEOPLE":  [
+
+                                 ],
                       "SOL":  [
-                          "Wall Street altcoin inflows, tjedni +30%",
-                          "RWA ekosustav >$4B ostaje jak"
-                      ],
-                      "ADA":  [],
-                      "PNUT":  [],
+                              "Alpenglow nadogradnja klijenta u pripremi",
+                              "SOL +25% tjedno, ekosustav aktivan"
+                              ],
+                      "ADA":  [
+                              "ADA vodi altcoine s +10% tjedno"
+                              ],
+                      "PNUT":  [
+
+                               ],
                       "AIXBT":  [
-                          "AI kripto sektor oporavlja s tržištem"
-                      ],
+
+                                ],
                       "ETH":  [
-                          "ETF priljevi jačaju, tjedni rast +28.6%"
-                      ],
+                              "ETH nadmašuje BTC tjedno +28%",
+                              "Institucionalni interes raste"
+                              ],
                       "LINK":  [
-                          "CEO na White House crypto eventu",
-                          "Altcoin ETF priljevi, Wall Street interes"
-                      ],
-                      "PUMP":  [],
+                               "LINK prati snažni alt rally"
+                               ],
+                      "PUMP":  [
+
+                               ],
                       "TRUMP":  [
-                          "Clarity Act pritisak Trumpa - ključni reg. katalizator"
-                      ],
+                                "Trump gura Clarity Act — regulatorna jasnoća"
+                                ],
                       "BTC":  [
-                          "3-mjes. vrh $81.2K, Treasury buyback potpora tržištu",
-                          "Warsh Jackson Hole govor 27-29.8. i PCE ključni katalizatori"
-                      ]
+                              "ETF priljevi >$3B u kolovozu",
+                              "BTC probio $80K otpor — highest od svibnja"
+                              ]
                   },
     "regime":  "BULL",
     "sentimentScore":  {
-                           "ACT":  0,
-                           "MEME":  1,
-                           "ANIME":  0,
+                           "ACT":  -1,
+                           "MEME":  -1,
+                           "ANIME":  -1,
                            "XRP":  2,
                            "BNB":  1,
                            "SUI":  1,
                            "AVAX":  0,
-                           "PENGU":  0,
-                           "BOME":  0,
-                           "DOGS":  0,
-                           "NOT":  0,
-                           "PEOPLE":  0,
+                           "PENGU":  -1,
+                           "BOME":  -1,
+                           "DOGS":  -1,
+                           "NOT":  -1,
+                           "PEOPLE":  -1,
                            "SOL":  1,
-                           "ADA":  -1,
-                           "PNUT":  0,
-                           "AIXBT":  1,
-                           "ETH":  1,
-                           "LINK":  2,
-                           "PUMP":  0,
-                           "TRUMP":  2,
+                           "ADA":  1,
+                           "PNUT":  -1,
+                           "AIXBT":  0,
+                           "ETH":  2,
+                           "LINK":  1,
+                           "PUMP":  -1,
+                           "TRUMP":  0,
                            "BTC":  2
                        },
-    "aiSummary":  "Dolar (DXY ~99) ostaje stabilno ispod 100 i pruža makro potporu kripto tržištu, pa je macroPenalty 0 jer nema aktivnih ratnih rizika ni ekstremnih DXY razina. Bitcoin konsolidira na ~$79K nakon kratkog 3-mjes. vrha od $81.2K, Fear & Greed ostaje na 65 (Pohlepa), a BTC dominacija od 58.8% ostavlja prostor za altcoin rotaciju bez signala alt-seasona. Warshov ključni nastup na Jackson Holeu (27-29.8.) i PCE inflacijski podaci mogu odlučno odrediti smjer tržišta u nadolazećim danima.",
+    "aiSummary":  "DXY je pao ispod 100 (trenutno ~99), što slabi dolar i potiče risk-on imovinu poput kriptovaluta. Fear & Greed indeks je na 68 (Pohlepa) nakon dramatičnog oporavka s 27 u samo dva tjedna, a BTC konsolidira oko $79K nakon proboja $80K. Očekuje se povećana volatilnost oko Jackson Hole simpozija (27.-29. kolovoza) — Fedov govor može biti ključan katalizator za smjer tržišta.",
     "warActive":  false,
     "btcDom":  58.8,
-    "stableDom":  11.3,
-    "oil":  80.3
+    "stableDom":  8.5,
+    "oil":  80.2
 }
