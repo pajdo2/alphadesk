@@ -1,74 +1,74 @@
 {
     "dxy":  99.0,
-    "changeSummary":  "Tržište se dramatično oporavilo — BTC skočio na ~$79K, Fear & Greed prešao iz straha (27) u pohlepu (68), a DXY oslabio ispod 100, što zajedno signalizira BULL režim.",
-    "lastUpdated":  "2026-08-27T12:00:00Z",
+    "changeSummary":  "Fear & Greed porastao s 68 na 71, BTC ostaje stabilan oko $79K, a macroPenalty ispravljen na 0 — DXY i oil nepromijenjeni uz neizvjesnost pred Fedov govor na Jackson Holeu.",
+    "lastUpdated":  "2026-08-27T20:00:00Z",
     "warnings":  {
                      "ACT":  [
-                             "Mali cap bez katalizatora, visoki rizik"
+
                              ],
                      "MEME":  [
-                              "Generički meme token, ekstreman rizik"
+
                               ],
                      "ANIME":  [
-                               "Nema katalizatora, spekulativno"
+
                                ],
                      "XRP":  [
-                             "XRP pao -5% u jednom danu — volatilnost visoka"
+                                 "XRP vodi gubitke, -0.76% - Fed rizik"
                              ],
                      "BNB":  [
-                             "BNB ovisan o BTC kretanju"
+
                              ],
                      "SUI":  [
-                             "Alt rally nestabilan, moguća korekcija"
+
                              ],
                      "AVAX":  [
-                              "Nema jačeg katalizatora, slijedi BTC"
+                                  "AVAX -4.2% tjedno - slab relativni nastup"
                               ],
                      "PENGU":  [
-                               "NFT/meme sektor bez podrške tržišta"
+
                                ],
                      "BOME":  [
-                              "Meme token, ekstreman rizik"
+
                               ],
                      "DOGS":  [
-                              "Meme token pod pritiskom BTC dominacije"
+
                               ],
                      "NOT":  [
-                             "BTC dominacija >58% guši male tokene"
+
                              ],
                      "PEOPLE":  [
-                                "Mali cap, bez katalizatora"
+
                                 ],
                      "SOL":  [
-                             "SOL oscilira u širokom rangu $95-105"
+
                              ],
                      "ADA":  [
-                             "Brzi rast može dovesti do korekcije"
+
                              ],
                      "PNUT":  [
-                              "Nema likvidnosti, ekstreman rizik"
+
                               ],
                      "AIXBT":  [
-                               "AI narativ bez novog pokretača"
+
                                ],
                      "ETH":  [
-                             "ETH prati BTC, nema samostalnog katalizatora"
+
                              ],
                      "LINK":  [
-                              "Prati alt rally bez vlastitog narativa"
+
                               ],
                      "PUMP":  [
-                              "Pump.fun token — spekulativan, visok rizik"
+
                               ],
                      "TRUMP":  [
-                               "Politički token — visoka volatilnost"
+                                   "80% ponude kod insajdera - unlock dump rizik"
                                ],
                      "BTC":  [
-                             "Brz rast $65K→$80K, moguća korekcija"
+                                 "Jackson Hole: Fed govor može izazvati volatilnost"
                              ]
                  },
-    "sp500Ret5d":  -0.8,
-    "fearGreed":  68,
+    "sp500Ret5d":  -1.4,
+    "fearGreed":  71,
     "macroPenalty":  0,
     "catalysts":  {
                       "ACT":  [
@@ -81,14 +81,15 @@
 
                                 ],
                       "XRP":  [
-                              "RLUSD širi se na institucijske koridore",
-                              "XRP +43% tjedno — jaka potražnja"
+                                  "XRPL 3.3.0 update, novi developer alati",
+                                  "XRP ETF priljevi $28M"
                               ],
                       "BNB":  [
-                              "BNB +15% tjedno, bull momentum nastavlja"
+                                  "BNB +5%, povratak iznad $600 psihol. razine"
                               ],
                       "SUI":  [
-                              "SUI prati snažni alt season rally"
+                                  "Kvantno-otporne potpise dodan 6.8.",
+                                  "NB/Securitize tokenized fond na Sui"
                               ],
                       "AVAX":  [
 
@@ -109,63 +110,61 @@
 
                                  ],
                       "SOL":  [
-                              "Alpenglow nadogradnja klijenta u pripremi",
-                              "SOL +25% tjedno, ekosustav aktivan"
+                                  "SOL +5.76% - vodeći major, ETF priljevi $9M"
                               ],
                       "ADA":  [
-                              "ADA vodi altcoine s +10% tjedno"
+                                  "ADA +14% tjedno, bull trend od lipnja"
                               ],
                       "PNUT":  [
 
                                ],
                       "AIXBT":  [
-
+                                    "AIXBT trend AI agent token, višestruke listinge"
                                 ],
                       "ETH":  [
-                              "ETH nadmašuje BTC tjedno +28%",
-                              "Institucionalni interes raste"
+                                  "ETF priljevi $192M, ETH raste +1.7% na $2,497"
                               ],
                       "LINK":  [
-                               "LINK prati snažni alt rally"
-                               ],
-                      "PUMP":  [
 
                                ],
+                      "PUMP":  [
+                                   "PUMP medu top trending meme coinova kolovoza"
+                               ],
                       "TRUMP":  [
-                                "Trump gura Clarity Act — regulatorna jasnoća"
+                                    "TRUMP +93.5% tjedno - live event katalizatori"
                                 ],
                       "BTC":  [
-                              "ETF priljevi >$3B u kolovozu",
-                              "BTC probio $80K otpor — highest od svibnja"
+                                  "ETF neto priljevi $232M u zadnjih 24h",
+                                  "BTC stabilan iznad $79K, tržišna kap $2.76T"
                               ]
                   },
     "regime":  "BULL",
     "sentimentScore":  {
-                           "ACT":  -1,
-                           "MEME":  -1,
-                           "ANIME":  -1,
-                           "XRP":  2,
+                           "ACT":  0,
+                           "MEME":  0,
+                           "ANIME":  0,
+                           "XRP":  0,
                            "BNB":  1,
                            "SUI":  1,
-                           "AVAX":  0,
-                           "PENGU":  -1,
-                           "BOME":  -1,
-                           "DOGS":  -1,
-                           "NOT":  -1,
-                           "PEOPLE":  -1,
-                           "SOL":  1,
+                           "AVAX":  -1,
+                           "PENGU":  0,
+                           "BOME":  0,
+                           "DOGS":  0,
+                           "NOT":  0,
+                           "PEOPLE":  0,
+                           "SOL":  2,
                            "ADA":  1,
-                           "PNUT":  -1,
-                           "AIXBT":  0,
-                           "ETH":  2,
-                           "LINK":  1,
-                           "PUMP":  -1,
-                           "TRUMP":  0,
-                           "BTC":  2
+                           "PNUT":  0,
+                           "AIXBT":  1,
+                           "ETH":  1,
+                           "LINK":  0,
+                           "PUMP":  1,
+                           "TRUMP":  2,
+                           "BTC":  1
                        },
-    "aiSummary":  "DXY je pao ispod 100 (trenutno ~99), što slabi dolar i potiče risk-on imovinu poput kriptovaluta. Fear & Greed indeks je na 68 (Pohlepa) nakon dramatičnog oporavka s 27 u samo dva tjedna, a BTC konsolidira oko $79K nakon proboja $80K. Očekuje se povećana volatilnost oko Jackson Hole simpozija (27.-29. kolovoza) — Fedov govor može biti ključan katalizator za smjer tržišta.",
+    "aiSummary":  "DXY ostaje stabilan ispod 100 (~99), što nastavlja slabiti dolar i podržavati risk-on raspoloženje — BTC konsolidira oko $79K, SOL predvodi majore s +5.76%, a ETH raste na $2,497 uz snažne ETF priljeve. Fear & Greed indeks ojačao na 71 (Pohlepa), tržišna kapitalizacija kripta drži $2.76T, dok macroPenalty stoji na 0 bez aktivnih ratnih premija ili ekstremnog dolara. Ključni rizik ovog vikenda je Fedov govor na Jackson Hole simpoziju (27.-29. kolovoza) — hawkish ton mogao bi preokrenuti kratkoročni bull sentiment.",
     "warActive":  false,
-    "btcDom":  58.8,
-    "stableDom":  8.5,
-    "oil":  80.2
+    "btcDom":  57.4,
+    "stableDom":  6.5,
+    "oil":  81.0
 }
