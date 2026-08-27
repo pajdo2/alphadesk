@@ -52,8 +52,8 @@
       "d3Hit": false,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 79786,
-      "peakPct": 0.01
+      "peakPrice": 79997.41,
+      "peakPct": 0.27
     },
     {
       "id": "1787576681090",
@@ -205,16 +205,17 @@
       "stop": 677.1936,
       "conf": 69,
       "targetPct": 9.06,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "POGODAK",
+      "closePrice": 709.83,
+      "closePct": 0.63,
+      "autoClose": true,
       "engineVer": "v5.208",
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
       "peakPrice": 710.34,
-      "peakPct": 0.7
+      "peakPct": 0.7,
+      "closeReason": "⏰ Vrijeme isteklo (24/7)"
     },
     {
       "id": "1787576413629",
@@ -287,10 +288,10 @@
       "conf": 63,
       "score": 14.456499999999998,
       "targetPct": 9.02,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "POGODAK",
+      "closePrice": 709.83,
+      "closePct": 0.59,
+      "autoClose": true,
       "direction": "LONG",
       "autoTrack": true,
       "autoSource": "ulaz",
@@ -323,7 +324,8 @@
       "d4Hit": false,
       "d5Hit": false,
       "peakPrice": 710.34,
-      "peakPct": 0.66
+      "peakPct": 0.66,
+      "closeReason": "⏰ Vrijeme isteklo (24/7)"
     },
     {
       "id": "1787056200902",
@@ -9535,5 +9537,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-08-27T16:50:45.747Z"
+  "updatedAt": "2026-08-27T20:39:45.274Z"
 }
