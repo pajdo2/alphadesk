@@ -1,7 +1,7 @@
 {
-    "dxy":  99.0,
-    "changeSummary":  "Fear & Greed porastao s 68 na 71, BTC ostaje stabilan oko $79K, a macroPenalty ispravljen na 0 — DXY i oil nepromijenjeni uz neizvjesnost pred Fedov govor na Jackson Holeu.",
-    "lastUpdated":  "2026-08-27T20:00:00Z",
+    "dxy":  99.12,
+    "changeSummary":  "Nema promjene režima (ostaje BULL), ali macroPenalty raste s -1 na +1 zbog aktivnog rata koji diže naftu na $83.1, dok Schwab listing SOL/AVAX/LINK i deveti uzastopni dan ETF priljeva ostaju ključni katalizatori tjedna.",
+    "lastUpdated":  "2026-08-28T19:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -13,7 +13,7 @@
 
                                ],
                      "XRP":  [
-                                 "XRP vodi gubitke, -0.76% - Fed rizik"
+                                 "CLARITY Act odgođen do rujna, regulatorni rizik"
                              ],
                      "BNB":  [
 
@@ -22,7 +22,7 @@
 
                              ],
                      "AVAX":  [
-                                  "AVAX -4.2% tjedno - slab relativni nastup"
+
                               ],
                      "PENGU":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-
+                                 "Ledger kritična ranjivost u ETH appu zakrpana"
                              ],
                      "LINK":  [
 
@@ -61,15 +61,15 @@
 
                               ],
                      "TRUMP":  [
-                                   "80% ponude kod insajdera - unlock dump rizik"
+
                                ],
                      "BTC":  [
-                                 "Jackson Hole: Fed govor može izazvati volatilnost"
+                                 "BTC dom 59%, brz FG skok - oprez od korekcije"
                              ]
                  },
-    "sp500Ret5d":  -1.4,
-    "fearGreed":  71,
-    "macroPenalty":  0,
+    "sp500Ret5d":  1.5,
+    "fearGreed":  63,
+    "macroPenalty":  1,
     "catalysts":  {
                       "ACT":  [
 
@@ -81,18 +81,16 @@
 
                                 ],
                       "XRP":  [
-                                  "XRPL 3.3.0 update, novi developer alati",
-                                  "XRP ETF priljevi $28M"
+                                  "ETF priljevi $23.87M, XRPL 3.3.0 update"
                               ],
                       "BNB":  [
-                                  "BNB +5%, povratak iznad $600 psihol. razine"
+
                               ],
                       "SUI":  [
-                                  "Kvantno-otporne potpise dodan 6.8.",
-                                  "NB/Securitize tokenized fond na Sui"
+
                               ],
                       "AVAX":  [
-
+                                   "Schwab listing AVAX za 39M klijenata"
                                ],
                       "PENGU":  [
 
@@ -110,32 +108,34 @@
 
                                  ],
                       "SOL":  [
-                                  "SOL +5.76% - vodeći major, ETF priljevi $9M"
+                                  "Schwab listing SOL za 39M klijenata, +13%",
+                                  "Deflatorna propozicija prošla glasanje"
                               ],
                       "ADA":  [
-                                  "ADA +14% tjedno, bull trend od lipnja"
+
                               ],
                       "PNUT":  [
 
                                ],
                       "AIXBT":  [
-                                    "AIXBT trend AI agent token, višestruke listinge"
+
                                 ],
                       "ETH":  [
-                                  "ETF priljevi $192M, ETH raste +1.7% na $2,497"
+                                  "$697M ETF priljevi u tjednu, BlackRock 78% udjela",
+                                  "Glamsterdam upgrade H2 2026 u pripremi"
                               ],
                       "LINK":  [
-
+                                   "Schwab listing LINK za 39M klijenata"
                                ],
                       "PUMP":  [
-                                   "PUMP medu top trending meme coinova kolovoza"
+
                                ],
                       "TRUMP":  [
-                                    "TRUMP +93.5% tjedno - live event katalizatori"
+                                    "Trump sastanak s kripto izvršiteljima, CLARITY Act"
                                 ],
                       "BTC":  [
-                                  "ETF neto priljevi $232M u zadnjih 24h",
-                                  "BTC stabilan iznad $79K, tržišna kap $2.76T"
+                                  "9. uzastopni dan ETF priljeva, BTC iznad $80K",
+                                  "Nvidia rezultati podižu risk-on sentiment"
                               ]
                   },
     "regime":  "BULL",
@@ -143,28 +143,28 @@
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  0,
-                           "BNB":  1,
-                           "SUI":  1,
-                           "AVAX":  -1,
+                           "XRP":  1,
+                           "BNB":  0,
+                           "SUI":  0,
+                           "AVAX":  2,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  2,
-                           "ADA":  1,
+                           "SOL":  3,
+                           "ADA":  0,
                            "PNUT":  0,
-                           "AIXBT":  1,
-                           "ETH":  1,
-                           "LINK":  0,
-                           "PUMP":  1,
-                           "TRUMP":  2,
-                           "BTC":  1
+                           "AIXBT":  0,
+                           "ETH":  2,
+                           "LINK":  2,
+                           "PUMP":  0,
+                           "TRUMP":  1,
+                           "BTC":  2
                        },
-    "aiSummary":  "DXY ostaje stabilan ispod 100 (~99), što nastavlja slabiti dolar i podržavati risk-on raspoloženje — BTC konsolidira oko $79K, SOL predvodi majore s +5.76%, a ETH raste na $2,497 uz snažne ETF priljeve. Fear & Greed indeks ojačao na 71 (Pohlepa), tržišna kapitalizacija kripta drži $2.76T, dok macroPenalty stoji na 0 bez aktivnih ratnih premija ili ekstremnog dolara. Ključni rizik ovog vikenda je Fedov govor na Jackson Hole simpoziju (27.-29. kolovoza) — hawkish ton mogao bi preokrenuti kratkoročni bull sentiment.",
-    "warActive":  false,
-    "btcDom":  57.4,
-    "stableDom":  6.5,
-    "oil":  81.0
+    "aiSummary":  "DXY stabilan pri 99.12, ispod razine 100 — slabi dolar podržava risk-on okruženje, no macroPenalty raste na +1 zbog aktivnog rusko-ukrainskog rata koji diže WTI naftu na $83.1. Fear & Greed indeks mjeri 63 (Pohlepa), BTC drži iznad $80K uz deveti uzastopni dan ETF priljeva ($242M u jednom danu), dok Schwab najavljuje listing SOL, AVAX i LINK za 39M klijenata s $12T AUM — najveći institucionalni katalizator tjedna. Makro ostaje u BULL režimu, no BTC dominancija pri 59% i ubrzani FG rast od 27 na 74 u dva tjedna signaliziraju povećan pritisak na altcoine i rizik od kratkoročne korekcije.",
+    "warActive":  true,
+    "btcDom":  59.2,
+    "stableDom":  11.5,
+    "oil":  83.1
 }
