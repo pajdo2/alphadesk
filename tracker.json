@@ -1,6 +1,32 @@
 {
   "predictions": [
     {
+      "id": "1787898078940",
+      "timestamp": 1787898078940,
+      "sym": "SUI",
+      "type": "regular",
+      "direction": "LONG",
+      "date": "28. kol",
+      "entry": 0.7651,
+      "target": 0.83385,
+      "d1Target": 0.789162,
+      "d2Target": 0.813225,
+      "d3Target": 0.83385,
+      "stop": 0.734496,
+      "conf": 72,
+      "targetPct": 8.99,
+      "status": "AKTIVAN",
+      "closePrice": null,
+      "closePct": null,
+      "autoClose": false,
+      "engineVer": "v5.214",
+      "d1Hit": false,
+      "d2Hit": false,
+      "d3Hit": false,
+      "peakPrice": 0.7651,
+      "peakPct": 0
+    },
+    {
       "id": "1787898070681_TAO",
       "timestamp": 1787898070681,
       "sym": "TAO",
@@ -7921,60 +7947,6 @@
       "peakPrice": 0.03558257,
       "peakPct": 37.27,
       "closeReason": "ð¯ Target D3 dostignut"
-    },
-    {
-      "id": "1776426516823_U",
-      "timestamp": 1776426516823,
-      "sym": "U",
-      "type": "regular",
-      "date": "17. tra",
-      "entry": 0.9998,
-      "target": 1.0498,
-      "d1Target": 1.0173,
-      "d2Target": 1.0348,
-      "d4Target": 1.0498,
-      "d5Target": 1.0498,
-      "d3Target": 1.0498,
-      "stop": 0.9798,
-      "conf": 44,
-      "score": 0.75,
-      "targetPct": 5,
-      "status": "POGODAK",
-      "closePrice": 1.0001,
-      "closePct": 0.03,
-      "autoClose": true,
-      "direction": "LONG",
-      "autoTrack": true,
-      "autoSource": "watch",
-      "snap": {
-        "rsiOversold": false,
-        "rsiOverbought": false,
-        "trendUp": false,
-        "trendDown": false,
-        "bbBelow": false,
-        "divBullish": false,
-        "divBearish": false,
-        "macdBullCross": false,
-        "macdBearCross": true,
-        "lsRatioBull": false,
-        "lsRatioExtreme": false,
-        "basisBack": false,
-        "takerSell": false,
-        "btcDomHigh": true,
-        "btcDomLow": false,
-        "volSpike": false,
-        "mtfAllUp": false,
-        "fgExtremeFear": false,
-        "fgFear": true
-      },
-      "d1Hit": false,
-      "d2Hit": false,
-      "d3Hit": false,
-      "d4Hit": false,
-      "d5Hit": false,
-      "peakPrice": 1.0001,
-      "peakPct": 0.03,
-      "closeReason": "â° 3 dana istekla"
     }
   ],
   "signalWeights": {
@@ -9547,5 +9519,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-08-28T06:21:13.683Z"
+  "updatedAt": "2026-08-28T06:21:23.106Z"
 }
