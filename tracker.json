@@ -17,10 +17,10 @@
       "conf": 60,
       "score": 8.901,
       "targetPct": 8,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "POGODAK",
+      "closePrice": 79828.12,
+      "closePct": 0.06,
+      "autoClose": true,
       "direction": "LONG",
       "autoTrack": true,
       "autoSource": "ulaz",
@@ -52,8 +52,9 @@
       "d3Hit": false,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 79786,
-      "peakPct": 0.01
+      "peakPrice": 79828.12,
+      "peakPct": 0.06,
+      "closeReason": "🔄 CHoCH Bearish — exit (struktura puknula)"
     },
     {
       "id": "1787576681090",
@@ -7982,25 +7983,25 @@
   ],
   "signalWeights": {
     "_global": {
-      "rsiOversold": 0.815,
+      "rsiOversold": 0.791,
       "rsiOverbought": 1,
-      "trendUp": 0.581,
-      "trendDown": 0.731,
+      "trendUp": 0.761,
+      "trendDown": 0.706,
       "bbBelow": 1,
-      "divBullish": 1.09,
-      "divBearish": 0.476,
+      "divBullish": 1.012,
+      "divBearish": 0.483,
       "macdBullCross": 1,
       "macdBearCross": 1,
       "lsRatioBull": 1,
       "lsRatioExtreme": 1,
-      "basisBack": 1.304,
+      "basisBack": 1.18,
       "takerSell": 1,
       "btcDomHigh": 1,
       "btcDomLow": 1,
-      "volSpike": 0.715,
-      "mtfAllUp": 0.581,
-      "fgExtremeFear": 1.03,
-      "fgFear": 0.569
+      "volSpike": 0.728,
+      "mtfAllUp": 0.854,
+      "fgExtremeFear": 0.976,
+      "fgFear": 0.549
     },
     "CRAB": {
       "rsiOversold": 1,
@@ -8008,7 +8009,7 @@
       "trendUp": 1,
       "trendDown": 1,
       "bbBelow": 1,
-      "divBullish": 1.192,
+      "divBullish": 1.144,
       "divBearish": 1,
       "macdBullCross": 1,
       "macdBearCross": 1,
@@ -8021,7 +8022,7 @@
       "volSpike": 1,
       "mtfAllUp": 1,
       "fgExtremeFear": 1,
-      "fgFear": 0.936
+      "fgFear": 0.897
     },
     "BEAR": {
       "rsiOversold": 1,
@@ -9550,5 +9551,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-08-28T06:20:54.633Z"
+  "updatedAt": "2026-08-28T06:21:01.664Z"
 }
