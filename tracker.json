@@ -9342,10 +9342,10 @@
       "conf": 38,
       "score": 0.15,
       "verdict": "🔵 Spekulativno",
-      "graded": false,
-      "correct": null,
-      "fwdPrice": null,
-      "fwdPct": null
+      "graded": true,
+      "correct": true,
+      "fwdPrice": 68456,
+      "fwdPct": 0
     },
     {
       "ts": 1787833457869,
@@ -9385,7 +9385,33 @@
       "correct": null,
       "fwdPrice": null,
       "fwdPct": null
+    },
+    {
+      "ts": 1787901712297,
+      "price": 68456,
+      "dir": "UP",
+      "th": 2.4,
+      "conf": 43,
+      "score": 1.85,
+      "verdict": "🔵 Spekulativno",
+      "graded": false,
+      "correct": null,
+      "fwdPrice": null,
+      "fwdPct": null
+    },
+    {
+      "ts": 1787914848469,
+      "price": 68456,
+      "dir": "NEUTRAL",
+      "th": 2.4,
+      "conf": 38,
+      "score": 0.15,
+      "verdict": "🔵 Spekulativno",
+      "graded": false,
+      "correct": null,
+      "fwdPrice": null,
+      "fwdPct": null
     }
   ],
-  "updatedAt": "2026-08-28T06:23:00.772Z"
+  "updatedAt": "2026-08-28T11:00:51.470Z"
 }
