@@ -20,11 +20,11 @@
       "closePct": null,
       "autoClose": false,
       "engineVer": "v5.214",
-      "d1Hit": false,
-      "d2Hit": false,
+      "d1Hit": true,
+      "d2Hit": true,
       "d3Hit": false,
-      "peakPrice": 0.0082,
-      "peakPct": 1.74
+      "peakPrice": 0.00845,
+      "peakPct": 4.84
     },
     {
       "id": "1787898116944",
@@ -229,10 +229,10 @@
       "conf": 69,
       "score": 14.741999999999999,
       "targetPct": 10,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "PROMAŠAJ",
+      "closePrice": 0.3536,
+      "closePct": -4.61,
+      "autoClose": true,
       "direction": "LONG",
       "autoTrack": true,
       "autoSource": "ulaz",
@@ -265,7 +265,8 @@
       "d4Hit": false,
       "d5Hit": false,
       "peakPrice": 0.3711,
-      "peakPct": 0.11
+      "peakPct": 0.11,
+      "closeReason": "🛑 Stop-loss (24/7)"
     },
     {
       "id": "1787898070681_SUI",
@@ -374,8 +375,8 @@
       "d3Hit": false,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 0.09776,
-      "peakPct": 0.04
+      "peakPrice": 0.09848,
+      "peakPct": 0.77
     },
     {
       "id": "1787821049077_BTC",
@@ -9414,5 +9415,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-08-28T17:35:16.169Z"
+  "updatedAt": "2026-08-29T01:26:32.769Z"
 }
