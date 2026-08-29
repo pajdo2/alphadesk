@@ -41,16 +41,17 @@
       "stop": 0.734592,
       "conf": 76,
       "targetPct": 8.97,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "PROMAŠAJ",
+      "closePrice": 0.7331,
+      "closePct": -4.19,
+      "autoClose": true,
       "engineVer": "v5.214",
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
       "peakPrice": 0.7659,
-      "peakPct": 0.09
+      "peakPct": 0.09,
+      "closeReason": "🛑 Stop-loss (24/7)"
     },
     {
       "id": "1787898112601",
@@ -67,16 +68,17 @@
       "stop": 236.064,
       "conf": 70,
       "targetPct": 10,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "PROMAŠAJ",
+      "closePrice": 232.1,
+      "closePct": -5.61,
+      "autoClose": true,
       "engineVer": "v5.214",
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
       "peakPrice": 246,
-      "peakPct": 0.04
+      "peakPct": 0.04,
+      "closeReason": "🛑 Stop-loss (24/7)"
     },
     {
       "id": "1787898108074",
@@ -120,16 +122,17 @@
       "stop": 1.8086,
       "conf": 68,
       "targetPct": 8.94,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "PROMAŠAJ",
+      "closePrice": 1.787,
+      "closePct": -5.15,
+      "autoClose": true,
       "engineVer": "v5.214",
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
       "peakPrice": 1.885,
-      "peakPct": 0.05
+      "peakPct": 0.05,
+      "closeReason": "🛑 Stop-loss (24/7)"
     },
     {
       "id": "1787898078940",
@@ -146,16 +149,17 @@
       "stop": 0.734496,
       "conf": 72,
       "targetPct": 8.99,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "PROMAŠAJ",
+      "closePrice": 0.7331,
+      "closePct": -4.18,
+      "autoClose": true,
       "engineVer": "v5.214",
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
       "peakPrice": 0.7659,
-      "peakPct": 0.1
+      "peakPct": 0.1,
+      "closeReason": "🛑 Stop-loss (24/7)"
     },
     {
       "id": "1787898070681_TAO",
@@ -174,10 +178,10 @@
       "conf": 65,
       "score": 13.792,
       "targetPct": 10,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "PROMAŠAJ",
+      "closePrice": 232.1,
+      "closePct": -5.57,
+      "autoClose": true,
       "direction": "LONG",
       "autoTrack": true,
       "autoSource": "ulaz",
@@ -210,7 +214,8 @@
       "d4Hit": false,
       "d5Hit": false,
       "peakPrice": 246,
-      "peakPct": 0.08
+      "peakPct": 0.08,
+      "closeReason": "🛑 Stop-loss (24/7)"
     },
     {
       "id": "1787898070681_ONDO",
@@ -285,10 +290,10 @@
       "conf": 72,
       "score": 14.341999999999999,
       "targetPct": 8.99,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "PROMAŠAJ",
+      "closePrice": 0.7331,
+      "closePct": -4.18,
+      "autoClose": true,
       "direction": "LONG",
       "autoTrack": true,
       "autoSource": "ulaz",
@@ -321,7 +326,8 @@
       "d4Hit": false,
       "d5Hit": false,
       "peakPrice": 0.7659,
-      "peakPct": 0.1
+      "peakPct": 0.1,
+      "closeReason": "🛑 Stop-loss (24/7)"
     },
     {
       "id": "1787898065115_JST",
@@ -375,8 +381,8 @@
       "d3Hit": false,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 0.09848,
-      "peakPct": 0.77
+      "peakPrice": 0.09895,
+      "peakPct": 1.25
     },
     {
       "id": "1787821049077_BTC",
@@ -9415,5 +9421,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-08-29T01:26:32.769Z"
+  "updatedAt": "2026-08-29T08:08:32.690Z"
 }
