@@ -346,10 +346,10 @@
       "conf": 63,
       "score": 14.800525,
       "targetPct": 5.4,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "PROMAŠAJ",
+      "closePrice": 0.09478,
+      "closePct": -3.01,
+      "autoClose": true,
       "direction": "LONG",
       "autoTrack": true,
       "autoSource": "ulaz",
@@ -382,7 +382,8 @@
       "d4Hit": false,
       "d5Hit": false,
       "peakPrice": 0.09895,
-      "peakPct": 1.25
+      "peakPct": 1.25,
+      "closeReason": "🛑 Stop-loss (24/7)"
     },
     {
       "id": "1787821049077_BTC",
@@ -9421,5 +9422,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-08-29T08:08:32.690Z"
+  "updatedAt": "2026-08-30T23:07:52.056Z"
 }
