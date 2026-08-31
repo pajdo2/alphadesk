@@ -15,16 +15,17 @@
       "stop": 0.00469414,
       "conf": 67,
       "targetPct": 6,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "PROMAŠAJ",
+      "closePrice": 0.0078,
+      "closePct": -3.23,
+      "autoClose": true,
       "engineVer": "v5.214",
       "d1Hit": true,
       "d2Hit": true,
       "d3Hit": false,
       "peakPrice": 0.00845,
-      "peakPct": 4.84
+      "peakPct": 4.84,
+      "closeReason": "⏰ Vrijeme isteklo (24/7)"
     },
     {
       "id": "1787898116944",
@@ -9422,5 +9423,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-08-30T23:07:52.056Z"
+  "updatedAt": "2026-08-31T07:22:43.858Z"
 }
