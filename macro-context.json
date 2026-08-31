@@ -1,19 +1,19 @@
 {
-    "dxy":  99.47,
-    "changeSummary":  "DXY je blago porastao s 99.12 na 99.47, BTC korigira na $79K dok FG pada s 63 na 61, ali SOL eksplodira +6.89% na Schwab najavi listanja — makro ostaje u BULL režimu s nepromijenjenim macroPenaltyjem +1.",
-    "lastUpdated":  "2026-08-28T20:00:00Z",
+    "dxy":  99.1,
+    "changeSummary":  "Fear & Greed dramatično pada s 61 na 44 (Neutralno), BTC ostaje stabilan oko $78K uz BTC dominanciju koja skače na 60.5%, DXY blago pada na 99.1, macroPenalty se smanjuje na 0, a Schwab listing SOL/AVAX/LINK ostaje ključni pozitivni katalizator tjedna.",
+    "lastUpdated":  "2026-08-31T12:00:00Z",
     "warnings":  {
                      "ACT":  [
-
+                             "Slabi volumen, nema katalizatora — rizik daljnjeg pada"
                              ],
                      "MEME":  [
-
+                              "Meme token bez fundamentala — visok rizik"
                               ],
                      "ANIME":  [
-
+                               "Niche token, nema vijesti — visok rizik"
                                ],
                      "XRP":  [
-
+                             "Profit-taking i long likvidacije nakon skoka"
                              ],
                      "BNB":  [
 
@@ -25,19 +25,19 @@
 
                               ],
                      "PENGU":  [
-
+                               "Meme NFT token, visoka volatilnost bez katalizatora"
                                ],
                      "BOME":  [
-
+                              "Meme token bez vijesti — spekulativan"
                               ],
                      "DOGS":  [
-
+                              "Meme token bez fundamentala — visok rizik"
                               ],
                      "NOT":  [
-
+                             "Telegram meme token bez vijesti — visok rizik"
                              ],
                      "PEOPLE":  [
-
+                                "Nema vijesti, niska likvidnost — rizik"
                                 ],
                      "SOL":  [
 
@@ -46,7 +46,7 @@
 
                              ],
                      "PNUT":  [
-                                "Mala likvidnost, visok volatilitet"
+                              "Meme token bez katalizatora — visok spekulativni rizik"
                               ],
                      "AIXBT":  [
 
@@ -58,18 +58,18 @@
 
                               ],
                      "PUMP":  [
-
+                              "Meme token bez vijesti — visok spekulativni rizik"
                               ],
                      "TRUMP":  [
-                                "Politički rizik — osjetljivo na US vijesti"
+                               "Politički meme token — visok rizik bez novih katalizatora"
                                ],
                      "BTC":  [
 
                              ]
                  },
-    "sp500Ret5d":  -0.8,
-    "fearGreed":  61,
-    "macroPenalty":  1,
+    "sp500Ret5d":  0.8,
+    "fearGreed":  44,
+    "macroPenalty":  0,
     "catalysts":  {
                       "ACT":  [
 
@@ -81,16 +81,16 @@
 
                                 ],
                       "XRP":  [
-                                "XRP +2.15% uz jak volumen"
+                              "Ripple $275M funding — ekspanzija u prime brokerage"
                               ],
                       "BNB":  [
-
+                              "Binance WOTD reward pool — 500K BNB aktivacija"
                               ],
                       "SUI":  [
 
                               ],
                       "AVAX":  [
-                                "Schwab dodaje AVAX za 39M klijenata"
+                               "Schwab dodaje AVAX na platformu za 39M klijenata"
                                ],
                       "PENGU":  [
 
@@ -108,7 +108,7 @@
 
                                  ],
                       "SOL":  [
-                                "Schwab listing najava, SOL +6.89%"
+                              "Schwab dodaje SOL na kripto platformu za 39M klijenata"
                               ],
                       "ADA":  [
 
@@ -120,10 +120,10 @@
 
                                 ],
                       "ETH":  [
-                                "ETH ETF 8-dnevni streak priljeva, ETH $2510"
+                              "ETH ETF institucijski priljevi nastavljaju se"
                               ],
                       "LINK":  [
-                                "Schwab dodaje LINK za 39M klijenata"
+                               "Schwab dodaje LINK na platformu za 39M klijenata"
                                ],
                       "PUMP":  [
 
@@ -132,36 +132,36 @@
 
                                 ],
                       "BTC":  [
-                                "BTC ETF deveti uzastopni dan priljeva ($242M)"
+                              "BTC pristupa $80K — institucionalni ETF priljevi traju"
                               ]
                   },
-    "regime":  "BULL",
+    "regime":  "CRAB",
     "sentimentScore":  {
-                           "ACT":  0,
-                           "MEME":  0,
-                           "ANIME":  0,
-                           "XRP":  1,
+                           "ACT":  -1,
+                           "MEME":  -1,
+                           "ANIME":  -1,
+                           "XRP":  0,
                            "BNB":  0,
                            "SUI":  0,
                            "AVAX":  2,
-                           "PENGU":  0,
-                           "BOME":  0,
-                           "DOGS":  0,
-                           "NOT":  0,
-                           "PEOPLE":  0,
-                           "SOL":  3,
+                           "PENGU":  -1,
+                           "BOME":  -1,
+                           "DOGS":  -1,
+                           "NOT":  -1,
+                           "PEOPLE":  -1,
+                           "SOL":  2,
                            "ADA":  0,
                            "PNUT":  -1,
                            "AIXBT":  0,
-                           "ETH":  2,
+                           "ETH":  1,
                            "LINK":  2,
-                           "PUMP":  0,
-                           "TRUMP":  0,
-                           "BTC":  2
+                           "PUMP":  -1,
+                           "TRUMP":  -1,
+                           "BTC":  1
                        },
-    "aiSummary":  "DXY raste blago na 99.47 uz snažne US ekonomske podatke koji pojačavaju pritisak Fed kamatnih stopa pred kraj godine, no ostaje ispod 100 podržavajući risk-on okruženje, dok WTI nafta pada na $82.9 uz smanjene geopolitičke napetosti. Fear & Greed blago pada s 63 na 61 (Pohlepa), BTC korigira na $79,132 no ETF priljevi traju deveti uzastopni dan (~$3B ukupno u streaku), a SOL eksplodira +6.89% nakon Schwab najave listanja za 39M klijenata uz istovremeni 8-dnevni ETH ETF streak. Makro ostaje čvrsto u BULL režimu s macroPenaltyjem +1 — institucionalni katalizatori dominiraju tjedno narrativom.",
-    "warActive":  true,
-    "btcDom":  58.8,
-    "stableDom":  7.5,
-    "oil":  82.9
+    "aiSummary":  "DXY blago pada na 99.1 ispod razine 100, podržavajući risk-on okruženje, dok WTI nafta raste na ~$85 bez geopolitičkih eskalacija. Fear & Greed dramatično pada s 77 (30.08.) na 44 danas (Neutralno), BTC oscilira oko $78,150 uz BTC dominanciju koja skače na ~60.5% potiskujući altkoine u CRAB fazu — Schwab listing SOL, AVAX i LINK ostaje ključni tjedni katalizator za selektivne altcoin pozicije.",
+    "warActive":  false,
+    "btcDom":  60.5,
+    "stableDom":  12.0,
+    "oil":  85.0
 }
