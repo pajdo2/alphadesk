@@ -1,7 +1,7 @@
 {
-    "dxy":  99.6,
-    "changeSummary":  "BTC dominacija pala s 61% na 58%, F&G porastao s 55 na 61 (Greed), ETH ubrzava +20% tjedan, nafta skočila na $90 uz novu eskalaciju US-Iran rata i režim promijenjen u BULL.",
-    "lastUpdated":  "2026-09-02T08:00:00Z",
+    "dxy":  99.5,
+    "changeSummary":  "BTC dominacija pala s 58% na 57.7% dok ETH i SOL preuzimaju vodstvo u altcoin rotaciji uz S&P 500 -2% tjedni pad kao risk-off signal.",
+    "lastUpdated":  "2026-09-02T12:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -19,7 +19,7 @@
 
                              ],
                      "SUI":  [
-                                 "Token unlock pritisak i dalje aktivan"
+
                              ],
                      "AVAX":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-                                 "Overbought signal nakon +20% tjednog skoka"
+
                              ],
                      "LINK":  [
 
@@ -64,8 +64,8 @@
 
                                ],
                      "BTC":  [
-                                 "Exchange rezerve Binance na rekord 687k BTC",
-                                 "RSI > 80 overbought signal, Fed rate hike strah"
+                                 "Binance rezerve 687k BTC - distribucijska opasnost",
+                                 "ETF priljevi prekinuti 31. kolovoza"
                              ]
                  },
     "sp500Ret5d":  -2.0,
@@ -82,7 +82,7 @@
 
                                 ],
                       "XRP":  [
-                                  "XRP privlači snažne kapitalske tokove"
+                                  "Jaki kapitalni priljevi iz institucija"
                               ],
                       "BNB":  [
 
@@ -109,7 +109,8 @@
 
                                  ],
                       "SOL":  [
-                                  "Jaki kapitalski tokovi u SOL od institucija"
+                                  "Bitwise SOL ETF prešao $1B u AUM",
+                                  "Charles Schwab dodaje SOL u trading"
                               ],
                       "ADA":  [
 
@@ -121,8 +122,7 @@
 
                                 ],
                       "ETH":  [
-                                  "ETH +20% tjedni rast, jaki kapitalski tokovi",
-                                  "Altcoin rotacija favorizira ETH i SOL"
+                                  "+20% tjedni dobitak, altcoin rotacija jača"
                               ],
                       "LINK":  [
 
@@ -134,8 +134,8 @@
 
                                 ],
                       "BTC":  [
-                                  "US spot ETF tjedni pritok $2B - godišnji rekord",
-                                  "Snažan kolovoz +24% momentum nastavlja rasti"
+                                  "ETF priljevi $1.92B u tjednom rekordnom nizu",
+                                  "Rekordni kolovoz +24% BTC rasta"
                               ]
                   },
     "regime":  "BULL",
@@ -145,14 +145,14 @@
                            "ANIME":  0,
                            "XRP":  1,
                            "BNB":  0,
-                           "SUI":  -1,
+                           "SUI":  0,
                            "AVAX":  0,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  1,
+                           "SOL":  3,
                            "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
@@ -160,11 +160,11 @@
                            "LINK":  0,
                            "PUMP":  0,
                            "TRUMP":  0,
-                           "BTC":  1
+                           "BTC":  2
                        },
-    "aiSummary":  "DXY ostaje ispod 100 (~99.6) i podržava risk-on okruženje za kripto, no US-Iran rat eskalira uz naftu na $90 što drži warActive rizik aktivan uz geopolitičku premiju. BTC stagnira na ~$77.5k nakon rekordnog kolovoza (+24%), BTC dominacija pala s 61% na 58% dok ETH ubrzava s +20% tjednim dobitkom i altcoin rotacija dobiva momentum. S&P 500 pada -2% tjedan (risk-off signal) — unatoč ETF prilivima od $2B, Binance rezerve na godišnjem rekordu 687k BTC upozoravaju na distribucijsku fazu.",
+    "aiSummary":  "DXY ostaje ispod 100 (~99.5) i podržava risk-on okruženje za kripto, dok US-Iran geopolitički rizik ostaje aktivan uz naftu na ~$90. Fear & Greed indeks je 61 (Pohlepa), BTC dominacija pala na 57.7% dok ETH (+20% tjedno) i SOL (Bitwise ETF $1B, Schwab listanje) preuzimaju momentum altcoin rotacije. Binance rezerve na 687k BTC i prekid ETF priljeva 31. kolovoza signaliziraju oprez od distribucijske faze unatoč općenito bull sentimentu.",
     "warActive":  true,
-    "btcDom":  58.0,
-    "stableDom":  11.7,
+    "btcDom":  57.7,
+    "stableDom":  5.5,
     "oil":  90.1
 }
