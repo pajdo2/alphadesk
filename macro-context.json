@@ -1,74 +1,74 @@
 {
     "dxy":  99.5,
-    "changeSummary":  "Fear & Greed pao s 61 na 50, BTC dominacija skočila s 57.7% na 60.7%, dok Iran eskalacija uzrokuje pad tržišta i bijeg kapitala iz altcoina u BTC.",
-    "lastUpdated":  "2026-09-02T16:19:00Z",
+    "changeSummary":  "Makroekonomski uvjeti ostaju gotovo nepromijenjeni vs jučer - DXY stabilan na 99.5, F&G na 50, BTC dominacija na 60.7%, dok US-Iran rat nastavlja pritiskati kripto tržište uz BTC na ~$77k.",
+    "lastUpdated":  "2026-09-03T09:00:00Z",
     "warnings":  {
                      "ACT":  [
-
+                             "BTC dominacija 61% - bijeg kapitala iz altcoina"
                              ],
                      "MEME":  [
-
+                              "BTC dominacija 61% - bijeg kapitala iz altcoina"
                               ],
                      "ANIME":  [
-
+                               "BTC dominacija 61% - bijeg kapitala iz altcoina"
                                ],
                      "XRP":  [
-
+                             "Senatsko glasanje o kripto regulaciji - regulatorni rizik"
                              ],
                      "BNB":  [
-
+                             "US-Iran rat - negativan makro sentiment"
                              ],
                      "SUI":  [
-
+                             "BTC dominacija 61% - bijeg kapitala iz altcoina"
                              ],
                      "AVAX":  [
-
+                              "BTC dominacija 61% - bijeg kapitala iz altcoina"
                               ],
                      "PENGU":  [
-
+                               "BTC dominacija 61% - bijeg kapitala iz altcoina"
                                ],
                      "BOME":  [
-
+                              "BTC dominacija 61% - bijeg kapitala iz altcoina"
                               ],
                      "DOGS":  [
-
+                              "BTC dominacija 61% - bijeg kapitala iz altcoina"
                               ],
                      "NOT":  [
-
+                             "BTC dominacija 61% - bijeg kapitala iz altcoina"
                              ],
                      "PEOPLE":  [
-
+                                "BTC dominacija 61% - bijeg kapitala iz altcoina"
                                 ],
                      "SOL":  [
-
+                             "US-Iran rat - negativan makro, altcoini pod pritiskom"
                              ],
                      "ADA":  [
-
+                             "BTC dominacija 61% - bijeg kapitala iz altcoina"
                              ],
                      "PNUT":  [
-
+                              "BTC dominacija 61% - bijeg kapitala iz altcoina"
                               ],
                      "AIXBT":  [
-
+                               "Negativan makro sentiment - AI kripto tokeni pod pritiskom"
                                ],
                      "ETH":  [
-                                 "Iran eskalacija — ETH pada -2.4%, risk-off sentiment"
+                             "Pad na $2,403 uz rastuću BTC dominaciju od 61%"
                              ],
                      "LINK":  [
-
+                              "US-Iran rat - negativan makro sentiment"
                               ],
                      "PUMP":  [
-
+                              "BTC dominacija 61% - bijeg kapitala iz altcoina"
                               ],
                      "TRUMP":  [
-
+                               "Politički token - negativan makro i geopolitički rizik"
                                ],
                      "BTC":  [
-                                 "Iran rat eskalira, geopolitički rizik raste",
-                                 "Pad -1.5% uz volumen $14.2B"
+                             "US-Iran eskalacija uzrokuje pad i povišenu volatilnost",
+                             "Fed meeting 15.9. - 60% šansa povišenja kamate"
                              ]
                  },
-    "sp500Ret5d":  -2.0,
+    "sp500Ret5d":  -1.5,
     "fearGreed":  50,
     "macroPenalty":  1,
     "catalysts":  {
@@ -82,8 +82,7 @@
 
                                 ],
                       "XRP":  [
-                                  "CME XRP futures OI >400M, nadmašio Binance",
-                                  "Institucionalna spot akumulacija potvrđena"
+
                               ],
                       "BNB":  [
 
@@ -134,37 +133,37 @@
 
                                 ],
                       "BTC":  [
-                                  "Korporativne bilance konsolidiraju BTC rezerve",
-                                  "Međunarodni regulatori nude jasne integracijske okvire"
+                              "ETF spot pritok $2.6B - tjedni rekord 2026",
+                              "Rusija legalizira BTC kao kolateral za kredite"
                               ]
                   },
     "regime":  "VOLATILE",
     "sentimentScore":  {
-                           "ACT":  0,
-                           "MEME":  -1,
-                           "ANIME":  0,
-                           "XRP":  1,
+                           "ACT":  -2,
+                           "MEME":  -2,
+                           "ANIME":  -2,
+                           "XRP":  -1,
                            "BNB":  0,
-                           "SUI":  0,
-                           "AVAX":  0,
-                           "PENGU":  0,
-                           "BOME":  0,
-                           "DOGS":  0,
-                           "NOT":  -1,
-                           "PEOPLE":  -1,
+                           "SUI":  -1,
+                           "AVAX":  -1,
+                           "PENGU":  -2,
+                           "BOME":  -2,
+                           "DOGS":  -2,
+                           "NOT":  -2,
+                           "PEOPLE":  -2,
                            "SOL":  -1,
-                           "ADA":  0,
-                           "PNUT":  0,
-                           "AIXBT":  0,
+                           "ADA":  -1,
+                           "PNUT":  -2,
+                           "AIXBT":  -1,
                            "ETH":  -1,
                            "LINK":  0,
-                           "PUMP":  0,
-                           "TRUMP":  -1,
-                           "BTC":  -1
+                           "PUMP":  -2,
+                           "TRUMP":  -2,
+                           "BTC":  1
                        },
-    "aiSummary":  "DXY ostaje stabilan na ~99.5 ispod 100, što blago podržava risk-on, no eskalacija US-Iran rata uzrokuje snažan negativni sentiment i pad kripto cijena uz BTC na ~$77k. Fear & Greed indeks pao s 61 na 50 (Neutralno) dok BTC dominacija skočila na 60.7%, što signalizira bijeg kapitala iz altcoina u BTC kao sigurniju opciju. Negativni tjedni prinos S&P 500 od -2% i aktivan geopolitički rizik sugeriraju povećani oprez uz mogućnost daljnje volatilnosti.",
+    "aiSummary":  "DXY ostaje stabilan na ~99.5 ispod 100, što blago podržava risk-on, no eskalacija US-Iran rata i hawkiški Fed signali (60% šansa povišenja kamate 15.9.) drže kripto tržište pod pritiskom uz BTC na ~$77k. Fear & Greed indeks ostaje na 50 (Neutralno), a BTC dominacija na 60.7% signalizira kontinuirani bijeg kapitala iz altcoina u BTC. Rekordni ETF pritoci od $2.6B tjedno i ruska legalizacija kripta kao bankovnog kolaterala pružaju pozitivne impulse, ali geopolitika i monetarna politika sugeriraju povišeni oprez.",
     "warActive":  true,
     "btcDom":  60.7,
-    "stableDom":  5.5,
+    "stableDom":  12.3,
     "oil":  90.7
 }
