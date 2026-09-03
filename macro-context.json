@@ -1,7 +1,7 @@
 {
     "dxy":  99.5,
-    "changeSummary":  "BTC dominacija pala s 58% na 57.7% dok ETH i SOL preuzimaju vodstvo u altcoin rotaciji uz S&P 500 -2% tjedni pad kao risk-off signal.",
-    "lastUpdated":  "2026-09-02T12:00:00Z",
+    "changeSummary":  "Fear & Greed pao s 61 na 50, BTC dominacija skočila s 57.7% na 60.7%, dok Iran eskalacija uzrokuje pad tržišta i bijeg kapitala iz altcoina u BTC.",
+    "lastUpdated":  "2026-09-02T16:19:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-
+                                 "Iran eskalacija — ETH pada -2.4%, risk-off sentiment"
                              ],
                      "LINK":  [
 
@@ -64,12 +64,12 @@
 
                                ],
                      "BTC":  [
-                                 "Binance rezerve 687k BTC - distribucijska opasnost",
-                                 "ETF priljevi prekinuti 31. kolovoza"
+                                 "Iran rat eskalira, geopolitički rizik raste",
+                                 "Pad -1.5% uz volumen $14.2B"
                              ]
                  },
     "sp500Ret5d":  -2.0,
-    "fearGreed":  61,
+    "fearGreed":  50,
     "macroPenalty":  1,
     "catalysts":  {
                       "ACT":  [
@@ -82,7 +82,8 @@
 
                                 ],
                       "XRP":  [
-                                  "Jaki kapitalni priljevi iz institucija"
+                                  "CME XRP futures OI >400M, nadmašio Binance",
+                                  "Institucionalna spot akumulacija potvrđena"
                               ],
                       "BNB":  [
 
@@ -109,8 +110,7 @@
 
                                  ],
                       "SOL":  [
-                                  "Bitwise SOL ETF prešao $1B u AUM",
-                                  "Charles Schwab dodaje SOL u trading"
+
                               ],
                       "ADA":  [
 
@@ -122,7 +122,7 @@
 
                                 ],
                       "ETH":  [
-                                  "+20% tjedni dobitak, altcoin rotacija jača"
+
                               ],
                       "LINK":  [
 
@@ -134,14 +134,14 @@
 
                                 ],
                       "BTC":  [
-                                  "ETF priljevi $1.92B u tjednom rekordnom nizu",
-                                  "Rekordni kolovoz +24% BTC rasta"
+                                  "Korporativne bilance konsolidiraju BTC rezerve",
+                                  "Međunarodni regulatori nude jasne integracijske okvire"
                               ]
                   },
-    "regime":  "BULL",
+    "regime":  "VOLATILE",
     "sentimentScore":  {
                            "ACT":  0,
-                           "MEME":  0,
+                           "MEME":  -1,
                            "ANIME":  0,
                            "XRP":  1,
                            "BNB":  0,
@@ -150,21 +150,21 @@
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
-                           "NOT":  0,
-                           "PEOPLE":  0,
-                           "SOL":  3,
+                           "NOT":  -1,
+                           "PEOPLE":  -1,
+                           "SOL":  -1,
                            "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  2,
+                           "ETH":  -1,
                            "LINK":  0,
                            "PUMP":  0,
-                           "TRUMP":  0,
-                           "BTC":  2
+                           "TRUMP":  -1,
+                           "BTC":  -1
                        },
-    "aiSummary":  "DXY ostaje ispod 100 (~99.5) i podržava risk-on okruženje za kripto, dok US-Iran geopolitički rizik ostaje aktivan uz naftu na ~$90. Fear & Greed indeks je 61 (Pohlepa), BTC dominacija pala na 57.7% dok ETH (+20% tjedno) i SOL (Bitwise ETF $1B, Schwab listanje) preuzimaju momentum altcoin rotacije. Binance rezerve na 687k BTC i prekid ETF priljeva 31. kolovoza signaliziraju oprez od distribucijske faze unatoč općenito bull sentimentu.",
+    "aiSummary":  "DXY ostaje stabilan na ~99.5 ispod 100, što blago podržava risk-on, no eskalacija US-Iran rata uzrokuje snažan negativni sentiment i pad kripto cijena uz BTC na ~$77k. Fear & Greed indeks pao s 61 na 50 (Neutralno) dok BTC dominacija skočila na 60.7%, što signalizira bijeg kapitala iz altcoina u BTC kao sigurniju opciju. Negativni tjedni prinos S&P 500 od -2% i aktivan geopolitički rizik sugeriraju povećani oprez uz mogućnost daljnje volatilnosti.",
     "warActive":  true,
-    "btcDom":  57.7,
+    "btcDom":  60.7,
     "stableDom":  5.5,
-    "oil":  90.1
+    "oil":  90.7
 }
