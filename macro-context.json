@@ -1,19 +1,19 @@
 {
-    "dxy":  99.2,
-    "changeSummary":  "Makroekonomska slika ostaje gotovo identična prethodnoj analizi (F&G 74, DXY 99.2, BTC ~$80K), no pojavljuju se dva nova rizika: geopolitička eskalacija US-Iran (napadi na tankere u Hormuzu) i odgoda glasanja o CLARITY Actu s 15. rujna.",
+    "dxy":  99.16,
+    "changeSummary":  "Makro uvjeti ostaju gotovo nepromijenjeni uz blagi pad F&G s 74 na 71 i rast Fed hike vjerojatnosti na 57%, dok US-Iran napadi održavaju naftu iznad $92 i geopolitički pritisak na tržištu.",
     "lastUpdated":  "2026-09-07T12:00:00Z",
     "warnings":  {
                      "ACT":  [
 
                              ],
                      "MEME":  [
-                                 "BTC dom ~60%, kapital ostaje u BTC, ne altcoinima"
+
                               ],
                      "ANIME":  [
 
                                ],
                      "XRP":  [
-                                 "CLARITY Act odgođen, kratkotrajna neizvjesnost"
+                         "SEC transfer agent prijedlog 421str. utječe na XRP"
                              ],
                      "BNB":  [
 
@@ -28,7 +28,7 @@
 
                                ],
                      "BOME":  [
-                                 "BTC dom ~60%, kapital ostaje u BTC, ne altcoinima"
+
                               ],
                      "DOGS":  [
 
@@ -37,7 +37,7 @@
 
                              ],
                      "PEOPLE":  [
-                                    "Odgoda CLARITY Acta, regulatorna neizvjesnost"
+
                                 ],
                      "SOL":  [
 
@@ -49,27 +49,26 @@
 
                               ],
                      "AIXBT":  [
-                                   "SEC predlaže nova pravila za blockchain agente"
+
                                ],
                      "ETH":  [
-                                 "SEC predlaže nova pravila za blockchain agente"
+
                              ],
                      "LINK":  [
-
+                         "SEC predlaže nova pravila za blockchain agente"
                               ],
                      "PUMP":  [
 
                               ],
                      "TRUMP":  [
-                                   "CLARITY Act odgođen, regulatorni rizik za TRUMP"
+                         "Regulatorna neizvjesnost, CLARITY Act još čeka"
                                ],
                      "BTC":  [
-                                 "Visoka poluga altcoina - rizik zaraze pri korekci",
-                                 "Geopolitika US-Iran, napadi na tankere u Hormuzu"
+                         "Fed hike odds 57%, pritisak na risk-on imovinu"
                              ]
                  },
     "sp500Ret5d":  0.1,
-    "fearGreed":  74,
+    "fearGreed":  71,
     "macroPenalty":  1,
     "catalysts":  {
                       "ACT":  [
@@ -82,7 +81,7 @@
 
                                 ],
                       "XRP":  [
-                                  "ETF priljevi $19M tjedno, kumulativno $1.68B"
+                          "Snažni ETF priljevi XRP-a nastavljaju se"
                               ],
                       "BNB":  [
 
@@ -109,7 +108,7 @@
 
                                  ],
                       "SOL":  [
-                                  "Pozitivne prognoze analitičara za rujan 2026."
+                          "Altcoin OI nadmašio BTC prvi put od pros'24"
                               ],
                       "ADA":  [
 
@@ -118,10 +117,10 @@
 
                                ],
                       "AIXBT":  [
-
+                          "AI kripto sektor u trendu, pozitivan sentiment"
                                 ],
                       "ETH":  [
-                                  "Altcoin OI premašuje BTC, potencijalna rotacija"
+                          "ETH drži 11% tržišnog udjela, DeFi TVL raste"
                               ],
                       "LINK":  [
 
@@ -133,7 +132,7 @@
 
                                 ],
                       "BTC":  [
-                                  "Cijena raste prema $80K, bullish momentum potvrđen"
+                          "BTC konsolidira $80K uz jak ETF volumen"
                               ]
                   },
     "regime":  "BULL",
@@ -141,7 +140,7 @@
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  2,
+                           "XRP":  1,
                            "BNB":  0,
                            "SUI":  0,
                            "AVAX":  0,
@@ -149,20 +148,20 @@
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
-                           "PEOPLE":  -1,
+                           "PEOPLE":  0,
                            "SOL":  1,
                            "ADA":  0,
                            "PNUT":  0,
-                           "AIXBT":  0,
-                           "ETH":  0,
-                           "LINK":  0,
+                           "AIXBT":  1,
+                           "ETH":  1,
+                           "LINK":  -1,
                            "PUMP":  0,
                            "TRUMP":  -1,
                            "BTC":  1
                        },
-    "aiSummary":  "DXY se stabilizirao oko 99.2, ispod ključne razine 100, što i dalje podržava risk-on pozicioniranje i pogoduje kriptovalutama. Fear & Greed indeks ostaje na 74 (Pohlepa), BTC konsolidira oko $80K uz dominaciju ~60%, dok novi geopolitički rizik (napadi na tankere u Hormuzu) drži naftu iznad $92. Odgoda CLARITY Acta donosi kratkoročnu neizvjesnost za regulatorno osjetljive altcoine poput XRP-a i TRUMP-a, no snažni ETF priljevi XRP-a ublažavaju negativni efekt.",
+    "aiSummary":  "DXY ostaje stabilan oko 99.16, ispod ključne razine 100, što nastavlja podržavati risk-on pozicioniranje i pogoduje kriptovalutama. Fear & Greed blago je pao na 71 (Pohlepa), BTC konsolidira oko $80K uz dominaciju ~59.5%, dok rast Fed hike odds-a na 57% i nastavljeni US-Iran napadi donose umjeren makro pritisak. Stablecoin dominacija od ~10.5% i jak altcoin OI signal ukazuju na potencijalnu rotaciju prema altcoinima u kratkom roku.",
     "warActive":  true,
-    "btcDom":  60.0,
-    "stableDom":  13.9,
-    "oil":  92.2
+    "btcDom":  59.5,
+    "stableDom":  10.5,
+    "oil":  92.0
 }
