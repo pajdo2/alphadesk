@@ -1,53 +1,71 @@
 {
-    "dxy":  99.3,
-    "changeSummary":  "Fear & Greed indeks skočio sa 53 na 74 (Pohlepa), BTC se oporavio do ~$80K uz DXY ispod 100, što signalizira jači risk-on momentum u odnosu na prethodnu analizu.",
-    "lastUpdated":  "2026-09-07T10:00:00Z",
+    "dxy":  99.2,
+    "changeSummary":  "Makroekonomska slika ostaje gotovo identična prethodnoj analizi (F&G 74, DXY 99.2, BTC ~$80K), no pojavljuju se dva nova rizika: geopolitička eskalacija US-Iran (napadi na tankere u Hormuzu) i odgoda glasanja o CLARITY Actu s 15. rujna.",
+    "lastUpdated":  "2026-09-07T12:00:00Z",
     "warnings":  {
                      "ACT":  [
+
                              ],
                      "MEME":  [
+                                 "BTC dom ~60%, kapital ostaje u BTC, ne altcoinima"
                               ],
                      "ANIME":  [
+
                                ],
                      "XRP":  [
+                                 "CLARITY Act odgođen, kratkotrajna neizvjesnost"
                              ],
                      "BNB":  [
+
                              ],
                      "SUI":  [
+
                              ],
                      "AVAX":  [
+
                               ],
                      "PENGU":  [
+
                                ],
                      "BOME":  [
-                                 "Visoka volatilnost, nizak volumen — špekulativan"
+                                 "BTC dom ~60%, kapital ostaje u BTC, ne altcoinima"
                               ],
                      "DOGS":  [
+
                               ],
                      "NOT":  [
+
                              ],
                      "PEOPLE":  [
+                                    "Odgoda CLARITY Acta, regulatorna neizvjesnost"
                                 ],
                      "SOL":  [
+
                              ],
                      "ADA":  [
+
                              ],
                      "PNUT":  [
-                                 "Meme token bez temeljnih katalizatora — visok rizik"
+
                               ],
                      "AIXBT":  [
+                                   "SEC predlaže nova pravila za blockchain agente"
                                ],
                      "ETH":  [
+                                 "SEC predlaže nova pravila za blockchain agente"
                              ],
                      "LINK":  [
+
                               ],
                      "PUMP":  [
-                                 "Spekulativan token, niska likvidnost"
+
                               ],
                      "TRUMP":  [
-                                  "Politički token — visoka volatilnost oko vijesti"
+                                   "CLARITY Act odgođen, regulatorni rizik za TRUMP"
                                ],
                      "BTC":  [
+                                 "Visoka poluga altcoina - rizik zaraze pri korekci",
+                                 "Geopolitika US-Iran, napadi na tankere u Hormuzu"
                              ]
                  },
     "sp500Ret5d":  0.1,
@@ -55,55 +73,67 @@
     "macroPenalty":  1,
     "catalysts":  {
                       "ACT":  [
+
                               ],
                       "MEME":  [
+
                                ],
                       "ANIME":  [
+
                                 ],
                       "XRP":  [
-                                 "Sep 15 CLARITY Act glasanje u Senatu — ključni katalizator"
+                                  "ETF priljevi $19M tjedno, kumulativno $1.68B"
                               ],
                       "BNB":  [
+
                               ],
                       "SUI":  [
-                                 "Rastući ekosustav, nova partnerstva u Q3"
+
                               ],
                       "AVAX":  [
+
                                ],
                       "PENGU":  [
+
                                 ],
                       "BOME":  [
+
                                ],
                       "DOGS":  [
+
                                ],
                       "NOT":  [
+
                               ],
                       "PEOPLE":  [
-                                    "Sep 15 CLARITY Act — regulatorni vjetar u leđa"
+
                                  ],
                       "SOL":  [
-                                 "Sep 15 CLARITY Act — pozitivan za DeFi ekosustav"
+                                  "Pozitivne prognoze analitičara za rujan 2026."
                               ],
                       "ADA":  [
+
                               ],
                       "PNUT":  [
+
                                ],
                       "AIXBT":  [
-                                   "AI+kripto narativ u porastu"
+
                                 ],
                       "ETH":  [
-                                 "ETH ETF potražnja raste, bull target $10K"
+                                  "Altcoin OI premašuje BTC, potencijalna rotacija"
                               ],
                       "LINK":  [
-                                  "Rast DeFi i RWA sektora pogoduje LINK-u"
+
                                ],
                       "PUMP":  [
+
                                ],
                       "TRUMP":  [
+
                                 ],
                       "BTC":  [
-                                 "Sep 15 CLARITY Act glasanje u Senatu",
-                                 "BTC ETF dnevni pritoci pozitivni"
+                                  "Cijena raste prema $80K, bullish momentum potvrđen"
                               ]
                   },
     "regime":  "BULL",
@@ -111,28 +141,28 @@
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  0,
+                           "XRP":  2,
                            "BNB":  0,
-                           "SUI":  1,
+                           "SUI":  0,
                            "AVAX":  0,
                            "PENGU":  0,
-                           "BOME":  -1,
+                           "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
-                           "PEOPLE":  0,
+                           "PEOPLE":  -1,
                            "SOL":  1,
                            "ADA":  0,
-                           "PNUT":  -1,
-                           "AIXBT":  1,
-                           "ETH":  1,
-                           "LINK":  1,
-                           "PUMP":  -1,
+                           "PNUT":  0,
+                           "AIXBT":  0,
+                           "ETH":  0,
+                           "LINK":  0,
+                           "PUMP":  0,
                            "TRUMP":  -1,
                            "BTC":  1
                        },
-    "aiSummary":  "DXY ispod 100 (99.3) podržava risk-on pozicioniranje i pogoduje kriptovalutama, dok Fear & Greed indeks na 74 (Pohlepa) signalizira snažan oporavak sentimenta u odnosu na neutralnih 53 od 3. rujna. BTC se stabilizirao oko $80K uz dominaciju od ~61%, a glasanje Senata o CLARITY Act-u 15.9. ostaje ključni katalizator koji može snažno pokrenuti altcoin okruženje.",
+    "aiSummary":  "DXY se stabilizirao oko 99.2, ispod ključne razine 100, što i dalje podržava risk-on pozicioniranje i pogoduje kriptovalutama. Fear & Greed indeks ostaje na 74 (Pohlepa), BTC konsolidira oko $80K uz dominaciju ~60%, dok novi geopolitički rizik (napadi na tankere u Hormuzu) drži naftu iznad $92. Odgoda CLARITY Acta donosi kratkoročnu neizvjesnost za regulatorno osjetljive altcoine poput XRP-a i TRUMP-a, no snažni ETF priljevi XRP-a ublažavaju negativni efekt.",
     "warActive":  true,
-    "btcDom":  61.0,
-    "stableDom":  6.0,
-    "oil":  94.0
+    "btcDom":  60.0,
+    "stableDom":  13.9,
+    "oil":  92.2
 }
