@@ -1,75 +1,74 @@
 {
-    "dxy":  99.5,
-    "changeSummary":  "Makroekonomski uvjeti ostaju gotovo nepromijenjeni vs jučer - DXY stabilan na 99.5, F&G na 50, BTC dominacija na 60.7%, dok US-Iran rat nastavlja pritiskati kripto tržište uz BTC na ~$77k.",
-    "lastUpdated":  "2026-09-03T09:00:00Z",
+    "dxy":  99.37,
+    "changeSummary":  "DXY blago pao s 99.5 na 99.37, nafta porasla s 90.7 na ~92 (WTI) zbog eskalacije US-Iran sukoba, dok F&G raste s 50 na 53 uz ETF pritoke za BTC od $101M nasuprot odljevima ETH-a.",
+    "lastUpdated":  "2026-09-03T14:00:00Z",
     "warnings":  {
                      "ACT":  [
-                             "BTC dominacija 61% - bijeg kapitala iz altcoina"
+
                              ],
                      "MEME":  [
-                              "BTC dominacija 61% - bijeg kapitala iz altcoina"
+
                               ],
                      "ANIME":  [
-                               "BTC dominacija 61% - bijeg kapitala iz altcoina"
+
                                ],
                      "XRP":  [
-                             "Senatsko glasanje o kripto regulaciji - regulatorni rizik"
+
                              ],
                      "BNB":  [
-                             "US-Iran rat - negativan makro sentiment"
+
                              ],
                      "SUI":  [
-                             "BTC dominacija 61% - bijeg kapitala iz altcoina"
+
                              ],
                      "AVAX":  [
-                              "BTC dominacija 61% - bijeg kapitala iz altcoina"
+
                               ],
                      "PENGU":  [
-                               "BTC dominacija 61% - bijeg kapitala iz altcoina"
+
                                ],
                      "BOME":  [
-                              "BTC dominacija 61% - bijeg kapitala iz altcoina"
+
                               ],
                      "DOGS":  [
-                              "BTC dominacija 61% - bijeg kapitala iz altcoina"
+
                               ],
                      "NOT":  [
-                             "BTC dominacija 61% - bijeg kapitala iz altcoina"
+
                              ],
                      "PEOPLE":  [
-                                "BTC dominacija 61% - bijeg kapitala iz altcoina"
+
                                 ],
                      "SOL":  [
-                             "US-Iran rat - negativan makro, altcoini pod pritiskom"
+
                              ],
                      "ADA":  [
-                             "BTC dominacija 61% - bijeg kapitala iz altcoina"
+
                              ],
                      "PNUT":  [
-                              "BTC dominacija 61% - bijeg kapitala iz altcoina"
+
                               ],
                      "AIXBT":  [
-                               "Negativan makro sentiment - AI kripto tokeni pod pritiskom"
+
                                ],
                      "ETH":  [
-                             "Pad na $2,403 uz rastuću BTC dominaciju od 61%"
+                                 "ETF odljevi $48.2M, ETH underperformance vs BTC"
                              ],
                      "LINK":  [
-                              "US-Iran rat - negativan makro sentiment"
+
                               ],
                      "PUMP":  [
-                              "BTC dominacija 61% - bijeg kapitala iz altcoina"
+
                               ],
                      "TRUMP":  [
-                               "Politički token - negativan makro i geopolitički rizik"
+                                   "Geopolitička eskalacija US-Iran, visoka volatilnost"
                                ],
                      "BTC":  [
-                             "US-Iran eskalacija uzrokuje pad i povišenu volatilnost",
-                             "Fed meeting 15.9. - 60% šansa povišenja kamate"
+                                 "US-Iran rat pritišće risk aktive, oprez s leverageom"
                              ]
                  },
-    "sp500Ret5d":  -1.5,
-    "fearGreed":  50,
+    "sp500Ret5d":  0.1,
+    "fearGreed":  53,
     "macroPenalty":  1,
     "catalysts":  {
                       "ACT":  [
@@ -82,7 +81,7 @@
 
                                 ],
                       "XRP":  [
-
+                                  "SEC prijedlog izuzeća za kripto aktive do $75M"
                               ],
                       "BNB":  [
 
@@ -118,10 +117,10 @@
 
                                ],
                       "AIXBT":  [
-
+                                    "AI kripto narrativ pozitivan u trenutnom ciklusu"
                                 ],
                       "ETH":  [
-
+                                  "SEC predložio nova pravila za blockchain transfer agente"
                               ],
                       "LINK":  [
 
@@ -133,37 +132,37 @@
 
                                 ],
                       "BTC":  [
-                              "ETF spot pritok $2.6B - tjedni rekord 2026",
-                              "Rusija legalizira BTC kao kolateral za kredite"
+                                  "ETF neto pritok $101M na 3.9.",
+                                  "CLARITY Act glasanje u Senatu 15.9."
                               ]
                   },
     "regime":  "VOLATILE",
     "sentimentScore":  {
-                           "ACT":  -2,
-                           "MEME":  -2,
-                           "ANIME":  -2,
-                           "XRP":  -1,
+                           "ACT":  0,
+                           "MEME":  0,
+                           "ANIME":  0,
+                           "XRP":  0,
                            "BNB":  0,
-                           "SUI":  -1,
-                           "AVAX":  -1,
-                           "PENGU":  -2,
-                           "BOME":  -2,
-                           "DOGS":  -2,
-                           "NOT":  -2,
-                           "PEOPLE":  -2,
-                           "SOL":  -1,
-                           "ADA":  -1,
-                           "PNUT":  -2,
-                           "AIXBT":  -1,
+                           "SUI":  0,
+                           "AVAX":  0,
+                           "PENGU":  0,
+                           "BOME":  0,
+                           "DOGS":  0,
+                           "NOT":  0,
+                           "PEOPLE":  0,
+                           "SOL":  0,
+                           "ADA":  0,
+                           "PNUT":  0,
+                           "AIXBT":  1,
                            "ETH":  -1,
                            "LINK":  0,
-                           "PUMP":  -2,
-                           "TRUMP":  -2,
+                           "PUMP":  0,
+                           "TRUMP":  -1,
                            "BTC":  1
                        },
-    "aiSummary":  "DXY ostaje stabilan na ~99.5 ispod 100, što blago podržava risk-on, no eskalacija US-Iran rata i hawkiški Fed signali (60% šansa povišenja kamate 15.9.) drže kripto tržište pod pritiskom uz BTC na ~$77k. Fear & Greed indeks ostaje na 50 (Neutralno), a BTC dominacija na 60.7% signalizira kontinuirani bijeg kapitala iz altcoina u BTC. Rekordni ETF pritoci od $2.6B tjedno i ruska legalizacija kripta kao bankovnog kolaterala pružaju pozitivne impulse, ali geopolitika i monetarna politika sugeriraju povišeni oprez.",
+    "aiSummary":  "DXY pada na 99.37 ispod 100 što blago podržava risk-on pozicioniranje, no eskalacija US-Iran sukoba diže naftu prema $92 (WTI) i zadržava geopolitički pritisak uz aktivan rat. Fear & Greed indeks na 53 (Neutralno) uz BTC dominaciju na ~61% signalizira bijeg kapitala prema BTC-u, dok ETF pritoci od $101M za BTC nasuprot odljevima kod ETH-a sugeriraju selektivni optimizam. Glasanje Senata o CLARITY Act-u 15.9. ključni je katalizator — altcoin okruženje ostaje pod rizikom do razrješenja geopolitičke i regulatorne neizvjesnosti.",
     "warActive":  true,
-    "btcDom":  60.7,
-    "stableDom":  12.3,
-    "oil":  90.7
+    "btcDom":  61.0,
+    "stableDom":  7.5,
+    "oil":  92.0
 }
