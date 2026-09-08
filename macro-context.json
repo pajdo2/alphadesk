@@ -1,7 +1,7 @@
 {
-    "dxy":  99.65,
-    "changeSummary":  "DXY blago porastao s 99.16 na 99.65, Fear & Greed pao s 71 na 69, BTC dominacija smanjena na 57.7% uz eskalaciju geopolitičkih napetosti napadima na saudijska naftna postrojenja.",
-    "lastUpdated":  "2026-09-08T12:00:00Z",
+    "dxy":  99.0,
+    "changeSummary":  "BTC je pao ispod $79K uz pritisak jakih podataka o tržištu rada SAD-a, DXY je blago korigirao na 99.0, dok Fear & Greed ostaje stabilan na 69 — makro uvjeti ostaju gotovo nepromijenjeni u odnosu na prethodnu analizu.",
+    "lastUpdated":  "2026-09-08T14:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -64,10 +64,10 @@
 
                                ],
                      "BTC":  [
-                                 "Četiri odbijanja na $82K, otpor jak, rizik daljnjeg pada"
+                         "BTC pao ispod $79K na jakim podacima o tržištu rada"
                              ]
                  },
-    "sp500Ret5d":  0.1,
+    "sp500Ret5d":  -0.5,
     "fearGreed":  69,
     "macroPenalty":  1,
     "catalysts":  {
@@ -84,7 +84,7 @@
 
                               ],
                       "BNB":  [
-
+                          "Bybit lansirao Perp Options s SPCX i NVDA"
                               ],
                       "SUI":  [
 
@@ -120,7 +120,7 @@
 
                                 ],
                       "ETH":  [
-                                  "Testira $2,520, potencijalni proboj na višu razinu"
+                          "ETH testira $2,520 otpornost uz rast presale potražnje"
                               ],
                       "LINK":  [
 
@@ -132,7 +132,7 @@
 
                                 ],
                       "BTC":  [
-                                  "DXY ispod 100 podržava risk-on pozicioniranje"
+                          "Institucionalna akumulacija ispod $79K nastavlja se"
                               ]
                   },
     "regime":  "BULL",
@@ -141,7 +141,7 @@
                            "MEME":  0,
                            "ANIME":  0,
                            "XRP":  0,
-                           "BNB":  0,
+                           "BNB":  1,
                            "SUI":  0,
                            "AVAX":  0,
                            "PENGU":  0,
@@ -153,15 +153,15 @@
                            "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  0,
+                           "ETH":  1,
                            "LINK":  0,
                            "PUMP":  0,
                            "TRUMP":  0,
                            "BTC":  -1
                        },
-    "aiSummary":  "DXY blago porastao na 99.65, no ostaje ispod kritične razine 100, čime se nastavlja podrška risk-on sentimentu i kriptovalutama. Fear & Greed pao je na 69 (Pohlepa), BTC konsolidira oko $79K uz četiri uzastopna odbijanja na $82K i smanjenu dominaciju na 57.7%, dok eskalacija geopolitičkih napetosti — napadi na Aramco i Hormuški prolaz — gura naftu na $92 i uvodi umjeren makro pritisak. Stablecoin dominacija od ~10.5% i stabilan S&P 500 (+0.1% tjedno) sugeriraju oprezan risk-on, uz potencijal za rotaciju u altcoine ako BTC probije $82K.",
+    "aiSummary":  "DXY je pao na 99.0, ispod kritičnih 100, čime nastavlja podupirati risk-on sentiment, no jak izvještaj o tržištu rada SAD-a gurnuo je prinose gore i pritisnuo rizičnu imovinu pa je BTC sklizio ispod $79K uz Fear & Greed na 69. BTC dominacija ostaje na 57.7%, nafta se zadržava oko $92 zbog geopolitičkih napetosti na Hormuzu, dok S&P 500 bilježi blagi tjedni pad od -0.5%. Konsolidacija BTC-a između $78K–$82K nastavlja se, a proboj iznad $82K i dalje je ključan uvjet za aktiviranje altcoin rotacije.",
     "warActive":  true,
     "btcDom":  57.7,
     "stableDom":  10.5,
-    "oil":  92.4
+    "oil":  92.0
 }
