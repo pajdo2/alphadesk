@@ -1,7 +1,7 @@
 {
-    "dxy":  99.16,
-    "changeSummary":  "Makro uvjeti ostaju gotovo nepromijenjeni uz blagi pad F&G s 74 na 71 i rast Fed hike vjerojatnosti na 57%, dok US-Iran napadi održavaju naftu iznad $92 i geopolitički pritisak na tržištu.",
-    "lastUpdated":  "2026-09-07T12:00:00Z",
+    "dxy":  99.65,
+    "changeSummary":  "DXY blago porastao s 99.16 na 99.65, Fear & Greed pao s 71 na 69, BTC dominacija smanjena na 57.7% uz eskalaciju geopolitičkih napetosti napadima na saudijska naftna postrojenja.",
+    "lastUpdated":  "2026-09-08T12:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -13,7 +13,7 @@
 
                                ],
                      "XRP":  [
-                         "SEC transfer agent prijedlog 421str. utječe na XRP"
+
                              ],
                      "BNB":  [
 
@@ -55,20 +55,20 @@
 
                              ],
                      "LINK":  [
-                         "SEC predlaže nova pravila za blockchain agente"
+
                               ],
                      "PUMP":  [
 
                               ],
                      "TRUMP":  [
-                         "Regulatorna neizvjesnost, CLARITY Act još čeka"
+
                                ],
                      "BTC":  [
-                         "Fed hike odds 57%, pritisak na risk-on imovinu"
+                                 "Četiri odbijanja na $82K, otpor jak, rizik daljnjeg pada"
                              ]
                  },
     "sp500Ret5d":  0.1,
-    "fearGreed":  71,
+    "fearGreed":  69,
     "macroPenalty":  1,
     "catalysts":  {
                       "ACT":  [
@@ -81,7 +81,7 @@
 
                                 ],
                       "XRP":  [
-                          "Snažni ETF priljevi XRP-a nastavljaju se"
+
                               ],
                       "BNB":  [
 
@@ -108,7 +108,7 @@
 
                                  ],
                       "SOL":  [
-                          "Altcoin OI nadmašio BTC prvi put od pros'24"
+
                               ],
                       "ADA":  [
 
@@ -117,10 +117,10 @@
 
                                ],
                       "AIXBT":  [
-                          "AI kripto sektor u trendu, pozitivan sentiment"
+
                                 ],
                       "ETH":  [
-                          "ETH drži 11% tržišnog udjela, DeFi TVL raste"
+                                  "Testira $2,520, potencijalni proboj na višu razinu"
                               ],
                       "LINK":  [
 
@@ -132,7 +132,7 @@
 
                                 ],
                       "BTC":  [
-                          "BTC konsolidira $80K uz jak ETF volumen"
+                                  "DXY ispod 100 podržava risk-on pozicioniranje"
                               ]
                   },
     "regime":  "BULL",
@@ -140,7 +140,7 @@
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  1,
+                           "XRP":  0,
                            "BNB":  0,
                            "SUI":  0,
                            "AVAX":  0,
@@ -149,19 +149,19 @@
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  1,
+                           "SOL":  0,
                            "ADA":  0,
                            "PNUT":  0,
-                           "AIXBT":  1,
-                           "ETH":  1,
-                           "LINK":  -1,
+                           "AIXBT":  0,
+                           "ETH":  0,
+                           "LINK":  0,
                            "PUMP":  0,
-                           "TRUMP":  -1,
-                           "BTC":  1
+                           "TRUMP":  0,
+                           "BTC":  -1
                        },
-    "aiSummary":  "DXY ostaje stabilan oko 99.16, ispod ključne razine 100, što nastavlja podržavati risk-on pozicioniranje i pogoduje kriptovalutama. Fear & Greed blago je pao na 71 (Pohlepa), BTC konsolidira oko $80K uz dominaciju ~59.5%, dok rast Fed hike odds-a na 57% i nastavljeni US-Iran napadi donose umjeren makro pritisak. Stablecoin dominacija od ~10.5% i jak altcoin OI signal ukazuju na potencijalnu rotaciju prema altcoinima u kratkom roku.",
+    "aiSummary":  "DXY blago porastao na 99.65, no ostaje ispod kritične razine 100, čime se nastavlja podrška risk-on sentimentu i kriptovalutama. Fear & Greed pao je na 69 (Pohlepa), BTC konsolidira oko $79K uz četiri uzastopna odbijanja na $82K i smanjenu dominaciju na 57.7%, dok eskalacija geopolitičkih napetosti — napadi na Aramco i Hormuški prolaz — gura naftu na $92 i uvodi umjeren makro pritisak. Stablecoin dominacija od ~10.5% i stabilan S&P 500 (+0.1% tjedno) sugeriraju oprezan risk-on, uz potencijal za rotaciju u altcoine ako BTC probije $82K.",
     "warActive":  true,
-    "btcDom":  59.5,
+    "btcDom":  57.7,
     "stableDom":  10.5,
-    "oil":  92.0
+    "oil":  92.4
 }
