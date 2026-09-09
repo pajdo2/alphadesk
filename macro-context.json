@@ -1,83 +1,167 @@
 {
     "dxy":  98.85,
-    "changeSummary":  "Prethodni JSON bio je prazan placeholder; danas su unesene prve stvarne vrijednosti s aktivnim US-Iran ratom, DXY-em ispod 100 i Fear & Greed indeksom u zoni pohlepe (73).",
+    "changeSummary":  "Fear & Greed indeks pao je s 73 na 66, DXY ostaje stabilan na 98.85, BTC dominacija blago pada na 56.9% uz nepromijenjen macroPenalty i nastavak VOLATILE tržišnog režima.",
     "lastUpdated":  "2026-09-09T12:00:00Z",
     "warnings":  {
-                     "ACT":  [],
-                     "MEME":  ["Risk-off okolina zbog Fed povišice i US-Iran sukoba"],
-                     "ANIME":  [],
-                     "XRP":  [],
-                     "BNB":  [],
-                     "SUI":  [],
-                     "AVAX":  [],
-                     "PENGU":  ["Meme coin osjetljiv na risk-off makro okruženje"],
-                     "BOME":  ["Meme coin osjetljiv na risk-off makro okruženje"],
-                     "DOGS":  ["Meme coin osjetljiv na risk-off makro okruženje"],
-                     "NOT":  ["Meme coin osjetljiv na risk-off makro okruženje"],
-                     "PEOPLE":  ["Meme coin osjetljiv na risk-off makro okruženje"],
-                     "SOL":  [],
-                     "ADA":  [],
-                     "PNUT":  ["Meme coin osjetljiv na risk-off makro okruženje"],
-                     "AIXBT":  [],
-                     "ETH":  [],
-                     "LINK":  [],
-                     "PUMP":  ["Risk-off okolina pritišće spekulativne tokene"],
-                     "TRUMP":  [],
-                     "BTC":  ["Bitcoin Liquid Network exploit oslabio sentiment"]
+                     "ACT":  [
+                             "US-Iran sukob i Fed hike pritišću meme tokene"
+                             ],
+                     "MEME":  [
+                              "Geopolitička nestabilnost povećava rizik pada"
+                              ],
+                     "ANIME":  [
+                               "Macro rizici opterećuju niske likvidnosti tokene"
+                               ],
+                     "XRP":  [
+
+                             ],
+                     "BNB":  [
+
+                             ],
+                     "SUI":  [
+                             "Fed hike rizik → altcoini pod pritiskom"
+                             ],
+                     "AVAX":  [
+
+                              ],
+                     "PENGU":  [
+                               "Meme sezona zaustavljena makro rizicima"
+                               ],
+                     "BOME":  [
+                              "Visoki makro rizici; nizak volumen"
+                              ],
+                     "DOGS":  [
+                              "Geopolitika pritišće spekulativne altcoine"
+                              ],
+                     "NOT":  [
+                             "Meme tokeni pod pritiskom u risk-off okolini"
+                             ],
+                     "PEOPLE":  [
+
+                                ],
+                     "SOL":  [
+
+                             ],
+                     "ADA":  [
+
+                             ],
+                     "PNUT":  [
+                              "Makro rizici i Fed hike opterećuju cijenu"
+                              ],
+                     "AIXBT":  [
+
+                               ],
+                     "ETH":  [
+
+                             ],
+                     "LINK":  [
+
+                              ],
+                     "PUMP":  [
+                              "Spekulativni token, osjetljiv na makro šok"
+                              ],
+                     "TRUMP":  [
+                               "Politički token, raste US-Iran napetost"
+                               ],
+                     "BTC":  [
+                             "US-Iran sukob + Fed hike 60% → rizik pada ispod $76K"
+                             ]
                  },
-    "sp500Ret5d":  -1.3,
-    "fearGreed":  73,
+    "sp500Ret5d":  -1.2,
+    "fearGreed":  66,
     "macroPenalty":  1,
     "catalysts":  {
-                      "ACT":  [],
-                      "MEME":  [],
-                      "ANIME":  [],
-                      "XRP":  ["Glasanje Senata o kripto regulativi - potencijalni katalizator"],
-                      "BNB":  [],
-                      "SUI":  [],
-                      "AVAX":  [],
-                      "PENGU":  [],
-                      "BOME":  [],
-                      "DOGS":  [],
-                      "NOT":  [],
-                      "PEOPLE":  [],
-                      "SOL":  [],
-                      "ADA":  [],
-                      "PNUT":  [],
-                      "AIXBT":  [],
-                      "ETH":  ["ETH Foundation najavljuje kvantnu otpornost mreže", "Bitmine kupuje ETH, jača sentiment"],
-                      "LINK":  [],
-                      "PUMP":  [],
-                      "TRUMP":  [],
-                      "BTC":  ["Bitcoin drži $78k unatoč Fed riziku i geopolitici"]
+                      "ACT":  [
+
+                              ],
+                      "MEME":  [
+
+                               ],
+                      "ANIME":  [
+
+                                ],
+                      "XRP":  [
+
+                              ],
+                      "BNB":  [
+
+                              ],
+                      "SUI":  [
+
+                              ],
+                      "AVAX":  [
+
+                               ],
+                      "PENGU":  [
+
+                                ],
+                      "BOME":  [
+
+                               ],
+                      "DOGS":  [
+
+                               ],
+                      "NOT":  [
+
+                              ],
+                      "PEOPLE":  [
+
+                                 ],
+                      "SOL":  [
+
+                              ],
+                      "ADA":  [
+
+                              ],
+                      "PNUT":  [
+
+                               ],
+                      "AIXBT":  [
+
+                                ],
+                      "ETH":  [
+                              "ETH raste 0.5%; DeFi tržište stabilno na $78.2B"
+                              ],
+                      "LINK":  [
+
+                               ],
+                      "PUMP":  [
+
+                               ],
+                      "TRUMP":  [
+
+                                ],
+                      "BTC":  [
+                              "Konsolidacija oko $79K; Fed odluka ključna za smjer"
+                              ]
                   },
     "regime":  "VOLATILE",
     "sentimentScore":  {
-                           "ACT":  0,
+                           "ACT":  -1,
                            "MEME":  -1,
-                           "ANIME":  0,
-                           "XRP":  1,
+                           "ANIME":  -1,
+                           "XRP":  0,
                            "BNB":  0,
-                           "SUI":  0,
+                           "SUI":  -1,
                            "AVAX":  0,
                            "PENGU":  -1,
                            "BOME":  -1,
                            "DOGS":  -1,
                            "NOT":  -1,
-                           "PEOPLE":  -1,
+                           "PEOPLE":  0,
                            "SOL":  0,
                            "ADA":  0,
                            "PNUT":  -1,
                            "AIXBT":  0,
-                           "ETH":  1,
+                           "ETH":  0,
                            "LINK":  0,
                            "PUMP":  -1,
-                           "TRUMP":  0,
+                           "TRUMP":  -1,
                            "BTC":  -1
                        },
-    "aiSummary":  "DXY je na 98.85, ispod razine 100, što je pozitivno za kripto tržišta jer slabiji dolar pogoduje rizičnoj imovini. Fear & Greed indeks iznosi 73 (pohlepa), ali geopolitička napetost uzrokovana US-Iran sukobom i očekivana Fed-ova povišica kamatnih stopa (60% vjerojatnost) vrše pritisak na tržište. Bitcoin se konsolidira ispod $80.000 USD; ključni katalizatori su Fed-ova odluka i glasanje Senata o kripto regulativi sljedeći tjedan.",
+    "aiSummary":  "DXY je na 98.85, ispod razine 100, što pruža blagu potporu kripto tržištima jer slabiji dolar pogoduje rizičnoj imovini. Fear & Greed indeks pao je na 66 (pohlepa), ali aktivni US-Iran sukob i 60%-tna vjerojatnost Fedovog povišenja kamatnih stopa vrše negativan pritisak na tržište; Bitcoin se konsolidira oko $79.000. Ključni katalizatori bit će Fedova odluka o kamatnim stopama i daljnji razvoj geopolitičke situacije.",
     "warActive":  true,
-    "btcDom":  57.33,
-    "stableDom":  10.57,
-    "oil":  99.5
+    "btcDom":  56.9,
+    "stableDom":  10.5,
+    "oil":  100.2
 }
