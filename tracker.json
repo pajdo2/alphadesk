@@ -1,6 +1,32 @@
 {
   "predictions": [
     {
+      "id": "1788952676836",
+      "timestamp": 1788952676836,
+      "sym": "NEAR",
+      "type": "regular",
+      "direction": "LONG",
+      "date": "9. ruj",
+      "entry": 2.511,
+      "target": 2.7353,
+      "d1Target": 2.5895,
+      "d2Target": 2.668,
+      "d3Target": 2.7353,
+      "stop": 2.4106,
+      "conf": 59,
+      "targetPct": 8.93,
+      "status": "AKTIVAN",
+      "closePrice": null,
+      "closePct": null,
+      "autoClose": false,
+      "engineVer": "v5.235",
+      "d1Hit": false,
+      "d2Hit": false,
+      "d3Hit": false,
+      "peakPrice": 2.511,
+      "peakPct": 0
+    },
+    {
       "id": "1788952669465",
       "timestamp": 1788952669465,
       "sym": "NEAR",
@@ -7743,60 +7769,6 @@
       "peakPrice": 0.08324,
       "peakPct": 29.25,
       "closeReason": "ð¯ Target D3 dostignut"
-    },
-    {
-      "id": "1776426516823_ETH",
-      "timestamp": 1776426516823,
-      "sym": "ETH",
-      "type": "regular",
-      "date": "17. tra",
-      "entry": 2353.29,
-      "target": 2470.9545,
-      "d1Target": 2394.4726,
-      "d2Target": 2435.6551,
-      "d4Target": 2470.9545,
-      "d5Target": 2470.9545,
-      "d3Target": 2470.9545,
-      "stop": 2306.2242,
-      "conf": 44,
-      "score": -0.7499999999999998,
-      "targetPct": 5,
-      "status": "PROMAÅ AJ",
-      "closePrice": 2323.87,
-      "closePct": -1.25,
-      "autoClose": true,
-      "direction": "LONG",
-      "autoTrack": true,
-      "autoSource": "watch",
-      "snap": {
-        "rsiOversold": false,
-        "rsiOverbought": false,
-        "trendUp": false,
-        "trendDown": false,
-        "bbBelow": false,
-        "divBullish": false,
-        "divBearish": false,
-        "macdBullCross": false,
-        "macdBearCross": false,
-        "lsRatioBull": false,
-        "lsRatioExtreme": false,
-        "basisBack": false,
-        "takerSell": false,
-        "btcDomHigh": true,
-        "btcDomLow": false,
-        "volSpike": false,
-        "mtfAllUp": false,
-        "fgExtremeFear": false,
-        "fgFear": true
-      },
-      "d1Hit": false,
-      "d2Hit": false,
-      "d3Hit": false,
-      "d4Hit": false,
-      "d5Hit": false,
-      "peakPrice": 2357.38,
-      "peakPct": 0.17,
-      "closeReason": "â° 3 dana istekla"
     }
   ],
   "signalWeights": {
@@ -9447,5 +9419,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-09-09T11:17:53.925Z"
+  "updatedAt": "2026-09-09T11:18:00.671Z"
 }
