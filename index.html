@@ -423,7 +423,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.235</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.236</span></div>
       <div class="hd-sub" id="hdsub">Učitavam top 100 tokena…</div>
       <div class="hd-claude" id="claude-update" style="display:flex;align-items:center;gap:6px">
         <span id="claude-update-txt">🤖 Claude analiza: —</span>
@@ -741,7 +741,7 @@ function getMemeSYMS(){
 
 // Engine verzija — tag na svaku predikciju za mjerenje win-rate po verziji.
 // Pre-commit hook (sed s/v5.x/.../g) automatski drži ovo u sinku s headerom.
-var APP_VER="v5.235";
+var APP_VER="v5.236";
 
 // Settings
 var settings={minConf:45,targetPct:6,maxRisk:2,minRR:1.2,accountSize:1000,maxRiskPerTrade:1};
@@ -4289,6 +4289,11 @@ function recordPred(sym,entryPrice,targetPrice,stopPrice,conf,forcePct,d1T,d2T,d
   if(conf<60&&typeof confirm==="function"){
     if(!confirm("⚠️ Niska pouzdanost ("+conf+"%)\n\nPovijesno su ulazi ispod 60% coin-flip ili gubitak. "+sym+" ipak zabilježiti?"))return;
   }
+  // Per-token cooldown — <30% win rate u zadnjih 5+ tradova. Auto-engine ovaj token
+  // vec preskace (shouldBlockToken); daj rucnom unosu istu zastitu (npr. SUI 3x re-entry gubitci).
+  if(typeof shouldBlockToken==="function"&&shouldBlockToken(sym)&&typeof confirm==="function"){
+    if(!confirm("⚠️ "+sym+" je na cooldownu — nedavni tradovi <30% uspješnosti.\n\nAuto-engine ovaj token trenutno preskače. Ipak zabilježiti?"))return;
+  }
   var pct=forcePct||settings.targetPct;
   var isMeme=KNOWN_MEME.indexOf(sym)>-1;
   // Za SHORT: preračunaj target (ispod ulaza) i stop (iznad ulaza)
@@ -5056,6 +5061,39 @@ function hcEngineVersion(sorted){
   return h;
 }
 
+// ── WIN RATE PO REŽIMU TRŽIŠTA ───────────────────────────────────
+// Win-rate jako ovisi o režimu (buy-the-fear radi, buy-the-greed gubi). Ovaj panel
+// pokazuje pravu priču koju "po verziji" skriva (verzije su confounded s režimom).
+function hcRegimePerf(sorted){
+  var map={};
+  sorted.forEach(function(p){
+    var r=(p.snap&&p.snap.regime)?p.snap.regime:null;
+    if(!r)return; // preskoči stare bez snap-a
+    if(!map[r])map[r]={h:0,t:0};
+    map[r].t++;
+    if(p.status==="POGODAK")map[r].h++;
+  });
+  var regs=Object.keys(map);
+  if(regs.length<1)return'';
+  regs.sort(function(a,b){return map[b].t-map[a].t;}); // najviše podataka prvo
+  var lbl={BULL:"🐂 Bull",BEAR:"🐻 Bear",CRAB:"🦀 Crab",VOLATILE:"⚡ Volatile",NEUTRAL:"➖ Neutral",ALT_SEASON:"🌱 Alt season"};
+  var h='<div style="margin-bottom:14px"><div style="font-size:10px;color:var(--t3);font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px">Win rate po režimu tržišta</div>';
+  regs.forEach(function(r){
+    var d=map[r],rate=d.t?d.h/d.t*100:0;
+    var col=rate>=55?"#00e676":rate>=45?"#ffea00":"#ff1744";
+    var small=d.t<5;
+    h+='<div style="display:flex;align-items:center;gap:8px;margin-bottom:5px'+(small?';opacity:.6':'')+'">';
+    h+='<div style="width:82px;font-size:10px;font-weight:700;color:var(--t3)">'+(lbl[r]||r)+'</div>';
+    h+='<div style="flex:1;height:16px;background:var(--s3);border-radius:4px;overflow:hidden"><div style="height:100%;width:'+rate.toFixed(0)+'%;background:'+col+';opacity:.6;border-radius:4px"></div></div>';
+    h+='<div style="width:32px;font-size:11px;font-weight:800;color:'+col+';text-align:right">'+rate.toFixed(0)+'%</div>';
+    h+='<div style="font-size:10px;color:var(--t4);width:56px;text-align:right">'+d.h+'/'+d.t+(small?' malo':'')+'</div>';
+    h+='</div>';
+  });
+  h+='<div style="font-size:10px;color:var(--t4);margin-top:4px">Engine radi najbolje u strahu, najgore u pohlepi — loše brojke u pohlepi = tržište, ne kvar.</div>';
+  h+='</div>';
+  return h;
+}
+
 function hcInsights(sorted){
   if(sorted.length<3)return'';
   var hits=sorted.filter(function(p){return p.status==="POGODAK";});
@@ -5158,6 +5196,7 @@ function renderMiniSuccessChart(sorted){
     h+=hcDayMilestones(sorted);
     h+=hcConfBuckets(sorted);
     h+=hcEngineVersion(sorted);
+    h+=hcRegimePerf(sorted);
     h+=hcTokenPerf(sorted);
     h+=hcInsights(sorted);
   }
@@ -9925,7 +9964,7 @@ function disableNotifs(){
   showToast("Notifikacije isključene");render();
 }
 
-// emitEntryNotif uklonjen (v5.235) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
+// emitEntryNotif uklonjen (v5.236) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
 // Bila mrtva funkcija (nula poziva); uklonjena da se ne može slučajno ponovno spojiti.
 
 // ── EXIT NOTIFICATION — SAMO 2 TIPA (po korisnikovom zahtjevu) ──
