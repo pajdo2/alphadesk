@@ -423,7 +423,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.237</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.238</span></div>
       <div class="hd-sub" id="hdsub">Učitavam top 100 tokena…</div>
       <div class="hd-claude" id="claude-update" style="display:flex;align-items:center;gap:6px">
         <span id="claude-update-txt">🤖 Claude analiza: —</span>
@@ -741,7 +741,7 @@ function getMemeSYMS(){
 
 // Engine verzija — tag na svaku predikciju za mjerenje win-rate po verziji.
 // Pre-commit hook (sed s/v5.x/.../g) automatski drži ovo u sinku s headerom.
-var APP_VER="v5.237";
+var APP_VER="v5.238";
 
 // Settings
 var settings={minConf:45,targetPct:6,maxRisk:2,minRR:1.2,accountSize:1000,maxRiskPerTrade:1};
@@ -1411,6 +1411,7 @@ function fmtTsAgo(ts){
   return Math.floor(sec/3600)+"h";
 }
 var _dataStatusOpen=false;
+var _analyticsOpen=false; // Rezultati: sklopiva "Detaljna analitika" sekcija
 function renderRefreshStatus(){
   var now=new Date(),pad=function(n){return n<10?"0"+n:n;};
   var clk=pad(now.getHours())+":"+pad(now.getMinutes())+":"+pad(now.getSeconds());
@@ -5203,14 +5204,25 @@ function renderMiniSuccessChart(sorted){
   h+='</div>';
   // Dual-line SVG chart (kumulativ + rolling-5)
   h+=hcCumulative(sorted);
-  // Sub-analiza odmah ispod grafa — D-milestoni, conf kalibracija, token perf, insights
+  // Sub-analiza grupirana u sklopivu "Detaljna analitika" — glavni sažetak + graf
+  // ostaju vidljivi iznad; detaljni bar-paneli (kalibracija, režim, token) na klik.
   if(sorted.length>=3){
-    h+=hcDayMilestones(sorted);
-    h+=hcConfBuckets(sorted);
-    h+=hcEngineVersion(sorted);
-    h+=hcRegimePerf(sorted);
-    h+=hcTokenPerf(sorted);
-    h+=hcInsights(sorted);
+    h+='<div style="margin-bottom:14px">';
+    h+='<div onclick="_analyticsOpen=!_analyticsOpen;render()" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;background:var(--s2);border-radius:10px;padding:10px 14px">';
+    h+='<span style="font-size:11px;font-weight:700;color:var(--t2);letter-spacing:.04em">📊 Detaljna analitika</span>';
+    h+='<span style="font-size:11px;color:var(--t3)">'+(_analyticsOpen?"▲ sakrij":"▾ prikaži (kalibracija, režim, tokeni)")+'</span>';
+    h+='</div>';
+    if(_analyticsOpen){
+      h+='<div style="margin-top:12px">';
+      h+=hcDayMilestones(sorted);
+      h+=hcConfBuckets(sorted);
+      h+=hcEngineVersion(sorted);
+      h+=hcRegimePerf(sorted);
+      h+=hcTokenPerf(sorted);
+      h+=hcInsights(sorted);
+      h+='</div>';
+    }
+    h+='</div>';
   }
   h+='</div>';
   return h;
@@ -6994,7 +7006,7 @@ function render(){
     // Metric row — 4 kartica
     var fc=getNextFunding();
     var fcCol=fc.nearImpending?"var(--warn)":"var(--t3)";
-    h+='<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px">';
+    h+='<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:10px">';
     // BTC Dom
     var btcDomCardCls=MACRO.btcDom>60?"bear-card":MACRO.btcDom<45?"bull-card":"";
     h+='<div class="macro-card '+btcDomCardCls+'">';
@@ -7103,20 +7115,20 @@ function render(){
       var topCls=r.rank===1?" top":r.rank===srs.length?" bot":"";
       var barW=Math.round(Math.abs(r.avg)/maxAbs*100);
       var barCol=pos?"rgba(0,230,118,.55)":"rgba(255,23,68,.55)";
-      h+='<div class="sec-pill'+topCls+'" style="flex-direction:column;align-items:flex-start;gap:2px;min-width:72px">';
+      h+='<div class="sec-pill'+topCls+'" style="flex-direction:column;align-items:flex-start;gap:3px;min-width:84px">';
       // Header row
       h+='<div style="display:flex;align-items:center;justify-content:space-between;width:100%">';
-      h+='<span style="font-size:11px">'+(secIco[r.sec]||"•")+'</span>';
-      h+='<span style="font-size:11px;font-weight:800;color:'+col+'">'+(pos?"+":"")+r.avg+'%</span>';
+      h+='<span style="font-size:13px">'+(secIco[r.sec]||"•")+'</span>';
+      h+='<span style="font-size:13px;font-weight:800;color:'+col+'">'+(pos?"+":"")+r.avg+'%</span>';
       h+='</div>';
       // Sector name
-      h+='<div style="font-size:9px;color:var(--t3);font-weight:600;white-space:nowrap">'+r.sec+'</div>';
+      h+='<div style="font-size:11px;color:var(--t2);font-weight:700;white-space:nowrap">'+r.sec+'</div>';
       // Mini bar
       h+='<div style="width:100%;height:3px;background:rgba(255,255,255,.07);border-radius:2px;margin-top:2px">';
       h+='<div style="height:3px;width:'+barW+'%;background:'+barCol+';border-radius:2px"></div>';
       h+='</div>';
-      if(r.rank===1)h+='<div style="font-size:8px;color:var(--bull);font-weight:700;letter-spacing:.04em">🔥 TOP</div>';
-      if(r.rank===srs.length)h+='<div style="font-size:8px;color:var(--bear);font-weight:700;letter-spacing:.04em">❄ COLD</div>';
+      if(r.rank===1)h+='<div style="font-size:9px;color:var(--bull);font-weight:700;letter-spacing:.04em">🔥 TOP</div>';
+      if(r.rank===srs.length)h+='<div style="font-size:9px;color:var(--bear);font-weight:700;letter-spacing:.04em">❄ COLD</div>';
       h+='</div>';
     });
     h+='</div>';
@@ -9733,7 +9745,9 @@ function fetchMacroContext(manual){
         // vrijeme) -> ageMs negativan -> ne prikazuj "-389min". Tad pokazi "upravo".
         var ageMs=Date.now()-dt.getTime();
         var ageStr=ageMs<60000?"upravo":ageMs<3600000?"prije "+Math.round(ageMs/60000)+" min":"prije "+Math.round(ageMs/3600000)+" h";
-        var regimeBadge=MACRO.claudeRegime?(' <span style="opacity:.55;font-size:9px">· '+MACRO.claudeRegime+'</span>'):'';
+        var _regCol={BULL:"#00e676",BEAR:"#ff1744",CRAB:"#9e9e9e",VOLATILE:"#ffab00",NEUTRAL:"#78909c",ALT_SEASON:"#00e5ff"};
+        var _rc=_regCol[MACRO.claudeRegime]||"#78909c";
+        var regimeBadge=MACRO.claudeRegime?(' <span style="background:'+_rc+'22;color:'+_rc+';font-size:9px;font-weight:800;padding:1px 6px;border-radius:5px;letter-spacing:.05em">'+MACRO.claudeRegime+'</span>'):'';
         txt.innerHTML='🤖 Claude analiza: '+dStr+' u '+tStr+' <span style="opacity:.6">('+ageStr+')</span>'+regimeBadge;
         if(wrap)wrap.style.display="flex";
       }
@@ -9976,7 +9990,7 @@ function disableNotifs(){
   showToast("Notifikacije isključene");render();
 }
 
-// emitEntryNotif uklonjen (v5.237) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
+// emitEntryNotif uklonjen (v5.238) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
 // Bila mrtva funkcija (nula poziva); uklonjena da se ne može slučajno ponovno spojiti.
 
 // ── EXIT NOTIFICATION — SAMO 2 TIPA (po korisnikovom zahtjevu) ──
