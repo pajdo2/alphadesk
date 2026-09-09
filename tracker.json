@@ -1,6 +1,32 @@
 {
   "predictions": [
     {
+      "id": "1788952682594",
+      "timestamp": 1788952682594,
+      "sym": "DOGE",
+      "type": "meme",
+      "direction": "LONG",
+      "date": "9. ruj",
+      "entry": 0.09018,
+      "target": 0.0955908,
+      "d1Target": 0.09207378,
+      "d2Target": 0.09396756,
+      "d3Target": 0.0955908,
+      "stop": 0.06507389,
+      "conf": 60,
+      "targetPct": 6,
+      "status": "AKTIVAN",
+      "closePrice": null,
+      "closePct": null,
+      "autoClose": false,
+      "engineVer": "v5.235",
+      "d1Hit": false,
+      "d2Hit": false,
+      "d3Hit": false,
+      "peakPrice": 0.09018,
+      "peakPct": 0
+    },
+    {
       "id": "1788952676836",
       "timestamp": 1788952676836,
       "sym": "NEAR",
@@ -7715,60 +7741,6 @@
       "peakPrice": 88.29,
       "peakPct": 0.17,
       "closeReason": "ð Stop-loss hit"
-    },
-    {
-      "id": "1776426516823_JST",
-      "timestamp": 1776426516823,
-      "sym": "JST",
-      "type": "regular",
-      "date": "17. tra",
-      "entry": 0.0644,
-      "target": 0.0676,
-      "d1Target": 0.0655,
-      "d2Target": 0.0667,
-      "d4Target": 0.0676,
-      "d5Target": 0.0676,
-      "d3Target": 0.0676,
-      "stop": 0.0631,
-      "conf": 44,
-      "score": -0.75,
-      "targetPct": 5,
-      "status": "POGODAK",
-      "closePrice": 0.08324,
-      "closePct": 29.25,
-      "autoClose": true,
-      "direction": "LONG",
-      "autoTrack": true,
-      "autoSource": "watch",
-      "snap": {
-        "rsiOversold": false,
-        "rsiOverbought": false,
-        "trendUp": false,
-        "trendDown": true,
-        "bbBelow": false,
-        "divBullish": false,
-        "divBearish": false,
-        "macdBullCross": false,
-        "macdBearCross": false,
-        "lsRatioBull": false,
-        "lsRatioExtreme": false,
-        "basisBack": false,
-        "takerSell": false,
-        "btcDomHigh": true,
-        "btcDomLow": false,
-        "volSpike": false,
-        "mtfAllUp": false,
-        "fgExtremeFear": false,
-        "fgFear": true
-      },
-      "d1Hit": true,
-      "d2Hit": true,
-      "d3Hit": true,
-      "d4Hit": false,
-      "d5Hit": false,
-      "peakPrice": 0.08324,
-      "peakPct": 29.25,
-      "closeReason": "ð¯ Target D3 dostignut"
     }
   ],
   "signalWeights": {
@@ -9419,5 +9391,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-09-09T11:18:00.671Z"
+  "updatedAt": "2026-09-09T11:18:06.658Z"
 }
