@@ -1,7 +1,7 @@
 {
-    "dxy":  98.82,
-    "changeSummary":  "DXY blago pao s 98.85 na 98.82, tržišni sentiment ostaje nepromijenjen (F&G 66), a makro uvjeti su gotovo identični prethodnoj analizi uz nastavak US-Iran sukoba i nepromijenjenu 60%-tnu vjerojatnost Fedovog povišenja kamatnih stopa.",
-    "lastUpdated":  "2026-09-09T17:00:00Z",
+    "dxy":  98.85,
+    "changeSummary":  "Makro uvjeti ostaju gotovo nepromijenjeni — DXY stabilan na 98.85, Fear & Greed na 66, nafta oko $94, a jedina primjetna promjena je blagi pad BTC dominance s 57.3% na 56.9%.",
+    "lastUpdated":  "2026-09-09T12:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -52,23 +52,22 @@
 
                                ],
                      "ETH":  [
-
+                                 "US-Iran sukob pritišće kripto, nafta prema $100"
                              ],
                      "LINK":  [
-
+                                  "Incident sigurnosti Liquid Network 6. rujna"
                               ],
                      "PUMP":  [
 
                               ],
                      "TRUMP":  [
-
+                                   "US-Iran tenzije pogađaju političke tokene"
                                ],
                      "BTC":  [
-                                 "US-Iran rat pritisce trzista, nafta ~$94 WTI",
-                                 "Fed povisenje kamatnih stopa 60% sansa"
+                                 "Fed povišenje kamatnih stopa s vjerojatnošću >60%"
                              ]
                  },
-    "sp500Ret5d":  -0.9,
+    "sp500Ret5d":  -1.0,
     "fearGreed":  66,
     "macroPenalty":  1,
     "catalysts":  {
@@ -121,7 +120,7 @@
 
                                 ],
                       "ETH":  [
-                                  "Qivalis: 37 europskih banaka dolazi na Ethereum (MiCA)"
+                                  "Circle preuzima Tazapay za $400M, stablecoin rast"
                               ],
                       "LINK":  [
 
@@ -133,36 +132,36 @@
 
                                 ],
                       "BTC":  [
-                                  "Circle kupuje Tazapay - rast stablecoin placanja"
+                                  "BTC dominanca stabilna na 56.9% ukupnog tržišta"
                               ]
                   },
     "regime":  "VOLATILE",
     "sentimentScore":  {
-                           "ACT":  0,
-                           "MEME":  0,
-                           "ANIME":  0,
+                           "ACT":  -1,
+                           "MEME":  -1,
+                           "ANIME":  -1,
                            "XRP":  0,
                            "BNB":  0,
                            "SUI":  0,
                            "AVAX":  0,
-                           "PENGU":  0,
-                           "BOME":  0,
-                           "DOGS":  0,
-                           "NOT":  0,
+                           "PENGU":  -1,
+                           "BOME":  -1,
+                           "DOGS":  -1,
+                           "NOT":  -1,
                            "PEOPLE":  0,
                            "SOL":  0,
                            "ADA":  0,
-                           "PNUT":  0,
+                           "PNUT":  -1,
                            "AIXBT":  0,
-                           "ETH":  1,
-                           "LINK":  0,
-                           "PUMP":  0,
-                           "TRUMP":  0,
-                           "BTC":  -1
+                           "ETH":  0,
+                           "LINK":  -1,
+                           "PUMP":  -1,
+                           "TRUMP":  -1,
+                           "BTC":  1
                        },
-    "aiSummary":  "DXY se stabilizirao na 98.82, i dalje ispod razine 100, sto pruza blagu potporu kripto trzistima jer slabiji dolar pogoduje rizicnoj imovini. Fear & Greed indeks ostaje na 66 (pohlepa), no aktivni US-Iran sukob gura naftu prema $94-100/bbl i pojacava inflacijske pritiske uoci Fedovog sastanka s 60%-tnom vjerojatnošcu povišenja kamatnih stopa. Bitcoin se konsolidira oko $78.900 bez jasnog proboja, a kljucni katalizatori bit ce Fedova odluka o kamatnim stopama i daljnji razvoj geopoliticke situacije.",
+    "aiSummary":  "DXY se zadržao na razini 98.85, ispod ključnog praga od 100, pružajući blagu potporu kripto tržištu jer slabiji dolar pogoduje rizičnoj imovini. Fear & Greed indeks ostaje na 66 (pohlepa), no aktivni US-Iran sukob gura naftu prema $94-100/bbl i pojačava inflacijske pritiske, s vjerojatnošću Fedovog povišenja kamatnih stopa iznad 60%. Bitcoin se konsolidira oko $78.900 bez jasnog proboja, a ključni katalizatori ostaju Fedova odluka o kamatnim stopama i daljnji razvoj geopolitičke situacije.",
     "warActive":  true,
-    "btcDom":  57.3,
-    "stableDom":  10.9,
-    "oil":  94.3
+    "btcDom":  56.9,
+    "stableDom":  10.8,
+    "oil":  94.24
 }
