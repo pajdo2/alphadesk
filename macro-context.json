@@ -1,16 +1,16 @@
 {
-    "dxy":  98.85,
-    "changeSummary":  "Fear & Greed indeks pao je s 73 na 66, DXY ostaje stabilan na 98.85, BTC dominacija blago pada na 56.9% uz nepromijenjen macroPenalty i nastavak VOLATILE tržišnog režima.",
-    "lastUpdated":  "2026-09-09T12:00:00Z",
+    "dxy":  98.82,
+    "changeSummary":  "DXY blago pao s 98.85 na 98.82, tržišni sentiment ostaje nepromijenjen (F&G 66), a makro uvjeti su gotovo identični prethodnoj analizi uz nastavak US-Iran sukoba i nepromijenjenu 60%-tnu vjerojatnost Fedovog povišenja kamatnih stopa.",
+    "lastUpdated":  "2026-09-09T17:00:00Z",
     "warnings":  {
                      "ACT":  [
-                             "US-Iran sukob i Fed hike pritišću meme tokene"
+
                              ],
                      "MEME":  [
-                              "Geopolitička nestabilnost povećava rizik pada"
+
                               ],
                      "ANIME":  [
-                               "Macro rizici opterećuju niske likvidnosti tokene"
+
                                ],
                      "XRP":  [
 
@@ -19,22 +19,22 @@
 
                              ],
                      "SUI":  [
-                             "Fed hike rizik → altcoini pod pritiskom"
+
                              ],
                      "AVAX":  [
 
                               ],
                      "PENGU":  [
-                               "Meme sezona zaustavljena makro rizicima"
+
                                ],
                      "BOME":  [
-                              "Visoki makro rizici; nizak volumen"
+
                               ],
                      "DOGS":  [
-                              "Geopolitika pritišće spekulativne altcoine"
+
                               ],
                      "NOT":  [
-                             "Meme tokeni pod pritiskom u risk-off okolini"
+
                              ],
                      "PEOPLE":  [
 
@@ -46,7 +46,7 @@
 
                              ],
                      "PNUT":  [
-                              "Makro rizici i Fed hike opterećuju cijenu"
+
                               ],
                      "AIXBT":  [
 
@@ -58,16 +58,17 @@
 
                               ],
                      "PUMP":  [
-                              "Spekulativni token, osjetljiv na makro šok"
+
                               ],
                      "TRUMP":  [
-                               "Politički token, raste US-Iran napetost"
+
                                ],
                      "BTC":  [
-                             "US-Iran sukob + Fed hike 60% → rizik pada ispod $76K"
+                                 "US-Iran rat pritisce trzista, nafta ~$94 WTI",
+                                 "Fed povisenje kamatnih stopa 60% sansa"
                              ]
                  },
-    "sp500Ret5d":  -1.2,
+    "sp500Ret5d":  -0.9,
     "fearGreed":  66,
     "macroPenalty":  1,
     "catalysts":  {
@@ -120,7 +121,7 @@
 
                                 ],
                       "ETH":  [
-                              "ETH raste 0.5%; DeFi tržište stabilno na $78.2B"
+                                  "Qivalis: 37 europskih banaka dolazi na Ethereum (MiCA)"
                               ],
                       "LINK":  [
 
@@ -132,36 +133,36 @@
 
                                 ],
                       "BTC":  [
-                              "Konsolidacija oko $79K; Fed odluka ključna za smjer"
+                                  "Circle kupuje Tazapay - rast stablecoin placanja"
                               ]
                   },
     "regime":  "VOLATILE",
     "sentimentScore":  {
-                           "ACT":  -1,
-                           "MEME":  -1,
-                           "ANIME":  -1,
+                           "ACT":  0,
+                           "MEME":  0,
+                           "ANIME":  0,
                            "XRP":  0,
                            "BNB":  0,
-                           "SUI":  -1,
+                           "SUI":  0,
                            "AVAX":  0,
-                           "PENGU":  -1,
-                           "BOME":  -1,
-                           "DOGS":  -1,
-                           "NOT":  -1,
+                           "PENGU":  0,
+                           "BOME":  0,
+                           "DOGS":  0,
+                           "NOT":  0,
                            "PEOPLE":  0,
                            "SOL":  0,
                            "ADA":  0,
-                           "PNUT":  -1,
+                           "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  0,
+                           "ETH":  1,
                            "LINK":  0,
-                           "PUMP":  -1,
-                           "TRUMP":  -1,
+                           "PUMP":  0,
+                           "TRUMP":  0,
                            "BTC":  -1
                        },
-    "aiSummary":  "DXY je na 98.85, ispod razine 100, što pruža blagu potporu kripto tržištima jer slabiji dolar pogoduje rizičnoj imovini. Fear & Greed indeks pao je na 66 (pohlepa), ali aktivni US-Iran sukob i 60%-tna vjerojatnost Fedovog povišenja kamatnih stopa vrše negativan pritisak na tržište; Bitcoin se konsolidira oko $79.000. Ključni katalizatori bit će Fedova odluka o kamatnim stopama i daljnji razvoj geopolitičke situacije.",
+    "aiSummary":  "DXY se stabilizirao na 98.82, i dalje ispod razine 100, sto pruza blagu potporu kripto trzistima jer slabiji dolar pogoduje rizicnoj imovini. Fear & Greed indeks ostaje na 66 (pohlepa), no aktivni US-Iran sukob gura naftu prema $94-100/bbl i pojacava inflacijske pritiske uoci Fedovog sastanka s 60%-tnom vjerojatnošcu povišenja kamatnih stopa. Bitcoin se konsolidira oko $78.900 bez jasnog proboja, a kljucni katalizatori bit ce Fedova odluka o kamatnim stopama i daljnji razvoj geopoliticke situacije.",
     "warActive":  true,
-    "btcDom":  56.9,
-    "stableDom":  10.5,
-    "oil":  100.2
+    "btcDom":  57.3,
+    "stableDom":  10.9,
+    "oil":  94.3
 }
