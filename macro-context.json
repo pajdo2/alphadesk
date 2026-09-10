@@ -1,19 +1,19 @@
 {
-    "dxy":  98.75,
-    "changeSummary":  "BTC dominacija porasla je s 56.9% na 59.2%, Fear & Greed blago je porastao s 67 na 69, dok DXY i nafta ostaju na gotovo identičnim razinama uz nepromijenjen macroPenalty i VOLATILE režim.",
-    "lastUpdated":  "2026-09-10T14:00:00Z",
+    "dxy":  98.85,
+    "changeSummary":  "Nafta raste s $97.16 na $97.74 uz snažne tehničke signale kupnje, DXY ostaje stabilan na 98.85, Fear & Greed indeks zadržan na 69, a macroPenalty ispravljen na 0 sukladno pravilima klampiranja vrijednosti.",
+    "lastUpdated":  "2026-09-10T18:00:00Z",
     "warnings":  {
                      "ACT":  [
 
                              ],
                      "MEME":  [
-                               "LAPTOP crash širi negativan sentiment na meme tokene"
+                                 "Njemački prijedlog 25% poreza na kripto od 2028."
                               ],
                      "ANIME":  [
 
                                ],
                      "XRP":  [
-
+                                 "Njemački prijedlog 25% poreza na kripto od 2028."
                              ],
                      "BNB":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-
+                                 "Consensys razdvaja MetaMask od institucionalnih operacija"
                              ],
                      "LINK":  [
 
@@ -61,15 +61,15 @@
 
                               ],
                      "TRUMP":  [
-                               "LAPTOP memecoin -99.6% - FUD na političke tokene"
+                                  "TRUMP token bez konkretnih katalizatora — čisti sentiment"
                                ],
                      "BTC":  [
-                              "Njemačka predlaže porez 25% na BTC dobitke od 2027."
+                                 "BTC ETF odljev $167M — prekida 3 tjedna snažnih priljeva"
                              ]
                  },
-    "sp500Ret5d":  -1.1,
+    "sp500Ret5d":  -0.8,
     "fearGreed":  69,
-    "macroPenalty":  1,
+    "macroPenalty":  0,
     "catalysts":  {
                       "ACT":  [
 
@@ -81,16 +81,16 @@
 
                                 ],
                       "XRP":  [
-                               "Clarity Act u Senatu - pozitivno za regulatornu jasnoću"
+                                  "Clarity Act poboljšava regulatorno okruženje za XRP"
                               ],
                       "BNB":  [
-
+                                  "BNB zadržava tehničku snagu nakon jučerašnjeg +4.32%"
                               ],
                       "SUI":  [
 
                               ],
                       "AVAX":  [
-
+                                  "Arya.ag tokenizira zrno na Avalanche — blockchain adopcija"
                                ],
                       "PENGU":  [
 
@@ -108,7 +108,7 @@
 
                                  ],
                       "SOL":  [
-
+                                  "SOL ETF fondovi vraćaju pozitivne neto priljeve"
                               ],
                       "ADA":  [
 
@@ -120,7 +120,7 @@
 
                                 ],
                       "ETH":  [
-                               "MetaMask postaje neovisna tvrtka iz Consensys-a"
+                                  "ETH fondovi vraćaju neto priljeve — pozitivan signal"
                               ],
                       "LINK":  [
 
@@ -132,36 +132,37 @@
 
                                 ],
                       "BTC":  [
-                               "Clarity Act u Senatu - potpora regulatornoj jasnoći"
+                                  "Clarity Act — Bessent aktivno gura Senat, regulatorna jasnoća",
+                                  "BTC sell-side rizik na minimumima — $80K zone nema prodavača"
                               ]
                   },
-    "regime":  "VOLATILE",
+    "regime":  "BULL",
     "sentimentScore":  {
                            "ACT":  0,
                            "MEME":  -1,
                            "ANIME":  0,
                            "XRP":  1,
-                           "BNB":  0,
+                           "BNB":  1,
                            "SUI":  0,
-                           "AVAX":  0,
+                           "AVAX":  1,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  0,
+                           "SOL":  1,
                            "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  0,
+                           "ETH":  1,
                            "LINK":  0,
                            "PUMP":  0,
-                           "TRUMP":  -1,
+                           "TRUMP":  0,
                            "BTC":  -1
                        },
-    "aiSummary":  "DXY se blago pomaknuo na 98.75, zadržavajući se ispod razine 100 i pružajući umjerenu potporu kripto tržištu, dok nafta ostaje visoka na $97.19 zbog geopolitičkih napetosti na Bliskom istoku. Bitcoin stagnira oko $78K uoči petkovog CPI izvještaja, Fear & Greed indeks iznosi 69 (pohlepa), a BTC dominacija je porasla na 59.2% uz S&P 500 koji je tjedan završio s gubitkom od -1.1%. Ključni katalizatori za nadolazećih nekoliko dana su petkovi CPI podaci, daljnji razvoj geopolitičke situacije i napredak Clarity Act zakona u Senatu.",
-    "warActive":  true,
-    "btcDom":  59.2,
-    "stableDom":  10.5,
-    "oil":  97.19
+    "aiSummary":  "DXY ostaje stabilan oko razine 98.85, ispod ključne granice od 100, nastavljajući pružati umjerenu potporu kripto tržištu, dok nafta raste na $97.74 uz snažne tehničke signale kupnje zbog geopolitičkih napetosti. Bitcoin konsolidira oko $77.8K uz nastavak ETF odljeva od $167M, no ETH i SOL fondovi bilježe povratak neto priljeva, Fear & Greed ostaje na 69 (pohlepa), a BTC dominacija stabilna na 56.9%. Ključni katalizatori su glasanje o CLARITY Act-u uz aktivnu podršku Treasurer Bessenta, nadolazeći CPI podaci te europski regulatorni rizik s njemačkim prijedlogom 25% poreza na kripto od 2028.",
+    "warActive":  false,
+    "btcDom":  56.9,
+    "stableDom":  6.2,
+    "oil":  97.74
 }
