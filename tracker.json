@@ -107,8 +107,8 @@
       "d3Hit": false,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 5.897,
-      "peakPct": 0
+      "peakPrice": 5.899,
+      "peakPct": 0.03
     },
     {
       "id": "1789187393259_MORPHO",
@@ -243,8 +243,8 @@
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
-      "peakPrice": 2511.8,
-      "peakPct": 0.45
+      "peakPrice": 2512.19,
+      "peakPct": 0.46
     },
     {
       "id": "1788956939427",
@@ -9402,5 +9402,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-09-12T04:30:13.186Z"
+  "updatedAt": "2026-09-12T04:30:33.186Z"
 }
