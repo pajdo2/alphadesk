@@ -9401,7 +9401,20 @@
       "correct": null,
       "fwdPrice": null,
       "fwdPct": null
+    },
+    {
+      "ts": 1789190953933,
+      "price": 77226.01,
+      "dir": "NEUTRAL",
+      "th": 2.59,
+      "conf": 42,
+      "score": -0.39,
+      "verdict": "🔵 Spekulativno",
+      "graded": false,
+      "correct": null,
+      "fwdPrice": null,
+      "fwdPct": null
     }
   ],
-  "updatedAt": "2026-09-12T04:57:12.454Z"
+  "updatedAt": "2026-09-12T05:29:33.849Z"
 }
