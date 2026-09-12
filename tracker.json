@@ -107,8 +107,8 @@
       "d3Hit": false,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 5.918,
-      "peakPct": 0.36
+      "peakPrice": 5.919,
+      "peakPct": 0.37
     },
     {
       "id": "1789187393259_MORPHO",
@@ -9403,5 +9403,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-09-12T04:50:23.494Z"
+  "updatedAt": "2026-09-12T04:57:12.454Z"
 }
