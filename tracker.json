@@ -127,10 +127,10 @@
       "conf": 65,
       "score": 17.332125,
       "targetPct": 7.47,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "PROMAŠAJ",
+      "closePrice": 2.175,
+      "closePct": -4.44,
+      "autoClose": true,
       "direction": "LONG",
       "autoTrack": true,
       "autoSource": "ulaz",
@@ -163,7 +163,8 @@
       "d4Hit": false,
       "d5Hit": false,
       "peakPrice": 2.278,
-      "peakPct": 0.09
+      "peakPct": 0.09,
+      "closeReason": "🛑 Stop-loss (24/7)"
     },
     {
       "id": "1789187393259_HBAR",
@@ -9429,5 +9430,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-09-13T07:03:34.783Z"
+  "updatedAt": "2026-09-13T11:03:16.423Z"
 }
