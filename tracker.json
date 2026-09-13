@@ -217,8 +217,8 @@
       "d3Hit": false,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 0.07457,
-      "peakPct": 0.09
+      "peakPrice": 0.075398,
+      "peakPct": 1.21
     },
     {
       "id": "1788956946997",
@@ -7705,25 +7705,25 @@
   ],
   "signalWeights": {
     "_global": {
-      "rsiOversold": 0.789,
+      "rsiOversold": 0.79,
       "rsiOverbought": 1,
-      "trendUp": 0.723,
-      "trendDown": 0.547,
+      "trendUp": 0.726,
+      "trendDown": 0.548,
       "bbBelow": 1,
-      "divBullish": 0.807,
-      "divBearish": 0.546,
+      "divBullish": 0.81,
+      "divBearish": 0.547,
       "macdBullCross": 1,
       "macdBearCross": 1,
       "lsRatioBull": 1,
       "lsRatioExtreme": 1,
-      "basisBack": 0.984,
+      "basisBack": 0.987,
       "takerSell": 1,
       "btcDomHigh": 1,
       "btcDomLow": 1,
-      "volSpike": 0.607,
-      "mtfAllUp": 0.905,
-      "fgExtremeFear": 0.97,
-      "fgFear": 0.4
+      "volSpike": 0.609,
+      "mtfAllUp": 0.909,
+      "fgExtremeFear": 0.973,
+      "fgFear": 0.401
     },
     "CRAB": {
       "rsiOversold": 1,
@@ -9429,5 +9429,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-09-13T07:03:28.890Z"
+  "updatedAt": "2026-09-13T07:03:34.783Z"
 }
