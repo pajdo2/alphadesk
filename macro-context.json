@@ -1,144 +1,110 @@
 {
-    "dxy":  99.46,
-    "changeSummary":  "BTC stagnira oko $77.5K uz pad Fear & Greed indeksa s 62 na 55, DXY blago raste na 99.46, a glasanje o CLARITY Actu 15.9. unosi regulatornu neizvjesnost za meme tokene i DeFi sektor.",
-    "lastUpdated":  "2026-09-14T09:00:00Z",
+    "dxy":  99.4,
+    "changeSummary":  "Nafta skočila na $103 zbog zatvaranja saudijskog naftovoda, Fear & Greed pao s 55 na 52, a Fed povećanje kamate prijeti s 86.5% vjerojatnošću ovaj tjedan.",
+    "lastUpdated":  "2026-09-14T12:00:00Z",
     "warnings":  {
                      "ACT":  [
-
                              ],
                      "MEME":  [
-
+                                 "Fed povećanje kamate pritišće meme sektor"
                               ],
                      "ANIME":  [
-
                                ],
                      "XRP":  [
-
                              ],
                      "BNB":  [
-
                              ],
                      "SUI":  [
-
                              ],
                      "AVAX":  [
-
                               ],
                      "PENGU":  [
-
                                ],
                      "BOME":  [
-
                               ],
                      "DOGS":  [
-
                               ],
                      "NOT":  [
-
+                                 "Telegram meme tokeni slabi uz rizik rasta kamatnih stopa"
                              ],
                      "PEOPLE":  [
-                                    "CLARITY Act rizik za DeFi i community tokene 15.9."
                                 ],
                      "SOL":  [
-
                              ],
                      "ADA":  [
-
                              ],
                      "PNUT":  [
-
                               ],
                      "AIXBT":  [
-
+                                  "AI dionice padaju zbog poziva za usporavanje razvoja AI"
                                ],
                      "ETH":  [
-                                 "ETH pao 0.7%, slabiji sentiment od BTC-a"
                              ],
                      "LINK":  [
-
                               ],
                      "PUMP":  [
-                                  "Regulatorni rizik od CLARITY Act glasanja 15.9."
                               ],
                      "TRUMP":  [
-                                   "CLARITY Act cilja meme tokene, rizik od restrikcija"
+                                  "Meme tokeni pod pritiskom uz Fed rizik povećanja kamate"
                                ],
                      "BTC":  [
-                                 "CLARITY Act glasanje 15.9. — regulatorna neizvjesnost"
+                                 "Fed kamatna stopa: 86.5% vjerojatn. povećanja ovaj tjedan"
                              ]
                  },
-    "sp500Ret5d":  0.4,
-    "fearGreed":  55,
+    "sp500Ret5d":  -0.8,
+    "fearGreed":  52,
     "macroPenalty":  1,
     "catalysts":  {
                       "ACT":  [
-
                               ],
                       "MEME":  [
-
                                ],
                       "ANIME":  [
-
                                 ],
                       "XRP":  [
-
                               ],
                       "BNB":  [
-
                               ],
                       "SUI":  [
-
                               ],
                       "AVAX":  [
-
                                ],
                       "PENGU":  [
-
                                 ],
                       "BOME":  [
-
                                ],
                       "DOGS":  [
-
                                ],
                       "NOT":  [
-
                               ],
                       "PEOPLE":  [
-
                                  ],
                       "SOL":  [
-                                  "SIMD-0550 odobren, Transaction V1 aktivan od 9.9."
+                                  "Testira razinu $100, jaki tjedni momentum"
                               ],
                       "ADA":  [
-
                               ],
                       "PNUT":  [
-
                                ],
                       "AIXBT":  [
-
                                 ],
                       "ETH":  [
-
+                                  "Clarity Act odds rastu na 30%, pozitivno za DeFi"
                               ],
                       "LINK":  [
-
                                ],
                       "PUMP":  [
-
                                ],
                       "TRUMP":  [
-
                                 ],
                       "BTC":  [
-                                  "BTC oporavak prema $77.5K, Fed odluka predstoji"
+                                  "Clarity Act odds porasli na 30% na Polymarketu"
                               ]
                   },
     "regime":  "CRAB",
     "sentimentScore":  {
                            "ACT":  0,
-                           "MEME":  0,
+                           "MEME":  -1,
                            "ANIME":  0,
                            "XRP":  0,
                            "BNB":  0,
@@ -147,21 +113,21 @@
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
-                           "NOT":  0,
-                           "PEOPLE":  -1,
+                           "NOT":  -1,
+                           "PEOPLE":  0,
                            "SOL":  1,
                            "ADA":  0,
                            "PNUT":  0,
-                           "AIXBT":  0,
+                           "AIXBT":  -1,
                            "ETH":  -1,
                            "LINK":  0,
-                           "PUMP":  -1,
+                           "PUMP":  0,
                            "TRUMP":  -1,
-                           "BTC":  0
+                           "BTC":  1
                        },
-    "aiSummary":  "DXY blago raste na 99.46 ali ostaje ispod praga 100 sto i dalje podupire kripto, dok nafta stagnira oko $102.52 uz trajne Houthi prijetnje Saudijskoj Arabiji. Bitcoin se konsolidira oko $77.5K uz Fear & Greed koji je pao s 62 na 55, a predstojeće glasanje o CLARITY Actu 15.9. donosi regulatornu neizvjesnost posebno za meme tokene i DeFi. SOL pokazuje relativnu snagu zahvaljujući SIMD-0550 nadogradnji, dok se očekuje povećana volatilnost pred Fed odlukom.",
+    "aiSummary":  "DXY ostaje ispod 100 na ~99.4 i dalje podupirući kripto, ali Fed vjerojatnost za povećanje kamate ovaj tjedan skočila je na 86.5% što pritišće sentiment i guralo S&P500 dolje za 0.8% tjedno. BTC se konsolidira blizu $77.5K uz Fear & Greed na 52 (neutralno), dok rastući Clarity Act optimizam (30% na Polymarketu, gore s 12%) pruža regulatornu potporu. Nafta skočila na $103+ zbog zatvaranja saudijskog naftovoda East-West — inflacijski rizik raste i očekuje se povećana volatilnost uoči Fed odluke.",
     "warActive":  true,
     "btcDom":  59.2,
-    "stableDom":  8.5,
-    "oil":  102.52
+    "stableDom":  11.3,
+    "oil":  103.2
 }
