@@ -1,19 +1,19 @@
 {
-    "dxy":  98.85,
-    "changeSummary":  "Nafta raste s $97.16 na $97.74 uz snažne tehničke signale kupnje, DXY ostaje stabilan na 98.85, Fear & Greed indeks zadržan na 69, a macroPenalty ispravljen na 0 sukladno pravilima klampiranja vrijednosti.",
-    "lastUpdated":  "2026-09-10T18:00:00Z",
+    "dxy":  99.06,
+    "changeSummary":  "BTC pao na $76.7K uz ETF odljeve od $282M pred CPI podacima, BTC dominacija pala na 56.8%, XRP pozitivan od SEC Nasdaq odobrenja i ETF pritoka $5.14M.",
+    "lastUpdated":  "2026-09-11T21:00:00Z",
     "warnings":  {
                      "ACT":  [
 
                              ],
                      "MEME":  [
-                                 "Njemački prijedlog 25% poreza na kripto od 2028."
+
                               ],
                      "ANIME":  [
 
                                ],
                      "XRP":  [
-                                 "Njemački prijedlog 25% poreza na kripto od 2028."
+
                              ],
                      "BNB":  [
 
@@ -40,7 +40,7 @@
 
                                 ],
                      "SOL":  [
-
+                              "ETF odljev $482K; pritisak pred CPI podacima"
                              ],
                      "ADA":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-                                 "Consensys razdvaja MetaMask od institucionalnih operacija"
+                              "ETF odljev $29.76M - 2. najveci ovog mjeseca"
                              ],
                      "LINK":  [
 
@@ -61,15 +61,16 @@
 
                               ],
                      "TRUMP":  [
-                                  "TRUMP token bez konkretnih katalizatora — čisti sentiment"
+
                                ],
                      "BTC":  [
-                                 "BTC ETF odljev $167M — prekida 3 tjedna snažnih priljeva"
+                              "ETF odljev $282M - najgori od srpnja",
+                              "CPI neizvjesnost moze gurnuti cijenu nize"
                              ]
                  },
-    "sp500Ret5d":  -0.8,
-    "fearGreed":  69,
-    "macroPenalty":  0,
+    "sp500Ret5d":  -2.08,
+    "fearGreed":  62,
+    "macroPenalty":  1,
     "catalysts":  {
                       "ACT":  [
 
@@ -81,16 +82,17 @@
 
                                 ],
                       "XRP":  [
-                                  "Clarity Act poboljšava regulatorno okruženje za XRP"
+                               "SEC odobrio XRP u Nasdaq commodity standardima",
+                               "ETF pritoci +$5.14M; fixCleanup3_3_0 aktiviran"
                               ],
                       "BNB":  [
-                                  "BNB zadržava tehničku snagu nakon jučerašnjeg +4.32%"
+
                               ],
                       "SUI":  [
 
                               ],
                       "AVAX":  [
-                                  "Arya.ag tokenizira zrno na Avalanche — blockchain adopcija"
+
                                ],
                       "PENGU":  [
 
@@ -108,7 +110,7 @@
 
                                  ],
                       "SOL":  [
-                                  "SOL ETF fondovi vraćaju pozitivne neto priljeve"
+                               "SEC odobrio SOL u Nasdaq commodity standardima"
                               ],
                       "ADA":  [
 
@@ -120,7 +122,7 @@
 
                                 ],
                       "ETH":  [
-                                  "ETH fondovi vraćaju neto priljeve — pozitivan signal"
+                               "SEC odobrio ETH u Nasdaq commodity standardima"
                               ],
                       "LINK":  [
 
@@ -132,37 +134,36 @@
 
                                 ],
                       "BTC":  [
-                                  "Clarity Act — Bessent aktivno gura Senat, regulatorna jasnoća",
-                                  "BTC sell-side rizik na minimumima — $80K zone nema prodavača"
+                               "CPI podaci mogu pogurati BTC prema $80K ako su nizi"
                               ]
                   },
     "regime":  "BULL",
     "sentimentScore":  {
                            "ACT":  0,
-                           "MEME":  -1,
+                           "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  1,
-                           "BNB":  1,
+                           "XRP":  2,
+                           "BNB":  0,
                            "SUI":  0,
-                           "AVAX":  1,
+                           "AVAX":  0,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  1,
+                           "SOL":  0,
                            "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  1,
+                           "ETH":  -1,
                            "LINK":  0,
                            "PUMP":  0,
                            "TRUMP":  0,
                            "BTC":  -1
                        },
-    "aiSummary":  "DXY ostaje stabilan oko razine 98.85, ispod ključne granice od 100, nastavljajući pružati umjerenu potporu kripto tržištu, dok nafta raste na $97.74 uz snažne tehničke signale kupnje zbog geopolitičkih napetosti. Bitcoin konsolidira oko $77.8K uz nastavak ETF odljeva od $167M, no ETH i SOL fondovi bilježe povratak neto priljeva, Fear & Greed ostaje na 69 (pohlepa), a BTC dominacija stabilna na 56.9%. Ključni katalizatori su glasanje o CLARITY Act-u uz aktivnu podršku Treasurer Bessenta, nadolazeći CPI podaci te europski regulatorni rizik s njemačkim prijedlogom 25% poreza na kripto od 2028.",
-    "warActive":  false,
-    "btcDom":  56.9,
-    "stableDom":  6.2,
-    "oil":  97.74
+    "aiSummary":  "DXY konsolidira oko 99.06 ispod kriticnog praga 100 sto blago podupire kripto, no nafta ostaje na $102.59 uz geopoliticke napetosti na Bliskom istoku uz rizik inflacijskog pritiska. Bitcoin pao na $76.7K uz masovne ETF odljeve od $282M pred kljucnim CPI podacima koji ce odrediti smjer prema $80K ili dublje, a BTC dominacija blago pala na 56.8% uz Fear & Greed na 62. XRP istice kao pozitivno iznenadenje — SEC odobrio Nasdaq commodity standarde za BTC/ETH/SOL/XRP, XRP ETF pritoci $5.14M i aktivacija fixCleanup3_3_0 amandmana.",
+    "warActive":  true,
+    "btcDom":  56.8,
+    "stableDom":  11.0,
+    "oil":  102.59
 }
