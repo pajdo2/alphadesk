@@ -185,10 +185,10 @@
       "conf": 65,
       "score": 13.918499999999998,
       "targetPct": 7.32,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "POGODAK",
+      "closePrice": 0.07678,
+      "closePct": 3.06,
+      "autoClose": true,
       "direction": "LONG",
       "autoTrack": true,
       "autoSource": "ulaz",
@@ -221,7 +221,8 @@
       "d4Hit": false,
       "d5Hit": false,
       "peakPrice": 0.07837,
-      "peakPct": 5.19
+      "peakPct": 5.19,
+      "closeReason": "⏰ Vrijeme isteklo (24/7)"
     },
     {
       "id": "1788956946997",
@@ -9432,5 +9433,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-09-14T19:00:10.483Z"
+  "updatedAt": "2026-09-15T05:46:40.392Z"
 }
