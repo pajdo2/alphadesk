@@ -17,10 +17,10 @@
       "conf": 62,
       "score": 9.558625000000001,
       "targetPct": 6.43,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "POGODAK",
+      "closePrice": 2.566,
+      "closePct": 8.54,
+      "autoClose": true,
       "direction": "LONG",
       "autoTrack": true,
       "autoSource": "ulaz",
@@ -47,13 +47,14 @@
         "fgFear": false,
         "regime": "BULL"
       },
-      "d1Hit": false,
-      "d2Hit": false,
-      "d3Hit": false,
+      "d1Hit": true,
+      "d2Hit": true,
+      "d3Hit": true,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 2.371,
-      "peakPct": 0.3
+      "peakPrice": 2.566,
+      "peakPct": 8.54,
+      "closeReason": "🎯 Target (24/7)"
     },
     {
       "id": "1789187393259_INJ",
@@ -72,10 +73,10 @@
       "conf": 63,
       "score": 11.049999999999999,
       "targetPct": 7.56,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "POGODAK",
+      "closePrice": 6.372,
+      "closePct": 8.05,
+      "autoClose": true,
       "direction": "LONG",
       "autoTrack": true,
       "autoSource": "ulaz",
@@ -102,13 +103,14 @@
         "fgFear": false,
         "regime": "BULL"
       },
-      "d1Hit": false,
-      "d2Hit": false,
-      "d3Hit": false,
+      "d1Hit": true,
+      "d2Hit": true,
+      "d3Hit": true,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 5.935,
-      "peakPct": 0.64
+      "peakPrice": 6.372,
+      "peakPct": 8.05,
+      "closeReason": "🎯 Target (24/7)"
     },
     {
       "id": "1789187393259_MORPHO",
@@ -183,10 +185,10 @@
       "conf": 65,
       "score": 13.918499999999998,
       "targetPct": 7.32,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "POGODAK",
+      "closePrice": 0.07678,
+      "closePct": 3.06,
+      "autoClose": true,
       "direction": "LONG",
       "autoTrack": true,
       "autoSource": "ulaz",
@@ -213,13 +215,14 @@
         "fgFear": false,
         "regime": "BULL"
       },
-      "d1Hit": false,
-      "d2Hit": false,
+      "d1Hit": true,
+      "d2Hit": true,
       "d3Hit": false,
       "d4Hit": false,
       "d5Hit": false,
-      "peakPrice": 0.075398,
-      "peakPct": 1.21
+      "peakPrice": 0.07837,
+      "peakPct": 5.19,
+      "closeReason": "⏰ Vrijeme isteklo (24/7)"
     },
     {
       "id": "1788956946997",
@@ -9430,5 +9433,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-09-13T11:03:16.423Z"
+  "updatedAt": "2026-09-15T05:46:40.392Z"
 }
