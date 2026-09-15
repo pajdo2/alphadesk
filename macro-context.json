@@ -1,75 +1,81 @@
 {
-    "dxy":  99.6,
-    "changeSummary":  "Fear & Greed skočio sa 52 na 69 (Pohlepa), BTC porastao na ~$78K uz +3% tržišni skok potaknut glasanjem Senata o Clarity Act, dok DXY blago porastao na 99.6 pred sutrašnjim FOMC-om.",
-    "lastUpdated":  "2026-09-15T12:00:00Z",
+    "dxy":  99.44,
+    "changeSummary":  "Sentiment ostaje stabilan uz Fear & Greed na 69 i DXY na 99.44, dok je ključni katalist dan glasanje Senata o Clarity Act koji je digao tržišnu kap +3% na $2.77T, a BTC dominacija porasla s 59.2% na 60.7% pojačavajući pritisak na altcoine.",
+    "lastUpdated":  "2026-09-15T18:00:00Z",
     "warnings":  {
                      "ACT":  [
-
+                             "FOMC sutra 85% šanse za povišenje kamate",
+                             "BTC dom 60.7% – kapital ne ide u male tokene"
                              ],
                      "MEME":  [
-                                 "Meme token bez fundamentalnog katalizatora, FOMC rizik"
+                              "BTC dom 60.7% – kapital ne ide u meme tokene",
+                              "FOMC sutra može povećati volatilnost"
                               ],
                      "ANIME":  [
-
+                               "BTC dom 60.7% – altcoin pritisak pojačan"
                                ],
                      "XRP":  [
-
+                             "FOMC sutra 85% šanse za povišenje kamate"
                              ],
                      "BNB":  [
-
+                             "FOMC odluka sutra može povećati volatilnost"
                              ],
                      "SUI":  [
-
+                             "BTC dom 60.7% – altcoin sezona odgođena"
                              ],
                      "AVAX":  [
-
+                              "FOMC odluka sutra može povećati volatilnost",
+                              "BTC dom 60.7% – altcoin pritisak pojačan"
                               ],
                      "PENGU":  [
-
+                               "BTC dom 60.7% – kapital ne ide u male tokene"
                                ],
                      "BOME":  [
-                                 "Meme token: visok rizik pred FOMC volatilnošću sutra"
+                              "BTC dom 60.7% – meme pritisak pojačan"
                               ],
                      "DOGS":  [
-
+                              "BTC dom 60.7% – altcoin pritisak pojačan"
                               ],
                      "NOT":  [
-
+                             "BTC dom 60.7% – kapital ne ide u altcoine"
                              ],
                      "PEOPLE":  [
-
+                                "FOMC sutra – meme tokeni najizloženiji",
+                                "BTC dom 60.7% – kapital ne ide u male tokene"
                                 ],
                      "SOL":  [
-
+                             "FOMC odluka sutra može povećati volatilnost"
                              ],
                      "ADA":  [
-
+                             "FOMC odluka sutra može povećati volatilnost"
                              ],
                      "PNUT":  [
-                                 "Meme token: povećana volatilnost oko FOMC odluke 16.9"
+                              "BTC dom 60.7% – meme pritisak pojačan"
                               ],
                      "AIXBT":  [
-
+                               "FOMC sutra – AI tokeni slijede BTCov sentiment"
                                ],
                      "ETH":  [
-                                 "FOMC odluka 16.9 može pritisnuti rizičnu imovinu"
+                             "FOMC sutra 85% šanse za povišenje kamate"
                              ],
                      "LINK":  [
-
+                              "FOMC odluka sutra može povećati volatilnost"
                               ],
                      "PUMP":  [
-
+                              "BTC dom 60.7% – meme pritisak pojačan"
                               ],
                      "TRUMP":  [
-                                  "Politički token: povećana volatilnost oko FOMC-a"
+                               "BTC dom 60.7% – kapital ne ide u meme tokene",
+                               "FOMC sutra može povećati volatilnost"
                                ],
                      "BTC":  [
-                                 "FOMC 16.9: 85% šanse povišenja kamate - volatilnost"
+                             "FOMC sutra 85% šanse za povišenje kamate",
+                             "Nafta Brent $107.46 drži inflacijske rizike"
                              ]
                  },
-    "sp500Ret5d":  -0.8,
+    "sp500Ret5d":  -1.5,
     "fearGreed":  69,
-    "macroPenalty":  1,
+    "macroPenalty":  0,
     "catalysts":  {
                       "ACT":  [
 
@@ -81,16 +87,16 @@
 
                                 ],
                       "XRP":  [
-                                  "Clarity Act potvrđuje XRP nije vrijednosni papir"
+                              "Clarity Act rješava regulatornu neizvjesnost za XRP"
                               ],
                       "BNB":  [
-                                  "Tržište +3% uz Clarity Act bull sentiment"
+
                               ],
                       "SUI":  [
-                                  "Bull tržište: SUI prati sektorski rast"
+
                               ],
                       "AVAX":  [
-                                   "Bull tržište: AVAX prati sektorski rast"
+
                                ],
                       "PENGU":  [
 
@@ -108,23 +114,22 @@
 
                                  ],
                       "SOL":  [
-                                  "Pi Network Protocol 27 mainnet upgrade - 15.9"
+                              "Tržišni val +3% potaknut Clarity Act glasanjem"
                               ],
                       "ADA":  [
-                                  "Clarity Act pozitivan za L1 blockchain tokene"
+
                               ],
                       "PNUT":  [
 
                                ],
                       "AIXBT":  [
-                                    "AI+kripto bull: AIXBT prati rast sektora"
+
                                 ],
                       "ETH":  [
-                                  "ETH ETF uljev $216M 11.9 - rekord mjeseca",
-                                  "Clarity Act: ETH izlazi iz regulatorne neizvjesnosti"
+                              "Clarity Act donosi regulatorni okvir za ETH"
                               ],
                       "LINK":  [
-                                   "Regulatorna jasnoća pozitivna za oracle protokole"
+
                                ],
                       "PUMP":  [
 
@@ -133,37 +138,37 @@
 
                                 ],
                       "BTC":  [
-                                  "Clarity Act glasanje 15.9 - prvi federalni kripto okvir",
-                                  "BTC ETF uljev: $986.9M tjedni rekord u 2026."
+                              "Clarity Act – prvi federalni kripto okvir u SAD-u",
+                              "ETF tjedni uljev dostigao rekordnih $986.9M"
                               ]
                   },
     "regime":  "BULL",
     "sentimentScore":  {
-                           "ACT":  0,
-                           "MEME":  0,
-                           "ANIME":  0,
+                           "ACT":  -1,
+                           "MEME":  -1,
+                           "ANIME":  -1,
                            "XRP":  2,
                            "BNB":  1,
-                           "SUI":  1,
-                           "AVAX":  1,
-                           "PENGU":  0,
-                           "BOME":  0,
-                           "DOGS":  0,
-                           "NOT":  0,
-                           "PEOPLE":  0,
+                           "SUI":  0,
+                           "AVAX":  0,
+                           "PENGU":  -1,
+                           "BOME":  -1,
+                           "DOGS":  -1,
+                           "NOT":  -1,
+                           "PEOPLE":  -1,
                            "SOL":  1,
-                           "ADA":  1,
-                           "PNUT":  0,
-                           "AIXBT":  1,
-                           "ETH":  2,
-                           "LINK":  1,
-                           "PUMP":  0,
-                           "TRUMP":  0,
+                           "ADA":  0,
+                           "PNUT":  -1,
+                           "AIXBT":  0,
+                           "ETH":  1,
+                           "LINK":  0,
+                           "PUMP":  -1,
+                           "TRUMP":  -1,
                            "BTC":  2
                        },
-    "aiSummary":  "DXY raste četvrti dan zaredom na 99.6 pred FOMC odlukom 16.9 kada je 85% šanse za povišenje kamate, no ostaje ispod 100 što blago podupire kripto sentiment. Fear & Greed skočio je sa 52 na 69 (Pohlepa) uz +3% skok tržišne kap na $2.77T potaknut glasanjem Senata o Clarity Act koji bi kriptu dao prvi federalni regulatorni okvir u SAD-u, a BTC ETF tjedni uljev dostigao rekordnih $986.9M. Nafta Brent na $107 zbog blokade Hormuškog prolaza i Bab el-Mandeba drži inflacijske rizike visokim — očekuj povećanu volatilnost oko sutrašnjeg FOMC-a.",
-    "warActive":  true,
-    "btcDom":  59.2,
-    "stableDom":  9.9,
-    "oil":  107.0
+    "aiSummary":  "DXY se stabilizirao na 99.44, ispod razine 100, što blago podupire kripto sentiment, a Fear & Greed indeks iznosi 69 (Pohlepa) uz tržišni skok +3% na $2.77T potaknut glasanjem Senata o Clarity Act koji bi kriptu dao prvi federalni regulatorni okvir u SAD-u. BTC dominacija porasla je na 60.7%, signalizirajući odljev kapitala iz altcoina prema BTC-u, dok nafta Brent drži razinu od $107.46 uz blokadu Hormuškog prolaza što zadržava inflacijske rizike. Sutrašnja FOMC odluka (85% šanse za povišenje kamate) donosi ključnu volatilnost – pazi na reakciju BTC-a oko 14:00 ET.",
+    "warActive":  false,
+    "btcDom":  60.7,
+    "stableDom":  10.9,
+    "oil":  107.46
 }
