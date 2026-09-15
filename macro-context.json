@@ -1,13 +1,13 @@
 {
-    "dxy":  99.1,
-    "changeSummary":  "Nafta skočila s $103.2 na $108.3 zbog drone napada na saudijski naftovod, DXY blago pao na 99.1, dok ostali makroparametri (F&G 52, CRAB režim, penalty 1) ostaju nepromijenjeni.",
-    "lastUpdated":  "2026-09-14T12:00:00Z",
+    "dxy":  99.6,
+    "changeSummary":  "Fear & Greed skočio sa 52 na 69 (Pohlepa), BTC porastao na ~$78K uz +3% tržišni skok potaknut glasanjem Senata o Clarity Act, dok DXY blago porastao na 99.6 pred sutrašnjim FOMC-om.",
+    "lastUpdated":  "2026-09-15T12:00:00Z",
     "warnings":  {
                      "ACT":  [
 
                              ],
                      "MEME":  [
-
+                                 "Meme token bez fundamentalnog katalizatora, FOMC rizik"
                               ],
                      "ANIME":  [
 
@@ -28,7 +28,7 @@
 
                                ],
                      "BOME":  [
-
+                                 "Meme token: visok rizik pred FOMC volatilnošću sutra"
                               ],
                      "DOGS":  [
 
@@ -46,13 +46,13 @@
 
                              ],
                      "PNUT":  [
-
+                                 "Meme token: povećana volatilnost oko FOMC odluke 16.9"
                               ],
                      "AIXBT":  [
-                                   "AI sektor pod pritiskom zbog AI rasprodaje na burzi"
+
                                ],
                      "ETH":  [
-                                 "Altcoin kapital odlijeva se natrag u BTC - dom. raste"
+                                 "FOMC odluka 16.9 može pritisnuti rizičnu imovinu"
                              ],
                      "LINK":  [
 
@@ -61,14 +61,14 @@
 
                               ],
                      "TRUMP":  [
-
+                                  "Politički token: povećana volatilnost oko FOMC-a"
                                ],
                      "BTC":  [
-                                 "Fed povišenje kamate 86.5% - negativan pritisak na sentiment"
+                                 "FOMC 16.9: 85% šanse povišenja kamate - volatilnost"
                              ]
                  },
     "sp500Ret5d":  -0.8,
-    "fearGreed":  52,
+    "fearGreed":  69,
     "macroPenalty":  1,
     "catalysts":  {
                       "ACT":  [
@@ -81,16 +81,16 @@
 
                                 ],
                       "XRP":  [
-                                  "Clarity Act daje regulatornu jasnoću za XRP"
+                                  "Clarity Act potvrđuje XRP nije vrijednosni papir"
                               ],
                       "BNB":  [
-
+                                  "Tržište +3% uz Clarity Act bull sentiment"
                               ],
                       "SUI":  [
-
+                                  "Bull tržište: SUI prati sektorski rast"
                               ],
                       "AVAX":  [
-
+                                   "Bull tržište: AVAX prati sektorski rast"
                                ],
                       "PENGU":  [
 
@@ -105,63 +105,65 @@
 
                               ],
                       "PEOPLE":  [
-                                     "Clarity Act cloture - regulatorna podrška meme tokenu"
+
                                  ],
                       "SOL":  [
-
+                                  "Pi Network Protocol 27 mainnet upgrade - 15.9"
                               ],
                       "ADA":  [
-
+                                  "Clarity Act pozitivan za L1 blockchain tokene"
                               ],
                       "PNUT":  [
 
                                ],
                       "AIXBT":  [
-
+                                    "AI+kripto bull: AIXBT prati rast sektora"
                                 ],
                       "ETH":  [
-
+                                  "ETH ETF uljev $216M 11.9 - rekord mjeseca",
+                                  "Clarity Act: ETH izlazi iz regulatorne neizvjesnosti"
                               ],
                       "LINK":  [
-
+                                   "Regulatorna jasnoća pozitivna za oracle protokole"
                                ],
                       "PUMP":  [
 
                                ],
                       "TRUMP":  [
-                                    "Clarity Act glasanje - politički tokeni osjetljivi na reg."
+
                                 ],
                       "BTC":  [
-                                  "Clarity Act cloture glasanje utorak - regulatorni optimizam"
+                                  "Clarity Act glasanje 15.9 - prvi federalni kripto okvir",
+                                  "BTC ETF uljev: $986.9M tjedni rekord u 2026."
                               ]
                   },
-    "regime":  "CRAB",
+    "regime":  "BULL",
     "sentimentScore":  {
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  1,
-                           "BNB":  0,
-                           "SUI":  0,
-                           "AVAX":  0,
+                           "XRP":  2,
+                           "BNB":  1,
+                           "SUI":  1,
+                           "AVAX":  1,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
-                           "PEOPLE":  1,
-                           "SOL":  0,
-                           "ADA":  0,
+                           "PEOPLE":  0,
+                           "SOL":  1,
+                           "ADA":  1,
                            "PNUT":  0,
-                           "AIXBT":  -1,
-                           "ETH":  0,
-                           "LINK":  0,
+                           "AIXBT":  1,
+                           "ETH":  2,
+                           "LINK":  1,
                            "PUMP":  0,
-                           "TRUMP":  1,
-                           "BTC":  1
+                           "TRUMP":  0,
+                           "BTC":  2
                        },
-    "aiSummary":  "DXY drži ispod 100 na ~99.1 i dalje pruža umjerenu podršku kriptu, ali Fed vjerojatnost povišenja kamate ovaj tjedan porasla je na 86.5% što pritišće sentiment i gura S&P500 na tjedni pad od -0.8%. BTC se konsolidira oko $77.5K uz Fear & Greed na 52 (neutralno), dok nafta skače na $108 (Brent) zbog drone napada na saudijski naftovod što povećava inflacijske rizike. Clarity Act 'finalna ponuda' Republikanaca pred cloture glasanjem diže regulatorni optimizam za kripto, no Fed tjedni sastanak donosi povećanu volatilnost.",
+    "aiSummary":  "DXY raste četvrti dan zaredom na 99.6 pred FOMC odlukom 16.9 kada je 85% šanse za povišenje kamate, no ostaje ispod 100 što blago podupire kripto sentiment. Fear & Greed skočio je sa 52 na 69 (Pohlepa) uz +3% skok tržišne kap na $2.77T potaknut glasanjem Senata o Clarity Act koji bi kriptu dao prvi federalni regulatorni okvir u SAD-u, a BTC ETF tjedni uljev dostigao rekordnih $986.9M. Nafta Brent na $107 zbog blokade Hormuškog prolaza i Bab el-Mandeba drži inflacijske rizike visokim — očekuj povećanu volatilnost oko sutrašnjeg FOMC-a.",
     "warActive":  true,
-    "btcDom":  59.8,
-    "stableDom":  11.3,
-    "oil":  108.3
+    "btcDom":  59.2,
+    "stableDom":  9.9,
+    "oil":  107.0
 }
