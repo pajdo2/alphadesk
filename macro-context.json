@@ -1,22 +1,22 @@
 {
-    "dxy":  99.44,
-    "changeSummary":  "BTC dominacija pala s 60.7% na 59.2% uz tržišni rast +3% potaknut glasanjem Senata o Clarity Act-u, dok DXY i Fear & Greed ostaju stabilni na 99.44 i 69.",
-    "lastUpdated":  "2026-09-15T20:00:00Z",
+    "dxy":  99.72,
+    "changeSummary":  "Nafta skočila na $104 zbog bliskoistočnih poremećaja, FOMC hike šansa rasla na 85%, macroPenalty ispravljen na 0.",
+    "lastUpdated":  "2026-09-16T10:00:00Z",
     "warnings":  {
                      "ACT":  [
 
                              ],
                      "MEME":  [
-                                 "FOMC rate hike 16.9. može uzrokovati dump memcoina"
+
                               ],
                      "ANIME":  [
 
                                ],
                      "XRP":  [
-                                 "FOMC rate hike rizik, kratkoročna volatilnost moguća"
+
                              ],
                      "BNB":  [
-                                 "FOMC 16.9. - mogući pritisak na sve altcoine"
+
                              ],
                      "SUI":  [
 
@@ -28,7 +28,7 @@
 
                                ],
                      "BOME":  [
-                                  "Niska likvidnost + FOMC rizik = povećana volatilnost"
+
                               ],
                      "DOGS":  [
 
@@ -37,10 +37,10 @@
 
                              ],
                      "PEOPLE":  [
-                                    "Visoka volatilnost memcoina oko FOMC odluke 16.9."
+
                                 ],
                      "SOL":  [
-                                 "FOMC 16.9. - rate hike signali pritiskaju altcoine"
+
                              ],
                      "ADA":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-                                 "FOMC sutra 16.9., 85% šanse za povišenje kamate"
+
                              ],
                      "LINK":  [
 
@@ -61,14 +61,14 @@
 
                               ],
                      "TRUMP":  [
-                                   "Visoka volatilnost memcoina oko FOMC odluke 16.9."
+
                                ],
                      "BTC":  [
-                                 "FOMC sutra 16.9., 85% šanse za povišenje kamate"
+                                 "FOMC 85% šansa na hike danas – negativan za kripto"
                              ]
                  },
-    "sp500Ret5d":  -1.2,
-    "fearGreed":  69,
+    "sp500Ret5d":  -1.5,
+    "fearGreed":  48,
     "macroPenalty":  0,
     "catalysts":  {
                       "ACT":  [
@@ -81,13 +81,13 @@
 
                                 ],
                       "XRP":  [
-                                  "Clarity Act okončava SEC vs XRP regulatornu neizvjesnost"
+
                               ],
                       "BNB":  [
-                                  "Kripto tržište +3%, $2.77T ukupna tržišna kapitalizacija"
+
                               ],
                       "SUI":  [
-                                  "SUI ekosustav raste uz pozitivan kripto sentiment"
+
                               ],
                       "AVAX":  [
 
@@ -105,63 +105,63 @@
 
                               ],
                       "PEOPLE":  [
-                                     "Clarity Act glasanje povoljno za politički memcoin"
+
                                  ],
                       "SOL":  [
-                                  "Kripto tržište +3%, SOL prati BTC uzlazni trend"
+
                               ],
                       "ADA":  [
-                                  "Clarity Act pozitivan za L1 projekte poput ADA"
+
                               ],
                       "PNUT":  [
 
                                ],
                       "AIXBT":  [
-                                    "AI kripto segment raste uz regulatornu jasnoću"
+
                                 ],
                       "ETH":  [
-                                  "Clarity Act daje ETH pravni status vrijednosnog papira"
+                                  "SWIFT + 17 banaka pilot tokeniziranih depozita"
                               ],
                       "LINK":  [
-
+                                   "SWIFT + 17 banaka pilot tokeniziranih depozita"
                                ],
                       "PUMP":  [
 
                                ],
                       "TRUMP":  [
-                                    "Clarity Act: regulatorni tailwind za meme tokene"
+
                                 ],
                       "BTC":  [
-                                  "Clarity Act glasanje Senata, prvi kripto okvir u SAD-u"
+                                  "Kongres razmatra strateške BTC rezerve SAD"
                               ]
                   },
-    "regime":  "BULL",
+    "regime":  "CRAB",
     "sentimentScore":  {
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  2,
-                           "BNB":  1,
-                           "SUI":  1,
-                           "AVAX":  1,
+                           "XRP":  0,
+                           "BNB":  0,
+                           "SUI":  0,
+                           "AVAX":  0,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
-                           "PEOPLE":  1,
-                           "SOL":  1,
-                           "ADA":  1,
+                           "PEOPLE":  0,
+                           "SOL":  0,
+                           "ADA":  0,
                            "PNUT":  0,
-                           "AIXBT":  1,
-                           "ETH":  2,
+                           "AIXBT":  0,
+                           "ETH":  1,
                            "LINK":  1,
                            "PUMP":  0,
-                           "TRUMP":  1,
-                           "BTC":  2
+                           "TRUMP":  0,
+                           "BTC":  0
                        },
-    "aiSummary":  "DXY se drži na 99.44, ispod razine 100, što podupire kripto sentiment, a Fear & Greed indeks iznosi 69 (Pohlepa) uz tržišni skok +3% na $2.77T potaknut glasanjem Senata o Clarity Act-u koji kriptu daje prvi federalni regulatorni okvir u SAD-u. BTC dominacija blago je pala na 59.2% uz opći pozitivan sentiment, dok nafta Brent ostaje na $107.5 uz geopolitičke rizike od blokade Hormuškog prolaza. Sutrašnja FOMC odluka (85% šanse za povišenje kamate) donosi ključnu volatilnost – pazi na reakciju BTC-a oko 14:00 ET.",
+    "aiSummary":  "DXY ostaje ispod 100 (99.72) što je blago pozitivno za kripto, ali nafta je skočila na ~$104 zbog bliskoistočnih poremećaja opskrbe, pojačavajući inflacijske pritiske. Fear & Greed indeks na 48 (Neutralno) odražava opreznost uoči FOMC odluke danas – tržište cijeni 85% šansu za povišenje kamatnih stopa za 25bp. BTC konsolidira oko $77k u CRAB fazi; hold odluka Feda otvorila bi put prema $85k, dok bi hike produljio bočno kretanje.",
     "warActive":  false,
-    "btcDom":  59.2,
-    "stableDom":  6.2,
-    "oil":  107.5
+    "btcDom":  58.2,
+    "stableDom":  6.5,
+    "oil":  104.0
 }
