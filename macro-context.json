@@ -1,7 +1,7 @@
 {
     "dxy":  99.72,
-    "changeSummary":  "WarActive aktiviran zbog Houthi napada na saudijsku infrastrukturu – macroPenalty skočio s 0 na 2, dok DXY (99.72) i Fear&Greed (48) ostaju nepromijenjeni.",
-    "lastUpdated":  "2026-09-16T12:00:00Z",
+    "changeSummary":  "Makro uvjeti gotovo nepromijenjeni vs 12:00Z – DXY 99.72 i nafta $104.68 stabilni, ali macroPenalty smanjen s 2 na 1 jer DXY<100 i dalje vrijedi, dok BTC dominanca blago raste na 59.2% uz Fear & Greed koji se stabilizira na 49.",
+    "lastUpdated":  "2026-09-16T18:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -13,7 +13,7 @@
 
                                ],
                      "XRP":  [
-                                 "Brazil podigao min. kapital za kripto tvrtke"
+
                              ],
                      "BNB":  [
 
@@ -34,7 +34,7 @@
 
                               ],
                      "NOT":  [
-                                 "Regulatorna neizvjesnost u TON ekosustavu"
+
                              ],
                      "PEOPLE":  [
 
@@ -52,24 +52,25 @@
 
                                ],
                      "ETH":  [
-
+                             "EU Cyber Resilience Act - wallet ranjivosti 24h"
                              ],
                      "LINK":  [
 
                               ],
                      "PUMP":  [
-                                  "EU Cyber Resilience Act - novo regulatorno breme"
+
                               ],
                      "TRUMP":  [
-                                   "FOMC povišenje + inflacija = rizik za meme tokene"
+
                                ],
                      "BTC":  [
-                                 "FOMC hike 87% - moguće produženo bočno kretanje"
+                             "FOMC hike 85% sansa - BTC ostaje prikovan na $78k",
+                             "Nafta $104.68 Houthi napadi - warActive aktivan"
                              ]
                  },
-    "sp500Ret5d":  -1.5,
-    "fearGreed":  48,
-    "macroPenalty":  2,
+    "sp500Ret5d":  -1.2,
+    "fearGreed":  49,
+    "macroPenalty":  1,
     "catalysts":  {
                       "ACT":  [
 
@@ -81,7 +82,7 @@
 
                                 ],
                       "XRP":  [
-
+                              "CLARITY Act glasanje u Senatu - regulatorna jasnoća"
                               ],
                       "BNB":  [
 
@@ -120,10 +121,10 @@
 
                                 ],
                       "ETH":  [
-                                  "SWIFT/Citi tokenizacija - potvrda blockchain utility"
+                              "SWIFT pilot tokeniziranih depozita s 17 banaka"
                               ],
                       "LINK":  [
-                                   "SWIFT pilot s 17 banaka - LINK oracle direktni use case"
+                               "SWIFT pilot 17 banaka - potraznja za oracle servise"
                                ],
                       "PUMP":  [
 
@@ -132,36 +133,37 @@
 
                                 ],
                       "BTC":  [
-                                  "Kongres razmatra strateške Bitcoin rezerve SAD-a"
+                              "FOMC hold moguce - put prema $82-85k otvoren",
+                              "House KOM glasa o BTC nacionalnoj rezervi danas"
                               ]
                   },
     "regime":  "CRAB",
     "sentimentScore":  {
-                           "ACT":  -1,
-                           "MEME":  -1,
-                           "ANIME":  -1,
-                           "XRP":  -1,
+                           "ACT":  0,
+                           "MEME":  0,
+                           "ANIME":  0,
+                           "XRP":  1,
                            "BNB":  0,
                            "SUI":  0,
                            "AVAX":  0,
-                           "PENGU":  -1,
-                           "BOME":  -1,
-                           "DOGS":  -1,
-                           "NOT":  -1,
-                           "PEOPLE":  -1,
+                           "PENGU":  0,
+                           "BOME":  0,
+                           "DOGS":  0,
+                           "NOT":  0,
+                           "PEOPLE":  0,
                            "SOL":  0,
                            "ADA":  0,
-                           "PNUT":  -1,
-                           "AIXBT":  -1,
-                           "ETH":  0,
+                           "PNUT":  0,
+                           "AIXBT":  0,
+                           "ETH":  1,
                            "LINK":  1,
-                           "PUMP":  -2,
-                           "TRUMP":  -1,
+                           "PUMP":  0,
+                           "TRUMP":  0,
                            "BTC":  1
                        },
-    "aiSummary":  "DXY ostaje stabilan na 99.72, ispod 100 – neutralan do blago pozitivan signal za kripto, dok nafta raste na $104.68 zbog Houthi napada koji su zatvorili saudijski East-West naftovod i time aktivirali warActive. FOMC danas s 87% šansom za povišenje kamatnih stopa pojačava inflacijske pritiske, a Fear & Greed na 48 (Neutralno) odražava oprez tržišta. BTC konsolidira oko $75.8k u CRAB fazi – hold odluka Feda otvorila bi put prema $82-85k, dok bi hike produljio bočno kretanje.",
+    "aiSummary":  "DXY stagnira na 99.72, ispod 100 – blago pozitivan signal za kripto, dok nafta ostaje na $104.68 zbog Houthi napada koji drže warActive aktivan. FOMC danas s 85% šansom za povišenje kamatnih stopa pojačava inflacijske pritiske, a Fear & Greed na 49 (Neutralno) odražava oprez tržišta. BTC konsolidira na ~$76.4k u CRAB fazi – Fed hold otvara put prema $82-85k, dok bi hike produljio bočno kretanje.",
     "warActive":  true,
-    "btcDom":  58.5,
+    "btcDom":  59.2,
     "stableDom":  11.8,
     "oil":  104.68
 }
