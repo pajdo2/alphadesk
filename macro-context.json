@@ -1,7 +1,7 @@
 {
-    "dxy":  99.8,
-    "changeSummary":  "DXY ostao stabilno ispod 100, nafta pala s $104.68 na $102.13, Fear & Greed gotovo nepromijenjen na 48, dok je propast CLARITY Akta donijela regulatorni negativac za cijeli sektor.",
-    "lastUpdated":  "2026-09-17T10:00:00Z",
+    "dxy":  99.7,
+    "changeSummary":  "Nafta skočila na $108 (+~6 USD) zbog Houthi napada na saudijsku infrastrukturu, BTC dominacija pala na 57.4%, a Fed hike od 25bps i CLARITY Act neuspjeh zadržavaju CRAB fazu uz nepromijenjen macroPenalty=1.",
+    "lastUpdated":  "2026-09-17T14:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -37,13 +37,13 @@
 
                              ],
                      "PEOPLE":  [
-                                    "CLARITY Act propao – regulatorni rizik za zajednicu"
+                                    "CLARITY Act neuspjeh - regulatorni rizik"
                                 ],
                      "SOL":  [
 
                              ],
                      "ADA":  [
-
+                                 "Regulatorna neizvjesnost - CLARITY Act neuspjeh"
                              ],
                      "PNUT":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-
+                                 "CLARITY Act propao - DeFi regulatorni pritisak"
                              ],
                      "LINK":  [
 
@@ -61,14 +61,14 @@
 
                               ],
                      "TRUMP":  [
-                                   "CLARITY Act propao – regulatorni udar na kripto industriju"
+                                   "Meme token rizik - politički FUD aktivan"
                                ],
                      "BTC":  [
-                                 "Fed hike danas – rizik pada prema $72k zoni"
+                                 "Fed hike 25bps - produžena CRAB faza"
                              ]
                  },
-    "sp500Ret5d":  -0.8,
-    "fearGreed":  48,
+    "sp500Ret5d":  -1.5,
+    "fearGreed":  50,
     "macroPenalty":  1,
     "catalysts":  {
                       "ACT":  [
@@ -81,7 +81,7 @@
 
                                 ],
                       "XRP":  [
-
+                                  "XRPL Batch amandman 82.86% glasova - poboljšanja"
                               ],
                       "BNB":  [
 
@@ -90,7 +90,7 @@
 
                               ],
                       "AVAX":  [
-
+                                   "$200B konglomerat odabrao Avalanche za tokeniz. sec."
                                ],
                       "PENGU":  [
 
@@ -108,7 +108,7 @@
 
                                  ],
                       "SOL":  [
-
+                                  "Transaction V1 upgrade - 3.3x veće transakcije"
                               ],
                       "ADA":  [
 
@@ -132,8 +132,7 @@
 
                                 ],
                       "BTC":  [
-                                  "Zlatni križ – 50d EMA prešao 200d EMA, cilj $80k",
-                                  "Fed hold otvara put prema $82-85k"
+                                  "Zlatni križ 50d/200d EMA drži tehnički optimizam"
                               ]
                   },
     "regime":  "CRAB",
@@ -141,28 +140,28 @@
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  0,
+                           "XRP":  1,
                            "BNB":  0,
                            "SUI":  0,
-                           "AVAX":  0,
+                           "AVAX":  1,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  -1,
-                           "SOL":  0,
-                           "ADA":  0,
+                           "SOL":  1,
+                           "ADA":  -1,
                            "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  0,
+                           "ETH":  -1,
                            "LINK":  0,
                            "PUMP":  0,
                            "TRUMP":  -1,
-                           "BTC":  1
+                           "BTC":  0
                        },
-    "aiSummary":  "DXY drži se ispod 100 na ~99.8, što je blago pozitivno za kripto, dok nafta pada na $102.13 – warActive ostaje aktivan zbog Houthi napada na saudijsku infrastrukturu. Fear & Greed na 48 (Neutralno) odražava nastavak horizontalne konsolidacije, a zlatni križ na BTC grafikonu (50d > 200d EMA) daje tehnički optimizam s ciljem $80k. Fed hike danas mogao bi prekinuti rast i produljiti CRAB fazu, dok propast CLARITY Akta povećava regulatorni pritisak na sektor.",
+    "aiSummary":  "DXY se drži ispod 100 na ~99.7 što blago podržava kripto, no nafta je eskalirala na $108 zbog Houthi napada na saudijsku infrastrukturu koji povećavaju inflacijski pritisak. Fed je podigao kamatnu stopu za 25bps, a propast CLARITY Akta u Kongresu pojačava regulatornu neizvjesnost te drži Fear & Greed na neutralnih 50. Kratkoročno se nastavak CRAB faze čini vjerojatnim uz BTC u rasponu $74-79k – proboj navišu zahtijeva Fed pivot ili regulatornu jasnoću.",
     "warActive":  true,
-    "btcDom":  59.2,
-    "stableDom":  11.9,
-    "oil":  102.13
+    "btcDom":  57.4,
+    "stableDom":  11.5,
+    "oil":  108.0
 }
