@@ -1,7 +1,7 @@
 {
-    "dxy":  99.72,
-    "changeSummary":  "Makro uvjeti gotovo nepromijenjeni vs 12:00Z – DXY 99.72 i nafta $104.68 stabilni, ali macroPenalty smanjen s 2 na 1 jer DXY<100 i dalje vrijedi, dok BTC dominanca blago raste na 59.2% uz Fear & Greed koji se stabilizira na 49.",
-    "lastUpdated":  "2026-09-16T18:00:00Z",
+    "dxy":  99.8,
+    "changeSummary":  "DXY ostao stabilno ispod 100, nafta pala s $104.68 na $102.13, Fear & Greed gotovo nepromijenjen na 48, dok je propast CLARITY Akta donijela regulatorni negativac za cijeli sektor.",
+    "lastUpdated":  "2026-09-17T10:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -37,7 +37,7 @@
 
                              ],
                      "PEOPLE":  [
-
+                                    "CLARITY Act propao – regulatorni rizik za zajednicu"
                                 ],
                      "SOL":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-                             "EU Cyber Resilience Act - wallet ranjivosti 24h"
+
                              ],
                      "LINK":  [
 
@@ -61,15 +61,14 @@
 
                               ],
                      "TRUMP":  [
-
+                                   "CLARITY Act propao – regulatorni udar na kripto industriju"
                                ],
                      "BTC":  [
-                             "FOMC hike 85% sansa - BTC ostaje prikovan na $78k",
-                             "Nafta $104.68 Houthi napadi - warActive aktivan"
+                                 "Fed hike danas – rizik pada prema $72k zoni"
                              ]
                  },
-    "sp500Ret5d":  -1.2,
-    "fearGreed":  49,
+    "sp500Ret5d":  -0.8,
+    "fearGreed":  48,
     "macroPenalty":  1,
     "catalysts":  {
                       "ACT":  [
@@ -82,7 +81,7 @@
 
                                 ],
                       "XRP":  [
-                              "CLARITY Act glasanje u Senatu - regulatorna jasnoća"
+
                               ],
                       "BNB":  [
 
@@ -121,10 +120,10 @@
 
                                 ],
                       "ETH":  [
-                              "SWIFT pilot tokeniziranih depozita s 17 banaka"
+
                               ],
                       "LINK":  [
-                               "SWIFT pilot 17 banaka - potraznja za oracle servise"
+
                                ],
                       "PUMP":  [
 
@@ -133,8 +132,8 @@
 
                                 ],
                       "BTC":  [
-                              "FOMC hold moguce - put prema $82-85k otvoren",
-                              "House KOM glasa o BTC nacionalnoj rezervi danas"
+                                  "Zlatni križ – 50d EMA prešao 200d EMA, cilj $80k",
+                                  "Fed hold otvara put prema $82-85k"
                               ]
                   },
     "regime":  "CRAB",
@@ -142,7 +141,7 @@
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  1,
+                           "XRP":  0,
                            "BNB":  0,
                            "SUI":  0,
                            "AVAX":  0,
@@ -150,20 +149,20 @@
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
-                           "PEOPLE":  0,
+                           "PEOPLE":  -1,
                            "SOL":  0,
                            "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  1,
-                           "LINK":  1,
+                           "ETH":  0,
+                           "LINK":  0,
                            "PUMP":  0,
-                           "TRUMP":  0,
+                           "TRUMP":  -1,
                            "BTC":  1
                        },
-    "aiSummary":  "DXY stagnira na 99.72, ispod 100 – blago pozitivan signal za kripto, dok nafta ostaje na $104.68 zbog Houthi napada koji drže warActive aktivan. FOMC danas s 85% šansom za povišenje kamatnih stopa pojačava inflacijske pritiske, a Fear & Greed na 49 (Neutralno) odražava oprez tržišta. BTC konsolidira na ~$76.4k u CRAB fazi – Fed hold otvara put prema $82-85k, dok bi hike produljio bočno kretanje.",
+    "aiSummary":  "DXY drži se ispod 100 na ~99.8, što je blago pozitivno za kripto, dok nafta pada na $102.13 – warActive ostaje aktivan zbog Houthi napada na saudijsku infrastrukturu. Fear & Greed na 48 (Neutralno) odražava nastavak horizontalne konsolidacije, a zlatni križ na BTC grafikonu (50d > 200d EMA) daje tehnički optimizam s ciljem $80k. Fed hike danas mogao bi prekinuti rast i produljiti CRAB fazu, dok propast CLARITY Akta povećava regulatorni pritisak na sektor.",
     "warActive":  true,
     "btcDom":  59.2,
-    "stableDom":  11.8,
-    "oil":  104.68
+    "stableDom":  11.9,
+    "oil":  102.13
 }
