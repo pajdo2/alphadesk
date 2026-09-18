@@ -1,7 +1,7 @@
 {
-    "dxy":  99.8,
-    "changeSummary":  "Nafta pala s $108 na $104 zbog pomaka krize s Houthi/Saudijske na US-Iran tenzije oko Hormuškog tjesnaca, BTC dominacija porasla s 57.4% na 59.2%, F&G ostao neutralnih 48 uz nepromijenjeni CRAB režim i macroPenalty 1.",
-    "lastUpdated":  "2026-09-17T17:00:00Z",
+    "dxy":  99.4,
+    "changeSummary":  "Fed je danas podigao kamatne stope za 25bp izazivajući kratku volatilnost BTC-a, dok su DXY, dominacija i Fear & Greed ostali gotovo nepromijenjeni u odnosu na prethodnu analizu.",
+    "lastUpdated":  "2026-09-17T20:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -13,7 +13,7 @@
 
                                ],
                      "XRP":  [
-                                 "CLARITY Akt propao u Kongresu, reg. neizvjesnost"
+
                              ],
                      "BNB":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-
+                                 "Fed kamatne stope rastu, risk-off pritisak"
                              ],
                      "LINK":  [
 
@@ -64,11 +64,12 @@
 
                                ],
                      "BTC":  [
-                                 "Fed najavljuje daljnje podizanje kamatnih stopa"
+                                 "Fed +25bp, inflacijski pritisak ostaje visok",
+                                 "Warzone aktivna, geopolitička neizvjesnost traje"
                              ]
                  },
-    "sp500Ret5d":  -0.8,
-    "fearGreed":  48,
+    "sp500Ret5d":  -0.5,
+    "fearGreed":  46,
     "macroPenalty":  1,
     "catalysts":  {
                       "ACT":  [
@@ -120,7 +121,8 @@
 
                                 ],
                       "ETH":  [
-
+                                  "Circle Arc mainnet, BlackRock/DTCC validatori",
+                                  "Deutsche Bank planira inst. digital-asset custody"
                               ],
                       "LINK":  [
 
@@ -132,7 +134,8 @@
 
                                 ],
                       "BTC":  [
-                                  "BTC iznad $75k, tržišna kap $1.53T, dominacija 59.2%"
+                                  "SEC inovacijska iznimka - put za tokeniz. burze",
+                                  "BTC oporavio iznad 76.5k nakon Fed odluke"
                               ]
                   },
     "regime":  "CRAB",
@@ -140,7 +143,7 @@
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  -1,
+                           "XRP":  0,
                            "BNB":  0,
                            "SUI":  0,
                            "AVAX":  0,
@@ -153,15 +156,15 @@
                            "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  0,
+                           "ETH":  -1,
                            "LINK":  0,
                            "PUMP":  0,
                            "TRUMP":  0,
-                           "BTC":  0
+                           "BTC":  -1
                        },
-    "aiSummary":  "DXY se drži ispod 100 na ~99.8 što blago podržava kripto, no nafta je eskalirala na ~$104 zbog US-Iran tenzija u Hormuškom tjesnacu (napadi na supertankere) koji pojačavaju inflacijski pritisak uz CPI na 3.4% i warActive. Fed nastavlja ciklus podizanja kamatnih stopa, a propast CLARITY Akta drži regulatornu neizvjesnost visokom dok Fear & Greed oscilira oko neutralnih 48. BTC se zadržava u uskom rasponu $75-76k s dominacijom 59.2%, a nastavak CRAB faze čini se vjerojatnim dok nema Fed pivota ili geopolitičke deeskalacije.",
+    "aiSummary":  "DXY se zadržava blago ispod 100 (~99.4) što i dalje blago podržava kripto, no Fed je danas podigao stope za 25bp zbog persistentne inflacije, izazivajući kratkotrajnu volatilnost — BTC pao na ~75k pa se oporavio iznad 76.5k. Fear & Greed oscilira oko 46 (neutralno-strah), BTC dominacija stabilna na ~59.3%, a CRAB faza nastavlja se bez jasnog signala za proboj dok Fed pivot ostaje upitan uz SEC inovacijsku iznimku kao jedini pozitivni katalizator.",
     "warActive":  true,
-    "btcDom":  59.2,
-    "stableDom":  11.7,
+    "btcDom":  59.3,
+    "stableDom":  6.2,
     "oil":  103.8
 }
