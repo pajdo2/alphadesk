@@ -1,19 +1,19 @@
 {
-    "dxy":  99.7,
-    "changeSummary":  "Fed podigao kamate 25bps na 3.75-4.00% uz hawkish signal, ETH ETF odljev $224M i BoJ rizik povećali pritisak, BTC pada na ~76.5k dok F&G ostaje neutralan na 50.",
-    "lastUpdated":  "2026-09-18T22:00:00Z",
+    "dxy":  100.33,
+    "changeSummary":  "DXY blago porastao na 100.3 (s 99.7), Fear & Greed pao na 45 (s 50), BTC dominacija i nafta ostaju stabilni, a ukupni CRAB režim se nastavlja.",
+    "lastUpdated":  "2026-09-18T10:00:00Z",
     "warnings":  {
                      "ACT":  [
-                             "Meme token - visoka volatilnost u CRAB fazi"
+
                              ],
                      "MEME":  [
-                              "Visoka volatilnost, bez katalizatora za rast"
+
                               ],
                      "ANIME":  [
-                               "Mala likvidnost, riskantno u sideways tržištu"
+
                                ],
                      "XRP":  [
-
+                         "SEC odgodio XRP Short ETF na 11.10.2026 (19. odgoda)"
                              ],
                      "BNB":  [
 
@@ -25,19 +25,19 @@
 
                               ],
                      "PENGU":  [
-                               "Mala tržišna kapa, visok rizik pada"
+
                                ],
                      "BOME":  [
-                              "Meme token bez fundamentala, CRAB opasan"
+
                               ],
                      "DOGS":  [
-                              "Bez jasnog katalizatora, stagnacija moguća"
+
                               ],
                      "NOT":  [
-                             "Volatilnost Telegram tokena povećana"
+
                              ],
                      "PEOPLE":  [
-                                "Mala tržišna kapa, visok rizik u CRAB fazi"
+
                                 ],
                      "SOL":  [
 
@@ -46,29 +46,29 @@
 
                              ],
                      "PNUT":  [
-                              "Meme token - opasno u Fed hawkish okruženju"
+
                               ],
                      "AIXBT":  [
 
                                ],
                      "ETH":  [
-                             "ETF odljev $224M - institucionalni izlaz upozorava"
+                         "ETH ETF odljevi i BoJ rizik povišenja kamata"
                              ],
                      "LINK":  [
 
                               ],
                      "PUMP":  [
-                              "Meme token, visok rizik pada bez katalizatora"
+
                               ],
                      "TRUMP":  [
-                               "Politički meme token - visok rizik volatilnosti"
+
                                ],
                      "BTC":  [
-                             "Fed hawkish, BoJ 25bps hike rizik za risk-off"
+                         "Nafta $101+ i geopolitički rizik Hormuz tjesnac"
                              ]
                  },
-    "sp500Ret5d":  -1.2,
-    "fearGreed":  50,
+    "sp500Ret5d":  -0.8,
+    "fearGreed":  45,
     "macroPenalty":  0,
     "catalysts":  {
                       "ACT":  [
@@ -81,13 +81,13 @@
 
                                 ],
                       "XRP":  [
-                              "Regulatorna jasnoća SAD-a pozitivna za XRP"
+                          "Russia MOEX XRP perpetual futures lansiranje 22.9."
                               ],
                       "BNB":  [
 
                               ],
                       "SUI":  [
-                              "Rast SUI ekosustava i DeFi aktivnosti"
+
                               ],
                       "AVAX":  [
 
@@ -108,7 +108,7 @@
 
                                  ],
                       "SOL":  [
-                              "Stabilna mreža, SOL DeFi raste u CRAB fazi"
+                          "Russia MOEX SOL perpetual futures lansiranje 22.9."
                               ],
                       "ADA":  [
 
@@ -120,7 +120,7 @@
 
                                 ],
                       "ETH":  [
-
+                          "Russia MOEX ETH perpetual futures lansiranje 22.9."
                               ],
                       "LINK":  [
 
@@ -132,36 +132,37 @@
 
                                 ],
                       "BTC":  [
-                              "Zakon o modernizaciji rezervi SAD prolazi odborom"
+                          "Russia MOEX BTC perpetual futures lansiranje 22.9.",
+                          "SEC tokenizirana tržišta - regulatorna klarnost"
                               ]
                   },
     "regime":  "CRAB",
     "sentimentScore":  {
-                           "ACT":  -1,
-                           "MEME":  -1,
-                           "ANIME":  -1,
-                           "XRP":  0,
+                           "ACT":  0,
+                           "MEME":  0,
+                           "ANIME":  0,
+                           "XRP":  1,
                            "BNB":  0,
                            "SUI":  0,
                            "AVAX":  0,
-                           "PENGU":  -1,
-                           "BOME":  -1,
-                           "DOGS":  -1,
-                           "NOT":  -1,
-                           "PEOPLE":  -1,
-                           "SOL":  0,
+                           "PENGU":  0,
+                           "BOME":  0,
+                           "DOGS":  0,
+                           "NOT":  0,
+                           "PEOPLE":  0,
+                           "SOL":  1,
                            "ADA":  0,
-                           "PNUT":  -1,
+                           "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  -1,
+                           "ETH":  1,
                            "LINK":  0,
-                           "PUMP":  -1,
-                           "TRUMP":  -1,
-                           "BTC":  0
+                           "PUMP":  0,
+                           "TRUMP":  0,
+                           "BTC":  1
                        },
-    "aiSummary":  "Fed je jednoglasno podigao kamate za 25bps na 3.75-4.00% uz signal daljnjeg pooštrenja, što povećava pritisak na kripto tržište, dok DXY oscilira oko 99.7 ispod razine 100 i još uvijek blago podupire BTC konsolidaciju oko 76.5k. Fear & Greed indeks je na 50 (neutralno), no masivni odljev iz ETH ETF-ova ($224M) i nadolazeća BoJ odluka o povećanju na 1.25% donose rizik risk-off scenarija. Regulatoran napredak u SAD-u (Zakon o modernizaciji rezervi) pozitivan je dugoročni signal za BTC, ali kratkoročno CRAB faza se nastavlja uz oprez.",
+    "aiSummary":  "DXY je na 100.3, blago iznad razine 100 što neutralno utječe na kripto tržište bez značajnog pritiska na BTC koji konsolidira oko $77.9k s dominacijom 59.3%. Fear & Greed pao je na ~45 (neutralno/blaga strah zona) uz naftu iznad $101 i geopolitički rizik u Hormuz tjesnacu, dok regulatorna pozitivna iznenađenja (SEC tokenizirana tržišta, CFTC klarnost, Russia MOEX futures 22.9.) podupiru dugoročni sentiment. Kratkoročno CRAB faza se nastavlja uz umjereni oprez.",
     "warActive":  false,
     "btcDom":  59.3,
-    "stableDom":  12.0,
+    "stableDom":  9.9,
     "oil":  101.21
 }
