@@ -1,7 +1,7 @@
 {
-    "dxy":  99.4,
-    "changeSummary":  "Fed je danas podigao kamatne stope za 25bp izazivajući kratku volatilnost BTC-a, dok su DXY, dominacija i Fear & Greed ostali gotovo nepromijenjeni u odnosu na prethodnu analizu.",
-    "lastUpdated":  "2026-09-17T20:00:00Z",
+    "dxy":  99.7,
+    "changeSummary":  "BTC porastao na ~78k, DXY minimalno podignut na 99.7, Fear & Greed ostao neutralan (~47), a senatski zakon za kripto tržišnu strukturu propao kao negativan regulatorni signal.",
+    "lastUpdated":  "2026-09-18T20:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -13,7 +13,7 @@
 
                                ],
                      "XRP":  [
-
+                                 "Senate kripto tržišna legis. propala - reg. neizvjesnost"
                              ],
                      "BNB":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-                                 "Fed kamatne stope rastu, risk-off pritisak"
+
                              ],
                      "LINK":  [
 
@@ -64,13 +64,12 @@
 
                                ],
                      "BTC":  [
-                                 "Fed +25bp, inflacijski pritisak ostaje visok",
-                                 "Warzone aktivna, geopolitička neizvjesnost traje"
+                                 "Senate legis. za kripto tržišnu strukturu propala"
                              ]
                  },
     "sp500Ret5d":  -0.5,
-    "fearGreed":  46,
-    "macroPenalty":  1,
+    "fearGreed":  47,
+    "macroPenalty":  0,
     "catalysts":  {
                       "ACT":  [
 
@@ -85,7 +84,7 @@
 
                               ],
                       "BNB":  [
-
+                                  "Binance WOTD event - 500k BNB nagradni fond"
                               ],
                       "SUI":  [
 
@@ -112,7 +111,7 @@
 
                               ],
                       "ADA":  [
-
+                                  "Cardano Node 11.2 stiže za Dijkstra era testiranje"
                               ],
                       "PNUT":  [
 
@@ -121,8 +120,7 @@
 
                                 ],
                       "ETH":  [
-                                  "Circle Arc mainnet, BlackRock/DTCC validatori",
-                                  "Deutsche Bank planira inst. digital-asset custody"
+
                               ],
                       "LINK":  [
 
@@ -134,8 +132,7 @@
 
                                 ],
                       "BTC":  [
-                                  "SEC inovacijska iznimka - put za tokeniz. burze",
-                                  "BTC oporavio iznad 76.5k nakon Fed odluke"
+                                  "BTC konsolidira ~78k, čeka CPI i Fed signal"
                               ]
                   },
     "regime":  "CRAB",
@@ -143,8 +140,8 @@
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  0,
-                           "BNB":  0,
+                           "XRP":  -1,
+                           "BNB":  1,
                            "SUI":  0,
                            "AVAX":  0,
                            "PENGU":  0,
@@ -153,18 +150,18 @@
                            "NOT":  0,
                            "PEOPLE":  0,
                            "SOL":  0,
-                           "ADA":  0,
+                           "ADA":  1,
                            "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  -1,
+                           "ETH":  0,
                            "LINK":  0,
                            "PUMP":  0,
                            "TRUMP":  0,
-                           "BTC":  -1
+                           "BTC":  0
                        },
-    "aiSummary":  "DXY se zadržava blago ispod 100 (~99.4) što i dalje blago podržava kripto, no Fed je danas podigao stope za 25bp zbog persistentne inflacije, izazivajući kratkotrajnu volatilnost — BTC pao na ~75k pa se oporavio iznad 76.5k. Fear & Greed oscilira oko 46 (neutralno-strah), BTC dominacija stabilna na ~59.3%, a CRAB faza nastavlja se bez jasnog signala za proboj dok Fed pivot ostaje upitan uz SEC inovacijsku iznimku kao jedini pozitivni katalizator.",
-    "warActive":  true,
-    "btcDom":  59.3,
-    "stableDom":  6.2,
-    "oil":  103.8
+    "aiSummary":  "DXY se blago podigao na ~99.7, ostaje ispod 100 što i dalje minimalno podupire kripto, no Fed pivot ostaje upitan uz persistentnu inflaciju. Fear & Greed oscilira oko 47 (neutralno-strah), BTC konsolidira ~78k čekajući CPI podatke i Fed signal, dok propast senatskog zakonodavnog okvira za kripto tržišnu strukturu donosi negativan regulatorni sentiment. CRAB faza se nastavlja, Cardano Node 11.2 pozitivan je katalizator za ADA, no bez jasnog signala za širi proboj.",
+    "warActive":  false,
+    "btcDom":  59.2,
+    "stableDom":  7.1,
+    "oil":  103.5
 }
