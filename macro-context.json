@@ -1,19 +1,19 @@
 {
-    "dxy":  100.33,
-    "changeSummary":  "DXY blago porastao na 100.3 (s 99.7), Fear & Greed pao na 45 (s 50), BTC dominacija i nafta ostaju stabilni, a ukupni CRAB režim se nastavlja.",
-    "lastUpdated":  "2026-09-18T10:00:00Z",
+    "dxy":  100.27,
+    "changeSummary":  "BTC vratio razinu $80k uz rast F&G indeksa s 45 na 52, macroPenalty porastao na 2 zbog aktivnih geopolitičkih rizika koji drže naftu oko $100.",
+    "lastUpdated":  "2026-09-18T16:00:00Z",
     "warnings":  {
                      "ACT":  [
 
                              ],
                      "MEME":  [
-
+                                 "Memecoin bez fundamenta, visok spekulativni rizik"
                               ],
                      "ANIME":  [
 
                                ],
                      "XRP":  [
-                         "SEC odgodio XRP Short ETF na 11.10.2026 (19. odgoda)"
+
                              ],
                      "BNB":  [
 
@@ -25,13 +25,13 @@
 
                               ],
                      "PENGU":  [
-
+                                 "Memecoin bez jasnih katalizatora, visok rizik"
                                ],
                      "BOME":  [
-
+                                 "Memecoin bez jasnih katalizatora, visok rizik"
                               ],
                      "DOGS":  [
-
+                                 "Memecoin bez jasnih katalizatora, visok rizik"
                               ],
                      "NOT":  [
 
@@ -46,30 +46,30 @@
 
                              ],
                      "PNUT":  [
-
+                                 "Memecoin bez jasnih katalizatora, visok rizik"
                               ],
                      "AIXBT":  [
 
                                ],
                      "ETH":  [
-                         "ETH ETF odljevi i BoJ rizik povišenja kamata"
+                                 "Fed prvi rast kamata od 2023. - rizik za alts"
                              ],
                      "LINK":  [
 
                               ],
                      "PUMP":  [
-
+                                 "Memecoin bez jasnih katalizatora, visok rizik"
                               ],
                      "TRUMP":  [
-
+                                 "Politicki memecoin - fundamentalni rizik visok"
                                ],
                      "BTC":  [
-                         "Nafta $101+ i geopolitički rizik Hormuz tjesnac"
+                                 "CLARITY Act pao u Senatu - regulatorna nesigurnost"
                              ]
                  },
     "sp500Ret5d":  -0.8,
-    "fearGreed":  45,
-    "macroPenalty":  0,
+    "fearGreed":  52,
+    "macroPenalty":  2,
     "catalysts":  {
                       "ACT":  [
 
@@ -81,7 +81,7 @@
 
                                 ],
                       "XRP":  [
-                          "Russia MOEX XRP perpetual futures lansiranje 22.9."
+                                  "Regulatorni napredak unatoc padu CLARITY Acta"
                               ],
                       "BNB":  [
 
@@ -90,7 +90,7 @@
 
                               ],
                       "AVAX":  [
-
+                                  "L2 i DeFi tokeni vode siri kripto reli dana"
                                ],
                       "PENGU":  [
 
@@ -108,7 +108,7 @@
 
                                  ],
                       "SOL":  [
-                          "Russia MOEX SOL perpetual futures lansiranje 22.9."
+                                  "SOL vodi altcoin reli, L2 ekosustav +17%"
                               ],
                       "ADA":  [
 
@@ -120,10 +120,10 @@
 
                                 ],
                       "ETH":  [
-                          "Russia MOEX ETH perpetual futures lansiranje 22.9."
+                                  "SEC otvara put tokeniziranih dionickih trzista"
                               ],
                       "LINK":  [
-
+                                  "SEC/CFTC regulatorna jasnoca za oracle protokole"
                                ],
                       "PUMP":  [
 
@@ -132,8 +132,7 @@
 
                                 ],
                       "BTC":  [
-                          "Russia MOEX BTC perpetual futures lansiranje 22.9.",
-                          "SEC tokenizirana tržišta - regulatorna klarnost"
+                                  "BTC vratio $80k, Fed hike prihvacen pozitivno"
                               ]
                   },
     "regime":  "CRAB",
@@ -142,27 +141,27 @@
                            "MEME":  0,
                            "ANIME":  0,
                            "XRP":  1,
-                           "BNB":  0,
-                           "SUI":  0,
-                           "AVAX":  0,
+                           "BNB":  1,
+                           "SUI":  1,
+                           "AVAX":  1,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  1,
+                           "SOL":  2,
                            "ADA":  0,
                            "PNUT":  0,
-                           "AIXBT":  0,
+                           "AIXBT":  1,
                            "ETH":  1,
-                           "LINK":  0,
+                           "LINK":  1,
                            "PUMP":  0,
                            "TRUMP":  0,
-                           "BTC":  1
+                           "BTC":  2
                        },
-    "aiSummary":  "DXY je na 100.3, blago iznad razine 100 što neutralno utječe na kripto tržište bez značajnog pritiska na BTC koji konsolidira oko $77.9k s dominacijom 59.3%. Fear & Greed pao je na ~45 (neutralno/blaga strah zona) uz naftu iznad $101 i geopolitički rizik u Hormuz tjesnacu, dok regulatorna pozitivna iznenađenja (SEC tokenizirana tržišta, CFTC klarnost, Russia MOEX futures 22.9.) podupiru dugoročni sentiment. Kratkoročno CRAB faza se nastavlja uz umjereni oprez.",
-    "warActive":  false,
-    "btcDom":  59.3,
-    "stableDom":  9.9,
-    "oil":  101.21
+    "aiSummary":  "DXY je na 100.27 dok BTC vraća razinu $80k uz Fear & Greed koji raste na 52, no ostaje u CRAB zoni zbog moguće pozicije ispod SMA200. Nafta pada na $100.30 uz djelomično popuštanje Saudi tenzija, ali warActive ostaje aktivan s macroPenalty=2. CLARITY Act propao je u Senatu no SEC-ov napredak prema tokeniziranim dioničkim tržištima i CFTC regulatorna jasnoća podupiru dugoročni sentiment uz oprez zbog Fed-ovog prvog rasta kamata od 2023.",
+    "warActive":  true,
+    "btcDom":  59.2,
+    "stableDom":  6.0,
+    "oil":  100.30
 }
