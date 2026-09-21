@@ -1,13 +1,13 @@
 {
     "dxy":  100.27,
-    "changeSummary":  "Fear & Greed raste s 68 na 70, DXY stagnira na 100.27, BTC drži $81k+ uz pad BTC dominance s 60.66% na 59.2% i jake regulatorne vijesti za XRP.",
-    "lastUpdated":  "2026-09-21T12:00:00Z",
+    "changeSummary":  "BTC dominance eksplodirala na 60.7% gaseći altseason nade, dok BTC drži $81k uz stabilan DXY od 100.27, Fear & Greed minimalno pao na 69, a macroPenalty poboljšan s 2 na 0.",
+    "lastUpdated":  "2026-09-21T18:00:00Z",
     "warnings":  {
                      "ACT":  [
 
                              ],
                      "MEME":  [
-                               "Meme tokeni bez fundamentala, rizik nagle korekcije"
+                         "Altseason indeks 37, kapital teče prema BTC-u"
                               ],
                      "ANIME":  [
 
@@ -28,13 +28,13 @@
 
                                ],
                      "BOME":  [
-                               "Niska likvidnost, meme rizik bez jasnog katalizatora"
+
                               ],
                      "DOGS":  [
 
                               ],
                      "NOT":  [
-                              "TON ekosustav bez jasnog katalizatora, niska likvidnost"
+
                              ],
                      "PEOPLE":  [
 
@@ -46,7 +46,7 @@
 
                              ],
                      "PNUT":  [
-                               "Politički meme, visok volatilitet bez fundamentala"
+
                               ],
                      "AIXBT":  [
 
@@ -58,18 +58,18 @@
 
                               ],
                      "PUMP":  [
-                               "Pump.fun meme volatilnost, visok rizik nagle korekcije"
+
                               ],
                      "TRUMP":  [
 
                                ],
                      "BTC":  [
-
+                         "Blink Lightning wallet pauzirao uslugu - sigurnosni incident"
                              ]
                  },
-    "sp500Ret5d":  -1.2,
-    "fearGreed":  70,
-    "macroPenalty":  2,
+    "sp500Ret5d":  -0.8,
+    "fearGreed":  69,
+    "macroPenalty":  0,
     "catalysts":  {
                       "ACT":  [
 
@@ -81,8 +81,7 @@
 
                                 ],
                       "XRP":  [
-                               "Ripple x Stripe integracija plaćanja aktivna od 17.9.",
-                               "Evernorth kupuje $30M XRP konvertibilnih nota"
+                          "SEC odobrio on-chain trading tokeniziranih dionica"
                               ],
                       "BNB":  [
 
@@ -109,7 +108,7 @@
 
                                  ],
                       "SOL":  [
-                               "Tržišna kapitalizacija raste, SOL ekosustav jak"
+                          "ZetaChain migrira $ZETA na Solanu kao SPL token"
                               ],
                       "ADA":  [
 
@@ -118,13 +117,13 @@
 
                                ],
                       "AIXBT":  [
-                                 "AI kripto sektor u usponu, pozitivan sentiment"
+
                                 ],
                       "ETH":  [
-                               "ETH +2.8%, sentiment Greed, tržišni oporavak jak"
+                          "ETH +2.8%, rast s BTC-om, SEC on-chain katalizator"
                               ],
                       "LINK":  [
-                                "Switchboard oracle gasi se 25.9., migracija na Pyth/RedStone"
+                          "Tokenizacija dionica povećava potražnju za oracle"
                                ],
                       "PUMP":  [
 
@@ -133,8 +132,7 @@
 
                                 ],
                       "BTC":  [
-                               "SEC odobrio on-chain trading tokeniziranih dionica",
-                               "BTC drži $81k+ uz rast volumena i Greed sentiment"
+                          "BTC drži $81k+, Fed buzz, SEC on-chain tokenizacija"
                               ]
                   },
     "regime":  "BULL",
@@ -144,26 +142,26 @@
                            "ANIME":  0,
                            "XRP":  2,
                            "BNB":  0,
-                           "SUI":  0,
+                           "SUI":  1,
                            "AVAX":  0,
                            "PENGU":  0,
-                           "BOME":  -1,
+                           "BOME":  0,
                            "DOGS":  0,
-                           "NOT":  -1,
+                           "NOT":  0,
                            "PEOPLE":  0,
                            "SOL":  1,
                            "ADA":  0,
-                           "PNUT":  -1,
+                           "PNUT":  0,
                            "AIXBT":  1,
                            "ETH":  1,
                            "LINK":  2,
-                           "PUMP":  -1,
+                           "PUMP":  0,
                            "TRUMP":  0,
-                           "BTC":  2
+                           "BTC":  1
                        },
-    "aiSummary":  "DXY stagnira na 100.27 bez promjene dok BTC drži razinu od $81k+ uz Fear & Greed od 70 (Greed), a SEC-ovo odobrenje on-chain tradinga tokeniziranih dionica potaknulo je bullish sentiment. S&P 500 pada drugi tjedan zaredom (-1.2%), no kriptotržište pokazuje otpornost uz snažne regulatorne katalizatore za XRP i nastavak BULL režima. BTC dominance pada na 59.2% što još ne signalizira altseason, ali XRP, LINK i ETH bilježe konkretne fundamentalne vijesti.",
-    "warActive":  true,
-    "btcDom":  59.2,
-    "stableDom":  6.5,
+    "aiSummary":  "DXY stagnira na 100.27 dok BTC drži razinu $81k uz Fear & Greed 69 (Greed) i nastavlja BULL trend bez geopolitičke premije. S&P 500 pada drugi tjedan zaredom (-0.8%), no kripto pokazuje otpornost zahvaljujući SEC katalizatoru za on-chain tokenizaciju dionica. BTC dominance eksplodirala na 60.7% što gasi altseason nade, ali XRP i LINK imaju konkretne fundamentalne katalizatore za samostalan rast.",
+    "warActive":  false,
+    "btcDom":  60.7,
+    "stableDom":  7.5,
     "oil":  95.0
 }
