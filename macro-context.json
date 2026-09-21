@@ -1,19 +1,19 @@
 {
     "dxy":  100.27,
-    "changeSummary":  "BTC probija $81k uz skok F&G na 68, DXY stagnira na 100.27, nafta pada na $95 dok BTC dominance raste na 60.66% — režim prelazi iz CRAB u BULL.",
-    "lastUpdated":  "2026-09-21T10:00:00Z",
+    "changeSummary":  "Fear & Greed raste s 68 na 70, DXY stagnira na 100.27, BTC drži $81k+ uz pad BTC dominance s 60.66% na 59.2% i jake regulatorne vijesti za XRP.",
+    "lastUpdated":  "2026-09-21T12:00:00Z",
     "warnings":  {
                      "ACT":  [
 
                              ],
                      "MEME":  [
-
+                               "Meme tokeni bez fundamentala, rizik nagle korekcije"
                               ],
                      "ANIME":  [
 
                                ],
                      "XRP":  [
-                                 "Zakon o commodity statusu pao, Polymarket odds 18%"
+
                              ],
                      "BNB":  [
 
@@ -28,13 +28,13 @@
 
                                ],
                      "BOME":  [
-
+                               "Niska likvidnost, meme rizik bez jasnog katalizatora"
                               ],
                      "DOGS":  [
 
                               ],
                      "NOT":  [
-
+                              "TON ekosustav bez jasnog katalizatora, niska likvidnost"
                              ],
                      "PEOPLE":  [
 
@@ -46,7 +46,7 @@
 
                              ],
                      "PNUT":  [
-
+                               "Politički meme, visok volatilitet bez fundamentala"
                               ],
                      "AIXBT":  [
 
@@ -58,17 +58,17 @@
 
                               ],
                      "PUMP":  [
-
+                               "Pump.fun meme volatilnost, visok rizik nagle korekcije"
                               ],
                      "TRUMP":  [
-                                   "Token unlock 28.7M TRUMP, tim premjestio $26.65M SOL"
+
                                ],
                      "BTC":  [
 
                              ]
                  },
-    "sp500Ret5d":  -1.0,
-    "fearGreed":  68,
+    "sp500Ret5d":  -1.2,
+    "fearGreed":  70,
     "macroPenalty":  2,
     "catalysts":  {
                       "ACT":  [
@@ -81,7 +81,8 @@
 
                                 ],
                       "XRP":  [
-
+                               "Ripple x Stripe integracija plaćanja aktivna od 17.9.",
+                               "Evernorth kupuje $30M XRP konvertibilnih nota"
                               ],
                       "BNB":  [
 
@@ -90,7 +91,7 @@
 
                               ],
                       "AVAX":  [
-                                   "Teleporter v1.4 izdan, Helicon mainnet upgrade 22.9."
+
                                ],
                       "PENGU":  [
 
@@ -108,22 +109,22 @@
 
                                  ],
                       "SOL":  [
-                                  "Charles Schwab dodaje SOL na investicijsku platformu"
+                               "Tržišna kapitalizacija raste, SOL ekosustav jak"
                               ],
                       "ADA":  [
-                                  "T. Rowe Price ETF uključio ADA, +11% spike"
+
                               ],
                       "PNUT":  [
 
                                ],
                       "AIXBT":  [
-
+                                 "AI kripto sektor u usponu, pozitivan sentiment"
                                 ],
                       "ETH":  [
-                                  "DeFi tržište +3.2%, ETH blagi rast"
+                               "ETH +2.8%, sentiment Greed, tržišni oporavak jak"
                               ],
                       "LINK":  [
-                                   "Charles Schwab dodaje LINK na investicijsku platformu"
+                                "Switchboard oracle gasi se 25.9., migracija na Pyth/RedStone"
                                ],
                       "PUMP":  [
 
@@ -132,36 +133,37 @@
 
                                 ],
                       "BTC":  [
-                                  "Proboj $80k, zlatni križ formiran na dnevnom grafu"
+                               "SEC odobrio on-chain trading tokeniziranih dionica",
+                               "BTC drži $81k+ uz rast volumena i Greed sentiment"
                               ]
                   },
     "regime":  "BULL",
     "sentimentScore":  {
                            "ACT":  0,
-                           "MEME":  0,
+                           "MEME":  -1,
                            "ANIME":  0,
-                           "XRP":  -1,
+                           "XRP":  2,
                            "BNB":  0,
-                           "SUI":  1,
-                           "AVAX":  2,
+                           "SUI":  0,
+                           "AVAX":  0,
                            "PENGU":  0,
-                           "BOME":  0,
+                           "BOME":  -1,
                            "DOGS":  0,
-                           "NOT":  0,
+                           "NOT":  -1,
                            "PEOPLE":  0,
-                           "SOL":  2,
-                           "ADA":  2,
-                           "PNUT":  0,
-                           "AIXBT":  0,
+                           "SOL":  1,
+                           "ADA":  0,
+                           "PNUT":  -1,
+                           "AIXBT":  1,
                            "ETH":  1,
                            "LINK":  2,
-                           "PUMP":  0,
-                           "TRUMP":  -2,
+                           "PUMP":  -1,
+                           "TRUMP":  0,
                            "BTC":  2
                        },
-    "aiSummary":  "DXY stagnira na 100.27 dok BTC probija $81k uz Fear & Greed koji skače na 68 (Greed), signalizirajući prelazak iz CRAB u BULL režim. Nafta pada na ~$95 smanjujući cjenovni pritisak, no warActive ostaje aktivan s macroPenalty=2. Altcoin season se odgađa zbog BTC dominance na 60.66%, ali SOL, LINK, AVAX i ADA bilježe jake katalitičke vijesti.",
+    "aiSummary":  "DXY stagnira na 100.27 bez promjene dok BTC drži razinu od $81k+ uz Fear & Greed od 70 (Greed), a SEC-ovo odobrenje on-chain tradinga tokeniziranih dionica potaknulo je bullish sentiment. S&P 500 pada drugi tjedan zaredom (-1.2%), no kriptotržište pokazuje otpornost uz snažne regulatorne katalizatore za XRP i nastavak BULL režima. BTC dominance pada na 59.2% što još ne signalizira altseason, ali XRP, LINK i ETH bilježe konkretne fundamentalne vijesti.",
     "warActive":  true,
-    "btcDom":  60.66,
-    "stableDom":  10.8,
-    "oil":  95.26
+    "btcDom":  59.2,
+    "stableDom":  6.5,
+    "oil":  95.0
 }
