@@ -1,7 +1,7 @@
 {
     "dxy":  100.42,
-    "changeSummary":  "BTC snažno raste s $81K na $86K uz eksplozivni skok Fear & Greeda s 69 na 78 potaknut Fed snižavanjem kamatnih stopa.",
-    "lastUpdated":  "2026-09-22T18:00:00Z",
+    "changeSummary":  "Makro parametri ostaju stabilni: DXY nepromijenjeni na 100.42, F&G zadržan na 78, BTC dominance blago pala s 59.5% na 59.2% uz nastavak BTC rally-ja iznad $85K.",
+    "lastUpdated":  "2026-09-22T20:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -34,7 +34,7 @@
 
                               ],
                      "NOT":  [
-                                 "TON unlock 1.3% supply (~$51M) — prodajni pritisak"
+
                              ],
                      "PEOPLE":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-
+                                 "Tržišne oklade: ETH ispod $2.250 do kraja 2026"
                              ],
                      "LINK":  [
 
@@ -64,10 +64,10 @@
 
                                ],
                      "BTC":  [
-                                 "F&G=78 overbought signal, moguća kratka korekcija"
+                                 "F&G=78 Extreme Greed - overbought rizik"
                              ]
                  },
-    "sp500Ret5d":  0.8,
+    "sp500Ret5d":  -0.5,
     "fearGreed":  78,
     "macroPenalty":  1,
     "catalysts":  {
@@ -81,7 +81,7 @@
 
                                 ],
                       "XRP":  [
-                                  "SEC katalizator za on-chain tokenizaciju dionica"
+                                  "XRP ETF priljevi, $750M kratkih likvidacija"
                               ],
                       "BNB":  [
 
@@ -108,7 +108,7 @@
 
                                  ],
                       "SOL":  [
-                                  "BULL tržište, rast likvid. u L1 ekosustav"
+                                  "BTC-led rally, SOL +3% u 12h, $20M likvidacija kratkih"
                               ],
                       "ADA":  [
 
@@ -117,23 +117,23 @@
 
                                ],
                       "AIXBT":  [
-
+                                    "AI-kripto sektor rotacija, TAO +8%"
                                 ],
                       "ETH":  [
-                                  "ETH probija $2.8k, Circle USDC pozajmice s BTC kol."
+                                  "Altseason signal: ETH prati BTC rast na $86K"
                               ],
                       "LINK":  [
-                                   "Fundamentalni rast — blockchain integracije"
+
                                ],
                       "PUMP":  [
-
+                                   "PUMP +12% nakon rang liste prihoda ($322M, 2. mjesto)"
                                ],
                       "TRUMP":  [
 
                                 ],
                       "BTC":  [
-                                  "Fed snižava stope — risk-on val",
-                                  "BTC probijena zona $85k-$87k — bull nastavak"
+                                  "MicroStrategy kupio 950 BTC ($75.7M) ovaj tjedan",
+                                  "Short squeeze >$600M likvidacija kratkih"
                               ]
                   },
     "regime":  "BULL",
@@ -141,28 +141,28 @@
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  1,
-                           "BNB":  0,
+                           "XRP":  2,
+                           "BNB":  1,
                            "SUI":  0,
-                           "AVAX":  0,
+                           "AVAX":  1,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
-                           "NOT":  -1,
+                           "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  1,
+                           "SOL":  2,
                            "ADA":  0,
                            "PNUT":  0,
-                           "AIXBT":  0,
-                           "ETH":  2,
+                           "AIXBT":  1,
+                           "ETH":  1,
                            "LINK":  1,
-                           "PUMP":  0,
+                           "PUMP":  2,
                            "TRUMP":  0,
                            "BTC":  2
                        },
-    "aiSummary":  "DXY stagnira na 100.42 dok BTC probija $86K uz Fear & Greed 78 (Extreme Greed) potaknut Fed snižavanjem stopa i rastom S&P 500 (+1.49% danas). BTC dominance pada na 59.5% no još uvijek sprječava altseason, dok ETH probija $2.8K i SOL bilježe solidne dobitke u risk-on okruženju. Pazi na overbought signale (F&G=78) i TON unlock koji može kratkoročno pritisnuti NOT.",
+    "aiSummary":  "DXY stagnira na 100.42 dok BTC drži iznad $85K uz Fear & Greed 78 (Extreme Greed) potaknut MicroStrategy kupnjom 950 BTC i masovnim short squeezeom ($600M+). BTC dominance blago pala na 59.2% dok alti poput XRP i SOL bilježe solidne dobitke uz ETF priljeve i likvidacije kratkih pozicija. Pazi na overbought signale (F&G=78) i nastavak S&P 500 slabosti (-0.5% tjedan) koji može usporiti risk-on momentum.",
     "warActive":  false,
-    "btcDom":  59.5,
-    "stableDom":  10.5,
-    "oil":  93.2
+    "btcDom":  59.2,
+    "stableDom":  5.5,
+    "oil":  93.18
 }
