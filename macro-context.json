@@ -1,13 +1,13 @@
 {
-    "dxy":  100.27,
-    "changeSummary":  "BTC dominance eksplodirala na 60.7% gaseći altseason nade, dok BTC drži $81k uz stabilan DXY od 100.27, Fear & Greed minimalno pao na 69, a macroPenalty poboljšan s 2 na 0.",
-    "lastUpdated":  "2026-09-21T18:00:00Z",
+    "dxy":  100.42,
+    "changeSummary":  "BTC snažno raste s $81K na $86K uz eksplozivni skok Fear & Greeda s 69 na 78 potaknut Fed snižavanjem kamatnih stopa.",
+    "lastUpdated":  "2026-09-22T18:00:00Z",
     "warnings":  {
                      "ACT":  [
 
                              ],
                      "MEME":  [
-                         "Altseason indeks 37, kapital teče prema BTC-u"
+
                               ],
                      "ANIME":  [
 
@@ -34,7 +34,7 @@
 
                               ],
                      "NOT":  [
-
+                                 "TON unlock 1.3% supply (~$51M) — prodajni pritisak"
                              ],
                      "PEOPLE":  [
 
@@ -64,12 +64,12 @@
 
                                ],
                      "BTC":  [
-                         "Blink Lightning wallet pauzirao uslugu - sigurnosni incident"
+                                 "F&G=78 overbought signal, moguća kratka korekcija"
                              ]
                  },
-    "sp500Ret5d":  -0.8,
-    "fearGreed":  69,
-    "macroPenalty":  0,
+    "sp500Ret5d":  0.8,
+    "fearGreed":  78,
+    "macroPenalty":  1,
     "catalysts":  {
                       "ACT":  [
 
@@ -81,7 +81,7 @@
 
                                 ],
                       "XRP":  [
-                          "SEC odobrio on-chain trading tokeniziranih dionica"
+                                  "SEC katalizator za on-chain tokenizaciju dionica"
                               ],
                       "BNB":  [
 
@@ -108,7 +108,7 @@
 
                                  ],
                       "SOL":  [
-                          "ZetaChain migrira $ZETA na Solanu kao SPL token"
+                                  "BULL tržište, rast likvid. u L1 ekosustav"
                               ],
                       "ADA":  [
 
@@ -120,10 +120,10 @@
 
                                 ],
                       "ETH":  [
-                          "ETH +2.8%, rast s BTC-om, SEC on-chain katalizator"
+                                  "ETH probija $2.8k, Circle USDC pozajmice s BTC kol."
                               ],
                       "LINK":  [
-                          "Tokenizacija dionica povećava potražnju za oracle"
+                                   "Fundamentalni rast — blockchain integracije"
                                ],
                       "PUMP":  [
 
@@ -132,36 +132,37 @@
 
                                 ],
                       "BTC":  [
-                          "BTC drži $81k+, Fed buzz, SEC on-chain tokenizacija"
+                                  "Fed snižava stope — risk-on val",
+                                  "BTC probijena zona $85k-$87k — bull nastavak"
                               ]
                   },
     "regime":  "BULL",
     "sentimentScore":  {
                            "ACT":  0,
-                           "MEME":  -1,
+                           "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  2,
+                           "XRP":  1,
                            "BNB":  0,
-                           "SUI":  1,
+                           "SUI":  0,
                            "AVAX":  0,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
-                           "NOT":  0,
+                           "NOT":  -1,
                            "PEOPLE":  0,
                            "SOL":  1,
                            "ADA":  0,
                            "PNUT":  0,
-                           "AIXBT":  1,
-                           "ETH":  1,
-                           "LINK":  2,
+                           "AIXBT":  0,
+                           "ETH":  2,
+                           "LINK":  1,
                            "PUMP":  0,
                            "TRUMP":  0,
-                           "BTC":  1
+                           "BTC":  2
                        },
-    "aiSummary":  "DXY stagnira na 100.27 dok BTC drži razinu $81k uz Fear & Greed 69 (Greed) i nastavlja BULL trend bez geopolitičke premije. S&P 500 pada drugi tjedan zaredom (-0.8%), no kripto pokazuje otpornost zahvaljujući SEC katalizatoru za on-chain tokenizaciju dionica. BTC dominance eksplodirala na 60.7% što gasi altseason nade, ali XRP i LINK imaju konkretne fundamentalne katalizatore za samostalan rast.",
+    "aiSummary":  "DXY stagnira na 100.42 dok BTC probija $86K uz Fear & Greed 78 (Extreme Greed) potaknut Fed snižavanjem stopa i rastom S&P 500 (+1.49% danas). BTC dominance pada na 59.5% no još uvijek sprječava altseason, dok ETH probija $2.8K i SOL bilježe solidne dobitke u risk-on okruženju. Pazi na overbought signale (F&G=78) i TON unlock koji može kratkoročno pritisnuti NOT.",
     "warActive":  false,
-    "btcDom":  60.7,
-    "stableDom":  7.5,
-    "oil":  95.0
+    "btcDom":  59.5,
+    "stableDom":  10.5,
+    "oil":  93.2
 }
