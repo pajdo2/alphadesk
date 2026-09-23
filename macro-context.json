@@ -1,13 +1,13 @@
 {
-    "dxy":  100.42,
-    "changeSummary":  "DXY stagnira na 100.42 dok BTC prima rekordne ETF pritjecaje od $999M te konsolidira na ~$86.5K uz blagi pad F&G indeksa s 78 na 73.",
-    "lastUpdated":  "2026-09-23T22:00:00Z",
+    "dxy":  100.6,
+    "changeSummary":  "Fear & Greed skočio s 73 na 78 (Extreme Greed), DXY blago porasao s 100.42 na 100.6, ETH ETF priljevi $270M pojačali su bullish sentiment uz macroPenalty +1 i nepromijenjen BULL režim.",
+    "lastUpdated":  "2026-09-23T23:00:00Z",
     "warnings":  {
                      "ACT":  [
 
                              ],
                      "MEME":  [
-                                 "Niski volumeni, pazi na pump&dump sheme"
+
                               ],
                      "ANIME":  [
 
@@ -28,7 +28,7 @@
 
                                ],
                      "BOME":  [
-                                 "Visoka volatilnost bez jasnih katalizatora"
+
                               ],
                      "DOGS":  [
 
@@ -46,30 +46,30 @@
 
                              ],
                      "PNUT":  [
-                                 "Mala tržišna kap, visoki rizik padova"
+
                               ],
                      "AIXBT":  [
 
                                ],
                      "ETH":  [
-
+                               "Likvidacija $180M shortera - moguća volatilnost"
                              ],
                      "LINK":  [
 
                               ],
                      "PUMP":  [
-                                 "Pazi na manipulaciju volumenom"
+
                               ],
                      "TRUMP":  [
-                                  "Politička osjetljivost - pazi na vijesti"
+
                                ],
                      "BTC":  [
-
+                               "FG 78 - overbought signal, kratkoročni korekcijski rizik"
                              ]
                  },
-    "sp500Ret5d":  1.5,
-    "fearGreed":  73,
-    "macroPenalty":  0,
+    "sp500Ret5d":  0.3,
+    "fearGreed":  78,
+    "macroPenalty":  1,
     "catalysts":  {
                       "ACT":  [
 
@@ -81,13 +81,13 @@
 
                                 ],
                       "XRP":  [
-
+                                "Dvoznamenkasti tjedni rast, masovne likvidacije shortera"
                               ],
                       "BNB":  [
-
+                                "Dobitnik tjednog altcoin rallyja"
                               ],
                       "SUI":  [
-                                 "Aktivni ekosustav razvoj u Q3 2026"
+
                               ],
                       "AVAX":  [
 
@@ -108,7 +108,7 @@
 
                                  ],
                       "SOL":  [
-                                 "Bullish tržišno raspoloženje podupire SOL"
+                                "Snažan tjedni rast uz BTC rally"
                               ],
                       "ADA":  [
 
@@ -117,13 +117,14 @@
 
                                ],
                       "AIXBT":  [
-                                   "AI narativ ostaje jak, AIXBT prati bullish trend"
+
                                 ],
                       "ETH":  [
-                                 "Pozitivna korelacija s BTC probojom na $87K"
+                                "ETF priljevi $270M, BlackRock ETHA vodi",
+                                "BitMine: 5.9M ETH u trezoru, kupnja 27562 ETH"
                               ],
                       "LINK":  [
-                                  "Rast institucionalnog interesa za oracle mreže"
+
                                ],
                       "PUMP":  [
 
@@ -132,37 +133,36 @@
 
                                 ],
                       "BTC":  [
-                                 "Spot ETF pritjecaj $999M - rekord od listopada 2025",
-                                 "BTC doseže $87.3K - najviše od siječnja 2026"
+                                "Rekordni ETF priljevi, snažna institucijska potražnja"
                               ]
                   },
     "regime":  "BULL",
     "sentimentScore":  {
                            "ACT":  0,
-                           "MEME":  -1,
+                           "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  0,
-                           "BNB":  0,
-                           "SUI":  1,
+                           "XRP":  1,
+                           "BNB":  1,
+                           "SUI":  0,
                            "AVAX":  0,
                            "PENGU":  0,
-                           "BOME":  -1,
+                           "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
                            "SOL":  1,
                            "ADA":  0,
-                           "PNUT":  -1,
-                           "AIXBT":  1,
-                           "ETH":  1,
-                           "LINK":  1,
+                           "PNUT":  0,
+                           "AIXBT":  0,
+                           "ETH":  2,
+                           "LINK":  0,
                            "PUMP":  0,
                            "TRUMP":  0,
                            "BTC":  2
                        },
-    "aiSummary":  "DXY ostaje stabilan na 100.42 dok BTC konsolidira između $86K-$87K uz rekordne dnevne ETF priljeve od $999M što potvrđuje snažnu institucionalnu potražnju. Fear & Greed blago pada s 78 na 73 (Greed) smanjujući kratkoročni rizik overbought korekcije i otvarajući prostor za daljnji rast. Prati BTC dominaciju na ~59.2% koja guši altseason potencijal, ali snažni ETF inflowi daju bullish signal prema $90K.",
+    "aiSummary":  "DXY blago raste na 100.6 bez pritiska na kripto tržište, dok Fear & Greed skače s 73 na 78 (Extreme Greed) signalizirajući pojačan optimizam ali i kratkoročni overbought rizik koji dovodi macroPenalty na 1. BTC konsolidira između $85K-$87K uz rekordne ETF priljeve i snažnu institucijsku potražnju, dok ETH ETF priljevi od $270M i masovna kupovina BitMinea otvaraju prostor za daljnji rast. Prati BTC dominaciju na ~59.5% i mogući proboj prema $90K, ali FG iznad 75 zahtijeva oprez kod kratkoročnih pozicija.",
     "warActive":  false,
-    "btcDom":  59.2,
-    "stableDom":  6.1,
-    "oil":  89.0
+    "btcDom":  59.5,
+    "stableDom":  7.5,
+    "oil":  89.46
 }
