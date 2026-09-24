@@ -1,7 +1,7 @@
 {
-    "dxy":  100.75,
-    "changeSummary":  "Makro parametri praktički nepromijenjeni (DXY 100.7, FG 78), ali značajni katalizatori: ETF priljevi $999M, Schwab listing SOL/LINK/AVAX i AVAX Helicon upgrade pojačavaju bullish sliku.",
-    "lastUpdated":  "2026-09-23T12:00:00Z",
+    "dxy":  101.08,
+    "changeSummary":  "Fear & Greed pada s 78 na 71 (macroPenalty 1→0), BTC konsolidira oko $84.4K nakon odbijanja od $87K, DXY raste na 101.1 a BTC dominancija skače na 61% usporavajući altcoin rotaciju.",
+    "lastUpdated":  "2026-09-24T12:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -13,7 +13,7 @@
 
                                ],
                      "XRP":  [
-                             "Konsolidacija $1.27-$1.43 uz povećanu volatilnost"
+                                 "CLARITY Act blokiran u Senatu - regulatorni rizik"
                              ],
                      "BNB":  [
 
@@ -25,7 +25,7 @@
 
                               ],
                      "PENGU":  [
-
+                                   "Kratkoročno pregrijano - +47% tjedno"
                                ],
                      "BOME":  [
 
@@ -61,16 +61,15 @@
 
                               ],
                      "TRUMP":  [
-                               "Warren/Blumenthal traže SEC istragu TRUMP tokena",
-                               "28.27M $TRUMP unlock - pritisak na cijenu"
+                                   "Ciklički - ovisi o vijestima iz politike"
                                ],
                      "BTC":  [
-
+                                 "Odbijen od $87K - kratkoročni overbought signali"
                              ]
                  },
-    "sp500Ret5d":  1.8,
-    "fearGreed":  78,
-    "macroPenalty":  1,
+    "sp500Ret5d":  1.18,
+    "fearGreed":  71,
+    "macroPenalty":  0,
     "catalysts":  {
                       "ACT":  [
 
@@ -82,20 +81,19 @@
 
                                 ],
                       "XRP":  [
-                              "XRPL upgrade 29.09, golden cross pred probojom"
+                                  "Probijena $1.50 razina, +10% u 3 dana"
                               ],
                       "BNB":  [
-                              "BNB +9.5% tjedno, jak momentum"
+
                               ],
                       "SUI":  [
-                              "Raoul Pal - SUI top AI bet, BTC kolateral protokol"
+
                               ],
                       "AVAX":  [
-                               "Helicon upgrade 22.09, NYSE testira AVAX tech",
-                               "NY Life tokeniziran fond na Avalanche"
+                                   "SEC/CFTC regulatorna jasnoća za AVAX"
                                ],
                       "PENGU":  [
-
+                                    "+47% u 7 dana, IP brand NFT/Pudgy Penguins"
                                 ],
                       "BOME":  [
 
@@ -110,10 +108,10 @@
 
                                  ],
                       "SOL":  [
-                              "Schwab listing SOL, markup faza prema $500"
+                                  "+8.3% u 24h, SEC/CFTC potvrdio kao robna dobra"
                               ],
                       "ADA":  [
-
+                                  "x402 plaćanja protokol - AI integracija za ADA"
                               ],
                       "PNUT":  [
 
@@ -122,20 +120,19 @@
 
                                 ],
                       "ETH":  [
-                              "ETF priljevi $270M, ETH +10.8% tjedno"
+                                  "+14% tjedno - snažan momentum altcoina"
                               ],
                       "LINK":  [
-                               "Charles Schwab dodao LINK na kripto platformu"
+                                   "SEC/CFTC potvrdio LINK kao robno dobro"
                                ],
                       "PUMP":  [
-
+                                   "PUMP +12%: 2. po prihodima u 2026 ($322M)"
                                ],
                       "TRUMP":  [
-
+                                    "2. najveći meme coin po tržišnoj kapitalizaciji"
                                 ],
                       "BTC":  [
-                              "ETF priljevi $999M dnevno - BlackRock, Fidelity",
-                              "BTC $86.5K, short pozicije $648M likvidirane"
+                                  "$15.9B opcija expiry sutra - moguć kratkoročni pritisak"
                               ]
                   },
     "regime":  "BULL",
@@ -143,28 +140,28 @@
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  1,
-                           "BNB":  1,
-                           "SUI":  1,
-                           "AVAX":  2,
-                           "PENGU":  0,
+                           "XRP":  0,
+                           "BNB":  0,
+                           "SUI":  0,
+                           "AVAX":  1,
+                           "PENGU":  2,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  2,
-                           "ADA":  0,
+                           "SOL":  1,
+                           "ADA":  1,
                            "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  2,
-                           "LINK":  2,
-                           "PUMP":  0,
-                           "TRUMP":  -1,
-                           "BTC":  2
+                           "ETH":  1,
+                           "LINK":  1,
+                           "PUMP":  2,
+                           "TRUMP":  0,
+                           "BTC":  0
                        },
-    "aiSummary":  "DXY blago raste na 100.7 bez pritiska na kripto tržište, dok Fear & Greed ostaje na 78 (Extreme Greed) signalizirajući pojačan optimizam s kratkoročnim overbought rizikom koji drži macroPenalty na 1. BTC konsolidira oko $86.5K uz rekordne ETF priljeve od $999M i likvidacijom $648M short pozicija, dok Schwab listing SOL/LINK/AVAX i AVAX Helicon upgrade otvaraju prostor za altcoin rotaciju. Prati BTC dominanciju na 59.2% i mogući pad prema altcoinima, ali FG iznad 75 zahtijeva oprez kod kratkoročnih pozicija.",
+    "aiSummary":  "DXY blago raste na 101.1 bez pritiska na kripto, dok Fear & Greed pada s 78 na 71 (Greed) signalizirajući smanjenje kratkoročnog overbought rizika i macroPenalty pada na 0. BTC konsolidira oko $84.4K nakon odbijanja od $87K uz sutrašnji $15.9B opcija expiry, dok BTC dominancija raste na 61% što usporava altcoin rotaciju usprkos snažnim tjednim dobicima ETH (+14%), SOL (+8%) i PENGU (+47%). Pozitivan S&P 500 tjedni prinos (+1.18%) i SEC/CFTC regulatorna jasnoća za SOL/ETH/XRP/ADA/LINK/AVAX podupiru BULL režim, ali CLARITY Act blokiran u Senatu unosi oprez kod XRP-a.",
     "warActive":  false,
-    "btcDom":  59.2,
-    "stableDom":  10.5,
-    "oil":  89.46
+    "btcDom":  61.0,
+    "stableDom":  10.9,
+    "oil":  92.71
 }
