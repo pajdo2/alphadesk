@@ -42,16 +42,17 @@
       "stop": 112.3776,
       "conf": 61,
       "targetPct": 9.15,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "POGODAK",
+      "closePrice": 117.25,
+      "closePct": 0.16,
+      "autoClose": true,
       "engineVer": "v5.263",
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
-      "peakPrice": 117.06,
-      "peakPct": 0
+      "peakPrice": 117.25,
+      "peakPct": 0.16,
+      "closeReason": "⏰ Vrijeme isteklo (24/7)"
     },
     {
       "id": "1790012932977",
@@ -68,16 +69,17 @@
       "stop": 1.4347,
       "conf": 61,
       "targetPct": 8.9,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "POGODAK",
+      "closePrice": 1.53,
+      "closePct": 2.38,
+      "autoClose": true,
       "engineVer": "v5.263",
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
-      "peakPrice": 1.4945,
-      "peakPct": 0
+      "peakPrice": 1.53,
+      "peakPct": 2.38,
+      "closeReason": "⏰ Vrijeme isteklo (24/7)"
     },
     {
       "id": "1790012930880",
@@ -94,16 +96,17 @@
       "stop": 1.4348,
       "conf": 61,
       "targetPct": 8.89,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "POGODAK",
+      "closePrice": 1.53,
+      "closePct": 2.37,
+      "autoClose": true,
       "engineVer": "v5.263",
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
-      "peakPrice": 1.4946,
-      "peakPct": 0
+      "peakPrice": 1.53,
+      "peakPct": 2.37,
+      "closeReason": "⏰ Vrijeme isteklo (24/7)"
     },
     {
       "id": "1790012928484",
@@ -120,16 +123,17 @@
       "stop": 82350.2688,
       "conf": 61,
       "targetPct": 8.99,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "PROMAŠAJ",
+      "closePrice": 84412,
+      "closePct": -1.6,
+      "autoClose": true,
       "engineVer": "v5.263",
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
       "peakPrice": 85781.53,
-      "peakPct": 0
+      "peakPct": 0,
+      "closeReason": "⏰ Vrijeme isteklo (24/7)"
     },
     {
       "id": "1790012925390",
@@ -172,16 +176,17 @@
       "stop": 762.8448,
       "conf": 61,
       "targetPct": 9.08,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "PROMAŠAJ",
+      "closePrice": 780.24,
+      "closePct": -1.81,
+      "autoClose": true,
       "engineVer": "v5.263",
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
       "peakPrice": 794.63,
-      "peakPct": 0
+      "peakPct": 0,
+      "closeReason": "⏰ Vrijeme isteklo (24/7)"
     },
     {
       "id": "1790012919117",
@@ -198,16 +203,17 @@
       "stop": 762.8448,
       "conf": 61,
       "targetPct": 9.08,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "PROMAŠAJ",
+      "closePrice": 780.24,
+      "closePct": -1.81,
+      "autoClose": true,
       "engineVer": "v5.263",
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
       "peakPrice": 794.63,
-      "peakPct": 0
+      "peakPct": 0,
+      "closeReason": "⏰ Vrijeme isteklo (24/7)"
     },
     {
       "id": "1790012916071",
@@ -224,16 +230,17 @@
       "stop": 2629.3056,
       "conf": 60,
       "targetPct": 8.96,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "PROMAŠAJ",
+      "closePrice": 2680.85,
+      "closePct": -2.12,
+      "autoClose": true,
       "engineVer": "v5.263",
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
       "peakPrice": 2738.86,
-      "peakPct": 0
+      "peakPct": 0,
+      "closeReason": "⏰ Vrijeme isteklo (24/7)"
     },
     {
       "id": "1789187393259_NEAR",
@@ -9247,5 +9254,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-09-24T08:38:39.853Z"
+  "updatedAt": "2026-09-24T18:22:44.270Z"
 }
