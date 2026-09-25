@@ -1,19 +1,19 @@
 {
-    "dxy":  101.08,
-    "changeSummary":  "F&G blago pada s 71 na 68 dok BTC konsolidira oko $84K nakon odbijanja od $87K, ADA i SOL jačaju AI payments katalyzatorima, BULL режim i macroPenalty ostaju nepromijenjeni na 0.",
-    "lastUpdated":  "2026-09-24T18:00:00Z",
+    "dxy":  101.06,
+    "changeSummary":  "F&G pada s 68 na ~65, oil raste na $93.02, BTC konsolidira $84K uz Fed hike pritisak, dok SOL i XRP bilježe nove ETF priljeve a PENGU eksplodira +47% tjedno.",
+    "lastUpdated":  "2026-09-25T10:00:00Z",
     "warnings":  {
                      "ACT":  [
 
                              ],
                      "MEME":  [
-                                "Visoka volatilnost, pazi na nagle likvidacije"
+
                               ],
                      "ANIME":  [
 
                                ],
                      "XRP":  [
-                               "CLARITY Act blokiran - pravna neizvjesnost ostaje"
+
                              ],
                      "BNB":  [
 
@@ -40,7 +40,7 @@
 
                                 ],
                      "SOL":  [
-                               "$369M likvidacijski val uz SEC blockchain reformu"
+
                              ],
                      "ADA":  [
 
@@ -52,49 +52,54 @@
 
                                ],
                      "ETH":  [
-                               "Profit-taking na 8-mj. visini, pad -0.8% na otvaranju"
+                                 "Fed hike pritisak, otpor $2,500",
+                                 "ETF odljevi $224M u jednom danu"
                              ],
                      "LINK":  [
-
+                                  "Binance delistanje margin para u rujnu"
                               ],
                      "PUMP":  [
 
                               ],
                      "TRUMP":  [
-
+                                   "Bullish samo dok novi kupci > prodavaci"
                                ],
                      "BTC":  [
-                               "Odbijanje od $87K - teži otpor, kratkoročna konsolidacija"
+                                 "Fed hike 25bps + novi hike 69% sansa u listopadu",
+                                 "Otpor na $87K, ETF odljevi"
                              ]
                  },
-    "sp500Ret5d":  1.18,
-    "fearGreed":  68,
+    "sp500Ret5d":  0.3,
+    "fearGreed":  65,
     "macroPenalty":  0,
     "catalysts":  {
                       "ACT":  [
 
                               ],
                       "MEME":  [
-
+                                   "Meme sezona aktivna, pozitivan sentiment"
                                ],
                       "ANIME":  [
 
                                 ],
                       "XRP":  [
-                                "RLUSD stablecoin lansiranje kasno 2026 na XRPL i ETH",
-                                "SEC/CFTC commodity status - regulatorna jasnoća"
+                                  "ETF priljevi $14.89M, treci uzastopni dan",
+                                  "Whale akumulacija, bullish setup iznad $1.54"
                               ],
                       "BNB":  [
 
                               ],
                       "SUI":  [
-                                "Bull market momentum, SEC commodity status"
+                                  "Linux Foundation partnerstvo uz Swift, WF",
+                                  "CLOB launch, DeFi TVL $1.21B, momentum"
                               ],
                       "AVAX":  [
-                                 "SEC/CFTC commodity status potvrđen"
+                                   "Aave V4 $1.2B depozita na Avalancheu",
+                                   "Helicon upgrade - validator lock 14d na 48h"
                                ],
                       "PENGU":  [
-                                  "+47% prethodni tjedan, bull momentum se nastavlja"
+                                    "Trending, +47% tjedno, +60% mjesecno",
+                                    "Top meme performer ovog tjedna"
                                 ],
                       "BOME":  [
 
@@ -109,64 +114,63 @@
 
                                  ],
                       "SOL":  [
-                                "x402 AI payments kit - direktni AI payment rail",
-                                "SEC/CFTC commodity status potvrđen"
+                                  "ETF priljevi $32.81M, peti uzastopni dan",
+                                  "Institucionalna potraznja, bullish flag $118"
                               ],
                       "ADA":  [
-                                "x402 AI payments kit, +8% skok uz AI integraciju",
-                                "SEC/CFTC commodity status potvrđen"
+                                  "Supply u profitu +30% za 2 tjedna",
+                                  "Whale akumulacija, bullish kanal breakout"
                               ],
                       "PNUT":  [
-
+                                   "Musk kripticna vjeverica - potencijalni catalyst"
                                ],
                       "AIXBT":  [
-                                  "AI kripto sektor bullish u aktualnom bull marketu"
+
                                 ],
                       "ETH":  [
-                                "ETF tjedni priljevi $218M, institucionalni interes raste",
-                                "Blizu 8-mj. visine, kripto zima gotova po analitičarima"
+                                  "ETH drzi $2,400 usprkos Fed hikeu i ETF odljevima"
                               ],
                       "LINK":  [
-                                 "SEC/CFTC commodity status - regulatorna zaštita"
+
                                ],
                       "PUMP":  [
 
                                ],
                       "TRUMP":  [
-                                  "Trump-Xi summit u Washingtonu - geopolitička stabilizacija"
+                                    "Najvise pretrazivani token, +35% u 30 dana"
                                 ],
                       "BTC":  [
-                                "S&P 500 tjedni prinos +1.18% - risk-on makro signal",
-                                "Trump-Xi summit smanjuje geopolitički rizik"
+                                  "PMI 58.4 signalizira ekonomski rast, risk-on",
+                                  "BTC konsolidacija $84K, podrska drzi"
                               ]
                   },
     "regime":  "BULL",
     "sentimentScore":  {
                            "ACT":  0,
-                           "MEME":  0,
+                           "MEME":  1,
                            "ANIME":  0,
                            "XRP":  1,
-                           "BNB":  1,
-                           "SUI":  1,
-                           "AVAX":  1,
-                           "PENGU":  1,
+                           "BNB":  0,
+                           "SUI":  2,
+                           "AVAX":  2,
+                           "PENGU":  2,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
                            "SOL":  2,
-                           "ADA":  2,
-                           "PNUT":  0,
-                           "AIXBT":  1,
-                           "ETH":  1,
-                           "LINK":  1,
+                           "ADA":  1,
+                           "PNUT":  1,
+                           "AIXBT":  0,
+                           "ETH":  0,
+                           "LINK":  -1,
                            "PUMP":  0,
                            "TRUMP":  1,
-                           "BTC":  1
+                           "BTC":  0
                        },
-    "aiSummary":  "DXY stabilna na 101.1 bez makro pritiska na kripto, dok F&G blago pada na 68 (Greed) signalizirajući smanjenje overbought rizika uz BTC konsolidaciju oko $84K nakon odbijanja od $87K. Trump-Xi summit u Washingtonu smanjuje geopolitički rizik i podupire risk-on sentiment, dok ADA i SOL dobivaju novi bullish momentum kroz x402 AI payments integraciju uz SEC/CFTC commodity status. BULL режim se nastavlja s macroPenalty 0, ali kratkoročna konsolidacija BTC-a vjerojatna do proboja otpora na $87K.",
+    "aiSummary":  "DXY stabilna na 101.1 bez izravnog makro pritiska, no Fed hike od 25bps uz 69% sanse novog hikea u listopadu stvara headwind za rizicnu imovinu. F&G pada s 78 na ~65 (Greed) dok BTC konsolidira $84K, a oil raste na $93 (+16% u mjesec dana). XRP, SOL i ADA biljeze uzastopne ETF priljeve uz whale akumulaciju, PENGU vodi meme rally +47% tjedno, BULL rezim traje uz macroPenalty 0.",
     "warActive":  false,
-    "btcDom":  61.0,
-    "stableDom":  11.0,
-    "oil":  92.71
+    "btcDom":  60.0,
+    "stableDom":  9.0,
+    "oil":  93.02
 }
