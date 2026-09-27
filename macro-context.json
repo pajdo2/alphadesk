@@ -1,22 +1,22 @@
 {
-    "dxy":  101.06,
-    "changeSummary":  "F&G pada s 68 na ~65, oil raste na $93.02, BTC konsolidira $84K uz Fed hike pritisak, dok SOL i XRP bilježe nove ETF priljeve a PENGU eksplodira +47% tjedno.",
-    "lastUpdated":  "2026-09-25T10:00:00Z",
+    "dxy":  101.03,
+    "changeSummary":  "BTC ostaje stabilan oko $84.5K uz F&G 71 dok DXY pada na 101.0, BTC dominacija klizi s 60% na 58.6%, a Bitget hack za $350M unosi sigurnosne zabrinutosti dok Iran-US napetosti drže naftu na $93.",
+    "lastUpdated":  "2026-09-25T12:00:00Z",
     "warnings":  {
                      "ACT":  [
 
                              ],
                      "MEME":  [
-
+                                 "Negativni meme sentiment, tržište rotira prema većim altcoinima"
                               ],
                      "ANIME":  [
-
+                                   "Opći negativni sentiment prema meme coinima"
                                ],
                      "XRP":  [
 
                              ],
                      "BNB":  [
-
+                                 "Bitget hakiran $350M, CEX povjerenje oslabljeno"
                              ],
                      "SUI":  [
 
@@ -25,19 +25,19 @@
 
                               ],
                      "PENGU":  [
-
+                                   "Smirivanje nakon +47% tjednog rasta, korekcija moguća"
                                ],
                      "BOME":  [
-
+                                  "Visoka volatilnost meme coina, slabi fundamentals"
                               ],
                      "DOGS":  [
-
+                                  "Opći negativni sentiment prema meme coinima"
                               ],
                      "NOT":  [
-
+                                 "Opći negativni sentiment prema meme coinima"
                              ],
                      "PEOPLE":  [
-
+                                    "Opći negativni sentiment prema meme coinima"
                                 ],
                      "SOL":  [
 
@@ -46,60 +46,54 @@
 
                              ],
                      "PNUT":  [
-
+                                  "Visoka volatilnost meme coina, slabi fundamentals"
                               ],
                      "AIXBT":  [
 
                                ],
                      "ETH":  [
-                                 "Fed hike pritisak, otpor $2,500",
-                                 "ETF odljevi $224M u jednom danu"
+
                              ],
                      "LINK":  [
-                                  "Binance delistanje margin para u rujnu"
-                              ],
-                     "PUMP":  [
 
                               ],
+                     "PUMP":  [
+                                  "Bitget hack narušava povjerenje u CEX ekosustav"
+                              ],
                      "TRUMP":  [
-                                   "Bullish samo dok novi kupci > prodavaci"
+                                   "Meme coin politička neizvjesnost, visoka volatilnost"
                                ],
                      "BTC":  [
-                                 "Fed hike 25bps + novi hike 69% sansa u listopadu",
-                                 "Otpor na $87K, ETF odljevi"
+
                              ]
                  },
-    "sp500Ret5d":  0.3,
-    "fearGreed":  65,
-    "macroPenalty":  0,
+    "sp500Ret5d":  0.6,
+    "fearGreed":  71,
+    "macroPenalty":  2,
     "catalysts":  {
                       "ACT":  [
 
                               ],
                       "MEME":  [
-                                   "Meme sezona aktivna, pozitivan sentiment"
+
                                ],
                       "ANIME":  [
 
                                 ],
                       "XRP":  [
-                                  "ETF priljevi $14.89M, treci uzastopni dan",
-                                  "Whale akumulacija, bullish setup iznad $1.54"
+                                  "GENIUS Act stablecoin regulativa povoljnija za XRP ekosustav"
                               ],
                       "BNB":  [
 
                               ],
                       "SUI":  [
-                                  "Linux Foundation partnerstvo uz Swift, WF",
-                                  "CLOB launch, DeFi TVL $1.21B, momentum"
+
                               ],
                       "AVAX":  [
-                                   "Aave V4 $1.2B depozita na Avalancheu",
-                                   "Helicon upgrade - validator lock 14d na 48h"
+
                                ],
                       "PENGU":  [
-                                    "Trending, +47% tjedno, +60% mjesecno",
-                                    "Top meme performer ovog tjedna"
+
                                 ],
                       "BOME":  [
 
@@ -114,63 +108,60 @@
 
                                  ],
                       "SOL":  [
-                                  "ETF priljevi $32.81M, peti uzastopni dan",
-                                  "Institucionalna potraznja, bullish flag $118"
+                                  "ETF priljevi nastavljeni, whale akumulacija u tijeku"
                               ],
                       "ADA":  [
-                                  "Supply u profitu +30% za 2 tjedna",
-                                  "Whale akumulacija, bullish kanal breakout"
+                                  "ETF priljevi nastavljeni, jaka on-chain aktivnost"
                               ],
                       "PNUT":  [
-                                   "Musk kripticna vjeverica - potencijalni catalyst"
+
                                ],
                       "AIXBT":  [
 
                                 ],
                       "ETH":  [
-                                  "ETH drzi $2,400 usprkos Fed hikeu i ETF odljevima"
+                                  "NYSE/Blockchain.com 24/7 tokenizacija dionica bullish za ETH"
                               ],
                       "LINK":  [
-
+                                   "Tokenizacija trad-fi imovine povećava potražnju za LINK orakle"
                                ],
                       "PUMP":  [
 
                                ],
                       "TRUMP":  [
-                                    "Najvise pretrazivani token, +35% u 30 dana"
+
                                 ],
                       "BTC":  [
-                                  "PMI 58.4 signalizira ekonomski rast, risk-on",
-                                  "BTC konsolidacija $84K, podrska drzi"
+                                  "Put na $250K: analitičari vide $85K kao odskočnu dasku"
                               ]
                   },
     "regime":  "BULL",
     "sentimentScore":  {
                            "ACT":  0,
-                           "MEME":  1,
-                           "ANIME":  0,
+                           "MEME":  -1,
+                           "ANIME":  -1,
                            "XRP":  1,
-                           "BNB":  0,
-                           "SUI":  2,
-                           "AVAX":  2,
-                           "PENGU":  2,
-                           "BOME":  0,
-                           "DOGS":  0,
-                           "NOT":  0,
-                           "PEOPLE":  0,
-                           "SOL":  2,
+                           "BNB":  -1,
+                           "SUI":  0,
+                           "AVAX":  0,
+                           "PENGU":  0,
+                           "BOME":  -1,
+                           "DOGS":  -1,
+                           "NOT":  -1,
+                           "PEOPLE":  -1,
+                           "SOL":  1,
                            "ADA":  1,
-                           "PNUT":  1,
+                           "PNUT":  -1,
                            "AIXBT":  0,
-                           "ETH":  0,
-                           "LINK":  -1,
-                           "PUMP":  0,
-                           "TRUMP":  1,
-                           "BTC":  0
+                           "ETH":  1,
+                           "LINK":  1,
+                           "PUMP":  -1,
+                           "TRUMP":  -1,
+                           "BTC":  1
                        },
-    "aiSummary":  "DXY stabilna na 101.1 bez izravnog makro pritiska, no Fed hike od 25bps uz 69% sanse novog hikea u listopadu stvara headwind za rizicnu imovinu. F&G pada s 78 na ~65 (Greed) dok BTC konsolidira $84K, a oil raste na $93 (+16% u mjesec dana). XRP, SOL i ADA biljeze uzastopne ETF priljeve uz whale akumulaciju, PENGU vodi meme rally +47% tjedno, BULL rezim traje uz macroPenalty 0.",
-    "warActive":  false,
-    "btcDom":  60.0,
-    "stableDom":  9.0,
+    "aiSummary":  "DXY pada na 101.0 bez izravnog makro pritiska, no Iran-US napetosti oko Hormuzkog tjesnaca drže naftu na $93 uz aktivni ratni rizik (macroPenalty 2). F&G ostaje na 71 (Greed) dok BTC konsolidira $84-85K uz spekulacije o cilju $250K, a NYSE/Blockchain.com tokenizacija dionica daje dugoročni bullish signal za ETH i LINK. Bitget hack za $350M i opći negativni meme sentiment sugeriraju oprez kod meme coina, dok SOL, ADA i XRP i dalje bilježe pozitivne katalizatore.",
+    "warActive":  true,
+    "btcDom":  58.57,
+    "stableDom":  10.2,
     "oil":  93.02
 }
