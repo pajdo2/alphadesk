@@ -1,22 +1,22 @@
 {
-    "dxy":  101.03,
-    "changeSummary":  "BTC ostaje stabilan oko $84.5K uz F&G 71 dok DXY pada na 101.0, BTC dominacija klizi s 60% na 58.6%, a Bitget hack za $350M unosi sigurnosne zabrinutosti dok Iran-US napetosti drže naftu na $93.",
-    "lastUpdated":  "2026-09-25T12:00:00Z",
+    "dxy":  101.11,
+    "changeSummary":  "BTC zadržao bullish momentum s probijem $87K i ETF priljevi $2.4 mlrd, dok Bitget hack $387M (rast od $350M) pojačao negativni altcoin sentiment, DXY i F&G praktički nepromijenjeni.",
+    "lastUpdated":  "2026-09-27T12:00:00Z",
     "warnings":  {
                      "ACT":  [
 
                              ],
                      "MEME":  [
-                                 "Negativni meme sentiment, tržište rotira prema većim altcoinima"
+                               "Bitget hack i FUD tjeraju kapital prema BTC/stablecoins"
                               ],
                      "ANIME":  [
-                                   "Opći negativni sentiment prema meme coinima"
+
                                ],
                      "XRP":  [
-
+                              "BatchV1_1 amandman odgođen, validator podrška pala"
                              ],
                      "BNB":  [
-                                 "Bitget hakiran $350M, CEX povjerenje oslabljeno"
+
                              ],
                      "SUI":  [
 
@@ -25,19 +25,19 @@
 
                               ],
                      "PENGU":  [
-                                   "Smirivanje nakon +47% tjednog rasta, korekcija moguća"
+
                                ],
                      "BOME":  [
-                                  "Visoka volatilnost meme coina, slabi fundamentals"
+
                               ],
                      "DOGS":  [
-                                  "Opći negativni sentiment prema meme coinima"
+
                               ],
                      "NOT":  [
-                                 "Opći negativni sentiment prema meme coinima"
+
                              ],
                      "PEOPLE":  [
-                                    "Opći negativni sentiment prema meme coinima"
+
                                 ],
                      "SOL":  [
 
@@ -46,22 +46,22 @@
 
                              ],
                      "PNUT":  [
-                                  "Visoka volatilnost meme coina, slabi fundamentals"
+
                               ],
                      "AIXBT":  [
 
                                ],
                      "ETH":  [
-
+                              "Bitget hack $387M - ETH dio ukradene imovine, prodajni pritisak"
                              ],
                      "LINK":  [
-
+                               "SEC odgodio odluku o kripto ETF opcijama do 11. studenog"
                               ],
                      "PUMP":  [
-                                  "Bitget hack narušava povjerenje u CEX ekosustav"
+                               "Bitget hack pojačava rizik i FUD oko meme/pump tokena"
                               ],
                      "TRUMP":  [
-                                   "Meme coin politička neizvjesnost, visoka volatilnost"
+                                "Bitget hack povećava rizik meme coina, oprez"
                                ],
                      "BTC":  [
 
@@ -81,10 +81,10 @@
 
                                 ],
                       "XRP":  [
-                                  "GENIUS Act stablecoin regulativa povoljnija za XRP ekosustav"
+
                               ],
                       "BNB":  [
-
+                               "Binance+Circle 5-god. USDC partnerstvo za $100M"
                               ],
                       "SUI":  [
 
@@ -108,10 +108,10 @@
 
                                  ],
                       "SOL":  [
-                                  "ETF priljevi nastavljeni, whale akumulacija u tijeku"
+
                               ],
                       "ADA":  [
-                                  "ETF priljevi nastavljeni, jaka on-chain aktivnost"
+
                               ],
                       "PNUT":  [
 
@@ -120,10 +120,10 @@
 
                                 ],
                       "ETH":  [
-                                  "NYSE/Blockchain.com 24/7 tokenizacija dionica bullish za ETH"
+
                               ],
                       "LINK":  [
-                                   "Tokenizacija trad-fi imovine povećava potražnju za LINK orakle"
+
                                ],
                       "PUMP":  [
 
@@ -132,36 +132,37 @@
 
                                 ],
                       "BTC":  [
-                                  "Put na $250K: analitičari vide $85K kao odskočnu dasku"
+                               "Bitcoin ETF priljevi $2.4 mlrd, rekord od Q4 2025",
+                               "BTC probio $87K, najjači tjedan od siječnja 2026"
                               ]
                   },
     "regime":  "BULL",
     "sentimentScore":  {
-                           "ACT":  0,
-                           "MEME":  -1,
+                           "ACT":  -1,
+                           "MEME":  -2,
                            "ANIME":  -1,
-                           "XRP":  1,
-                           "BNB":  -1,
+                           "XRP":  -1,
+                           "BNB":  1,
                            "SUI":  0,
                            "AVAX":  0,
-                           "PENGU":  0,
+                           "PENGU":  -1,
                            "BOME":  -1,
                            "DOGS":  -1,
                            "NOT":  -1,
                            "PEOPLE":  -1,
-                           "SOL":  1,
-                           "ADA":  1,
+                           "SOL":  0,
+                           "ADA":  0,
                            "PNUT":  -1,
                            "AIXBT":  0,
-                           "ETH":  1,
-                           "LINK":  1,
+                           "ETH":  0,
+                           "LINK":  0,
                            "PUMP":  -1,
                            "TRUMP":  -1,
-                           "BTC":  1
+                           "BTC":  2
                        },
-    "aiSummary":  "DXY pada na 101.0 bez izravnog makro pritiska, no Iran-US napetosti oko Hormuzkog tjesnaca drže naftu na $93 uz aktivni ratni rizik (macroPenalty 2). F&G ostaje na 71 (Greed) dok BTC konsolidira $84-85K uz spekulacije o cilju $250K, a NYSE/Blockchain.com tokenizacija dionica daje dugoročni bullish signal za ETH i LINK. Bitget hack za $350M i opći negativni meme sentiment sugeriraju oprez kod meme coina, dok SOL, ADA i XRP i dalje bilježe pozitivne katalizatore.",
+    "aiSummary":  "DXY stabilan na 101.1 uz Iran-US napetosti koje drže naftu na $92.4, macroPenalty ostaje na 2. F&G iznosi 71 (Greed) dok BTC konsolidira $84-87K uz rekordne ETF priljeve od $2.4 mlrd i proboj $87K — najjači tjedan od siječnja 2026. Bitget hack za $387M povećava rizik altcoina i meme coina, a SEC odgoda ETF opcija do studenog donosi kratkoročnu regulatornu neizvjesnost.",
     "warActive":  true,
-    "btcDom":  58.57,
-    "stableDom":  10.2,
-    "oil":  93.02
+    "btcDom":  58.5,
+    "stableDom":  10.6,
+    "oil":  92.41
 }
