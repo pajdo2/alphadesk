@@ -1,19 +1,19 @@
 {
     "dxy":  101.11,
-    "changeSummary":  "BTC zadržao bullish momentum s probijem $87K i ETF priljevi $2.4 mlrd, dok Bitget hack $387M (rast od $350M) pojačao negativni altcoin sentiment, DXY i F&G praktički nepromijenjeni.",
-    "lastUpdated":  "2026-09-27T12:00:00Z",
+    "changeSummary":  "BTC pao na $83.2K uz pad F&G s 71 na 63, nafta raste na $94 zbog Trump-Iran napetosti dok macroPenalty ostaje na 2.",
+    "lastUpdated":  "2026-09-28T08:00:00Z",
     "warnings":  {
                      "ACT":  [
 
                              ],
                      "MEME":  [
-                               "Bitget hack i FUD tjeraju kapital prema BTC/stablecoins"
+
                               ],
                      "ANIME":  [
 
                                ],
                      "XRP":  [
-                              "BatchV1_1 amandman odgođen, validator podrška pala"
+
                              ],
                      "BNB":  [
 
@@ -52,30 +52,30 @@
 
                                ],
                      "ETH":  [
-                              "Bitget hack $387M - ETH dio ukradene imovine, prodajni pritisak"
+
                              ],
                      "LINK":  [
-                               "SEC odgodio odluku o kripto ETF opcijama do 11. studenog"
+
                               ],
                      "PUMP":  [
-                               "Bitget hack pojačava rizik i FUD oko meme/pump tokena"
+
                               ],
                      "TRUMP":  [
-                                "Bitget hack povećava rizik meme coina, oprez"
+                                   "Politički token, visoka volatilnost uz geopolitiku"
                                ],
                      "BTC":  [
-
+                                 "Konsolidacija $83-85K, Fed hike u listopadu 64%"
                              ]
                  },
-    "sp500Ret5d":  0.6,
-    "fearGreed":  71,
+    "sp500Ret5d":  0.88,
+    "fearGreed":  63,
     "macroPenalty":  2,
     "catalysts":  {
                       "ACT":  [
 
                               ],
                       "MEME":  [
-
+                                   "Altcoin sezona indeks na 3-mjes. vrhuncu"
                                ],
                       "ANIME":  [
 
@@ -84,7 +84,7 @@
 
                               ],
                       "BNB":  [
-                               "Binance+Circle 5-god. USDC partnerstvo za $100M"
+
                               ],
                       "SUI":  [
 
@@ -120,7 +120,7 @@
 
                                 ],
                       "ETH":  [
-
+                                  "ETH ETF priljevi $87M, 6 uzast. dana"
                               ],
                       "LINK":  [
 
@@ -129,40 +129,39 @@
 
                                ],
                       "TRUMP":  [
-
+                                    "Trump odbio Iran deal, geopolitika u fokusu"
                                 ],
                       "BTC":  [
-                               "Bitcoin ETF priljevi $2.4 mlrd, rekord od Q4 2025",
-                               "BTC probio $87K, najjači tjedan od siječnja 2026"
+                                  "ETF priljevi 7 uzast. dana, pozitivan momentum"
                               ]
                   },
     "regime":  "BULL",
     "sentimentScore":  {
-                           "ACT":  -1,
-                           "MEME":  -2,
-                           "ANIME":  -1,
-                           "XRP":  -1,
-                           "BNB":  1,
+                           "ACT":  0,
+                           "MEME":  1,
+                           "ANIME":  0,
+                           "XRP":  0,
+                           "BNB":  0,
                            "SUI":  0,
                            "AVAX":  0,
-                           "PENGU":  -1,
-                           "BOME":  -1,
-                           "DOGS":  -1,
-                           "NOT":  -1,
-                           "PEOPLE":  -1,
+                           "PENGU":  0,
+                           "BOME":  0,
+                           "DOGS":  0,
+                           "NOT":  0,
+                           "PEOPLE":  0,
                            "SOL":  0,
                            "ADA":  0,
-                           "PNUT":  -1,
+                           "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  0,
+                           "ETH":  1,
                            "LINK":  0,
-                           "PUMP":  -1,
-                           "TRUMP":  -1,
-                           "BTC":  2
+                           "PUMP":  0,
+                           "TRUMP":  0,
+                           "BTC":  1
                        },
-    "aiSummary":  "DXY stabilan na 101.1 uz Iran-US napetosti koje drže naftu na $92.4, macroPenalty ostaje na 2. F&G iznosi 71 (Greed) dok BTC konsolidira $84-87K uz rekordne ETF priljeve od $2.4 mlrd i proboj $87K — najjači tjedan od siječnja 2026. Bitget hack za $387M povećava rizik altcoina i meme coina, a SEC odgoda ETF opcija do studenog donosi kratkoročnu regulatornu neizvjesnost.",
+    "aiSummary":  "DXY stabilan na 101.1, Trump-ovo odbijanje iranskog sporazuma gura WTI naftu na $94/bbl uz povišenu geopolitičku napetost i warActive=true. Fear & Greed pao s 71 na 63 (Greed) uz BTC koji konsolidira ispod $85K na $83.2K, dok ETF priljevi ostaju pozitivni sedmi uzastopni dan. Altcoini pokazuju relativnu snagu uz altcoin sezona indeks na 3-mjesečnom vrhuncu, ali Fed rate hike u listopadu (64% vjerojatnost) predstavlja kratkoročni rizik za tržište.",
     "warActive":  true,
-    "btcDom":  58.5,
-    "stableDom":  10.6,
-    "oil":  92.41
+    "btcDom":  58.8,
+    "stableDom":  7.1,
+    "oil":  94.1
 }
