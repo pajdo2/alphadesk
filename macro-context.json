@@ -1,7 +1,7 @@
 {
-    "dxy":  101.11,
-    "changeSummary":  "Macro ostaje stabilan (DXY 101.1, oil +0.3% na $94.4), ali tržišno raspoloženje slabi - BTC klizi na $83.1K uz negativne funding rateove i Bitget hack od $387M koji pritišće CEX povjerenje.",
-    "lastUpdated":  "2026-09-28T12:00:00Z",
+    "dxy":  101.12,
+    "changeSummary":  "BTC porastao s $83.1K na ~$83.5K uz pad nafte (WTI $92.6) i stabilan DXY 101.1, dok Fear & Greed raste s 65 na 73.",
+    "lastUpdated":  "2026-09-29T12:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -16,7 +16,7 @@
 
                              ],
                      "BNB":  [
-                                 "Bitget hack $387M - negativno za CEX povjerenje"
+
                              ],
                      "SUI":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-                                 "Negativni funding rateovi, geopolitika pritisce"
+                                 "Bitget hack $387M - povjerenje u razmjene oslabljeno"
                              ],
                      "LINK":  [
 
@@ -61,15 +61,15 @@
 
                               ],
                      "TRUMP":  [
-                                   "Geopoliticka napetost Iran-SAD slabi meme tokene"
+                                   "Trump odbio iranski 7-dnevni plan - rat se nastavlja"
                                ],
                      "BTC":  [
-                                 "Iran rizik pritisce risk-on imovinu",
-                                 "Fed rate hike Q4 - 64% vjerojatnost"
+                                 "Fed pritisak na kamatne stope - inflacijski rizik",
+                                 "Otpor na $85K, kljucna razina za break"
                              ]
                  },
-    "sp500Ret5d":  0.6,
-    "fearGreed":  65,
+    "sp500Ret5d":  -0.8,
+    "fearGreed":  73,
     "macroPenalty":  2,
     "catalysts":  {
                       "ACT":  [
@@ -82,7 +82,7 @@
 
                                 ],
                       "XRP":  [
-                                  "Bullish derivatives bias - XRP drzi pozitivan sentiment"
+
                               ],
                       "BNB":  [
 
@@ -121,8 +121,7 @@
 
                                 ],
                       "ETH":  [
-                                  "Glamsterdam upgrade ciljano Q4 2026",
-                                  "Sepolia fork 6. listopada 2026"
+                                  "Glamsterdam upgrade Q4 2026 - pozitivan razvojni signal"
                               ],
                       "LINK":  [
 
@@ -134,8 +133,8 @@
 
                                 ],
                       "BTC":  [
-                                  "ETF priljevi pozitivni 8. uzastopni dan",
-                                  "BTC konsolidira iznad $83K"
+                                  "ETF tjedni priljevi $2.39B - jaka institucionalna potraznja",
+                                  "BTC drzi $83K razinu podrske uz konsolidaciju"
                               ]
                   },
     "regime":  "BULL",
@@ -143,8 +142,8 @@
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  1,
-                           "BNB":  -1,
+                           "XRP":  0,
+                           "BNB":  0,
                            "SUI":  0,
                            "AVAX":  0,
                            "PENGU":  0,
@@ -156,15 +155,15 @@
                            "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  -1,
+                           "ETH":  1,
                            "LINK":  0,
                            "PUMP":  0,
                            "TRUMP":  -1,
-                           "BTC":  0
+                           "BTC":  1
                        },
-    "aiSummary":  "DXY stabilno na 101.1 uz naftu koja raste na $94.4/bbl zbog napetosti oko Hormuza i Trumpovih izjava o Iranu (warActive=true). Fear & Greed indeks na 65 (Greed) uz tržište koje pada 1.7%, BTC klizi na $83.1K s negativnim funding rateovima za BTC i ETH. Glamsterdam ETH upgrade cilja Q4 2026, ali Bitget hack od $387M i Fed rate hike pritisci kratkorocno opterecuju sentiment.",
+    "aiSummary":  "DXY stabilan na 101.1, no nafta (WTI $92.6, Brent $105) i visoki prinosi obveznica pojacavaju inflacijske strahove uz aktivan US-Iran rat (warActive=true). Fear & Greed raste na 73 (Pohlepa), BTC konsolidira oko $83.5K s jakim ETF priljevi od $2.39B tjedno dok Fed price hike ocekivanja pritiskauju trzistu. Ocekuje se volatilnost oko GDP i core PCE podataka 30. rujna, kratkorocni otpor na $85K kljucan za nastavak bika.",
     "warActive":  true,
-    "btcDom":  58.5,
-    "stableDom":  10.3,
-    "oil":  94.44
+    "btcDom":  58.8,
+    "stableDom":  8.5,
+    "oil":  92.6
 }
