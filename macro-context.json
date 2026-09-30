@@ -1,7 +1,7 @@
 {
-    "dxy":  101.4,
-    "changeSummary":  "Fear & Greed pao s 73 na 71, nafta korigirala s $92.6 na $89.3, BTC dominacija blago smanjena na 58.5%, DXY stabilan na 101.4, macroPenalty nepromijenjen na 2.",
-    "lastUpdated":  "2026-09-30T10:00:00Z",
+    "dxy":  101.3,
+    "changeSummary":  "DXY neznatno pao na 101.3, F&G stabilan na 69, oil korigirao na $89, dok AVAX eksplodirao +9% na Goldman Sachs institucionalnom ulazu.",
+    "lastUpdated":  "2026-09-30T12:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -13,7 +13,7 @@
 
                                ],
                      "XRP":  [
-
+                                 "$83M ukradeni XRP premješteni iz Bitget hacka"
                              ],
                      "BNB":  [
 
@@ -52,10 +52,10 @@
 
                                ],
                      "ETH":  [
-                                 "ETH ETF priljevi usporavaju, dnevni inflow $17.1M"
+
                              ],
                      "LINK":  [
-                                  "LINK overbought signal na dnevnom grafu"
+
                               ],
                      "PUMP":  [
 
@@ -64,12 +64,12 @@
 
                                ],
                      "BTC":  [
-                                 "PCE/ADP podaci danas mogu ojacati dolar i pritisnuti BTC"
+                                 "Otpor na $85K kljucan za nastavak bika"
                              ]
                  },
-    "sp500Ret5d":  -0.3,
-    "fearGreed":  71,
-    "macroPenalty":  2,
+    "sp500Ret5d":  -0.5,
+    "fearGreed":  69,
+    "macroPenalty":  0,
     "catalysts":  {
                       "ACT":  [
 
@@ -81,17 +81,17 @@
 
                                 ],
                       "XRP":  [
-                                  "XRP danas +2.1%, analitičari ciljaju $1.70 do kraja rujna"
+                                  "XRP Treasury Co. Nasdaq glasovanje danas"
                               ],
                       "BNB":  [
 
                               ],
                       "SUI":  [
-                                  "CME planira SUI futures ugovore, čeka reg. odobrenje"
+                                  "Neuberger Berman tokenized fond na Sui lancu"
                               ],
                       "AVAX":  [
-                                   "Goldman Sachs $100B Treasury fond na AVAX mreži",
-                                   "AVAX +59% u zadnjem mjesecu, 6-mj. vrhunac"
+                                   "Goldman Sachs $100B FTIXX fond via Avalanche",
+                                   "Tokenized dionice +$131M tjedni priljevi"
                                ],
                       "PENGU":  [
 
@@ -109,7 +109,7 @@
 
                                  ],
                       "SOL":  [
-                                  "Jeonbuk Bank stablecoin POC sa Solana Foundationom"
+                                  "Charles Schwab dodaje SOL trading"
                               ],
                       "ADA":  [
 
@@ -121,11 +121,11 @@
 
                                 ],
                       "ETH":  [
-                                  "Glamsterdam upgrade Sepolia testnet 6. listopada"
+                                  "NYSE + Blockchain.com tokenized trading partnerstvo"
                               ],
                       "LINK":  [
-                                   "DTCC integracija CCIP-a za Q4 kolateral sustav",
-                                   "Infosys partnerstvo za 600 banaka i $16T godisnjeg vol."
+                                   "Charles Schwab dodaje LINK trading",
+                                   "Iznad svih kljucnih pokretnih prosjeka"
                                ],
                       "PUMP":  [
 
@@ -134,8 +134,7 @@
 
                                 ],
                       "BTC":  [
-                                  "Spot ETF priljevi nastavljaju 8-dnevnu pozitivnu seriju",
-                                  "BTC konsolidira $82K-$85K, otpor na $85K"
+                                  "ETF priljevi aktivni, konsolidacija na $83K"
                               ]
                   },
     "regime":  "BULL",
@@ -145,14 +144,14 @@
                            "ANIME":  0,
                            "XRP":  1,
                            "BNB":  0,
-                           "SUI":  1,
-                           "AVAX":  2,
+                           "SUI":  2,
+                           "AVAX":  3,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  1,
+                           "SOL":  2,
                            "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
@@ -162,9 +161,9 @@
                            "TRUMP":  0,
                            "BTC":  1
                        },
-    "aiSummary":  "DXY stabilan na 101.4 uz rast hawkish Fed ocekivanja pred PCE i ADP podacima koji se objavljuju danas. Fear & Greed blago pada na 71 (Pohlepa), BTC konsolidira oko $83.5K s aktivnim ETF priljevi (8-dnevna pozitivna serija), dok nafta korigira s $92.6 prema $89 nakon US rezervnih ispustanja. US-Iran rat ostaje aktivan rizik, otpor na $85K kljucan za potvrdu nastavka bika.",
-    "warActive":  true,
-    "btcDom":  58.5,
-    "stableDom":  9.1,
-    "oil":  89.26
+    "aiSummary":  "DXY pada na 101.3 uz minimalni utjecaj na kripto, Fear & Greed na 69 (Pohlepa) potvrdjuje bullish raspolozenje uz BTC konsolidaciju oko $83.3K. AVAX prednjaci s +9% rastom zbog Goldman Sachs ulaska u $100B tokenized Treasury fond, dok Schwab dodaje SOL, AVAX i LINK cime pojacava institucionalni momentum. Kljucni otpor za BTC ostaje $85K ciji proboj bi potvrdio nastavak bika.",
+    "warActive":  false,
+    "btcDom":  58.4,
+    "stableDom":  13.0,
+    "oil":  89.1
 }
