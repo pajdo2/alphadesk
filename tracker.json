@@ -9305,7 +9305,20 @@
       "correct": null,
       "fwdPrice": null,
       "fwdPct": null
+    },
+    {
+      "ts": 1791038561181,
+      "price": 84900.02,
+      "dir": "UP",
+      "th": 0.86,
+      "conf": 50,
+      "score": 3.92,
+      "verdict": "🟡 Oprez",
+      "graded": false,
+      "correct": null,
+      "fwdPrice": null,
+      "fwdPct": null
     }
   ],
-  "updatedAt": "2026-10-03T12:57:32.402Z"
+  "updatedAt": "2026-10-03T14:42:44.182Z"
 }
