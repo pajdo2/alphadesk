@@ -23,8 +23,8 @@
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
-      "peakPrice": 251.61,
-      "peakPct": 0
+      "peakPrice": 251.76,
+      "peakPct": 0.06
     },
     {
       "id": "1791183399590",
@@ -75,7 +75,7 @@
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
-      "peakPrice": 4152.92,
+      "peakPrice": 4152.93,
       "peakPct": 0
     },
     {
@@ -101,8 +101,8 @@
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
-      "peakPrice": 10.995,
-      "peakPct": 0
+      "peakPrice": 10.997,
+      "peakPct": 0.02
     },
     {
       "id": "1791183380106",
@@ -7270,25 +7270,46 @@
   ],
   "signalWeights": {
     "_global": {
-      "rsiOversold": 0.79,
+      "rsiOversold": 0.774,
       "rsiOverbought": 1,
-      "trendUp": 0.726,
-      "trendDown": 0.548,
+      "trendUp": 0.653,
+      "trendDown": 0.745,
       "bbBelow": 1,
-      "divBullish": 0.81,
-      "divBearish": 0.547,
+      "divBullish": 0.796,
+      "divBearish": 0.533,
       "macdBullCross": 1,
       "macdBearCross": 1,
       "lsRatioBull": 1,
       "lsRatioExtreme": 1,
-      "basisBack": 0.987,
+      "basisBack": 0.982,
       "takerSell": 1,
       "btcDomHigh": 1,
       "btcDomLow": 1,
-      "volSpike": 0.609,
-      "mtfAllUp": 0.909,
-      "fgExtremeFear": 0.973,
-      "fgFear": 0.401
+      "volSpike": 0.787,
+      "mtfAllUp": 0.838,
+      "fgExtremeFear": 0.864,
+      "fgFear": 0.417
+    },
+    "BULL": {
+      "rsiOversold": 1,
+      "rsiOverbought": 1,
+      "trendUp": 1,
+      "trendDown": 1,
+      "bbBelow": 1,
+      "divBullish": 0.764,
+      "divBearish": 1,
+      "macdBullCross": 1,
+      "macdBearCross": 1,
+      "lsRatioBull": 1,
+      "lsRatioExtreme": 1,
+      "basisBack": 0.962,
+      "takerSell": 1,
+      "btcDomHigh": 1,
+      "btcDomLow": 1,
+      "volSpike": 0.869,
+      "mtfAllUp": 1,
+      "fgExtremeFear": 1,
+      "fgFear": 1
     },
     "CRAB": {
       "rsiOversold": 1,
@@ -7296,7 +7317,7 @@
       "trendUp": 1,
       "trendDown": 1,
       "bbBelow": 1,
-      "divBullish": 1.144,
+      "divBullish": 1.231,
       "divBearish": 1,
       "macdBullCross": 1,
       "macdBearCross": 1,
@@ -7309,7 +7330,7 @@
       "volSpike": 1,
       "mtfAllUp": 1,
       "fgExtremeFear": 1,
-      "fgFear": 0.897
+      "fgFear": 0.923
     },
     "BEAR": {
       "rsiOversold": 1,
@@ -9150,5 +9171,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-10-05T06:56:51.128Z"
+  "updatedAt": "2026-10-05T06:57:00.721Z"
 }
