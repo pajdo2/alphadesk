@@ -423,7 +423,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.286</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.287</span></div>
       <div class="hd-sub" id="hdsub">Učitavam top 100 tokena…</div>
       <div class="hd-claude" id="claude-update" style="display:flex;align-items:center;gap:6px">
         <span id="claude-update-txt">🤖 Claude analiza: —</span>
@@ -741,7 +741,7 @@ function getMemeSYMS(){
 
 // Engine verzija — tag na svaku predikciju za mjerenje win-rate po verziji.
 // Pre-commit hook (sed s/v5.x/.../g) automatski drži ovo u sinku s headerom.
-var APP_VER="v5.286";
+var APP_VER="v5.287";
 
 // Settings
 var settings={minConf:45,targetPct:6,maxRisk:2,minRR:1.2,accountSize:1000,maxRiskPerTrade:1};
@@ -2370,6 +2370,22 @@ function regimeMultiplier(signalType){
 // Logic: risk-fixed - svaki trade rizicira ISTU $ kolicinu (maxRiskPerTrade % od accounta)
 // Pozicija = (account * maxRiskPerTrade%) / stopLossPct
 // Modifikatori po conf, RR, broj aktivnih trade-ova
+// ── KELLY CRITERION — matematički optimalna veličina pozicije po povijesnom edge-u ──
+// Full Kelly = W − (1−W)/R. Koristimo HALF-Kelly (konzervativno, jer je edge
+// procjena šumovita i fat-tail). R capan na 4 da moon-outlieri ne napuhaju bet.
+function computeKellyFraction(){
+  var c=predTracker.filter(function(p){return p.status!=="AKTIVAN"&&p.closePct!=null&&!isNaN(p.closePct);});
+  if(c.length<15)return 0; // premalo za pouzdan edge
+  var wins=c.filter(function(p){return p.status==="POGODAK";});
+  var loss=c.filter(function(p){return p.status==="PROMAŠAJ";});
+  if(wins.length<3||loss.length<3)return 0;
+  var W=wins.length/c.length;
+  var avgW=wins.reduce(function(s,p){return s+p.closePct;},0)/wins.length;
+  var avgL=Math.abs(loss.reduce(function(s,p){return s+p.closePct;},0)/loss.length);
+  var R=Math.min(4,avgW/Math.max(0.5,avgL)); // cap R (fat-tail zaštita)
+  var kelly=W-(1-W)/R;
+  return Math.max(0,Math.min(0.2,kelly*0.5)); // half-Kelly, clamp 0-20% kapitala
+}
 function calcPositionSize(opp){
   if(!opp||!opp.price||!opp.stopPrice||opp.stopPrice<=0)return null;
   var account=settings.accountSize||1000;
@@ -2406,6 +2422,9 @@ function calcPositionSize(opp){
   var finalUsd=basePosUsd*confMult*rrMult*diversifyMult*atrMult*calMult;
   // Cap na 25% accounta (single trade ne smije biti vise od 1/4 kapitala)
   finalUsd=Math.min(finalUsd, account*0.25);
+  // 6. KELLY CAP — ne prelazi half-Kelly granicu po povijesnom edge-u (fund-manager disciplina)
+  var kellyFrac=computeKellyFraction();
+  if(kellyFrac>0)finalUsd=Math.min(finalUsd, account*kellyFrac);
 
   var pctOfAccount=(finalUsd/account)*100;
   var realMaxLoss=finalUsd*stopPct;
@@ -2417,6 +2436,7 @@ function calcPositionSize(opp){
     maxLoss: +realMaxLoss.toFixed(2),
     units: +sharesUnits.toFixed(opp.price<1?2:4),
     calConf: calConf,
+    kellyPct: kellyFrac>0?+(kellyFrac*100).toFixed(1):null,
     multipliers: {conf:confMult, rr:rrMult, diversify:diversifyMult, atr:atrMult, cal:+calMult.toFixed(2)}
   };
 }
@@ -3573,6 +3593,10 @@ function renderOpp(o){
       h+='<span style="color:var(--t1);font-weight:var(--fw-x)">$'+ps.usd+' <span style="color:var(--t4);font-weight:var(--fw-b)">('+ps.pct+'% accounta)</span></span>';
       h+='<span style="color:var(--bear);font-weight:var(--fw-b)">Max gubitak: -$'+ps.maxLoss+'</span>';
       h+='</div>';
+      // Kelly referenca — matematički optimalna gornja granica (half-Kelly po edge-u)
+      if(ps.kellyPct!=null){
+        h+='<div style="padding:4px 16px;background:rgba(99,102,241,.03);border-bottom:.5px solid var(--sep2);font-size:9.5px;color:var(--t4)">📊 Half-Kelly max: <strong style="color:#a5b4fc">'+ps.kellyPct+'% kapitala</strong> — optimalno po povijesnom edge-u'+(ps.pct>=ps.kellyPct-0.3?' <span style="color:#a5b4fc">(pozicija ograničena Kellyjem)</span>':'')+'</div>';
+      }
       // Kalibrirani conf (ako povijest koriguje nominalni) — sizing ga vec koristi
       if(ps.calConf!=null&&ps.calConf!==o.conf){
         var _cc=ps.calConf>o.conf;
@@ -5187,6 +5211,40 @@ function hcDrawdown(sorted){
   return h;
 }
 
+// ── SHARPE / SORTINO (risk-adjusted povrat — quant standard) ─────
+// Sharpe = povrat po jedinici UKUPNE varijance; Sortino = po jedinici DOWNSIDE
+// varijance (kažnjava samo gubitke). Anualizirano (×√tradova/god) za usporedbu
+// s benchmarkom: >1 dobro, >2 odlično, <0 gubi. Fat-tail → nizak Sharpe (outlieri
+// dižu varijancu) ali bolji Sortino (stopovi režu downside).
+function hcSharpe(sorted){
+  var c=sorted.filter(function(p){return p.closePct!=null&&!isNaN(p.closePct);});
+  if(c.length<10)return'';
+  var rets=c.map(function(p){return p.closePct;});
+  var mean=rets.reduce(function(s,v){return s+v;},0)/rets.length;
+  var variance=rets.reduce(function(s,v){return s+(v-mean)*(v-mean);},0)/rets.length;
+  var std=Math.sqrt(variance);
+  var downVar=rets.reduce(function(s,v){return s+(v<0?v*v:0);},0)/rets.length;
+  var downStd=Math.sqrt(downVar);
+  // Anualizacija: procijeni tradova/god iz vremenskog raspona
+  var ts=c.map(function(p){return p.timestamp||parseInt(p.id)||0;}).filter(function(t){return t>0;}).sort(function(a,b){return a-b;});
+  var spanYears=ts.length>=2?(ts[ts.length-1]-ts[0])/(365.25*24*3600*1000):0;
+  var perYear=spanYears>0.02?c.length/spanYears:c.length*12;
+  var ann=Math.sqrt(Math.min(perYear,252)); // cap na ~trading dane (konzervativna anualizacija)
+  var sharpe=std>0?mean/std*ann:0;
+  var sortino=downStd>0?mean/downStd*ann:(mean>0?99:0);
+  function col(v){return v>=2?"#00e676":v>=1?"#69f0ae":v>=0?"#ffab00":"#ff1744";}
+  function fmt(v){return v>=10?"10+":(v<=-10?"−10":(v>=0?"+":"")+v.toFixed(2));}
+  var h='<div style="margin-bottom:14px;background:var(--s1);border:.5px solid var(--sep);border-radius:14px;padding:14px">';
+  h+='<div style="font-size:10px;color:var(--t3);font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px">📐 Risk-adjusted povrat (anualizirano)</div>';
+  h+='<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">';
+  h+='<div style="background:var(--s2);border-radius:10px;padding:10px;text-align:center"><div style="font-size:24px;font-weight:900;color:'+col(sharpe)+'">'+fmt(sharpe)+'</div><div style="font-size:10px;color:var(--t4);margin-top:2px">Sharpe ratio</div></div>';
+  h+='<div style="background:var(--s2);border-radius:10px;padding:10px;text-align:center"><div style="font-size:24px;font-weight:900;color:'+col(sortino)+'">'+fmt(sortino)+'</div><div style="font-size:10px;color:var(--t4);margin-top:2px">Sortino ratio</div></div>';
+  h+='</div>';
+  h+='<div style="font-size:10px;color:var(--t4);margin-top:9px;line-height:1.4">Povrat po jedinici rizika. Sharpe <strong>>1</strong> = dobro, <strong>>2</strong> = odlično. Sortino gleda samo gubitke (pravedniji za fat-tail). Nizak Sharpe uz pozitivan expectancy = "lumpy" dobit (par velikih pogodaka).</div>';
+  h+='</div>';
+  return h;
+}
+
 function hcInsights(sorted){
   if(sorted.length<3)return'';
   var hits=sorted.filter(function(p){return p.status==="POGODAK";});
@@ -5280,6 +5338,7 @@ function renderMiniSuccessChart(sorted){
   // Expectancy — ključni pokazatelj profitabilnosti (prominentno, prije grafa)
   h+=hcExpectancy(sorted);
   h+=hcDrawdown(sorted);
+  h+=hcSharpe(sorted);
   // Dual-line SVG chart (kumulativ + rolling-5)
   h+=hcCumulative(sorted);
   // Sub-analiza grupirana u sklopivu "Detaljna analitika" — glavni sažetak + graf
@@ -10068,7 +10127,7 @@ function disableNotifs(){
   showToast("Notifikacije isključene");render();
 }
 
-// emitEntryNotif uklonjen (v5.286) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
+// emitEntryNotif uklonjen (v5.287) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
 // Bila mrtva funkcija (nula poziva); uklonjena da se ne može slučajno ponovno spojiti.
 
 // ── EXIT NOTIFICATION — SAMO 2 TIPA (po korisnikovom zahtjevu) ──
