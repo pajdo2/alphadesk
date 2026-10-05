@@ -423,7 +423,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.284</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.285</span></div>
       <div class="hd-sub" id="hdsub">Učitavam top 100 tokena…</div>
       <div class="hd-claude" id="claude-update" style="display:flex;align-items:center;gap:6px">
         <span id="claude-update-txt">🤖 Claude analiza: —</span>
@@ -741,7 +741,7 @@ function getMemeSYMS(){
 
 // Engine verzija — tag na svaku predikciju za mjerenje win-rate po verziji.
 // Pre-commit hook (sed s/v5.x/.../g) automatski drži ovo u sinku s headerom.
-var APP_VER="v5.284";
+var APP_VER="v5.285";
 
 // Settings
 var settings={minConf:45,targetPct:6,maxRisk:2,minRR:1.2,accountSize:1000,maxRiskPerTrade:1};
@@ -3617,27 +3617,25 @@ function renderOpp(o){
     if(MACRO.warActive)h+='<span class="metric txt-warn">⚠️ Rat aktivan</span>';
     h+='</div></div>';
 
-    // Projekcija timeline (horizontal, kompakt)
-    var tgt=o.targetPct||settings.targetPct;
+    // Projekcija po danima — D1-D3 (put do 3d potencijala) + D5 (ako se pusti da raste)
     var ddays=[
       {n:"Dan 1",p:o.d1Price,prob:o.d1Prob,pct:+(((o.d1Price/o.price-1)*100).toFixed(1))},
       {n:"Dan 2",p:o.d2Price,prob:o.d2Prob,pct:+(((o.d2Price/o.price-1)*100).toFixed(1))},
-      {n:"Dan 3"+(o.targetPct!==10?" 🎯":""),p:o.d3Price,prob:o.d3Prob,pct:+(((o.d3Price/o.price-1)*100).toFixed(1))},
+      {n:"Dan 3",p:o.d3Price,prob:o.d3Prob,pct:+(((o.d3Price/o.price-1)*100).toFixed(1))},
     ];
-    if(o.targetPct===10&&o.d4Price){
-      ddays.push({n:"Dan 4",p:o.d4Price,prob:o.d4Prob,pct:+(((o.d4Price/o.price-1)*100).toFixed(1))});
-      ddays.push({n:"Dan 5 🎯",p:o.d5Price,prob:o.d5Prob,pct:tgt});
+    if(o.pot5Price&&o.pot5d>(o.pot3d||0)){
+      ddays.push({n:"Dan 5 📈",p:o.pot5Price,prob:null,pct:o.pot5d});
     }
     h+='<div class="sec sec-divider-top">';
-    h+='<div class="sec-lbl-sm" style="margin-bottom:7px">📅 '+(o.targetPct===10?'5d projekcija':'3d projekcija')+'</div>';
+    h+='<div class="sec-lbl-sm" style="margin-bottom:7px">📅 Projekcija po danima</div>';
     h+='<div style="display:flex;gap:5px;overflow-x:auto">';
     ddays.forEach(function(d){
       h+='<div class="day-cell">';
       h+='<div class="day-cell-name">'+d.n+'</div>';
       h+='<div class="day-cell-price">'+fp(d.p)+'</div>';
       h+='<div class="day-cell-pct">+'+d.pct+'%</div>';
-      h+='<div class="day-cell-prob">'+d.prob+'%</div>';
-      h+=pr(d.prob,"var(--bull)",2);
+      h+='<div class="day-cell-prob">'+(d.prob!=null?d.prob+'%':'potencijal')+'</div>';
+      h+=pr(d.prob!=null?d.prob:0,"var(--bull)",2);
       h+='</div>';
     });
     h+='</div></div>';
@@ -5226,20 +5224,15 @@ function renderMiniSuccessChart(sorted){
   var recent=sorted.slice(-20);
   var h='<div style="background:var(--s1);border-radius:16px;padding:14px 16px;margin-bottom:10px;border:.5px solid var(--sep)">';
   // Header: 3 bloka — ukupno / forma / trend
-  h+='<div style="display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;margin-bottom:12px">';
+  h+='<div style="display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;margin-bottom:12px">';
   h+='<div>';
   h+='<div style="font-size:11px;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px">Uspješnost tradova</div>';
-  h+='<div style="font-size:10px;color:var(--t4)">'+sorted.length+' zatvorenih · '+hits+' pogodaka'+(trendStr?' · <span style="color:'+trendCol+'">'+trendStr+'</span>':'')+'</div>';
+  h+='<div style="font-size:10px;color:var(--t4)">'+sorted.length+' zatvorenih'+(trendStr?' · <span style="color:'+trendCol+'">'+trendStr+'</span>':'')+'</div>';
   h+='</div>';
-  // Blok: forma (rolling 5)
+  // Blok: forma (rolling 5) — zadnjih 5 vs ukupno (ukupna točnost je gore u KPI redu)
   h+='<div style="text-align:center;background:var(--s2);border-radius:10px;padding:6px 12px;border:.5px solid '+formCol+'33">';
   h+='<div style="font-size:18px;font-weight:900;color:'+formCol+'">'+formPct+'%</div>';
   h+='<div style="font-size:9px;color:var(--t4);white-space:nowrap">Forma (5) <span style="color:'+formArrCol+'">'+formArr+'</span></div>';
-  h+='</div>';
-  // Blok: ukupno
-  h+='<div style="text-align:center;background:var(--s2);border-radius:10px;padding:6px 12px;border:.5px solid '+accCol+'33">';
-  h+='<div style="font-size:18px;font-weight:900;color:'+accCol+'">'+acc.toFixed(0)+'%</div>';
-  h+='<div style="font-size:9px;color:var(--t4)">Ukupno</div>';
   h+='</div>';
   h+='</div>';
   // Kvadratići — zadnjih 20 tradova
@@ -10040,7 +10033,7 @@ function disableNotifs(){
   showToast("Notifikacije isključene");render();
 }
 
-// emitEntryNotif uklonjen (v5.284) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
+// emitEntryNotif uklonjen (v5.285) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
 // Bila mrtva funkcija (nula poziva); uklonjena da se ne može slučajno ponovno spojiti.
 
 // ── EXIT NOTIFICATION — SAMO 2 TIPA (po korisnikovom zahtjevu) ──
