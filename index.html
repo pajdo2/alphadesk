@@ -423,7 +423,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.285</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.286</span></div>
       <div class="hd-sub" id="hdsub">Učitavam top 100 tokena…</div>
       <div class="hd-claude" id="claude-update" style="display:flex;align-items:center;gap:6px">
         <span id="claude-update-txt">🤖 Claude analiza: —</span>
@@ -741,7 +741,7 @@ function getMemeSYMS(){
 
 // Engine verzija — tag na svaku predikciju za mjerenje win-rate po verziji.
 // Pre-commit hook (sed s/v5.x/.../g) automatski drži ovo u sinku s headerom.
-var APP_VER="v5.285";
+var APP_VER="v5.286";
 
 // Settings
 var settings={minConf:45,targetPct:6,maxRisk:2,minRR:1.2,accountSize:1000,maxRiskPerTrade:1};
@@ -5153,6 +5153,40 @@ function hcExpectancy(sorted){
   return h;
 }
 
+// ── DRAWDOWN & RIZIK (fund-manager metrika) ──────────────────────
+// Max drawdown = najveći pad kapitala (peak→trough) u kumulativnom P&L.
+// Najdulji niz gubitaka = "bol" između moon-ova. Recovery factor = povrat/DD.
+function hcDrawdown(sorted){
+  var c=sorted.filter(function(p){return p.closePct!=null&&!isNaN(p.closePct);});
+  if(c.length<5)return'';
+  var chron=c.slice().sort(function(a,b){return (a.timestamp||parseInt(a.id)||0)-(b.timestamp||parseInt(b.id)||0);});
+  var equity=0,peak=0,maxDD=0;
+  chron.forEach(function(p){
+    equity+=p.closePct;
+    if(equity>peak)peak=equity;
+    var dd=peak-equity;
+    if(dd>maxDD)maxDD=dd;
+  });
+  var curDD=peak-equity;
+  var cur=0,maxStreak=0;
+  chron.forEach(function(p){if(p.status==="PROMAŠAJ"){cur++;if(cur>maxStreak)maxStreak=cur;}else cur=0;});
+  var recFactor=maxDD>0?equity/maxDD:(equity>0?99:0);
+  var ddCol=maxDD<20?"#00e676":maxDD<50?"#ffab00":"#ff1744";
+  var recCol=recFactor>=2?"#00e676":recFactor>=1?"#ffab00":"#ff1744";
+  var h='<div style="margin-bottom:14px;background:var(--s1);border:.5px solid var(--sep);border-radius:14px;padding:14px">';
+  h+='<div style="font-size:10px;color:var(--t3);font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px">📉 Rizik — drawdown</div>';
+  h+='<div style="font-size:26px;font-weight:900;color:'+ddCol+';line-height:1.1">−'+maxDD.toFixed(0)+'%</div>';
+  h+='<div style="font-size:10px;color:var(--t4);margin-bottom:10px">najveći pad kapitala (vrh→dno) · kumulativni P&L</div>';
+  h+='<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px">';
+  [["Najdulji niz gubitaka",maxStreak+"×","#ff1744"],["Trenutni drawdown",(curDD>0.5?"−"+curDD.toFixed(0)+"%":"0% (na vrhu)"),curDD>0.5?"#ffab00":"#00e676"],["Recovery factor",(recFactor>=99?"∞":recFactor.toFixed(1)+"×"),recCol]].forEach(function(s){
+    h+='<div style="background:var(--s2);border-radius:8px;padding:8px;text-align:center"><div style="font-size:14px;font-weight:800;color:'+s[2]+'">'+s[1]+'</div><div style="font-size:9px;color:var(--t4);margin-top:2px">'+s[0]+'</div></div>';
+  });
+  h+='</div>';
+  h+='<div style="font-size:10px;color:var(--t4);margin-top:9px;line-height:1.4">Drawdown je "bol" koju moraš izdržati — niz gubitaka prije nego dobitnik sve vrati. Recovery factor >1 = ukupni povrat nadmašuje najveći pad.</div>';
+  h+='</div>';
+  return h;
+}
+
 function hcInsights(sorted){
   if(sorted.length<3)return'';
   var hits=sorted.filter(function(p){return p.status==="POGODAK";});
@@ -5245,6 +5279,7 @@ function renderMiniSuccessChart(sorted){
   h+='</div>';
   // Expectancy — ključni pokazatelj profitabilnosti (prominentno, prije grafa)
   h+=hcExpectancy(sorted);
+  h+=hcDrawdown(sorted);
   // Dual-line SVG chart (kumulativ + rolling-5)
   h+=hcCumulative(sorted);
   // Sub-analiza grupirana u sklopivu "Detaljna analitika" — glavni sažetak + graf
@@ -10033,7 +10068,7 @@ function disableNotifs(){
   showToast("Notifikacije isključene");render();
 }
 
-// emitEntryNotif uklonjen (v5.285) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
+// emitEntryNotif uklonjen (v5.286) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
 // Bila mrtva funkcija (nula poziva); uklonjena da se ne može slučajno ponovno spojiti.
 
 // ── EXIT NOTIFICATION — SAMO 2 TIPA (po korisnikovom zahtjevu) ──
