@@ -423,7 +423,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.289</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.290</span></div>
       <div class="hd-sub" id="hdsub">Učitavam top 100 tokena…</div>
       <div class="hd-claude" id="claude-update" style="display:flex;align-items:center;gap:6px">
         <span id="claude-update-txt">🤖 Claude analiza: —</span>
@@ -741,7 +741,7 @@ function getMemeSYMS(){
 
 // Engine verzija — tag na svaku predikciju za mjerenje win-rate po verziji.
 // Pre-commit hook (sed s/v5.x/.../g) automatski drži ovo u sinku s headerom.
-var APP_VER="v5.289";
+var APP_VER="v5.290";
 
 // Settings
 var settings={minConf:45,targetPct:6,maxRisk:2,minRR:1.2,accountSize:1000,maxRiskPerTrade:1};
@@ -5141,30 +5141,40 @@ function hcRegimePerf(sorted){
   return h;
 }
 
+// ── TROŠKOVI TRGOVANJA (fee + slippage) ──────────────────────────
+// Round-trip trošak (ULAZ + IZLAZ) koji se oduzima od SVIH realiziranih
+// P&L metrika da pokazuju NETO (ono što stvarno sjedne na račun), ne bruto.
+// Pretpostavka: Binance spot taker ~0.1%/strana × 2 = 0.2% fee
+// + procijenjeni slippage ~0.15%/strana × 2 = 0.3% → ukupno ≈ 0.5% po tradu.
+// PROMIJENI OVDJE: BNB popust → niže (~0.35%); manje likvidni memesi → više (0.8-1.2%).
+var TRADE_COST_PCT = 0.5;
+function netPnl(grossPct){ return (typeof grossPct==="number"&&!isNaN(grossPct)) ? grossPct - TRADE_COST_PCT : grossPct; }
+
 // ── EXPECTANCY (očekivani P&L po tradu) ──────────────────────────
 // Pravi pokazatelj profitabilnosti — ne win rate nego win%*prosj.dobitak +
 // loss%*prosj.gubitak. Upozorava ako pozitivan rezultat ovisi o rijetkim
 // outlierima (medijan << prosjek = par "moon-ova" diže sliku).
+// SVI iznosi su NETO (nakon TRADE_COST_PCT fee+slippage).
 function hcExpectancy(sorted){
   var c=sorted.filter(function(p){return p.closePct!=null&&!isNaN(p.closePct);});
   if(c.length<5)return'';
   var wins=c.filter(function(p){return p.status==="POGODAK";});
   var loss=c.filter(function(p){return p.status==="PROMAŠAJ";});
   var wr=wins.length/c.length;
-  var avgWin=wins.length?wins.reduce(function(s,p){return s+p.closePct;},0)/wins.length:0;
-  var avgLoss=loss.length?loss.reduce(function(s,p){return s+p.closePct;},0)/loss.length:0;
-  var exp=c.reduce(function(s,p){return s+p.closePct;},0)/c.length;
+  var avgWin=wins.length?wins.reduce(function(s,p){return s+netPnl(p.closePct);},0)/wins.length:0;
+  var avgLoss=loss.length?loss.reduce(function(s,p){return s+netPnl(p.closePct);},0)/loss.length:0;
+  var exp=c.reduce(function(s,p){return s+netPnl(p.closePct);},0)/c.length;
   var rr=avgLoss!==0?avgWin/Math.abs(avgLoss):0;
   var beWR=(avgWin+Math.abs(avgLoss))!==0?Math.abs(avgLoss)/(avgWin+Math.abs(avgLoss)):0;
-  // Medijan dobitka — otkriva ovise li dobici o rijetkim moon-ovima
-  var ws=wins.map(function(p){return p.closePct;}).sort(function(a,b){return a-b;});
+  // Medijan dobitka — otkriva ovise li dobici o rijetkim moon-ovima (neto)
+  var ws=wins.map(function(p){return netPnl(p.closePct);}).sort(function(a,b){return a-b;});
   var medWin=ws.length?(ws.length%2?ws[(ws.length-1)/2]:(ws[ws.length/2-1]+ws[ws.length/2])/2):0;
   var outlierSkew=avgWin>Math.max(medWin*2.5,medWin+8); // prosjek puno veći od medijana
   var expCol=exp>0.5?"#00e676":exp>-0.3?"#ffab00":"#ff1744";
   var h='<div style="margin-bottom:14px;background:var(--s1);border:.5px solid var(--sep);border-radius:14px;padding:14px">';
-  h+='<div style="font-size:10px;color:var(--t3);font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px">💰 Expectancy — očekivani P&L po tradu</div>';
+  h+='<div style="font-size:10px;color:var(--t3);font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px">💰 Expectancy — očekivani P&L po tradu <span style="color:var(--t4);font-weight:600">· NETO</span></div>';
   h+='<div style="font-size:26px;font-weight:900;color:'+expCol+';line-height:1.1">'+(exp>=0?"+":"")+exp.toFixed(2)+'%</div>';
-  h+='<div style="font-size:10px;color:var(--t4);margin-bottom:10px">prosječni rezultat po tradu · breakeven već na '+(beWR*100).toFixed(0)+'% win rate</div>';
+  h+='<div style="font-size:10px;color:var(--t4);margin-bottom:10px">prosječni rezultat po tradu nakon ~'+TRADE_COST_PCT+'% fee+slippage · breakeven već na '+(beWR*100).toFixed(0)+'% win rate</div>';
   h+='<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px">';
   [["Win rate",(wr*100).toFixed(0)+"%","var(--t2)"],["Prosj. dobitak","+"+avgWin.toFixed(1)+"%","#00e676"],["Prosj. gubitak",avgLoss.toFixed(1)+"%","#ff1744"],["R/R",rr.toFixed(1)+":1",rr>=2?"#00e676":"var(--t2)"]].forEach(function(s){
     h+='<div style="background:var(--s2);border-radius:8px;padding:8px;text-align:center"><div style="font-size:14px;font-weight:800;color:'+s[2]+'">'+s[1]+'</div><div style="font-size:9px;color:var(--t4);margin-top:2px">'+s[0]+'</div></div>';
@@ -5173,6 +5183,7 @@ function hcExpectancy(sorted){
   if(outlierSkew){
     h+='<div style="font-size:10px;color:var(--warn);margin-top:9px;line-height:1.45">⚠️ Pozitivan expectancy ovisi o rijetkim "moon" dobicima — medijan dobitka je samo +'+medWin.toFixed(1)+'% (prosjek +'+avgWin.toFixed(1)+'%). Bez tih ekstrema strategija je blizu nule. Visoka varijanca: dobit dolazi od malo velikih pogodaka, ne od većine tradova.</div>';
   }
+  h+='<div style="font-size:9px;color:var(--t4);margin-top:9px;line-height:1.4;opacity:.85">💡 € iznosi (expectancy, dobitak, gubitak) su <strong>neto</strong> — oduzet ~'+TRADE_COST_PCT+'% fee+slippage po tradu. <em>Win rate</em> je pogođenost cilja (bruto hit-rate), ne novac. Trošak se mijenja u kodu (TRADE_COST_PCT).</div>';
   h+='</div>';
   return h;
 }
@@ -5186,7 +5197,7 @@ function hcDrawdown(sorted){
   var chron=c.slice().sort(function(a,b){return (a.timestamp||parseInt(a.id)||0)-(b.timestamp||parseInt(b.id)||0);});
   var equity=0,peak=0,maxDD=0;
   chron.forEach(function(p){
-    equity+=p.closePct;
+    equity+=netPnl(p.closePct); // neto (nakon fee+slippage)
     if(equity>peak)peak=equity;
     var dd=peak-equity;
     if(dd>maxDD)maxDD=dd;
@@ -5219,7 +5230,7 @@ function hcDrawdown(sorted){
 function hcSharpe(sorted){
   var c=sorted.filter(function(p){return p.closePct!=null&&!isNaN(p.closePct);});
   if(c.length<10)return'';
-  var rets=c.map(function(p){return p.closePct;});
+  var rets=c.map(function(p){return netPnl(p.closePct);}); // neto (nakon fee+slippage)
   var mean=rets.reduce(function(s,v){return s+v;},0)/rets.length;
   var variance=rets.reduce(function(s,v){return s+(v-mean)*(v-mean);},0)/rets.length;
   var std=Math.sqrt(variance);
@@ -5261,19 +5272,19 @@ function hcBenchmark(sorted){
   var btcHodl=(curBtc/startBtc-1)*100;
   var avgHold=3.5; // procjena prosječnog držanja (strategija 3-5d)
   var btcPerHold=btcHodl*avgHold/spanDays;
-  var exp=c.reduce(function(s,p){return s+p.closePct;},0)/c.length;
+  var exp=c.reduce(function(s,p){return s+netPnl(p.closePct);},0)/c.length; // tvoj prosjek NETO (nakon fee+slippage)
   var edge=exp-btcPerHold;
   var win=edge>0;
   var edgeCol=win?"#00e676":"#ff1744";
   var h='<div style="margin-bottom:14px;background:var(--s1);border:.5px solid var(--sep);border-radius:14px;padding:14px">';
   h+='<div style="font-size:10px;color:var(--t3);font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px">🆚 Trgovanje vs Buy &amp; Hold BTC</div>';
   h+='<div style="font-size:22px;font-weight:900;color:'+edgeCol+';line-height:1.15">'+(win?"+":"")+edge.toFixed(1)+' pp</div>';
-  h+='<div style="font-size:10px;color:var(--t4);margin-bottom:10px">'+(win?"tvoji tradovi nadmašuju BTC":"BTC HODL je bolji")+' — prednost po tradu (bruto)</div>';
+  h+='<div style="font-size:10px;color:var(--t4);margin-bottom:10px">'+(win?"tvoji tradovi nadmašuju BTC":"BTC HODL je bolji")+' — prednost po tradu (tvoj neto vs BTC bruto)</div>';
   h+='<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">';
-  h+='<div style="background:var(--s2);border-radius:10px;padding:10px;text-align:center"><div style="font-size:18px;font-weight:900;color:#00e676">+'+exp.toFixed(1)+'%</div><div style="font-size:9px;color:var(--t4);margin-top:2px">tvoj prosjek / trade</div></div>';
+  h+='<div style="background:var(--s2);border-radius:10px;padding:10px;text-align:center"><div style="font-size:18px;font-weight:900;color:'+(exp>=0?"#00e676":"#ff1744")+'">'+(exp>=0?"+":"")+exp.toFixed(1)+'%</div><div style="font-size:9px;color:var(--t4);margin-top:2px">tvoj prosjek / trade (neto)</div></div>';
   h+='<div style="background:var(--s2);border-radius:10px;padding:10px;text-align:center"><div style="font-size:18px;font-weight:900;color:'+(btcPerHold>=0?"#69f0ae":"#ff1744")+'">'+(btcPerHold>=0?"+":"")+btcPerHold.toFixed(1)+'%</div><div style="font-size:9px;color:var(--t4);margin-top:2px">BTC / isto držanje (~'+avgHold+'d)</div></div>';
   h+='</div>';
-  h+='<div style="font-size:10px;color:var(--t4);margin-top:9px;line-height:1.4">BTC je u tih '+Math.round(spanDays)+' dana napravio <strong style="color:'+(btcHodl>=0?"#69f0ae":"#ff1744")+'">'+(btcHodl>=0?"+":"")+btcHodl.toFixed(0)+'%</strong> (uz 100% izloženost — ti si često u cashu). Napomena: BRUTO bez troškova (fee/slippage), prosjek napuhan moon-ovima (vidi Expectancy).</div>';
+  h+='<div style="font-size:10px;color:var(--t4);margin-top:9px;line-height:1.4">BTC je u tih '+Math.round(spanDays)+' dana napravio <strong style="color:'+(btcHodl>=0?"#69f0ae":"#ff1744")+'">'+(btcHodl>=0?"+":"")+btcHodl.toFixed(0)+'%</strong> (uz 100% izloženost — ti si često u cashu). Tvoja strana je NETO (nakon ~'+TRADE_COST_PCT+'% troškova), BTC strana bruto — realna prednost je i malo veća. Prosjek napuhan moon-ovima (vidi Expectancy).</div>';
   h+='</div>';
   return h;
 }
@@ -6309,7 +6320,7 @@ function rTracker(){
     var allClosed=allHits.length+allMiss.length;
     var accPct=allClosed?Math.round(allHits.length/allClosed*100):null;
     var accC=accPct===null?"var(--t3)":accPct>=60?"var(--gr)":accPct>=40?"var(--ye)":"var(--re)";
-    var activePnls=allActive.map(function(p){var cur=px[p.sym]?px[p.sym].p:p.entry;return p.direction==="SHORT"?(p.entry-cur)/p.entry*100:(cur-p.entry)/p.entry*100;});
+    var activePnls=allActive.map(function(p){var cur=px[p.sym]?px[p.sym].p:p.entry;var g=p.direction==="SHORT"?(p.entry-cur)/p.entry*100:(cur-p.entry)/p.entry*100;return netPnl(g);}); // neto "da zatvorim sad" (nakon fee+slippage)
     var avgPnl=allActive.length?activePnls.reduce(function(s,v){return s+v;},0)/allActive.length:null;
     var pnlCol=avgPnl===null?"var(--t3)":avgPnl>=0?"var(--gr)":"var(--re)";
     var sortedClosed=_filtered.filter(function(p){return p.status!=="AKTIVAN";}).slice().sort(function(a,b){return(a.timestamp||parseInt(a.id)||0)-(b.timestamp||parseInt(b.id)||0);});
@@ -10161,7 +10172,7 @@ function disableNotifs(){
   showToast("Notifikacije isključene");render();
 }
 
-// emitEntryNotif uklonjen (v5.289) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
+// emitEntryNotif uklonjen (v5.290) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
 // Bila mrtva funkcija (nula poziva); uklonjena da se ne može slučajno ponovno spojiti.
 
 // ── EXIT NOTIFICATION — SAMO 2 TIPA (po korisnikovom zahtjevu) ──
