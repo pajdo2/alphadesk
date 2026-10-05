@@ -84,15 +84,21 @@ async function main() {
     }
 
     const elapsed = elapsedOf(p);
-    const windowDays = p.targetPct === 10 ? 5 : 3;
+    const windowDays = 5; // let winners run — 5-dnevni prozor (bilo 3)
+    // Trailing-stop širina ≈ targetPct×1.1 (≈ATR×1.5), clamp 8-30%. Pušta moon-ove da rastu.
+    const trailDist = Math.max(8, Math.min(30, (p.targetPct || 6) * 1.1));
     let reason = null, hit = false;
     if (isShort) {
       if (cur >= p.stop) { reason = '🛑 Stop-loss (24/7)'; hit = false; }
       else if (cur <= tgt) { reason = '🎯 Target (24/7)'; hit = true; }
       else if (elapsed >= windowDays * DAY) { reason = '⏰ Vrijeme isteklo (24/7)'; hit = cur < p.entry; }
     } else {
+      // LET WINNERS RUN: bez fiksnog target-capa. Stop štiti rizik; nakon +4% peaka
+      // trailing stop (peak − trailDist%, min breakeven) pušta moon da raste i izađe
+      // tek kad trend pukne.
+      const effStop = p.peakPrice ? Math.max(p.entry, p.peakPrice * (1 - trailDist / 100)) : p.entry;
       if (cur <= p.stop) { reason = '🛑 Stop-loss (24/7)'; hit = false; }
-      else if (cur >= tgt) { reason = '🎯 Target (24/7)'; hit = true; }
+      else if ((p.peakPct || 0) >= 4 && cur <= effStop) { reason = '🔒 Trailing stop (24/7)'; hit = cur >= p.entry; }
       else if (elapsed >= windowDays * DAY) { reason = '⏰ Vrijeme isteklo (24/7)'; hit = cur > p.entry; }
     }
 
