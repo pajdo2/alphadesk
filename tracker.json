@@ -23,8 +23,8 @@
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
-      "peakPrice": 0.7328,
-      "peakPct": 0
+      "peakPrice": 0.7357,
+      "peakPct": 0.4
     },
     {
       "id": "1791204415942",
@@ -49,8 +49,8 @@
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
-      "peakPrice": 0.10757,
-      "peakPct": 0.38
+      "peakPrice": 0.10806,
+      "peakPct": 0.84
     },
     {
       "id": "1791204411732",
@@ -180,8 +180,8 @@
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
-      "peakPrice": 10.997,
-      "peakPct": 0.02
+      "peakPrice": 11.023,
+      "peakPct": 0.25
     },
     {
       "id": "1791183380106",
@@ -250,16 +250,17 @@
       "stop": 0.260832,
       "conf": 55,
       "targetPct": 30,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "POGODAK",
+      "closePrice": 0.2749,
+      "closePct": 1.18,
+      "autoClose": true,
       "engineVer": "v5.286",
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
-      "peakPrice": 0.2741,
-      "peakPct": 0.88
+      "peakPrice": 0.2749,
+      "peakPct": 1.18,
+      "closeReason": "🔄 Bear reversal — exit u profitu"
     },
     {
       "id": "1790012938934",
@@ -9127,5 +9128,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-10-05T14:18:21.168Z"
+  "updatedAt": "2026-10-05T14:18:33.031Z"
 }
