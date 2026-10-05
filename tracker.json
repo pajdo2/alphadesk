@@ -49,8 +49,8 @@
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
-      "peakPrice": 0.1072,
-      "peakPct": 0.04
+      "peakPrice": 0.10757,
+      "peakPct": 0.38
     },
     {
       "id": "1791204411732",
@@ -75,8 +75,8 @@
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
-      "peakPrice": 258.98,
-      "peakPct": 0.46
+      "peakPrice": 260.62,
+      "peakPct": 1.1
     },
     {
       "id": "1791183407095",
@@ -101,8 +101,8 @@
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
-      "peakPrice": 258.98,
-      "peakPct": 2.93
+      "peakPrice": 260.62,
+      "peakPct": 3.58
     },
     {
       "id": "1791183399590",
@@ -258,8 +258,8 @@
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
-      "peakPrice": 0.2717,
-      "peakPct": 0
+      "peakPrice": 0.274,
+      "peakPct": 0.85
     },
     {
       "id": "1790012938934",
@@ -9114,5 +9114,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-10-05T13:07:07.054Z"
+  "updatedAt": "2026-10-05T13:07:20.236Z"
 }
