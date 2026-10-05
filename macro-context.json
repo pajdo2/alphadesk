@@ -1,7 +1,7 @@
 {
-    "dxy":  101.28,
-    "changeSummary":  "Makro uvjeti gotovo nepromijenjeni — DXY stabilno oko 101.3, F&G blago pao na 67, jedina znacajnija promjena je rast nafte na ~$97 Brent uz BTC konsolidaciju u rasponu $83-84K.",
-    "lastUpdated":  "2026-09-30T12:00:00Z",
+    "dxy":  102.53,
+    "changeSummary":  "DXY je porastao s 101.28 na 102.53 uz aktivne geopolitičke rizike na Bliskom istoku, nafta pala na $90.13, Fear & Greed stabilan na 70, a BTC dominanca ostala gotovo nepromijenjena na ~58.7% uz macroPenalty +2.",
+    "lastUpdated":  "2026-10-05T12:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -13,7 +13,7 @@
 
                                ],
                      "XRP":  [
-
+                                 "Socijalni sentiment pao na 0.67 — min. zadnjeg mj."
                              ],
                      "BNB":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-                                 "ETH nije zadrzala $2.7K na dnevnoj bazi"
+
                              ],
                      "LINK":  [
 
@@ -61,15 +61,15 @@
 
                               ],
                      "TRUMP":  [
-
+                                   "Regulatorni rizik: kontroverze oko meme coin dinner"
                                ],
                      "BTC":  [
-                                 "Kljucni otpor $85K, SEC odgodio ETF opcije"
+
                              ]
                  },
-    "sp500Ret5d":  -0.5,
-    "fearGreed":  67,
-    "macroPenalty":  0,
+    "sp500Ret5d":  -0.3,
+    "fearGreed":  70,
+    "macroPenalty":  2,
     "catalysts":  {
                       "ACT":  [
 
@@ -81,16 +81,17 @@
 
                                 ],
                       "XRP":  [
-                                  "XRP ETF priljevi $117M u rujnu 2026"
+                                  "ETF neto kupnja 11. tjedan uzastopno, 1.19B XRP",
+                                  "Ripple XRP Asia lansiran na Korea Blockchain Week"
                               ],
                       "BNB":  [
 
                               ],
                       "SUI":  [
-
+                                  "Altcoin rally uz BTC proboj $87K"
                               ],
                       "AVAX":  [
-
+                                   "Altcoin rally uz BTC proboj $87K"
                                ],
                       "PENGU":  [
 
@@ -108,10 +109,12 @@
 
                                  ],
                       "SOL":  [
-                                  "+4.5% dnevno, analiticari ciljaju $130"
+                                  "Alpenglow konsenzus upgrade — oct. 2026 cilj",
+                                  "Q3 rekord: 14.2B transakcija na mreži"
                               ],
                       "ADA":  [
-                                  "ADA se oporavlja, tjedni trend zelen"
+                                  "Cardano + Pacific Meta partnerstvo za Japan",
+                                  "ADA +22% u 30 dana"
                               ],
                       "PNUT":  [
 
@@ -120,10 +123,10 @@
 
                                 ],
                       "ETH":  [
-                                  "ETH drzi $2.6K, testira otpor na $2.750K"
+                                  "Glamsterdam upgrade planiran za listopad 2026"
                               ],
                       "LINK":  [
-
+                                   "Swift integracija napreduje, tjedni rast +17.7%"
                                ],
                       "PUMP":  [
 
@@ -132,7 +135,7 @@
 
                                 ],
                       "BTC":  [
-                                  "BTC iznad $83K, konsolidacija nakon vrha $87K"
+                                  "BTC dostigao $87K, konsolidira iznad $85K"
                               ]
                   },
     "regime":  "BULL",
@@ -140,10 +143,10 @@
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  2,
+                           "XRP":  1,
                            "BNB":  0,
-                           "SUI":  0,
-                           "AVAX":  0,
+                           "SUI":  1,
+                           "AVAX":  1,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
@@ -154,14 +157,14 @@
                            "PNUT":  0,
                            "AIXBT":  0,
                            "ETH":  1,
-                           "LINK":  0,
+                           "LINK":  2,
                            "PUMP":  0,
-                           "TRUMP":  0,
+                           "TRUMP":  -1,
                            "BTC":  1
                        },
-    "aiSummary":  "DXY pada blago na 101.28 bez znacajnog pritiska na kripto, dok Fear & Greed indeks na 67 (Pohlepa) potvrduje bullish raspolozenje uz BTC konsolidaciju oko $83-84K. XRP prednjaci s ETF prijevodima od $117M i rastom 2.1%, dok SOL biljezi impresivnih +4.5% dnevno uz cilj analiticara na $130. SEC je odgodio odluku o ETF opcijama do studenog, no ukupni momentum ostaje pozitivan s BTC ciljem analiticara na $87K.",
-    "warActive":  false,
-    "btcDom":  58.5,
+    "aiSummary":  "DXY raste na 102.53 uz povišene Treasury prinose (10Y 5.29%), što blago pritišće risk-on imovinu, dok Fear & Greed na 70 (Pohlepa) signalizira zadržano bullish raspoloženje. BTC konsolidira oko $85.5K nakon kratkog proboja $87K uz dominancu 58.74% — altcoin sezona još nije počela. Ključni katalizatori su ETH Glamsterdam i SOL Alpenglow upgradi, dok geopolitički rizik (Bliski istok) i viši DXY ostaju manji headwind.",
+    "warActive":  true,
+    "btcDom":  58.74,
     "stableDom":  10.8,
-    "oil":  97.1
+    "oil":  90.13
 }
