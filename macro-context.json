@@ -1,20 +1,12 @@
 {
-    "dxy":  102.22,
-    "changeSummary":  "Prva popuna stvarnim podacima: BTC ~86.377$, Fear & Greed 70 (pohlepa), DXY 102.22, BTC dominacija 58.5%, režim promijenjen u BULL.",
+    "dxy":  102.2,
+    "changeSummary":  "DXY stabiliziran na 102.2, nafta porasla na ~$90, BTC drži Bull s dominacijom 59% i F&G na 70.",
     "lastUpdated":  "2026-10-05T10:00:00Z",
     "warnings":  {
-                     "ACT":  [
-
-                             ],
-                     "MEME":  [
-
-                              ],
-                     "ANIME":  [
-
-                               ],
-                     "XRP":  [
-
-                             ],
+                     "ACT":  ["Altcoin sezona indeks ~30, alti zaostaju za BTC"],
+                     "MEME":  ["Altcoin sezona indeks ~30, alti zaostaju za BTC"],
+                     "ANIME":  ["Altcoin sezona indeks ~30, alti zaostaju za BTC"],
+                     "XRP":  ["Analitičar Doctor Profit prodaje XRP"],
                      "BNB":  [
 
                              ],
@@ -24,50 +16,30 @@
                      "AVAX":  [
 
                               ],
-                     "PENGU":  [
-
-                               ],
-                     "BOME":  [
-
-                              ],
-                     "DOGS":  [
-
-                              ],
-                     "NOT":  [
-
-                             ],
-                     "PEOPLE":  [
-
-                                ],
-                     "SOL":  [
-
-                             ],
+                     "PENGU":  ["Altcoin sezona indeks ~30, alti zaostaju za BTC"],
+                     "BOME":  ["Altcoin sezona indeks ~30, alti zaostaju za BTC"],
+                     "DOGS":  ["Altcoin sezona indeks ~30, alti zaostaju za BTC"],
+                     "NOT":  ["Altcoin sezona indeks ~30, alti zaostaju za BTC"],
+                     "PEOPLE":  ["Altcoin sezona indeks ~30, alti zaostaju za BTC"],
+                     "SOL":  ["$1.11B token unlock početkom listopada"],
                      "ADA":  [
 
                              ],
-                     "PNUT":  [
-
-                              ],
+                     "PNUT":  ["Altcoin sezona indeks ~30, alti zaostaju za BTC"],
                      "AIXBT":  [
 
                                ],
-                     "ETH":  [
-                                 "ETH ETF odljevi $138M, rotacija kapitala u BTC"
-                             ],
+                     "ETH":  ["Blast L2 gasi se, povlačenje do 26.10.2026."],
                      "LINK":  [
 
                               ],
-                     "PUMP":  [
-
-                              ],
-                     "TRUMP":  [
-
-                               ],
+                     "PUMP":  ["Altcoin sezona indeks ~30, alti zaostaju za BTC"],
+                     "TRUMP":  ["Altcoin sezona indeks ~30, alti zaostaju za BTC"],
                      "BTC":  [
 
                              ]
                  },
-    "sp500Ret5d":  -0.27,
+    "sp500Ret5d":  1.18,
     "fearGreed":  70,
     "macroPenalty":  0,
     "catalysts":  {
@@ -80,9 +52,7 @@
                       "ANIME":  [
 
                                 ],
-                      "XRP":  [
-                                  "Permission Delegation aktivacija 5. listopada"
-                              ],
+                      "XRP":  ["Absa banka uvela XRP Ledger inst. pohranu imovine"],
                       "BNB":  [
 
                               ],
@@ -119,9 +89,7 @@
                       "AIXBT":  [
 
                                 ],
-                      "ETH":  [
-                                  "Ethereum Foundation pokrenuo zkAPI za AI plaćanja"
-                              ],
+                      "ETH":  ["SEC odobrio 3x leveraged ETH ETP produkte"],
                       "LINK":  [
 
                                ],
@@ -131,38 +99,35 @@
                       "TRUMP":  [
 
                                 ],
-                      "BTC":  [
-                                  "BTC iznad $86k, Fed hike u listopadu procijenjen van",
-                                  "Treći uzastopni tjedan ETF priljeva za BTC"
-                              ]
+                      "BTC":  ["Listopad historijski bullish, rast ka godišnjem otvaranju"]
                   },
     "regime":  "BULL",
     "sentimentScore":  {
-                           "ACT":  0,
-                           "MEME":  0,
-                           "ANIME":  0,
-                           "XRP":  1,
+                           "ACT":  -1,
+                           "MEME":  -1,
+                           "ANIME":  -1,
+                           "XRP":  0,
                            "BNB":  0,
                            "SUI":  0,
                            "AVAX":  0,
-                           "PENGU":  0,
-                           "BOME":  0,
-                           "DOGS":  0,
-                           "NOT":  0,
-                           "PEOPLE":  0,
+                           "PENGU":  -1,
+                           "BOME":  -1,
+                           "DOGS":  -1,
+                           "NOT":  -1,
+                           "PEOPLE":  -1,
                            "SOL":  0,
                            "ADA":  0,
-                           "PNUT":  0,
+                           "PNUT":  -1,
                            "AIXBT":  0,
-                           "ETH":  -1,
+                           "ETH":  1,
                            "LINK":  0,
-                           "PUMP":  0,
-                           "TRUMP":  0,
+                           "PUMP":  -1,
+                           "TRUMP":  -1,
                            "BTC":  1
                        },
-    "aiSummary":  "DXY se drži iznad 102 uz povišene prinose na 10Y obveznice (~5.29%), što umjereno pritišće kripto tržišta ali ne blokira rast. Fear & Greed indeks na 70 (pohlepa) uz BTC dominaciju 58.5% potvrđuje Bull režim — kapital je koncentriran u large capovima, altovi zasad zaostaju. Očekuje se konsolidacija BTC-a između 84.000-88.000$ uz moguć nastavak rasta ako Fed ne podigne kamate u listopadu.",
+    "aiSummary":  "DXY stabiliziran oko 102.2 uz 10Y prinose ~5.29% što umjereno pritišće kripto tržišta ali ne blokira rast — WTI nafta na ~90$/bbl dodaje geopolitički rizik uz Brent iznad $100. Fear & Greed indeks na 70 (pohlepa) uz BTC dominaciju 59% potvrđuje Bull režim s kapitalom koncentriranim u large capovima dok altcoin sezona indeks pada na ~30. Očekuje se nastavak BTC rasta prema $88-90K u listopadu, ali $1.11B token unlockova početkom mjeseca i dalje povišena nafta mogu pritiskati altcoinove.",
     "warActive":  false,
-    "btcDom":  58.5,
-    "stableDom":  9.8,
-    "oil":  72
+    "btcDom":  59.0,
+    "stableDom":  10.8,
+    "oil":  90
 }
