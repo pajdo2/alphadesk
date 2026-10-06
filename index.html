@@ -20,7 +20,7 @@
   --target-green:rgba(0,230,118,.12);--stop-red:rgba(255,23,68,.1);
 
   /* ── TYPOGRAPHY (4 sizes, 3 weights) ── */
-  --text-xs:11px;--text-sm:13px;--text-md:15px;--text-lg:22px;
+  --text-xs:12px;--text-sm:13px;--text-md:15px;--text-lg:22px;
   --fw-r:400;--fw-b:600;--fw-x:800;
 
   /* ── SPACING (5 razina) ── */
@@ -112,7 +112,7 @@ html,body{height:100%;background:#000;color:#fff;font-family:-apple-system,'SF P
 
 /* Projekcija dani — kompaktna ćelija */
 .day-cell{flex:1;min-width:54px;background:var(--s3);border-radius:var(--r-sm);padding:7px 5px;text-align:center}
-.day-cell-name{font-size:9px;color:var(--t4);margin-bottom:3px}
+.day-cell-name{font-size:10px;color:var(--t4);margin-bottom:3px}
 .day-cell-price{font-size:11px;font-weight:var(--fw-x);color:var(--bull)}
 .day-cell-pct{font-size:10px;color:rgba(0,230,118,.6)}
 .day-cell-prob{font-size:10px;color:var(--t3);margin-top:2px}
@@ -380,7 +380,7 @@ svg.sp{overflow:visible;display:block}
 
 /* ── CONF RING container ── */
 .conf-ring-wrap{flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:2px}
-.conf-ring-lbl{font-size:9px;color:var(--t4);letter-spacing:.05em;text-transform:uppercase;font-weight:600}
+.conf-ring-lbl{font-size:10px;color:var(--t4);letter-spacing:.05em;text-transform:uppercase;font-weight:600}
 
 /* ── VERDICT BAR upgrade ── */
 .v-bar-entry{background:linear-gradient(90deg,rgba(0,230,118,.1) 0%,rgba(0,230,118,.03) 100%)}
@@ -409,7 +409,7 @@ svg.sp{overflow:visible;display:block}
 .macro-card.warn-card{border-color:rgba(255,167,38,.25);background:linear-gradient(135deg,rgba(255,167,38,.08) 0%,rgba(255,167,38,.02) 100%)}
 .macro-card-ico{font-size:14px;line-height:1;margin-bottom:3px}
 .macro-card-val{font-size:15px;font-weight:800;letter-spacing:-.5px;line-height:1.1}
-.macro-card-lbl{font-size:9px;color:var(--t4);font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-top:2px}
+.macro-card-lbl{font-size:10px;color:var(--t4);font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-top:2px}
 
 /* ── DAILY RECS section header ── */
 .section-header{
@@ -441,7 +441,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.295</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.296</span></div>
       <div class="hd-status">
         <span class="hd-sub" id="hdsub">Učitavam…</span>
         <span class="hd-claude" id="claude-update" style="display:none;align-items:center;gap:5px">
@@ -763,7 +763,7 @@ function getMemeSYMS(){
 
 // Engine verzija — tag na svaku predikciju za mjerenje win-rate po verziji.
 // Pre-commit hook (sed s/v5.x/.../g) automatski drži ovo u sinku s headerom.
-var APP_VER="v5.295";
+var APP_VER="v5.296";
 
 // Settings
 var settings={minConf:45,targetPct:6,maxRisk:2,minRR:1.2,accountSize:1000,maxRiskPerTrade:1};
@@ -3503,7 +3503,7 @@ function renderOpp(o){
     var hasInteresting=tfs.some(function(x){return x.r<40||x.r>65;});
     if(!hasInteresting)return;
     var tip="RSI po vremenu|RSI mjeri je li token preprodan (&lt;30 = oversold, prilika) ili prekupljen (&gt;70 = oprez). Vrijednosti: "+tfs.map(function(x){return x.l+" "+x.r;}).join(", ")+".";
-    var inner='<span data-tip="'+tip.replace(/"/g,"&quot;")+'" style="display:inline-flex;gap:3px;font-size:9px;font-weight:var(--fw-b);background:rgba(255,255,255,.04);padding:2px 6px;border-radius:6px;cursor:help;line-height:1.6;white-space:nowrap">';
+    var inner='<span data-tip="'+tip.replace(/"/g,"&quot;")+'" style="display:inline-flex;gap:3px;font-size:10px;font-weight:var(--fw-b);background:rgba(255,255,255,.04);padding:2px 6px;border-radius:6px;cursor:help;line-height:1.6;white-space:nowrap">';
     tfs.forEach(function(x){inner+='<span style="color:'+rsiCol(x.r)+'">'+x.l+' '+x.r+'</span>';});
     inner+='</span>';
     h+=inner;
@@ -3593,7 +3593,7 @@ function renderOpp(o){
     var sub=has5?(fp(o.targetPrice)+' · '+fp(o.pot5Price)+' ako pustiš da raste'):fp(o.targetPrice);
     h+='<div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin:12px 16px 0;padding:11px 13px;background:linear-gradient(90deg,rgba(0,230,118,.1),rgba(0,230,118,.02));border:.5px solid rgba(0,230,118,.2);border-radius:12px">';
     h+='<div style="font-size:11px;color:var(--t3);line-height:1.3">Potencijal<br><strong style="color:var(--t1);font-weight:800">3–5 dana</strong></div>';
-    h+='<div style="text-align:right"><div style="font-size:20px;font-weight:900;color:var(--bull);line-height:1">'+right+'</div><div style="font-size:9.5px;color:var(--t4);margin-top:3px">'+sub+'</div></div>';
+    h+='<div style="text-align:right"><div style="font-size:20px;font-weight:900;color:var(--bull);line-height:1">'+right+'</div><div style="font-size:10.5px;color:var(--t4);margin-top:3px">'+sub+'</div></div>';
     h+='</div>';
   })();
 
@@ -3622,12 +3622,12 @@ function renderOpp(o){
       h+='</div>';
       // Kelly referenca — matematički optimalna gornja granica (half-Kelly po edge-u)
       if(ps.kellyPct!=null){
-        h+='<div style="padding:4px 16px;background:rgba(99,102,241,.03);border-bottom:.5px solid var(--sep2);font-size:9.5px;color:var(--t4)">📊 Half-Kelly max: <strong style="color:#a5b4fc">'+ps.kellyPct+'% kapitala</strong> — optimalno po povijesnom edge-u'+(ps.pct>=ps.kellyPct-0.3?' <span style="color:#a5b4fc">(pozicija ograničena Kellyjem)</span>':'')+'</div>';
+        h+='<div style="padding:4px 16px;background:rgba(99,102,241,.03);border-bottom:.5px solid var(--sep2);font-size:10.5px;color:var(--t4)">📊 Half-Kelly max: <strong style="color:#a5b4fc">'+ps.kellyPct+'% kapitala</strong> — optimalno po povijesnom edge-u'+(ps.pct>=ps.kellyPct-0.3?' <span style="color:#a5b4fc">(pozicija ograničena Kellyjem)</span>':'')+'</div>';
       }
       // Kalibrirani conf (ako povijest koriguje nominalni) — sizing ga vec koristi
       if(ps.calConf!=null&&ps.calConf!==o.conf){
         var _cc=ps.calConf>o.conf;
-        h+='<div style="padding:4px 16px;background:rgba(206,147,216,.05);border-bottom:.5px solid var(--sep2);font-size:9.5px;color:var(--t4)">⚙️ Kalibrirano: nominalno '+o.conf+'% → <strong style="color:#ce93d8">'+ps.calConf+'%</strong> po povijesti '+(_cc?'(podcijenjen → veća poz.)':'(precijenjen → manja poz.)')+'</div>';
+        h+='<div style="padding:4px 16px;background:rgba(206,147,216,.05);border-bottom:.5px solid var(--sep2);font-size:10.5px;color:var(--t4)">⚙️ Kalibrirano: nominalno '+o.conf+'% → <strong style="color:#ce93d8">'+ps.calConf+'%</strong> po povijesti '+(_cc?'(podcijenjen → veća poz.)':'(precijenjen → manja poz.)')+'</div>';
       }
     }
   }
@@ -5000,8 +5000,8 @@ function hcConfCalib(sorted){
     h+='<div style="position:absolute;left:0;top:0;height:100%;width:'+ae.toFixed(0)+'%;background:rgba(255,255,255,.1);border-radius:5px"></div>';
     h+='<div style="position:absolute;left:0;top:0;height:100%;width:'+aa.toFixed(0)+'%;background:'+(aa>=ae?'rgba(0,230,118,.45)':'rgba(255,23,68,.45)')+';border-radius:5px"></div>';
     h+='<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;padding:0 7px">';
-    h+='<span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.45)">Oček: '+ae.toFixed(0)+'%</span>';
-    h+='<span style="font-size:9px;font-weight:700;color:#fff">'+aa.toFixed(0)+'%</span>';
+    h+='<span style="font-size:10px;font-weight:700;color:rgba(255,255,255,.45)">Oček: '+ae.toFixed(0)+'%</span>';
+    h+='<span style="font-size:10px;font-weight:700;color:#fff">'+aa.toFixed(0)+'%</span>';
     h+='</div></div></div>';
   });
   h+='</div>';
@@ -5036,7 +5036,7 @@ function hcDayMilestones(sorted){
   [{n:"Dan 1",v:d1h/n*100,c:d1h},{n:"Dan 2",v:d2h/n*100,c:d2h},{n:"Dan 3",v:d3h/n*100,c:d3h}].forEach(function(d){
     var col=d.v>=60?"#00e676":d.v>=40?"#ffea00":"#ff1744";
     h+='<div style="background:var(--s2);border-radius:10px;padding:10px;text-align:center">';
-    h+='<div style="font-size:9px;color:var(--t3);font-weight:700;margin-bottom:4px">'+d.n+'</div>';
+    h+='<div style="font-size:10px;color:var(--t3);font-weight:700;margin-bottom:4px">'+d.n+'</div>';
     h+='<div style="font-size:20px;font-weight:900;color:'+col+'">'+d.v.toFixed(0)+'%</div>';
     h+='<div style="font-size:10px;color:var(--t4);margin-top:2px">'+d.c+'/'+n+'</div>';
     h+='<div style="margin-top:5px;height:4px;background:var(--s4);border-radius:2px;overflow:hidden"><div style="height:100%;width:'+d.v.toFixed(0)+'%;background:'+col+';border-radius:2px"></div></div>';
@@ -5083,7 +5083,7 @@ function hcConfBuckets(sorted){
     var midConf=(b.min+Math.min(b.max-1,b.min+9))/2;
     var diff=actual-midConf;
     var accCol=actual>=60?"#00e676":actual>=40?"#ffea00":"#ff1744";
-    var diffStr=b.total<3?'<span style="color:var(--t4);font-size:9px"> malo uzoraka</span>':diff>5?'<span style="color:#ff6d00;font-size:9px"> ▲ precijenjeno</span>':diff<-5?'<span style="color:#2979ff;font-size:9px"> ▼ konzervativno</span>':'<span style="color:#00e676;font-size:9px"> ✓ kalibirano</span>';
+    var diffStr=b.total<3?'<span style="color:var(--t4);font-size:10px"> malo uzoraka</span>':diff>5?'<span style="color:#ff6d00;font-size:10px"> ▲ precijenjeno</span>':diff<-5?'<span style="color:#2979ff;font-size:10px"> ▼ konzervativno</span>':'<span style="color:#00e676;font-size:10px"> ✓ kalibirano</span>';
     h+='<div style="display:flex;align-items:center;gap:8px;margin-bottom:5px">';
     h+='<div style="width:46px;font-size:10px;font-weight:700;color:var(--t3)">'+b.label+'</div>';
     h+='<div style="flex:1;height:16px;background:var(--s3);border-radius:4px;overflow:hidden;position:relative">';
@@ -5204,13 +5204,13 @@ function hcExpectancy(sorted){
   h+='<div style="font-size:10px;color:var(--t4);margin-bottom:10px">prosječni rezultat po tradu nakon ~'+TRADE_COST_PCT+'% fee+slippage · breakeven već na '+(beWR*100).toFixed(0)+'% win rate</div>';
   h+='<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px">';
   [["Win rate",(wr*100).toFixed(0)+"%","var(--t2)"],["Prosj. dobitak","+"+avgWin.toFixed(1)+"%","#00e676"],["Prosj. gubitak",avgLoss.toFixed(1)+"%","#ff1744"],["R/R",rr.toFixed(1)+":1",rr>=2?"#00e676":"var(--t2)"]].forEach(function(s){
-    h+='<div style="background:var(--s2);border-radius:8px;padding:8px;text-align:center"><div style="font-size:14px;font-weight:800;color:'+s[2]+'">'+s[1]+'</div><div style="font-size:9px;color:var(--t4);margin-top:2px">'+s[0]+'</div></div>';
+    h+='<div style="background:var(--s2);border-radius:8px;padding:8px;text-align:center"><div style="font-size:14px;font-weight:800;color:'+s[2]+'">'+s[1]+'</div><div style="font-size:10px;color:var(--t4);margin-top:2px">'+s[0]+'</div></div>';
   });
   h+='</div>';
   if(outlierSkew){
     h+='<div style="font-size:10px;color:var(--warn);margin-top:9px;line-height:1.45">⚠️ Pozitivan expectancy ovisi o rijetkim "moon" dobicima — medijan dobitka je samo +'+medWin.toFixed(1)+'% (prosjek +'+avgWin.toFixed(1)+'%). Bez tih ekstrema strategija je blizu nule. Visoka varijanca: dobit dolazi od malo velikih pogodaka, ne od većine tradova.</div>';
   }
-  h+='<div style="font-size:9px;color:var(--t4);margin-top:9px;line-height:1.4;opacity:.85">💡 € iznosi (expectancy, dobitak, gubitak) su <strong>neto</strong> — oduzet ~'+TRADE_COST_PCT+'% fee+slippage po tradu. <em>Win rate</em> je pogođenost cilja (bruto hit-rate), ne novac. Trošak se mijenja u kodu (TRADE_COST_PCT).</div>';
+  h+='<div style="font-size:10px;color:var(--t4);margin-top:9px;line-height:1.4;opacity:.85">💡 € iznosi (expectancy, dobitak, gubitak) su <strong>neto</strong> — oduzet ~'+TRADE_COST_PCT+'% fee+slippage po tradu. <em>Win rate</em> je pogođenost cilja (bruto hit-rate), ne novac. Trošak se mijenja u kodu (TRADE_COST_PCT).</div>';
   h+='</div>';
   return h;
 }
@@ -5241,7 +5241,7 @@ function hcDrawdown(sorted){
   h+='<div style="font-size:10px;color:var(--t4);margin-bottom:10px">najveći pad kapitala (vrh→dno) · kumulativni P&L</div>';
   h+='<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px">';
   [["Najdulji niz gubitaka",maxStreak+"×","#ff1744"],["Trenutni drawdown",(curDD>0.5?"−"+curDD.toFixed(0)+"%":"0% (na vrhu)"),curDD>0.5?"#ffab00":"#00e676"],["Recovery factor",(recFactor>=99?"∞":recFactor.toFixed(1)+"×"),recCol]].forEach(function(s){
-    h+='<div style="background:var(--s2);border-radius:8px;padding:8px;text-align:center"><div style="font-size:14px;font-weight:800;color:'+s[2]+'">'+s[1]+'</div><div style="font-size:9px;color:var(--t4);margin-top:2px">'+s[0]+'</div></div>';
+    h+='<div style="background:var(--s2);border-radius:8px;padding:8px;text-align:center"><div style="font-size:14px;font-weight:800;color:'+s[2]+'">'+s[1]+'</div><div style="font-size:10px;color:var(--t4);margin-top:2px">'+s[0]+'</div></div>';
   });
   h+='</div>';
   h+='<div style="font-size:10px;color:var(--t4);margin-top:9px;line-height:1.4">Drawdown je "bol" koju moraš izdržati — niz gubitaka prije nego dobitnik sve vrati. Recovery factor >1 = ukupni povrat nadmašuje najveći pad.</div>';
@@ -5308,8 +5308,8 @@ function hcBenchmark(sorted){
   h+='<div style="font-size:22px;font-weight:900;color:'+edgeCol+';line-height:1.15">'+(win?"+":"")+edge.toFixed(1)+' pp</div>';
   h+='<div style="font-size:10px;color:var(--t4);margin-bottom:10px">'+(win?"tvoji tradovi nadmašuju BTC":"BTC HODL je bolji")+' — prednost po tradu (tvoj neto vs BTC bruto)</div>';
   h+='<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">';
-  h+='<div style="background:var(--s2);border-radius:10px;padding:10px;text-align:center"><div style="font-size:18px;font-weight:900;color:'+(exp>=0?"#00e676":"#ff1744")+'">'+(exp>=0?"+":"")+exp.toFixed(1)+'%</div><div style="font-size:9px;color:var(--t4);margin-top:2px">tvoj prosjek / trade (neto)</div></div>';
-  h+='<div style="background:var(--s2);border-radius:10px;padding:10px;text-align:center"><div style="font-size:18px;font-weight:900;color:'+(btcPerHold>=0?"#69f0ae":"#ff1744")+'">'+(btcPerHold>=0?"+":"")+btcPerHold.toFixed(1)+'%</div><div style="font-size:9px;color:var(--t4);margin-top:2px">BTC / isto držanje (~'+avgHold+'d)</div></div>';
+  h+='<div style="background:var(--s2);border-radius:10px;padding:10px;text-align:center"><div style="font-size:18px;font-weight:900;color:'+(exp>=0?"#00e676":"#ff1744")+'">'+(exp>=0?"+":"")+exp.toFixed(1)+'%</div><div style="font-size:10px;color:var(--t4);margin-top:2px">tvoj prosjek / trade (neto)</div></div>';
+  h+='<div style="background:var(--s2);border-radius:10px;padding:10px;text-align:center"><div style="font-size:18px;font-weight:900;color:'+(btcPerHold>=0?"#69f0ae":"#ff1744")+'">'+(btcPerHold>=0?"+":"")+btcPerHold.toFixed(1)+'%</div><div style="font-size:10px;color:var(--t4);margin-top:2px">BTC / isto držanje (~'+avgHold+'d)</div></div>';
   h+='</div>';
   h+='<div style="font-size:10px;color:var(--t4);margin-top:9px;line-height:1.4">BTC je u tih '+Math.round(spanDays)+' dana napravio <strong style="color:'+(btcHodl>=0?"#69f0ae":"#ff1744")+'">'+(btcHodl>=0?"+":"")+btcHodl.toFixed(0)+'%</strong> (uz 100% izloženost — ti si često u cashu). Tvoja strana je NETO (nakon ~'+TRADE_COST_PCT+'% troškova), BTC strana bruto — realna prednost je i malo veća. Prosjek napuhan moon-ovima (vidi Expectancy).</div>';
   h+='</div>';
@@ -5395,7 +5395,7 @@ function renderMiniSuccessChart(sorted){
   // Blok: forma (rolling 5) — zadnjih 5 vs ukupno (ukupna točnost je gore u KPI redu)
   h+='<div style="text-align:center;background:var(--s2);border-radius:10px;padding:6px 12px;border:.5px solid '+formCol+'33">';
   h+='<div style="font-size:18px;font-weight:900;color:'+formCol+'">'+formPct+'%</div>';
-  h+='<div style="font-size:9px;color:var(--t4);white-space:nowrap">Forma (5) <span style="color:'+formArrCol+'">'+formArr+'</span></div>';
+  h+='<div style="font-size:10px;color:var(--t4);white-space:nowrap">Forma (5) <span style="color:'+formArrCol+'">'+formArr+'</span></div>';
   h+='</div>';
   h+='</div>';
   // Kvadratići — zadnjih 20 tradova
@@ -5404,7 +5404,7 @@ function renderMiniSuccessChart(sorted){
     var isHit=p.status==="POGODAK";
     h+='<div title="'+p.sym+' '+p.date+'" style="width:13px;height:13px;border-radius:3px;background:'+(isHit?"var(--gr)":"var(--re)")+';opacity:'+(isHit?'1':'0.5')+';flex-shrink:0"></div>';
   });
-  if(sorted.length>20)h+='<div style="font-size:9px;color:var(--t4);align-self:center;margin-left:3px">+'+( sorted.length-20)+' starijih</div>';
+  if(sorted.length>20)h+='<div style="font-size:10px;color:var(--t4);align-self:center;margin-left:3px">+'+( sorted.length-20)+' starijih</div>';
   h+='</div>';
   // Expectancy — ključni pokazatelj profitabilnosti (prominentno, prije grafa)
   h+=hcExpectancy(sorted);
@@ -5505,7 +5505,7 @@ function renderTabSuccessPanel(tabKey){
         h+='<span style="font-size:12px;font-weight:800;color:var(--t1);flex-shrink:0;min-width:40px">'+p.sym+'</span>';
         h+='<span style="font-size:10px;color:var(--t4);flex-shrink:0">'+dirStr+'</span>';
         h+='<span style="font-size:11px;font-weight:700;color:'+pctCol+';margin-left:auto">'+pctStr+'</span>';
-        h+='<span style="font-size:9px;color:var(--t4);flex-shrink:0;min-width:32px;text-align:right">'+dateStr+'</span>';
+        h+='<span style="font-size:10px;color:var(--t4);flex-shrink:0;min-width:32px;text-align:right">'+dateStr+'</span>';
         h+='</div>';
       });
       if(total>20) h+='<div style="font-size:10px;color:var(--t4);text-align:center;padding:4px 0">+ još '+(total-20)+' starijih tradova</div>';
@@ -5526,12 +5526,12 @@ function renderClosedList(preds){
     var col=isHit?"var(--gr)":"var(--re)";
     var isMemeC=p.type==="meme";
     var isShortC=p.direction==="SHORT";
-    var typeDot=isMemeC?'<span style="color:var(--pu);font-size:9px">🎰</span> ':'';
-    var dirBadge=isShortC?'<span style="color:var(--re);font-size:9px">▼S</span>':'<span style="color:#2979ff;font-size:9px">▲L</span>';
-    var autoB=p.autoClose?'<span style="font-size:9px;color:var(--t4)"> AUTO</span>':'';
+    var typeDot=isMemeC?'<span style="color:var(--pu);font-size:10px">🎰</span> ':'';
+    var dirBadge=isShortC?'<span style="color:var(--re);font-size:10px">▼S</span>':'<span style="color:#2979ff;font-size:10px">▲L</span>';
+    var autoB=p.autoClose?'<span style="font-size:10px;color:var(--t4)"> AUTO</span>':'';
     var dn=p.targetPct===10?5:3;
     var dStr='';
-    for(var di=1;di<=dn;di++){dStr+='<span style="color:'+(p['d'+di+'Hit']?'var(--gr)':'rgba(255,255,255,.18)')+';font-size:9px">D'+di+'</span> ';}
+    for(var di=1;di<=dn;di++){dStr+='<span style="color:'+(p['d'+di+'Hit']?'var(--gr)':'rgba(255,255,255,.18)')+';font-size:10px">D'+di+'</span> ';}
     var pnlVal=(p.closePct!=null?(p.closePct>=0?"+":"")+p.closePct+'%':'—');
     var sep=i<preds.length-1?'border-bottom:.5px solid var(--sep2)':'';
     h+='<div style="display:flex;align-items:center;gap:10px;padding:9px 14px;'+sep+'">';
@@ -5580,9 +5580,9 @@ function renderActiveCard(p){
     h+='<div style="font-size:10px;color:var(--bull);background:rgba(0,230,118,.08);border-radius:8px;padding:5px 9px;margin-bottom:8px">🎯 50% uzeto na +'+(p.partialPct!=null?p.partialPct:'?')+'% · stop podignut na breakeven · ostatak vozi chandelier trailing</div>';
   }
   h+='<div class="grid-3" style="margin-bottom:10px">';
-  h+='<div class="stat-box"><div style="font-size:9px;font-weight:var(--fw-b);margin-bottom:2px;color:var(--info)">ULAZ</div><div style="font-size:12px;font-weight:var(--fw-x)">'+fp(p.entry)+'</div></div>';
-  h+='<div class="stat-box"><div style="font-size:9px;font-weight:var(--fw-b);margin-bottom:2px;color:var(--bear)">STOP</div><div style="font-size:12px;font-weight:var(--fw-x)">'+fp(p.stop)+'</div></div>';
-  h+='<div class="stat-box"><div style="font-size:9px;font-weight:var(--fw-b);margin-bottom:2px;color:var(--bull)">TARGET</div><div style="font-size:12px;font-weight:var(--fw-x)">'+fp(p.target)+'</div></div>';
+  h+='<div class="stat-box"><div style="font-size:10px;font-weight:var(--fw-b);margin-bottom:2px;color:var(--info)">ULAZ</div><div style="font-size:12px;font-weight:var(--fw-x)">'+fp(p.entry)+'</div></div>';
+  h+='<div class="stat-box"><div style="font-size:10px;font-weight:var(--fw-b);margin-bottom:2px;color:var(--bear)">STOP</div><div style="font-size:12px;font-weight:var(--fw-x)">'+fp(p.stop)+'</div></div>';
+  h+='<div class="stat-box"><div style="font-size:10px;font-weight:var(--fw-b);margin-bottom:2px;color:var(--bull)">TARGET</div><div style="font-size:12px;font-weight:var(--fw-x)">'+fp(p.target)+'</div></div>';
   h+='</div>';
   // Dnevni targeti (3 dana za 5%, 5 dana za 10%)
   var DAY=24*3600*1000;
@@ -5614,9 +5614,9 @@ function renderActiveCard(p){
     var prob=_bayesProbs[di]||0;
     var probCol=prob>=70?"var(--gr)":prob>=50?"var(--ye)":"var(--t3)";
     h+='<div style="background:var(--s2);border-radius:9px;padding:8px;text-align:center">';
-    h+='<div style="font-size:9px;font-weight:700;color:'+dCol+';margin-bottom:3px">'+icon+' '+d.n+'</div>';
+    h+='<div style="font-size:10px;font-weight:700;color:'+dCol+';margin-bottom:3px">'+icon+' '+d.n+'</div>';
     h+='<div style="font-size:11px;font-weight:700;color:'+dCol+'">'+fp(d.t)+'</div>';
-    if(prob>0&&!d.hit){h+='<div style="font-size:9px;color:'+probCol+';margin-top:2px">'+prob+'%'+(_bayesUpd&&di>0?' ↑':'')+'</div>';}
+    if(prob>0&&!d.hit){h+='<div style="font-size:10px;color:'+probCol+';margin-top:2px">'+prob+'%'+(_bayesUpd&&di>0?' ↑':'')+'</div>';}
     h+='</div>';
   });
   h+='</div>';
@@ -5763,7 +5763,7 @@ function renderCalibrationPanel(){
   // Auto-korekcija sizinga: prikazi gdje kalibrirani conf odstupa od nominalnog
   if(typeof calibratedConf==="function"){
     var demo=[60,70,80].map(function(c){var cc=calibratedConf(c);return cc!==c?(c+'→'+cc+'%'):null;}).filter(Boolean);
-    h+='<div style="font-size:9px;color:var(--t4);padding-top:8px;margin-top:6px;border-top:.5px solid var(--sep);line-height:1.5">⚙️ Auto-korekcija pozicije: sizing koristi <strong style="color:#ce93d8">kalibrirani conf</strong> umjesto nominalnog'+(demo.length?' ('+demo.join(' · ')+')':' — aktivira se kad bucket ima ≥8 uzoraka')+'</div>';
+    h+='<div style="font-size:10px;color:var(--t4);padding-top:8px;margin-top:6px;border-top:.5px solid var(--sep);line-height:1.5">⚙️ Auto-korekcija pozicije: sizing koristi <strong style="color:#ce93d8">kalibrirani conf</strong> umjesto nominalnog'+(demo.length?' ('+demo.join(' · ')+')':' — aktivira se kad bucket ima ≥8 uzoraka')+'</div>';
   }
   h+='</div>';
   return h;
@@ -5785,10 +5785,10 @@ function renderShadowPanel(){
   h+='</div>';
   h+='<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px">';
   [{v:tot,l:'Uzoraka'},{v:graded.length,l:'Ocijenjeno'},{v:pend,l:'Čeka 24h'},{v:Object.keys(uniq).length,l:'Tokena'}].forEach(function(s){
-    h+='<div style="background:var(--s2,rgba(255,255,255,.03));border-radius:8px;padding:7px;text-align:center"><div style="font-size:14px;font-weight:900;color:var(--t2)">'+s.v+'</div><div style="font-size:9px;color:var(--t4)">'+s.l+'</div></div>';
+    h+='<div style="background:var(--s2,rgba(255,255,255,.03));border-radius:8px;padding:7px;text-align:center"><div style="font-size:14px;font-weight:900;color:var(--t2)">'+s.v+'</div><div style="font-size:10px;color:var(--t4)">'+s.l+'</div></div>';
   });
   h+='</div>';
-  h+='<div style="font-size:9px;color:var(--t4);margin-top:7px;text-align:center">Puni se +30 uzoraka / 4h · hrani težine signala i AI model</div>';
+  h+='<div style="font-size:10px;color:var(--t4);margin-top:7px;text-align:center">Puni se +30 uzoraka / 4h · hrani težine signala i AI model</div>';
   h+='</div>';
   return h;
 }
@@ -5845,7 +5845,7 @@ function renderWeightsPanel(){
     availableRegimes.forEach(function(r){
       var lbl=r==="_global"?"Sve":r.substring(0,5);
       var act=r===selRegime;
-      h+='<button onclick="stateAPI.ui.setValue(\'wpReg\',\''+r+'\');render()" style="padding:2px 7px;background:'+(act?"rgba(255,234,0,.2)":"rgba(255,255,255,.04)")+';border:.5px solid '+(act?"rgba(255,234,0,.4)":"var(--sep)")+';border-radius:5px;font-size:9px;color:'+(act?"var(--ye)":"var(--t3)")+';cursor:pointer;font-family:inherit;font-weight:var(--fw-b)">'+lbl+'</button>';
+      h+='<button onclick="stateAPI.ui.setValue(\'wpReg\',\''+r+'\');render()" style="padding:2px 7px;background:'+(act?"rgba(255,234,0,.2)":"rgba(255,255,255,.04)")+';border:.5px solid '+(act?"rgba(255,234,0,.4)":"var(--sep)")+';border-radius:5px;font-size:10px;color:'+(act?"var(--ye)":"var(--t3)")+';cursor:pointer;font-family:inherit;font-weight:var(--fw-b)">'+lbl+'</button>';
     });
     h+='</span>';
   }
@@ -5864,7 +5864,7 @@ function renderWeightsPanel(){
     h+='<div style="width:110px;font-size:10px;color:var(--t2);flex-shrink:0;line-height:1.3">'+LABELS[e.f]+'</div>';
     h+='<div style="flex:1">';
     h+='<div style="height:4px;background:var(--s4);border-radius:2px;overflow:hidden;margin-bottom:2px"><div style="height:100%;width:'+barW+'%;background:'+col+';border-radius:2px;transition:width .4s"></div></div>';
-    h+='<div style="font-size:9px;color:'+rateCol+'">'+rateStr+'</div>';
+    h+='<div style="font-size:10px;color:'+rateCol+'">'+rateStr+'</div>';
     h+='</div>';
     h+='<div style="width:46px;text-align:right;font-size:11px;font-weight:700;color:'+col+'">'+arrow+' '+e.w.toFixed(2)+'x</div>';
     h+='</div>';
@@ -5913,9 +5913,9 @@ function renderKellyPanel(){
     return'<div style="background:var(--s2);border-radius:12px;padding:12px;text-align:center;border:.5px solid '+col+'22">'
       +'<div style="font-size:10px;font-weight:700;color:'+col+';margin-bottom:6px">'+label+'</div>'
       +'<div style="font-size:28px;font-weight:900;color:'+kCol+'">'+k.halfKelly+'%</div>'
-      +'<div style="font-size:9px;color:var(--t4);margin-top:2px">½ Kelly</div>'
-      +'<div style="font-size:9px;color:var(--t3);margin-top:5px">Win '+Math.round(k.winRate*100)+'% · +'+k.avgGain+'% / -'+k.avgLoss+'%</div>'
-      +'<div style="font-size:9px;color:var(--t4)">Iz '+k.n+' predikcija</div>'
+      +'<div style="font-size:10px;color:var(--t4);margin-top:2px">½ Kelly</div>'
+      +'<div style="font-size:10px;color:var(--t3);margin-top:5px">Win '+Math.round(k.winRate*100)+'% · +'+k.avgGain+'% / -'+k.avgLoss+'%</div>'
+      +'<div style="font-size:10px;color:var(--t4)">Iz '+k.n+' predikcija</div>'
       +'</div>';
   }
   var kCol=kAll?(kAll.halfKelly>=10?"var(--gr)":kAll.halfKelly>=5?"var(--ye)":"var(--re)"):"var(--t3)";
@@ -5958,7 +5958,7 @@ function renderBacktestPanel(){
     h+='<div style="background:var(--s2);border-radius:10px;padding:8px 12px;text-align:center;min-width:70px">';
     h+='<div style="font-size:11px;font-weight:700;color:var(--t2);margin-bottom:3px">'+sym+'</div>';
     h+='<div style="font-size:20px;font-weight:900;color:'+col+'">'+bt.accuracy+'%</div>';
-    h+='<div style="font-size:9px;color:var(--t4)">'+bt.hits+'/'+bt.n+' signala</div>';
+    h+='<div style="font-size:10px;color:var(--t4)">'+bt.hits+'/'+bt.n+' signala</div>';
     h+='</div>';
   });
   h+='</div>';
@@ -6102,7 +6102,7 @@ function renderSignalBacktestPanel(){
     var bCol=sb.baseline>=60?"var(--gr)":sb.baseline>=50?"var(--ye)":"var(--re)";
     h+='<div style="background:var(--s3);border-radius:10px;padding:8px 12px;margin-bottom:8px;display:flex;align-items:center;justify-content:space-between">';
     h+='<div><div style="font-size:11px;font-weight:700;color:var(--t2)">📊 Baseline</div><div style="font-size:10px;color:var(--t4)">Svi pozitivni tehički setupi, bez filtera</div></div>';
-    h+='<div style="text-align:right"><div style="font-size:22px;font-weight:900;color:'+bCol+'">'+sb.baseline+'%</div><div style="font-size:9px;color:var(--t4)">'+base.fires+' slučajeva</div></div>';
+    h+='<div style="text-align:right"><div style="font-size:22px;font-weight:900;color:'+bCol+'">'+sb.baseline+'%</div><div style="font-size:10px;color:var(--t4)">'+base.fires+' slučajeva</div></div>';
     h+='</div>';
   }
   h+='<div style="font-size:10px;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;display:grid;grid-template-columns:1fr 58px 44px 52px;gap:4px;padding:0 10px">';
@@ -6123,7 +6123,7 @@ function renderSignalBacktestPanel(){
   });
   h+='</div>';
   var ago=sb.ts?Math.round((Date.now()-sb.ts)/60000):null;
-  if(ago!==null)h+='<div style="font-size:9px;color:var(--t4);margin-top:8px;text-align:right">Izračunato prije '+ago+' min</div>';
+  if(ago!==null)h+='<div style="font-size:10px;color:var(--t4);margin-top:8px;text-align:right">Izračunato prije '+ago+' min</div>';
   h+='</div>';
   return h;
 }
@@ -6177,13 +6177,13 @@ function renderDailyRec(){
     var col=conf>=70?"#00e676":conf>=60?"#ffea00":conf>=50?"#2979ff":"var(--t3)";
     var cfg=getCfg(sym);
     h+='<div style="background:var(--s2);border-radius:14px;padding:12px;text-align:center;border:.5px solid '+col+'33">';
-    h+='<div style="font-size:9px;color:var(--t4);font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:5px">'+day.ico+' '+day.n+'</div>';
+    h+='<div style="font-size:10px;color:var(--t4);font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:5px">'+day.ico+' '+day.n+'</div>';
     h+='<div style="font-size:16px;font-weight:900;color:'+cfg.c+';margin-bottom:2px">'+sym+(isMeme?' 🎰':'')+'</div>';
     h+='<div style="font-size:11px;color:'+col+';font-weight:800;margin-bottom:6px">'+conf+'% pouzdanost</div>';
     h+='<div style="background:rgba(0,0,0,.3);border-radius:8px;padding:6px;margin-bottom:6px">';
-    h+='<div style="font-size:9px;color:var(--t4);margin-bottom:1px">Preporučena pozicija</div>';
+    h+='<div style="font-size:10px;color:var(--t4);margin-bottom:1px">Preporučena pozicija</div>';
     h+='<div style="font-size:18px;font-weight:900;color:'+col+'">'+ps+'%</div>';
-    h+='<div style="font-size:9px;color:var(--t4)">portfelja</div>';
+    h+='<div style="font-size:10px;color:var(--t4)">portfelja</div>';
     h+='</div>';
     h+='<div style="font-size:10px;color:var(--t3)">Target: <strong style="color:var(--gr)">+'+tok.targetPct+'%</strong></div>';
     h+='<div style="font-size:10px;color:var(--t3)">Prob: <strong style="color:var(--ye)">'+prob+'%</strong></div>';
@@ -6760,7 +6760,7 @@ function rMeme(){
       ["Vol spikes",""+spikeCount+"/"+mSyms.length,spikeCount>=2?"var(--pu)":"var(--t3)"]
     ].forEach(function(r){
       h+='<div style="background:rgba(0,0,0,.25);border-radius:8px;padding:7px;text-align:center">';
-      h+='<div style="font-size:9px;color:var(--t4);margin-bottom:2px">'+r[0]+'</div>';
+      h+='<div style="font-size:10px;color:var(--t4);margin-bottom:2px">'+r[0]+'</div>';
       h+='<div style="font-size:13px;font-weight:800;color:'+r[2]+'">'+r[1]+'</div>';
       h+='</div>';
     });
@@ -6846,7 +6846,7 @@ function btcAccuracyChart(){
     {v:graded.length,l:'Ocijenjeno',c:'var(--t2)'},
     {v:pending,l:'Čeka 24h',c:'var(--t3)'}
   ].forEach(function(s){
-    h+='<div style="background:var(--s2,rgba(255,255,255,.03));border-radius:9px;padding:8px;text-align:center"><div style="font-size:14px;font-weight:900;color:'+s.c+'">'+s.v+'</div><div style="font-size:9px;color:var(--t4);margin-top:1px">'+s.l+'</div></div>';
+    h+='<div style="background:var(--s2,rgba(255,255,255,.03));border-radius:9px;padding:8px;text-align:center"><div style="font-size:14px;font-weight:900;color:'+s.c+'">'+s.v+'</div><div style="font-size:10px;color:var(--t4);margin-top:1px">'+s.l+'</div></div>';
   });
   h+='</div>';
   // Baseline usporedba (coin-flip 50%) — pokazuje ima li app stvarni edge
@@ -6865,12 +6865,12 @@ function btcAccuracyChart(){
       h+='<div style="background:var(--s2,rgba(255,255,255,.03));border-radius:9px;padding:7px;text-align:center">';
       h+='<div style="font-size:10px;color:'+x.col+';font-weight:800;margin-bottom:1px">'+x.ico+' '+x.lbl+'</div>';
       h+='<div style="font-size:13px;font-weight:900;color:'+acCol+'">'+(ac!=null?ac+'%':'—')+'</div>';
-      h+='<div style="font-size:8px;color:var(--t4)">'+st.n+' uzor.</div></div>';
+      h+='<div style="font-size:9px;color:var(--t4)">'+st.n+' uzor.</div></div>';
     });
     h+='</div>';
   }
   // Legenda (oblici + boje)
-  h+='<div style="display:flex;gap:11px;justify-content:center;margin-top:9px;font-size:9px;color:var(--t4);flex-wrap:wrap">';
+  h+='<div style="display:flex;gap:11px;justify-content:center;margin-top:9px;font-size:10px;color:var(--t4);flex-wrap:wrap">';
   h+='<span><span style="color:#f7931a">━</span> cijena</span>';
   h+='<span>▲ rast · ▼ pad · ◆ flat</span>';
   h+='<span><span style="color:#00e676">●</span>✓ · <span style="color:#ff1744">●</span>✗ · <span style="color:rgba(255,255,255,.45)">●</span>čeka</span>';
@@ -6954,7 +6954,7 @@ function btcBearBottomPanel(){
   var h='<div style="background:var(--s1);border:.5px solid var(--sep);border-radius:14px;padding:13px 15px;margin-bottom:12px">';
   h+='<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">';
   h+='<span data-tip="Procjena dna (bear scenarij)|Heuristička projekcija gdje bi BTC mogao naći dno AKO se bear nastavi. Računa se iz: povijesnog diskonta ispod 200D SMA (prilagođen Fear&amp;Greed, ratom, volatilnošću) + najdubljeg tehničkog supporta ispod cijene. Sama se korigira sa svakim osvježavanjem. NIJE garancija ni savjet." style="font-size:12px;font-weight:800;color:var(--t2);cursor:help">🎯 Procjena dna (bear) ⓘ</span>';
-  if(est.discount!=null)h+='<span style="font-size:9px;color:var(--t4)">−'+Math.round(est.discount*100)+'% isp. 200D</span>';
+  if(est.discount!=null)h+='<span style="font-size:10px;color:var(--t4)">−'+Math.round(est.discount*100)+'% isp. 200D</span>';
   h+='</div>';
 
   // Glavni broj — downside target ispod trenutne
@@ -6975,8 +6975,8 @@ function btcBearBottomPanel(){
   if(sma)h+='<div style="position:absolute;top:5px;left:'+pp(sma).toFixed(1)+'%;width:2px;height:18px;background:#2979ff;transform:translateX(-1px)"></div>';
   h+='<div style="position:absolute;top:3px;left:'+pp(price).toFixed(1)+'%;width:2px;height:22px;background:#f7931a;transform:translateX(-1px)"></div>';
   h+='</div>';
-  h+='<div style="display:flex;justify-content:space-between;font-size:8px;color:var(--t4)"><span>$'+fmtNum(lo)+'</span><span>$'+fmtNum(hi)+'</span></div>';
-  h+='<div style="display:flex;gap:12px;justify-content:center;margin-top:6px;font-size:9px;color:var(--t4)"><span><span style="color:#f7931a">▎</span>trenutna</span>'+(sma?'<span><span style="color:#2979ff">▎</span>200D SMA</span>':'')+'<span><span style="color:rgba(255,23,68,.7)">▬</span>zona dna</span></div>';
+  h+='<div style="display:flex;justify-content:space-between;font-size:9px;color:var(--t4)"><span>$'+fmtNum(lo)+'</span><span>$'+fmtNum(hi)+'</span></div>';
+  h+='<div style="display:flex;gap:12px;justify-content:center;margin-top:6px;font-size:10px;color:var(--t4)"><span><span style="color:#f7931a">▎</span>trenutna</span>'+(sma?'<span><span style="color:#2979ff">▎</span>200D SMA</span>':'')+'<span><span style="color:rgba(255,23,68,.7)">▬</span>zona dna</span></div>';
 
   // ── VREMENSKA TRAKA: top → danas → povijesni prozor dna (330-410d, median ~365d) ──
   if(est.daysFromTop!=null){
@@ -6988,7 +6988,7 @@ function btcBearBottomPanel(){
     h+='<div style="margin-top:11px;padding-top:10px;border-top:.5px solid rgba(255,255,255,.06)">';
     h+='<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">';
     h+='<span data-tip="Vremenska komponenta|BTC bear dno povijesno nastupa ~365 dana nakon cycle topa: 2013→2015 ~410d, 2017→2018 ~363d, 2021→2022 ~376d. Rano u bearu (<60% vremena) procjena cijene dna se spušta jer kapitulacija statistički tek dolazi." style="font-size:10px;font-weight:700;color:var(--t3);cursor:help">⏳ Dan <strong style="color:var(--t1)">'+est.daysFromTop+'</strong> od topa · dno tipično ~365d ⓘ</span>';
-    h+='<span style="font-size:9px;font-weight:800;color:'+(ripe?'var(--bull)':'var(--warn)')+'">'+Math.round(est.timeProgress*100)+'%</span>';
+    h+='<span style="font-size:10px;font-weight:800;color:'+(ripe?'var(--bull)':'var(--warn)')+'">'+Math.round(est.timeProgress*100)+'%</span>';
     h+='</div>';
     // traka: prozor dna (330-410) + marker danas
     h+='<div style="position:relative;height:20px">';
@@ -6997,17 +6997,17 @@ function btcBearBottomPanel(){
     h+='<div style="position:absolute;top:5px;left:'+tp(365).toFixed(1)+'%;width:2px;height:10px;background:var(--bull);transform:translateX(-1px)"></div>';
     h+='<div style="position:absolute;top:1px;left:'+tp(est.daysFromTop).toFixed(1)+'%;width:2px;height:18px;background:#f7931a;transform:translateX(-1px)"></div>';
     h+='</div>';
-    h+='<div style="display:flex;justify-content:space-between;font-size:8px;color:var(--t4)"><span>top '+(MACRO.btcTopDate?new Date(Date.parse(MACRO.btcTopDate)).toLocaleDateString("hr-HR",{day:"numeric",month:"short",year:"2-digit"}):"")+(est.topPrice?' ($'+fmtNum(est.topPrice)+')':'')+'</span><span>+440d</span></div>';
+    h+='<div style="display:flex;justify-content:space-between;font-size:9px;color:var(--t4)"><span>top '+(MACRO.btcTopDate?new Date(Date.parse(MACRO.btcTopDate)).toLocaleDateString("hr-HR",{day:"numeric",month:"short",year:"2-digit"}):"")+(est.topPrice?' ($'+fmtNum(est.topPrice)+')':'')+'</span><span>+440d</span></div>';
     h+='<div style="text-align:center;font-size:10px;color:var(--t3);margin-top:6px">'+(ripe
       ?'🟢 <strong style="color:var(--bull)">Vrijeme zrelo za dno</strong> — u povijesnom prozoru ('+fmtDt(est.bottomDateMin)+' – '+fmtDt(est.bottomDateMax)+')'
       :'Procijenjeno dno oko <strong style="color:var(--t1)">'+fmtDt(est.bottomDateMid)+'</strong> (raspon '+fmtDt(est.bottomDateMin)+' – '+fmtDt(est.bottomDateMax)+') · još ~'+dLeft+'d')+'</div>';
-    if(est.timeAdj<1)h+='<div style="text-align:center;font-size:9px;color:var(--t4);margin-top:3px">⏬ '+(est.timeProgress<0.6?'Rana faza bear-a':'Dno statistički još nije dosegnuto')+' ('+Math.round(est.timeProgress*100)+'% vremena) — procjena cijene spuštena '+Math.round((1-est.timeAdj)*100)+'%</div>';
+    if(est.timeAdj<1)h+='<div style="text-align:center;font-size:10px;color:var(--t4);margin-top:3px">⏬ '+(est.timeProgress<0.6?'Rana faza bear-a':'Dno statistički još nije dosegnuto')+' ('+Math.round(est.timeProgress*100)+'% vremena) — procjena cijene spuštena '+Math.round((1-est.timeAdj)*100)+'%</div>';
     h+='</div>';
   }
 
   // Driver chips — sto trenutno korigira procjenu
   h+='<div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:9px">';
-  function dc(t){return'<span style="font-size:9px;color:var(--t3);background:rgba(255,255,255,.04);border-radius:6px;padding:2px 7px">'+t+'</span>';}
+  function dc(t){return'<span style="font-size:10px;color:var(--t3);background:rgba(255,255,255,.04);border-radius:6px;padding:2px 7px">'+t+'</span>';}
   h+=dc('F&G '+(MACRO.fg!=null?MACRO.fg:'—'));
   if(est.smaBottom)h+=dc('SMA dno $'+fmtNum(est.smaBottom));
   if(est.techBottom)h+=dc('Support $'+fmtNum(est.techBottom));
@@ -7015,7 +7015,7 @@ function btcBearBottomPanel(){
   h+=dc('ATR '+est.atrD.toFixed(1)+'%/d');
   if(est.daysFromTop!=null)h+=dc('⏳ dan '+est.daysFromTop+'/365');
   h+='</div>';
-  h+='<div style="font-size:9px;color:var(--t4);text-align:center;margin-top:8px">⚠️ Heuristička procjena — nije garancija ni financijski savjet</div>';
+  h+='<div style="font-size:10px;color:var(--t4);text-align:center;margin-top:8px">⚠️ Heuristička procjena — nije garancija ni financijski savjet</div>';
   h+='</div>';return h;
 }
 
@@ -7035,7 +7035,7 @@ function rBtc(){
   h+='<div style="display:flex;align-items:center;gap:11px">';
   h+='<span style="font-size:30px;line-height:1;color:'+bo+'">₿</span>';
   h+='<div><div style="font-size:18px;font-weight:900;color:var(--t1);letter-spacing:-.3px">Bitcoin</div>';
-  h+='<div style="font-size:9.5px;color:var(--t4)">Posvećeni monitor · isti engine kao Signali</div></div>';
+  h+='<div style="font-size:10.5px;color:var(--t4)">Posvećeni monitor · isti engine kao Signali</div></div>';
   h+='</div>';
   h+='<div style="text-align:right">';
   h+='<div style="font-size:20px;font-weight:900;color:var(--t1)">$'+(price?fmtNum(price):'—')+'</div>';
@@ -7053,7 +7053,7 @@ function rBtc(){
     var cur=tip?';cursor:help':'';
     return'<div'+ta2+' style="background:var(--s1);border:.5px solid var(--sep);border-radius:12px;padding:10px 8px;text-align:center'+cur+'">'
       +'<div style="font-size:15px;font-weight:900;color:'+col+'">'+val+'</div>'
-      +'<div style="font-size:9px;color:var(--t4);margin-top:2px">'+lbl+'</div></div>';
+      +'<div style="font-size:10px;color:var(--t4);margin-top:2px">'+lbl+'</div></div>';
   }
   var sma=MACRO.btcSma200;
   var smaDiff=sma?((price-sma)/sma*100):null;
@@ -7091,7 +7091,7 @@ function rBtc(){
       h+='<div style="flex:1;background:'+bg+';border:.5px solid '+col+'33;border-radius:9px;padding:8px;text-align:center">';
       h+='<div style="font-size:10px;color:var(--t4);margin-bottom:2px">'+x.l+'</div>';
       h+='<div style="font-size:12px;font-weight:800;color:'+col+'">'+(isUp?'▲ UP':'▼ DOWN')+'</div>';
-      if(rsi!=null)h+='<div style="font-size:9px;color:var(--t4);margin-top:2px">RSI '+rsi+'</div>';
+      if(rsi!=null)h+='<div style="font-size:10px;color:var(--t4);margin-top:2px">RSI '+rsi+'</div>';
       h+='</div>';
     });
     h+='</div></div>';
@@ -7115,8 +7115,8 @@ function rBtc(){
     h+='<div style="position:absolute;left:50%;top:-2px;width:1px;height:12px;background:rgba(255,255,255,.2)"></div>';
     h+='<div style="position:absolute;left:'+pct.toFixed(1)+'%;top:-3px;width:3px;height:14px;background:'+fl.col+';border-radius:2px;transform:translateX(-1.5px);box-shadow:0 0 5px '+fl.col+'"></div>';
     h+='</div>';
-    h+='<div style="display:flex;justify-content:space-between;font-size:8px;color:var(--t4);margin-top:3px"><span>distribucija</span><span>akumulacija</span></div>';
-    if(fl.drivers.length)h+='<div style="font-size:9.5px;color:var(--t3);margin-top:6px">Pokretači: '+fl.drivers.join(" · ")+'</div>';
+    h+='<div style="display:flex;justify-content:space-between;font-size:9px;color:var(--t4);margin-top:3px"><span>distribucija</span><span>akumulacija</span></div>';
+    if(fl.drivers.length)h+='<div style="font-size:10.5px;color:var(--t3);margin-top:6px">Pokretači: '+fl.drivers.join(" · ")+'</div>';
     h+='</div>';
   })();
 
@@ -7231,9 +7231,9 @@ function render(){
         +'<circle cx="18" cy="18" r="'+r+'" fill="none" stroke="'+col+'" stroke-width="3" stroke-linecap="round"'
         +' stroke-dasharray="'+dash.toFixed(1)+' '+(circ-dash).toFixed(1)+'" />'
         +'</svg>';
-      h+='<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:'+col+'">'+fg+'</div>';
+      h+='<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:'+col+'">'+fg+'</div>';
       h+='</div>';
-      h+='<div style="font-size:8px;color:var(--t4);letter-spacing:.04em;text-transform:uppercase">F&amp;G</div>';
+      h+='<div style="font-size:9px;color:var(--t4);letter-spacing:.04em;text-transform:uppercase">F&amp;G</div>';
       h+='</div>';
     })();
     h+='</div>';
@@ -7321,7 +7321,7 @@ function render(){
         h+='<div style="margin-top:10px;padding:10px 12px;background:linear-gradient(135deg,rgba(0,230,118,.07) 0%,rgba(0,230,118,.02) 100%);border:.5px solid rgba(0,230,118,.2);border-radius:10px;font-size:11px;line-height:1.65;color:var(--t2)">';
         h+='<div style="display:flex;align-items:center;gap:5px;margin-bottom:5px">';
         h+='<span style="font-size:12px">🤖</span>';
-        h+='<span style="font-size:9px;font-weight:700;color:rgba(0,230,118,.7);text-transform:uppercase;letter-spacing:.07em">Claude AI · Makro analiza</span>';
+        h+='<span style="font-size:10px;font-weight:700;color:rgba(0,230,118,.7);text-transform:uppercase;letter-spacing:.07em">Claude AI · Makro analiza</span>';
         h+='</div>';
         h+=MACRO.aiSummary;
         h+='</div>';
@@ -7361,8 +7361,8 @@ function render(){
       h+='<div style="width:100%;height:3px;background:rgba(255,255,255,.07);border-radius:2px;margin-top:2px">';
       h+='<div style="height:3px;width:'+barW+'%;background:'+barCol+';border-radius:2px"></div>';
       h+='</div>';
-      if(r.rank===1)h+='<div style="font-size:9px;color:var(--bull);font-weight:700;letter-spacing:.04em">🔥 TOP</div>';
-      if(r.rank===srs.length)h+='<div style="font-size:9px;color:var(--bear);font-weight:700;letter-spacing:.04em">❄ COLD</div>';
+      if(r.rank===1)h+='<div style="font-size:10px;color:var(--bull);font-weight:700;letter-spacing:.04em">🔥 TOP</div>';
+      if(r.rank===srs.length)h+='<div style="font-size:10px;color:var(--bear);font-weight:700;letter-spacing:.04em">❄ COLD</div>';
       h+='</div>';
     });
     h+='</div>';
@@ -7391,7 +7391,7 @@ function render(){
       h+='<span style="font-size:15px">🐻</span>';
       h+='<div>';
       h+='<div style="font-size:13px;font-weight:800;color:'+bc+';letter-spacing:-.2px">BEAR MODE — disciplina prije ulaska</div>';
-      h+='<div style="font-size:9px;color:var(--t4);margin-top:1px">F&amp;G '+fg+' · max '+maxTrades+' '+(maxTrades===1?"trejd":"trejda")+' istovremeno · pola pozicije</div>';
+      h+='<div style="font-size:10px;color:var(--t4);margin-top:1px">F&amp;G '+fg+' · max '+maxTrades+' '+(maxTrades===1?"trejd":"trejda")+' istovremeno · pola pozicije</div>';
       h+='</div></div>';
       h+='<span style="font-size:11px;color:var(--t4)">'+(collapsed?"▾":"▴")+'</span>';
       h+='</div>';
@@ -7664,7 +7664,7 @@ function render(){
       topMarkets.forEach(function(m){
         var pct=Math.round(m.prob*100);
         var barCol=pct>60?"var(--bull)":pct<35?"var(--bear)":"var(--warn)";
-        var symBadge=m.sym?'<span style="font-size:9px;font-weight:var(--fw-x);background:var(--s3);border-radius:4px;padding:1px 5px;color:var(--t3);margin-right:5px">'+m.sym+'</span>':"";
+        var symBadge=m.sym?'<span style="font-size:10px;font-weight:var(--fw-x);background:var(--s3);border-radius:4px;padding:1px 5px;color:var(--t3);margin-right:5px">'+m.sym+'</span>':"";
         var volStr=m.volume>=1000000?"$"+(m.volume/1000000).toFixed(1)+"M":"$"+(m.volume/1000).toFixed(0)+"K";
         var daysStr="";
         if(m.endDate){var dd=Math.round((new Date(m.endDate)-Date.now())/86400000);if(dd>=0)daysStr='<span class="txt-t4" style="font-size:10px"> · '+dd+'d</span>';}
@@ -7935,14 +7935,14 @@ function doSearch(){
     h+='<div class="sec">';
     h+='<div class="row" style="gap:10px;margin-bottom:10px">';
     h+='<div class="tok-ico" style="background:'+CFG[sym].c+'15;color:'+CFG[sym].c+'">'+CFG[sym].i+'</div>';
-    h+='<div style="flex:1"><div style="font-size:18px;font-weight:var(--fw-x)">'+sym+' <span class="chip" style="font-size:9px;padding:1px 6px;margin-left:4px;background:rgba(255,255,255,.06);color:var(--t3);border-color:var(--sep)">📡 '+found.source+'</span></div>';
+    h+='<div style="flex:1"><div style="font-size:18px;font-weight:var(--fw-x)">'+sym+' <span class="chip" style="font-size:10px;padding:1px 6px;margin-left:4px;background:rgba(255,255,255,.06);color:var(--t3);border-color:var(--sep)">📡 '+found.source+'</span></div>';
     h+='<div class="txt-t3" style="font-size:11px;margin-top:2px">'+fp(price)+' <span style="color:'+(c24>=0?"var(--bull)":"var(--bear)")+';font-weight:var(--fw-b);margin-left:6px">'+(c24>=0?"+":"")+c24.toFixed(2)+'%</span></div></div>';
     h+='</div>';
     if(result.verdictWhy)h+='<div style="font-size:11px;color:var(--t3);line-height:1.5;margin-bottom:8px">'+result.verdictWhy+'</div>';
     h+='<div class="grid-3" style="gap:6px;margin-bottom:10px">';
-    h+='<div class="stat-box"><div class="txt-t4" style="font-size:9px">ULAZ</div><div class="stat-num-sm">'+fp(price)+'</div></div>';
-    h+='<div class="stat-box"><div class="txt-bear" style="font-size:9px">STOP</div><div class="stat-num-sm txt-bear">'+fp(result.stopPrice)+'</div></div>';
-    h+='<div class="stat-box"><div class="txt-bull" style="font-size:9px">TARGET +'+result.targetPct+'%</div><div class="stat-num-sm txt-bull">'+fp(result.targetPrice)+'</div></div>';
+    h+='<div class="stat-box"><div class="txt-t4" style="font-size:10px">ULAZ</div><div class="stat-num-sm">'+fp(price)+'</div></div>';
+    h+='<div class="stat-box"><div class="txt-bear" style="font-size:10px">STOP</div><div class="stat-num-sm txt-bear">'+fp(result.stopPrice)+'</div></div>';
+    h+='<div class="stat-box"><div class="txt-bull" style="font-size:10px">TARGET +'+result.targetPct+'%</div><div class="stat-num-sm txt-bull">'+fp(result.targetPrice)+'</div></div>';
     h+='</div>';
     h+='<div class="row-wrap" style="gap:10px;margin-bottom:8px">';
     h+='<span class="metric">R/R <strong>'+result.rr+':1</strong></span>';
@@ -8057,9 +8057,9 @@ function renderDebugLogs(){
     var agoStr=ago<60?ago+"s":ago<3600?Math.round(ago/60)+"m":Math.round(ago/3600)+"h";
     h+='<div style="font-size:10px;color:var(--t3);margin-bottom:4px;padding:4px 6px;background:var(--s3);border-radius:5px;border-left:2px solid var(--bear)">';
     h+='<span style="color:var(--warn);font-weight:var(--fw-b)">'+e.source+'</span> ';
-    h+='<span style="color:var(--t4);font-size:9px">'+agoStr+' ago</span><br>';
+    h+='<span style="color:var(--t4);font-size:10px">'+agoStr+' ago</span><br>';
     h+='<span style="color:var(--t2);word-break:break-word">'+e.msg+'</span>';
-    if(e.detail)h+='<div style="color:var(--t4);font-size:9px;margin-top:2px">'+e.detail+'</div>';
+    if(e.detail)h+='<div style="color:var(--t4);font-size:10px;margin-top:2px">'+e.detail+'</div>';
     h+='</div>';
   });
   el.innerHTML=h;
@@ -9987,7 +9987,7 @@ function fetchMacroContext(manual){
         var ageStr=ageMs<60000?"upravo":ageMs<3600000?"prije "+Math.round(ageMs/60000)+" min":"prije "+Math.round(ageMs/3600000)+" h";
         var _regCol={BULL:"#00e676",BEAR:"#ff1744",CRAB:"#9e9e9e",VOLATILE:"#ffab00",NEUTRAL:"#78909c",ALT_SEASON:"#00e5ff"};
         var _rc=_regCol[MACRO.claudeRegime]||"#78909c";
-        var regimeBadge=MACRO.claudeRegime?(' <span style="background:'+_rc+'22;color:'+_rc+';font-size:9px;font-weight:800;padding:1px 6px;border-radius:5px;letter-spacing:.05em">'+MACRO.claudeRegime+'</span>'):'';
+        var regimeBadge=MACRO.claudeRegime?(' <span style="background:'+_rc+'22;color:'+_rc+';font-size:10px;font-weight:800;padding:1px 6px;border-radius:5px;letter-spacing:.05em">'+MACRO.claudeRegime+'</span>'):'';
         txt.innerHTML=regimeBadge+' 🤖 '+dStr+' <span style="opacity:.6">('+ageStr+')</span>';
         if(wrap)wrap.style.display="flex";
       }
@@ -10230,7 +10230,7 @@ function disableNotifs(){
   showToast("Notifikacije isključene");render();
 }
 
-// emitEntryNotif uklonjen (v5.295) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
+// emitEntryNotif uklonjen (v5.296) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
 // Bila mrtva funkcija (nula poziva); uklonjena da se ne može slučajno ponovno spojiti.
 
 // ── EXIT NOTIFICATION — SAMO 2 TIPA (po korisnikovom zahtjevu) ──
