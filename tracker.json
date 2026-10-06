@@ -9087,10 +9087,10 @@
       "conf": 32,
       "score": -1.02,
       "verdict": "🔴 Preskoči",
-      "graded": false,
-      "correct": null,
-      "fwdPrice": null,
-      "fwdPct": null
+      "graded": true,
+      "correct": false,
+      "fwdPrice": 68456,
+      "fwdPct": -20.33
     },
     {
       "ts": 1791194764039,
@@ -9158,5 +9158,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-10-06T06:39:18.579Z"
+  "updatedAt": "2026-10-06T06:53:21.582Z"
 }
