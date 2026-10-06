@@ -1,14 +1,22 @@
 {
     "dxy":  102.2,
-    "changeSummary":  "DXY stabiliziran na 102.2, nafta porasla na ~$90, BTC drži Bull s dominacijom 59% i F&G na 70.",
-    "lastUpdated":  "2026-10-05T10:00:00Z",
+    "changeSummary":  "Fear & Greed porastao s 70 na 73, BTC dominacija blago pala s 59% na 58.5%, DXY ostao stabilan na 102.2, a Glamsterdam upgrade donosi novi ETH katalizator.",
+    "lastUpdated":  "2026-10-06T10:00:00Z",
     "warnings":  {
-                     "ACT":  ["Altcoin sezona indeks ~30, alti zaostaju za BTC"],
-                     "MEME":  ["Altcoin sezona indeks ~30, alti zaostaju za BTC"],
-                     "ANIME":  ["Altcoin sezona indeks ~30, alti zaostaju za BTC"],
-                     "XRP":  ["Analitičar Doctor Profit prodaje XRP"],
-                     "BNB":  [
+                     "ACT":  [
 
+                             ],
+                     "MEME":  [
+
+                              ],
+                     "ANIME":  [
+
+                               ],
+                     "XRP":  [
+                                 "XRP zarobljen ispod supply zone, rizik korekcije"
+                             ],
+                     "BNB":  [
+                                 "Binance-CFTC novi potezi, regulatorni pritisak"
                              ],
                      "SUI":  [
 
@@ -16,31 +24,51 @@
                      "AVAX":  [
 
                               ],
-                     "PENGU":  ["Altcoin sezona indeks ~30, alti zaostaju za BTC"],
-                     "BOME":  ["Altcoin sezona indeks ~30, alti zaostaju za BTC"],
-                     "DOGS":  ["Altcoin sezona indeks ~30, alti zaostaju za BTC"],
-                     "NOT":  ["Altcoin sezona indeks ~30, alti zaostaju za BTC"],
-                     "PEOPLE":  ["Altcoin sezona indeks ~30, alti zaostaju za BTC"],
-                     "SOL":  ["$1.11B token unlock početkom listopada"],
+                     "PENGU":  [
+
+                               ],
+                     "BOME":  [
+
+                              ],
+                     "DOGS":  [
+
+                              ],
+                     "NOT":  [
+
+                             ],
+                     "PEOPLE":  [
+
+                                ],
+                     "SOL":  [
+
+                             ],
                      "ADA":  [
 
                              ],
-                     "PNUT":  ["Altcoin sezona indeks ~30, alti zaostaju za BTC"],
+                     "PNUT":  [
+
+                              ],
                      "AIXBT":  [
 
                                ],
-                     "ETH":  ["Blast L2 gasi se, povlačenje do 26.10.2026."],
+                     "ETH":  [
+                                 "$340M HYPE unlock 6.10., pritisak na sentiment"
+                             ],
                      "LINK":  [
 
                               ],
-                     "PUMP":  ["Altcoin sezona indeks ~30, alti zaostaju za BTC"],
-                     "TRUMP":  ["Altcoin sezona indeks ~30, alti zaostaju za BTC"],
-                     "BTC":  [
+                     "PUMP":  [
 
+                              ],
+                     "TRUMP":  [
+
+                               ],
+                     "BTC":  [
+                                 "$1.11B token unlock aktivan 5-11.10., kratkotrajna volatilnost"
                              ]
                  },
-    "sp500Ret5d":  1.18,
-    "fearGreed":  70,
+    "sp500Ret5d":  1.2,
+    "fearGreed":  73,
     "macroPenalty":  0,
     "catalysts":  {
                       "ACT":  [
@@ -52,7 +80,9 @@
                       "ANIME":  [
 
                                 ],
-                      "XRP":  ["Absa banka uvela XRP Ledger inst. pohranu imovine"],
+                      "XRP":  [
+
+                              ],
                       "BNB":  [
 
                               ],
@@ -89,7 +119,10 @@
                       "AIXBT":  [
 
                                 ],
-                      "ETH":  ["SEC odobrio 3x leveraged ETH ETP produkte"],
+                      "ETH":  [
+                                  "Glamsterdam na Sepolia testnetu 6.10.",
+                                  "Najveci ETH upgrade od The Mergea"
+                              ],
                       "LINK":  [
 
                                ],
@@ -99,35 +132,37 @@
                       "TRUMP":  [
 
                                 ],
-                      "BTC":  ["Listopad historijski bullish, rast ka godišnjem otvaranju"]
+                      "BTC":  [
+                                  "BTC +3.4% tjedno, recovery iznad $85K"
+                              ]
                   },
     "regime":  "BULL",
     "sentimentScore":  {
-                           "ACT":  -1,
-                           "MEME":  -1,
-                           "ANIME":  -1,
-                           "XRP":  0,
-                           "BNB":  0,
+                           "ACT":  0,
+                           "MEME":  0,
+                           "ANIME":  0,
+                           "XRP":  -1,
+                           "BNB":  -1,
                            "SUI":  0,
                            "AVAX":  0,
-                           "PENGU":  -1,
-                           "BOME":  -1,
-                           "DOGS":  -1,
-                           "NOT":  -1,
-                           "PEOPLE":  -1,
+                           "PENGU":  0,
+                           "BOME":  0,
+                           "DOGS":  0,
+                           "NOT":  0,
+                           "PEOPLE":  0,
                            "SOL":  0,
                            "ADA":  0,
-                           "PNUT":  -1,
+                           "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  1,
+                           "ETH":  2,
                            "LINK":  0,
-                           "PUMP":  -1,
-                           "TRUMP":  -1,
+                           "PUMP":  0,
+                           "TRUMP":  0,
                            "BTC":  1
                        },
-    "aiSummary":  "DXY stabiliziran oko 102.2 uz 10Y prinose ~5.29% što umjereno pritišće kripto tržišta ali ne blokira rast — WTI nafta na ~90$/bbl dodaje geopolitički rizik uz Brent iznad $100. Fear & Greed indeks na 70 (pohlepa) uz BTC dominaciju 59% potvrđuje Bull režim s kapitalom koncentriranim u large capovima dok altcoin sezona indeks pada na ~30. Očekuje se nastavak BTC rasta prema $88-90K u listopadu, ali $1.11B token unlockova početkom mjeseca i dalje povišena nafta mogu pritiskati altcoinove.",
+    "aiSummary":  "DXY stabiliziran na 102.2 uz 10Y prinose iznad 5.29% — umjeren pritisak na kripto ali ne blokira rast. Fear & Greed indeks na 73 (pohlepa) uz BTC dominaciju 58.5% potvrđuje Bull režim dok BTC drži razinu iznad $85K. Ethereum Glamsterdam upgrade na Sepolia testnetu 6.10. novi je katalizator za ETH, dok $1.11B token unlockova do 11.10. može ubrizgati kratkoročnu volatilnost u altcoinove.",
     "warActive":  false,
-    "btcDom":  59.0,
-    "stableDom":  10.8,
+    "btcDom":  58.5,
+    "stableDom":  10.0,
     "oil":  90
 }
