@@ -327,6 +327,16 @@ svg.sp{overflow:visible;display:block}
 }
 @media(min-width:600px){.filter-wrap{flex-direction:row!important;padding:6px 16px!important}}
 
+/* ── BOTTOM NAV (mobilni) ── */
+.btmnav{display:none;flex-shrink:0;align-items:stretch;gap:4px;background:rgba(10,10,13,.97);border-top:.5px solid rgba(255,255,255,.08);backdrop-filter:blur(20px);padding:6px 8px calc(6px + env(safe-area-inset-bottom))}
+.bnav{flex:1;background:none;border:none;color:var(--t3);font-family:inherit;display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;padding:6px 0 5px;border-radius:12px;transition:color .15s,background .15s}
+.bnav .bn-ic{font-size:19px;line-height:1}
+.bnav .bn-lb{font-size:10px;font-weight:600;letter-spacing:.01em}
+.bnav.on{color:var(--ye)}
+.bnav.on .bn-lb{color:var(--ye)}
+.bnav:active{background:rgba(255,255,255,.05)}
+@media(max-width:599px){.btmnav{display:flex}.filter-wrap{display:none!important}}
+
 /* ── HEADER GLASS ── */
 .hd{
   background:linear-gradient(180deg,rgba(10,10,13,.97) 0%,rgba(14,14,20,.93) 100%)!important;
@@ -423,7 +433,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.292</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.293</span></div>
       <div class="hd-sub" id="hdsub">Učitavam top 100 tokena…</div>
       <div class="hd-claude" id="claude-update" style="display:flex;align-items:center;gap:6px">
         <span id="claude-update-txt">🤖 Claude analiza: —</span>
@@ -447,15 +457,17 @@ svg.sp{overflow:visible;display:block}
     <div class="filter-top">
       <div class="tab-row">
         <button class="tab on" id="tab-pregled" onclick="setTab('pregled')">Pregled</button>
-        <button class="tab" id="tab-btc" onclick="setTab('btc')">₿ BTC</button>
         <button class="tab" id="tab-signali" onclick="setTab('signali')">🎯 Signali</button>
-        <button class="tab" id="tab-meme" onclick="setTab('meme')">🎰 Meme</button>
         <button class="tab" id="tab-rezultati" onclick="setTab('rezultati')">📈 Rezultati</button>
-        <button class="tab" id="tab-hodl" onclick="setTab('hodl')">💎 HODL</button>
       </div>
     </div>
   </div>
   <div class="sc" id="sc"></div>
+  <nav class="btmnav">
+    <button class="bnav on" id="bnav-pregled" onclick="setTab('pregled')"><span class="bn-ic">◎</span><span class="bn-lb">Pregled</span></button>
+    <button class="bnav" id="bnav-signali" onclick="setTab('signali')"><span class="bn-ic">◉</span><span class="bn-lb">Signali</span></button>
+    <button class="bnav" id="bnav-rezultati" onclick="setTab('rezultati')"><span class="bn-ic">▤</span><span class="bn-lb">Rezultati</span></button>
+  </nav>
 </div>
 
 <!-- Search modal -->
@@ -741,7 +753,7 @@ function getMemeSYMS(){
 
 // Engine verzija — tag na svaku predikciju za mjerenje win-rate po verziji.
 // Pre-commit hook (sed s/v5.x/.../g) automatski drži ovo u sinku s headerom.
-var APP_VER="v5.292";
+var APP_VER="v5.293";
 
 // Settings
 var settings={minConf:45,targetPct:6,maxRisk:2,minRR:1.2,accountSize:1000,maxRiskPerTrade:1};
@@ -7108,6 +7120,30 @@ function rBtc(){
   h+='</div>';return h;
 }
 
+// ── BTC KOMPAKTNA KARTICA (uvijek pri vrhu Pregleda) ─────────────
+// BTC nema vlastiti tab u 3-tab navigaciji; umjesto toga je trajno
+// vidljiv na vrhu Pregleda. Klik otvara puni BTC monitor (rBtc).
+function btcTopCard(){
+  var d=px.BTC, price=d&&d.p?d.p:0;
+  var c24=d&&d.c24!=null?d.c24:0;
+  var c24Col=c24>=0?'var(--bull)':'var(--bear)';
+  var bo='#f7931a';
+  var sma=MACRO.btcSma200, smaDiff=(sma&&price)?((price-sma)/sma*100):null;
+  var smaCol=smaDiff==null?'var(--t3)':smaDiff<0?'var(--bull)':smaDiff<15?'var(--warn)':'var(--bear)';
+  var trs=[ta.BTC,ta4h.BTC,taDaily.BTC].filter(function(x){return x&&x.trend;});
+  var up=trs.filter(function(x){return x.trend==='UP';}).length;
+  var mtfCol=trs.length?(up>=2?'var(--bull)':up===1?'var(--warn)':'var(--bear)'):'var(--t3)';
+  var h='<div onclick="setTab(\'btc\')" style="background:linear-gradient(135deg,'+bo+'1f 0%,'+bo+'06 100%);border:.5px solid '+bo+'55;border-radius:var(--r-lg);padding:12px 14px;margin-bottom:12px;cursor:pointer;display:flex;align-items:center;gap:12px">';
+  h+='<span style="font-size:26px;line-height:1;color:'+bo+'">₿</span>';
+  h+='<div style="flex:1;min-width:0">';
+  h+='<div style="font-size:16px;font-weight:900;color:var(--t1)">$'+(price?fmtNum(price):'—')+' <span style="font-size:12px;font-weight:800;color:'+c24Col+'">'+(price?(c24>=0?'+':'')+c24.toFixed(2)+'%':'')+'</span></div>';
+  h+='<div style="font-size:10px;color:var(--t4);margin-top:2px">Bitcoin · 200D '+(smaDiff==null?'—':'<span style="color:'+smaCol+'">'+(smaDiff>=0?'+':'')+smaDiff.toFixed(1)+'%</span>')+' · <span style="color:'+mtfCol+'">MTF '+up+'/'+(trs.length||3)+'</span></div>';
+  h+='</div>';
+  h+='<span style="font-size:11px;color:var(--t3);white-space:nowrap">Monitor ›</span>';
+  h+='</div>';
+  return h;
+}
+
 function render(){
   lastRefresh.analysis=Date.now();
   computeSectorRS(); // Svaki render recomputa sektor RS iz trenutnih cijena
@@ -7125,6 +7161,7 @@ function render(){
   var h='<div class="pg">';
 
   if(isPregled){
+    h+=btcTopCard(); // BTC uvijek pri vrhu
     h+=renderRefreshStatus();
 
     // ── EVENT BLACKOUT BANNER (kad smo u 30min zoni oko Fed/CPI) ──
@@ -7382,6 +7419,7 @@ function render(){
     h+=chipBtn("ulaz","✅","Ulazi",c.ulaz,"var(--bull)");
     h+=chipBtn("watch_y","🟡","Oprez",c.yellow,"var(--warn)");
     h+=chipBtn("watch_b","🔵","Spek",c.blue,"var(--info)");
+    h+='<button onclick="setTab(\'meme\')" style="font-size:11px;font-weight:var(--fw-x);padding:5px 11px;border-radius:14px;cursor:pointer;font-family:inherit;border:.5px solid rgba(206,147,216,.3);background:transparent;color:#ce93d8">🎰 Meme ›</button>';
     h+='</div>';
     // Sort
     h+='<div class="row" style="gap:4px">';
@@ -7640,9 +7678,14 @@ function render(){
 
 // ── FILTER ───────────────────────────────────────────────────────
 function setTab(t){
-  document.querySelectorAll(".tab").forEach(function(el){el.classList.remove("on");});
-  var btn=document.getElementById("tab-"+t);
+  document.querySelectorAll(".tab,.bnav").forEach(function(el){el.classList.remove("on");});
+  // btc živi pod Pregledom, meme pod Signalima (nemaju vlastiti tab u 3-tab navigaciji)
+  var navMap={btc:"pregled",meme:"signali",hodl:""};
+  var bk=navMap.hasOwnProperty(t)?navMap[t]:t;
+  var btn=document.getElementById("tab-"+t)||(bk?document.getElementById("tab-"+bk):null);
   if(btn)btn.classList.add("on");
+  var bb=bk?document.getElementById("bnav-"+bk):null;
+  if(bb)bb.classList.add("on");
   if(t==="pregled")        activeFilter="all";
   else if(t==="signali")   activeFilter="signali";
   else if(t==="meme")      activeFilter="meme";
@@ -10172,7 +10215,7 @@ function disableNotifs(){
   showToast("Notifikacije isključene");render();
 }
 
-// emitEntryNotif uklonjen (v5.292) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
+// emitEntryNotif uklonjen (v5.293) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
 // Bila mrtva funkcija (nula poziva); uklonjena da se ne može slučajno ponovno spojiti.
 
 // ── EXIT NOTIFICATION — SAMO 2 TIPA (po korisnikovom zahtjevu) ──
