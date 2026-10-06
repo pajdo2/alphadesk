@@ -15,16 +15,17 @@
       "stop": 0.703488,
       "conf": 57,
       "targetPct": 13,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "POGODAK",
+      "closePrice": 0.7389,
+      "closePct": 0.83,
+      "autoClose": true,
       "engineVer": "v5.289",
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
-      "peakPrice": 0.7363,
-      "peakPct": 0.48
+      "peakPrice": 0.7389,
+      "peakPct": 0.83,
+      "closeReason": "🔄 Bear reversal — exit u profitu"
     },
     {
       "id": "1791204415942",
@@ -49,8 +50,8 @@
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
-      "peakPrice": 0.10806,
-      "peakPct": 0.84
+      "peakPrice": 0.10906,
+      "peakPct": 1.77
     },
     {
       "id": "1791204411732",
@@ -93,16 +94,17 @@
       "stop": 241.5456,
       "conf": 58,
       "targetPct": 24,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "POGODAK",
+      "closePrice": 256.23,
+      "closePct": 1.84,
+      "autoClose": true,
       "engineVer": "v5.286",
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
       "peakPrice": 260.62,
-      "peakPct": 3.58
+      "peakPct": 3.58,
+      "closeReason": "🔄 Bear reversal — exit u profitu"
     },
     {
       "id": "1791183399590",
@@ -180,8 +182,8 @@
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
-      "peakPrice": 11.023,
-      "peakPct": 0.25
+      "peakPrice": 11.391,
+      "peakPct": 3.6
     },
     {
       "id": "1791183380106",
@@ -7190,25 +7192,25 @@
   ],
   "signalWeights": {
     "_global": {
-      "rsiOversold": 0.772,
+      "rsiOversold": 0.776,
       "rsiOverbought": 1,
-      "trendUp": 0.651,
-      "trendDown": 0.769,
+      "trendUp": 0.656,
+      "trendDown": 0.774,
       "bbBelow": 1,
-      "divBullish": 0.793,
+      "divBullish": 0.8,
       "divBearish": 0.533,
       "macdBullCross": 1,
       "macdBearCross": 1,
       "lsRatioBull": 1,
       "lsRatioExtreme": 1,
-      "basisBack": 0.979,
+      "basisBack": 0.987,
       "takerSell": 1,
       "btcDomHigh": 1,
       "btcDomLow": 1,
-      "volSpike": 0.75,
-      "mtfAllUp": 0.836,
-      "fgExtremeFear": 0.861,
-      "fgFear": 0.398
+      "volSpike": 0.756,
+      "mtfAllUp": 0.841,
+      "fgExtremeFear": 0.868,
+      "fgFear": 0.401
     },
     "BULL": {
       "rsiOversold": 1,
@@ -7216,17 +7218,17 @@
       "trendUp": 1,
       "trendDown": 1,
       "bbBelow": 1,
-      "divBullish": 0.764,
+      "divBullish": 0.786,
       "divBearish": 1,
       "macdBullCross": 1,
       "macdBearCross": 1,
       "lsRatioBull": 1,
       "lsRatioExtreme": 1,
-      "basisBack": 0.962,
+      "basisBack": 1,
       "takerSell": 1,
       "btcDomHigh": 1,
       "btcDomLow": 1,
-      "volSpike": 0.869,
+      "volSpike": 0.907,
       "mtfAllUp": 1,
       "fgExtremeFear": 1,
       "fgFear": 1
@@ -9072,10 +9074,10 @@
       "conf": 35,
       "score": -1.1,
       "verdict": "🔴 Preskoči",
-      "graded": false,
-      "correct": null,
-      "fwdPrice": null,
-      "fwdPct": null
+      "graded": true,
+      "correct": true,
+      "fwdPrice": 68456,
+      "fwdPct": 0
     },
     {
       "ts": 1791183188747,
@@ -9128,7 +9130,33 @@
       "correct": null,
       "fwdPrice": null,
       "fwdPct": null
+    },
+    {
+      "ts": 1791226722282,
+      "price": 68456,
+      "dir": "UP",
+      "th": 2.4,
+      "conf": 44,
+      "score": 2.55,
+      "verdict": "🔵 Spekulativno",
+      "graded": false,
+      "correct": null,
+      "fwdPrice": null,
+      "fwdPct": null
+    },
+    {
+      "ts": 1791268736499,
+      "price": 68456,
+      "dir": "NEUTRAL",
+      "th": 2.4,
+      "conf": 37,
+      "score": -0.4,
+      "verdict": "🔴 Preskoči",
+      "graded": false,
+      "correct": null,
+      "fwdPrice": null,
+      "fwdPct": null
     }
   ],
-  "updatedAt": "2026-10-05T18:43:06.090Z"
+  "updatedAt": "2026-10-06T06:39:18.579Z"
 }
