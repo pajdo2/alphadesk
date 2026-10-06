@@ -441,7 +441,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.297</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.298</span></div>
       <div class="hd-status">
         <span class="hd-sub" id="hdsub">Učitavam…</span>
         <span class="hd-claude" id="claude-update" style="display:none;align-items:center;gap:5px">
@@ -763,7 +763,7 @@ function getMemeSYMS(){
 
 // Engine verzija — tag na svaku predikciju za mjerenje win-rate po verziji.
 // Pre-commit hook (sed s/v5.x/.../g) automatski drži ovo u sinku s headerom.
-var APP_VER="v5.297";
+var APP_VER="v5.298";
 
 // Settings
 var settings={minConf:45,targetPct:6,maxRisk:2,minRR:1.2,accountSize:1000,maxRiskPerTrade:1};
@@ -1434,6 +1434,7 @@ function fmtTsAgo(ts){
 }
 var _dataStatusOpen=false;
 var _analyticsOpen=false; // Rezultati: sklopiva "Detaljna analitika" sekcija
+var _metricsOpen=false;   // Rezultati: sklopive "Detaljne metrike" (Expectancy/Drawdown/Sharpe/Benchmark)
 function renderRefreshStatus(){
   var now=new Date(),pad=function(n){return n<10?"0"+n:n;};
   var clk=pad(now.getHours())+":"+pad(now.getMinutes())+":"+pad(now.getSeconds());
@@ -5359,6 +5360,41 @@ function hcInsights(sorted){
 
 // Unificirani panel uspješnosti — jedini graf na Rezultati tabu
 // Sadrži: win% + forma + kvadratići + dual-line SVG (kumulativ + rolling-5) + key insight
+// ── SCORECARD — headline kvaliteta track-recorda (uvijek vidljivo) ──
+// 3 ključne neto metrike na prvi pogled; dubinski paneli (Expectancy/Drawdown/
+// Sharpe/Benchmark) su sklopivi ispod. Win rate i count su u gornjem KPI redu.
+function hcScorecard(sorted){
+  var c=sorted.filter(function(p){return p.closePct!=null&&!isNaN(p.closePct);});
+  if(c.length<5)return'';
+  var exp=c.reduce(function(s,p){return s+netPnl(p.closePct);},0)/c.length;
+  var expCol=exp>0.5?"#00e676":exp>-0.3?"#ffab00":"#ff1744";
+  var chron=c.slice().sort(function(a,b){return (a.timestamp||parseInt(a.id)||0)-(b.timestamp||parseInt(b.id)||0);});
+  var eq=0,peak=0,maxDD=0;
+  chron.forEach(function(p){eq+=netPnl(p.closePct);if(eq>peak)peak=eq;var dd=peak-eq;if(dd>maxDD)maxDD=dd;});
+  var ddCol=maxDD<20?"#00e676":maxDD<50?"#ffab00":"#ff1744";
+  var edgeStr='—',edgeCol='var(--t3)',edgeSub='nema BTC trada';
+  var curBtc=(typeof px!=="undefined"&&px.BTC&&px.BTC.p>0)?px.BTC.p:0;
+  var btcTrades=(typeof predTracker!=="undefined"?predTracker:[]).filter(function(p){return p.sym==="BTC"&&p.entry>0&&p.timestamp;}).sort(function(a,b){return a.timestamp-b.timestamp;});
+  if(curBtc&&btcTrades.length){
+    var spanDays=(Date.now()-btcTrades[0].timestamp)/(864e5);
+    if(spanDays>=3&&btcTrades[0].entry>0){
+      var btcHodl=(curBtc/btcTrades[0].entry-1)*100;
+      var edge=exp-(btcHodl*3.5/spanDays);
+      edgeStr=(edge>=0?"+":"")+edge.toFixed(1)+"pp";
+      edgeCol=edge>=0?"#00e676":"#ff1744"; edgeSub="prednost/trade (neto)";
+    }
+  }
+  function card(lbl,val,col,sub){
+    return'<div style="background:var(--s1);border:.5px solid var(--sep);border-radius:12px;padding:11px 12px"><div style="font-size:10px;color:var(--t3);font-weight:700;text-transform:uppercase;letter-spacing:.04em">'+lbl+'</div><div style="font-size:21px;font-weight:900;color:'+col+';margin-top:4px;line-height:1">'+val+'</div><div style="font-size:9px;color:var(--t4);margin-top:3px">'+sub+'</div></div>';
+  }
+  var h='<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px">';
+  h+=card("Expectancy",(exp>=0?"+":"")+exp.toFixed(1)+"%",expCol,"neto / trade");
+  h+=card("Max DD","−"+maxDD.toFixed(0)+"%",ddCol,"najveći pad");
+  h+=card("vs Hold BTC",edgeStr,edgeCol,edgeSub);
+  h+='</div>';
+  return h;
+}
+
 function renderMiniSuccessChart(sorted){
   if(sorted.length<1){
     return'<div style="background:var(--s1);border-radius:14px;padding:12px 16px;margin-bottom:10px;border:.5px solid var(--sep);text-align:center;color:var(--t4);font-size:12px">Zatvori barem 1 predikciju da vidiš grafikon.</div>';
@@ -5406,11 +5442,25 @@ function renderMiniSuccessChart(sorted){
   });
   if(sorted.length>20)h+='<div style="font-size:10px;color:var(--t4);align-self:center;margin-left:3px">+'+( sorted.length-20)+' starijih</div>';
   h+='</div>';
-  // Expectancy — ključni pokazatelj profitabilnosti (prominentno, prije grafa)
-  h+=hcExpectancy(sorted);
-  h+=hcDrawdown(sorted);
-  h+=hcSharpe(sorted);
-  h+=hcBenchmark(sorted);
+  // Scorecard — 3 headline neto metrike (uvijek vidljivo)
+  h+=hcScorecard(sorted);
+  // Dubinski paneli (Expectancy/Drawdown/Sharpe/Benchmark) — sklopivi da se skrati scroll
+  if(sorted.filter(function(p){return p.closePct!=null&&!isNaN(p.closePct);}).length>=5){
+    h+='<div style="margin-bottom:10px">';
+    h+='<div onclick="_metricsOpen=!_metricsOpen;render()" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;background:var(--s2);border-radius:10px;padding:10px 14px">';
+    h+='<span style="font-size:11px;font-weight:700;color:var(--t2);letter-spacing:.04em">📐 Detaljne metrike</span>';
+    h+='<span style="font-size:11px;color:var(--t3)">'+(_metricsOpen?"▲ sakrij":"▾ Expectancy · Drawdown · Sharpe · vs BTC")+'</span>';
+    h+='</div>';
+    if(_metricsOpen){
+      h+='<div style="margin-top:12px">';
+      h+=hcExpectancy(sorted);
+      h+=hcDrawdown(sorted);
+      h+=hcSharpe(sorted);
+      h+=hcBenchmark(sorted);
+      h+='</div>';
+    }
+    h+='</div>';
+  }
   // Dual-line SVG chart (kumulativ + rolling-5)
   h+=hcCumulative(sorted);
   // Sub-analiza grupirana u sklopivu "Detaljna analitika" — glavni sažetak + graf
@@ -10231,7 +10281,7 @@ function disableNotifs(){
   showToast("Notifikacije isključene");render();
 }
 
-// emitEntryNotif uklonjen (v5.297) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
+// emitEntryNotif uklonjen (v5.298) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
 // Bila mrtva funkcija (nula poziva); uklonjena da se ne može slučajno ponovno spojiti.
 
 // ── EXIT NOTIFICATION — SAMO 2 TIPA (po korisnikovom zahtjevu) ──
