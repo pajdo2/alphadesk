@@ -327,6 +327,14 @@ svg.sp{overflow:visible;display:block}
 }
 @media(min-width:600px){.filter-wrap{flex-direction:row!important;padding:6px 16px!important}}
 
+/* ── KOMPAKTAN HEADER — status u jedan red ── */
+.hd-logo{flex:1 1 auto;min-width:0}
+.hd-status{display:flex;align-items:center;gap:8px;margin-top:2px;min-width:0;max-width:100%;overflow:hidden}
+.hd-status .hd-sub{margin-top:0;flex-shrink:0}
+.hd-status .hd-claude{margin-top:0;min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.hd-status .hd-claude #claude-update-txt{overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.hd>div:last-child{flex-shrink:0}
+
 /* ── BOTTOM NAV (mobilni) ── */
 .btmnav{display:none;flex-shrink:0;align-items:stretch;gap:4px;background:rgba(10,10,13,.97);border-top:.5px solid rgba(255,255,255,.08);backdrop-filter:blur(20px);padding:6px 8px calc(6px + env(safe-area-inset-bottom))}
 .bnav{flex:1;background:none;border:none;color:var(--t3);font-family:inherit;display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;padding:6px 0 5px;border-radius:12px;transition:color .15s,background .15s}
@@ -433,11 +441,13 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.293</span></div>
-      <div class="hd-sub" id="hdsub">Učitavam top 100 tokena…</div>
-      <div class="hd-claude" id="claude-update" style="display:flex;align-items:center;gap:6px">
-        <span id="claude-update-txt">🤖 Claude analiza: —</span>
-        <button onclick="fetchMacroContext(true)" title="Osvježi analizu" style="background:none;border:none;cursor:pointer;font-size:12px;opacity:.55;padding:0;line-height:1" id="macro-refresh-btn">🔄</button>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.294</span></div>
+      <div class="hd-status">
+        <span class="hd-sub" id="hdsub">Učitavam…</span>
+        <span class="hd-claude" id="claude-update" style="display:none;align-items:center;gap:5px">
+          <span id="claude-update-txt">🤖 —</span>
+          <button onclick="fetchMacroContext(true)" title="Osvježi analizu" style="background:none;border:none;cursor:pointer;font-size:11px;opacity:.55;padding:0;line-height:1" id="macro-refresh-btn">🔄</button>
+        </span>
       </div>
     </div>
     <div style="display:flex;align-items:center;gap:8px">
@@ -753,7 +763,7 @@ function getMemeSYMS(){
 
 // Engine verzija — tag na svaku predikciju za mjerenje win-rate po verziji.
 // Pre-commit hook (sed s/v5.x/.../g) automatski drži ovo u sinku s headerom.
-var APP_VER="v5.293";
+var APP_VER="v5.294";
 
 // Settings
 var settings={minConf:45,targetPct:6,maxRisk:2,minRR:1.2,accountSize:1000,maxRiskPerTrade:1};
@@ -9973,7 +9983,7 @@ function fetchMacroContext(manual){
         var _regCol={BULL:"#00e676",BEAR:"#ff1744",CRAB:"#9e9e9e",VOLATILE:"#ffab00",NEUTRAL:"#78909c",ALT_SEASON:"#00e5ff"};
         var _rc=_regCol[MACRO.claudeRegime]||"#78909c";
         var regimeBadge=MACRO.claudeRegime?(' <span style="background:'+_rc+'22;color:'+_rc+';font-size:9px;font-weight:800;padding:1px 6px;border-radius:5px;letter-spacing:.05em">'+MACRO.claudeRegime+'</span>'):'';
-        txt.innerHTML='🤖 Claude analiza: '+dStr+' u '+tStr+' <span style="opacity:.6">('+ageStr+')</span>'+regimeBadge;
+        txt.innerHTML=regimeBadge+' 🤖 '+dStr+' <span style="opacity:.6">('+ageStr+')</span>';
         if(wrap)wrap.style.display="flex";
       }
       // AI summary se prikazuje u Pregled tabu — re-render će ga ubaciti
@@ -10215,7 +10225,7 @@ function disableNotifs(){
   showToast("Notifikacije isključene");render();
 }
 
-// emitEntryNotif uklonjen (v5.293) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
+// emitEntryNotif uklonjen (v5.294) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
 // Bila mrtva funkcija (nula poziva); uklonjena da se ne može slučajno ponovno spojiti.
 
 // ── EXIT NOTIFICATION — SAMO 2 TIPA (po korisnikovom zahtjevu) ──
