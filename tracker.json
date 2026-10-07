@@ -42,16 +42,17 @@
       "stop": 0.102874,
       "conf": 60,
       "targetPct": 20,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "PROMAŠAJ",
+      "closePrice": 0.1009,
+      "closePct": -5.84,
+      "autoClose": true,
       "engineVer": "v5.289",
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
       "peakPrice": 0.10906,
-      "peakPct": 1.77
+      "peakPct": 1.77,
+      "closeReason": "🛑 Stop-loss (24/7)"
     },
     {
       "id": "1791204411732",
@@ -9159,5 +9160,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-10-07T11:14:18.073Z"
+  "updatedAt": "2026-10-07T17:53:54.409Z"
 }
