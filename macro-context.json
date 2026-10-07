@@ -1,7 +1,7 @@
 {
     "dxy":  102.0,
-    "changeSummary":  "DXY blago pao s 102.2 na 102.0, Fear & Greed porastao s 70 na 73 (pohlepa) uz BTC dominaciju koja je narasla s 58.5% na 59.2%, dok BTC oscilira oko $85.5K bez proboja ključnog otpora na $87K.",
-    "lastUpdated":  "2026-10-06T18:00:00Z",
+    "changeSummary":  "Fear & Greed stabilan na 74 (vs 73), BTC dominacija pala s 59.2% na 59.0%, nafta Brent prešla $101 dok warActive signal ostaje aktivan uz novi makro pritisak.",
+    "lastUpdated":  "2026-10-06T21:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -16,7 +16,7 @@
 
                              ],
                      "BNB":  [
-                                 "Binance-CFTC regulatorni pokreti - pratiti razvoj"
+                                 "CFTC regulatorni potezi vezani za Binance u tijeku"
                              ],
                      "SUI":  [
 
@@ -64,11 +64,11 @@
 
                                ],
                      "BTC":  [
-                                 "$172M likvidacija i ETF odljevi pred Fed minutama"
+                                 "$172M likvidacije i ETF odljevi pritišću tržište"
                              ]
                  },
     "sp500Ret5d":  1.18,
-    "fearGreed":  73,
+    "fearGreed":  74,
     "macroPenalty":  2,
     "catalysts":  {
                       "ACT":  [
@@ -81,7 +81,7 @@
 
                                 ],
                       "XRP":  [
-
+                                  "Plaćanja +386% u 24h, XRPL Batch amandman blizu odluke"
                               ],
                       "BNB":  [
 
@@ -108,10 +108,11 @@
 
                                  ],
                       "SOL":  [
-                                  "Solana DvP: atomsko settlementiranje tokeniziranih aktiva"
+                                  "DvP lansiranje s J.P. Morgan - institucije ulaze",
+                                  "Alpenglow upgrade: finalizacija s 150ms u planu"
                               ],
                       "ADA":  [
-
+                                  "Proboj iznad dugoročnog otpora, cilj $0.30-$0.32"
                               ],
                       "PNUT":  [
 
@@ -120,7 +121,7 @@
 
                                 ],
                       "ETH":  [
-                                  "Glamsterdam upgrade Sepolia test 6.10."
+                                  "Glamsterdam Sepolia test 6. X - upgrade na vidiku"
                               ],
                       "LINK":  [
 
@@ -132,7 +133,8 @@
 
                                 ],
                       "BTC":  [
-                                  "Risk-on signal: S&P 500 tjedni rast +1.18%"
+                                  "S&P 500 tjedni rast 1.18% šalje risk-on signal",
+                                  "Fed minute - potencijalni katalizator volatilnosti"
                               ]
                   },
     "regime":  "BULL",
@@ -140,8 +142,8 @@
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  0,
-                           "BNB":  0,
+                           "XRP":  2,
+                           "BNB":  -1,
                            "SUI":  0,
                            "AVAX":  0,
                            "PENGU":  0,
@@ -149,8 +151,8 @@
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  1,
-                           "ADA":  0,
+                           "SOL":  2,
+                           "ADA":  1,
                            "PNUT":  0,
                            "AIXBT":  0,
                            "ETH":  1,
@@ -159,9 +161,9 @@
                            "TRUMP":  0,
                            "BTC":  0
                        },
-    "aiSummary":  "DXY blago pao na 102.0 bez većeg pritiska na kripto, dok Fear & Greed indeks na 73 (pohlepa) uz BTC dominaciju od 59.2% potvrđuje Bull režim s BTC-om koji oscilira oko $85.5K ispod otpora na $87K. Pozitivni katalizatori su Ethereum Glamsterdam Sepolia test i Solana DvP lansiranje, a S&P 500 tjedni rast od 1.18% šalje risk-on signal za kripto tržište. Kratkoročni rizik donose $172M u likvidacijama i ETF odljevi uz iščekivanje Fed minuta koji bi mogli pokrenuti volatilnost.",
+    "aiSummary":  "DXY stabilan oko 102.0 bez većeg pritiska na kripto, dok Fear & Greed indeks na 74 (pohlepa) uz BTC dominaciju od 59.0% potvrđuje Bull režim s BTC-om koji drži oko $85.5K ispod otpora na $87K. Pozitivni katalizatori su Solana DvP lansiranje s J.P. Morganom, Ethereum Glamsterdam Sepolia test i XRP plaćanja +386%, a S&P 500 tjedni rast od 1.18% pojačava risk-on raspoloženje. Kratkoročni rizici uključuju $172M u likvidacijama, ETF odljeve i iščekivanje Fed minuta uz naftu Brent na $101 i aktivni ratni signal koji drže macroPenalty na razini 2.",
     "warActive":  true,
-    "btcDom":  59.2,
-    "stableDom":  6.2,
-    "oil":  90
+    "btcDom":  59.0,
+    "stableDom":  10.7,
+    "oil":  101
 }
