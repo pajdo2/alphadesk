@@ -1,13 +1,13 @@
 {
-    "dxy":  102.1,
-    "changeSummary":  "BTC pao s $85.5K na $84.2K uz $546M likvidacija i gašenje Abstract L2 negativno za PENGU, dok Fear & Greed pada s 74 na 65, a DXY i macroPenalty ostaju nepromijenjeni na 102 i 2.",
-    "lastUpdated":  "2026-10-07T21:00:00Z",
+    "dxy":  102.4,
+    "changeSummary":  "BTC korigirao na $84K uz $547M likvidacija i gašenje Abstract L2 mreže, F&G pao na 62 dok DXY blago porastao na 102.4 uz aktivan geopolitički rizik od iranskih napada na Hormuz.",
+    "lastUpdated":  "2026-10-07T10:30:00Z",
     "warnings":  {
                      "ACT":  [
 
                              ],
                      "MEME":  [
-
+                                 "Meme coini korigiraju s tržištem, FG pao na 62"
                               ],
                      "ANIME":  [
 
@@ -22,53 +22,54 @@
 
                              ],
                      "AVAX":  [
-
+                                 "Altcoini korigiraju, CoinDesk 80 pao ~4% za 24h"
                               ],
                      "PENGU":  [
-                                   "Abstract blockchain zatvara se 15. prosinca 2026."
+                                   "Abstract L2 (Pudgy Penguins) ugašen – drugi L2 za tjedan"
                                ],
                      "BOME":  [
-
+                                  "Meme sektor pod pritiskom zbog rasta cijene nafte i FUD-a"
                               ],
                      "DOGS":  [
-
+                                  "Meme sektor pod pritiskom, bez katalizatora"
                               ],
                      "NOT":  [
-
+                                 "TON ekosustav bez katalizatora, meme pritisak"
                              ],
                      "PEOPLE":  [
-
+                                    "Meme sektor korigira bez pozitivnih vijesti"
                                 ],
                      "SOL":  [
 
                              ],
                      "ADA":  [
-
+                                 "Korigira s tržištem, bez specifičnih pozitivnih katalizatora"
                              ],
                      "PNUT":  [
-
+                                  "Meme coini pod pritiskom od $547M likvidacija"
                               ],
                      "AIXBT":  [
 
                                ],
                      "ETH":  [
-                                 "Abstract L2 mreža gasi se 15.12., gubici milijuna $"
+                                 "OP pao 10% zbog gašenja Abstract L2 mreže"
                              ],
                      "LINK":  [
 
                               ],
                      "PUMP":  [
-
+                                  "Meme/pump sektor pod pritiskom tržišne korekcije"
                               ],
                      "TRUMP":  [
 
                                ],
                      "BTC":  [
-                                 "$546M likvidacija i ETF odljevi uoči Fed minuta"
+                                 "$547M likvidacija uoči Fed minuta",
+                                 "ETF odljevi kratkoročno pritiskaju BTC ispod $87K"
                              ]
                  },
-    "sp500Ret5d":  1.8,
-    "fearGreed":  65,
+    "sp500Ret5d":  0.6,
+    "fearGreed":  62,
     "macroPenalty":  2,
     "catalysts":  {
                       "ACT":  [
@@ -108,7 +109,7 @@
 
                                  ],
                       "SOL":  [
-
+                                 "DeFi Dev Corp autorizirao CHAD preferred stock buyback"
                               ],
                       "ADA":  [
 
@@ -120,7 +121,7 @@
 
                                 ],
                       "ETH":  [
-
+                                 "Ether.fi lansirao vlastiti USD stablecoin (Ethena)"
                               ],
                       "LINK":  [
 
@@ -132,36 +133,37 @@
 
                                 ],
                       "BTC":  [
-                                  "Bullish stair-step trajektorija intaktna unatoč padu"
+                                 "Robinhood dodao $25M BTC u bilancu",
+                                 "BTC bullish stair-step trajektorija ostaje intaktna"
                               ]
                   },
     "regime":  "BULL",
     "sentimentScore":  {
                            "ACT":  0,
-                           "MEME":  0,
+                           "MEME":  -1,
                            "ANIME":  0,
                            "XRP":  0,
                            "BNB":  0,
                            "SUI":  0,
-                           "AVAX":  0,
-                           "PENGU":  -2,
-                           "BOME":  0,
-                           "DOGS":  0,
-                           "NOT":  0,
-                           "PEOPLE":  0,
-                           "SOL":  0,
+                           "AVAX":  -1,
+                           "PENGU":  -3,
+                           "BOME":  -1,
+                           "DOGS":  -1,
+                           "NOT":  -1,
+                           "PEOPLE":  -1,
+                           "SOL":  1,
                            "ADA":  -1,
-                           "PNUT":  0,
+                           "PNUT":  -1,
                            "AIXBT":  0,
                            "ETH":  -1,
                            "LINK":  0,
-                           "PUMP":  0,
+                           "PUMP":  -1,
                            "TRUMP":  0,
                            "BTC":  -1
                        },
-    "aiSummary":  "DXY stabilan oko 102 bez povećanog pritiska na kripto, dok Fear & Greed indeks pao s 74 na 65 uz BTC dominaciju od 58.5% potvrđuje nastavak Bull režima. BTC korigirao na $84.2K uz $546M likvidacija i ETF odljevima uoči Fed minuta, ali bullish stair-step trajektorija ostaje intaktna. PENGU pod ozbiljnim pritiskom zbog gašenja Abstract L2 mreže 15. prosinca, a ADA i ETH prate tržišnu korekciju bez specifičnih pozitivnih katalizatora.",
+    "aiSummary":  "DXY blago porastao na 102.4 dok iranski napadi na tankere u Hormuškom tjesnacu podigli naftu iznad $101 i aktivirali geopolitički rizik (warActive). Fear & Greed indeks pao s 65 na 62 uz BTC dominaciju od 58% potvrđuje nastavak Bull režima, no $547M likvidacija i ETF odljevi uoči Fed minuta kratkoročno pritiskaju proboj $87K. Gašenje Abstract L2 mreže (Pudgy Penguins) nanosi ozbiljan udarac PENGU ekosustavu, dok BTC-ova bullish stair-step trajektorija ostaje intaktna.",
     "warActive":  true,
-    "btcDom":  58.5,
-    "stableDom":  6.5,
-    "oil":  101
+    "btcDom":  58.0,
+    "stableDom":  9.5,
+    "oil":  101.5
 }
