@@ -150,16 +150,17 @@
       "stop": 4069.8616,
       "conf": 55,
       "targetPct": 5,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "PROMAŠAJ",
+      "closePrice": 4120.48,
+      "closePct": -0.78,
+      "autoClose": true,
       "engineVer": "v5.286",
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
       "peakPrice": 4158.6,
-      "peakPct": 0.14
+      "peakPct": 0.14,
+      "closeReason": "⏰ 2 dana, gubimo — soft exit"
     },
     {
       "id": "1791183388211",
@@ -176,16 +177,17 @@
       "stop": 10.5552,
       "conf": 58,
       "targetPct": 15,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "PROMAŠAJ",
+      "closePrice": 10.808,
+      "closePct": -1.7,
+      "autoClose": true,
       "engineVer": "v5.286",
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
       "peakPrice": 11.391,
-      "peakPct": 3.6
+      "peakPct": 3.6,
+      "closeReason": "⏰ 2 dana, gubimo — soft exit"
     },
     {
       "id": "1791183380106",
@@ -7194,25 +7196,25 @@
   ],
   "signalWeights": {
     "_global": {
-      "rsiOversold": 0.776,
+      "rsiOversold": 0.771,
       "rsiOverbought": 1,
-      "trendUp": 0.656,
-      "trendDown": 0.774,
+      "trendUp": 0.65,
+      "trendDown": 0.767,
       "bbBelow": 1,
-      "divBullish": 0.8,
+      "divBullish": 0.79,
       "divBearish": 0.533,
       "macdBullCross": 1,
       "macdBearCross": 1,
       "lsRatioBull": 1,
       "lsRatioExtreme": 1,
-      "basisBack": 0.987,
+      "basisBack": 0.976,
       "takerSell": 1,
       "btcDomHigh": 1,
       "btcDomLow": 1,
-      "volSpike": 0.756,
-      "mtfAllUp": 0.841,
-      "fgExtremeFear": 0.868,
-      "fgFear": 0.401
+      "volSpike": 0.747,
+      "mtfAllUp": 0.834,
+      "fgExtremeFear": 0.859,
+      "fgFear": 0.396
     },
     "BULL": {
       "rsiOversold": 1,
@@ -9186,5 +9188,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-10-08T06:24:11.667Z"
+  "updatedAt": "2026-10-08T06:24:22.521Z"
 }
