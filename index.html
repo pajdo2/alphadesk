@@ -441,7 +441,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.307</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.308</span></div>
       <div class="hd-status">
         <span class="hd-sub" id="hdsub">Učitavam…</span>
         <span class="hd-claude" id="claude-update" style="display:none;align-items:center;gap:5px">
@@ -513,6 +513,7 @@ svg.sp{overflow:visible;display:block}
     <div><label class="inp-lbl">Min R/R omjer</label><input id="s-rr" class="inp" type="number" value="1.2" min="0.8" max="5" step="0.1"></div>
     <div><label class="inp-lbl">Account size (USD)</label><input id="s-acct" class="inp" type="number" value="1000" min="100" max="1000000" step="100"></div>
     <div><label class="inp-lbl">Risk po trade (%)</label><input id="s-rpt" class="inp" type="number" value="1" min="0.25" max="5" step="0.25"></div>
+    <div><label class="inp-lbl">Prag pogotka (%)</label><input id="s-win" class="inp" type="number" value="5" min="1" max="50" step="0.5" title="Trade se broji kao POGODAK samo ako zatvori s barem ovoliko % u plusu"></div>
   </div>
   <div style="margin-bottom:10px;padding:10px 12px;background:rgba(255,255,255,.04);border-radius:10px;border:.5px solid var(--sep)">
     <div class="row-between" style="margin-bottom:6px">
@@ -763,10 +764,10 @@ function getMemeSYMS(){
 
 // Engine verzija — tag na svaku predikciju za mjerenje win-rate po verziji.
 // Pre-commit hook (sed s/v5.x/.../g) automatski drži ovo u sinku s headerom.
-var APP_VER="v5.307";
+var APP_VER="v5.308";
 
 // Settings
-var settings={minConf:45,targetPct:6,maxRisk:2,minRR:1.2,accountSize:1000,maxRiskPerTrade:1};
+var settings={minConf:45,targetPct:6,maxRisk:2,minRR:1.2,accountSize:1000,maxRiskPerTrade:1,winThreshold:5};
 try{var ss=JSON.parse(lsGet("ad3d_s")||"{}");if(ss.minConf)settings=ss;}catch(e){}
 // Migracija: stari settings sa targetPct=5 se updateaju na 6 (default)
 // (10% mode UKLONJEN, ako je korisnik bio na 10% prebaci na 6)
@@ -4010,6 +4011,7 @@ try{
     predTracker=[];
   }
 }catch(e){predTracker=[];}
+try{normalizeWinStatus();}catch(e){} // uskladi POGODAK/PROMAŠAJ s pragom odmah pri učitavanju
 
 // ── ADAPTIVE SIGNAL WEIGHTS (regime-aware od v5.88) ──────────────
 // Struktura: {[regime]: {field: weight}, _global: {field: weight}}
@@ -4354,6 +4356,22 @@ if(typeof window!=='undefined')window.aiModel=aiModel;
 
 // Pozovi jednom pri startu
 refreshWeights();
+
+// ── DEFINICIJA POGOTKA ───────────────────────────────────────────
+// POGODAK = trade zatvoren s ≥ winThreshold% (default 5%). Sve ispod (uklj.
+// mali plus 0-5%) = PROMAŠAJ. Prag podesiv u Postavkama. Status se izvodi
+// iz closePct (stvarni rezultat), pa je retroaktivan na cijelu povijest i
+// usklađuje SVE (prikaz win-rate + učenje NN/bandit) na jednu definiciju.
+function winThreshold(){ return (settings&&settings.winThreshold!=null)?settings.winThreshold:5; }
+function isWin(p){ return !!(p&&p.closePct!=null&&!isNaN(p.closePct)&&p.closePct>=winThreshold()); }
+function normalizeWinStatus(){
+  if(typeof predTracker==="undefined"||!Array.isArray(predTracker))return;
+  var t=winThreshold();
+  predTracker.forEach(function(p){
+    if(!p||p.status==="AKTIVAN"||p.closePct==null||isNaN(p.closePct))return; // ne diraj aktivne
+    p.status = p.closePct>=t ? "POGODAK" : "PROMAŠAJ";
+  });
+}
 
 function recordPred(sym,entryPrice,targetPrice,stopPrice,conf,forcePct,d1T,d2T,direction){
   // SPOT-ONLY: SHORT (futures trgovanje) uklonjen — app bilježi samo kupovne pozicije.
@@ -7270,6 +7288,7 @@ function btcTopCard(){
 
 function render(){
   lastRefresh.analysis=Date.now();
+  normalizeWinStatus(); // POGODAK/PROMAŠAJ po pragu (≥winThreshold%) — retroaktivno, usklađuje prikaz i učenje
   computeSectorRS(); // Svaki render recomputa sektor RS iz trenutnih cijena
   try{tickBtcLog();}catch(e){} // BTC direction-log: throttled sample (30min) + grade dozrelih
   try{tickShadowLog();}catch(e){} // Shadow log top tokena (4h batch) → hrani ucenje weightova/NN
@@ -8131,6 +8150,7 @@ function openSettings(){
   var sacct=document.getElementById("s-acct");var srpt=document.getElementById("s-rpt");
   if(sacct)sacct.value=settings.accountSize||1000;
   if(srpt)srpt.value=settings.maxRiskPerTrade||1;
+  var swin=document.getElementById("s-win");if(swin)swin.value=settings.winThreshold!=null?settings.winThreshold:5;
   // Popuni API ključeve
   var cq=document.getElementById("s-cq");var lc=document.getElementById("s-lc");var gh=document.getElementById("s-gh");var cp=document.getElementById("s-cp");var wa=document.getElementById("s-wa");
   if(cq&&apiKeys.cryptoquant)cq.value=apiKeys.cryptoquant;
@@ -8228,6 +8248,8 @@ function applySettings(){
   settings.minRR=parseFloat(document.getElementById("s-rr").value)||1.2;
   var acctEl=document.getElementById("s-acct");if(acctEl)settings.accountSize=parseFloat(acctEl.value)||1000;
   var rptEl=document.getElementById("s-rpt");if(rptEl)settings.maxRiskPerTrade=parseFloat(rptEl.value)||1;
+  var winEl=document.getElementById("s-win");if(winEl){var wv=parseFloat(winEl.value);settings.winThreshold=(!isNaN(wv)&&wv>0)?wv:5;}
+  try{normalizeWinStatus();}catch(e){} // odmah preračunaj POGODAK/PROMAŠAJ s novim pragom
   settings._cacheV=(settings._cacheV||0)+1; // invalidate analyze3D cache
   // Sync activePct sa novim target-om iz settings (UI toggle UKLONJEN)
   activePct=settings.targetPct;
@@ -10340,7 +10362,7 @@ function disableNotifs(){
   showToast("Notifikacije isključene");render();
 }
 
-// emitEntryNotif uklonjen (v5.307) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
+// emitEntryNotif uklonjen (v5.308) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
 // Bila mrtva funkcija (nula poziva); uklonjena da se ne može slučajno ponovno spojiti.
 
 // ── EXIT NOTIFICATION — SAMO 2 TIPA (po korisnikovom zahtjevu) ──

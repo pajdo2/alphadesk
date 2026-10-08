@@ -111,7 +111,9 @@ async function main() {
         finalPct = +(0.5 * p.partialPct + 0.5 * pct).toFixed(2);
         hit = finalPct > 0;
       }
-      p.status = hit ? 'POGODAK' : 'PROMAŠAJ';
+      // POGODAK = zatvoreno s >=5% u plusu (default prag; app ga re-normalizira po
+      // korisnikovom pragu pri ucitavanju). Sve ispod (uklj. mali plus) = PROMASAJ.
+      p.status = finalPct >= 5 ? 'POGODAK' : 'PROMAŠAJ';
       p.closePrice = +cur.toFixed(8);
       p.closePct = finalPct;
       p.autoClose = true;
