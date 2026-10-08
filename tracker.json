@@ -23,8 +23,8 @@
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
-      "peakPrice": 0.09272,
-      "peakPct": 0.28,
+      "peakPrice": 0.09273,
+      "peakPct": 0.29,
       "maePrice": 0.09269,
       "maePct": 0.25
     },
@@ -9247,5 +9247,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-10-08T06:53:28.054Z"
+  "updatedAt": "2026-10-08T06:53:48.054Z"
 }
