@@ -114,8 +114,8 @@
       "d3Hit": false,
       "peakPrice": 87.18,
       "peakPct": 0.1,
-      "maePrice": 85.53,
-      "maePct": -1.79
+      "maePrice": 85.51,
+      "maePct": -1.81
     },
     {
       "id": "1791440678740",
@@ -9359,7 +9359,20 @@
       "correct": null,
       "fwdPrice": null,
       "fwdPct": null
+    },
+    {
+      "ts": 1791463394403,
+      "price": 82546,
+      "dir": "DOWN",
+      "th": 2.02,
+      "conf": 21,
+      "score": -10.37,
+      "verdict": "🔴 Preskoči",
+      "graded": false,
+      "correct": null,
+      "fwdPrice": null,
+      "fwdPct": null
     }
   ],
-  "updatedAt": "2026-10-08T12:43:14.094Z"
+  "updatedAt": "2026-10-08T12:43:34.042Z"
 }
