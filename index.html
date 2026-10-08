@@ -441,7 +441,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.306</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.307</span></div>
       <div class="hd-status">
         <span class="hd-sub" id="hdsub">Učitavam…</span>
         <span class="hd-claude" id="claude-update" style="display:none;align-items:center;gap:5px">
@@ -763,7 +763,7 @@ function getMemeSYMS(){
 
 // Engine verzija — tag na svaku predikciju za mjerenje win-rate po verziji.
 // Pre-commit hook (sed s/v5.x/.../g) automatski drži ovo u sinku s headerom.
-var APP_VER="v5.306";
+var APP_VER="v5.307";
 
 // Settings
 var settings={minConf:45,targetPct:6,maxRisk:2,minRR:1.2,accountSize:1000,maxRiskPerTrade:1};
@@ -4401,7 +4401,9 @@ function recordPred(sym,entryPrice,targetPrice,stopPrice,conf,forcePct,d1T,d2T,d
     engineVer:APP_VER,
     d1Hit:false,d2Hit:false,d3Hit:false,
     peakPrice:entryPrice,
-    peakPct:0
+    peakPct:0,
+    maePrice:entryPrice, // MAE — najniža točka (dno) tokom trada, za MAE/MFE analizu
+    maePct:0
   };
   predTracker.unshift(p);
   if(predTracker.length>500)predTracker=predTracker.slice(0,500); // 50→100→200→500 (dulji track record; cap zbog localStorage+GitHub sync)
@@ -4575,6 +4577,12 @@ function autoClosePreds(){
       if(!u.peakPrice||cur>u.peakPrice){
         u.peakPrice=+cur.toFixed(8);
         u.peakPct=+((cur-p.entry)/p.entry*100).toFixed(2);
+        changed=true;
+      }
+      // MAE (dno) za LONG — najniža točka, koliko je išlo u minus prije izlaza
+      if(u.maePrice==null||cur<u.maePrice){
+        u.maePrice=+cur.toFixed(8);
+        u.maePct=+((cur-p.entry)/p.entry*100).toFixed(2); // negativan = dubina minusa
         changed=true;
       }
     }
@@ -5360,6 +5368,56 @@ function hcInsights(sorted){
 
 // Unificirani panel uspješnosti — jedini graf na Rezultati tabu
 // Sadrži: win% + forma + kvadratići + dual-line SVG (kumulativ + rolling-5) + key insight
+// ── MAE / MFE — anatomija tradova (koliko su išli u plus/minus prije izlaza) ──
+// MFE (peakPct) = max plus tokom trada; MAE (maePct) = max minus (dno). Otkriva
+// jesu li ulazi loši (gubitnici nikad ne odu u plus) ili stopovi preuski
+// (dobitnici prvo duboko padnu). MAE se skuplja tek za nove tradove (maePct).
+function hcExcursion(sorted){
+  var c=sorted.filter(function(p){return p.closePct!=null&&!isNaN(p.closePct);});
+  if(c.length<5)return'';
+  var wins=c.filter(function(p){return p.status==="POGODAK";});
+  var loss=c.filter(function(p){return p.status==="PROMAŠAJ";});
+  function avg(a){return a.length?a.reduce(function(s,v){return s+v;},0)/a.length:null;}
+  function med(a){if(!a.length)return null;var s=a.slice().sort(function(x,y){return x-y;});var m=Math.floor(s.length/2);return s.length%2?s[m]:(s[m-1]+s[m])/2;}
+  function card(lbl,val,col,sub){
+    return'<div style="background:var(--s2);border-radius:10px;padding:9px 11px"><div style="font-size:9px;color:var(--t3);font-weight:700;text-transform:uppercase;letter-spacing:.03em">'+lbl+'</div><div style="font-size:17px;font-weight:900;color:'+col+';margin-top:3px;line-height:1">'+val+'</div><div style="font-size:9px;color:var(--t4);margin-top:3px">'+sub+'</div></div>';
+  }
+  var lossMFE=loss.filter(function(p){return p.peakPct!=null;}).map(function(p){return p.peakPct;});
+  if(lossMFE.length<3)return''; // bez dovoljno podataka nema smisla
+  var lmAvg=avg(lossMFE), lmMed=med(lossMFE);
+  var neverPlus2=Math.round(lossMFE.filter(function(v){return v<2;}).length/lossMFE.length*100);
+  var winMAE=wins.filter(function(p){return p.maePct!=null&&p.maePct<0;}).map(function(p){return Math.abs(p.maePct);});
+  var lossMAE=loss.filter(function(p){return p.maePct!=null&&p.maePct<0;}).map(function(p){return Math.abs(p.maePct);});
+  var wMaeAvg=avg(winMAE), lMaeAvg=avg(lossMAE);
+
+  var h='<div style="background:var(--s1);border:.5px solid var(--sep);border-radius:14px;padding:14px;margin-bottom:12px">';
+  h+='<div style="font-size:10px;color:var(--t3);font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px">📍 Anatomija tradova — MAE / MFE</div>';
+  // MFE gubitnika — glavni uvid, radi s postojećim podacima
+  h+='<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px">';
+  h+=card("Gubitnici: max plus","+"+lmAvg.toFixed(1)+"%","#ffab00","prosj. vrh prije pada (med +"+(lmMed||0).toFixed(1)+"%)");
+  h+=card("…nikad ne pređe +2%",neverPlus2+"%",neverPlus2>=70?"#ff1744":"#ffab00","udio gubitnika");
+  h+='</div>';
+  var interp=lmAvg<2
+    ?'⚠️ Gubitnici rijetko odu u plus → <strong style="color:var(--t2)">problem je ULAZ</strong> (loš timing/razina), ne izlaz. Čekaj bolji ulaz — dip, potvrdu, blizu dna raspona.'
+    :'⚠️ Gubitnici odu u plus pa se vrate → <strong style="color:var(--t2)">problem je IZLAZ</strong> (daješ natrag profit). Razmisli o ranijem ili tješnjem trailing izlazu.';
+  h+='<div style="font-size:10px;color:var(--t4);line-height:1.5;margin-bottom:'+((wMaeAvg!=null&&winMAE.length>=3)?'12px':'0')+'">'+interp+'</div>';
+  // MAE dobitnika — skuplja se za nove tradove
+  if(wMaeAvg!=null&&winMAE.length>=3){
+    h+='<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px;padding-top:10px;border-top:.5px solid var(--sep)">';
+    h+=card("Dobitnici: max minus","−"+wMaeAvg.toFixed(1)+"%","#69f0ae","koliko padnu prije uspjeha");
+    h+=card("Gubitnici: max minus",lMaeAvg!=null?"−"+lMaeAvg.toFixed(1)+"%":"—","#ff7043","dubina do stopa");
+    h+='</div>';
+    var maeI=wMaeAvg>4
+      ?'💡 Dobitnici prvo duboko padnu (−'+wMaeAvg.toFixed(1)+'%) prije uspjeha → stopovi su blizu okidanja ili su ulazi rani. Malo širi stop ili strpljiviji ulaz može spasiti dobre tradove.'
+      :'✓ Dobitnici rijetko duboko padnu (−'+wMaeAvg.toFixed(1)+'%) → ulazi su čisti, stopovi dobro postavljeni.';
+    h+='<div style="font-size:10px;color:var(--t4);line-height:1.5">'+maeI+'</div>';
+  } else {
+    h+='<div style="font-size:9px;color:var(--t4);margin-top:8px;padding-top:8px;border-top:.5px solid var(--sep)">📍 MAE (dno trada — koliko dobitnici padnu prije uspjeha) se skuplja za nove tradove; uvid o dubini do stopa stiže kako se zatvaraju.</div>';
+  }
+  h+='</div>';
+  return h;
+}
+
 // ── SCORECARD — headline kvaliteta track-recorda (uvijek vidljivo) ──
 // 3 ključne neto metrike na prvi pogled; dubinski paneli (Expectancy/Drawdown/
 // Sharpe/Benchmark) su sklopivi ispod. Win rate i count su u gornjem KPI redu.
@@ -5449,7 +5507,7 @@ function renderMiniSuccessChart(sorted){
     h+='<div style="margin-bottom:10px">';
     h+='<div onclick="_metricsOpen=!_metricsOpen;render()" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;background:var(--s2);border-radius:10px;padding:10px 14px">';
     h+='<span style="font-size:11px;font-weight:700;color:var(--t2);letter-spacing:.04em">📐 Detaljne metrike</span>';
-    h+='<span style="font-size:11px;color:var(--t3)">'+(_metricsOpen?"▲ sakrij":"▾ Expectancy · Drawdown · Sharpe · vs BTC")+'</span>';
+    h+='<span style="font-size:11px;color:var(--t3)">'+(_metricsOpen?"▲ sakrij":"▾ Expectancy · Drawdown · Sharpe · vs BTC · MAE/MFE")+'</span>';
     h+='</div>';
     if(_metricsOpen){
       h+='<div style="margin-top:12px">';
@@ -5457,6 +5515,7 @@ function renderMiniSuccessChart(sorted){
       h+=hcDrawdown(sorted);
       h+=hcSharpe(sorted);
       h+=hcBenchmark(sorted);
+      h+=hcExcursion(sorted);
       h+='</div>';
     }
     h+='</div>';
@@ -10281,7 +10340,7 @@ function disableNotifs(){
   showToast("Notifikacije isključene");render();
 }
 
-// emitEntryNotif uklonjen (v5.306) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
+// emitEntryNotif uklonjen (v5.307) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
 // Bila mrtva funkcija (nula poziva); uklonjena da se ne može slučajno ponovno spojiti.
 
 // ── EXIT NOTIFICATION — SAMO 2 TIPA (po korisnikovom zahtjevu) ──

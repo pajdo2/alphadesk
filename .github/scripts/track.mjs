@@ -70,6 +70,8 @@ async function main() {
       if (p.valleyPrice == null || cur < p.valleyPrice) { p.valleyPrice = +cur.toFixed(8); p.valleyPct = +((p.entry - cur) / p.entry * 100).toFixed(2); }
     } else {
       if (p.peakPrice == null || cur > p.peakPrice) { p.peakPrice = +cur.toFixed(8); p.peakPct = +((cur - p.entry) / p.entry * 100).toFixed(2); }
+      // MAE (dno) za LONG — najniza tocka, za MAE/MFE analizu u appu
+      if (p.maePrice == null || cur < p.maePrice) { p.maePrice = +cur.toFixed(8); p.maePct = +((cur - p.entry) / p.entry * 100).toFixed(2); }
     }
     // milestone d-hitovi
     const tgt = p.target;
