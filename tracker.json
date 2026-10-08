@@ -17,10 +17,10 @@
       "conf": 66,
       "score": 11.700000000000001,
       "targetPct": 30,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "PROMAŠAJ",
+      "closePrice": 0.7213,
+      "closePct": -7.35,
+      "autoClose": true,
       "direction": "LONG",
       "autoTrack": true,
       "autoSource": "ulaz",
@@ -54,8 +54,9 @@
       "d5Hit": false,
       "peakPrice": 0.784,
       "peakPct": 0.71,
-      "maePrice": 0.7785,
-      "maePct": 0
+      "maePrice": 0.7213,
+      "maePct": -7.35,
+      "closeReason": "🛑 Stop-loss (24/7)"
     },
     {
       "id": "1791440690804",
@@ -114,8 +115,8 @@
       "d3Hit": false,
       "peakPrice": 87.18,
       "peakPct": 0.1,
-      "maePrice": 85.51,
-      "maePct": -1.81
+      "maePrice": 84.44,
+      "maePct": -3.04
     },
     {
       "id": "1791440678740",
@@ -9374,5 +9375,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-10-08T12:43:34.042Z"
+  "updatedAt": "2026-10-08T16:45:58.329Z"
 }
