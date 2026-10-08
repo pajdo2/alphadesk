@@ -1,7 +1,7 @@
 {
-    "dxy":  102.27,
-    "changeSummary":  "BTC testira $82K podršku uz $487M ETF odljeva i daljnje geopolitičke napetosti u Hormuškom tjesnacu, dok F&G blago raste na 64 a BTC dominacija pada na 56.9%.",
-    "lastUpdated":  "2026-10-08T06:00:00Z",
+    "dxy":  102.32,
+    "changeSummary":  "DXY blago porastao na 102.32 (s 102.27), nafta stabilna na $102.29, BTC dominacija skočila na 58.5% (s 56.9%) dok BTC klizi na $82,900 uz $500M likvidacija i ETF odljeve — Bull režim se održava ali kratkoročni pritisak raste.",
+    "lastUpdated":  "2026-10-08T12:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -25,7 +25,7 @@
 
                               ],
                      "PENGU":  [
-                                   "Abstract L2 i dalje offline, ekosustav pod pritiskom"
+
                                ],
                      "BOME":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-                                 "ETH pada 1.9%, ETF odljevi nastavljaju pritisak"
+                                 "Pad 1.9% u 24h, bez katalizatora, slab sentiment"
                              ],
                      "LINK":  [
 
@@ -64,11 +64,11 @@
 
                                ],
                      "BTC":  [
-                                 "$487M ETF odljevi, testiranje $82K potpore",
-                                 "$400M likvidacija, opasnost proboja niže"
+                                 "$500M likvidacija, ETF odljevi, otpor na $87K",
+                                 "Hawkish Fed, rast prinosa trezora tlaci BTC"
                              ]
                  },
-    "sp500Ret5d":  -0.5,
+    "sp500Ret5d":  1.5,
     "fearGreed":  64,
     "macroPenalty":  2,
     "catalysts":  {
@@ -82,7 +82,7 @@
 
                                 ],
                       "XRP":  [
-                                  "XRPL PermissionDelegation amandmani aktivni 8-9.10."
+                                  "XRPL amandmani aktivirani 8-9.10.2026"
                               ],
                       "BNB":  [
 
@@ -109,7 +109,7 @@
 
                                  ],
                       "SOL":  [
-
+                                  "Samsung Wallet dodaje USDC na Solana za US"
                               ],
                       "ADA":  [
 
@@ -121,7 +121,7 @@
 
                                 ],
                       "ETH":  [
-                                  "Glamsterdam: gas limit raste na 200M/blok"
+
                               ],
                       "LINK":  [
 
@@ -145,24 +145,24 @@
                            "BNB":  0,
                            "SUI":  0,
                            "AVAX":  0,
-                           "PENGU":  -1,
+                           "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  0,
+                           "SOL":  1,
                            "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  1,
+                           "ETH":  -1,
                            "LINK":  0,
                            "PUMP":  0,
                            "TRUMP":  0,
                            "BTC":  -1
                        },
-    "aiSummary":  "DXY blago pao na 102.27 dok nafta ostaje visoka ($101.53 Brent) uslijed novih napada na brodove u Hormuškom tjesnacu, što zadržava geopolitički rizik i macroPenalty na 2. Bitcoin testira kritičnu podršku na $82K uz $487M ETF odljeva i $400M likvidacija, no Fear & Greed se blago oporavlja na 64 uz BTC dominaciju od 56.9% što potvrđuje nastavak Bull režima. XRP aktivira XRPL amandmane, Ethereum napreduje s Glamsterdam nadogradnjom, ali kratkoročni pritisak ostaje sve dok BTC ne probije $87K otpor.",
+    "aiSummary":  "DXY je porastao na 102.32 uz hawkish ton FOMC zapisnika koji najavljuju jos jedno povišenje kamate, dok nafta ostaje visoka na $102.29 zbog Houthi napada na saudijsku infrastrukturu — macroPenalty ostaje na 2. Bitcoin se bori na $82,900 uz $500M likvidacija i ETF odljeve, no Fear & Greed ostaje na 64 s BTC dominacijom od 58.5% što potvrđuje nastavak Bull režima. Kratkorocni pritisak ostaje sve dok BTC ne probije otpor na $87K, a rast prinosa trezora i jaki dolar ogranicavaju širi kripto oporavak.",
     "warActive":  true,
-    "btcDom":  56.9,
-    "stableDom":  7.5,
-    "oil":  101.53
+    "btcDom":  58.5,
+    "stableDom":  11.0,
+    "oil":  102.29
 }
