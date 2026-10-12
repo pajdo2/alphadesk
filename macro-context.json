@@ -1,54 +1,70 @@
 {
-    "dxy":  102.21,
-    "changeSummary":  "Makroekonomske prilike ostale su gotovo nepromijenjene — DXY neznatno pao na 102.21, nafta (Brent) spustila se na $103, Fear & Greed zadržao 69, BTC dominacija stabilna na 59.3%, a jedini novi katalizator je XRP Evernorth Nasdaq listanje danas.",
-    "lastUpdated":  "2026-10-12T12:00:00Z",
+    "dxy":  102.17,
+    "changeSummary":  "Makro uvjeti ostali gotovo nepromijenjeni s DXY na 102.17 i Brent naftom na $103.3, Fear & Greed stabilan na 69, dok Evernorth Nasdaq listing donosi snažan XRP katalizator danas.",
+    "lastUpdated":  "2026-10-12T18:00:00Z",
     "warnings":  {
                      "ACT":  [
+                             "BTC dominacija 59.5% — altcoini pod pritiskom"
                              ],
                      "MEME":  [
-                                 "Visoka BTC dominacija (59.3%) pritišće meme coinove"
+                              "BTC dominacija 59.5% — meme coini pod pritiskom"
                               ],
                      "ANIME":  [
+                               "BTC dominacija 59.5% — altcoini pod pritiskom"
                                ],
                      "XRP":  [
-                                 "XRPL bug 'supply-rule bypass' patchan, aktivacija >80% validatora"
+                             "CFTC predlaže nova pravila za prediction markete"
                              ],
                      "BNB":  [
+
                              ],
                      "SUI":  [
+
                              ],
                      "AVAX":  [
+
                               ],
                      "PENGU":  [
+                               "BTC dominacija 59.5% — meme coini pod pritiskom"
                                ],
                      "BOME":  [
-                                  "Visoka BTC dominacija — altcoini pod pritiskom"
+                              "BTC dominacija 59.5% — meme coini pod pritiskom"
                               ],
                      "DOGS":  [
+                              "BTC dominacija 59.5% — meme coini pod pritiskom"
                               ],
                      "NOT":  [
+                             "BTC dominacija 59.5% — meme coini pod pritiskom"
                              ],
                      "PEOPLE":  [
+                                "BTC dominacija 59.5% — meme coini pod pritiskom"
                                 ],
                      "SOL":  [
+
                              ],
                      "ADA":  [
+
                              ],
                      "PNUT":  [
+                              "BTC dominacija 59.5% — meme coini pod pritiskom"
                               ],
                      "AIXBT":  [
+                               "AI tokeni bez jasnog katalizatora danas"
                                ],
                      "ETH":  [
+
                              ],
                      "LINK":  [
+
                               ],
                      "PUMP":  [
+                              "BTC dominacija 59.5% — meme coini pod pritiskom"
                               ],
                      "TRUMP":  [
-                                   "Argentina zabranila kripto u bankarskom sustavu"
+
                                ],
                      "BTC":  [
-                                 "Ledger kompromitiran putem distributera CryptoBilis"
+                             "Ledger hack: neovlašten hardver implanti, >$86M"
                              ]
                  },
     "sp500Ret5d":  1.15,
@@ -56,79 +72,96 @@
     "macroPenalty":  2,
     "catalysts":  {
                       "ACT":  [
+
                               ],
                       "MEME":  [
+
                                ],
                       "ANIME":  [
+
                                 ],
                       "XRP":  [
-                                  "Evernorth Nasdaq listanje danas — 473M XRP u trezoru"
+                              "Evernorth SPAC debut Nasdaq 12.10. (+473M XRP)"
                               ],
                       "BNB":  [
+
                               ],
                       "SUI":  [
+
                               ],
                       "AVAX":  [
+
                                ],
                       "PENGU":  [
+
                                 ],
                       "BOME":  [
+
                                ],
                       "DOGS":  [
+
                                ],
                       "NOT":  [
+
                               ],
                       "PEOPLE":  [
+
                                  ],
                       "SOL":  [
+                              "Total market cap $2.9T, tržišni rast nastavljen"
                               ],
                       "ADA":  [
+
                               ],
                       "PNUT":  [
+
                                ],
                       "AIXBT":  [
+
                                 ],
                       "ETH":  [
-                                  "ETH +1.5% uz rast tržišta, DeFi market cap $87B"
+                              "Ethereum upgrade rasprave — CoinDesk agenda"
                               ],
                       "LINK":  [
+
                                ],
                       "PUMP":  [
+
                                ],
                       "TRUMP":  [
-                                    "TRUMP trending — +2.7% u 24h"
+                                "TRUMP token trending na kripto listama danas"
                                 ],
                       "BTC":  [
-                                  "S&P 500 +1.15% tjedni rast — risk-on signal za kripto"
+                              "BTC drži $83.8K uz +1.1% dnevni rast"
                               ]
                   },
     "regime":  "BULL",
     "sentimentScore":  {
-                           "ACT":  0,
+                           "ACT":  -1,
                            "MEME":  -1,
                            "ANIME":  0,
                            "XRP":  2,
                            "BNB":  0,
                            "SUI":  0,
                            "AVAX":  0,
-                           "PENGU":  0,
-                           "BOME":  0,
-                           "DOGS":  0,
-                           "NOT":  0,
-                           "PEOPLE":  0,
-                           "SOL":  0,
+                           "PENGU":  -1,
+                           "BOME":  -1,
+                           "DOGS":  -1,
+                           "NOT":  -1,
+                           "PEOPLE":  -1,
+                           "SOL":  1,
                            "ADA":  0,
-                           "PNUT":  0,
+                           "PNUT":  -1,
                            "AIXBT":  0,
                            "ETH":  1,
                            "LINK":  0,
-                           "PUMP":  0,
+                           "PUMP":  -1,
                            "TRUMP":  1,
                            "BTC":  1
                        },
-    "aiSummary":  "DXY je blago pao na 102.21 uz četvrti uzastopni tjedan rasta dolara dok Fed zadržava hawkish ton s CPI objavom 14. listopada kao ključnim katalizatorom, a nafta (Brent) ostaje iznad $100 uz geopolitičke napetosti na Bliskom istoku. Fear & Greed indeks ostaje na 69 (pohlepa), BTC drži $83.8K s dominacijom 59.3% — Bull režim aktivan uz risk-on signal sa S&P 500 tjednim rastom od +1.15%. XRP ima snažan katalizator uz Evernorth Nasdaq listanje danas, dok meme coini i altcoini ostaju pod pritiskom visoke BTC dominacije.",
+    "aiSummary":  "DXY ostaje na 102.17 blago ispod prethodne razine uz Fed hawkish ton i CPI objavu 14. listopada kao ključnim katalizatorom, nafta (Brent) pada na $103.3 uz djelomično smirivanje napetosti na Bliskom istoku. Fear & Greed stabilan je na 69 (pohlepa), BTC drži $83.8K s dominacijom 59.5% — Bull režim aktivan uz risk-on signal sa S&P 500 tjednim rastom +1.15%. Evernorth debut na Nasdaq danas je ključni XRP katalizator, dok Ledger hardware hack ($86M+ gubitak) unosi sigurnosni oprez u šire kripto tržište.",
     "warActive":  true,
-    "btcDom":  59.3,
-    "stableDom":  10.1,
-    "oil":  103.0
+    "btcDom":  59.5,
+    "stableDom":  10.0,
+    "oil":  103.3
 }
