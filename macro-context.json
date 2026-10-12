@@ -1,16 +1,16 @@
 {
-    "dxy":  102.32,
-    "changeSummary":  "DXY blago porastao na 102.32 (s 102.27), nafta stabilna na $102.29, BTC dominacija skočila na 58.5% (s 56.9%) dok BTC klizi na $82,900 uz $500M likvidacija i ETF odljeve — Bull režim se održava ali kratkoročni pritisak raste.",
-    "lastUpdated":  "2026-10-08T12:00:00Z",
+    "dxy":  102.25,
+    "changeSummary":  "Fear & Greed porastao s 64 na 69, BTC dominacija s 58.5% na 59.2%, DXY blago pao na 102.25, a macroPenalty ostaje na 2 uz nastavak Bull režima.",
+    "lastUpdated":  "2026-10-12T10:00:00Z",
     "warnings":  {
                      "ACT":  [
-
+                             "Nema katalista, meme sezona nije aktivna"
                              ],
                      "MEME":  [
-
+                              "Nema katalista, meme sezona nije aktivna"
                               ],
                      "ANIME":  [
-
+                               "Nema katalista, meme sezona nije aktivna"
                                ],
                      "XRP":  [
 
@@ -25,19 +25,19 @@
 
                               ],
                      "PENGU":  [
-
+                               "Nema katalista, meme sezona nije aktivna"
                                ],
                      "BOME":  [
-
+                              "Nema katalista, meme sezona nije aktivna"
                               ],
                      "DOGS":  [
-
+                              "Nema katalista, meme sezona nije aktivna"
                               ],
                      "NOT":  [
-
+                             "Nema katalista, BTC dom. 59.2% smanjuje altcoin tok"
                              ],
                      "PEOPLE":  [
-
+                                "Nema katalista, BTC dom. 59.2% smanjuje altcoin tok"
                                 ],
                      "SOL":  [
 
@@ -46,30 +46,29 @@
 
                              ],
                      "PNUT":  [
-
+                              "Nema katalista, meme sezona nije aktivna"
                               ],
                      "AIXBT":  [
 
                                ],
                      "ETH":  [
-                                 "Pad 1.9% u 24h, bez katalizatora, slab sentiment"
+
                              ],
                      "LINK":  [
 
                               ],
                      "PUMP":  [
-
+                              "Nema katalista, meme sezona nije aktivna"
                               ],
                      "TRUMP":  [
 
                                ],
                      "BTC":  [
-                                 "$500M likvidacija, ETF odljevi, otpor na $87K",
-                                 "Hawkish Fed, rast prinosa trezora tlaci BTC"
+                             "Ledger hardware implant, $86M gubici - provjeri uredaj"
                              ]
                  },
-    "sp500Ret5d":  1.5,
-    "fearGreed":  64,
+    "sp500Ret5d":  1.15,
+    "fearGreed":  69,
     "macroPenalty":  2,
     "catalysts":  {
                       "ACT":  [
@@ -82,7 +81,7 @@
 
                                 ],
                       "XRP":  [
-                                  "XRPL amandmani aktivirani 8-9.10.2026"
+                              "Evernorth listanje na Nasdaq uz 473M XRP treasury"
                               ],
                       "BNB":  [
 
@@ -109,7 +108,7 @@
 
                                  ],
                       "SOL":  [
-                                  "Samsung Wallet dodaje USDC na Solana za US"
+                              "Solidna likvidnost, bull market momentum nastavlja"
                               ],
                       "ADA":  [
 
@@ -121,48 +120,48 @@
 
                                 ],
                       "ETH":  [
-
+                              "ETH +1.5% dnevno, oporavak uz BTC momentum"
                               ],
                       "LINK":  [
-
+                               "Bull trziste, LINK prati BTC rast"
                                ],
                       "PUMP":  [
 
                                ],
                       "TRUMP":  [
-
+                                "TRUMP trending, potencijalni kratkoro\u010dni momentum"
                                 ],
                       "BTC":  [
-
+                              "BTC $83.8K, S&P +1.15% tjedan - risk-on signal"
                               ]
                   },
     "regime":  "BULL",
     "sentimentScore":  {
-                           "ACT":  0,
-                           "MEME":  0,
-                           "ANIME":  0,
-                           "XRP":  1,
+                           "ACT":  -1,
+                           "MEME":  -1,
+                           "ANIME":  -1,
+                           "XRP":  2,
                            "BNB":  0,
                            "SUI":  0,
                            "AVAX":  0,
-                           "PENGU":  0,
-                           "BOME":  0,
-                           "DOGS":  0,
-                           "NOT":  0,
-                           "PEOPLE":  0,
+                           "PENGU":  -1,
+                           "BOME":  -1,
+                           "DOGS":  -1,
+                           "NOT":  -1,
+                           "PEOPLE":  -1,
                            "SOL":  1,
                            "ADA":  0,
-                           "PNUT":  0,
+                           "PNUT":  -1,
                            "AIXBT":  0,
-                           "ETH":  -1,
-                           "LINK":  0,
-                           "PUMP":  0,
-                           "TRUMP":  0,
-                           "BTC":  -1
+                           "ETH":  1,
+                           "LINK":  1,
+                           "PUMP":  -1,
+                           "TRUMP":  1,
+                           "BTC":  1
                        },
-    "aiSummary":  "DXY je porastao na 102.32 uz hawkish ton FOMC zapisnika koji najavljuju jos jedno povišenje kamate, dok nafta ostaje visoka na $102.29 zbog Houthi napada na saudijsku infrastrukturu — macroPenalty ostaje na 2. Bitcoin se bori na $82,900 uz $500M likvidacija i ETF odljeve, no Fear & Greed ostaje na 64 s BTC dominacijom od 58.5% što potvrđuje nastavak Bull režima. Kratkorocni pritisak ostaje sve dok BTC ne probije otpor na $87K, a rast prinosa trezora i jaki dolar ogranicavaju širi kripto oporavak.",
+    "aiSummary":  "DXY se stabilizirao na 102.25 ispod 18-mjesecnog vrha, dok Fed zadrzava hawkish ton s 70% sanse za povišenje kamate u prosincu, a nafta ostaje iznad $100 zbog geopolitickih napetosti. Fear & Greed porastao je na 69 (pohlepa), BTC drzi $83.8K s dominacijom 59.2% — Bull rezim ostaje aktivan uz risk-on signal sa S&P 500 tjednim rastom od +1.15%. XRP ima snažan katalizator uz Evernorth Nasdaq listanje, dok meme coini ostaju pod pritiskom uslijed visoke BTC dominacije, a Ledger sigurnosni incident ($86M) povecava kratkorocni oprez.",
     "warActive":  true,
-    "btcDom":  58.5,
-    "stableDom":  11.0,
-    "oil":  102.29
+    "btcDom":  59.2,
+    "stableDom":  6.2,
+    "oil":  101.8
 }
