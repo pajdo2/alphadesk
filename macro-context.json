@@ -1,19 +1,19 @@
 {
-    "dxy":  102.17,
-    "changeSummary":  "Makro uvjeti ostali gotovo nepromijenjeni s DXY na 102.17 i Brent naftom na $103.3, Fear & Greed stabilan na 69, dok Evernorth Nasdaq listing donosi snažan XRP katalizator danas.",
-    "lastUpdated":  "2026-10-12T18:00:00Z",
+    "dxy":  102.43,
+    "changeSummary":  "DXY blago porastao na 102.43 uz US 10Y prinos na historijskom vrhu od 5.35%, Fear & Greed minimalno pao s 69 na 68, BTC dominanca smanjena na 59.3%, nafta stabilna na $103.3 — Bull režim i macroPenalty 2 ostaju nepromijenjeni.",
+    "lastUpdated":  "2026-10-12T12:00:00Z",
     "warnings":  {
                      "ACT":  [
-                             "BTC dominacija 59.5% — altcoini pod pritiskom"
+
                              ],
                      "MEME":  [
-                              "BTC dominacija 59.5% — meme coini pod pritiskom"
+                                 "81% memecoina palo 90%+ od vrhunca (Talos izvješće)"
                               ],
                      "ANIME":  [
-                               "BTC dominacija 59.5% — altcoini pod pritiskom"
+
                                ],
                      "XRP":  [
-                             "CFTC predlaže nova pravila za prediction markete"
+                                 "XRPL bug iz 2015 otkriven — rizik sigurnosti lanca"
                              ],
                      "BNB":  [
 
@@ -25,19 +25,19 @@
 
                               ],
                      "PENGU":  [
-                               "BTC dominacija 59.5% — meme coini pod pritiskom"
+                                  "Abstract L2 ugašen — kompenzacija airdrop farmera"
                                ],
                      "BOME":  [
-                              "BTC dominacija 59.5% — meme coini pod pritiskom"
+
                               ],
                      "DOGS":  [
-                              "BTC dominacija 59.5% — meme coini pod pritiskom"
+
                               ],
                      "NOT":  [
-                             "BTC dominacija 59.5% — meme coini pod pritiskom"
+
                              ],
                      "PEOPLE":  [
-                                "BTC dominacija 59.5% — meme coini pod pritiskom"
+
                                 ],
                      "SOL":  [
 
@@ -46,10 +46,10 @@
 
                              ],
                      "PNUT":  [
-                              "BTC dominacija 59.5% — meme coini pod pritiskom"
+
                               ],
                      "AIXBT":  [
-                               "AI tokeni bez jasnog katalizatora danas"
+
                                ],
                      "ETH":  [
 
@@ -58,17 +58,18 @@
 
                               ],
                      "PUMP":  [
-                              "BTC dominacija 59.5% — meme coini pod pritiskom"
+                                 "81% memecoina palo 90%+ od vrhunca (Talos izvješće)"
                               ],
                      "TRUMP":  [
 
                                ],
                      "BTC":  [
-                             "Ledger hack: neovlašten hardver implanti, >$86M"
+                                "US 10Y prinos na 5.35% — pritisak na risk-on imovinu",
+                                "Obveznice na 24-god. vrhu — moguć risk-off scenarij"
                              ]
                  },
     "sp500Ret5d":  1.15,
-    "fearGreed":  69,
+    "fearGreed":  68,
     "macroPenalty":  2,
     "catalysts":  {
                       "ACT":  [
@@ -81,13 +82,15 @@
 
                                 ],
                       "XRP":  [
-                              "Evernorth SPAC debut Nasdaq 12.10. (+473M XRP)"
+                                  "Evernorth Nasdaq debut (XRPN), 473M XRP u trezoru"
                               ],
                       "BNB":  [
 
                               ],
                       "SUI":  [
-
+                                  "Hashi: $500M BTC-backed lending protokol na Sui",
+                                  "Circle CCTP V2 na Sui — USDC cross-chain transfer",
+                                  "Sui rekord: 40.6M TPS live test — Basecamp Singapore"
                               ],
                       "AVAX":  [
 
@@ -108,7 +111,7 @@
 
                                  ],
                       "SOL":  [
-                              "Total market cap $2.9T, tržišni rast nastavljen"
+
                               ],
                       "ADA":  [
 
@@ -120,48 +123,49 @@
 
                                 ],
                       "ETH":  [
-                              "Ethereum upgrade rasprave — CoinDesk agenda"
+                                  "BitMine drži 6.03M ETH (4.9% ukupne ponude)"
                               ],
                       "LINK":  [
 
                                ],
                       "PUMP":  [
-
+                                  "$18.6M prihod protokola u prošlom tjednu"
                                ],
                       "TRUMP":  [
-                                "TRUMP token trending na kripto listama danas"
+
                                 ],
                       "BTC":  [
-                              "BTC drži $83.8K uz +1.1% dnevni rast"
+                                  "Strategy kupuje 250 BTC, treasury na 848.250 BTC",
+                                  "ETF prodaja usporava, kratke pozicije se odmotavaju"
                               ]
                   },
     "regime":  "BULL",
     "sentimentScore":  {
-                           "ACT":  -1,
+                           "ACT":  0,
                            "MEME":  -1,
                            "ANIME":  0,
-                           "XRP":  2,
+                           "XRP":  1,
                            "BNB":  0,
-                           "SUI":  0,
+                           "SUI":  2,
                            "AVAX":  0,
                            "PENGU":  -1,
-                           "BOME":  -1,
-                           "DOGS":  -1,
-                           "NOT":  -1,
-                           "PEOPLE":  -1,
-                           "SOL":  1,
+                           "BOME":  0,
+                           "DOGS":  0,
+                           "NOT":  0,
+                           "PEOPLE":  0,
+                           "SOL":  0,
                            "ADA":  0,
-                           "PNUT":  -1,
+                           "PNUT":  0,
                            "AIXBT":  0,
                            "ETH":  1,
                            "LINK":  0,
-                           "PUMP":  -1,
-                           "TRUMP":  1,
+                           "PUMP":  0,
+                           "TRUMP":  0,
                            "BTC":  1
                        },
-    "aiSummary":  "DXY ostaje na 102.17 blago ispod prethodne razine uz Fed hawkish ton i CPI objavu 14. listopada kao ključnim katalizatorom, nafta (Brent) pada na $103.3 uz djelomično smirivanje napetosti na Bliskom istoku. Fear & Greed stabilan je na 69 (pohlepa), BTC drži $83.8K s dominacijom 59.5% — Bull režim aktivan uz risk-on signal sa S&P 500 tjednim rastom +1.15%. Evernorth debut na Nasdaq danas je ključni XRP katalizator, dok Ledger hardware hack ($86M+ gubitak) unosi sigurnosni oprez u šire kripto tržište.",
+    "aiSummary":  "DXY raste na 102.43 uz US 10-godišnji Treasury prinos na 5.35% koji stvara pritisak na rizičnu imovinu i ugrožava kripto momentum; nafta stabilna na $103.3 uz perzistentne geopolitičke napetosti na Bliskom istoku i Rusija-Ukrajina konfliktu. Fear & Greed iznosi 68 (pohlepa), BTC se stabilizira oko $84K s dominacijom 59.3% — Bull režim aktivan, ali historijski visoki obvezničke prinos ostaje ključni risk-off rizik ovaj tjedan. Evernorth/XRP Nasdaq debut, Strategy BTC kupnja te SUI Hashi protokol selektivni su katalizatori mogućih proboja.",
     "warActive":  true,
-    "btcDom":  59.5,
-    "stableDom":  10.0,
+    "btcDom":  59.3,
+    "stableDom":  9.9,
     "oil":  103.3
 }
