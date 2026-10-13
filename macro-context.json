@@ -1,19 +1,19 @@
 {
-    "dxy":  102.43,
-    "changeSummary":  "DXY blago porastao na 102.43 uz US 10Y prinos na historijskom vrhu od 5.35%, Fear & Greed minimalno pao s 69 na 68, BTC dominanca smanjena na 59.3%, nafta stabilna na $103.3 — Bull režim i macroPenalty 2 ostaju nepromijenjeni.",
-    "lastUpdated":  "2026-10-12T12:00:00Z",
+    "dxy":  102.58,
+    "changeSummary":  "DXY blago porastao na 102.58 dok je nafta pala na $103, BTC dominacija i Fear&Greed ostali stabilni na 59.3% i 68 — Bull režim i macroPenalty 2 nepromijenjeni.",
+    "lastUpdated":  "2026-10-12T18:00:00Z",
     "warnings":  {
                      "ACT":  [
 
                              ],
                      "MEME":  [
-                                 "81% memecoina palo 90%+ od vrhunca (Talos izvješće)"
+
                               ],
                      "ANIME":  [
 
                                ],
                      "XRP":  [
-                                 "XRPL bug iz 2015 otkriven — rizik sigurnosti lanca"
+
                              ],
                      "BNB":  [
 
@@ -25,7 +25,7 @@
 
                               ],
                      "PENGU":  [
-                                  "Abstract L2 ugašen — kompenzacija airdrop farmera"
+
                                ],
                      "BOME":  [
 
@@ -52,20 +52,20 @@
 
                                ],
                      "ETH":  [
-
+                                 "Bond prinosi 5.35% vrše pritisak na ETH momentum"
                              ],
                      "LINK":  [
 
                               ],
                      "PUMP":  [
-                                 "81% memecoina palo 90%+ od vrhunca (Talos izvješće)"
+
                               ],
                      "TRUMP":  [
 
                                ],
                      "BTC":  [
-                                "US 10Y prinos na 5.35% — pritisak na risk-on imovinu",
-                                "Obveznice na 24-god. vrhu — moguć risk-off scenarij"
+                                 "Ledger incident: 86M$ gubici, oprez s hw walletima",
+                                 "US Treasury 5.35% prinos — risk-off pritisak na BTC"
                              ]
                  },
     "sp500Ret5d":  1.15,
@@ -82,15 +82,13 @@
 
                                 ],
                       "XRP":  [
-                                  "Evernorth Nasdaq debut (XRPN), 473M XRP u trezoru"
+                                  "XRP Nasdaq listing — potencijalni katalizator proboja"
                               ],
                       "BNB":  [
 
                               ],
                       "SUI":  [
-                                  "Hashi: $500M BTC-backed lending protokol na Sui",
-                                  "Circle CCTP V2 na Sui — USDC cross-chain transfer",
-                                  "Sui rekord: 40.6M TPS live test — Basecamp Singapore"
+                                  "SUI Hashi protokol nova integracija"
                               ],
                       "AVAX":  [
 
@@ -120,35 +118,34 @@
 
                                ],
                       "AIXBT":  [
-
+                                    "AI bubble raste, pogoduje AI kripto tokenima"
                                 ],
                       "ETH":  [
-                                  "BitMine drži 6.03M ETH (4.9% ukupne ponude)"
+
                               ],
                       "LINK":  [
 
                                ],
                       "PUMP":  [
-                                  "$18.6M prihod protokola u prošlom tjednu"
+
                                ],
                       "TRUMP":  [
-
+                                    "TRUMP trending u vijestima, politički sentiment pozitivan"
                                 ],
                       "BTC":  [
-                                  "Strategy kupuje 250 BTC, treasury na 848.250 BTC",
-                                  "ETF prodaja usporava, kratke pozicije se odmotavaju"
+                                  "Strategy treasury na 848,250 BTC — institucionalni momentum"
                               ]
                   },
     "regime":  "BULL",
     "sentimentScore":  {
                            "ACT":  0,
-                           "MEME":  -1,
+                           "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  1,
+                           "XRP":  2,
                            "BNB":  0,
-                           "SUI":  2,
+                           "SUI":  1,
                            "AVAX":  0,
-                           "PENGU":  -1,
+                           "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
@@ -156,16 +153,16 @@
                            "SOL":  0,
                            "ADA":  0,
                            "PNUT":  0,
-                           "AIXBT":  0,
+                           "AIXBT":  1,
                            "ETH":  1,
                            "LINK":  0,
                            "PUMP":  0,
-                           "TRUMP":  0,
+                           "TRUMP":  1,
                            "BTC":  1
                        },
-    "aiSummary":  "DXY raste na 102.43 uz US 10-godišnji Treasury prinos na 5.35% koji stvara pritisak na rizičnu imovinu i ugrožava kripto momentum; nafta stabilna na $103.3 uz perzistentne geopolitičke napetosti na Bliskom istoku i Rusija-Ukrajina konfliktu. Fear & Greed iznosi 68 (pohlepa), BTC se stabilizira oko $84K s dominacijom 59.3% — Bull režim aktivan, ali historijski visoki obvezničke prinos ostaje ključni risk-off rizik ovaj tjedan. Evernorth/XRP Nasdaq debut, Strategy BTC kupnja te SUI Hashi protokol selektivni su katalizatori mogućih proboja.",
+    "aiSummary":  "DXY raste na 102.58 uz US 10-godišnji Treasury prinos na 5.35% koji nastavlja stvarati pritisak na rizičnu imovinu; nafta pada na $103 uz perzistentne geopolitičke napetosti na Bliskom istoku i Rusija-Ukrajina konfliktu. Fear & Greed iznosi 68 (pohlepa), BTC se stabilizira oko $83.4K s dominacijom 59.3% — Bull režim ostaje aktivan, a Strategy BTC kupnja i XRP Nasdaq listing pružaju selektivne katalizatore proboja ovaj tjedan.",
     "warActive":  true,
     "btcDom":  59.3,
-    "stableDom":  9.9,
-    "oil":  103.3
+    "stableDom":  9.1,
+    "oil":  103.0
 }
