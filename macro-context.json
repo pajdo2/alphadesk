@@ -1,7 +1,7 @@
 {
-    "dxy":  102.58,
-    "changeSummary":  "DXY blago porastao na 102.58 dok je nafta pala na $103, BTC dominacija i Fear&Greed ostali stabilni na 59.3% i 68 — Bull režim i macroPenalty 2 nepromijenjeni.",
-    "lastUpdated":  "2026-10-12T18:00:00Z",
+    "dxy":  102.60,
+    "changeSummary":  "Fear & Greed pada s 68 na 57, nafta (Brent) raste na $105.6 uz napad na tanker u Hormuškom tjesnacu, BTC se drži oko $83.75K uz masovne likvidacije od $672M i nadolazeći CPI izvještaj 14.10.",
+    "lastUpdated":  "2026-10-13T12:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -16,7 +16,7 @@
 
                              ],
                      "BNB":  [
-
+                                 "JK regulatorna blokada 27 burzi, uključujući KuCoin"
                              ],
                      "SUI":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-                                 "Bond prinosi 5.35% vrše pritisak na ETH momentum"
+                                 "Pad -3.7% uz $672M kripto likvidacija danas"
                              ],
                      "LINK":  [
 
@@ -64,12 +64,11 @@
 
                                ],
                      "BTC":  [
-                                 "Ledger incident: 86M$ gubici, oprez s hw walletima",
-                                 "US Treasury 5.35% prinos — risk-off pritisak na BTC"
+                                 "ETF odljevi i CPI izvještaj 14.10. – povećan rizik"
                              ]
                  },
-    "sp500Ret5d":  1.15,
-    "fearGreed":  68,
+    "sp500Ret5d":  0.9,
+    "fearGreed":  57,
     "macroPenalty":  2,
     "catalysts":  {
                       "ACT":  [
@@ -82,13 +81,13 @@
 
                                 ],
                       "XRP":  [
-                                  "XRP Nasdaq listing — potencijalni katalizator proboja"
+
                               ],
                       "BNB":  [
 
                               ],
                       "SUI":  [
-                                  "SUI Hashi protokol nova integracija"
+
                               ],
                       "AVAX":  [
 
@@ -109,7 +108,7 @@
 
                                  ],
                       "SOL":  [
-
+                                  "HKEX drugi spot Solana ETF listing 13.10."
                               ],
                       "ADA":  [
 
@@ -118,7 +117,7 @@
 
                                ],
                       "AIXBT":  [
-                                    "AI bubble raste, pogoduje AI kripto tokenima"
+
                                 ],
                       "ETH":  [
 
@@ -130,10 +129,10 @@
 
                                ],
                       "TRUMP":  [
-                                    "TRUMP trending u vijestima, politički sentiment pozitivan"
+
                                 ],
                       "BTC":  [
-                                  "Strategy treasury na 848,250 BTC — institucionalni momentum"
+
                               ]
                   },
     "regime":  "BULL",
@@ -141,28 +140,28 @@
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  2,
-                           "BNB":  0,
-                           "SUI":  1,
+                           "XRP":  0,
+                           "BNB":  -1,
+                           "SUI":  0,
                            "AVAX":  0,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  0,
+                           "SOL":  2,
                            "ADA":  0,
                            "PNUT":  0,
-                           "AIXBT":  1,
-                           "ETH":  1,
+                           "AIXBT":  0,
+                           "ETH":  -1,
                            "LINK":  0,
                            "PUMP":  0,
-                           "TRUMP":  1,
-                           "BTC":  1
+                           "TRUMP":  0,
+                           "BTC":  -1
                        },
-    "aiSummary":  "DXY raste na 102.58 uz US 10-godišnji Treasury prinos na 5.35% koji nastavlja stvarati pritisak na rizičnu imovinu; nafta pada na $103 uz perzistentne geopolitičke napetosti na Bliskom istoku i Rusija-Ukrajina konfliktu. Fear & Greed iznosi 68 (pohlepa), BTC se stabilizira oko $83.4K s dominacijom 59.3% — Bull režim ostaje aktivan, a Strategy BTC kupnja i XRP Nasdaq listing pružaju selektivne katalizatore proboja ovaj tjedan.",
+    "aiSummary":  "DXY se stabilizira na 102.60 dok tržište iščekuje CPI izvještaj 14.10. koji može pojačati volatilnost; nafta (Brent) raste na $105.6 uslijed napada na tanker u Hormuškom tjesnacu i eskalacije Rusija-Ukrajina konflikta. Fear & Greed pada na 57, BTC se drži oko $83.75K s dominacijom 59.3% — Bull režim ostaje aktivan, ali $672M likvidacija i ETF odljevi traže oprez; SOL se ističe zahvaljujući drugom HKEX spot ETF listingu danas.",
     "warActive":  true,
     "btcDom":  59.3,
-    "stableDom":  9.1,
-    "oil":  103.0
+    "stableDom":  10.1,
+    "oil":  105.6
 }
