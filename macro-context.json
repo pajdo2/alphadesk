@@ -1,7 +1,7 @@
 {
-    "dxy":  102.60,
-    "changeSummary":  "Fear & Greed pada s 68 na 57, nafta (Brent) raste na $105.6 uz napad na tanker u Hormuškom tjesnacu, BTC se drži oko $83.75K uz masovne likvidacije od $672M i nadolazeći CPI izvještaj 14.10.",
-    "lastUpdated":  "2026-10-13T12:00:00Z",
+    "dxy":  102.40,
+    "changeSummary":  "DXY blago pao s 102.60 na 102.40 uz smanjenu BTC dominaciju (57.8%), dok Fear & Greed ostaje na 57 i macroPenalty nepromijenjen na 2.",
+    "lastUpdated":  "2026-10-13T18:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -16,7 +16,7 @@
 
                              ],
                      "BNB":  [
-                                 "JK regulatorna blokada 27 burzi, uključujući KuCoin"
+
                              ],
                      "SUI":  [
 
@@ -37,7 +37,7 @@
 
                              ],
                      "PEOPLE":  [
-
+                                    "FSB poziva na jači nadzor globalnih stablecoina"
                                 ],
                      "SOL":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-                                 "Pad -3.7% uz $672M kripto likvidacija danas"
+                                 "Pad -3.7% uz visok CPI rizik 14.10."
                              ],
                      "LINK":  [
 
@@ -64,7 +64,8 @@
 
                                ],
                      "BTC":  [
-                                 "ETF odljevi i CPI izvještaj 14.10. – povećan rizik"
+                                 "ETF tjedni odljevi $680M",
+                                 "$672M likvidacija u 24h"
                              ]
                  },
     "sp500Ret5d":  0.9,
@@ -108,7 +109,7 @@
 
                                  ],
                       "SOL":  [
-                                  "HKEX drugi spot Solana ETF listing 13.10."
+                                  "HKEX spot SOL ETF listing danas"
                               ],
                       "ADA":  [
 
@@ -120,7 +121,7 @@
 
                                 ],
                       "ETH":  [
-
+                                  "Ethereum nadogradnja u razmatranju"
                               ],
                       "LINK":  [
 
@@ -132,7 +133,7 @@
 
                                 ],
                       "BTC":  [
-
+                                  "CPI izvještaj 14.10. ključni katalizator"
                               ]
                   },
     "regime":  "BULL",
@@ -141,14 +142,14 @@
                            "MEME":  0,
                            "ANIME":  0,
                            "XRP":  0,
-                           "BNB":  -1,
+                           "BNB":  0,
                            "SUI":  0,
                            "AVAX":  0,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
-                           "PEOPLE":  0,
+                           "PEOPLE":  -1,
                            "SOL":  2,
                            "ADA":  0,
                            "PNUT":  0,
@@ -159,9 +160,9 @@
                            "TRUMP":  0,
                            "BTC":  -1
                        },
-    "aiSummary":  "DXY se stabilizira na 102.60 dok tržište iščekuje CPI izvještaj 14.10. koji može pojačati volatilnost; nafta (Brent) raste na $105.6 uslijed napada na tanker u Hormuškom tjesnacu i eskalacije Rusija-Ukrajina konflikta. Fear & Greed pada na 57, BTC se drži oko $83.75K s dominacijom 59.3% — Bull režim ostaje aktivan, ali $672M likvidacija i ETF odljevi traže oprez; SOL se ističe zahvaljujući drugom HKEX spot ETF listingu danas.",
+    "aiSummary":  "DXY se stabilizira na 102.40, blago ispod prethodne razine od 102.60, dok tržište iščekuje CPI izvještaj 14.10. koji može pojačati volatilnost uz govor Fed predsjednika Warsha u petak. Fear & Greed pada na 57 s 69 jučer, BTC se drži oko $82K s dominacijom 57.8% — Bull režim ostaje aktivan, ali $672M likvidacija i ETF odljevi od $680M traže oprez. SOL se ističe zahvaljujući HKEX spot ETF listingom danas, dok nafta (Brent) zadržava $105.6 uz geopolitičke tenzije na Hormuškom tjesnacu.",
     "warActive":  true,
-    "btcDom":  59.3,
-    "stableDom":  10.1,
+    "btcDom":  57.8,
+    "stableDom":  7.5,
     "oil":  105.6
 }
