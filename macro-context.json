@@ -1,19 +1,19 @@
 {
-    "dxy":  102.40,
-    "changeSummary":  "Makro uvjeti gotovo nepromijenjeni od 18:00Z — BTC dominacija blago raste na 58.5%, nafta pada na $105.86, F&G ostaje 57, a tržište ulazi u večer pred ključni CPI 14.10.",
-    "lastUpdated":  "2026-10-13T21:00:00Z",
+    "dxy":  102.10,
+    "changeSummary":  "Fear & Greed skočio s 57 na 62, DXY oslabio na 102.10 pred CPI, BTC stabilan oko $83K dok XRP, SOL i LINK bilježe snažne pozitivne katalizatore.",
+    "lastUpdated":  "2026-10-14T09:00:00Z",
     "warnings":  {
                      "ACT":  [
 
                              ],
                      "MEME":  [
-                                 "Meme coini -6.6% danas, pojačani odljevi iz sektora"
+                                 "6 od 7 top Solana meme coina crveno zadnjih 7 dana"
                               ],
                      "ANIME":  [
 
                                ],
                      "XRP":  [
-
+                                 "Altcoini slabi unatoč katalizatorima — provjeri volumen"
                              ],
                      "BNB":  [
 
@@ -22,10 +22,10 @@
 
                              ],
                      "AVAX":  [
-                                 "Pad -6.38%, testira ključne potpore ~$10.40"
+                                 "Slabost altcoina nastavlja se, prethodni pad -6.38%"
                               ],
                      "PENGU":  [
-
+                                   "-15.8% tjedno usprkos kratkoročnom penguin proboju"
                                ],
                      "BOME":  [
 
@@ -40,8 +40,8 @@
 
                                 ],
                      "SOL":  [
-                                "SOL ekosustav -6.44% unatoč HKEX ETF listingu"
-                            ],
+
+                             ],
                      "ADA":  [
 
                              ],
@@ -49,11 +49,11 @@
 
                               ],
                      "AIXBT":  [
-
+                                   "AI Rig Complex -26.4% — rizik širenja pada na AI tokene"
                                ],
                      "ETH":  [
-                                "Slabija relativna snaga vs BTC, pada -3.7%"
-                            ],
+                                 "ETH/BTC ratio slab — altcoini ne prate BTC oporavak"
+                             ],
                      "LINK":  [
 
                               ],
@@ -61,15 +61,14 @@
 
                               ],
                      "TRUMP":  [
-
+                                   "-11.8% tjedno, 98% ispod ATH — distribucija rizik"
                                ],
                      "BTC":  [
-                                "CPI 14.10. — visoka volatilnost očekivana",
-                                "Fed govor Warsha u petak — rizik okreta"
-                            ]
+                                 "Dormant whale 4582 BTC ($378M) premješten — distribucija?"
+                             ]
                  },
-    "sp500Ret5d":  -0.25,
-    "fearGreed":  57,
+    "sp500Ret5d":  0.8,
+    "fearGreed":  62,
     "macroPenalty":  2,
     "catalysts":  {
                       "ACT":  [
@@ -82,11 +81,11 @@
 
                                 ],
                       "XRP":  [
-                                  "Swell konferencija NYC, Evernorth Nasdaq debut",
-                                  "Kritična ranjivost XRP Ledgera zakrpana 12.10."
+                                  "4. korejski partner Meritz Securities potpisan",
+                                  "XRPN Nasdaq listing — Evernorth drži 473M XRP"
                               ],
                       "BNB":  [
-
+                                  "Binance otvara trading dionicama i ETF-ovima"
                               ],
                       "SUI":  [
 
@@ -95,10 +94,10 @@
 
                                ],
                       "PENGU":  [
-
+                                    "Meme coin volumeni na 2026 maximumu — penguin proboj"
                                 ],
                       "BOME":  [
-
+                                   "+9.1% tjedno — jedini zeleni Solana meme coin"
                                ],
                       "DOGS":  [
 
@@ -110,11 +109,11 @@
 
                                  ],
                       "SOL":  [
-                                  "HKEX spot Solana ETF listing danas (Pando)",
-                                  "Circle mintao $3.5B USDC na Solani 12.10."
+                                  "Alpenglow upgrade: finality 12s→150ms Q4 2026",
+                                  "USDU stablecoin lansiran na Solani 13.10."
                               ],
                       "ADA":  [
-
+                                  "Oporavak s dna, CPI može pokrenuti konsolidaciju"
                               ],
                       "PNUT":  [
 
@@ -123,19 +122,20 @@
 
                                 ],
                       "ETH":  [
-
+                                  "CPI data ključan za proboj iznad $2,500"
                               ],
                       "LINK":  [
-
+                                   "UBS/Swift CCIP pilot — RWA tokenizacija live"
                                ],
                       "PUMP":  [
 
                                ],
                       "TRUMP":  [
-
+                                    "Trump organizira galu za meme coin investitore"
                                 ],
                       "BTC":  [
-                                  "ETF odljevi -$680M, podrška $81K drži"
+                                  "CPI 14.10. 14:30 CET — ključni katalizator smjera",
+                                  "Oporavak s $80.345K prema $83.4K potvrđen"
                               ]
                   },
     "regime":  "BULL",
@@ -143,28 +143,28 @@
                            "ACT":  0,
                            "MEME":  -1,
                            "ANIME":  0,
-                           "XRP":  1,
-                           "BNB":  0,
+                           "XRP":  2,
+                           "BNB":  2,
                            "SUI":  0,
-                           "AVAX":  -1,
-                           "PENGU":  0,
-                           "BOME":  0,
+                           "AVAX":  0,
+                           "PENGU":  1,
+                           "BOME":  1,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
                            "SOL":  2,
                            "ADA":  0,
                            "PNUT":  0,
-                           "AIXBT":  0,
-                           "ETH":  -1,
-                           "LINK":  0,
+                           "AIXBT":  -2,
+                           "ETH":  0,
+                           "LINK":  2,
                            "PUMP":  0,
                            "TRUMP":  0,
-                           "BTC":  -1
+                           "BTC":  1
                        },
-    "aiSummary":  "DXY se stabilizira na 102.40 odbijajući s 18-mjesečnog vrha 102.61, dok tržišta iščekuju CPI podatak 14.10. koji može pokrenuti snažniji volatilni val uz govor Fed predsjednika Warsha u petak. Fear & Greed ostaje na 57, BTC fluktuira između $81K-$84K s dominacijom 58.5% — Bull režim aktivan, no ETF odljevi od $680M i slabost altcoina (AVAX -6.38%, meme -6.6%) traže oprez. SOL se ističe HKEX spot ETF listingom i $3.5B USDC injekcijom, dok XRP dobiva katalizator kroz Swell konferenciju i zakrpanu kritičnu ranjivost.",
+    "aiSummary":  "DXY oslabio na 102.10 pred CPI objavu 14.10. koja je ključni katalizator smjera — niža inflacija može pojačati risk-on i probiti BTC iznad $84K. Fear & Greed skočio s 57 na 62 (pohlepa), BTC fluktuira oko $83K s dominacijom 59.3% dok XRP, SOL i LINK vode altcoin oporavak uz snažne institucionalne katalizatore. Bull režim aktivan uz macroPenalty 2 zbog aktivnog Bliskog istoka; Fed govor Warsha u petak ključan za potvrdu nastavka rasta.",
     "warActive":  true,
-    "btcDom":  58.5,
-    "stableDom":  10.1,
-    "oil":  105.86
+    "btcDom":  59.3,
+    "stableDom":  9.9,
+    "oil":  106.20
 }
