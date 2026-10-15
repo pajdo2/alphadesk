@@ -1,19 +1,19 @@
 {
-    "dxy":  102.16,
-    "changeSummary":  "Tržišni uvjeti ostali stabilni od jutarnje analize — DXY se zadržao na 102.16, BTC drži ~$80.7K, Fear & Greed 53, bez značajnih promjena u makro okruženju.",
-    "lastUpdated":  "2026-10-15T15:00:00Z",
+    "dxy":  102.06,
+    "changeSummary":  "Makropodaci gotovo nepromijenjeni (DXY 102.06, FG 53), ali macroPenalty raste s 0 na 2 zbog aktivnih geopolitičkih rizika (Houthi napadi) koji guraju Brent naftu iznad $103.",
+    "lastUpdated":  "2026-10-15T17:00:00Z",
     "warnings":  {
                      "ACT":  [
 
                              ],
                      "MEME":  [
-                                  "Broad altcoin selloff, MEME tokeni pod pritiskom"
+                                 "Memecoin sektor pada s tržištem"
                               ],
                      "ANIME":  [
 
                                ],
                      "XRP":  [
-
+                                 "Pad ~5%, zero ETF tokovi 13.10."
                              ],
                      "BNB":  [
 
@@ -40,10 +40,10 @@
 
                                 ],
                      "SOL":  [
-
+                                 "Pad s $107, podrška na $104"
                              ],
                      "ADA":  [
-
+                                 "Bez kratkoročnog katalizatora"
                              ],
                      "PNUT":  [
 
@@ -52,8 +52,8 @@
 
                                ],
                      "ETH":  [
-                                 "ETH ispod $2.390 podrške, pad 6.2% u 24h",
-                                 "VanEck povukao Lido ETH ETF zahtjev"
+                                 "Pad 6.2%, VanEck Lido ETF zahtjev povučen",
+                                 "DeFi pada 11% uz ETH slabljenjem"
                              ],
                      "LINK":  [
 
@@ -62,16 +62,16 @@
 
                               ],
                      "TRUMP":  [
-
+                                   "Bez katalizatora, opće tržišno slabljenje"
                                ],
                      "BTC":  [
-                                 "Vrući CPI, Fed rate hike odds na 48%",
-                                 "$69M BTC likvidacija, cross-asset risk-off"
+                                 "CPI 3.7% revives Fed hike odds 48%",
+                                 "ETF odljevi BTC+ETH $391M jednodnevno"
                              ]
                  },
-    "sp500Ret5d":  -1.1,
+    "sp500Ret5d":  -1.2,
     "fearGreed":  53,
-    "macroPenalty":  0,
+    "macroPenalty":  2,
     "catalysts":  {
                       "ACT":  [
 
@@ -83,17 +83,20 @@
 
                                 ],
                       "XRP":  [
-                                  "Evernorth IPO na Nasdaqu, posredna XRP izloženost",
-                                  "XRPL Foundation zakrpala kritičan bug"
+                                  "XRPN debitul na Nasdaqu 13.10.",
+                                  "XRPL kritični bug fix potvrđen"
                               ],
                       "BNB":  [
-
+                                  "Zero gas za USDC/USD1 do 31.10."
                               ],
                       "SUI":  [
-
+                                  "Hashi $500M Bitcoin pledges na Sui",
+                                  "CME Emerging Crypto Index inkluzija",
+                                  "Rekordni TPS 40.6M na Basecamp"
                               ],
                       "AVAX":  [
-
+                                   "Helicon mainnet upgrade dovršen",
+                                   "Schwab dodao AVAX 13.10."
                                ],
                       "PENGU":  [
 
@@ -111,10 +114,10 @@
 
                                  ],
                       "SOL":  [
-
+                                  "Schwab dodao SOL u kripto trading 13.10."
                               ],
                       "ADA":  [
-
+                                  "Leios test u tijeku, mainnet cilj studeni"
                               ],
                       "PNUT":  [
 
@@ -123,19 +126,21 @@
 
                                 ],
                       "ETH":  [
-
+                                  "Glamsterdam upgrade u razvoju"
                               ],
                       "LINK":  [
-
+                                   "CCIP 2.0 najavljeno krajem rujna"
                                ],
                       "PUMP":  [
-
+                                   "$65.6M prihoda u 30 dana",
+                                   "~$1M dnevnih PUMP token buybacka"
                                ],
                       "TRUMP":  [
 
                                 ],
                       "BTC":  [
-
+                                  "Whales akumuliraju ispod $81K",
+                                  "BTC dominacija raste na 59.4%"
                               ]
                   },
     "regime":  "CRAB",
@@ -143,28 +148,28 @@
                            "ACT":  0,
                            "MEME":  -1,
                            "ANIME":  0,
-                           "XRP":  1,
-                           "BNB":  0,
-                           "SUI":  0,
-                           "AVAX":  0,
+                           "XRP":  0,
+                           "BNB":  1,
+                           "SUI":  2,
+                           "AVAX":  1,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  0,
-                           "ADA":  0,
+                           "SOL":  1,
+                           "ADA":  -1,
                            "PNUT":  0,
                            "AIXBT":  0,
                            "ETH":  -2,
-                           "LINK":  0,
-                           "PUMP":  0,
-                           "TRUMP":  0,
+                           "LINK":  1,
+                           "PUMP":  1,
+                           "TRUMP":  -1,
                            "BTC":  -1
                        },
-    "aiSummary":  "DXY se stabilizirao na 102.16 nakon što je ispravilo skok izazvan vrućim core CPI podatkom za rujan, no uzdignutih Fed rate hike odda (~48%) i dalje guše apetit za rizičnom imovinom. Fear & Greed indeks ostaje na 53 (neutralno), BTC oscilira oko $80.7K uz $69M likvidacija, a ETH pada 6.2% uz povlačenje VanEckovog Lido ETF zahtjeva. Tržište ostaje u CRAB fazi — ključni katalizator za smjer bit će Fed najava krajem listopada.",
-    "warActive":  false,
-    "btcDom":  59.5,
-    "stableDom":  10.7,
-    "oil":  104.5
+    "aiSummary":  "DXY se blago spustio na 102.06 nakon skoka izazvanog vrućim CPI podatkom za rujan (3.7% YoY), no uzdignutih Fed rate hike odds (~48%) i dalje guše apetit za rizičnom imovinom. Fear & Greed indeks pao s 62 na 53 (neutralno) jednodnevno, BTC oscilira oko $80.9K uz $391M ETF odljeva i ETH pada 6.2% nakon povlačenja VanEckovog Lido ETF zahtjeva, a geopolitička napetost (Houthi napadi na Saudijsku Arabiju) gura Brent naftu na $103.89. Tržište ostaje u CRAB fazi uz povišeni macroPenalty — ključni katalizator za smjer bit će Fed najava krajem listopada.",
+    "warActive":  true,
+    "btcDom":  59.4,
+    "stableDom":  10.65,
+    "oil":  103.89
 }
