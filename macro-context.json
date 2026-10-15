@@ -1,19 +1,19 @@
 {
-    "dxy":  102.10,
-    "changeSummary":  "Fear & Greed skočio s 57 na 62, DXY oslabio na 102.10 pred CPI, BTC stabilan oko $83K dok XRP, SOL i LINK bilježe snažne pozitivne katalizatore.",
-    "lastUpdated":  "2026-10-14T09:00:00Z",
+    "dxy":  102.16,
+    "changeSummary":  "Fear & Greed pao s 62 na 53, BTC klizao s ~$83K na ~$80.7K uz CPI šok koji je pokrenuo risk-off i prijelaz iz BULL u CRAB režim.",
+    "lastUpdated":  "2026-10-15T09:00:00Z",
     "warnings":  {
                      "ACT":  [
 
                              ],
                      "MEME":  [
-                                 "6 od 7 top Solana meme coina crveno zadnjih 7 dana"
+                                 "Meme tokeni pod pritiskom risk-off sentimenta"
                               ],
                      "ANIME":  [
 
                                ],
                      "XRP":  [
-                                 "Altcoini slabi unatoč katalizatorima — provjeri volumen"
+
                              ],
                      "BNB":  [
 
@@ -22,19 +22,19 @@
 
                              ],
                      "AVAX":  [
-                                 "Slabost altcoina nastavlja se, prethodni pad -6.38%"
+                                  "DeFi sektor pao 11%, altcoini pod pritiskom"
                               ],
                      "PENGU":  [
-                                   "-15.8% tjedno usprkos kratkoročnom penguin proboju"
+                                   "Meme token ranjiv u risk-off okruženju"
                                ],
                      "BOME":  [
-
+                                  "Meme token ranjiv u risk-off okruženju"
                               ],
                      "DOGS":  [
-
+                                  "Meme token ranjiv u risk-off okruženju"
                               ],
                      "NOT":  [
-
+                                 "TON ekosustav pod pritiskom risk-off poteza"
                              ],
                      "PEOPLE":  [
 
@@ -49,26 +49,28 @@
 
                               ],
                      "AIXBT":  [
-                                   "AI Rig Complex -26.4% — rizik širenja pada na AI tokene"
+
                                ],
                      "ETH":  [
-                                 "ETH/BTC ratio slab — altcoini ne prate BTC oporavak"
+                                 "VanEck povukao Lido ETH ETF zahtjev pred SEC-om",
+                                 "ETH -6.2%, DeFi sektor pao 11%"
                              ],
                      "LINK":  [
-
+                                  "DeFi sektor pao 11%, LINK pod pojačanim pritiskom"
                               ],
                      "PUMP":  [
 
                               ],
                      "TRUMP":  [
-                                   "-11.8% tjedno, 98% ispod ATH — distribucija rizik"
+                                   "Meme token ranjiv u risk-off okruženju"
                                ],
                      "BTC":  [
-                                 "Dormant whale 4582 BTC ($378M) premješten — distribucija?"
+                                 "Vrući CPI podigao Fed rate hike strahove",
+                                 "69M USD BTC likvidacija u risk-off potezu"
                              ]
                  },
-    "sp500Ret5d":  0.8,
-    "fearGreed":  62,
+    "sp500Ret5d":  -1.1,
+    "fearGreed":  53,
     "macroPenalty":  2,
     "catalysts":  {
                       "ACT":  [
@@ -81,11 +83,10 @@
 
                                 ],
                       "XRP":  [
-                                  "4. korejski partner Meritz Securities potpisan",
-                                  "XRPN Nasdaq listing — Evernorth drži 473M XRP"
+
                               ],
                       "BNB":  [
-                                  "Binance otvara trading dionicama i ETF-ovima"
+
                               ],
                       "SUI":  [
 
@@ -94,10 +95,10 @@
 
                                ],
                       "PENGU":  [
-                                    "Meme coin volumeni na 2026 maximumu — penguin proboj"
+
                                 ],
                       "BOME":  [
-                                   "+9.1% tjedno — jedini zeleni Solana meme coin"
+
                                ],
                       "DOGS":  [
 
@@ -109,11 +110,10 @@
 
                                  ],
                       "SOL":  [
-                                  "Alpenglow upgrade: finality 12s→150ms Q4 2026",
-                                  "USDU stablecoin lansiran na Solani 13.10."
+
                               ],
                       "ADA":  [
-                                  "Oporavak s dna, CPI može pokrenuti konsolidaciju"
+
                               ],
                       "PNUT":  [
 
@@ -122,49 +122,48 @@
 
                                 ],
                       "ETH":  [
-                                  "CPI data ključan za proboj iznad $2,500"
+
                               ],
                       "LINK":  [
-                                   "UBS/Swift CCIP pilot — RWA tokenizacija live"
+
                                ],
                       "PUMP":  [
 
                                ],
                       "TRUMP":  [
-                                    "Trump organizira galu za meme coin investitore"
+
                                 ],
                       "BTC":  [
-                                  "CPI 14.10. 14:30 CET — ključni katalizator smjera",
-                                  "Oporavak s $80.345K prema $83.4K potvrđen"
+                                  "SEC odobrio CBOE binarne opcije na kripto KPI indekse"
                               ]
                   },
-    "regime":  "BULL",
+    "regime":  "CRAB",
     "sentimentScore":  {
                            "ACT":  0,
                            "MEME":  -1,
                            "ANIME":  0,
-                           "XRP":  2,
-                           "BNB":  2,
+                           "XRP":  0,
+                           "BNB":  0,
                            "SUI":  0,
-                           "AVAX":  0,
-                           "PENGU":  1,
-                           "BOME":  1,
-                           "DOGS":  0,
-                           "NOT":  0,
-                           "PEOPLE":  0,
-                           "SOL":  2,
+                           "AVAX":  -1,
+                           "PENGU":  -1,
+                           "BOME":  -1,
+                           "DOGS":  -1,
+                           "NOT":  -1,
+                           "PEOPLE":  -1,
+                           "SOL":  -1,
                            "ADA":  0,
-                           "PNUT":  0,
-                           "AIXBT":  -2,
-                           "ETH":  0,
-                           "LINK":  2,
-                           "PUMP":  0,
-                           "TRUMP":  0,
-                           "BTC":  1
+                           "PNUT":  -1,
+                           "AIXBT":  0,
+                           "ETH":  -2,
+                           "LINK":  -1,
+                           "PUMP":  -1,
+                           "TRUMP":  -1,
+                           "BTC":  -1
                        },
-    "aiSummary":  "DXY oslabio na 102.10 pred CPI objavu 14.10. koja je ključni katalizator smjera — niža inflacija može pojačati risk-on i probiti BTC iznad $84K. Fear & Greed skočio s 57 na 62 (pohlepa), BTC fluktuira oko $83K s dominacijom 59.3% dok XRP, SOL i LINK vode altcoin oporavak uz snažne institucionalne katalizatore. Bull režim aktivan uz macroPenalty 2 zbog aktivnog Bliskog istoka; Fed govor Warsha u petak ključan za potvrdu nastavka rasta.",
+    "aiSummary":  "DXY stabiliziran na 102.16 nakon kratkoročnog skoka na CPI podatku, no vrući core CPI za rujan pokrenuo je Fed rate hike strahove i cross-asset risk-off potez. Fear & Greed indeks pao s 62 na 53 (neutralno), BTC klizao na ~$80.7K uz $69M likvidacija, ETH pao 6.2% uz povlačenje VanEckovog Lido ETH ETF zahtjeva. Tržište ulazi u CRAB fazu — volatilnost ostaje povišena dok se čekaju daljnji Fed signali.",
     "warActive":  true,
-    "btcDom":  59.3,
-    "stableDom":  9.9,
-    "oil":  106.20
+    "btcDom":  59.5,
+    "stableDom":  10.6,
+    "oil":  104.5
 }
