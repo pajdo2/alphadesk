@@ -9465,7 +9465,20 @@
       "correct": null,
       "fwdPrice": null,
       "fwdPct": null
+    },
+    {
+      "ts": 1792053349075,
+      "price": 81004.83,
+      "dir": "DOWN",
+      "th": 3.17,
+      "conf": 38,
+      "score": -3.2,
+      "verdict": "🔴 Preskoči",
+      "graded": false,
+      "correct": null,
+      "fwdPrice": null,
+      "fwdPct": null
     }
   ],
-  "updatedAt": "2026-10-15T06:27:42.182Z"
+  "updatedAt": "2026-10-15T08:35:55.002Z"
 }
