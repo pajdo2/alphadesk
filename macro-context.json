@@ -1,6 +1,6 @@
 {
-    "dxy":  102.00,
-    "changeSummary":  "Fear & Greed skočio s 53 na 64, BTC porastao na $82K uz dominanciju 60% — tržište prešlo iz CRAB u BULL fazu, DXY stabilan oko 102, nafta porasla na $105.",
+    "dxy":  102.0,
+    "changeSummary":  "Fear & Greed ostao stabilan na 63, BTC zadržan na $82K uz dominanciju 60%, a macroPenalty pao s 2 na 0 jer DXY i nafta nisu dosegli penalizacijske pragove.",
     "lastUpdated":  "2026-10-16T17:00:00Z",
     "warnings":  {
                      "ACT":  [
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-
+                               "Ispod 50-dnevnog EMA, spori oporavak"
                              ],
                      "LINK":  [
 
@@ -61,15 +61,15 @@
 
                               ],
                      "TRUMP":  [
-                                   "SEC kripto okvir — komentari do 20. 10."
+
                                ],
                      "BTC":  [
-                                 "PPI 6.3% — Fed rate hike odds rastu, pritisak na rizičnu imovinu"
+                               "PPI 6.3% povisuje Fed pritisak na kamate"
                              ]
                  },
-    "sp500Ret5d":  -1.2,
-    "fearGreed":  64,
-    "macroPenalty":  2,
+    "sp500Ret5d":  0.33,
+    "fearGreed":  63,
+    "macroPenalty":  0,
     "catalysts":  {
                       "ACT":  [
 
@@ -81,16 +81,13 @@
 
                                 ],
                       "XRP":  [
-                                  "Evernorth XRP Treasury Nasdaq debut — inst. izloženost",
-                                  "XRPL Batch V1.1 aktivan od 9. 10.",
-                                  "Swell NYC konferencija 27-29. 10."
+
                               ],
                       "BNB":  [
-                                  "BNB Chain AI-agent tržišna ekspanzija"
+
                               ],
                       "SUI":  [
-                                  "Samsung Wallet USDC integracija na 82M Galaxy uređaja",
-                                  "Sui $30M ulaganje u DATA Network AI"
+
                               ],
                       "AVAX":  [
 
@@ -111,8 +108,7 @@
 
                                  ],
                       "SOL":  [
-                                  "Samsung Wallet USDC cross-border na 82M Galaxy uređaja",
-                                  "Solana Mobile — Ledger Atom hardware partner"
+                                "Solana Mobile + Ledger Atom partnerstvo"
                               ],
                       "ADA":  [
 
@@ -124,11 +120,10 @@
 
                                 ],
                       "ETH":  [
-                                  "Lido cross-chain staking na 4 L2 bez bridginga (CCIP)"
+                                "Aave razmatra nativni BTC kolateral (Babylon)"
                               ],
                       "LINK":  [
-                                   "Chainlink Data Feeds na Stellar — $4B RWA",
-                                   "Lido L2 staking pokrenut Chainlink CCIP-om"
+
                                ],
                       "PUMP":  [
 
@@ -137,8 +132,7 @@
 
                                 ],
                       "BTC":  [
-                                  "Institucijska kupnja 24,869 BTC — bullish signal",
-                                  "Aave razmatra nativni BTC kolateral via Babylon"
+                                "Strategy kupio 24,869 BTC za $2.01B"
                               ]
                   },
     "regime":  "BULL",
@@ -146,28 +140,28 @@
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  2,
-                           "BNB":  1,
-                           "SUI":  2,
+                           "XRP":  0,
+                           "BNB":  0,
+                           "SUI":  0,
                            "AVAX":  0,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  2,
+                           "SOL":  1,
                            "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  1,
-                           "LINK":  1,
+                           "ETH":  0,
+                           "LINK":  0,
                            "PUMP":  0,
                            "TRUMP":  0,
                            "BTC":  1
                        },
-    "aiSummary":  "DXY ostao stabilan oko 102.00 nakon povlačenja s 18-mjesečnih maksimuma, no američki PPI od 6.3% zadržava Fed rate hike pritisak i guši apetit za rizičnom imovinom. Fear & Greed skočio s 53 na 64 (pohlepa), BTC se oporavio na $82K uz dominanciju 60% — tržište prešlo iz CRAB u BULL fazu potpomognuto institucionalnim kupnjama i katalizatorima poput Samsung-SUI/SOL integracije. Geopolitički rizici (nafta $105) i SEC regulatorni rok (20. 10.) ostaju ključni faktori neizvjesnosti.",
-    "warActive":  true,
+    "aiSummary":  "DXY se stabilizirao na 102.00 nakon povlačenja s 18-mjesečnih maksimuma, no američki PPI od 6.3% zadržava pritisak na Fed i guši apetit za rizičnom imovinom. Fear & Greed iznosi 63 (pohlepa), BTC se oporavio iznad $82K uz dominanciju 60% — tržište ostaje u BULL fazi potpomognuto institucionalnim kupnjama (Strategy $2B) i pozitivnim regulatornim signalima (White House kripto roadmap). Očekuje se konsolidacija u $80K-$85K rasponu uz oprez zbog inflacijskih iznenađenja i SEC aktivnosti.",
+    "warActive":  false,
     "btcDom":  60.0,
-    "stableDom":  11.1,
-    "oil":  105.34
+    "stableDom":  6.0,
+    "oil":  105.5
 }
