@@ -1,19 +1,19 @@
 {
-    "dxy":  102.06,
-    "changeSummary":  "Makropodaci gotovo nepromijenjeni (DXY 102.06, FG 53), ali macroPenalty raste s 0 na 2 zbog aktivnih geopolitičkih rizika (Houthi napadi) koji guraju Brent naftu iznad $103.",
-    "lastUpdated":  "2026-10-15T17:00:00Z",
+    "dxy":  102.00,
+    "changeSummary":  "Fear & Greed skočio s 53 na 64, BTC porastao na $82K uz dominanciju 60% — tržište prešlo iz CRAB u BULL fazu, DXY stabilan oko 102, nafta porasla na $105.",
+    "lastUpdated":  "2026-10-16T17:00:00Z",
     "warnings":  {
                      "ACT":  [
 
                              ],
                      "MEME":  [
-                                 "Memecoin sektor pada s tržištem"
+
                               ],
                      "ANIME":  [
 
                                ],
                      "XRP":  [
-                                 "Pad ~5%, zero ETF tokovi 13.10."
+
                              ],
                      "BNB":  [
 
@@ -40,10 +40,10 @@
 
                                 ],
                      "SOL":  [
-                                 "Pad s $107, podrška na $104"
+
                              ],
                      "ADA":  [
-                                 "Bez kratkoročnog katalizatora"
+
                              ],
                      "PNUT":  [
 
@@ -52,8 +52,7 @@
 
                                ],
                      "ETH":  [
-                                 "Pad 6.2%, VanEck Lido ETF zahtjev povučen",
-                                 "DeFi pada 11% uz ETH slabljenjem"
+
                              ],
                      "LINK":  [
 
@@ -62,15 +61,14 @@
 
                               ],
                      "TRUMP":  [
-                                   "Bez katalizatora, opće tržišno slabljenje"
+                                   "SEC kripto okvir — komentari do 20. 10."
                                ],
                      "BTC":  [
-                                 "CPI 3.7% revives Fed hike odds 48%",
-                                 "ETF odljevi BTC+ETH $391M jednodnevno"
+                                 "PPI 6.3% — Fed rate hike odds rastu, pritisak na rizičnu imovinu"
                              ]
                  },
     "sp500Ret5d":  -1.2,
-    "fearGreed":  53,
+    "fearGreed":  64,
     "macroPenalty":  2,
     "catalysts":  {
                       "ACT":  [
@@ -83,20 +81,19 @@
 
                                 ],
                       "XRP":  [
-                                  "XRPN debitul na Nasdaqu 13.10.",
-                                  "XRPL kritični bug fix potvrđen"
+                                  "Evernorth XRP Treasury Nasdaq debut — inst. izloženost",
+                                  "XRPL Batch V1.1 aktivan od 9. 10.",
+                                  "Swell NYC konferencija 27-29. 10."
                               ],
                       "BNB":  [
-                                  "Zero gas za USDC/USD1 do 31.10."
+                                  "BNB Chain AI-agent tržišna ekspanzija"
                               ],
                       "SUI":  [
-                                  "Hashi $500M Bitcoin pledges na Sui",
-                                  "CME Emerging Crypto Index inkluzija",
-                                  "Rekordni TPS 40.6M na Basecamp"
+                                  "Samsung Wallet USDC integracija na 82M Galaxy uređaja",
+                                  "Sui $30M ulaganje u DATA Network AI"
                               ],
                       "AVAX":  [
-                                   "Helicon mainnet upgrade dovršen",
-                                   "Schwab dodao AVAX 13.10."
+
                                ],
                       "PENGU":  [
 
@@ -114,10 +111,11 @@
 
                                  ],
                       "SOL":  [
-                                  "Schwab dodao SOL u kripto trading 13.10."
+                                  "Samsung Wallet USDC cross-border na 82M Galaxy uređaja",
+                                  "Solana Mobile — Ledger Atom hardware partner"
                               ],
                       "ADA":  [
-                                  "Leios test u tijeku, mainnet cilj studeni"
+
                               ],
                       "PNUT":  [
 
@@ -126,50 +124,50 @@
 
                                 ],
                       "ETH":  [
-                                  "Glamsterdam upgrade u razvoju"
+                                  "Lido cross-chain staking na 4 L2 bez bridginga (CCIP)"
                               ],
                       "LINK":  [
-                                   "CCIP 2.0 najavljeno krajem rujna"
+                                   "Chainlink Data Feeds na Stellar — $4B RWA",
+                                   "Lido L2 staking pokrenut Chainlink CCIP-om"
                                ],
                       "PUMP":  [
-                                   "$65.6M prihoda u 30 dana",
-                                   "~$1M dnevnih PUMP token buybacka"
+
                                ],
                       "TRUMP":  [
 
                                 ],
                       "BTC":  [
-                                  "Whales akumuliraju ispod $81K",
-                                  "BTC dominacija raste na 59.4%"
+                                  "Institucijska kupnja 24,869 BTC — bullish signal",
+                                  "Aave razmatra nativni BTC kolateral via Babylon"
                               ]
                   },
-    "regime":  "CRAB",
+    "regime":  "BULL",
     "sentimentScore":  {
                            "ACT":  0,
-                           "MEME":  -1,
+                           "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  0,
+                           "XRP":  2,
                            "BNB":  1,
                            "SUI":  2,
-                           "AVAX":  1,
+                           "AVAX":  0,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  1,
-                           "ADA":  -1,
+                           "SOL":  2,
+                           "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  -2,
+                           "ETH":  1,
                            "LINK":  1,
-                           "PUMP":  1,
-                           "TRUMP":  -1,
-                           "BTC":  -1
+                           "PUMP":  0,
+                           "TRUMP":  0,
+                           "BTC":  1
                        },
-    "aiSummary":  "DXY se blago spustio na 102.06 nakon skoka izazvanog vrućim CPI podatkom za rujan (3.7% YoY), no uzdignutih Fed rate hike odds (~48%) i dalje guše apetit za rizičnom imovinom. Fear & Greed indeks pao s 62 na 53 (neutralno) jednodnevno, BTC oscilira oko $80.9K uz $391M ETF odljeva i ETH pada 6.2% nakon povlačenja VanEckovog Lido ETF zahtjeva, a geopolitička napetost (Houthi napadi na Saudijsku Arabiju) gura Brent naftu na $103.89. Tržište ostaje u CRAB fazi uz povišeni macroPenalty — ključni katalizator za smjer bit će Fed najava krajem listopada.",
+    "aiSummary":  "DXY ostao stabilan oko 102.00 nakon povlačenja s 18-mjesečnih maksimuma, no američki PPI od 6.3% zadržava Fed rate hike pritisak i guši apetit za rizičnom imovinom. Fear & Greed skočio s 53 na 64 (pohlepa), BTC se oporavio na $82K uz dominanciju 60% — tržište prešlo iz CRAB u BULL fazu potpomognuto institucionalnim kupnjama i katalizatorima poput Samsung-SUI/SOL integracije. Geopolitički rizici (nafta $105) i SEC regulatorni rok (20. 10.) ostaju ključni faktori neizvjesnosti.",
     "warActive":  true,
-    "btcDom":  59.4,
-    "stableDom":  10.65,
-    "oil":  103.89
+    "btcDom":  60.0,
+    "stableDom":  11.1,
+    "oil":  105.34
 }
