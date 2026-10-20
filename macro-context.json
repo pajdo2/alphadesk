@@ -1,7 +1,7 @@
 {
-    "dxy":  102.08,
-    "changeSummary":  "DXY blago porastao na 102.08, Fear & Greed ostao gotovo nepromijenjen (60 vs 59), BTC drži $82K uz nove CME futures katalizatore dok S&P 500 bilježi tjedni pad od 1.9%.",
-    "lastUpdated":  "2026-10-19T12:00:00Z",
+    "dxy":  101.9,
+    "changeSummary":  "DXY pao s 102.08 na 101.9 uz porast nafte na $101, dok Schwabova najava dodavanja SOL/AVAX/LINK i BlackRockov rekordni IBIT pritjev od $665M donose pozitivni impuls tržištu.",
+    "lastUpdated":  "2026-10-20T12:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -13,13 +13,13 @@
 
                                ],
                      "XRP":  [
-
+                             "XRP pada ispod tjedne EMA200, rizik daljnjeg slabljenja."
                              ],
                      "BNB":  [
 
                              ],
                      "SUI":  [
-                                 "SUI suočava se s tehničkim otporom - oprez"
+
                              ],
                      "AVAX":  [
 
@@ -40,7 +40,7 @@
 
                                 ],
                      "SOL":  [
-
+                             "SOL spot ETF: $12.67M odljeva 17.10., institucijsko slabljenje."
                              ],
                      "ADA":  [
 
@@ -64,11 +64,11 @@
 
                                ],
                      "BTC":  [
-                                 "Flash crash vikend - ETF odljevi, Black Monday rizik"
+
                              ]
                  },
-    "sp500Ret5d":  -1.9,
-    "fearGreed":  60,
+    "sp500Ret5d":  -1.5,
+    "fearGreed":  56,
     "macroPenalty":  0,
     "catalysts":  {
                       "ACT":  [
@@ -81,7 +81,7 @@
 
                                 ],
                       "XRP":  [
-                                  "XRP rebound - J. Koreja razmatra odgodu kripto poreza"
+
                               ],
                       "BNB":  [
 
@@ -90,7 +90,8 @@
 
                               ],
                       "AVAX":  [
-
+                               "Schwab dodaje AVAX - pristup 39.9M računa do Q4.",
+                               "Dubai DIFC: sudski nalozi zapisuju se na AVAX lancu."
                                ],
                       "PENGU":  [
 
@@ -108,7 +109,8 @@
 
                                  ],
                       "SOL":  [
-                                  "Solana Alpenglow consensus upgrade nadolazi"
+                              "Schwab dodaje SOL - pristup 39.9M računa do Q4.",
+                              "RWA tržište na Solani: $4.3B (+600% godišnje)."
                               ],
                       "ADA":  [
 
@@ -120,10 +122,11 @@
 
                                 ],
                       "ETH":  [
-                                  "Glamsterdam upgrade u pripremi - pozitivan fundament"
+                              "JPMorgan širi JPM Coin na Ethereum za institucije.",
+                              "Bitmine dodaje ETH u trezor (+12,535 ETH)."
                               ],
                       "LINK":  [
-                                   "DeFi tokeni predvode altcoin rast"
+                               "Schwab dodaje LINK - pristup 39.9M računa do Q4."
                                ],
                       "PUMP":  [
 
@@ -132,8 +135,8 @@
 
                                 ],
                       "BTC":  [
-                                  "BTC testira otpor $82.5K-$83K zonu",
-                                  "CME uvodi BCH i UNI futures - pozitivan signal"
+                              "BlackRock IBIT: $665M pritjev, rekor od listopada 2025.",
+                              "Strategy na pragu zlatnog križa, bullish signal."
                               ]
                   },
     "regime":  "BULL",
@@ -141,10 +144,10 @@
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  1,
+                           "XRP":  -1,
                            "BNB":  0,
-                           "SUI":  -1,
-                           "AVAX":  0,
+                           "SUI":  0,
+                           "AVAX":  2,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
@@ -154,15 +157,15 @@
                            "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  1,
-                           "LINK":  1,
+                           "ETH":  2,
+                           "LINK":  2,
                            "PUMP":  0,
                            "TRUMP":  0,
-                           "BTC":  1
+                           "BTC":  2
                        },
-    "aiSummary":  "DXY blago porastao na 102.08, ostaje u neutralnoj zoni bez agresivnog rasta dolara koji bi mogao opteretiti kripto tržišta. Fear & Greed indeks na 60 odražava umjerenu pohlepu dok BTC drži oporavak iznad $82,000, unatoč tjednom padu S&P 500 od 1.9% i prolaznom flash crashu vikendom. Visoka BTC dominacija od 59.4% nastavlja ograničavati altseason, ali CME uvođenje novih futures proizvoda i regulatorni razvoji u Južnoj Koreji donose pozitivne kratkoročne impulse.",
+    "aiSummary":  "DXY lagano pao na 101.9, zadržava neutralnu zonu bez agresivnog rasta dolara koji bi opteretio kripto. Fear & Greed na 56 odražava umjerenu pohlepu dok BTC konsolidira oko $82,000 uz rekordni BlackRockov IBIT pritjev od $665M od 2025. Schwabova najava dodavanja SOL, AVAX i LINK donosi snažan bullish impuls za mid-cap altcoine, no visoka BTC dominacija od 59.8% i dalje koči širi altseason.",
     "warActive":  false,
-    "btcDom":  59.4,
-    "stableDom":  10.8,
-    "oil":  100.4
+    "btcDom":  59.8,
+    "stableDom":  11.2,
+    "oil":  101.0
 }
