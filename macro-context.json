@@ -1,134 +1,150 @@
 {
-    "dxy":  101.8,
-    "changeSummary":  "Nafta (Brent) skočila s $100.5 na $110 zbog Houthi napada pa raste macroPenalty na 3, F&G porastao s 56 na 63, SOL aktivirao Alpenglow upgrade (150ms finalnost), a BlackRock IBIT zabilježio rekordni dnevni ETF pritok od $665M.",
-    "lastUpdated":  "2026-10-21T14:00:00Z",
+    "dxy":  101.77,
+    "changeSummary":  "BTC dominacija pala s 60.1% na 57.8% uz blage naznake altseason-a, SOL lansirao Alpenglow upgrade, nafta ostaje iznad $110 s aktivnim geopolitičkim rizicima, Fear & Greed stabilan na 63.",
+    "lastUpdated":  "2026-10-21T10:00:00Z",
     "warnings":  {
                      "ACT":  [
-                             "BTC dom 60% blokira altseason momentum"
+
                              ],
                      "MEME":  [
-                              "BTC dom 60% blokira altseason momentum"
+                                 "Visoka volatilnost, nema fundamentalnih katalizatora"
                               ],
                      "ANIME":  [
-                               "BTC dom 60% blokira altseason momentum"
+                                   "Spekulativni token bez aktivnih katalizatora"
                                ],
                      "XRP":  [
+                                 "Tjedni pad -6%, nestabilna cijena"
                              ],
                      "BNB":  [
+
                              ],
                      "SUI":  [
-                             "BTC dom 60% blokira altseason momentum"
+
                              ],
                      "AVAX":  [
+
                               ],
                      "PENGU":  [
-                               "BTC dom 60% blokira altseason momentum"
+
                                ],
                      "BOME":  [
-                              "BTC dom 60% blokira altseason momentum"
+                                  "Nema fundamentalnih katalizatora, čisto špekulativno"
                               ],
                      "DOGS":  [
-                              "BTC dom 60% blokira altseason momentum"
+                                  "Spekulativni meme token bez utiliteta"
                               ],
                      "NOT":  [
-                             "BTC dom 60% blokira altseason momentum"
+                                 "Nema aktivnih katalizatora, niska likvidnost"
                              ],
                      "PEOPLE":  [
-                                "BTC dom 60% blokira altseason momentum"
+                                    "Spekulativni token bez jasnih pokretača"
                                 ],
                      "SOL":  [
+
                              ],
                      "ADA":  [
+
                              ],
                      "PNUT":  [
-                              "BTC dom 60% blokira altseason momentum"
+                                  "Čisto špekulativni token, bez utiliteta"
                               ],
                      "AIXBT":  [
-                               "BTC dom 60% blokira altseason momentum"
+
                                ],
                      "ETH":  [
-                             "S&P 500 -1.9% tjedno, risk-off pritisak"
+
                              ],
                      "LINK":  [
+
                               ],
                      "PUMP":  [
-                              "BTC dom 60% blokira altseason momentum"
+                                  "Visok rizik, spekulativni narrativ"
                               ],
                      "TRUMP":  [
-                               "BTC dom 60% blokira altseason momentum"
+                                   "Insider prodaja: 81.87M tokena na CEX ($249M)"
                                ],
                      "BTC":  [
-                             "Nafta Brent $110+, geopolitički rizik pojačan",
-                             "S&P 500 -1.9% tjedno, risk-off sentiment"
+
                              ]
                  },
-    "sp500Ret5d":  -1.9,
+    "sp500Ret5d":  -1.94,
     "fearGreed":  63,
     "macroPenalty":  3,
     "catalysts":  {
                       "ACT":  [
+                                  "AI meme token, rast AI agent narativa"
                               ],
                       "MEME":  [
+
                                ],
                       "ANIME":  [
+
                                 ],
                       "XRP":  [
+                                  "Oporavak +2.4% nakon tjednog pada od -6%"
                               ],
                       "BNB":  [
+
                               ],
                       "SUI":  [
+
                               ],
                       "AVAX":  [
-                               "Charles Schwab dodaje AVAX na kripto platformu",
-                               "Ava Labs urges SEC za digitalni commodity status"
+                                   "Schwab listing + DIFC sudbeni zapisi na C-Chainu"
                                ],
                       "PENGU":  [
+                                    "AI modeli biraju PENGU za listopadski rally"
                                 ],
                       "BOME":  [
+
                                ],
                       "DOGS":  [
+
                                ],
                       "NOT":  [
+
                               ],
                       "PEOPLE":  [
+
                                  ],
                       "SOL":  [
-                              "Alpenglow upgrade danas: 150ms finalnost aktivna",
-                              "Charles Schwab dodaje SOL na kripto platformu"
+                                  "Alpenglow live: 150ms finalnost, 85x brže"
                               ],
                       "ADA":  [
-                              "Cardano Fnd. traži od SECa kodificiranje statusa"
+                                  "Leios testnet aktivan"
                               ],
                       "PNUT":  [
+
                                ],
                       "AIXBT":  [
+                                    "Rast AI agent narativa u kripto sektoru"
                                 ],
                       "ETH":  [
-                              "DeFi raste 3.4%, ETH +1.5% uz povećan volumen"
+                                  "Tržišni rast +1.5%, DeFi sektor +3.4%"
                               ],
                       "LINK":  [
-                               "Charles Schwab dodaje LINK na kripto platformu",
-                               "Chainlink Labs urges SEC za digitalni status"
+                                   "Schwab integracija potvrđena do kraja 2026"
                                ],
                       "PUMP":  [
+
                                ],
                       "TRUMP":  [
+
                                 ],
                       "BTC":  [
-                              "BlackRock IBIT ETF $665M rekordni dnevni pritok",
-                              "BTC raste +1.05%, konsolidacija oko $82,600"
+                                  "ETF pritok $526.7M, konsolidacija na $82,700"
                               ]
                   },
     "regime":  "BULL",
     "sentimentScore":  {
-                           "ACT":  0,
+                           "ACT":  1,
                            "MEME":  0,
                            "ANIME":  0,
                            "XRP":  0,
                            "BNB":  0,
                            "SUI":  0,
                            "AVAX":  2,
-                           "PENGU":  0,
+                           "PENGU":  2,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
@@ -136,16 +152,16 @@
                            "SOL":  3,
                            "ADA":  1,
                            "PNUT":  0,
-                           "AIXBT":  0,
+                           "AIXBT":  1,
                            "ETH":  1,
                            "LINK":  2,
                            "PUMP":  0,
-                           "TRUMP":  0,
+                           "TRUMP":  -1,
                            "BTC":  2
                        },
-    "aiSummary":  "DXY ostaje stabilan na ~101.8 bez pritiska na kripto, no nafta (Brent) skočila je na $110+ zbog Houthi napada i tenzija na Bliskom istoku što aktivira warActive i podiže macroPenalty na 3. Fear & Greed porastao je na 63 (Pohlepa) uz BTC koji konsolidira oko $82,600 s rekordnim BlackRock IBIT ETF pritokom od $665M te ključnim Alpenglow upgradeom na Solani koji donosi 150ms finalnost. BTC dominacija drži se na ~60% blokirajući širi altseason, no selektivne prilike postoje kod SOL (upgrade), LINK i AVAX (Schwab integracija i SEC koalicija).",
+    "aiSummary":  "DXY ostaje stabilan na ~101.8 bez pritiska na kripto, no nafta (Brent) drži se iznad $110 zbog perzistentnih bliskoistočnih tenzija što zadržava warActive i macroPenalty na 3. Fear & Greed stabilan je na 63 (Pohlepa) uz BTC koji konsolidira oko $82,700 s ETF pritokom od $526.7M te historijskim Alpenglow upgradeom na Solani koji donosi 85x bržu finalnost i 60% niže troškove validatora. BTC dominacija pala je s 60.1% na ~57.8% što otvara selektivne prilike u altcoinima, posebno SOL (upgrade), LINK i AVAX (Schwab integracija), dok S&P 500 pada -1.94% tjedno signalizirajući blagi risk-off.",
     "warActive":  true,
-    "btcDom":  60.1,
+    "btcDom":  57.8,
     "stableDom":  10.5,
-    "oil":  110.0
+    "oil":  110.4
 }
