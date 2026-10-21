@@ -1,19 +1,19 @@
 {
-    "dxy":  101.77,
-    "changeSummary":  "BTC dominacija pala s 60.1% na 57.8% uz blage naznake altseason-a, SOL lansirao Alpenglow upgrade, nafta ostaje iznad $110 s aktivnim geopolitičkim rizicima, Fear & Greed stabilan na 63.",
-    "lastUpdated":  "2026-10-21T10:00:00Z",
+    "dxy":  101.76,
+    "changeSummary":  "BTC dominacija porasla je s 57.8% na ~59.5% dok altcoini slabe, a Solana aktivira Alpenglow upgrade na mainnet-beta uz nepromijenjene makro uvjete.",
+    "lastUpdated":  "2026-10-21T14:00:00Z",
     "warnings":  {
                      "ACT":  [
 
                              ],
                      "MEME":  [
-                                 "Visoka volatilnost, nema fundamentalnih katalizatora"
+
                               ],
                      "ANIME":  [
-                                   "Spekulativni token bez aktivnih katalizatora"
+
                                ],
                      "XRP":  [
-                                 "Tjedni pad -6%, nestabilna cijena"
+                         "XRP u četvrtoj korekciji, volatilnost moguća"
                              ],
                      "BNB":  [
 
@@ -28,16 +28,16 @@
 
                                ],
                      "BOME":  [
-                                  "Nema fundamentalnih katalizatora, čisto špekulativno"
+
                               ],
                      "DOGS":  [
-                                  "Spekulativni meme token bez utiliteta"
+
                               ],
                      "NOT":  [
-                                 "Nema aktivnih katalizatora, niska likvidnost"
+
                              ],
                      "PEOPLE":  [
-                                    "Spekulativni token bez jasnih pokretača"
+
                                 ],
                      "SOL":  [
 
@@ -46,7 +46,7 @@
 
                              ],
                      "PNUT":  [
-                                  "Čisto špekulativni token, bez utiliteta"
+
                               ],
                      "AIXBT":  [
 
@@ -58,30 +58,30 @@
 
                               ],
                      "PUMP":  [
-                                  "Visok rizik, spekulativni narrativ"
+
                               ],
                      "TRUMP":  [
-                                   "Insider prodaja: 81.87M tokena na CEX ($249M)"
+
                                ],
                      "BTC":  [
-
+                         "BTC u godišnjem gubitku -23%, zaostaje za zlatom i dionicama"
                              ]
                  },
-    "sp500Ret5d":  -1.94,
+    "sp500Ret5d":  -1.9,
     "fearGreed":  63,
     "macroPenalty":  3,
     "catalysts":  {
                       "ACT":  [
-                                  "AI meme token, rast AI agent narativa"
+
                               ],
                       "MEME":  [
-
+                          "PEPE i privacy coini u reboundu, meme sentiment raste"
                                ],
                       "ANIME":  [
 
                                 ],
                       "XRP":  [
-                                  "Oporavak +2.4% nakon tjednog pada od -6%"
+                          "Historijski: korekcija prethodi snažnom rallyu"
                               ],
                       "BNB":  [
 
@@ -90,10 +90,10 @@
 
                               ],
                       "AVAX":  [
-                                   "Schwab listing + DIFC sudbeni zapisi na C-Chainu"
+
                                ],
                       "PENGU":  [
-                                    "AI modeli biraju PENGU za listopadski rally"
+
                                 ],
                       "BOME":  [
 
@@ -108,22 +108,24 @@
 
                                  ],
                       "SOL":  [
-                                  "Alpenglow live: 150ms finalnost, 85x brže"
+                          "Alpenglow upgrade aktivan na mainnet-beta danas",
+                          "85x brža finalnost, 60% niži validator troškovi"
                               ],
                       "ADA":  [
-                                  "Leios testnet aktivan"
+
                               ],
                       "PNUT":  [
 
                                ],
                       "AIXBT":  [
-                                    "Rast AI agent narativa u kripto sektoru"
+
                                 ],
                       "ETH":  [
-                                  "Tržišni rast +1.5%, DeFi sektor +3.4%"
+                          "ETH staking rekord: 43.8M kovanica (35.9% supply)",
+                          "Bitmine dodao $390M ETH u korporativnu riznicu"
                               ],
                       "LINK":  [
-                                   "Schwab integracija potvrđena do kraja 2026"
+
                                ],
                       "PUMP":  [
 
@@ -132,36 +134,37 @@
 
                                 ],
                       "BTC":  [
-                                  "ETF pritok $526.7M, konsolidacija na $82,700"
+                          "ETF pritoci pozitivni, oporavak na $82.7K+",
+                          "JP Morgan rangira BTC na prvom mjestu imovine"
                               ]
                   },
     "regime":  "BULL",
     "sentimentScore":  {
-                           "ACT":  1,
-                           "MEME":  0,
+                           "ACT":  0,
+                           "MEME":  1,
                            "ANIME":  0,
-                           "XRP":  0,
+                           "XRP":  -1,
                            "BNB":  0,
                            "SUI":  0,
-                           "AVAX":  2,
-                           "PENGU":  2,
+                           "AVAX":  0,
+                           "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  3,
-                           "ADA":  1,
+                           "SOL":  2,
+                           "ADA":  0,
                            "PNUT":  0,
-                           "AIXBT":  1,
-                           "ETH":  1,
-                           "LINK":  2,
+                           "AIXBT":  0,
+                           "ETH":  2,
+                           "LINK":  0,
                            "PUMP":  0,
-                           "TRUMP":  -1,
-                           "BTC":  2
+                           "TRUMP":  0,
+                           "BTC":  1
                        },
-    "aiSummary":  "DXY ostaje stabilan na ~101.8 bez pritiska na kripto, no nafta (Brent) drži se iznad $110 zbog perzistentnih bliskoistočnih tenzija što zadržava warActive i macroPenalty na 3. Fear & Greed stabilan je na 63 (Pohlepa) uz BTC koji konsolidira oko $82,700 s ETF pritokom od $526.7M te historijskim Alpenglow upgradeom na Solani koji donosi 85x bržu finalnost i 60% niže troškove validatora. BTC dominacija pala je s 60.1% na ~57.8% što otvara selektivne prilike u altcoinima, posebno SOL (upgrade), LINK i AVAX (Schwab integracija), dok S&P 500 pada -1.94% tjedno signalizirajući blagi risk-off.",
+    "aiSummary":  "DXY ostaje stabilan na ~101.8 bez pritiska na kripto, a nafta (Brent) drži se na $110.4 zbog bliskoistočnih tenzija zadržavajući warActive i macroPenalty na 3. Fear & Greed stabilan je na 63 (Pohlepa) uz BTC koji se oporavlja na ~$82,700, rekordni ETH staking od 43.8M kovanica i Solanu koja danas aktivira Alpenglow upgrade s 85x bržom finalnošću. BTC dominacija porasla je na ~59.5% smanjujući prostor za altcoine, dok XRP signalizira moguću korekciju, a S&P 500 bilježi tjedno -1.9% kao blagi risk-off signal.",
     "warActive":  true,
-    "btcDom":  57.8,
+    "btcDom":  59.5,
     "stableDom":  10.5,
     "oil":  110.4
 }
