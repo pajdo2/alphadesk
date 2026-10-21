@@ -9435,10 +9435,10 @@
       "conf": 40,
       "score": 0.95,
       "verdict": "🔵 Spekulativno",
-      "graded": false,
-      "correct": null,
-      "fwdPrice": null,
-      "fwdPct": null
+      "graded": true,
+      "correct": false,
+      "fwdPrice": 81004.83,
+      "fwdPct": 18.33
     },
     {
       "ts": 1791995575046,
@@ -9448,10 +9448,10 @@
       "conf": 36,
       "score": -0.8,
       "verdict": "🔴 Preskoči",
-      "graded": false,
-      "correct": null,
-      "fwdPrice": null,
-      "fwdPct": null
+      "graded": true,
+      "correct": true,
+      "fwdPrice": 68456,
+      "fwdPct": 0
     },
     {
       "ts": 1792045659181,
@@ -9461,10 +9461,10 @@
       "conf": 35,
       "score": -1.15,
       "verdict": "🔴 Preskoči",
-      "graded": false,
-      "correct": null,
-      "fwdPrice": null,
-      "fwdPct": null
+      "graded": true,
+      "correct": true,
+      "fwdPrice": 68456,
+      "fwdPct": 0
     },
     {
       "ts": 1792053349075,
@@ -9474,11 +9474,37 @@
       "conf": 38,
       "score": -3.2,
       "verdict": "🔴 Preskoči",
+      "graded": true,
+      "correct": true,
+      "fwdPrice": 68456,
+      "fwdPct": -15.49
+    },
+    {
+      "ts": 1792568987783,
+      "price": 68456,
+      "dir": "NEUTRAL",
+      "th": 2.4,
+      "conf": 40,
+      "score": 0.85,
+      "verdict": "🔵 Spekulativno",
+      "graded": false,
+      "correct": null,
+      "fwdPrice": null,
+      "fwdPct": null
+    },
+    {
+      "ts": 1792571657583,
+      "price": 83202.77,
+      "dir": "UP",
+      "th": 1.63,
+      "conf": 54,
+      "score": 4.55,
+      "verdict": "🟡 Oprez",
       "graded": false,
       "correct": null,
       "fwdPrice": null,
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-10-15T08:35:55.002Z"
+  "updatedAt": "2026-10-21T08:34:20.585Z"
 }
