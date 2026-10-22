@@ -1,7 +1,7 @@
 {
-    "dxy":  101.7,
-    "changeSummary":  "Fear & Greed porastao s 63 na 68, BTC se oporavio na ~$84K, nafta blago rasla na $111.1 zbog Houthi napada, a Solana aktivirala Alpenglow upgrade na mainnet-beta.",
-    "lastUpdated":  "2026-10-22T14:00:00Z",
+    "dxy":  101.5,
+    "changeSummary":  "Makro okruženje ostaje stabilno — DXY neznatno pao na 101.5, Fear & Greed zadržan na 68, BTC oscilira $82.8K-$84.8K uz snažne ETF priljeve i aktiviran SOL Alpenglow upgrade.",
+    "lastUpdated":  "2026-10-22T17:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -13,10 +13,10 @@
 
                                ],
                      "XRP":  [
-
+                         "UK FCA pokreće konzultacije o DeFi regulativi"
                              ],
                      "BNB":  [
-
+                         "CZ upozorenje na kritične PHP ranjivosti"
                              ],
                      "SUI":  [
 
@@ -55,7 +55,7 @@
 
                              ],
                      "LINK":  [
-                               "LINK pada s $15.70 na $12.24, -22% od vrhunca"
+                         "Pad s vrhunca, momentum oslabljen"
                               ],
                      "PUMP":  [
 
@@ -67,7 +67,7 @@
 
                              ]
                  },
-    "sp500Ret5d":  -0.5,
+    "sp500Ret5d":  -0.8,
     "fearGreed":  68,
     "macroPenalty":  3,
     "catalysts":  {
@@ -108,10 +108,10 @@
 
                                  ],
                       "SOL":  [
-                               "Alpenglow live mainnet-beta, finality 150ms"
+                          "Alpenglow upgrade aktiviran, finalnost 150ms"
                               ],
                       "ADA":  [
-                               "ADA medu top gainerima, bullish momentum"
+
                               ],
                       "PNUT":  [
 
@@ -120,10 +120,10 @@
 
                                 ],
                       "ETH":  [
-                               "ETH na $2,477, staking rekord nastavlja rast"
+                          "ETF priljevi rastu, tržišna cap kripta $2.91T"
                               ],
                       "LINK":  [
-                                "Chainlink $15B CCIP migracija u Q3 2026"
+
                                ],
                       "PUMP":  [
 
@@ -132,7 +132,7 @@
 
                                 ],
                       "BTC":  [
-                               "BTC raste na $84K uz pozitivan FG sentiment"
+                          "ETF priljevi prešli $1B, BTC stabilan na ~$83K"
                               ]
                   },
     "regime":  "BULL",
@@ -141,8 +141,8 @@
                            "MEME":  0,
                            "ANIME":  0,
                            "XRP":  0,
-                           "BNB":  0,
-                           "SUI":  0,
+                           "BNB":  -1,
+                           "SUI":  1,
                            "AVAX":  0,
                            "PENGU":  0,
                            "BOME":  0,
@@ -150,7 +150,7 @@
                            "NOT":  0,
                            "PEOPLE":  0,
                            "SOL":  2,
-                           "ADA":  1,
+                           "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
                            "ETH":  1,
@@ -159,9 +159,9 @@
                            "TRUMP":  0,
                            "BTC":  1
                        },
-    "aiSummary":  "DXY ostaje stabilan na ~101.7 bez znacajnijeg pritiska na kripto, dok nafta (Brent) raste na $111.1 zbog Houthi napada na saudijske ciljeve zadrzavajuci warActive i macroPenalty na 3. Fear & Greed porastao je na 68 (Pohlepa) uz BTC koji se oporavlja na ~$84K, Solanu koja je aktivirala Alpenglow upgrade na mainnet-beta s finalnošcu od 150ms i Chainlink koji bilježi $15B CCIP migracija u Q3. BTC dominacija stabilna je na ~59.7% uz ogranicezan prostor za altcoine, LINK bilježi znacajan pad s vrhunca, a S&P 500 nastavlja blagi risk-off trend.",
+    "aiSummary":  "DXY ostaje stabilan na ~101.5 bez značajnijeg pritiska na kripto, dok nafta (Brent) zadržava razinu od ~$111 uz nastavak geopolitičke napetosti i aktivan warActive status. Fear & Greed indeks drži se na 68 (Pohlepa) uz BTC koji oscilira između $82.8K i $84.8K, SOL koja je aktivirala Alpenglow upgrade s finalnošću od 150ms, te BTC ETF priljeve koji su prešli $1B. BTC dominacija stabilna je na ~59.5% uz ograničen prostor za altcoin rast, dok S&P 500 bilježi blagi risk-off signal od -0.8% na tjednoj razini.",
     "warActive":  true,
-    "btcDom":  59.7,
-    "stableDom":  10.3,
-    "oil":  111.1
+    "btcDom":  59.5,
+    "stableDom":  8.5,
+    "oil":  111.0
 }
