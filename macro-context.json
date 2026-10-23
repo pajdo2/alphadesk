@@ -1,19 +1,20 @@
 {
     "dxy":  101.6,
-    "changeSummary":  "Fear & Greed ostao stabilan na 68, nafta porasla na ~$111.6 uz eskalaciju Bliskog istoka, a Swiss FINMA odobrio spot BTC ETF za maloprodajne investitore.",
-    "lastUpdated":  "2026-10-22T20:00:00Z",
+    "changeSummary":  "Fear & Greed indeks pao s 68 na 50, BTC korigirao 2.8% na ~$81.5K uz smanjenje dominacije na 57.8%, a režim prešao iz BULL u CRAB dok DXY ostaje stabilan (~101.6) i nafta neznatno rasla na $113.6.",
+    "lastUpdated":  "2026-10-23T20:00:00Z",
     "warnings":  {
                      "ACT":  [
-                             "Mali cap token bez jasnog katalista"
+
                              ],
                      "MEME":  [
-                              "Generalni meme sektor slab uz BTC dom 59.7%"
+
                               ],
                      "ANIME":  [
 
                                ],
                      "XRP":  [
-
+                                 "XRPL amendment odgođen na 4. studenog",
+                                 "Kitovi šalju XRP na Binance - sedmomj. max"
                              ],
                      "BNB":  [
 
@@ -25,19 +26,19 @@
 
                               ],
                      "PENGU":  [
-                               "NFT meme sektor bez impulsa"
+
                                ],
                      "BOME":  [
-                              "Meme token bez katalista"
+
                               ],
                      "DOGS":  [
-                              "Meme token - visoka BTC dom smanjuje altcoin apetit"
+
                               ],
                      "NOT":  [
-                             "Meme token - bez katalista, slaba likvidnost"
+
                              ],
                      "PEOPLE":  [
-                                "Meme bez katalista, BTC dom >59%"
+
                                 ],
                      "SOL":  [
 
@@ -46,29 +47,29 @@
 
                              ],
                      "PNUT":  [
-                              "Meme - rast BTC dom = pritisak na male capove"
+
                               ],
                      "AIXBT":  [
-
+                                   "Nasdaq -2.6% zbog AI dioničke rasprodaje"
                                ],
                      "ETH":  [
-
+                                 "ETH -3.28% slijedi opći tržišni pad"
                              ],
                      "LINK":  [
 
                               ],
                      "PUMP":  [
-                              "Mali cap - visok rizik uz BTC dom >59%"
+
                               ],
                      "TRUMP":  [
-                               "Meme token - visoka BTC dominacija ogranicava rast"
+
                                ],
                      "BTC":  [
-                             "CZ upozorenje na PHP ranjivosti - sigurnosni rizik"
+                                 "BTC -2.8% na $81.5K, F&G pao s 68 na 50"
                              ]
                  },
-    "sp500Ret5d":  -1.0,
-    "fearGreed":  68,
+    "sp500Ret5d":  -0.2,
+    "fearGreed":  50,
     "macroPenalty":  3,
     "catalysts":  {
                       "ACT":  [
@@ -81,10 +82,10 @@
 
                                 ],
                       "XRP":  [
-                              "GENIUS Act stablecoin pravila finalizirana - OCC"
+
                               ],
                       "BNB":  [
-                              "GENIUS Act - jasnoća za burze i banke"
+
                               ],
                       "SUI":  [
 
@@ -108,7 +109,7 @@
 
                                  ],
                       "SOL":  [
-                              "Alpenglow upgrade aktivan - 150ms finalnost"
+
                               ],
                       "ADA":  [
 
@@ -117,13 +118,13 @@
 
                                ],
                       "AIXBT":  [
-                                "AI kripto sektor u trendu"
+
                                 ],
                       "ETH":  [
-                              "UK FCA DeFi konzultacije - regulatorna jasnoća"
+                                  "ETF dnevni pritok +$14.96M, kumulativ $12.83B"
                               ],
                       "LINK":  [
-                               "DeFi rast potražnje za oracle uslugama"
+
                                ],
                       "PUMP":  [
 
@@ -132,37 +133,36 @@
 
                                 ],
                       "BTC":  [
-                              "Swiss spot BTC ETF odobren - retail investitori",
-                              "Tesla/SpaceX razgovori o konsolidaciji 30K BTC"
+                                  "Deutsche Bank priprema BTC custody rješenje"
                               ]
                   },
-    "regime":  "BULL",
+    "regime":  "CRAB",
     "sentimentScore":  {
-                           "ACT":  -1,
-                           "MEME":  -1,
+                           "ACT":  0,
+                           "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  1,
-                           "BNB":  1,
+                           "XRP":  -1,
+                           "BNB":  0,
                            "SUI":  0,
                            "AVAX":  0,
-                           "PENGU":  -1,
-                           "BOME":  -1,
-                           "DOGS":  -1,
-                           "NOT":  -1,
-                           "PEOPLE":  -1,
-                           "SOL":  2,
+                           "PENGU":  0,
+                           "BOME":  0,
+                           "DOGS":  0,
+                           "NOT":  0,
+                           "PEOPLE":  0,
+                           "SOL":  0,
                            "ADA":  0,
-                           "PNUT":  -1,
-                           "AIXBT":  1,
-                           "ETH":  1,
-                           "LINK":  1,
-                           "PUMP":  -1,
-                           "TRUMP":  -1,
-                           "BTC":  2
+                           "PNUT":  0,
+                           "AIXBT":  -1,
+                           "ETH":  0,
+                           "LINK":  0,
+                           "PUMP":  0,
+                           "TRUMP":  0,
+                           "BTC":  0
                        },
-    "aiSummary":  "DXY ostaje stabilan na ~101.6 bez značajnog pritiska na kripto, dok nafta (Brent) raste na $111.6 uz eskalaciju napetosti na Bliskom istoku (Houthi napadi, US diplomati napuštaju SA) i aktivni warActive status. Fear & Greed indeks drži se na 68 (Pohlepa) uz BTC koji oscilira između $82K i $84K, Swiss FINMA koji je odobrio spot BTC ETF za maloprodajne investitore, te aktivirani Alpenglow upgrade na Solani s finalnošću od 150ms. BTC dominacija stabilna je na ~59.7% uz ograničen prostor za altcoin rast, dok S&P 500 bilježi risk-off signal od ~-1.0% na tjednoj razini.",
+    "aiSummary":  "DXY ostaje stabilan na ~101.6 bez dodatnog pritiska na kripto, dok nafta (Brent) raste na $113.6 uz nastavljene Houthi napade i aktivni warActive status. Fear & Greed indeks pao je s 68 na 50 (Neutralno) jer je BTC korigirao za 2.8% na ~$81.5K, BTC dominacija smanjila se na 57.8%, a tržišna kapitalizacija pala 3.1% na $2.82T. S&P 500 i AI dionice bilježe tjedni pad, što negativno pritišće AI altcoine i širi raspoloženje prema CRAB režimu.",
     "warActive":  true,
-    "btcDom":  59.7,
-    "stableDom":  10.4,
-    "oil":  111.6
+    "btcDom":  57.8,
+    "stableDom":  10.7,
+    "oil":  113.6
 }
