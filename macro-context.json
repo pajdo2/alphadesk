@@ -1,168 +1,83 @@
 {
-    "dxy":  101.6,
-    "changeSummary":  "Fear & Greed indeks pao s 68 na 50, BTC korigirao 2.8% na ~$81.5K uz smanjenje dominacije na 57.8%, a režim prešao iz BULL u CRAB dok DXY ostaje stabilan (~101.6) i nafta neznatno rasla na $113.6.",
-    "lastUpdated":  "2026-10-23T20:00:00Z",
+    "dxy":  101.7,
+    "changeSummary":  "Makroekonomski uvjeti ostali praktički nepromijenjeni — DXY na 101.7, nafta na $113.6, F&G indeks na 50 i BTC dominacija na 57.8%, dok je BTC pao 2.8% uz spot ETF odljev od $635M te nastavljene US-Iran tenzije.",
+    "lastUpdated":  "2026-10-23T21:00:00Z",
     "warnings":  {
-                     "ACT":  [
-
-                             ],
-                     "MEME":  [
-
-                              ],
-                     "ANIME":  [
-
-                               ],
-                     "XRP":  [
-                                 "XRPL amendment odgođen na 4. studenog",
-                                 "Kitovi šalju XRP na Binance - sedmomj. max"
-                             ],
-                     "BNB":  [
-
-                             ],
-                     "SUI":  [
-
-                             ],
-                     "AVAX":  [
-
-                              ],
-                     "PENGU":  [
-
-                               ],
-                     "BOME":  [
-
-                              ],
-                     "DOGS":  [
-
-                              ],
-                     "NOT":  [
-
-                             ],
-                     "PEOPLE":  [
-
-                                ],
-                     "SOL":  [
-
-                             ],
-                     "ADA":  [
-
-                             ],
-                     "PNUT":  [
-
-                              ],
-                     "AIXBT":  [
-                                   "Nasdaq -2.6% zbog AI dioničke rasprodaje"
-                               ],
-                     "ETH":  [
-                                 "ETH -3.28% slijedi opći tržišni pad"
-                             ],
-                     "LINK":  [
-
-                              ],
-                     "PUMP":  [
-
-                              ],
-                     "TRUMP":  [
-
-                               ],
-                     "BTC":  [
-                                 "BTC -2.8% na $81.5K, F&G pao s 68 na 50"
-                             ]
+                     "ACT":  ["Opći pad tržišta, altcoini gube teren"],
+                     "MEME":  [],
+                     "ANIME":  [],
+                     "XRP":  ["XRP gubi teren uz opći tržišni pad"],
+                     "BNB":  [],
+                     "SUI":  [],
+                     "AVAX":  ["AVAX pala ~6%, vodi pad altcoina uz ADA"],
+                     "PENGU":  [],
+                     "BOME":  [],
+                     "DOGS":  [],
+                     "NOT":  [],
+                     "PEOPLE":  [],
+                     "SOL":  [],
+                     "ADA":  ["ADA pala ~6%, vodi pad altcoina uz AVAX"],
+                     "PNUT":  [],
+                     "AIXBT":  ["AI dionice rasprodaja, Nasdaq -2.6% pritišće AI tokene"],
+                     "ETH":  ["ETH pao 2.6%, gubi teren uz opći pad tržišta"],
+                     "LINK":  [],
+                     "PUMP":  ["PUMP pao 6.6%, povećan rizik pada"],
+                     "TRUMP":  [],
+                     "BTC":  ["Spot ETF odljev $635M, BTC pao 2.8% na ~$81.4K"]
                  },
-    "sp500Ret5d":  -0.2,
+    "sp500Ret5d":  -1.2,
     "fearGreed":  50,
     "macroPenalty":  3,
     "catalysts":  {
-                      "ACT":  [
-
-                              ],
-                      "MEME":  [
-
-                               ],
-                      "ANIME":  [
-
-                                ],
-                      "XRP":  [
-
-                              ],
-                      "BNB":  [
-
-                              ],
-                      "SUI":  [
-
-                              ],
-                      "AVAX":  [
-
-                               ],
-                      "PENGU":  [
-
-                                ],
-                      "BOME":  [
-
-                               ],
-                      "DOGS":  [
-
-                               ],
-                      "NOT":  [
-
-                              ],
-                      "PEOPLE":  [
-
-                                 ],
-                      "SOL":  [
-
-                              ],
-                      "ADA":  [
-
-                              ],
-                      "PNUT":  [
-
-                               ],
-                      "AIXBT":  [
-
-                                ],
-                      "ETH":  [
-                                  "ETF dnevni pritok +$14.96M, kumulativ $12.83B"
-                              ],
-                      "LINK":  [
-
-                               ],
-                      "PUMP":  [
-
-                               ],
-                      "TRUMP":  [
-
-                                ],
-                      "BTC":  [
-                                  "Deutsche Bank priprema BTC custody rješenje"
-                              ]
+                      "ACT":  [],
+                      "MEME":  [],
+                      "ANIME":  [],
+                      "XRP":  [],
+                      "BNB":  [],
+                      "SUI":  [],
+                      "AVAX":  [],
+                      "PENGU":  [],
+                      "BOME":  [],
+                      "DOGS":  [],
+                      "NOT":  [],
+                      "PEOPLE":  [],
+                      "SOL":  [],
+                      "ADA":  [],
+                      "PNUT":  [],
+                      "AIXBT":  [],
+                      "ETH":  [],
+                      "LINK":  [],
+                      "PUMP":  [],
+                      "TRUMP":  [],
+                      "BTC":  []
                   },
     "regime":  "CRAB",
     "sentimentScore":  {
-                           "ACT":  0,
+                           "ACT":  -1,
                            "MEME":  0,
                            "ANIME":  0,
                            "XRP":  -1,
-                           "BNB":  0,
-                           "SUI":  0,
-                           "AVAX":  0,
+                           "BNB":  -1,
+                           "SUI":  -1,
+                           "AVAX":  -2,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
-                           "NOT":  0,
+                           "NOT":  -1,
                            "PEOPLE":  0,
-                           "SOL":  0,
-                           "ADA":  0,
+                           "SOL":  -1,
+                           "ADA":  -2,
                            "PNUT":  0,
-                           "AIXBT":  -1,
-                           "ETH":  0,
-                           "LINK":  0,
-                           "PUMP":  0,
+                           "AIXBT":  -2,
+                           "ETH":  -1,
+                           "LINK":  -1,
+                           "PUMP":  -2,
                            "TRUMP":  0,
-                           "BTC":  0
+                           "BTC":  -1
                        },
-    "aiSummary":  "DXY ostaje stabilan na ~101.6 bez dodatnog pritiska na kripto, dok nafta (Brent) raste na $113.6 uz nastavljene Houthi napade i aktivni warActive status. Fear & Greed indeks pao je s 68 na 50 (Neutralno) jer je BTC korigirao za 2.8% na ~$81.5K, BTC dominacija smanjila se na 57.8%, a tržišna kapitalizacija pala 3.1% na $2.82T. S&P 500 i AI dionice bilježe tjedni pad, što negativno pritišće AI altcoine i širi raspoloženje prema CRAB režimu.",
+    "aiSummary":  "DXY ostaje stabilan na ~101.7 bez dodatnog pritiska na kripto, dok nafta (Brent) stagnira na $113.6 uz aktivne US-Iran tenzije i warActive status. Fear & Greed indeks ostao je na 50 (Neutralno), BTC je pao 2.8% na ~$81.4K uz spot ETF odljev od $635M i neuspješan proboj $85K, a altcoini bilježe oštarije gubitke (ADA, AVAX -6%, PUMP -6.6%) potpomognute rasprodajom AI dionica na Nasdaqu (-2.6%).",
     "warActive":  true,
     "btcDom":  57.8,
-    "stableDom":  10.7,
+    "stableDom":  8.5,
     "oil":  113.6
 }
