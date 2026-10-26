@@ -1,7 +1,7 @@
 {
-    "dxy":  101.73,
-    "changeSummary":  "Minimalne promjene u makro okruženju — F&G se blago oporavio na 51, DXY ostao stabilan na ~101.7, BTC dominacija zadržana na 59.4% uz nastavak altcoin pritiska i visoke nafte.",
-    "lastUpdated":  "2026-10-23T14:00:00Z",
+    "dxy":  101.5,
+    "changeSummary":  "Fear & Greed pao s 51 na 50, DXY stabilan na ~101.5, BTC konsolidira ispod $80.5K uz eskalaciju US-Iran napetosti i $800M+ likvidacija.",
+    "lastUpdated":  "2026-10-26T10:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -13,7 +13,7 @@
 
                                ],
                      "XRP":  [
-
+                                 "Pad 1.8% uz opći pritisak i Fed neizvjesnost"
                              ],
                      "BNB":  [
 
@@ -22,7 +22,7 @@
 
                              ],
                      "AVAX":  [
-                                 "Altcoin pritisak, tjedni gubici"
+
                               ],
                      "PENGU":  [
 
@@ -40,48 +40,49 @@
 
                                 ],
                      "SOL":  [
-                                "Altcoin rasprodaja, geopolitička napetost"
+                                 "BloomTrading drenirao $954K iz korisničkih walleta"
                              ],
                      "ADA":  [
-                                "Nastavak gubitaka, altcoin pritisak"
+
                              ],
                      "PNUT":  [
 
                               ],
                      "AIXBT":  [
-                                  "AI dionice pad, AIXBT pod pritiskom"
+                                   "SEC fokus na AI tokenizaciju u FY2027 inspekciji"
                                ],
                      "ETH":  [
-                                "ETF odljevi $110.6M, ETH -2.6% na $2,397"
+                                 "Pad 1.8% uz opći odljev kapitala s tržišta"
                              ],
                      "LINK":  [
 
                               ],
                      "PUMP":  [
-                                 "Nastavak gubitaka iz prethodnog tjedna"
+
                               ],
                      "TRUMP":  [
-
+                                   "US-Iran napetosti negativno utječu na meme tokene"
                                ],
                      "BTC":  [
-                                "Spot ETF odljevi $635M, BTC pada ispod $82K"
+                                 "Predikcijska tržišta signaliziraju rizik pada na $78K",
+                                 "Likvidacije >$800M pretežno long pozicija"
                              ]
                  },
-    "sp500Ret5d":  -1.9,
-    "fearGreed":  51,
+    "sp500Ret5d":  -0.5,
+    "fearGreed":  50,
     "macroPenalty":  3,
     "catalysts":  {
                       "ACT":  [
 
                               ],
                       "MEME":  [
-                                   "Memecoin sezona u toku, PEPE +13%"
+
                                ],
                       "ANIME":  [
 
                                 ],
                       "XRP":  [
-                                  "Ripple Swell konferencija uskoro, XRP ETF priljevi $3.55M"
+                                  "Južna Koreja odgodila kripto porez treći put"
                               ],
                       "BNB":  [
 
@@ -108,7 +109,7 @@
 
                                  ],
                       "SOL":  [
-
+                                  "BloomTrading obećao povrat $954K dreniranih sredstava"
                               ],
                       "ADA":  [
 
@@ -138,30 +139,30 @@
     "regime":  "CRAB",
     "sentimentScore":  {
                            "ACT":  0,
-                           "MEME":  1,
+                           "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  1,
+                           "XRP":  0,
                            "BNB":  0,
                            "SUI":  0,
-                           "AVAX":  -1,
+                           "AVAX":  0,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
                            "SOL":  -1,
-                           "ADA":  -1,
+                           "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  -1,
                            "ETH":  -1,
                            "LINK":  0,
-                           "PUMP":  -1,
-                           "TRUMP":  0,
+                           "PUMP":  0,
+                           "TRUMP":  -1,
                            "BTC":  -1
                        },
-    "aiSummary":  "DXY se stabilizirao na ~101.7 bez dodatnog pritiska na kripto, dok nafta (Brent) ostaje visoka na ~$114.5 uz geopolitičku napetost i Houthi napade na saudijsku energetsku infrastrukturu. Fear & Greed indeks pao je s 67 na 51 (Neutralno), a BTC se konsolidira oko $81.5K uz značajan ETF odljev od $635M i opći altcoin pad. Kratkoročno se očekuje nastavak CRAB faze uz BTC dominaciju na 59.4% i mogući daljnji pritisak na altcoine.",
+    "aiSummary":  "DXY se stabilizirao na ~101.5 bez povećanog pritiska na kripto, dok nafta (Brent) pada 2.1% na $114.3, ali ostaje visoka uz eskalaciju US-Iran napetosti i nastavak Houthi napada. Fear & Greed stagnira na 50 (Neutralno), a BTC konsolidira blizu $80K uz >$800M likvidacija long pozicija i predikcijskim rizikom pada na $78K pred Fedovom odlukom u srijedu. Kratkoročno se nastavlja CRAB faza uz BTC dominaciju od ~59.8% i mogući daljnji pritisak na altcoine.",
     "warActive":  true,
-    "btcDom":  59.4,
-    "stableDom":  10.7,
-    "oil":  114.5
+    "btcDom":  59.8,
+    "stableDom":  10.9,
+    "oil":  114.3
 }
