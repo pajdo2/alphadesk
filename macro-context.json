@@ -1,7 +1,7 @@
 {
-    "dxy":  102.04,
-    "changeSummary":  "DXY je porastao s 101.5 na ~102.0 uz blagi porast pritiska na USD, nafta se ohladila na ~$114.9, a Fear & Greed je pao s 51 na 47 dok tržište iščekuje Fedovu odluku 28. listopada.",
-    "lastUpdated":  "2026-10-27T18:00:00Z",
+    "dxy":  102.05,
+    "changeSummary":  "DXY i BTC dominacija ostaju gotovo nepromijenjeni (~102.1, 60.3%), nafta blago pada na $114.7 uz diplomatske naznake, dok BTC klizi ispod $80K pred Fedovu odluku 28.10.",
+    "lastUpdated":  "2026-10-27T21:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -40,7 +40,7 @@
 
                                 ],
                      "SOL":  [
-                               "SOL -14% u listopadu, najveći pad od top-4 kripta"
+
                              ],
                      "ADA":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-                               "ETH nastavlja padajući trend uz proširenje gubitaka"
+                               "ETF odljevi drugi dan zaredom uz pre-FOMC oprez"
                              ],
                      "LINK":  [
 
@@ -64,10 +64,10 @@
 
                                ],
                      "BTC":  [
-                               "BTC ispod $80K uz oprez pred sutrašnjim FOMC-om"
+                               "BTC ispao ispod $80K, ključna razina podrške $79K"
                              ]
                  },
-    "sp500Ret5d":  0.8,
+    "sp500Ret5d":  -0.8,
     "fearGreed":  47,
     "macroPenalty":  3,
     "catalysts":  {
@@ -81,7 +81,7 @@
 
                                 ],
                       "XRP":  [
-                                "Ripple NT Bank dobio konačno OCC odobrenje"
+                                "Ripple Swell NYC 27-29.10 + DTCC tokenizacija"
                               ],
                       "BNB":  [
 
@@ -108,7 +108,7 @@
 
                                  ],
                       "SOL":  [
-
+                                "Akash Network migrira na Solana, AKT +4%"
                               ],
                       "ADA":  [
 
@@ -132,7 +132,7 @@
 
                                 ],
                       "BTC":  [
-
+                                "Institucionalni ETF priljevi vraćaju se nakon 2 dana odljeva"
                               ]
                   },
     "regime":  "CRAB",
@@ -140,7 +140,7 @@
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  2,
+                           "XRP":  1,
                            "BNB":  0,
                            "SUI":  0,
                            "AVAX":  0,
@@ -149,7 +149,7 @@
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  -1,
+                           "SOL":  0,
                            "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
@@ -157,11 +157,11 @@
                            "LINK":  0,
                            "PUMP":  0,
                            "TRUMP":  0,
-                           "BTC":  0
+                           "BTC":  -1
                        },
-    "aiSummary":  "DXY je porastao na ~102.0 što pojačava blagi pritisak na rizičnu imovinu, dok nafta (Brent) ostaje visoka na ~$114.9 uz nastavak bliskoistočnih napetosti i Houthi napada. Fear & Greed je pao s 51 na 47 (Neutralno), BTC konsolidira ispod $80K s dominancijom od 60.3% uz pre-FOMC oprez — tržište uzima u obzir 91% vjerojatnost da Fed drži kamate nepromijenjenim. Kratkoročno se nastavlja CRAB faza uz povećanu volatilnost koja se očekuje oko Fedove odluke 28. listopada.",
+    "aiSummary":  "DXY ostaje stabilan na ~102.1 uz minimalne promjene, bez većeg pritiska na rizičnu imovinu. Nafta (Brent) blago pada na ~$114.7 uz diplomatske naznake de-eskalacije na Bliskom istoku, no Houthi napadi zadržavaju premiju rizika. BTC konsolidira ispod $80K s dominacijom ~60.3% i Fear & Greed na 47, dok tržište čeka Fedovu odluku 28.10. uz 91% vjerojatnost zadržavanja kamata.",
     "warActive":  true,
     "btcDom":  60.28,
-    "stableDom":  11.2,
-    "oil":  114.9
+    "stableDom":  7.8,
+    "oil":  114.7
 }
