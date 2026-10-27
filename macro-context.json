@@ -1,7 +1,7 @@
 {
-    "dxy":  101.5,
-    "changeSummary":  "Nafta (Brent) porasla s $112 na $115.4 uz eskalaciju US-Iran napetosti, dok DXY i Fear & Greed ostaju gotovo nepromijenjeni, a BTC bilježi treći uzastopni crveni tjedan uz neizmijenjeni CRAB režim i macroPenalty od 3.",
-    "lastUpdated":  "2026-10-26T18:00:00Z",
+    "dxy":  102.04,
+    "changeSummary":  "DXY je porastao s 101.5 na ~102.0 uz blagi porast pritiska na USD, nafta se ohladila na ~$114.9, a Fear & Greed je pao s 51 na 47 dok tržište iščekuje Fedovu odluku 28. listopada.",
+    "lastUpdated":  "2026-10-27T18:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -13,7 +13,7 @@
 
                                ],
                      "XRP":  [
-                                 "Aktivna ponuda na godišnjem minimumu ispod 50%"
+
                              ],
                      "BNB":  [
 
@@ -40,10 +40,10 @@
 
                                 ],
                      "SOL":  [
-
+                               "SOL -14% u listopadu, najveći pad od top-4 kripta"
                              ],
                      "ADA":  [
-                                 "Proboj padajućeg trenda, rizik daljnjeg pada"
+
                              ],
                      "PNUT":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-                                 "Slabljenje cijene, bearish kratkoročno"
+                               "ETH nastavlja padajući trend uz proširenje gubitaka"
                              ],
                      "LINK":  [
 
@@ -64,11 +64,11 @@
 
                                ],
                      "BTC":  [
-                                 "3 uzastopna crvena tjedna, FOMC rizik"
+                               "BTC ispod $80K uz oprez pred sutrašnjim FOMC-om"
                              ]
                  },
-    "sp500Ret5d":  -0.5,
-    "fearGreed":  51,
+    "sp500Ret5d":  0.8,
+    "fearGreed":  47,
     "macroPenalty":  3,
     "catalysts":  {
                       "ACT":  [
@@ -81,7 +81,7 @@
 
                                 ],
                       "XRP":  [
-                                  "RLUSD integracija s Cross River Bank"
+                                "Ripple NT Bank dobio konačno OCC odobrenje"
                               ],
                       "BNB":  [
 
@@ -108,7 +108,7 @@
 
                                  ],
                       "SOL":  [
-                                  "Q3 transakcije +104%, ubrzanje mreže na 200ms"
+
                               ],
                       "ADA":  [
 
@@ -132,7 +132,7 @@
 
                                 ],
                       "BTC":  [
-                                  "$68M opcija na rast prema $90K nakon midterma"
+
                               ]
                   },
     "regime":  "CRAB",
@@ -140,7 +140,7 @@
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  0,
+                           "XRP":  2,
                            "BNB":  0,
                            "SUI":  0,
                            "AVAX":  0,
@@ -149,8 +149,8 @@
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  1,
-                           "ADA":  -1,
+                           "SOL":  -1,
+                           "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
                            "ETH":  -1,
@@ -159,9 +159,9 @@
                            "TRUMP":  0,
                            "BTC":  0
                        },
-    "aiSummary":  "DXY ostao stabilan na ~101.5 bez dodatnog pritiska na kripto, dok nafta (Brent) raste na $115.4 uz eskalaciju US-Iran napetosti i nastavak Houthi napada. Fear & Greed stagnira na 51 (Neutralno), BTC konsolidira blizu $80K bilježeći tri uzastopna crvena tjedna uz pre-FOMC oprez i BTC dominacijom na ~59.5% koja nastavlja tlačiti altcoine. Kratkoročno se nastavlja CRAB faza uz moguću povećanu volatilnost oko Fedove odluke.",
+    "aiSummary":  "DXY je porastao na ~102.0 što pojačava blagi pritisak na rizičnu imovinu, dok nafta (Brent) ostaje visoka na ~$114.9 uz nastavak bliskoistočnih napetosti i Houthi napada. Fear & Greed je pao s 51 na 47 (Neutralno), BTC konsolidira ispod $80K s dominancijom od 60.3% uz pre-FOMC oprez — tržište uzima u obzir 91% vjerojatnost da Fed drži kamate nepromijenjenim. Kratkoročno se nastavlja CRAB faza uz povećanu volatilnost koja se očekuje oko Fedove odluke 28. listopada.",
     "warActive":  true,
-    "btcDom":  59.5,
-    "stableDom":  13.4,
-    "oil":  115.4
+    "btcDom":  60.28,
+    "stableDom":  11.2,
+    "oil":  114.9
 }
