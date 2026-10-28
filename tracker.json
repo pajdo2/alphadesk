@@ -1,6 +1,34 @@
 {
   "predictions": [
     {
+      "id": "1793176566857",
+      "timestamp": 1793176566857,
+      "sym": "QNT",
+      "type": "regular",
+      "direction": "LONG",
+      "date": "28. lis",
+      "entry": 198.79,
+      "target": 218.79,
+      "d1Target": 205.79,
+      "d2Target": 212.79,
+      "d3Target": 218.79,
+      "stop": 190.8384,
+      "conf": 56,
+      "targetPct": 10.06,
+      "status": "AKTIVAN",
+      "closePrice": null,
+      "closePct": null,
+      "autoClose": false,
+      "engineVer": "v5.349",
+      "d1Hit": false,
+      "d2Hit": false,
+      "d3Hit": false,
+      "peakPrice": 198.95,
+      "peakPct": 0.08,
+      "maePrice": 198.79,
+      "maePct": 0
+    },
+    {
       "id": "1793176556856",
       "timestamp": 1793176556856,
       "sym": "HBAR",
@@ -23,8 +51,8 @@
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
-      "peakPrice": 0.07679,
-      "peakPct": 0,
+      "peakPrice": 0.07695,
+      "peakPct": 0.21,
       "maePrice": 0.07679,
       "maePct": 0
     },
@@ -51,8 +79,8 @@
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
-      "peakPrice": 0.7154,
-      "peakPct": 0,
+      "peakPrice": 0.716,
+      "peakPct": 0.08,
       "maePrice": 0.7154,
       "maePct": 0
     },
@@ -79,8 +107,8 @@
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
-      "peakPrice": 0.4393,
-      "peakPct": 0,
+      "peakPrice": 0.4422,
+      "peakPct": 0.66,
       "maePrice": 0.4393,
       "maePct": 0
     },
@@ -7405,8 +7433,8 @@
     "_global": {
       "rsiOversold": 0.5,
       "rsiOverbought": 1,
-      "trendUp": 0.378,
-      "trendDown": 0.514,
+      "trendUp": 0.371,
+      "trendDown": 0.433,
       "bbBelow": 1,
       "divBullish": 0.3,
       "divBearish": 0.571,
@@ -7414,13 +7442,13 @@
       "macdBearCross": 1,
       "lsRatioBull": 1,
       "lsRatioExtreme": 1,
-      "basisBack": 0.628,
+      "basisBack": 0.555,
       "takerSell": 1,
       "btcDomHigh": 1,
       "btcDomLow": 1,
-      "volSpike": 0.405,
+      "volSpike": 0.345,
       "mtfAllUp": 0.4,
-      "fgExtremeFear": 0.487,
+      "fgExtremeFear": 0.473,
       "fgFear": 0.3
     },
     "BULL": {
@@ -7435,11 +7463,11 @@
       "macdBearCross": 1,
       "lsRatioBull": 1,
       "lsRatioExtreme": 1,
-      "basisBack": 0.928,
+      "basisBack": 0.885,
       "takerSell": 1,
       "btcDomHigh": 1,
       "btcDomLow": 1,
-      "volSpike": 0.837,
+      "volSpike": 0.767,
       "mtfAllUp": 1,
       "fgExtremeFear": 1,
       "fgFear": 1
@@ -9642,5 +9670,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-10-28T08:36:01.417Z"
+  "updatedAt": "2026-10-28T08:36:15.204Z"
 }
