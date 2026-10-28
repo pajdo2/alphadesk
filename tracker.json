@@ -1,6 +1,34 @@
 {
   "predictions": [
     {
+      "id": "1793176556856",
+      "timestamp": 1793176556856,
+      "sym": "HBAR",
+      "type": "regular",
+      "direction": "LONG",
+      "date": "28. lis",
+      "entry": 0.07679,
+      "target": 0.084469,
+      "d1Target": 0.079478,
+      "d2Target": 0.082165,
+      "d3Target": 0.084469,
+      "stop": 0.073933,
+      "conf": 61,
+      "targetPct": 10,
+      "status": "AKTIVAN",
+      "closePrice": null,
+      "closePct": null,
+      "autoClose": false,
+      "engineVer": "v5.349",
+      "d1Hit": false,
+      "d2Hit": false,
+      "d3Hit": false,
+      "peakPrice": 0.07679,
+      "peakPct": 0,
+      "maePrice": 0.07679,
+      "maePct": 0
+    },
+    {
       "id": "1793176537703",
       "timestamp": 1793176537703,
       "sym": "ASTER",
@@ -9614,5 +9642,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-10-28T08:35:42.466Z"
+  "updatedAt": "2026-10-28T08:36:01.417Z"
 }
