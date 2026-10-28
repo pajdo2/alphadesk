@@ -483,7 +483,7 @@ html.theme-lift [stroke="#2979ff"]{stroke:#6fa8ff}
    VER se automatski ažurira pre-commit hookom (zamjenjuje svaku pojavu trenutne verzije).
    Za pregled bilo koje teme: dodaj ?theme=0..7 na adresu. */
 (function(){
-  var VER="v5.350";
+  var VER="v5.351";
   var T=[
     {n:"Crna",          d:1,bg:"#000000",s:["#0e0e0e","#161616","#1f1f1f","#282828"],a:[.72,.45,.24]},
     {n:"Bijela",        d:0,bg:"#ffffff",s:["#f3f3f3","#ebebeb","#e2e2e2","#d8d8d8"],a:[.76,.58,.40]},
@@ -529,7 +529,7 @@ html.theme-lift [stroke="#2979ff"]{stroke:#6fa8ff}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.350</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.351</span></div>
       <div class="hd-status">
         <span class="hd-sub" id="hdsub">Učitavam…</span>
         <span class="hd-claude" id="claude-update" style="display:none;align-items:center;gap:5px">
@@ -854,7 +854,7 @@ function getMemeSYMS(){
 
 // Engine verzija — tag na svaku predikciju za mjerenje win-rate po verziji.
 // Pre-commit hook (sed s/v5.x/.../g) automatski drži ovo u sinku s headerom.
-var APP_VER="v5.350";
+var APP_VER="v5.351";
 
 // Settings
 var settings={minConf:45,targetPct:6,maxRisk:2,minRR:1.2,accountSize:1000,maxRiskPerTrade:1,winThreshold:5,btcDomBlock:57};
@@ -1086,12 +1086,17 @@ function runTests(){
     (function(){
       MACRO.warActive = false;
       // Score 0 → conf base 44 (cap min 22)
+      // Formula: round(38 + score/20*50), clamp 20..90. Test izoliran od kalibracije iz povijesti
+      // (getConfCalibrationCap / getTokenAccuracy ovise o tracker podacima, pa bi test bio nestabilan).
+      var _calBak = getConfCalibrationCap, _tokBak = getTokenAccuracy;
+      getConfCalibrationCap = function(){ return null; };
+      getTokenAccuracy = function(){ return null; };
       var c0 = computeConfidence(0, "BTC", 5);
-      assertTrue(c0 >= 22 && c0 <= 88, "computeConfidence: in range");
-      assertNear(c0, 44, 1, "computeConfidence: score 0 → conf ~44");
-      // Score 14 (max) → conf ~65
+      assertTrue(c0 >= 20 && c0 <= 90, "computeConfidence: in range");
+      assertNear(c0, 38, 1, "computeConfidence: score 0 → conf 38 (baza)");
       var cMax = computeConfidence(14, "BTC", 5);
-      assertNear(cMax, 65, 5, "computeConfidence: score 14 → conf ~65");
+      assertNear(cMax, 73, 1, "computeConfidence: score 14 → conf 73");
+      getConfCalibrationCap = _calBak; getTokenAccuracy = _tokBak;
       // War cap kad score=4
       MACRO.warActive = true;
       var cw = computeConfidence(4, "BTC", 5);
@@ -1170,11 +1175,13 @@ function runTests(){
     (function(){
       // Test danger detection
       var origPx = px["BTC"], origTa = ta["BTC"];
-      px["BTC"] = {p: 50000, c24: -4};  // -4% pad
+      px["BTC"] = {p: 50000, c24: -4.5};  // pad strogo ispod -4% (pravilo je "btc24 < -4", ublaženo v4.92)
       ta["BTC"] = null;
       ta4h["BTC"] = null;
       var ctx = getBtcContext();
-      assertTrue(ctx.danger, "BtcContext: -4% c24 = danger");
+      assertTrue(ctx.danger, "BtcContext: -4.5% c24 = danger");
+      px["BTC"] = {p: 50000, c24: -4};  // točno -4% je granica: NIJE danger bez 1h+4h DOWN trenda
+      assertEq(getBtcContext().danger, false, "BtcContext: točno -4% = granica, ne danger");
 
       px["BTC"] = {p: 50000, c24: 1};
       var ctx2 = getBtcContext();
@@ -5670,7 +5677,7 @@ function hcRules(sorted){
   var h='<div style="background:var(--s1);border:.5px solid var(--sep);border-radius:14px;padding:14px;margin-bottom:12px">';
   h+='<div style="font-size:10px;color:var(--t3);font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px">📏 Po pravilima vs izvan pravila</div>';
   h+='<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">'+_grpCell("Po pravilima",_grpStats(inR))+_grpCell("Izvan pravila",_grpStats(outR))+'</div>';
-  h+='<div style="font-size:10px;color:var(--t4);margin-top:9px;line-height:1.5">Pravila: ne kupuj alt kad BTC dominira (> limit) i ne juri cijenu (ulaz samo na povlačenju). Računaju se tek tradovi zabilježeni od v5.350 (nemaju ih stariji); meme su izuzeti. Dok je svaka skupina ispod ~15 tradova, razliku ne tumači kao dokaz.</div>';
+  h+='<div style="font-size:10px;color:var(--t4);margin-top:9px;line-height:1.5">Pravila: ne kupuj alt kad BTC dominira (> limit) i ne juri cijenu (ulaz samo na povlačenju). Računaju se tek tradovi zabilježeni od v5.351 (nemaju ih stariji); meme su izuzeti. Dok je svaka skupina ispod ~15 tradova, razliku ne tumači kao dokaz.</div>';
   if(!c.length)h+='<div style="font-size:11px;color:var(--warn);margin-top:6px">Još nema zatvorenih tradova s ovom oznakom.</div>';
   h+='</div>';
   return h;
@@ -10617,7 +10624,7 @@ function disableNotifs(){
   showToast("Notifikacije isključene");render();
 }
 
-// emitEntryNotif uklonjen (v5.350) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
+// emitEntryNotif uklonjen (v5.351) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
 // Bila mrtva funkcija (nula poziva); uklonjena da se ne može slučajno ponovno spojiti.
 
 // ── EXIT NOTIFICATION — SAMO 2 TIPA (po korisnikovom zahtjevu) ──
