@@ -483,7 +483,7 @@ html.theme-lift [stroke="#2979ff"]{stroke:#6fa8ff}
    VER se automatski ažurira pre-commit hookom (zamjenjuje svaku pojavu trenutne verzije).
    Za pregled bilo koje teme: dodaj ?theme=0..7 na adresu. */
 (function(){
-  var VER="v5.349";
+  var VER="v5.350";
   var T=[
     {n:"Crna",          d:1,bg:"#000000",s:["#0e0e0e","#161616","#1f1f1f","#282828"],a:[.72,.45,.24]},
     {n:"Bijela",        d:0,bg:"#ffffff",s:["#f3f3f3","#ebebeb","#e2e2e2","#d8d8d8"],a:[.76,.58,.40]},
@@ -529,7 +529,7 @@ html.theme-lift [stroke="#2979ff"]{stroke:#6fa8ff}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.349</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.350</span></div>
       <div class="hd-status">
         <span class="hd-sub" id="hdsub">Učitavam…</span>
         <span class="hd-claude" id="claude-update" style="display:none;align-items:center;gap:5px">
@@ -854,7 +854,7 @@ function getMemeSYMS(){
 
 // Engine verzija — tag na svaku predikciju za mjerenje win-rate po verziji.
 // Pre-commit hook (sed s/v5.x/.../g) automatski drži ovo u sinku s headerom.
-var APP_VER="v5.349";
+var APP_VER="v5.350";
 
 // Settings
 var settings={minConf:45,targetPct:6,maxRisk:2,minRR:1.2,accountSize:1000,maxRiskPerTrade:1,winThreshold:5,btcDomBlock:57};
@@ -3491,7 +3491,9 @@ function getOpportunities(){
     var watchRes=yellow.concat(blue);
     // Auto-track svaku grupu po vlastitom source-u (kao i prije)
     autoTrackOpps(ulazRes,"ulaz");
-    autoTrackOpps(watchRes,"watch");
+    // WATCH auto-praćenje UGAŠENO (listopad 2026): 41 trad, 7% pogodaka ≥5%, najslabiji izvor u povijesti.
+    // Watch signali ostaju vidljivi na Signalima; ručni "Prati" i dalje radi. Povijesni watch tradovi ostaju u statistici.
+    // autoTrackOpps(watchRes,"watch");
     // Vrati po chip filteru
     var result;
     if(signalChip==="ulaz")     result=ulazRes;
@@ -4584,6 +4586,9 @@ function recordPred(sym,entryPrice,targetPrice,stopPrice,conf,forcePct,d1T,d2T,d
     autoClose:false,
     engineVer:APP_VER,
     d1Hit:false,d2Hit:false,d3Hit:false,
+    // Oznaka "po pravilima": krši li ručni ulaz pravila engine-a (BTC-dom / jurenje cijene)? Meme izuzeti
+    // (vlastiti engine). Rezultati uspoređuju skupine da se vidi pomažu li pravila ili ih ignorirati.
+    ruleBreaks:isMeme?null:[].concat(btcDomAltBlock(sym)?["btcdom"]:[],isDipSetup(ta[sym],entryPrice)?[]:["jurenje"]),
     peakPrice:entryPrice,
     peakPct:0,
     maePrice:entryPrice, // MAE — najniža točka (dno) tokom trada, za MAE/MFE analizu
@@ -4737,6 +4742,18 @@ function autoClosePreds(){
   predTracker=predTracker.map(function(p){
     if(p.status!=="AKTIVAN")return p;
     var cur=px[p.sym]?px[p.sym].p:null;
+    // LIMIT NALOG (simulacija): trade čeka da cijena padne do limitPrice. Puni se ako je cur<=limit
+    // (entry je već = limitPrice); ako 24h ne dotakne limit, nalog istječe i trade se BRIŠE iz statistike.
+    if(p.limitPending){
+      if(!cur)return p;
+      if(cur<=p.limitPrice){
+        changed=true;
+        return Object.assign({},p,{limitPending:false,filledAt:Date.now(),timestamp:Date.now(),
+          peakPrice:p.limitPrice,peakPct:0,maePrice:p.limitPrice,maePct:0});
+      }
+      if(Date.now()>p.limitExpires){changed=true;return {__drop:true};}
+      return p;
+    }
     var ts=p.timestamp||parseInt(p.id);
     var elapsed=Date.now()-ts;
     var window=(p.targetPct===10?5:3)*DAY;
@@ -4887,6 +4904,7 @@ function autoClosePreds(){
     }
     return u;
   });
+  predTracker=predTracker.filter(function(p){return !(p&&p.__drop);}); // istekli limit nalozi (nikad napunjeni)
   if(changed){
     try{localStorage.setItem("ad3d_track",JSON.stringify(predTracker));}catch(e){}
     refreshWeights();
@@ -4919,8 +4937,9 @@ function autoTrackOpps(opps, source){
   // Ako vec >=2 alt LONG aktivna, ne otvaraj novi alt LONG (>70% korelirano s BTC)
   // Iznimka: BTC sam, ili counter-trend (SHORT)
   var activeAltLongs=predTracker.filter(function(p){
-    return p.status==="AKTIVAN" && p.direction!=="SHORT" && p.sym!=="BTC";
+    return p.status==="AKTIVAN" && p.direction!=="SHORT" && p.sym!=="BTC" && !p.limitPending; // čekajući limit nije pozicija
   }).length;
+  var pendingLimits=predTracker.filter(function(p){return p.status==="AKTIVAN"&&p.limitPending;}).length;
 
   // Quality gate 1: minConf threshold po source
   // DATA-DRIVEN (analiza 177 zatvorenih, srpanj 2026): win rate po conf-u je
@@ -4996,13 +5015,22 @@ function autoTrackOpps(opps, source){
     if(!isDipSetup(ta[o.sym],o.price))return;        // dip-only u SVIM režimima (ne samo u pohlepi)
 
     var isMeme=MEME_SYMS.indexOf(o.sym)>-1;
+    // LIMIT ULAZ (listopad 2026): ulaz 1.5–2% ispod cijene signala (isto kao na kartici). Trade se otvara tek
+    // kad cijena dotakne limit (autoClosePreds), inače nalog istječe za 24h. Mjeri pravi učinak dip-ulaza.
+    var _limPct=Math.max(1.5,Math.min(2,(o.atrPct||0)*0.2));
+    var _limPrice=+(o.price*(1-_limPct/100)).toFixed(o.price<0.001?8:o.price<1?6:4);
+    var _useLimit=_limPrice>(o.stopPrice||0);
+    if(_useLimit&&pendingLimits>=5)return; // najviše 5 čekajućih naloga odjednom
+    if(_useLimit)pendingLimits++;
     var p={
       id:now+"_"+o.sym,
       timestamp:now,
       sym:o.sym,
       type:isMeme?"meme":"regular",
       date:new Date().toLocaleDateString("hr-HR",{day:"numeric",month:"short"}),
-      entry:o.price,
+      entry:_useLimit?_limPrice:o.price,
+      limitPending:_useLimit,limitPrice:_useLimit?_limPrice:null,limitPct:_useLimit?+_limPct.toFixed(1):null,
+      limitExpires:_useLimit?now+24*3600*1000:null,signalPrice:o.price,
       target:o.targetPrice||(o.d5Price||o.d3Price)||o.price,
       d1Target:o.d1Price||o.targetPrice||o.price,
       d2Target:o.d2Price||o.targetPrice||o.price,
@@ -5019,6 +5047,7 @@ function autoTrackOpps(opps, source){
       direction:"LONG",
       autoTrack:true,
       autoSource:source||"ulaz",
+      ruleBreaks:isMeme?null:[], // auto-gateovi garantiraju: unutar pravila
       engineVer:APP_VER,
       snap:_snap,
       d1Hit:false,d2Hit:false,d3Hit:false,d4Hit:false,d5Hit:false
@@ -5602,6 +5631,51 @@ function hcExcursion(sorted){
   return h;
 }
 
+// ── statistika skupine tradova (zajednički helper za panele ispod) ──
+function _grpStats(g){
+  var n=g.length; if(!n)return null;
+  var net=g.map(function(p){return netPnl(p.closePct);}).sort(function(a,b){return a-b;});
+  var sum=net.reduce(function(s,v){return s+v;},0);
+  return {n:n,win:g.filter(function(p){return isWin(p);}).length,exp:sum/n,med:net[Math.floor(n/2)]};
+}
+function _grpCell(lbl,s,col){
+  if(!s)return'<div style="background:var(--s2);border-radius:10px;padding:10px"><div style="font-size:10px;color:var(--t3);font-weight:700;text-transform:uppercase">'+lbl+'</div><div style="font-size:12px;color:var(--t4);margin-top:6px">nema zatvorenih tradova</div></div>';
+  return'<div style="background:var(--s2);border-radius:10px;padding:10px"><div style="font-size:10px;color:var(--t3);font-weight:700;text-transform:uppercase">'+lbl+' · '+s.n+' tr.</div>'
+    +'<div style="font-size:19px;font-weight:900;color:'+(s.exp>0.5?"var(--bull)":s.exp>-0.3?"var(--warn)":"var(--bear)")+';margin-top:4px;line-height:1">'+(s.exp>=0?"+":"")+s.exp.toFixed(1)+'%</div>'
+    +'<div style="font-size:10px;color:var(--t4);margin-top:4px">expectancy neto · pogodaka ≥'+winThreshold()+'%: '+s.win+'/'+s.n+' ('+Math.round(s.win/s.n*100)+'%) · medijan '+(s.med>=0?"+":"")+s.med.toFixed(1)+'%</div></div>';
+}
+// ── NOVA VERZIJA ENGINE-A (v5.347+, nova pravila ulaza) — odvojeno od stare povijesti ──
+function hcNewVersion(){
+  function minor(p){var m=/v\d+\.(\d+)/.exec(p.engineVer||"");return m?parseInt(m[1],10):0;}
+  var all=predTracker.filter(function(p){return minor(p)>=347;});
+  var closed=all.filter(function(p){return p.status!=="AKTIVAN"&&p.closePct!=null&&!isNaN(p.closePct);});
+  var pend=all.filter(function(p){return p.status==="AKTIVAN"&&p.limitPending;}).length;
+  var open=all.filter(function(p){return p.status==="AKTIVAN"&&!p.limitPending;}).length;
+  var s=_grpStats(closed);
+  var h='<div style="background:var(--s1);border:.5px solid var(--sep);border-radius:14px;padding:13px 14px;margin-bottom:10px">';
+  h+='<div style="font-size:10px;color:var(--t3);font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">🆕 Nova verzija engine-a (v5.347+)</div>';
+  h+='<div style="display:grid;grid-template-columns:1fr;gap:8px">'+_grpCell("Zatvoreno",s)+'</div>';
+  h+='<div style="font-size:11px;color:var(--t3);margin-top:8px;line-height:1.5">'+open+' otvoreno · '+pend+' čeka limit</div>';
+  var need=30-closed.length;
+  h+='<div style="font-size:11px;margin-top:6px;line-height:1.5;color:'+(need>0?"var(--warn)":"var(--bull)")+'">'+(need>0
+    ?'⚠️ Premalo podataka ('+closed.length+'/30). Ne donosi zaključke niti mijenjaj engine dok ne skupi još '+need+' zatvorenih tradova.'
+    :'✓ ≥30 zatvorenih — brojke su prvi put smislene (i dalje uz veliku varijancu).')+'</div>';
+  h+='</div>';
+  return h;
+}
+// ── PO PRAVILIMA vs IZVAN PRAVILA (ručni ulazi koji krše pravila engine-a) ──
+function hcRules(sorted){
+  var c=sorted.filter(function(p){return Array.isArray(p.ruleBreaks)&&p.closePct!=null&&!isNaN(p.closePct);});
+  var inR=c.filter(function(p){return p.ruleBreaks.length===0;}), outR=c.filter(function(p){return p.ruleBreaks.length>0;});
+  var h='<div style="background:var(--s1);border:.5px solid var(--sep);border-radius:14px;padding:14px;margin-bottom:12px">';
+  h+='<div style="font-size:10px;color:var(--t3);font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px">📏 Po pravilima vs izvan pravila</div>';
+  h+='<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">'+_grpCell("Po pravilima",_grpStats(inR))+_grpCell("Izvan pravila",_grpStats(outR))+'</div>';
+  h+='<div style="font-size:10px;color:var(--t4);margin-top:9px;line-height:1.5">Pravila: ne kupuj alt kad BTC dominira (> limit) i ne juri cijenu (ulaz samo na povlačenju). Računaju se tek tradovi zabilježeni od v5.350 (nemaju ih stariji); meme su izuzeti. Dok je svaka skupina ispod ~15 tradova, razliku ne tumači kao dokaz.</div>';
+  if(!c.length)h+='<div style="font-size:11px;color:var(--warn);margin-top:6px">Još nema zatvorenih tradova s ovom oznakom.</div>';
+  h+='</div>';
+  return h;
+}
+
 // ── SCORECARD — headline kvaliteta track-recorda (uvijek vidljivo) ──
 // 3 ključne neto metrike na prvi pogled; dubinski paneli (Expectancy/Drawdown/
 // Sharpe/Benchmark) su sklopivi ispod. Win rate i count su u gornjem KPI redu.
@@ -5691,7 +5765,7 @@ function renderMiniSuccessChart(sorted){
     h+='<div style="margin-bottom:10px">';
     h+='<div onclick="_metricsOpen=!_metricsOpen;render()" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;background:var(--s2);border-radius:10px;padding:10px 14px">';
     h+='<span style="font-size:11px;font-weight:700;color:var(--t2);letter-spacing:.04em">📐 Detaljne metrike</span>';
-    h+='<span style="font-size:11px;color:var(--t3)">'+(_metricsOpen?"▲ sakrij":"▾ Expectancy · Drawdown · Sharpe · vs BTC · MAE/MFE")+'</span>';
+    h+='<span style="font-size:11px;color:var(--t3)">'+(_metricsOpen?"▲ sakrij":"▾ Expectancy · Drawdown · Sharpe · vs BTC · MAE/MFE · pravila")+'</span>';
     h+='</div>';
     if(_metricsOpen){
       h+='<div style="margin-top:12px">';
@@ -5700,6 +5774,7 @@ function renderMiniSuccessChart(sorted){
       h+=hcSharpe(sorted);
       h+=hcBenchmark(sorted);
       h+=hcExcursion(sorted);
+      h+=hcRules(sorted);
       h+='</div>';
     }
     h+='</div>';
@@ -5842,6 +5917,14 @@ function renderClosedList(preds){
 
 function renderActiveCard(p){
   var cur=px[p.sym]?px[p.sym].p:p.entry;
+  if(p.limitPending){ // čeka limit — još nije pozicija, nema P&L
+    var left=Math.max(0,p.limitExpires-Date.now()), hrs=Math.floor(left/3600000), mins=Math.floor(left%3600000/60000);
+    var dist=cur>0?((cur-p.limitPrice)/cur*100):0;
+    return '<div style="background:var(--s1);border:.5px dashed var(--sep);border-radius:14px;padding:12px 14px;margin-bottom:8px">'
+      +'<div style="display:flex;justify-content:space-between;align-items:center"><strong style="font-size:15px;color:var(--t1)">'+p.sym+'</strong>'
+      +'<span style="font-size:11px;font-weight:700;color:var(--warn)">⏳ čeka limit</span></div>'
+      +'<div style="font-size:11px;color:var(--t3);margin-top:6px;line-height:1.55">Limit ulaz <strong style="color:var(--t1)">'+fp(p.limitPrice)+'</strong> (−'+p.limitPct+'% od signala '+fp(p.signalPrice)+') · cijena sad '+fp(cur)+' (još '+dist.toFixed(1)+'% iznad)<br>Istječe za '+hrs+'h '+mins+'min — ako cijena ne padne, trade se poništava i ne ulazi u statistiku.</div></div>';
+  }
   var isShort=p.direction==="SHORT";
   // curPct = pozitivno kada trade ide u korist (i za long i za short)
   var curPct=isShort
@@ -6640,8 +6723,8 @@ function rTracker(){
     var allClosed=allHits.length+allMiss.length;
     var accPct=allClosed?Math.round(allHits.length/allClosed*100):null;
     var accC=accPct===null?"var(--t3)":accPct>=60?"var(--gr)":accPct>=40?"var(--ye)":"var(--re)";
-    var activePnls=allActive.map(function(p){var cur=px[p.sym]?px[p.sym].p:p.entry;var g=p.direction==="SHORT"?(p.entry-cur)/p.entry*100:(cur-p.entry)/p.entry*100;return netPnl(g);}); // neto "da zatvorim sad" (nakon fee+slippage)
-    var avgPnl=allActive.length?activePnls.reduce(function(s,v){return s+v;},0)/allActive.length:null;
+    var activePnls=allActive.filter(function(p){return !p.limitPending;}).map(function(p){var cur=px[p.sym]?px[p.sym].p:p.entry;var g=p.direction==="SHORT"?(p.entry-cur)/p.entry*100:(cur-p.entry)/p.entry*100;return netPnl(g);}); // neto "da zatvorim sad" (nakon fee+slippage)
+    var avgPnl=activePnls.length?activePnls.reduce(function(s,v){return s+v;},0)/activePnls.length:null;
     var pnlCol=avgPnl===null?"var(--t3)":avgPnl>=0?"var(--gr)":"var(--re)";
     var sortedClosed=_filtered.filter(function(p){return p.status!=="AKTIVAN";}).slice().sort(function(a,b){return(a.timestamp||parseInt(a.id)||0)-(b.timestamp||parseInt(b.id)||0);});
 
@@ -6672,6 +6755,7 @@ function rTracker(){
     h+='</div>';
 
     // ── 2. MINI GRAFIKON USPJEŠNOSTI ──────────────────────────────
+    h+=hcNewVersion();
     h+=renderMiniSuccessChart(sortedClosed);
 
     // ── 3. KORELACIJA UPOZORENJE (samo kad relevantno) ─────────────
@@ -8826,6 +8910,8 @@ function syncFromGH(onDone){
           if(!rem){byId[p.id]=p;return;}
           var lClosed=p.status!=="AKTIVAN";
           var rClosed=rem.status!=="AKTIVAN";
+          // Limit nalog: napunjen (bot ili app) pobijedi čekajući — inače bi se punjenje izgubilo
+          if(!lClosed&&!rClosed&&p.limitPending&&!rem.limitPending)return;
           // Zatvoren pobijedi AKTIVAN; oba zatvorena → lokalni (ažuriran peakPct itd.)
           if(lClosed||!rClosed)byId[p.id]=p;
           // else: remote zatvoren, lokalni aktivan → ostavi remote
@@ -10531,7 +10617,7 @@ function disableNotifs(){
   showToast("Notifikacije isključene");render();
 }
 
-// emitEntryNotif uklonjen (v5.349) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
+// emitEntryNotif uklonjen (v5.350) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
 // Bila mrtva funkcija (nula poziva); uklonjena da se ne može slučajno ponovno spojiti.
 
 // ── EXIT NOTIFICATION — SAMO 2 TIPA (po korisnikovom zahtjevu) ──

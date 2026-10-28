@@ -62,6 +62,18 @@ async function main() {
   for (const p of active) {
     const cur = await fetchPrice(p.sym);
     if (cur == null) { console.log(`  Cijena nedostupna: ${p.sym} — preskacem.`); continue; }
+    // LIMIT NALOG (simulacija): ceka da cijena padne do limitPrice; puni se na cur<=limit,
+    // istjece nakon 24h (trade se brise iz statistike). Do punjenja nema peak/MAE/izlaza.
+    if (p.limitPending) {
+      if (cur <= p.limitPrice) {
+        p.limitPending = false; p.filledAt = Date.now(); p.timestamp = Date.now();
+        p.peakPrice = p.limitPrice; p.peakPct = 0; p.maePrice = p.limitPrice; p.maePct = 0;
+        changed++; console.log(`  Limit napunjen ${p.sym} @ ${p.limitPrice}`);
+      } else if (Date.now() > p.limitExpires) {
+        p.__drop = true; changed++; console.log(`  Limit istekao ${p.sym} (nije napunjen)`);
+      }
+      continue;
+    }
     const isShort = p.direction === 'SHORT';
     const pct = isShort ? (p.entry - cur) / p.entry * 100 : (cur - p.entry) / p.entry * 100;
 
@@ -124,6 +136,7 @@ async function main() {
   }
 
   if (changed > 0) {
+    data.predictions = data.predictions.filter(p => !(p && p.__drop)); // istekli limit nalozi
     data.updatedAt = new Date().toISOString();
     fs.writeFileSync(FILE, JSON.stringify(data, null, 2));
     console.log(`Azurirano ${changed} predikcija — tracker.json zapisan.`);

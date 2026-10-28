@@ -5,7 +5,7 @@ name: Track predictions 24/7
 
 on:
   schedule:
-    - cron: '*/30 * * * *'   # svakih 30 min (best-effort; GitHub moze odgoditi)
+    - cron: '*/5 * * * *'    # svakih 5 min (bilo 30: stvarni stop bio ~-6% umjesto ~-4%). Best-effort; GitHub moze odgoditi
   workflow_dispatch: {}        # rucno pokretanje iz Actions taba
 
 permissions:
