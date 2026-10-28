@@ -1,7 +1,7 @@
 {
     "dxy":  102.4,
-    "changeSummary":  "BTC je probio $80K i raste prema $81K uz povrat ETF priljeva ($110M), Fear & Greed ostaje neutralan na 50, a DXY stabilno na 102.4 bez promjene makro pritiska.",
-    "lastUpdated":  "2026-10-28T10:00:00Z",
+    "changeSummary":  "DXY stabilan na 102.4, Fear & Greed blago pao s 50 na 47, režim ostaje CRAB uz isti macroPenalty od 1.",
+    "lastUpdated":  "2026-10-28T12:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -40,7 +40,7 @@
 
                                 ],
                      "SOL":  [
-
+                                 "ETF odljevi, whale prodaja, podrška $99-100"
                              ],
                      "ADA":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-                               "ETF odljevi nastavljaju pritisak na ETH"
+
                              ],
                      "LINK":  [
 
@@ -64,24 +64,24 @@
 
                                ],
                      "BTC":  [
-                               "Fed odluka danas - moguća nagla volatilnost"
+                                 "Otpor na $81,700, čeka se FOMC odluka"
                              ]
                  },
-    "sp500Ret5d":  0.4,
-    "fearGreed":  50,
+    "sp500Ret5d":  -0.47,
+    "fearGreed":  47,
     "macroPenalty":  1,
     "catalysts":  {
                       "ACT":  [
 
                               ],
                       "MEME":  [
-                                "PEPE +12% na glasinama o Justin Sun kitu"
+
                                ],
                       "ANIME":  [
 
                                 ],
                       "XRP":  [
-                                "XRP +2.75%, odboj od podrške $1.30"
+                                  "Rast 2.2% na $1.33, momentum pozitivan"
                               ],
                       "BNB":  [
 
@@ -108,7 +108,7 @@
 
                                  ],
                       "SOL":  [
-                                "SOL iznad $100 uz umjeren dnevni rast"
+
                               ],
                       "ADA":  [
 
@@ -117,10 +117,10 @@
 
                                ],
                       "AIXBT":  [
-                                  "AI narativ jak: Anthropic, OpenAI, Meta"
+                                    "Broadcom $63B AI deal s Anthropicom, bullish"
                                 ],
                       "ETH":  [
-
+                                  "Rast 1.8% uz tech rally, pozitivna dinamika"
                               ],
                       "LINK":  [
 
@@ -132,14 +132,14 @@
 
                                 ],
                       "BTC":  [
-                                "BTC ETF priljevi $110M, BlackRock vodi",
-                                "Tech rally diže apetit za rizičnu imovinu"
+                                  "Tech rally + ETF priljevi podržavaju BTC",
+                                  "BTC iznad SMA200, dugoročni trend uzlazan"
                               ]
                   },
     "regime":  "CRAB",
     "sentimentScore":  {
                            "ACT":  0,
-                           "MEME":  1,
+                           "MEME":  0,
                            "ANIME":  0,
                            "XRP":  1,
                            "BNB":  0,
@@ -150,19 +150,19 @@
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  1,
+                           "SOL":  -1,
                            "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  1,
-                           "ETH":  -1,
+                           "ETH":  1,
                            "LINK":  0,
                            "PUMP":  0,
                            "TRUMP":  0,
-                           "BTC":  2
+                           "BTC":  1
                        },
-    "aiSummary":  "DXY se stabilizirao na ~102.4 bez većeg pritiska na rizičnu imovinu dok BTC raste prema $81K pred Fedovu odluku. Fear & Greed je na 50 (neutralno), tržište čeka FOMC uz pozitivne signale od tech rallya i BTC ETF priljeva od $110M. BTC dominancija od 60.1% drži altcoine pod pritiskom, s AI tokenima kao izuzetkom zahvaljujući Anthropic/OpenAI narativu.",
+    "aiSummary":  "DXY se drži na ~102.4, makro pritisak na kripto ostaje neutralan pred Fedovu odluku u srijedu. Fear & Greed pao na 47 (neutralno), tržište u wait-and-see modu s BTC-om stabiliziranim iznad $80K i SMA200 (~$75.7K). BTC dominacija ostaje na 60.1% dok AI tokeni poput AIXBT profitiraju od Broadcom/Anthropic narativa vrijednog $63B.",
     "warActive":  false,
     "btcDom":  60.1,
-    "stableDom":  6.5,
+    "stableDom":  8.5,
     "oil":  111.0
 }
