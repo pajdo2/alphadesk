@@ -1,13 +1,13 @@
 {
-    "dxy":  102.4,
-    "changeSummary":  "DXY stabilan na 102.4, Fear & Greed blago pao s 50 na 47, režim ostaje CRAB uz isti macroPenalty od 1.",
+    "dxy":  102.41,
+    "changeSummary":  "Prva prava analiza - tržište u CRAB fazi s BTC-om na $81K, Fear&Greed neutralan (50), DXY stabilan na 102.4, nafta na $101.7 zbog houthi napada.",
     "lastUpdated":  "2026-10-28T12:00:00Z",
     "warnings":  {
                      "ACT":  [
 
                              ],
                      "MEME":  [
-
+                                 "Meme coin bez katalizatora"
                               ],
                      "ANIME":  [
 
@@ -25,28 +25,28 @@
 
                               ],
                      "PENGU":  [
-
+                                   "Meme coin bez katalizatora"
                                ],
                      "BOME":  [
-
+                                  "Meme coin bez katalizatora"
                               ],
                      "DOGS":  [
-
+                                  "Meme coin bez katalizatora"
                               ],
                      "NOT":  [
-
+                                 "Meme/TON, visoka BTC dominacija"
                              ],
                      "PEOPLE":  [
-
+                                    "Meme coin bez katalizatora"
                                 ],
                      "SOL":  [
-                                 "ETF odljevi, whale prodaja, podrška $99-100"
+
                              ],
                      "ADA":  [
 
                              ],
                      "PNUT":  [
-
+                                  "Meme coin bez katalizatora"
                               ],
                      "AIXBT":  [
 
@@ -58,18 +58,19 @@
 
                               ],
                      "PUMP":  [
-
+                                  "Meme coin bez katalizatora"
                               ],
                      "TRUMP":  [
-
+                                   "Meme coin, BTC dom 60% - altseason nije aktivan"
                                ],
                      "BTC":  [
-                                 "Otpor na $81,700, čeka se FOMC odluka"
+                                 "BTC ispod SMA200, drugi uzastopni Downtober",
+                                 "Otpor na $81.2K-$81.25K"
                              ]
                  },
     "sp500Ret5d":  -0.47,
-    "fearGreed":  47,
-    "macroPenalty":  1,
+    "fearGreed":  50,
+    "macroPenalty":  2,
     "catalysts":  {
                       "ACT":  [
 
@@ -81,10 +82,11 @@
 
                                 ],
                       "XRP":  [
-                                  "Rast 2.2% na $1.33, momentum pozitivan"
+                                  "XRP +2.2% danas, jači od BTC-a"
                               ],
                       "BNB":  [
-
+                                  "Jenner hard fork na testnet danas",
+                                  "Payment Lane + CAS20 standard upgrade"
                               ],
                       "SUI":  [
 
@@ -108,7 +110,7 @@
 
                                  ],
                       "SOL":  [
-
+                                  "Altcoin rally ispred FOMC odluke"
                               ],
                       "ADA":  [
 
@@ -117,10 +119,10 @@
 
                                ],
                       "AIXBT":  [
-                                    "Broadcom $63B AI deal s Anthropicom, bullish"
+
                                 ],
                       "ETH":  [
-                                  "Rast 1.8% uz tech rally, pozitivna dinamika"
+                                  "Altcoin rally +1.8%, ispred FOMC odluke"
                               ],
                       "LINK":  [
 
@@ -132,37 +134,37 @@
 
                                 ],
                       "BTC":  [
-                                  "Tech rally + ETF priljevi podržavaju BTC",
-                                  "BTC iznad SMA200, dugoročni trend uzlazan"
+                                  "FOMC odluka danas - potencijalni trend signal",
+                                  "BTC rebound iznad $81K"
                               ]
                   },
     "regime":  "CRAB",
     "sentimentScore":  {
                            "ACT":  0,
-                           "MEME":  0,
+                           "MEME":  -1,
                            "ANIME":  0,
                            "XRP":  1,
-                           "BNB":  0,
+                           "BNB":  2,
                            "SUI":  0,
                            "AVAX":  0,
-                           "PENGU":  0,
-                           "BOME":  0,
-                           "DOGS":  0,
-                           "NOT":  0,
-                           "PEOPLE":  0,
-                           "SOL":  -1,
+                           "PENGU":  -1,
+                           "BOME":  -1,
+                           "DOGS":  -1,
+                           "NOT":  -1,
+                           "PEOPLE":  -1,
+                           "SOL":  1,
                            "ADA":  0,
-                           "PNUT":  0,
-                           "AIXBT":  1,
+                           "PNUT":  -1,
+                           "AIXBT":  0,
                            "ETH":  1,
                            "LINK":  0,
-                           "PUMP":  0,
-                           "TRUMP":  0,
+                           "PUMP":  -1,
+                           "TRUMP":  -1,
                            "BTC":  1
                        },
-    "aiSummary":  "DXY se drži na ~102.4, makro pritisak na kripto ostaje neutralan pred Fedovu odluku u srijedu. Fear & Greed pao na 47 (neutralno), tržište u wait-and-see modu s BTC-om stabiliziranim iznad $80K i SMA200 (~$75.7K). BTC dominacija ostaje na 60.1% dok AI tokeni poput AIXBT profitiraju od Broadcom/Anthropic narativa vrijednog $63B.",
-    "warActive":  false,
-    "btcDom":  60.1,
-    "stableDom":  8.5,
-    "oil":  111.0
+    "aiSummary":  "DXY je na 102.4, neutralna razina bez pritiska na kripto; nafta skočila na $101.7 zbog houthi napada na saudijsku rafineriju Ras Tanura. Fear & Greed indeks je 50 (neutralno), BTC konsolidira oko $81K u CRAB fazi nakon drugog uzastopnog Downtobera. Danas FOMC donosi odluku o kamatnim stopama - očekuje se povećana volatilnost, major altovi (ETH, XRP, BNB) pokazuju kratkoročnu snagu.",
+    "warActive":  true,
+    "btcDom":  60.0,
+    "stableDom":  11.3,
+    "oil":  101.71
 }
