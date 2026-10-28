@@ -7,11 +7,15 @@
 <style>
 :root{
   /* ── BACKGROUND (3 razine + page) ── */
+  /* TEMA: ove vrijednosti su default (tamna); skripta u <head> ih nadjačava po VERZIJI aplikacije
+     (svaka verzija = druga nijansa crne/sive/bijele, vidi THEMES niže). --ink = boja teksta/linija
+     (bijela na tamnim temama, skoro crna na svijetlim), --bg-rgb = pozadina za prozirne trake. */
+  --ink:255,255,255;--bg-rgb:10,10,13;
   --bg:#0a0a0d;--s1:#14141a;--s2:#1a1a22;--s3:#22222c;--s4:#2a2a36;
-  --sep:rgba(255,255,255,.06);--sep2:rgba(255,255,255,.04);
+  --sep:rgba(var(--ink),.06);--sep2:rgba(var(--ink),.04);
 
   /* ── TEXT (samo opacity hierarchy) ── */
-  --t1:#fff;--t2:rgba(255,255,255,.72);--t3:rgba(255,255,255,.42);--t4:rgba(255,255,255,.2);
+  --t1:rgb(var(--ink));--t2:rgba(var(--ink),.72);--t3:rgba(var(--ink),.42);--t4:rgba(var(--ink),.2);
 
   /* ── SEMANTIC (4 primarne + 3 specijalne) ── */
   --bull:#00e676;--bear:#ff1744;--warn:#ffa726;--info:#2979ff;
@@ -30,13 +34,13 @@
   --r-sm:8px;--r-md:12px;--r-lg:16px;--r-xl:20px;
 }
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
-html,body{height:100%;background:#000;color:#fff;font-family:-apple-system,'SF Pro Display','Helvetica Neue',sans-serif;overflow:hidden;-webkit-font-smoothing:antialiased}
+html,body{height:100%;background:var(--bg);color:var(--t1);font-family:-apple-system,'SF Pro Display','Helvetica Neue',sans-serif;overflow:hidden;-webkit-font-smoothing:antialiased}
 .app{display:flex;flex-direction:column;height:100dvh}
 
 /* HEADER */
-.hd{padding:12px 18px 8px;flex-shrink:0;background:rgba(0,0,0,.9);backdrop-filter:blur(40px);border-bottom:.5px solid var(--sep2);display:flex;align-items:center;gap:10px}
+.hd{padding:12px 18px 8px;flex-shrink:0;background:rgba(var(--bg-rgb),.9);backdrop-filter:blur(40px);border-bottom:.5px solid var(--sep2);display:flex;align-items:center;gap:10px}
 .hd-logo{flex:1}
-.hd-title{font-size:15px;font-weight:800;letter-spacing:-.5px;color:#fff}
+.hd-title{font-size:15px;font-weight:800;letter-spacing:-.5px;color:var(--t1)}
 .hd-title span{color:var(--ye)}
 .hd-sub{font-size:11px;color:var(--t3);margin-top:1px;letter-spacing:.01em}
 .hd-claude{font-size:11px;color:rgba(0,230,118,.6);margin-top:2px;letter-spacing:.01em;display:none}
@@ -53,7 +57,7 @@ html,body{height:100%;background:#000;color:#fff;font-family:-apple-system,'SF P
 .pg{padding:14px 16px 70px}
 
 /* TABS */
-.filter-wrap{padding:0;flex-shrink:0;background:rgba(0,0,0,.85);backdrop-filter:blur(20px);border-bottom:.5px solid var(--sep2);display:flex;flex-direction:column}
+.filter-wrap{padding:0;flex-shrink:0;background:rgba(var(--bg-rgb),.85);backdrop-filter:blur(20px);border-bottom:.5px solid var(--sep2);display:flex;flex-direction:column}
 .filter-top{display:flex;align-items:center;justify-content:space-between;padding:0 16px}
 .tab-row{display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;flex:1;min-width:0}
 .tab-row::-webkit-scrollbar{display:none}
@@ -61,7 +65,7 @@ html,body{height:100%;background:#000;color:#fff;font-family:-apple-system,'SF P
 .tab{padding:13px 16px;font-size:13px;font-weight:600;border:none;background:none;color:var(--t3);cursor:pointer;font-family:inherit;border-bottom:2px solid transparent;transition:all .2s;white-space:nowrap}
 .tab.on{color:var(--t1);border-bottom-color:var(--ye)}
 .hd-gear{background:none;border:.5px solid var(--sep);border-radius:10px;padding:5px 9px;font-size:15px;cursor:pointer;color:var(--t3);transition:all .2s;flex-shrink:0}
-.hd-gear:hover{color:var(--t1);border-color:rgba(255,255,255,.2)}
+.hd-gear:hover{color:var(--t1);border-color:rgba(var(--ink),.2)}
 /* PCT toggle UKLONJEN — 10% mode više nije u UI-u, samo Settings */
 
 /* OPPORTUNITY CARD — minimalistic, semantic borders */
@@ -138,8 +142,8 @@ html,body{height:100%;background:#000;color:#fff;font-family:-apple-system,'SF P
 .act-btn.primary:hover{background:rgba(41,121,255,.2)}
 .act-btn.warn{background:rgba(255,167,38,.12);border-color:rgba(255,167,38,.38);color:var(--warn)}
 .act-btn.warn:hover{background:rgba(255,167,38,.18)}
-.act-btn.note{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.12);color:var(--t3)}
-.act-btn.note:hover{background:rgba(255,255,255,.07)}
+.act-btn.note{background:rgba(var(--ink),.04);border-color:rgba(var(--ink),.12);color:var(--t3)}
+.act-btn.note:hover{background:rgba(var(--ink),.07)}
 .act-btn.expand{flex:0 0 auto;padding:10px 14px;background:transparent;border-color:transparent;color:var(--t3);font-weight:var(--fw-b);font-size:var(--text-xs)}
 .act-btn.expand:hover{color:var(--t1)}
 
@@ -200,10 +204,10 @@ html,body{height:100%;background:#000;color:#fff;font-family:-apple-system,'SF P
 /* MODAL */
 .modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.85);backdrop-filter:blur(30px);z-index:300;display:none;align-items:flex-end}
 .modal-bg.open{display:flex}
-.modal{background:var(--s1);border-radius:26px 26px 0 0;width:100%;padding:20px 18px 44px;border-top:.5px solid rgba(255,255,255,.08);animation:up .28s cubic-bezier(.4,0,.2,1)}
+.modal{background:var(--s1);border-radius:26px 26px 0 0;width:100%;padding:20px 18px 44px;border-top:.5px solid rgba(var(--ink),.08);animation:up .28s cubic-bezier(.4,0,.2,1)}
 @keyframes up{from{transform:translateY(100%)}to{transform:translateY(0)}}
 .modal-handle{width:36px;height:4px;background:var(--s4);border-radius:2px;margin:0 auto 20px}
-.inp{width:100%;background:var(--s2);border:.5px solid var(--sep);border-radius:12px;padding:13px 15px;font-size:15px;color:#fff;outline:none;-webkit-appearance:none;font-family:inherit;transition:border-color .15s}
+.inp{width:100%;background:var(--s2);border:.5px solid var(--sep);border-radius:12px;padding:13px 15px;font-size:15px;color:var(--t1);outline:none;-webkit-appearance:none;font-family:inherit;transition:border-color .15s}
 .inp:focus{border-color:rgba(41,121,255,.5);box-shadow:0 0 0 3px rgba(41,121,255,.08)}
 .inp-lbl{font-size:12px;color:var(--t3);margin-bottom:6px;display:block;font-weight:500}
 .g2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
@@ -306,7 +310,7 @@ svg.sp{overflow:visible;display:block}
 .opp.t90{box-shadow:0 4px 32px rgba(0,230,118,.14),0 1px 0 rgba(0,230,118,.12) inset}
 
 /* ── PILL TABS — zamjena za underline stilove ── */
-.filter-wrap{padding:6px 14px!important;border-bottom:.5px solid var(--sep2)!important;background:rgba(10,10,13,.95)!important}
+.filter-wrap{padding:6px 14px!important;border-bottom:.5px solid var(--sep2)!important;background:rgba(var(--bg-rgb),.95)!important}
 .tab-row{gap:4px;padding:4px 0}
 .tab{
   padding:7px 14px!important;
@@ -318,7 +322,7 @@ svg.sp{overflow:visible;display:block}
   transition:background .15s,color .15s,border-color .15s!important;
   letter-spacing:.01em
 }
-.tab:hover{background:rgba(255,255,255,.06)!important;color:var(--t2)!important}
+.tab:hover{background:rgba(var(--ink),.06)!important;color:var(--t2)!important}
 .tab.on{
   background:rgba(255,213,79,.12)!important;
   border-color:rgba(255,213,79,.35)!important;
@@ -336,20 +340,20 @@ svg.sp{overflow:visible;display:block}
 .hd>div:last-child{flex-shrink:0}
 
 /* ── BOTTOM NAV (mobilni) ── */
-.btmnav{display:none;flex-shrink:0;align-items:stretch;gap:4px;background:rgba(10,10,13,.97);border-top:.5px solid rgba(255,255,255,.08);backdrop-filter:blur(20px);padding:6px 8px calc(6px + env(safe-area-inset-bottom))}
+.btmnav{display:none;flex-shrink:0;align-items:stretch;gap:4px;background:rgba(var(--bg-rgb),.97);border-top:.5px solid rgba(var(--ink),.08);backdrop-filter:blur(20px);padding:6px 8px calc(6px + env(safe-area-inset-bottom))}
 .bnav{flex:1;background:none;border:none;color:var(--t3);font-family:inherit;display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;padding:6px 0 5px;border-radius:12px;transition:color .15s,background .15s}
 .bnav .bn-ic{font-size:19px;line-height:1}
 .bnav .bn-lb{font-size:10px;font-weight:600;letter-spacing:.01em}
 .bnav.on{color:var(--ye)}
 .bnav.on .bn-lb{color:var(--ye)}
-.bnav:active{background:rgba(255,255,255,.05)}
+.bnav:active{background:rgba(var(--ink),.05)}
 @media(max-width:599px){.btmnav{display:flex}.filter-wrap{display:none!important}}
 
 /* ── HEADER GLASS ── */
 .hd{
-  background:linear-gradient(180deg,rgba(10,10,13,.97) 0%,rgba(14,14,20,.93) 100%)!important;
-  border-bottom:.5px solid rgba(255,255,255,.07)!important;
-  box-shadow:0 1px 0 rgba(255,255,255,.03),0 4px 20px rgba(0,0,0,.6)!important
+  background:linear-gradient(180deg,rgba(var(--bg-rgb),.97) 0%,rgba(var(--bg-rgb),.93) 100%)!important;
+  border-bottom:.5px solid rgba(var(--ink),.07)!important;
+  box-shadow:0 1px 0 rgba(var(--ink),.03),0 4px 20px rgba(0,0,0,.6)!important
 }
 
 /* ── LIVE PILL upgrade ── */
@@ -357,8 +361,8 @@ svg.sp{overflow:visible;display:block}
 
 /* ── STAT BOX upgrade ── */
 .stat-box{
-  background:linear-gradient(135deg,var(--s2) 0%,rgba(34,34,44,.8) 100%)!important;
-  border:.5px solid rgba(255,255,255,.07)!important;
+  background:linear-gradient(135deg,var(--s2) 0%,var(--s3) 100%)!important;
+  border:.5px solid rgba(var(--ink),.07)!important;
   box-shadow:0 1px 8px rgba(0,0,0,.3)!important;
   transition:transform .15s,box-shadow .15s!important
 }
@@ -396,7 +400,7 @@ svg.sp{overflow:visible;display:block}
 
 /* ── MACRO METRIC CARD ── */
 .macro-card{
-  background:linear-gradient(135deg,var(--s2) 0%,rgba(26,26,34,.6) 100%);
+  background:linear-gradient(135deg,var(--s2) 0%,var(--s1) 100%);
   border:.5px solid var(--sep);
   border-radius:var(--r-md);
   padding:8px 10px;
@@ -430,18 +434,102 @@ svg.sp{overflow:visible;display:block}
 
 /* ── SCROLLBAR thin style (desktop) ── */
 @media(min-width:600px){
-  .sc{scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.08) transparent}
+  .sc{scrollbar-width:thin;scrollbar-color:rgba(var(--ink),.08) transparent}
   .sc::-webkit-scrollbar{display:block;width:4px}
   .sc::-webkit-scrollbar-track{background:transparent}
-  .sc::-webkit-scrollbar-thumb{background:rgba(255,255,255,.08);border-radius:2px}
+  .sc::-webkit-scrollbar-thumb{background:rgba(var(--ink),.08);border-radius:2px}
 }
+
+/* ── SVIJETLE TEME ──────────────────────────────────────────────
+   Dio boja je ručno upisan u kodu (npr. #00e676 zelena). Na bijeloj pozadini je to nečitljivo,
+   pa ih u svijetlim temama zatamnimo. Pokriva inline "color:" i SVG fill/stroke atribute. */
+html.theme-light .hd-claude{color:rgba(0,107,53,.9)}
+html.theme-light [style*="color:#00e676"]{color:#005f2f!important}
+html.theme-light [style*="color:#69f0ae"]{color:#2e7d32!important}
+html.theme-light [style*="color:#ff1744"]{color:#a61818!important}
+html.theme-light [style*="color:#ff7043"]{color:#bf360c!important}
+html.theme-light [style*="color:#ff6d00"]{color:#9a3d00!important}
+html.theme-light [style*="color:#ffab00"]{color:#8a5200!important}
+html.theme-light [style*="color:#ffa726"]{color:#9a3d00!important}
+html.theme-light [style*="color:#ffea00"]{color:#7a6200!important}
+html.theme-light [style*="color:#ffd54f"]{color:#8a6700!important}
+html.theme-light [style*="color:#2979ff"]{color:#0d47a1!important}
+html.theme-light [style*="color:#ce93d8"]{color:#6a1b9a!important}
+html.theme-light [style*="color:#a5b4fc"]{color:#3949ab!important}
+html.theme-light [style*="color:#4dd0e1"]{color:#006064!important}
+html.theme-light [style*="color:#fff"]{color:var(--t1)!important}
+html.theme-light [fill="#00e676"]{fill:#005f2f}
+html.theme-light [stroke="#00e676"]{stroke:#005f2f}
+html.theme-light [fill="#ff1744"]{fill:#a61818}
+html.theme-light [stroke="#ff1744"]{stroke:#a61818}
+html.theme-light [fill="#ffea00"]{fill:#7a6200}
+html.theme-light [stroke="#ffea00"]{stroke:#7a6200}
+html.theme-light [fill="#ffab00"]{fill:#8a5200}
+html.theme-light [stroke="#ffab00"]{stroke:#8a5200}
+html.theme-light [fill="#2979ff"]{fill:#0d47a1}
+html.theme-light [stroke="#2979ff"]{stroke:#0d47a1}
+/* Sive tamne teme (Grafit/Ugljen/Tamno siva): crvena i plava svjetlije radi kontrasta na sivoj pozadini */
+html.theme-lift [style*="color:#ff1744"]{color:#ff6b83!important}
+html.theme-lift [style*="color:#2979ff"]{color:#6fa8ff!important}
+html.theme-lift [fill="#ff1744"]{fill:#ff6b83}
+html.theme-lift [stroke="#ff1744"]{stroke:#ff6b83}
+html.theme-lift [fill="#2979ff"]{fill:#6fa8ff}
+html.theme-lift [stroke="#2979ff"]{stroke:#6fa8ff}
 </style>
+<script>
+/* ── TEMA PO VERZIJI ─────────────────────────────────────────────
+   Svaka verzija aplikacije ima drugu nijansu crne / sive / bijele (broj verzije % 8), pa se izgled
+   mijenja sam sa svakim commitom. Redoslijed naizmjence tamno/svijetlo da se razlika jasno vidi.
+   VER se automatski ažurira pre-commit hookom (zamjenjuje svaku pojavu trenutne verzije).
+   Za pregled bilo koje teme: dodaj ?theme=0..7 na adresu. */
+(function(){
+  var VER="v5.349";
+  var T=[
+    {n:"Crna",          d:1,bg:"#000000",s:["#0e0e0e","#161616","#1f1f1f","#282828"],a:[.72,.45,.24]},
+    {n:"Bijela",        d:0,bg:"#ffffff",s:["#f3f3f3","#ebebeb","#e2e2e2","#d8d8d8"],a:[.76,.58,.40]},
+    {n:"Grafit",        d:1,l:1,bg:"#232323",s:["#2b2b2b","#333333","#3c3c3c","#454545"],a:[.74,.50,.30]},
+    {n:"Svijetlo siva", d:0,bg:"#d6d6d6",s:["#e6e6e6","#dedede","#d3d3d3","#c8c8c8"],a:[.78,.60,.44]},
+    {n:"Ugljen",        d:1,l:1,bg:"#141414",s:["#1c1c1c","#242424","#2d2d2d","#363636"],a:[.72,.45,.24]},
+    {n:"Gotovo bijela", d:0,bg:"#f0f0f0",s:["#ffffff","#f7f7f7","#ececec","#e2e2e2"],a:[.76,.58,.40]},
+    {n:"Tamno siva",    d:1,l:1,bg:"#343434",s:["#3d3d3d","#464646","#4f4f4f","#585858"],a:[.78,.56,.36]},
+    {n:"Srebrna",       d:0,bg:"#c4c4c4",s:["#d6d6d6","#cecece","#c2c2c2","#b6b6b6"],a:[.80,.62,.46]}
+  ];
+  var minor=parseInt(VER.split(".")[1],10)||0;
+  var q=/[?&]theme=(\d+)/.exec(location.search);
+  var idx=(q?parseInt(q[1],10):minor)%T.length;
+  var th=T[idx], root=document.documentElement, st=root.style;
+  function rgb(h){return parseInt(h.substr(1,2),16)+","+parseInt(h.substr(3,2),16)+","+parseInt(h.substr(5,2),16);}
+  st.setProperty("--ink",th.d?"255,255,255":"20,20,22");
+  st.setProperty("--bg-rgb",rgb(th.bg));
+  st.setProperty("--bg",th.bg);
+  for(var i=0;i<4;i++)st.setProperty("--s"+(i+1),th.s[i]);
+  st.setProperty("--t2","rgba(var(--ink),"+th.a[0]+")");
+  st.setProperty("--t3","rgba(var(--ink),"+th.a[1]+")");
+  st.setProperty("--t4","rgba(var(--ink),"+th.a[2]+")");
+  st.setProperty("--sep","rgba(var(--ink),"+(th.d?.08:.12)+")");
+  st.setProperty("--sep2","rgba(var(--ink),"+(th.d?.05:.07)+")");
+  if(!th.d){ // tamnije semantičke boje za čitljivost na svijetloj pozadini
+    var L={"--bull":"#005f2f","--gr":"#005f2f","--bear":"#a61818","--re":"#a61818","--warn":"#9a3d00","--info":"#0d47a1","--bl":"#0d47a1",
+           "--ye":"#8a6700","--or":"#bf360c","--pu":"#6a1b9a","--cy":"#006064"};
+    for(var k in L)st.setProperty(k,L[k]);
+  }
+  if(th.d&&th.l){ // sive tamne teme: crvena i plava moraju biti svjetlije da imaju dovoljan kontrast
+    var U={"--bear":"#ff6b83","--re":"#ff6b83","--info":"#6fa8ff","--bl":"#6fa8ff"};
+    for(var u in U)st.setProperty(u,U[u]);
+    root.classList.add("theme-lift");
+  }
+  root.classList.add(th.d?"theme-dark":"theme-light");
+  window.APP_THEME={name:th.n,idx:idx,ver:VER,light:!th.d};
+  window.APP_THEMES=T;
+  var m=document.createElement("meta");m.name="theme-color";m.content=th.bg;document.head.appendChild(m);
+})();
+</script>
 </head>
 <body>
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.348</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.349</span></div>
       <div class="hd-status">
         <span class="hd-sub" id="hdsub">Učitavam…</span>
         <span class="hd-claude" id="claude-update" style="display:none;align-items:center;gap:5px">
@@ -505,7 +593,8 @@ svg.sp{overflow:visible;display:block}
 <div class="modal">
   <div class="modal-handle"></div>
   <h2 style="font-size:19px;font-weight:800;margin-bottom:4px">Postavke skenera</h2>
-  <p style="font-size:13px;color:var(--t3);margin-bottom:18px">Prilagodi parametre za standardni +6% target u 3 dana (i meme tab)</p>
+  <p style="font-size:13px;color:var(--t3);margin-bottom:6px">Prilagodi parametre za standardni +6% target u 3 dana (i meme tab)</p>
+  <p id="theme-note" style="font-size:11px;color:var(--t4);margin-bottom:18px"></p>
   <div class="g2" style="margin-bottom:12px">
     <div><label class="inp-lbl">Min pouzdanost (%)</label><input id="s-conf" class="inp" type="number" value="45" min="20" max="90"></div>
     <div><label class="inp-lbl">Target profit (%)</label><input id="s-tgt" class="inp" type="number" value="6" min="2" max="20" step="0.5"></div>
@@ -516,7 +605,7 @@ svg.sp{overflow:visible;display:block}
     <div><label class="inp-lbl">Prag pogotka (%)</label><input id="s-win" class="inp" type="number" value="5" min="1" max="50" step="0.5" title="Trade se broji kao POGODAK samo ako zatvori s barem ovoliko % u plusu"></div>
     <div><label class="inp-lbl">BTC dom. limit (%)</label><input id="s-bdom" class="inp" type="number" value="57" min="40" max="100" step="0.5" title="Kad je BTC dominacija iznad ovoga, nema long ulaza u altcoine. 100 = filter ugašen."></div>
   </div>
-  <div style="margin-bottom:10px;padding:10px 12px;background:rgba(255,255,255,.04);border-radius:10px;border:.5px solid var(--sep)">
+  <div style="margin-bottom:10px;padding:10px 12px;background:rgba(var(--ink),.04);border-radius:10px;border:.5px solid var(--sep)">
     <div class="row-between" style="margin-bottom:6px">
       <span style="font-size:13px;font-weight:700;color:var(--t2)">🔔 Notifikacije</span>
       <span id="s-notif-status" style="font-size:11px"></span>
@@ -528,11 +617,11 @@ svg.sp{overflow:visible;display:block}
     </div>
   </div>
   <div style="margin-bottom:14px">
-    <div onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;padding:10px 12px;background:rgba(255,255,255,.04);border-radius:10px;border:.5px solid var(--sep)">
+    <div onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;padding:10px 12px;background:rgba(var(--ink),.04);border-radius:10px;border:.5px solid var(--sep)">
       <span style="font-size:13px;font-weight:700;color:var(--t2)">🔑 API ključevi (opcionalno)</span>
       <span style="font-size:11px;color:var(--t3)">▼ proširi</span>
     </div>
-    <div style="display:none;padding:12px;background:rgba(255,255,255,.02);border-radius:0 0 10px 10px;border:.5px solid var(--sep);border-top:none">
+    <div style="display:none;padding:12px;background:rgba(var(--ink),.02);border-radius:0 0 10px 10px;border:.5px solid var(--sep);border-top:none">
       <p style="font-size:11px;color:var(--t3);margin-bottom:10px">Dodaj API ključeve za exchange netflow, likvidacijske mape i social sentiment. Bez ključa ovi signali nisu dostupni.</p>
       <div style="display:flex;flex-direction:column;gap:8px">
         <div>
@@ -765,7 +854,7 @@ function getMemeSYMS(){
 
 // Engine verzija — tag na svaku predikciju za mjerenje win-rate po verziji.
 // Pre-commit hook (sed s/v5.x/.../g) automatski drži ovo u sinku s headerom.
-var APP_VER="v5.348";
+var APP_VER="v5.349";
 
 // Settings
 var settings={minConf:45,targetPct:6,maxRisk:2,minRR:1.2,accountSize:1000,maxRiskPerTrade:1,winThreshold:5,btcDomBlock:57};
@@ -1479,15 +1568,15 @@ function renderRefreshStatus(){
   allSrcs.forEach(function(s){var f=s.ts?Math.min(1,(Date.now()-s.ts)/1000/s.m):1;if(f>worst)worst=f;});
   var oc=worst<0.35?"#00e676":worst<0.70?"#ffab00":"#ff1744";
   var ol=worst<0.35?"svježi":worst<0.70?"OK":"zastarjeli";
-  var h='<div style="background:rgba(255,255,255,.02);border-radius:12px;padding:8px 12px;margin-bottom:12px;border:.5px solid rgba(255,255,255,.05)">';
+  var h='<div style="background:rgba(var(--ink),.02);border-radius:12px;padding:8px 12px;margin-bottom:12px;border:.5px solid rgba(var(--ink),.05)">';
   // Kompaktni sažetak — cijeli red je klikabilan za detalje
   h+='<div onclick="_dataStatusOpen=!_dataStatusOpen;render()" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer">';
   h+='<span style="display:flex;align-items:center;gap:7px">';
   h+='<span style="width:6px;height:6px;border-radius:50%;background:'+oc+';box-shadow:0 0 5px '+oc+'88;flex-shrink:0"></span>';
-  h+='<span style="font-size:10px;font-weight:700;color:rgba(255,255,255,.42);letter-spacing:.03em">Podaci '+ol+'</span>';
-  h+='<span style="font-size:10px;color:rgba(255,255,255,.25);font-family:monospace">'+clk+'</span>';
+  h+='<span style="font-size:10px;font-weight:700;color:rgba(var(--ink),.42);letter-spacing:.03em">Podaci '+ol+'</span>';
+  h+='<span style="font-size:10px;color:rgba(var(--ink),.25);font-family:monospace">'+clk+'</span>';
   h+='</span>';
-  h+='<span style="font-size:10px;color:rgba(255,255,255,.3)">'+(_dataStatusOpen?'▲':'▾')+' detalji</span>';
+  h+='<span style="font-size:10px;color:rgba(var(--ink),.3)">'+(_dataStatusOpen?'▲':'▾')+' detalji</span>';
   h+='</div>';
   if(!_dataStatusOpen){ h+='</div>'; return h; }
   h+='<div style="display:flex;flex-wrap:wrap;gap:4px;margin-top:8px">';
@@ -1495,28 +1584,28 @@ function renderRefreshStatus(){
     var f=s.ts?Math.min(1,(Date.now()-s.ts)/1000/s.m):1;
     var c=f<0.35?"#00e676":f<0.70?"#ffab00":"#ff1744";
     var ago=s.ts?fmtTsAgo(s.ts):"—";
-    h+='<div style="display:flex;align-items:center;gap:4px;background:rgba(255,255,255,.03);border:.5px solid rgba(255,255,255,.05);border-radius:20px;padding:3px 9px">';
+    h+='<div style="display:flex;align-items:center;gap:4px;background:rgba(var(--ink),.03);border:.5px solid rgba(var(--ink),.05);border-radius:20px;padding:3px 9px">';
     h+='<span style="width:5px;height:5px;border-radius:50%;background:'+c+';display:inline-block;flex-shrink:0;box-shadow:0 0 4px '+c+'88"></span>';
-    h+='<span style="font-size:10px;color:rgba(255,255,255,.35)">'+s.lbl+'</span>';
+    h+='<span style="font-size:10px;color:rgba(var(--ink),.35)">'+s.lbl+'</span>';
     h+='<span style="font-size:10px;color:'+c+';font-weight:700;font-family:monospace">'+ago+'</span>';
     h+='</div>';
   });
   h+='</div>';
   if(apiKeys.github){
-    var gc2=ghSync.status==="ok"?"#00e676":ghSync.status==="error"?"#ff1744":ghSync.status==="syncing"?"#ffab00":"rgba(255,255,255,.25)";
+    var gc2=ghSync.status==="ok"?"#00e676":ghSync.status==="error"?"#ff1744":ghSync.status==="syncing"?"#ffab00":"rgba(var(--ink),.25)";
     var gi=ghSync.status==="ok"?"✓":ghSync.status==="error"?"✗":ghSync.status==="syncing"?"↻":"·";
     var gt=ghSync.lastSync?fmtTsAgo(ghSync.lastSync):"—";
     h+='<div style="margin-top:6px;display:flex;justify-content:space-between;align-items:center">';
     h+='<button onclick="manualSync()" style="background:rgba(99,102,241,.12);border:.5px solid rgba(99,102,241,.25);border-radius:7px;color:#a5b4fc;font-size:10px;padding:3px 10px;cursor:pointer">↻ Sinkroniziraj</button>';
     h+='<div style="display:inline-flex;align-items:center;gap:5px;background:rgba(99,102,241,.07);border:.5px solid rgba(99,102,241,.15);border-radius:8px;padding:3px 10px">';
     h+='<span style="font-size:11px;color:'+gc2+';font-weight:900">'+gi+'</span>';
-    h+='<span style="font-size:10px;color:rgba(255,255,255,.3)">GitHub sync</span>';
+    h+='<span style="font-size:10px;color:rgba(var(--ink),.3)">GitHub sync</span>';
     h+='<span style="font-size:10px;color:'+gc2+';font-weight:700">'+gt+'</span>';
     if(ghSync.error)h+='<span style="font-size:10px;color:#ff1744"> — '+ghSync.error+'</span>';
     h+='</div></div>';
   } else {
     h+='<div style="margin-top:6px;text-align:center">';
-    h+='<span style="font-size:10px;color:rgba(255,255,255,.25)">⚙️ Postavi GitHub token u Postavkama za sync između uređaja</span>';
+    h+='<span style="font-size:10px;color:rgba(var(--ink),.25)">⚙️ Postavi GitHub token u Postavkama za sync između uređaja</span>';
     h+='</div>';
   }
   h+='</div>';
@@ -3510,7 +3599,7 @@ function renderOpp(o){
   if(o.conf>=70){
     var tierLbl=o.conf>=90?"ELITNI":o.conf>=80?"JAK":"DOBAR";
     var tierCol=o.conf>=90?"var(--bull)":o.conf>=80?"var(--warn)":"var(--info)";
-    h+=chip(tierLbl,tierCol,"rgba(255,255,255,.05)","Tier kvalitete|Razina pouzdanosti: DOBAR (70-79%), JAK (80-89%), ELITNI (90%+). Viši tier = jači setup s više potvrda.");
+    h+=chip(tierLbl,tierCol,"rgba(var(--ink),.05)","Tier kvalitete|Razina pouzdanosti: DOBAR (70-79%), JAK (80-89%), ELITNI (90%+). Viši tier = jači setup s više potvrda.");
   }
   if(alreadyTracked)h+=chip("PRAĆEN","var(--bull)","rgba(0,230,118,.12)","Praćeno|Ovaj token je već u tvom Trackeru kao aktivna pozicija. Dobit ćeš notifikaciju kad treba prodati.");
   // ── CONFLUENCE COUNT — vidljiv pokazatelj kvalitete setupa ─────
@@ -3529,7 +3618,7 @@ function renderOpp(o){
     h+=chip("💰 "+(bull?"+":"")+fl.score,fl.col,fbg,"Smart Money Flow "+fl.score+"|"+fl.label+" — composite iz CVD/OI/funding/taker/L-S/likvidacija (besplatni netflow-proxy). "+(fl.drivers.length?"Pokretači: "+fl.drivers.join(", "):""),9);
   })();
   // ── VISUAL SEPARATOR između status i context chips ─────────────
-  h+='<span style="width:1px;height:14px;background:rgba(255,255,255,.08);margin:0 2px"></span>';
+  h+='<span style="width:1px;height:14px;background:rgba(var(--ink),.08);margin:0 2px"></span>';
   // ── WYCKOFF faza badge (4h primarno, daily fallback) ──────────
   (function(){
     var wy=wyckoff4h[o.sym]||wyckoffData[o.sym];
@@ -3562,7 +3651,7 @@ function renderOpp(o){
     var hasInteresting=tfs.some(function(x){return x.r<40||x.r>65;});
     if(!hasInteresting)return;
     var tip="RSI po vremenu|RSI mjeri je li token preprodan (&lt;30 = oversold, prilika) ili prekupljen (&gt;70 = oprez). Vrijednosti: "+tfs.map(function(x){return x.l+" "+x.r;}).join(", ")+".";
-    var inner='<span data-tip="'+tip.replace(/"/g,"&quot;")+'" style="display:inline-flex;gap:3px;font-size:10px;font-weight:var(--fw-b);background:rgba(255,255,255,.04);padding:2px 6px;border-radius:6px;cursor:help;line-height:1.6;white-space:nowrap">';
+    var inner='<span data-tip="'+tip.replace(/"/g,"&quot;")+'" style="display:inline-flex;gap:3px;font-size:10px;font-weight:var(--fw-b);background:rgba(var(--ink),.04);padding:2px 6px;border-radius:6px;cursor:help;line-height:1.6;white-space:nowrap">';
     tfs.forEach(function(x){inner+='<span style="color:'+rsiCol(x.r)+'">'+x.l+' '+x.r+'</span>';});
     inner+='</span>';
     h+=inner;
@@ -3606,7 +3695,7 @@ function renderOpp(o){
     var gap=circ-dash;
     // Track circle (dim) + progress arc
     var svg='<svg width="44" height="44" viewBox="0 0 44 44" style="transform:rotate(-90deg)">'
-      +'<circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="'+stroke+'"/>'
+      +'<circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="none" stroke="rgba(var(--ink),.07)" stroke-width="'+stroke+'"/>'
       +'<circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="none" stroke="'+col+'" stroke-width="'+stroke+'" stroke-linecap="round"'
       +' stroke-dasharray="'+dash.toFixed(1)+' '+gap.toFixed(1)+'" style="transition:stroke-dasharray .4s ease"/>'
       +'</svg>';
@@ -3733,7 +3822,7 @@ function renderOpp(o){
   // ── EXPANDED DETAILS ────────────────────────────────────────────
   if(isExpDet){
     // verdictWhy + R/R/ATR metric row
-    h+='<div class="sec-tight sec-divider-top" style="background:rgba(255,255,255,.015)">';
+    h+='<div class="sec-tight sec-divider-top" style="background:rgba(var(--ink),.015)">';
     if(o.verdictWhy)h+='<div style="font-size:11px;color:var(--t3);line-height:1.5;margin-bottom:7px">'+o.verdictWhy+'</div>';
     var wlbl=o.targetPct===10?'5d':'3d';
     h+='<div class="row-wrap" style="gap:12px">';
@@ -3773,10 +3862,10 @@ function renderOpp(o){
     if(!isExpSig){
       var bc2=o.signals.length,wc2=o.warnings.length;
       var sSum=(bc2?"↑ "+bc2+" bull":"")+(bc2&&wc2?" · ":"")+(wc2?"⚠ "+wc2+" warn":"");
-      h+='<span onclick="expandedSigs[\''+o.sym+'\']=true;render()" style="font-size:10px;color:var(--t4);cursor:pointer;padding:4px 11px;border-radius:20px;border:.5px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);display:inline-flex;align-items:center;gap:5px">📋 Signali ('+allSigs.length+')&nbsp;<span style="opacity:.6">'+sSum+'</span> ▾</span>';
+      h+='<span onclick="expandedSigs[\''+o.sym+'\']=true;render()" style="font-size:10px;color:var(--t4);cursor:pointer;padding:4px 11px;border-radius:20px;border:.5px solid rgba(var(--ink),.12);background:rgba(var(--ink),.04);display:inline-flex;align-items:center;gap:5px">📋 Signali ('+allSigs.length+')&nbsp;<span style="opacity:.6">'+sSum+'</span> ▾</span>';
     } else {
       allSigs.forEach(function(s){h+='<span class="sig-chip '+s.type+'">'+(sigIcon[s.type]||'')+s.txt+'</span>';});
-      h+='<span onclick="delete expandedSigs[\''+o.sym+'\']; render()" style="font-size:10px;color:var(--t4);cursor:pointer;padding:4px 11px;border-radius:20px;border:.5px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);display:inline-flex;align-items:center;gap:4px">Sažmi ▴</span>';
+      h+='<span onclick="delete expandedSigs[\''+o.sym+'\']; render()" style="font-size:10px;color:var(--t4);cursor:pointer;padding:4px 11px;border-radius:20px;border:.5px solid rgba(var(--ink),.12);background:rgba(var(--ink),.06);display:inline-flex;align-items:center;gap:4px">Sažmi ▴</span>';
     }
     h+='</div>';
 
@@ -5028,13 +5117,13 @@ function hcCumulative(sorted){
   // Grid
   [25,50,75].forEach(function(pct){
     var y=ty(pct);
-    svg+='<line x1="'+PL+'" y1="'+y+'" x2="'+(W-PR)+'" y2="'+y+'" stroke="rgba(255,255,255,.055)" stroke-width="1"/>';
-    svg+='<text x="'+(PL-4)+'" y="'+(y+3.5)+'" font-size="9" fill="rgba(255,255,255,.2)" text-anchor="end">'+pct+'</text>';
+    svg+='<line x1="'+PL+'" y1="'+y+'" x2="'+(W-PR)+'" y2="'+y+'" stroke="rgba(var(--ink),.055)" stroke-width="1"/>';
+    svg+='<text x="'+(PL-4)+'" y="'+(y+3.5)+'" font-size="9" fill="rgba(var(--ink),.2)" text-anchor="end">'+pct+'</text>';
   });
   // 50% referentna linija
   svg+='<line x1="'+PL+'" y1="'+ty(50)+'" x2="'+(W-PR)+'" y2="'+ty(50)+'" stroke="rgba(255,234,0,.15)" stroke-width="1" stroke-dasharray="4 3"/>';
   // Okvir grafa
-  svg+='<rect x="'+PL+'" y="'+PT+'" width="'+cW+'" height="'+cH+'" fill="none" stroke="rgba(255,255,255,.04)" stroke-width="1" rx="2"/>';
+  svg+='<rect x="'+PL+'" y="'+PT+'" width="'+cW+'" height="'+cH+'" fill="none" stroke="rgba(var(--ink),.04)" stroke-width="1" rx="2"/>';
 
   // Krivulje: redoslijed važan (sve iza, zatim specifične ispred)
   svg+=drawCurve(sAll,'rgba(180,180,180,.55)','gAll',1.2,true,0.03);
@@ -5063,8 +5152,8 @@ function hcCumulative(sorted){
 
   // X-os datumi
   var fmt=function(ts){var d=new Date(ts);return d.toLocaleDateString("hr-HR",{day:"numeric",month:"short"});};
-  svg+='<text x="'+PL+'" y="'+(PT+cH+14)+'" font-size="9" fill="rgba(255,255,255,.2)" text-anchor="start">'+fmt(minTs)+'</text>';
-  svg+='<text x="'+(W-PR)+'" y="'+(PT+cH+14)+'" font-size="9" fill="rgba(255,255,255,.2)" text-anchor="end">'+fmt(maxTs)+'</text>';
+  svg+='<text x="'+PL+'" y="'+(PT+cH+14)+'" font-size="9" fill="rgba(var(--ink),.2)" text-anchor="start">'+fmt(minTs)+'</text>';
+  svg+='<text x="'+(W-PR)+'" y="'+(PT+cH+14)+'" font-size="9" fill="rgba(var(--ink),.2)" text-anchor="end">'+fmt(maxTs)+'</text>';
 
   // Legenda
   var legY=H-6;
@@ -5101,10 +5190,10 @@ function hcConfCalib(sorted){
     h+='<span style="color:'+dc+'">'+(diff>=0?'+':'')+diff.toFixed(0)+'% vs procjena</span>';
     h+='</div>';
     h+='<div style="height:18px;background:var(--s3);border-radius:5px;position:relative;overflow:hidden">';
-    h+='<div style="position:absolute;left:0;top:0;height:100%;width:'+ae.toFixed(0)+'%;background:rgba(255,255,255,.1);border-radius:5px"></div>';
+    h+='<div style="position:absolute;left:0;top:0;height:100%;width:'+ae.toFixed(0)+'%;background:rgba(var(--ink),.1);border-radius:5px"></div>';
     h+='<div style="position:absolute;left:0;top:0;height:100%;width:'+aa.toFixed(0)+'%;background:'+(aa>=ae?'rgba(0,230,118,.45)':'rgba(255,23,68,.45)')+';border-radius:5px"></div>';
     h+='<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;padding:0 7px">';
-    h+='<span style="font-size:10px;font-weight:700;color:rgba(255,255,255,.45)">Oček: '+ae.toFixed(0)+'%</span>';
+    h+='<span style="font-size:10px;font-weight:700;color:rgba(var(--ink),.45)">Oček: '+ae.toFixed(0)+'%</span>';
     h+='<span style="font-size:10px;font-weight:700;color:#fff">'+aa.toFixed(0)+'%</span>';
     h+='</div></div></div>';
   });
@@ -5450,7 +5539,7 @@ function hcInsights(sorted){
   if(insights.length===0)return'';
   var h='<div><div style="font-size:10px;color:var(--t3);font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px">Preporuke za poboljšanje</div>';
   insights.forEach(function(ins){
-    h+='<div style="background:rgba(255,255,255,.04);border-radius:10px;padding:9px 11px;margin-bottom:7px;border:.5px solid rgba(255,255,255,.06);display:flex;gap:9px;align-items:flex-start">';
+    h+='<div style="background:rgba(var(--ink),.04);border-radius:10px;padding:9px 11px;margin-bottom:7px;border:.5px solid rgba(var(--ink),.06);display:flex;gap:9px;align-items:flex-start">';
     h+='<span style="font-size:14px;flex-shrink:0;line-height:1.4">'+ins.i+'</span>';
     h+='<span style="font-size:11px;color:'+ins.c+';line-height:1.55">'+ins.t+'</span>';
     h+='</div>';
@@ -5735,7 +5824,7 @@ function renderClosedList(preds){
     var autoB=p.autoClose?'<span style="font-size:10px;color:var(--t4)"> AUTO</span>':'';
     var dn=p.targetPct===10?5:3;
     var dStr='';
-    for(var di=1;di<=dn;di++){dStr+='<span style="color:'+(p['d'+di+'Hit']?'var(--gr)':'rgba(255,255,255,.18)')+';font-size:10px">D'+di+'</span> ';}
+    for(var di=1;di<=dn;di++){dStr+='<span style="color:'+(p['d'+di+'Hit']?'var(--gr)':'rgba(var(--ink),.18)')+';font-size:10px">D'+di+'</span> ';}
     var pnlVal=(p.closePct!=null?(p.closePct>=0?"+":"")+p.closePct+'%':'—');
     var sep=i<preds.length-1?'border-bottom:.5px solid var(--sep2)':'';
     h+='<div style="display:flex;align-items:center;gap:10px;padding:9px 14px;'+sep+'">';
@@ -5855,7 +5944,7 @@ function renderActiveCard(p){
   var notesId="notes_"+p.id;
   var notesOpen=stateAPI.ui.isOpen("notes_"+p.id);
   var hasNotes=!!(p.notes&&p.notes.trim());
-  h+='<button onclick="stateAPI.ui.toggle(\'notes_'+p.id+'\');render()" style="margin-top:8px;width:100%;padding:7px 10px;background:rgba(255,255,255,.025);border:.5px dashed var(--sep);border-radius:8px;font-size:11px;color:'+(hasNotes?"var(--info)":"var(--t3)")+';cursor:pointer;font-family:inherit;text-align:left">';
+  h+='<button onclick="stateAPI.ui.toggle(\'notes_'+p.id+'\');render()" style="margin-top:8px;width:100%;padding:7px 10px;background:rgba(var(--ink),.025);border:.5px dashed var(--sep);border-radius:8px;font-size:11px;color:'+(hasNotes?"var(--info)":"var(--t3)")+';cursor:pointer;font-family:inherit;text-align:left">';
   h+=(hasNotes?'📓 Bilješka':'➕ Dodaj bilješku')+(notesOpen?' ▲':' ▾');
   if(hasNotes&&!notesOpen)h+='<span style="color:var(--t4);margin-left:6px;font-size:10px">'+(p.notes.length>40?p.notes.substring(0,40)+"…":p.notes)+'</span>';
   h+='</button>';
@@ -5942,13 +6031,13 @@ function renderCalibrationPanel(){
     h+='<span style="color:'+dCol+';font-weight:var(--fw-b)">'+(hasData?b.actualWR+"%":"—")+' <span style="color:var(--t4)">vs '+expW+'% '+deltaStr+'</span></span>';
     h+='</div>';
     // Dvostruka bar: siva pozadina = expected, obojena = actual
-    h+='<div style="position:relative;height:8px;background:rgba(255,255,255,.05);border-radius:4px;overflow:hidden">';
-    h+='<div style="position:absolute;left:0;top:0;height:8px;width:'+expW+'%;background:rgba(255,255,255,.12);border-radius:4px"></div>';
+    h+='<div style="position:relative;height:8px;background:rgba(var(--ink),.05);border-radius:4px;overflow:hidden">';
+    h+='<div style="position:absolute;left:0;top:0;height:8px;width:'+expW+'%;background:rgba(var(--ink),.12);border-radius:4px"></div>';
     if(hasData){
       h+='<div style="position:absolute;left:0;top:0;height:8px;width:'+actW+'%;background:'+dCol+';opacity:.85;border-radius:4px"></div>';
     }
     // Marker line za expected (točan x pozicija)
-    h+='<div style="position:absolute;left:'+expW+'%;top:-1px;width:1.5px;height:10px;background:rgba(255,255,255,.5)"></div>';
+    h+='<div style="position:absolute;left:'+expW+'%;top:-1px;width:1.5px;height:10px;background:rgba(var(--ink),.5)"></div>';
     h+='</div></div>';
   });
   h+='</div>';
@@ -5989,7 +6078,7 @@ function renderShadowPanel(){
   h+='</div>';
   h+='<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px">';
   [{v:tot,l:'Uzoraka'},{v:graded.length,l:'Ocijenjeno'},{v:pend,l:'Čeka 24h'},{v:Object.keys(uniq).length,l:'Tokena'}].forEach(function(s){
-    h+='<div style="background:var(--s2,rgba(255,255,255,.03));border-radius:8px;padding:7px;text-align:center"><div style="font-size:14px;font-weight:900;color:var(--t2)">'+s.v+'</div><div style="font-size:10px;color:var(--t4)">'+s.l+'</div></div>';
+    h+='<div style="background:var(--s2,rgba(var(--ink),.03));border-radius:8px;padding:7px;text-align:center"><div style="font-size:14px;font-weight:900;color:var(--t2)">'+s.v+'</div><div style="font-size:10px;color:var(--t4)">'+s.l+'</div></div>';
   });
   h+='</div>';
   h+='<div style="font-size:10px;color:var(--t4);margin-top:7px;text-align:center">Puni se +30 uzoraka / 4h · hrani težine signala i AI model</div>';
@@ -6049,13 +6138,13 @@ function renderWeightsPanel(){
     availableRegimes.forEach(function(r){
       var lbl=r==="_global"?"Sve":r.substring(0,5);
       var act=r===selRegime;
-      h+='<button onclick="stateAPI.ui.setValue(\'wpReg\',\''+r+'\');render()" style="padding:2px 7px;background:'+(act?"rgba(255,234,0,.2)":"rgba(255,255,255,.04)")+';border:.5px solid '+(act?"rgba(255,234,0,.4)":"var(--sep)")+';border-radius:5px;font-size:10px;color:'+(act?"var(--ye)":"var(--t3)")+';cursor:pointer;font-family:inherit;font-weight:var(--fw-b)">'+lbl+'</button>';
+      h+='<button onclick="stateAPI.ui.setValue(\'wpReg\',\''+r+'\');render()" style="padding:2px 7px;background:'+(act?"rgba(255,234,0,.2)":"rgba(var(--ink),.04)")+';border:.5px solid '+(act?"rgba(255,234,0,.4)":"var(--sep)")+';border-radius:5px;font-size:10px;color:'+(act?"var(--ye)":"var(--t3)")+';cursor:pointer;font-family:inherit;font-weight:var(--fw-b)">'+lbl+'</button>';
     });
     h+='</span>';
   }
   h+='</div>';
   h+='<div style="font-size:10px;color:var(--t3);margin-bottom:2px">Iz '+regimeClosed.length+' uzoraka (realni + shadow)'+(selRegime!=="_global"?" u regime-u <strong style=\"color:var(--ye)\">"+selRegime+"</strong>":"")+' · Time-decay: noviji = 2x</div>';
-  h+='<div style="font-size:10px;color:rgba(255,255,255,.25);margin-bottom:10px">Base rate: <strong style="color:var(--t2)">'+baseRate+'%</strong> — signali koji nadmašuju bazu su korisni'+(curRegime!==selRegime&&selRegime!=="_global"?' · <span style="color:var(--info)">📍 Live regime: '+curRegime+'</span>':'')+'</div>';
+  h+='<div style="font-size:10px;color:rgba(var(--ink),.25);margin-bottom:10px">Base rate: <strong style="color:var(--t2)">'+baseRate+'%</strong> — signali koji nadmašuju bazu su korisni'+(curRegime!==selRegime&&selRegime!=="_global"?' · <span style="color:var(--info)">📍 Live regime: '+curRegime+'</span>':'')+'</div>';
   h+='<div style="display:flex;flex-direction:column;gap:6px">';
   entries.forEach(function(e){
     var col=e.w>=1.3?"var(--gr)":e.w>=0.85?"var(--ye)":"var(--re)";
@@ -6103,7 +6192,7 @@ function kellyForGroup(preds){
 }
 function renderKellyPanel(){
   var closed=predTracker.filter(function(p){return p.status!=="AKTIVAN";});
-  if(closed.length<4)return'<div style="background:var(--s1);border-radius:14px;padding:12px 16px;margin-bottom:12px;border:.5px solid rgba(255,255,255,.06);text-align:center;color:var(--t3);font-size:12px">📐 Kelly kalkulator — treba min. 4 zatvorene predikcije (trenutno: '+closed.length+')</div>';
+  if(closed.length<4)return'<div style="background:var(--s1);border-radius:14px;padding:12px 16px;margin-bottom:12px;border:.5px solid rgba(var(--ink),.06);text-align:center;color:var(--t3);font-size:12px">📐 Kelly kalkulator — treba min. 4 zatvorene predikcije (trenutno: '+closed.length+')</div>';
   // preds5: standardne predikcije (5% stare, 6% nove, bez targetPct = stari default)
   var preds5=closed.filter(function(p){return p.targetPct===5||p.targetPct===6||!p.targetPct;});
   // predsMeme: meme predikcije (10% stare, 6% nove s type=meme)
@@ -6124,7 +6213,7 @@ function renderKellyPanel(){
   }
   var kCol=kAll?(kAll.halfKelly>=10?"var(--gr)":kAll.halfKelly>=5?"var(--ye)":"var(--re)"):"var(--t3)";
   var interpretation=kAll?(kAll.halfKelly>=15?"Agresivna — tržišni uvjeti povoljni":kAll.halfKelly>=8?"Umjerena — standardna preporuka":kAll.halfKelly>=3?"Konzervativna — poboljšaj R:R":"Micro — poboljšaj točnost"):"—";
-  var h='<div style="background:var(--s1);border-radius:16px;padding:14px 16px;margin-bottom:12px;border:.5px solid rgba(255,255,255,.08)">';
+  var h='<div style="background:var(--s1);border-radius:16px;padding:14px 16px;margin-bottom:12px;border:.5px solid rgba(var(--ink),.08)">';
   h+='<div style="font-size:11px;font-weight:700;color:var(--t2);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px">📐 Kelly Criterion — optimalna veličina pozicije</div>';
   h+='<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px">';
   h+=kellyCard("+5% Engine","#2979ff",k5);
@@ -6240,7 +6329,7 @@ function renderWalkForwardPanel(){
   var h='<div class="panel">';
   h+='<div class="row-between" style="margin-bottom:10px">';
   h+='<span class="sec-lbl" style="margin:0">🔬 Walk-Forward Backtest</span>';
-  h+='<button onclick="runWalkForwardBacktest();showToast(\'⏳ Re-run...\')" style="font-size:10px;padding:3px 8px;background:rgba(255,255,255,.05);border:.5px solid var(--sep);color:var(--t3);border-radius:6px;cursor:pointer;font-family:inherit">↻ Re-run</button>';
+  h+='<button onclick="runWalkForwardBacktest();showToast(\'⏳ Re-run...\')" style="font-size:10px;padding:3px 8px;background:rgba(var(--ink),.05);border:.5px solid var(--sep);color:var(--t3);border-radius:6px;cursor:pointer;font-family:inherit">↻ Re-run</button>';
   h+='</div>';
   h+='<div class="txt-t4" style="font-size:10px;margin-bottom:10px">'+w.n+' simuliranih trade-ova · '+(w.config.syms||[]).length+' tokena · '+ageH+'h ago · target '+w.config.target+'% / stop '+w.config.stop+'% / fee '+w.config.fee+'%</div>';
 
@@ -7017,8 +7106,8 @@ function btcAccuracyChart(){
   // y-grid (cijena)
   [0,0.5,1].forEach(function(f){
     var pv=minP+pR*f,y=py(pv);
-    svg+='<line x1="'+PL+'" y1="'+y.toFixed(1)+'" x2="'+(W-PR)+'" y2="'+y.toFixed(1)+'" stroke="rgba(255,255,255,.05)" stroke-width="1"/>';
-    svg+='<text x="'+(PL-5)+'" y="'+(y+3).toFixed(1)+'" font-size="8" fill="rgba(255,255,255,.28)" text-anchor="end">$'+fmtNum(pv)+'</text>';
+    svg+='<line x1="'+PL+'" y1="'+y.toFixed(1)+'" x2="'+(W-PR)+'" y2="'+y.toFixed(1)+'" stroke="rgba(var(--ink),.05)" stroke-width="1"/>';
+    svg+='<text x="'+(PL-5)+'" y="'+(y+3).toFixed(1)+'" font-size="8" fill="rgba(var(--ink),.28)" text-anchor="end">$'+fmtNum(pv)+'</text>';
   });
   // price line (bitcoin orange)
   var dPath='';
@@ -7027,7 +7116,7 @@ function btcAccuracyChart(){
   // markeri — OBLIK = smjer predikcije (▲UP/▼DOWN/◆NEUTRAL), BOJA = tocnost
   log.forEach(function(e){
     var cx=+tx(e.ts).toFixed(1),cy=+py(e.price).toFixed(1);
-    var col=!e.graded?'rgba(255,255,255,.38)':e.correct?'#00e676':'#ff1744';
+    var col=!e.graded?'rgba(var(--ink),.38)':e.correct?'#00e676':'#ff1744';
     var r=3.6;
     var shape;
     if(e.dir==='UP')      shape='<path d="M'+cx+','+(cy-r)+' L'+(cx-r)+','+(cy+r*0.8)+' L'+(cx+r)+','+(cy+r*0.8)+' Z"';
@@ -7038,8 +7127,8 @@ function btcAccuracyChart(){
   });
   // x-os: pocetak / kraj
   var fmtD=function(ts){var d=new Date(ts);return d.toLocaleDateString("hr-HR",{day:"2-digit",month:"2-digit"})+" "+("0"+d.getHours()).slice(-2)+"h";};
-  svg+='<text x="'+PL+'" y="'+(H-6)+'" font-size="8" fill="rgba(255,255,255,.3)" text-anchor="start">'+fmtD(minTs)+'</text>';
-  svg+='<text x="'+(W-PR)+'" y="'+(H-6)+'" font-size="8" fill="rgba(255,255,255,.3)" text-anchor="end">'+fmtD(maxTs)+'</text>';
+  svg+='<text x="'+PL+'" y="'+(H-6)+'" font-size="8" fill="rgba(var(--ink),.3)" text-anchor="start">'+fmtD(minTs)+'</text>';
+  svg+='<text x="'+(W-PR)+'" y="'+(H-6)+'" font-size="8" fill="rgba(var(--ink),.3)" text-anchor="end">'+fmtD(maxTs)+'</text>';
   svg+='</svg>';
   h+=svg;
 
@@ -7050,7 +7139,7 @@ function btcAccuracyChart(){
     {v:graded.length,l:'Ocijenjeno',c:'var(--t2)'},
     {v:pending,l:'Čeka 24h',c:'var(--t3)'}
   ].forEach(function(s){
-    h+='<div style="background:var(--s2,rgba(255,255,255,.03));border-radius:9px;padding:8px;text-align:center"><div style="font-size:14px;font-weight:900;color:'+s.c+'">'+s.v+'</div><div style="font-size:10px;color:var(--t4);margin-top:1px">'+s.l+'</div></div>';
+    h+='<div style="background:var(--s2,rgba(var(--ink),.03));border-radius:9px;padding:8px;text-align:center"><div style="font-size:14px;font-weight:900;color:'+s.c+'">'+s.v+'</div><div style="font-size:10px;color:var(--t4);margin-top:1px">'+s.l+'</div></div>';
   });
   h+='</div>';
   // Baseline usporedba (coin-flip 50%) — pokazuje ima li app stvarni edge
@@ -7066,7 +7155,7 @@ function btcAccuracyChart(){
     [{k:'UP',ico:'▲',col:'#00e676',lbl:'Rast'},{k:'DOWN',ico:'▼',col:'#ff1744',lbl:'Pad'},{k:'NEUTRAL',ico:'◆',col:'var(--t3)',lbl:'Flat'}].forEach(function(x){
       var st=dirStat(x.k),ac=st.acc;
       var acCol=ac==null?'var(--t4)':ac>=60?'var(--bull)':ac>=45?'var(--warn)':'var(--bear)';
-      h+='<div style="background:var(--s2,rgba(255,255,255,.03));border-radius:9px;padding:7px;text-align:center">';
+      h+='<div style="background:var(--s2,rgba(var(--ink),.03));border-radius:9px;padding:7px;text-align:center">';
       h+='<div style="font-size:10px;color:'+x.col+';font-weight:800;margin-bottom:1px">'+x.ico+' '+x.lbl+'</div>';
       h+='<div style="font-size:13px;font-weight:900;color:'+acCol+'">'+(ac!=null?ac+'%':'—')+'</div>';
       h+='<div style="font-size:9px;color:var(--t4)">'+st.n+' uzor.</div></div>';
@@ -7077,7 +7166,7 @@ function btcAccuracyChart(){
   h+='<div style="display:flex;gap:11px;justify-content:center;margin-top:9px;font-size:10px;color:var(--t4);flex-wrap:wrap">';
   h+='<span><span style="color:#f7931a">━</span> cijena</span>';
   h+='<span>▲ rast · ▼ pad · ◆ flat</span>';
-  h+='<span><span style="color:#00e676">●</span>✓ · <span style="color:#ff1744">●</span>✗ · <span style="color:rgba(255,255,255,.45)">●</span>čeka</span>';
+  h+='<span><span style="color:#00e676">●</span>✓ · <span style="color:#ff1744">●</span>✗ · <span style="color:rgba(var(--ink),.45)">●</span>čeka</span>';
   h+='</div>';
   h+='</div>';return h;
 }
@@ -7174,7 +7263,7 @@ function btcBearBottomPanel(){
   var lo=Math.min(low,price,sma||price)*0.98,hi=Math.max(price,sma||price,high)*1.02,span=(hi-lo)||1;
   function pp(v){return Math.max(0,Math.min(100,(v-lo)/span*100));}
   h+='<div style="position:relative;height:28px;margin:4px 0 2px">';
-  h+='<div style="position:absolute;top:12px;left:0;right:0;height:4px;background:rgba(255,255,255,.08);border-radius:3px"></div>';
+  h+='<div style="position:absolute;top:12px;left:0;right:0;height:4px;background:rgba(var(--ink),.08);border-radius:3px"></div>';
   h+='<div style="position:absolute;top:10px;left:'+pp(low).toFixed(1)+'%;width:'+(pp(high)-pp(low)).toFixed(1)+'%;height:8px;background:rgba(255,23,68,.35);border-radius:3px"></div>';
   if(sma)h+='<div style="position:absolute;top:5px;left:'+pp(sma).toFixed(1)+'%;width:2px;height:18px;background:#2979ff;transform:translateX(-1px)"></div>';
   h+='<div style="position:absolute;top:3px;left:'+pp(price).toFixed(1)+'%;width:2px;height:22px;background:#f7931a;transform:translateX(-1px)"></div>';
@@ -7189,14 +7278,14 @@ function btcBearBottomPanel(){
     var fmtDt=function(dt){return dt?dt.toLocaleDateString("hr-HR",{day:"numeric",month:"short",year:"2-digit"}):"—";};
     var ripe=est.timeProgress>=0.85;
     var dLeft=Math.max(0,365-est.daysFromTop);
-    h+='<div style="margin-top:11px;padding-top:10px;border-top:.5px solid rgba(255,255,255,.06)">';
+    h+='<div style="margin-top:11px;padding-top:10px;border-top:.5px solid rgba(var(--ink),.06)">';
     h+='<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">';
     h+='<span data-tip="Vremenska komponenta|BTC bear dno povijesno nastupa ~365 dana nakon cycle topa: 2013→2015 ~410d, 2017→2018 ~363d, 2021→2022 ~376d. Rano u bearu (<60% vremena) procjena cijene dna se spušta jer kapitulacija statistički tek dolazi." style="font-size:10px;font-weight:700;color:var(--t3);cursor:help">⏳ Dan <strong style="color:var(--t1)">'+est.daysFromTop+'</strong> od topa · dno tipično ~365d ⓘ</span>';
     h+='<span style="font-size:10px;font-weight:800;color:'+(ripe?'var(--bull)':'var(--warn)')+'">'+Math.round(est.timeProgress*100)+'%</span>';
     h+='</div>';
     // traka: prozor dna (330-410) + marker danas
     h+='<div style="position:relative;height:20px">';
-    h+='<div style="position:absolute;top:8px;left:0;right:0;height:4px;background:rgba(255,255,255,.08);border-radius:3px"></div>';
+    h+='<div style="position:absolute;top:8px;left:0;right:0;height:4px;background:rgba(var(--ink),.08);border-radius:3px"></div>';
     h+='<div style="position:absolute;top:6px;left:'+tp(330).toFixed(1)+'%;width:'+(tp(410)-tp(330)).toFixed(1)+'%;height:8px;background:rgba(0,230,118,.3);border-radius:3px" data-tip="Prozor dna|Povijesni raspon 330-410 dana od topa u kojem su nastupila bear dna."></div>';
     h+='<div style="position:absolute;top:5px;left:'+tp(365).toFixed(1)+'%;width:2px;height:10px;background:var(--bull);transform:translateX(-1px)"></div>';
     h+='<div style="position:absolute;top:1px;left:'+tp(est.daysFromTop).toFixed(1)+'%;width:2px;height:18px;background:#f7931a;transform:translateX(-1px)"></div>';
@@ -7211,7 +7300,7 @@ function btcBearBottomPanel(){
 
   // Driver chips — sto trenutno korigira procjenu
   h+='<div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:9px">';
-  function dc(t){return'<span style="font-size:10px;color:var(--t3);background:rgba(255,255,255,.04);border-radius:6px;padding:2px 7px">'+t+'</span>';}
+  function dc(t){return'<span style="font-size:10px;color:var(--t3);background:rgba(var(--ink),.04);border-radius:6px;padding:2px 7px">'+t+'</span>';}
   h+=dc('F&G '+(MACRO.fg!=null?MACRO.fg:'—'));
   if(est.smaBottom)h+=dc('SMA dno $'+fmtNum(est.smaBottom));
   if(est.techBottom)h+=dc('Support $'+fmtNum(est.techBottom));
@@ -7315,8 +7404,8 @@ function rBtc(){
     h+='<span style="font-size:13px;font-weight:900;color:'+fl.col+'">'+(fl.score>0?"+":"")+fl.score+' · '+fl.label+'</span>';
     h+='</div>';
     // bipolarna traka: sredina = 0, lijevo distribucija, desno akumulacija
-    h+='<div style="position:relative;height:8px;background:linear-gradient(90deg,rgba(255,23,68,.25),rgba(255,255,255,.06) 50%,rgba(0,230,118,.25));border-radius:4px">';
-    h+='<div style="position:absolute;left:50%;top:-2px;width:1px;height:12px;background:rgba(255,255,255,.2)"></div>';
+    h+='<div style="position:relative;height:8px;background:linear-gradient(90deg,rgba(255,23,68,.25),rgba(var(--ink),.06) 50%,rgba(0,230,118,.25));border-radius:4px">';
+    h+='<div style="position:absolute;left:50%;top:-2px;width:1px;height:12px;background:rgba(var(--ink),.2)"></div>';
     h+='<div style="position:absolute;left:'+pct.toFixed(1)+'%;top:-3px;width:3px;height:14px;background:'+fl.col+';border-radius:2px;transform:translateX(-1.5px);box-shadow:0 0 5px '+fl.col+'"></div>';
     h+='</div>';
     h+='<div style="display:flex;justify-content:space-between;font-size:9px;color:var(--t4);margin-top:3px"><span>distribucija</span><span>akumulacija</span></div>';
@@ -7432,7 +7521,7 @@ function render(){
       h+='<div style="display:flex;flex-direction:column;align-items:center;gap:2px">';
       h+='<div style="position:relative;width:36px;height:36px">';
       h+='<svg width="36" height="36" viewBox="0 0 36 36" style="transform:rotate(-90deg)">'
-        +'<circle cx="18" cy="18" r="'+r+'" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="3"/>'
+        +'<circle cx="18" cy="18" r="'+r+'" fill="none" stroke="rgba(var(--ink),.08)" stroke-width="3"/>'
         +'<circle cx="18" cy="18" r="'+r+'" fill="none" stroke="'+col+'" stroke-width="3" stroke-linecap="round"'
         +' stroke-dasharray="'+dash.toFixed(1)+' '+(circ-dash).toFixed(1)+'" />'
         +'</svg>';
@@ -7479,7 +7568,7 @@ function render(){
       var sNote=sess.scoreAdj>=0.5
         ?'<span style="color:var(--bull)">✓ Peak likvidnost</span> — breakouti pouzdaniji, institucije aktivne'
         :'<span style="color:var(--warn)">⚠ Thin market</span> — '+sess.desc;
-      h+='<div style="font-size:10px;color:var(--t3);padding-top:8px;margin-top:6px;border-top:.5px solid rgba(255,255,255,.05);line-height:1.5">'+sNote+'</div>';
+      h+='<div style="font-size:10px;color:var(--t3);padding-top:8px;margin-top:6px;border-top:.5px solid rgba(var(--ink),.05);line-height:1.5">'+sNote+'</div>';
     }
     h+='</div>';
 
@@ -7492,10 +7581,10 @@ function render(){
     h+='<div class="stat-box" style="border-color:rgba(41,121,255,.18)">';
     h+='<div style="font-size:11px;margin-bottom:2px">📡</div>';
     h+='<div class="stat-num-sm txt-info">'+scanSyms.length+'</div><div class="stat-lbl">Skenirano</div></div>';
-    h+='<div class="stat-box" style="border-color:'+(visible>0?"rgba(255,167,38,.25)":"rgba(255,255,255,.06)")+'">';
+    h+='<div class="stat-box" style="border-color:'+(visible>0?"rgba(255,167,38,.25)":"rgba(var(--ink),.06)")+'">';
     h+='<div style="font-size:11px;margin-bottom:2px">🎯</div>';
     h+='<div class="stat-num-sm txt-warn">'+visible+'</div><div class="stat-lbl">Prilike</div></div>';
-    h+='<div class="stat-box" style="border-color:'+(hot>0?"rgba(255,167,38,.35)":"rgba(255,255,255,.06)")+'">';
+    h+='<div class="stat-box" style="border-color:'+(hot>0?"rgba(255,167,38,.35)":"rgba(var(--ink),.06)")+'">';
     h+='<div style="font-size:11px;margin-bottom:2px">🔥</div>';
     h+='<div class="stat-num-sm txt-bull">'+hot+'</div><div class="stat-lbl">Vrući</div></div>';
     h+='<div class="stat-box" style="border-color:rgba(0,230,118,.18)">';
@@ -7564,7 +7653,7 @@ function render(){
       // Sector name
       h+='<div style="font-size:11px;color:var(--t2);font-weight:700;white-space:nowrap">'+r.sec+'</div>';
       // Mini bar
-      h+='<div style="width:100%;height:3px;background:rgba(255,255,255,.07);border-radius:2px;margin-top:2px">';
+      h+='<div style="width:100%;height:3px;background:rgba(var(--ink),.07);border-radius:2px;margin-top:2px">';
       h+='<div style="height:3px;width:'+barW+'%;background:'+barCol+';border-radius:2px"></div>';
       h+='</div>';
       if(r.rank===1)h+='<div style="font-size:10px;color:var(--bull);font-weight:700;letter-spacing:.04em">🔥 TOP</div>';
@@ -7632,7 +7721,7 @@ function render(){
     function chipBtn(val,emoji,lbl,count,col){
       var on=signalChip===val;
       var bg = on ? col+'22' : 'transparent';
-      var bord = on ? col+'66' : 'rgba(255,255,255,.12)';
+      var bord = on ? col+'66' : 'rgba(var(--ink),.12)';
       var fg = on ? col : 'var(--t3)';
       return'<button onclick="setSignalChip(\''+val+'\')" style="font-size:11px;font-weight:var(--fw-x);padding:5px 11px;border-radius:14px;cursor:pointer;font-family:inherit;border:.5px solid '+bord+';background:'+bg+';color:'+fg+'">'+emoji+' '+lbl+' <span style="opacity:.7;font-weight:var(--fw-r)">'+count+'</span></button>';
     }
@@ -7644,7 +7733,7 @@ function render(){
     h+='</div>';
     // Sort
     h+='<div class="row" style="gap:4px">';
-    function sortBtn(val,label){var on=ulazSortMode===val;return'<button onclick="ulazSortMode=\''+val+'\';render()" style="font-size:10px;font-weight:var(--fw-x);padding:4px 10px;border-radius:8px;cursor:pointer;font-family:inherit;border:.5px solid '+(on?'var(--info)':'rgba(255,255,255,.12)')+';background:'+(on?'rgba(41,121,255,.1)':'transparent')+';color:'+(on?'var(--info)':'var(--t4)')+'">'+label+'</button>';}
+    function sortBtn(val,label){var on=ulazSortMode===val;return'<button onclick="ulazSortMode=\''+val+'\';render()" style="font-size:10px;font-weight:var(--fw-x);padding:4px 10px;border-radius:8px;cursor:pointer;font-family:inherit;border:.5px solid '+(on?'var(--info)':'rgba(var(--ink),.12)')+';background:'+(on?'rgba(41,121,255,.1)':'transparent')+';color:'+(on?'var(--info)':'var(--t4)')+'">'+label+'</button>';}
     h+=sortBtn("conf","Conf ↓");
     h+=sortBtn("rr","R/R ↓");
     h+='</div></div>';
@@ -7698,11 +7787,11 @@ function render(){
         var barW=Math.min(100,pct);
         h+='<div style="margin-bottom:8px">';
         h+='<div class="row-between" style="margin-bottom:3px"><span style="font-size:11px;color:var(--t2)">'+b.lbl+'</span><span style="font-size:11px;color:var(--warn);font-weight:var(--fw-b)">'+b.n+' tokena ('+pct+'%)</span></div>';
-        h+='<div style="height:4px;background:rgba(255,255,255,.07);border-radius:2px"><div style="height:4px;width:'+barW+'%;background:var(--warn);border-radius:2px;opacity:.7"></div></div>';
+        h+='<div style="height:4px;background:rgba(var(--ink),.07);border-radius:2px"><div style="height:4px;width:'+barW+'%;background:var(--warn);border-radius:2px;opacity:.7"></div></div>';
         h+='</div>';
       });
       // Macro kontekst
-      h+='<div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.06);font-size:11px;color:var(--t3)">';
+      h+='<div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(var(--ink),.06);font-size:11px;color:var(--t3)">';
       h+='Režim: <span style="color:var(--t2);font-weight:var(--fw-b)">'+MACRO.claudeRegime+'</span>';
       if(MACRO.warActive)h+=' · <span style="color:var(--bear)">⚔️ Rat aktivan</span>';
       h+=' · BTC dom <span style="color:'+(MACRO.btcDom>60?"var(--bear)":"var(--t2)")+'">'+MACRO.btcDom+'%</span>';
@@ -7825,7 +7914,7 @@ function render(){
         top.slice(0,3).forEach(function(b){
           var pct=allA.length?Math.round(b.n/allA.length*100):0;
           h+='<div style="margin-bottom:6px"><div class="row-between" style="font-size:11px;margin-bottom:2px"><span style="color:var(--t2)">'+b.lbl+'</span><span style="color:var(--warn)">'+b.n+' ('+pct+'%)</span></div>';
-          h+='<div style="height:3px;background:rgba(255,255,255,.07);border-radius:2px"><div style="height:3px;width:'+Math.min(100,pct)+'%;background:var(--warn);border-radius:2px;opacity:.7"></div></div></div>';
+          h+='<div style="height:3px;background:rgba(var(--ink),.07);border-radius:2px"><div style="height:3px;width:'+Math.min(100,pct)+'%;background:var(--warn);border-radius:2px;opacity:.7"></div></div></div>';
         });
         if(topFix)h+='<div style="margin-top:8px;padding:6px 10px;background:rgba(41,121,255,.08);border-radius:7px;font-size:11px;color:var(--info)">💡 '+topFix.fix+'</div>';
         h+='</div>';
@@ -8134,14 +8223,14 @@ function doSearch(){
     var vCls=v.indexOf("✅")===0?"chip-bull":v.indexOf("🟡")===0?"chip-warn":v.indexOf("🔵")===0?"chip-info":"chip-bear";
     var confCol=result.conf>=70?"var(--bull)":result.conf>=60?"var(--info)":result.conf>=48?"var(--warn)":"var(--bear)";
     var h='<div class="panel" style="padding:0;overflow:hidden">';
-    h+='<div class="row-between sec-tight" style="background:rgba(255,255,255,.03);border-bottom:.5px solid var(--sep)">';
+    h+='<div class="row-between sec-tight" style="background:rgba(var(--ink),.03);border-bottom:.5px solid var(--sep)">';
     h+='<span class="chip '+vCls+'" style="font-size:13px">'+v+'</span>';
     h+='<span style="font-size:24px;font-weight:var(--fw-x);color:'+confCol+';letter-spacing:-1.5px;line-height:1">'+result.conf+'%</span>';
     h+='</div>';
     h+='<div class="sec">';
     h+='<div class="row" style="gap:10px;margin-bottom:10px">';
     h+='<div class="tok-ico" style="background:'+CFG[sym].c+'15;color:'+CFG[sym].c+'">'+CFG[sym].i+'</div>';
-    h+='<div style="flex:1"><div style="font-size:18px;font-weight:var(--fw-x)">'+sym+' <span class="chip" style="font-size:10px;padding:1px 6px;margin-left:4px;background:rgba(255,255,255,.06);color:var(--t3);border-color:var(--sep)">📡 '+found.source+'</span></div>';
+    h+='<div style="flex:1"><div style="font-size:18px;font-weight:var(--fw-x)">'+sym+' <span class="chip" style="font-size:10px;padding:1px 6px;margin-left:4px;background:rgba(var(--ink),.06);color:var(--t3);border-color:var(--sep)">📡 '+found.source+'</span></div>';
     h+='<div class="txt-t3" style="font-size:11px;margin-top:2px">'+fp(price)+' <span style="color:'+(c24>=0?"var(--bull)":"var(--bear)")+';font-weight:var(--fw-b);margin-left:6px">'+(c24>=0?"+":"")+c24.toFixed(2)+'%</span></div></div>';
     h+='</div>';
     if(result.verdictWhy)h+='<div style="font-size:11px;color:var(--t3);line-height:1.5;margin-bottom:8px">'+result.verdictWhy+'</div>';
@@ -8164,7 +8253,7 @@ function doSearch(){
       } else if(arbInfo.level==="med"){
         aBg="rgba(255,167,38,.07)"; aBord="rgba(255,167,38,.25)"; aIco="⚠️"; aLbl="Spread";
       } else {
-        aBg="rgba(255,255,255,.03)"; aBord="var(--sep)"; aIco="📊"; aLbl="Cijene";
+        aBg="rgba(var(--ink),.03)"; aBord="var(--sep)"; aIco="📊"; aLbl="Cijene";
       }
       h+='<div style="margin:10px 0 8px;padding:10px 12px;border-radius:var(--r-md);background:'+aBg+';border:.5px solid '+aBord+'">';
       h+='<div class="row-between" style="margin-bottom:6px">';
@@ -8229,6 +8318,8 @@ function openSettings(){
   if(srpt)srpt.value=settings.maxRiskPerTrade||1;
   var swin=document.getElementById("s-win");if(swin)swin.value=settings.winThreshold!=null?settings.winThreshold:5;
   var sbd=document.getElementById("s-bdom");if(sbd)sbd.value=btcDomLimit();
+  var tn=document.getElementById("theme-note");
+  if(tn&&window.APP_THEME)tn.textContent="🎨 Tema: "+APP_THEME.name+" ("+APP_THEME.ver+") — mijenja se sa svakom novom verzijom aplikacije";
   // Popuni API ključeve
   var cq=document.getElementById("s-cq");var lc=document.getElementById("s-lc");var gh=document.getElementById("s-gh");var cp=document.getElementById("s-cp");var wa=document.getElementById("s-wa");
   if(cq&&apiKeys.cryptoquant)cq.value=apiKeys.cryptoquant;
@@ -10440,7 +10531,7 @@ function disableNotifs(){
   showToast("Notifikacije isključene");render();
 }
 
-// emitEntryNotif uklonjen (v5.348) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
+// emitEntryNotif uklonjen (v5.349) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
 // Bila mrtva funkcija (nula poziva); uklonjena da se ne može slučajno ponovno spojiti.
 
 // ── EXIT NOTIFICATION — SAMO 2 TIPA (po korisnikovom zahtjevu) ──
