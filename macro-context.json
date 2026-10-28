@@ -1,7 +1,7 @@
 {
-    "dxy":  102.2,
-    "changeSummary":  "Oil pada s 113 na ~111 smanjujući macroPenalty s 3 na 1, dok DXY ostaje stabilan (~102.2) i F&G nepromjenjen na 47 uoči Fedove odluke.",
-    "lastUpdated":  "2026-10-27T10:00:00Z",
+    "dxy":  102.4,
+    "changeSummary":  "BTC je probio $80K i raste prema $81K uz povrat ETF priljeva ($110M), Fear & Greed ostaje neutralan na 50, a DXY stabilno na 102.4 bez promjene makro pritiska.",
+    "lastUpdated":  "2026-10-28T10:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -13,7 +13,7 @@
 
                                ],
                      "XRP":  [
-                                 "Ripple banka nije digla XRP, profit-taking pritisak"
+
                              ],
                      "BNB":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-                                 "ETH na ključnoj podršci $2,300, pad = -10% rizik"
+                               "ETF odljevi nastavljaju pritisak na ETH"
                              ],
                      "LINK":  [
 
@@ -64,24 +64,24 @@
 
                                ],
                      "BTC":  [
-                                 "Fed zasjedanje 28.10., BTC ispod $80K, čeka smjer"
-                            ]
+                               "Fed odluka danas - moguća nagla volatilnost"
+                             ]
                  },
     "sp500Ret5d":  0.4,
-    "fearGreed":  47,
+    "fearGreed":  50,
     "macroPenalty":  1,
     "catalysts":  {
                       "ACT":  [
 
                               ],
                       "MEME":  [
-
+                                "PEPE +12% na glasinama o Justin Sun kitu"
                                ],
                       "ANIME":  [
 
                                 ],
                       "XRP":  [
-                                  "Ripple dobiva US federalnu banku za RLUSD trust"
+                                "XRP +2.75%, odboj od podrške $1.30"
                               ],
                       "BNB":  [
 
@@ -108,19 +108,19 @@
 
                                  ],
                       "SOL":  [
-
+                                "SOL iznad $100 uz umjeren dnevni rast"
                               ],
                       "ADA":  [
-                                  "Cardano stablecoin supply raste, DeFi TVL u porastu"
+
                               ],
                       "PNUT":  [
 
                                ],
                       "AIXBT":  [
-                                    "Anthropic IPO potiče AI narativ i kapital u AI tokene"
+                                  "AI narativ jak: Anthropic, OpenAI, Meta"
                                 ],
                       "ETH":  [
-                                  "ETH testira podršku $2,300 uz snažne ETF odljeve"
+
                               ],
                       "LINK":  [
 
@@ -129,18 +129,19 @@
 
                                ],
                       "TRUMP":  [
-                                    "Kripto industrija troši 176M USD na US midterm izbore"
+
                                 ],
                       "BTC":  [
-                                  "Bitcoin ETF outflows 635M USD signal kratkoročni pritisak"
+                                "BTC ETF priljevi $110M, BlackRock vodi",
+                                "Tech rally diže apetit za rizičnu imovinu"
                               ]
                   },
     "regime":  "CRAB",
     "sentimentScore":  {
                            "ACT":  0,
-                           "MEME":  0,
+                           "MEME":  1,
                            "ANIME":  0,
-                           "XRP":  0,
+                           "XRP":  1,
                            "BNB":  0,
                            "SUI":  0,
                            "AVAX":  0,
@@ -149,19 +150,19 @@
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  0,
-                           "ADA":  1,
+                           "SOL":  1,
+                           "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  1,
                            "ETH":  -1,
                            "LINK":  0,
                            "PUMP":  0,
-                           "TRUMP":  1,
-                           "BTC":  -1
+                           "TRUMP":  0,
+                           "BTC":  2
                        },
-    "aiSummary":  "DXY se stabilizirao na ~102.2 bez većeg pritiska na rizičnu imovinu, dok BTC konsolidira ispod $80K pred Fedovu odluku 28.10. Fear & Greed je na 47 (neutralno), tržište čeka smjer nakon FOMC-a uz visoku vjerojatnost zadržavanja kamata. Ethereum testira ključnu podršku $2,300 uz rast ETF odljeva, dok Anthropic IPO pojačava AI narativ i preusmjerava kapital prema AI tokenima.",
+    "aiSummary":  "DXY se stabilizirao na ~102.4 bez većeg pritiska na rizičnu imovinu dok BTC raste prema $81K pred Fedovu odluku. Fear & Greed je na 50 (neutralno), tržište čeka FOMC uz pozitivne signale od tech rallya i BTC ETF priljeva od $110M. BTC dominancija od 60.1% drži altcoine pod pritiskom, s AI tokenima kao izuzetkom zahvaljujući Anthropic/OpenAI narativu.",
     "warActive":  false,
-    "btcDom":  59.8,
-    "stableDom":  6.2,
+    "btcDom":  60.1,
+    "stableDom":  6.5,
     "oil":  111.0
 }
