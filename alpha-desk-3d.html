@@ -441,7 +441,7 @@ svg.sp{overflow:visible;display:block}
 <div class="app">
   <div class="hd">
     <div class="hd-logo">
-      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.346</span></div>
+      <div class="hd-title">Alpha Desk <span>· 3D</span> <span style="font-size:11px;font-weight:500;color:var(--t3);letter-spacing:.5px;opacity:.7">v5.347</span></div>
       <div class="hd-status">
         <span class="hd-sub" id="hdsub">Učitavam…</span>
         <span class="hd-claude" id="claude-update" style="display:none;align-items:center;gap:5px">
@@ -514,6 +514,7 @@ svg.sp{overflow:visible;display:block}
     <div><label class="inp-lbl">Account size (USD)</label><input id="s-acct" class="inp" type="number" value="1000" min="100" max="1000000" step="100"></div>
     <div><label class="inp-lbl">Risk po trade (%)</label><input id="s-rpt" class="inp" type="number" value="1" min="0.25" max="5" step="0.25"></div>
     <div><label class="inp-lbl">Prag pogotka (%)</label><input id="s-win" class="inp" type="number" value="5" min="1" max="50" step="0.5" title="Trade se broji kao POGODAK samo ako zatvori s barem ovoliko % u plusu"></div>
+    <div><label class="inp-lbl">BTC dom. limit (%)</label><input id="s-bdom" class="inp" type="number" value="57" min="40" max="100" step="0.5" title="Kad je BTC dominacija iznad ovoga, nema long ulaza u altcoine. 100 = filter ugašen."></div>
   </div>
   <div style="margin-bottom:10px;padding:10px 12px;background:rgba(255,255,255,.04);border-radius:10px;border:.5px solid var(--sep)">
     <div class="row-between" style="margin-bottom:6px">
@@ -764,10 +765,10 @@ function getMemeSYMS(){
 
 // Engine verzija — tag na svaku predikciju za mjerenje win-rate po verziji.
 // Pre-commit hook (sed s/v5.x/.../g) automatski drži ovo u sinku s headerom.
-var APP_VER="v5.346";
+var APP_VER="v5.347";
 
 // Settings
-var settings={minConf:45,targetPct:6,maxRisk:2,minRR:1.2,accountSize:1000,maxRiskPerTrade:1,winThreshold:5};
+var settings={minConf:45,targetPct:6,maxRisk:2,minRR:1.2,accountSize:1000,maxRiskPerTrade:1,winThreshold:5,btcDomBlock:57};
 try{var ss=JSON.parse(lsGet("ad3d_s")||"{}");if(ss.minConf)settings=ss;}catch(e){}
 // Migracija: stari settings sa targetPct=5 se updateaju na 6 (default)
 // (10% mode UKLONJEN, ako je korisnik bio na 10% prebaci na 6)
@@ -959,16 +960,37 @@ function runTests(){
 
     // ── scoreVolumeBoost ─────────────────────────────────────────
     (function(){
-      // Ratio 5 = +2.5
-      assertEq(scoreVolumeBoost({ratio: 5}, [], []), 2.5, "VolBoost: 5x = +2.5");
-      // Ratio 3 = +1.5
-      assertEq(scoreVolumeBoost({ratio: 3}, [], []), 1.5, "VolBoost: 3x = +1.5");
+      // Listopad 2026: volumen-momentum NE diže ocjenu (ne juri snagu) — 5x i 3x = 0, samo informativno
+      assertEq(scoreVolumeBoost({ratio: 5}, [], []), 0, "VolBoost: 5x = 0 (informativno, ne boduje)");
+      assertEq(scoreVolumeBoost({ratio: 3}, [], []), 0, "VolBoost: 3x = 0 (informativno, ne boduje)");
       // Weak = -1.5
       assertEq(scoreVolumeBoost({ratio: 0.5, weak: true}, [], []), -1.5, "VolBoost: weak = -1.5");
       // Mid = 0 (1.4 < ratio < 2.5, no boost)
       assertEq(scoreVolumeBoost({ratio: 2}, [], []), 0, "VolBoost: 2x = 0");
       // Null = 0
       assertEq(scoreVolumeBoost(null, [], []), 0, "VolBoost: null = 0");
+    })();
+
+    // ── ENTRY-RULE helperi (listopad 2026) ───────────────────────
+    (function(){
+      var _lim = settings.btcDomBlock, _dom = MACRO.btcDom, _fg = MACRO.fg;
+      settings.btcDomBlock = 57;
+      MACRO.btcDom = 59;
+      assertTrue(btcDomAltBlock("SOL"), "BTC-dom: dom 59 > 57 blokira alt (SOL)");
+      assertTrue(!btcDomAltBlock("BTC"), "BTC-dom: BTC nikad blokiran");
+      assertTrue(KNOWN_MEME.length > 0 && !btcDomAltBlock(KNOWN_MEME[0]), "BTC-dom: meme (" + KNOWN_MEME[0] + ") izuzet — vlastiti engine");
+      MACRO.btcDom = 50;
+      assertTrue(!btcDomAltBlock("SOL"), "BTC-dom: dom 50 < 57 ne blokira");
+      MACRO.btcDom = 59; settings.btcDomBlock = 100;
+      assertTrue(!btcDomAltBlock("SOL"), "BTC-dom: limit 100 = filter ugašen");
+      assertTrue(isDipSetup({rsi: 40}, 10), "Dip: RSI<45 = dip");
+      assertTrue(isDipSetup({rsi: 60, divergence: "BULLISH"}, 10), "Dip: bullish div = dip");
+      assertTrue(isDipSetup({rsi: 60, bb: {l: 11}}, 10), "Dip: ispod donje BB = dip");
+      assertTrue(!isDipSetup({rsi: 60, bb: {l: 9}}, 10), "Dip: RSI 60, iznad BB = NIJE dip (jurenje)");
+      assertTrue(!isDipSetup(null, 10), "Dip: bez TA podataka = NIJE dip");
+      MACRO.fg = 15; assertEq(confluenceNeeded(), 2, "Confluence: ekstremni strah = 2");
+      MACRO.fg = 50; assertEq(confluenceNeeded(), 3, "Confluence: izvan straha = 3");
+      settings.btcDomBlock = _lim; MACRO.btcDom = _dom; MACRO.fg = _fg;
     })();
 
     // ── computeConfidence ────────────────────────────────────────
@@ -1830,8 +1852,11 @@ function scoreMarketSignals(sym,signals,warnings){
     var t1h=ta[sym];
     var bullCount=(t1h&&t1h.trend==="UP"?1:0)+(t4h.trend==="UP"?1:0)+(tDay.trend==="UP"?1:0);
     var bearCount=(t1h&&t1h.trend==="DOWN"?1:0)+(t4h.trend==="DOWN"?1:0)+(tDay.trend==="DOWN"?1:0);
-    if(bullCount===3){delta+=wt("mtfAllUp",1);signals.push({txt:"MTF: 1h+4h+Daily svi UP — jak alignment",type:"bull"});} // bilo 2 — analiza: mtfAllUp=17% win (chasing top)
-    else if(bullCount===2&&bearCount===0){delta+=1;signals.push({txt:"MTF: 2/3 timeframea bullish",type:"bull"});}
+    // bilo +2 → +1 → 0. Analiza: mtfAllUp = 0/12 pogodaka ≥5%, medijan −4.4% (kupuje se već potvrđen/pregrijan trend).
+    // Ostaje kao informacija, ali NE diže ocjenu.
+    if(bullCount===3){signals.push({txt:"MTF: 1h+4h+Daily svi UP — alignment (informativno, ne boduje: ne juri snagu)",type:"neutral"});}
+    // 2/3 je blaža verzija istog jurenja trenda; ostavljen bonus bi nagrađivao slabije poravnanje više od 3/3 (besmisleno)
+    else if(bullCount===2&&bearCount===0){signals.push({txt:"MTF: 2/3 timeframea bullish (informativno, ne boduje)",type:"neutral"});}
     else if(bearCount===3){delta-=3;warnings.push({txt:"MTF: 1h+4h+Daily svi DOWN — jak bearish alignment",type:"bear"});}
     else if(bearCount===2){delta-=1.5;warnings.push({txt:"MTF: 2/3 timeframea bearish",type:"warn"});}
     // RSI agregatna provjera — je li oversold na višim TF?
@@ -2190,6 +2215,26 @@ function getBtcContext(){
              (btc24<-2 && trend1h==="DOWN" && trend4h==="DOWN");
   return{c24:btc24,trend1h:trend1h,trend4h:trend4h,danger:danger};
 }
+
+// ── ENTRY-RULE HELPERI (analiza 66 auto-tradova, listopad 2026) ──
+// Jedno mjesto istine: koriste ih i verdict (analyze3D) i autoTrackOpps, da blokirani
+// signal ne "procuri" u auto-praćenje preko 🟡 watch grane.
+// 1) BTC-dom filter: kad BTC dominira, kapital bježi iz altova u BTC → nema long ulaza
+//    u altove (BTC sam, i meme tab koji ima vlastiti engine, ostaju izuzeti).
+function btcDomLimit(){ return (settings&&settings.btcDomBlock!=null)?settings.btcDomBlock:57; }
+function btcDomAltBlock(sym){
+  if(sym==="BTC"||sym==="WBTC")return false;
+  if(typeof KNOWN_MEME!=="undefined"&&KNOWN_MEME.indexOf(sym)>-1)return false;
+  if(typeof MEME_SYMS!=="undefined"&&MEME_SYMS.indexOf(sym)>-1)return false;
+  return typeof MACRO!=="undefined"&&MACRO.btcDom>btcDomLimit();
+}
+// 2) Dip-only: ulaz samo na povlačenju (oversold RSI / bullish divergencija / ispod donje BB),
+//    u SVIM režimima (prije samo u pohlepi FG>65). Ne juri cijenu.
+function isDipSetup(t,price){
+  return !!((t&&t.rsi<45)||(t&&t.divergence==="BULLISH")||(t&&t.bb&&t.bb.l&&price<t.bb.l));
+}
+// 3) Fokus na strah: izvan ekstremnog straha (F&G>=25) traži se više potvrde (confluence 3/6, ne 2/6).
+function confluenceNeeded(){ return (typeof MACRO!=="undefined"&&MACRO.fg<25)?2:3; }
 
 // Recent momentum confirmation za autoTrack ✅ entries
 // Sprječava ulaz dok cijena pada — čeka da WS tickovi pokažu pozitivnu inerciju
@@ -2584,8 +2629,10 @@ function scoreDailyCandle(sym,signals,warnings){
 function scoreVolumeBoost(vs,signals,warnings){
   if(!vs)return 0;
   var _rmBO=regimeMultiplier('breakout');
-  if(vs.ratio>4){signals.push({txt:"🔥 Volume "+vs.ratio.toFixed(1)+"× avg — jak momentum, setup ojačan",type:"bull"});return 2.5*_rmBO;}
-  if(vs.ratio>2.5){signals.push({txt:"📊 Volume "+vs.ratio.toFixed(1)+"× avg — momentum potvrđen",type:"bull"});return 1.5*_rmBO;}
+  // PROMJENA (listopad 2026): volumen-momentum više NE diže ocjenu (bio +2.5/+1.5). Skok volumena na
+  // rastu = jurenje; hard gate volumeOK (>=1.15×) ostaje netaknut. _rmBO ostaje deklariran radi regime logike.
+  if(vs.ratio>4){signals.push({txt:"🔥 Volume "+vs.ratio.toFixed(1)+"× avg — informativno (ne boduje: ne juri momentum)",type:"neutral"});return 0*_rmBO;}
+  if(vs.ratio>2.5){signals.push({txt:"📊 Volume "+vs.ratio.toFixed(1)+"× avg — informativno (ne boduje: ne juri momentum)",type:"neutral"});return 0*_rmBO;}
   if(vs.weak){warnings.push({txt:"📉 Volume slab — nema momentum potvrde, preskoči ili čekaj",type:"warn"});return -1.5;}
   return 0;
 }
@@ -2812,8 +2859,10 @@ function _analyze3DUncached(sym){
       // Jasno ispod EMA50 — bear trend
       score-=2;warnings.push({txt:"Ispod EMA50 ("+(_emaDist*100).toFixed(1)+"%) — bear trend, oversold nepouzdan",type:"bear"});
     } else if(_emaDist>_dz){
-      // Jasno iznad EMA50 — bull trend
-      score+=wt("trendUp",1.5);signals.push({txt:"Iznad EMA50 ("+(_emaDist*100).toFixed(1)+"%) — trend potvrđen",type:"bull"});
+      // Jasno iznad EMA50. PROMJENA (listopad 2026): bio +1.5 bonus ("trend potvrđen"), ali to je jurenje
+      // već pokrenute cijene. Sad bez bonusa; a daleko iznad EMA50 (>6%) = pregrijano → kazna.
+      if(_emaDist>0.06){score-=1.5;warnings.push({txt:"Cijena "+(_emaDist*100).toFixed(1)+"% iznad EMA50 — pregrijano, ne juri",type:"warn"});}
+      else signals.push({txt:"Iznad EMA50 ("+(_emaDist*100).toFixed(1)+"%) — trend (informativno, ne boduje: ne juri snagu)",type:"neutral"});
     } else {
       // Unutar ±deadzone — neodlučna zona, bez bonusa/penala (sprjecava flicker)
       signals.push({txt:"Cijena na EMA50 (±"+(_dz*100).toFixed(1)+"%) — neodlučna zona, čekaj smjer",type:"neutral"});
@@ -2823,6 +2872,7 @@ function _analyze3DUncached(sym){
     if(t.rsi<32){score+=wt("rsiOversold",3)*_rmOS;signals.push({txt:"RSI "+t.rsi.toFixed(0)+" — jako oversold",type:"bull"});}
     else if(t.rsi<42){score+=wt("rsiOversold",1.5)*_rmOS;signals.push({txt:"RSI "+t.rsi.toFixed(0)+" — oversold",type:"bull"});}
     else if(t.rsi>72){score-=3;warnings.push({txt:"RSI "+t.rsi.toFixed(0)+" — overbought",type:"bear"});}
+    else if(t.rsi>65){score-=1.5;warnings.push({txt:"RSI "+t.rsi.toFixed(0)+" — pregrijano (>65), ne juri cijenu",type:"warn"});}
     // Bollinger
     if(t.bb&&price<t.bb.l){score+=wt("bbBelow",2);signals.push({txt:"Ispod Bollinger dna — mean reversion signal",type:"bull"});}
     else if(t.bb&&price>t.bb.u){score-=2;warnings.push({txt:"Iznad Bollinger vrha — opasna zona",type:"bear"});}
@@ -3176,11 +3226,16 @@ function _analyze3DUncached(sym){
   // GREED GATE (analiza rujan 2026): u pohlepi (FG>65) momentum-chase LONG ulazi
   // kupuju vrh i gube (FG 66-74 = 9% win, -3 do -6% stopovi). Dozvoli SAMO dip-ulaze
   // (oversold RSI / bullish divergencija / ispod donje BB) — blokiraj jurenje cijene.
-  var isDipEntry=(t&&t.rsi<45)||(t&&t.divergence==="BULLISH")||(t&&t.bb&&t.bb.l&&price<t.bb.l);
-  var greedChaseBlock=(typeof MACRO!=="undefined"&&MACRO.fg>65&&!isDipEntry);
+  // PROŠIRENO (listopad 2026): dip-only vrijedi u SVIM režimima, ne samo u pohlepi.
+  // Analiza 66 auto-tradova: 93% gubitnika nikad ne pređe +2% → ulaz je problem (kupuje se
+  // trenutna cijena/momentum). Dodatno: BTC-dom filter za altove + veći confluence izvan straha.
+  var isDipEntry=isDipSetup(t,price);
+  var greedChaseBlock=!isDipEntry; // ime zadržano radi blockers teksta; sad = "ne juri" u svim režimima
+  var btcDomBlock=btcDomAltBlock(sym);
+  var confluenceTh=confluenceNeeded();
 
-  var passesAllGates=conf>=confTh&&score>=scoreTh&&confluenceCount>=2&&volumeOK&&!btcCtx.danger&&!wyBlocker
-                    &&!htfDownBlock&&!chochBearBlock&&!divBearishBlock&&!volatileBlock&&!greedChaseBlock;
+  var passesAllGates=conf>=confTh&&score>=scoreTh&&confluenceCount>=confluenceTh&&volumeOK&&!btcCtx.danger&&!wyBlocker
+                    &&!htfDownBlock&&!chochBearBlock&&!divBearishBlock&&!volatileBlock&&!greedChaseBlock&&!btcDomBlock;
   if(passesAllGates){
     // Kratak verdict — bez šuma. Detalji u expand.
     verdict="✅ Ulazi";
@@ -3191,7 +3246,7 @@ function _analyze3DUncached(sym){
     // Bio bi ✅ ali nedostaje neki gate → downgrade na 🟡 s eksplicitnim razlogom
     verdict="🟡 Oprez";
     var blockers=[];
-    if(confluenceCount<2)blockers.push(confluenceCount+"/6 kategorija");
+    if(confluenceCount<confluenceTh)blockers.push(confluenceCount+"/6 kategorija (treba "+confluenceTh+(confluenceTh>2?" izvan straha":"")+")");
     if(!volumeOK)blockers.push("vol "+(vsT1?vsT1.ratio.toFixed(1)+"× <1.15×":"pada (c24 "+d.c24.toFixed(1)+"%)"));
     if(btcCtx.danger)blockers.push("BTC "+btcCtx.c24.toFixed(1)+"%/24h");
     if(wyBlocker)blockers.push(wyBlocker);
@@ -3199,7 +3254,8 @@ function _analyze3DUncached(sym){
     if(chochBearBlock)blockers.push("CHoCH Bearish (mogući top)");
     if(divBearishBlock)blockers.push("Bearish divergencija (8% win rate)");
     if(volatileBlock)blockers.push("VOLATILE režim (0% win rate)");
-    if(greedChaseBlock)blockers.push("Pohlepa F&G "+MACRO.fg+" — čekaj dip, ne juri vrh");
+    if(btcDomBlock)blockers.push("BTC dom "+MACRO.btcDom+"% > "+btcDomLimit()+"% — kapital bježi u BTC, ne kupuj altove");
+    if(greedChaseBlock)blockers.push((MACRO.fg>65?"Pohlepa F&G "+MACRO.fg+" — ":"")+"čekaj povlačenje (RSI<45 / bull div / ispod BB), ne juri cijenu");
     verdictWhy="Blokirano: "+blockers.join(" · ")+riskSuffix;
   } else if(conf>=(_wasOprez?44:48)){
     // Hysteresis za 🟡: enter na 48, stay na 44
@@ -3274,6 +3330,7 @@ function _analyze3DUncached(sym){
     // Tier 1 entry gates
     confluenceCount:confluenceCount,
     volumeOK:volumeOK,
+    btcDomBlock:btcDomBlock,chaseBlock:greedChaseBlock,confluenceTh:confluenceTh,
     btcDanger:btcCtx.danger,
     wyBlocker:wyBlocker,
     dynamicTarget:dynTarget!==null,
@@ -3611,6 +3668,22 @@ function renderOpp(o){
   h+='<div data-tip="'+_stopTip+'" style="text-align:center;cursor:help"><div style="font-size:var(--text-xs);color:var(--bear);font-weight:var(--fw-b);margin-bottom:3px">Stop −'+_stopPctShow+'%</div><div style="font-size:var(--text-md);font-weight:var(--fw-x);color:var(--bear)">'+fp(o.stopPrice)+'</div></div>';
   h+='<div data-tip="'+_tgtTip+'" style="text-align:right;cursor:help"><div style="font-size:var(--text-xs);color:var(--bull);font-weight:var(--fw-b);margin-bottom:3px">Cilj 3d</div><div style="font-size:var(--text-md);font-weight:var(--fw-x);color:var(--bull)">'+fp(o.targetPrice)+'</div></div>';
   h+='</div>';
+  // ── LIMIT ULAZ + STOP PODSJETNIK (listopad 2026) ──
+  // Analiza: 93% gubitnika nikad ne pređe +2% — kupnja "po tržišnoj" odmah nakon signala. Predlaži limit
+  // nalog 1.5–2% ispod; stop ostaje na istoj apsolutnoj cijeni → manji rizik po tradu ako se napuni.
+  // NAPOMENA: tracker i dalje bilježi ulaz po cijeni signala (ne simulira limit), pa se učinak limit
+  // naloga NE vidi u Rezultatima — to je savjet za izvršenje na burzi.
+  (function(){
+    var limPct=Math.max(1.5,Math.min(2,(o.atrPct||0)*0.2));
+    var limPrice=o.price*(1-limPct/100);
+    var riskLim=(limPrice-o.stopPrice)/limPrice*100;
+    if(!(limPrice>0)||!(riskLim>0))return;
+    h+='<div style="padding:8px 16px;border-bottom:.5px solid var(--sep2);font-size:11px;line-height:1.55;color:var(--t3)">';
+    h+='🎯 <strong style="color:var(--t2)">Limit ulaz −'+limPct.toFixed(1)+'%: '+fp(limPrice)+'</strong> <span style="color:var(--t4)">· rizik do stopa −'+riskLim.toFixed(1)+'%</span><br>';
+    h+='🛑 <strong style="color:var(--t2)">Odmah postavi stop-loss nalog na burzi: '+fp(o.stopPrice)+'</strong>';
+    h+='</div>';
+  })();
+
   // ── POSITION SIZING — vidljivo tek na Detalji (progressive disclosure) ──
   // Skrivamo iz zbijene kartice; otvara se na "Detalji" (iznad Prati gumba → prvo veličina, pa akcija).
   if(isExpDet&&o.verdict&&(o.verdict.indexOf('✅')>-1||o.verdict.indexOf('🟡')>-1)){
@@ -4387,6 +4460,10 @@ function recordPred(sym,entryPrice,targetPrice,stopPrice,conf,forcePct,d1T,d2T,d
   if(typeof shouldBlockToken==="function"&&shouldBlockToken(sym)&&typeof confirm==="function"){
     if(!confirm("⚠️ "+sym+" je na cooldownu — nedavni tradovi <30% uspješnosti.\n\nAuto-engine ovaj token trenutno preskače. Ipak zabilježiti?"))return;
   }
+  // BTC-dom filter: engine ne otvara alt longove kad BTC dominira. Ručni unos dopušten, ali upozori.
+  if(btcDomAltBlock(sym)&&typeof confirm==="function"){
+    if(!confirm("⚠️ BTC dominacija je "+MACRO.btcDom+"% (limit "+btcDomLimit()+"%)\n\nKapital bježi u BTC, altovi pate — engine zato ne otvara alt longove. "+sym+" ipak zabilježiti?"))return;
+  }
   var pct=forcePct||settings.targetPct;
   var isMeme=KNOWN_MEME.indexOf(sym)>-1;
   // Za SHORT: preračunaj target (ispod ulaza) i stop (iznad ulaza)
@@ -4429,7 +4506,8 @@ function recordPred(sym,entryPrice,targetPrice,stopPrice,conf,forcePct,d1T,d2T,d
   syncToGH();
   render();
   var dirLbl=dir==="SHORT"?"📉 SHORT":"📈 LONG";
-  alert("✅ "+sym+" "+dirLbl+" zabilježen!\nTarget: $"+targetPrice.toFixed(4)+" | Stop: $"+stopPrice.toFixed(4));
+  alert("✅ "+sym+" "+dirLbl+" zabilježen!\nTarget: $"+targetPrice.toFixed(4)+" | Stop: $"+stopPrice.toFixed(4)+
+    "\n\n🛑 ODMAH postavi stop-loss nalog na burzi ($"+stopPrice.toFixed(4)+"). Praćenje u appu provjerava stop tek svakih ~30 min — burza ga izvršava odmah (analiza: stvarni gubitak ~−6.2% vs planiranih ~−4%).");
 }
 
 function closePred(id,hit){
@@ -4823,11 +4901,10 @@ function autoTrackOpps(opps, source){
     if((o.targetPct||0)>=10 && o.conf<65)return;
     // GREED GATE (analiza rujan 2026): u pohlepi (FG>65) ne trackaj momentum-chase LONG
     // (kupovanje vrha = 9% win, -3 do -6% stopovi). Samo dip-ulazi (oversold/div/ispod donje BB).
-    if(typeof MACRO!=="undefined"&&MACRO.fg>65){
-      var _ta=ta[o.sym];
-      var _dip=(_ta&&_ta.rsi<45)||(_ta&&_ta.divergence==="BULLISH")||(_ta&&_ta.bb&&_ta.bb.l&&o.price<_ta.bb.l);
-      if(!_dip)return;
-    }
+    // PROŠIRENO (listopad 2026): isti entry-rule helperi kao verdict. Blokirani signal pada na 🟡
+    // "watch", a watch se auto-prati → bez ovoga bi filteri samo preimenovali tradove.
+    if(btcDomAltBlock(o.sym))return;                 // BTC dom > limit → nema alt longova
+    if(!isDipSetup(ta[o.sym],o.price))return;        // dip-only u SVIM režimima (ne samo u pohlepi)
 
     var isMeme=MEME_SYMS.indexOf(o.sym)>-1;
     var p={
@@ -8151,6 +8228,7 @@ function openSettings(){
   if(sacct)sacct.value=settings.accountSize||1000;
   if(srpt)srpt.value=settings.maxRiskPerTrade||1;
   var swin=document.getElementById("s-win");if(swin)swin.value=settings.winThreshold!=null?settings.winThreshold:5;
+  var sbd=document.getElementById("s-bdom");if(sbd)sbd.value=btcDomLimit();
   // Popuni API ključeve
   var cq=document.getElementById("s-cq");var lc=document.getElementById("s-lc");var gh=document.getElementById("s-gh");var cp=document.getElementById("s-cp");var wa=document.getElementById("s-wa");
   if(cq&&apiKeys.cryptoquant)cq.value=apiKeys.cryptoquant;
@@ -8212,7 +8290,7 @@ function showWelcomeModal(){
     +'<div style="background:rgba(255,255,255,.03);border-radius:12px;padding:14px;margin-bottom:14px">'
     +  '<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px">📊 Kako čitati signal</div>'
     +  '<div style="display:flex;flex-direction:column;gap:8px;font-size:12px;line-height:1.5">'
-    +    '<div><span style="color:#00e676;font-weight:700">✅ Ulaz</span> — sve provjere prošle (conf ≥60%, confluence ≥2/6, volume OK, BTC stabilan)</div>'
+    +    '<div><span style="color:#00e676;font-weight:700">✅ Ulaz</span> — sve provjere prošle (conf ≥60%, ulaz na povlačenju, confluence ≥3/6 — ≥2 u ekstremnom strahu, BTC dominacija ispod limita za alte, volume OK)</div>'
     +    '<div><span style="color:#ffa726;font-weight:700">🟡 Oprez</span> — dobar signal ali nedostaje 1 gate. Čekaj potvrdu.</div>'
     +    '<div><span style="color:#2979ff;font-weight:700">🔵 Spek</span> — spekulativan ulaz, visok rizik. Manja pozicija.</div>'
     +  '</div>'
@@ -8220,10 +8298,9 @@ function showWelcomeModal(){
     +'<div style="background:rgba(255,255,255,.03);border-radius:12px;padding:14px;margin-bottom:14px">'
     +  '<div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px">🎯 Tabovi</div>'
     +  '<div style="display:flex;flex-direction:column;gap:6px;font-size:12px;line-height:1.5">'
-    +    '<div>📊 <strong>Pregled</strong> — macro kontekst, sektor RS, top signal</div>'
-    +    '<div>⚡ <strong>Signali</strong> — sve trade prilike (filtriraj po tier-u)</div>'
-    +    '<div>🐸 <strong>Meme</strong> — agresivniji 6% setupi za meme coine</div>'
-    +    '<div>📝 <strong>Tracker</strong> — historija + win rate + AI insights</div>'
+    +    '<div>📊 <strong>Pregled</strong> — BTC, macro kontekst, top signal</div>'
+    +    '<div>⚡ <strong>Signali</strong> — sve trade prilike, sektori, Meme filter</div>'
+    +    '<div>📝 <strong>Rezultati</strong> — povijest tradova, neto metrike, MAE/MFE</div>'
     +  '</div>'
     +'</div>'
     +'<div style="background:rgba(41,121,255,.05);border:.5px solid rgba(41,121,255,.2);border-radius:10px;padding:11px;margin-bottom:18px;font-size:11px;color:rgba(255,255,255,.7);line-height:1.5">'
@@ -8250,6 +8327,7 @@ function applySettings(){
   var rptEl=document.getElementById("s-rpt");if(rptEl)settings.maxRiskPerTrade=parseFloat(rptEl.value)||1;
   var winEl=document.getElementById("s-win");if(winEl){var wv=parseFloat(winEl.value);settings.winThreshold=(!isNaN(wv)&&wv>0)?wv:5;}
   try{normalizeWinStatus();}catch(e){} // odmah preračunaj POGODAK/PROMAŠAJ s novim pragom
+  var bdEl=document.getElementById("s-bdom");if(bdEl){var bdv=parseFloat(bdEl.value);settings.btcDomBlock=(!isNaN(bdv)&&bdv>=40)?bdv:57;}
   settings._cacheV=(settings._cacheV||0)+1; // invalidate analyze3D cache
   // Sync activePct sa novim target-om iz settings (UI toggle UKLONJEN)
   activePct=settings.targetPct;
@@ -10362,7 +10440,7 @@ function disableNotifs(){
   showToast("Notifikacije isključene");render();
 }
 
-// emitEntryNotif uklonjen (v5.346) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
+// emitEntryNotif uklonjen (v5.347) — korisnik želi SAMO 2 notif tipa (profit exit + bear reversal).
 // Bila mrtva funkcija (nula poziva); uklonjena da se ne može slučajno ponovno spojiti.
 
 // ── EXIT NOTIFICATION — SAMO 2 TIPA (po korisnikovom zahtjevu) ──
