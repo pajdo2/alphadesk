@@ -53,8 +53,8 @@
       "d3Hit": false,
       "peakPrice": 0.07695,
       "peakPct": 0.21,
-      "maePrice": 0.07548,
-      "maePct": -1.71
+      "maePrice": 0.07437,
+      "maePct": -3.15
     },
     {
       "id": "1793176537703",
@@ -81,8 +81,8 @@
       "d3Hit": false,
       "peakPrice": 0.7162,
       "peakPct": 0.11,
-      "maePrice": 0.7052,
-      "maePct": -1.43
+      "maePrice": 0.7023,
+      "maePct": -1.83
     },
     {
       "id": "1793176522964",
@@ -99,18 +99,19 @@
       "stop": 0.421728,
       "conf": 58,
       "targetPct": 13,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "PROMAŠAJ",
+      "closePrice": 0.4211,
+      "closePct": -4.14,
+      "autoClose": true,
       "engineVer": "v5.349",
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
       "peakPrice": 0.4422,
       "peakPct": 0.66,
-      "maePrice": 0.4295,
-      "maePct": -2.23
+      "maePrice": 0.4211,
+      "maePct": -4.14,
+      "closeReason": "🛑 Stop-loss (24/7)"
     },
     {
       "id": "1791460576249_APT",
@@ -9722,5 +9723,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-10-28T16:07:16.020Z"
+  "updatedAt": "2026-10-29T05:46:31.077Z"
 }
