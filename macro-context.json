@@ -1,19 +1,19 @@
 {
-    "dxy":  102.41,
-    "changeSummary":  "Prva prava analiza - tržište u CRAB fazi s BTC-om na $81K, Fear&Greed neutralan (50), DXY stabilan na 102.4, nafta na $101.7 zbog houthi napada.",
-    "lastUpdated":  "2026-10-28T12:00:00Z",
+    "dxy":  102.3,
+    "changeSummary":  "Fed zadržao kamate ali signalizira moguću povišicu u prosincu - BTC kliznu prema $80K dok altcoini bilježe veće gubitke, F&G ostaje na 50 kao jučer.",
+    "lastUpdated":  "2026-10-29T12:00:00Z",
     "warnings":  {
                      "ACT":  [
 
                              ],
                      "MEME":  [
-                                 "Meme coin bez katalizatora"
+
                               ],
                      "ANIME":  [
 
                                ],
                      "XRP":  [
-
+                                 "XRP -3% danas po Fed odluci, nastavak slabosti"
                              ],
                      "BNB":  [
 
@@ -25,19 +25,19 @@
 
                               ],
                      "PENGU":  [
-                                   "Meme coin bez katalizatora"
+
                                ],
                      "BOME":  [
-                                  "Meme coin bez katalizatora"
+
                               ],
                      "DOGS":  [
-                                  "Meme coin bez katalizatora"
+
                               ],
                      "NOT":  [
-                                 "Meme/TON, visoka BTC dominacija"
+
                              ],
                      "PEOPLE":  [
-                                    "Meme coin bez katalizatora"
+
                                 ],
                      "SOL":  [
 
@@ -46,29 +46,28 @@
 
                              ],
                      "PNUT":  [
-                                  "Meme coin bez katalizatora"
+
                               ],
                      "AIXBT":  [
 
                                ],
                      "ETH":  [
-
+                                 "ETH -5% tjedno, -10% mj., ispod SMA podrške"
                              ],
                      "LINK":  [
 
                               ],
                      "PUMP":  [
-                                  "Meme coin bez katalizatora"
+
                               ],
                      "TRUMP":  [
-                                   "Meme coin, BTC dom 60% - altseason nije aktivan"
+
                                ],
                      "BTC":  [
-                                 "BTC ispod SMA200, drugi uzastopni Downtober",
-                                 "Otpor na $81.2K-$81.25K"
+                                 "Fed signalizira povišicu u 12/26, prodajni pritisak"
                              ]
                  },
-    "sp500Ret5d":  -0.47,
+    "sp500Ret5d":  -0.46,
     "fearGreed":  50,
     "macroPenalty":  2,
     "catalysts":  {
@@ -82,11 +81,10 @@
 
                                 ],
                       "XRP":  [
-                                  "XRP +2.2% danas, jači od BTC-a"
+
                               ],
                       "BNB":  [
-                                  "Jenner hard fork na testnet danas",
-                                  "Payment Lane + CAS20 standard upgrade"
+
                               ],
                       "SUI":  [
 
@@ -110,7 +108,7 @@
 
                                  ],
                       "SOL":  [
-                                  "Altcoin rally ispred FOMC odluke"
+                                  "SOL +2.6% vodi altcoins, vraća se iznad $100"
                               ],
                       "ADA":  [
 
@@ -122,7 +120,7 @@
 
                                 ],
                       "ETH":  [
-                                  "Altcoin rally +1.8%, ispred FOMC odluke"
+
                               ],
                       "LINK":  [
 
@@ -134,37 +132,36 @@
 
                                 ],
                       "BTC":  [
-                                  "FOMC odluka danas - potencijalni trend signal",
-                                  "BTC rebound iznad $81K"
+                                  "Galaxy predviđa $125K kao cycle target"
                               ]
                   },
     "regime":  "CRAB",
     "sentimentScore":  {
                            "ACT":  0,
-                           "MEME":  -1,
+                           "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  1,
-                           "BNB":  2,
+                           "XRP":  -1,
+                           "BNB":  0,
                            "SUI":  0,
                            "AVAX":  0,
-                           "PENGU":  -1,
-                           "BOME":  -1,
-                           "DOGS":  -1,
-                           "NOT":  -1,
-                           "PEOPLE":  -1,
+                           "PENGU":  0,
+                           "BOME":  0,
+                           "DOGS":  0,
+                           "NOT":  0,
+                           "PEOPLE":  0,
                            "SOL":  1,
                            "ADA":  0,
-                           "PNUT":  -1,
+                           "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  1,
+                           "ETH":  -1,
                            "LINK":  0,
-                           "PUMP":  -1,
-                           "TRUMP":  -1,
-                           "BTC":  1
+                           "PUMP":  0,
+                           "TRUMP":  0,
+                           "BTC":  -1
                        },
-    "aiSummary":  "DXY je na 102.4, neutralna razina bez pritiska na kripto; nafta skočila na $101.7 zbog houthi napada na saudijsku rafineriju Ras Tanura. Fear & Greed indeks je 50 (neutralno), BTC konsolidira oko $81K u CRAB fazi nakon drugog uzastopnog Downtobera. Danas FOMC donosi odluku o kamatnim stopama - očekuje se povećana volatilnost, major altovi (ETH, XRP, BNB) pokazuju kratkoročnu snagu.",
+    "aiSummary":  "DXY je stabilan na 102.3, bez makro pritiska na kripto; Fed je zadržao kamate u omjeru 10-2 ali signalizira moguću povišicu u prosincu što je izazvalo novi val prodaje u BTC, ETH i XRP. Fear & Greed ostaje neutralan na 50, BTC konsolidira oko $80K u CRAB fazi dok BTC dominacija raste na 59.5% jer altcoini padaju jače. SOL prednjači s +2.6% i vraća $100, ali širi altcoin market ostaje pod pritiskom post-Fed.",
     "warActive":  true,
-    "btcDom":  60.0,
-    "stableDom":  11.3,
-    "oil":  101.71
+    "btcDom":  59.5,
+    "stableDom":  5.5,
+    "oil":  101.7
 }
