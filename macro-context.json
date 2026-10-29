@@ -1,7 +1,7 @@
 {
-    "dxy":  102.19,
-    "changeSummary":  "U odnosu na jutarnju analizu uvjeti su gotovo identični - BTC dalje klizi prema $80K uz nepromijenjeni F&G 50 i CRAB fazu, dok SOL ostaje jedini značajni outperformer zahvaljujući institucionalnim partnerstvima.",
-    "lastUpdated":  "2026-10-29T15:00:00Z",
+    "dxy":  102.2,
+    "changeSummary":  "Makro uvjeti ostaju gotovo nepromijenjeni — DXY stabilan na 102.2, F&G neutralan na 50, BTC konsolidira oko $80K u CRAB fazi uz blagi pad nafte na $101.9.",
+    "lastUpdated":  "2026-10-29T17:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -13,16 +13,16 @@
 
                                ],
                      "XRP":  [
-                                 "XRP -3.0% - najslabiji od top5 danas"
+                               "Pad 3% post-Fed, regulatorni pritisak"
                              ],
                      "BNB":  [
-                                 "Altcoin pritisak, BNB prati opći pad tržišta"
+
                              ],
                      "SUI":  [
 
-                              ],
+                             ],
                      "AVAX":  [
-                                  "AVAX pod pritiskom u širem altcoin rasprodaju"
+
                               ],
                      "PENGU":  [
 
@@ -40,7 +40,7 @@
 
                                 ],
                      "SOL":  [
-
+                               "Solflare validator incident"
                              ],
                      "ADA":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-                                 "ETH -2.1% post-Fed, slabiji od BTC"
+                               "ETF odljevi i prodajni val post-Fed odluke"
                              ],
                      "LINK":  [
 
@@ -64,10 +64,10 @@
 
                                ],
                      "BTC":  [
-                                 "Fed: 82.6% šansa za povišicu u prosincu"
+                               "Fed hike rizik - 82.6% šansa za prosinac"
                              ]
                  },
-    "sp500Ret5d":  0.8,
+    "sp500Ret5d":  -0.5,
     "fearGreed":  50,
     "macroPenalty":  2,
     "catalysts":  {
@@ -108,7 +108,8 @@
 
                                  ],
                       "SOL":  [
-                                  "Jupiter+BitGo validator za institucije - staking iz custodya"
+                                "Jupiter+BitGo institucijsko SOL staking",
+                                "Google MPC custody Solflare integracija"
                               ],
                       "ADA":  [
 
@@ -141,9 +142,9 @@
                            "MEME":  0,
                            "ANIME":  0,
                            "XRP":  -1,
-                           "BNB":  -1,
+                           "BNB":  0,
                            "SUI":  0,
-                           "AVAX":  -1,
+                           "AVAX":  0,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
@@ -159,9 +160,9 @@
                            "TRUMP":  0,
                            "BTC":  -1
                        },
-    "aiSummary":  "DXY ostaje stabilan na 102.2 bez direktnog pritiska na kripto, no Fed je zadržao kamate uz rastuće tržišne šanse (82.6%) za povišicu u prosincu što je obnovilo prodajni val u BTC, ETH i XRP. Fear & Greed ostaje neutralan na 50, BTC konsolidira ispod $80K u CRAB fazi s dominacijom od 59.5% dok altkoini padaju jače, a jedini outperformer je SOL (+2.6%) na vijesti o Jupiter+BitGo institucionalnom stakingu. Nafta (WTI ~$102) i aktivni geopolitički rizici (Houthi napadi, US-Iran napetosti) drže macroPenalty na 2; kratkoročno se ne očekuje snažan oporavak bez pozitivnog makro okidača.",
+    "aiSummary":  "DXY ostaje stabilan na 102.2, a Fed je zadržao kamate no tržišta cijene 82.6% šansu za podizanje u prosincu što pojačava prodajni pritisak na BTC (~$80K), ETH i XRP koji padaju 1-3%. Fear & Greed indeks je neutralan na 50, BTC dominacija ostaje na 59.5% u CRAB fazi dok ETH pati od ETF odljeva, a jedini outperformer je SOL na vijestima o Jupiter+BitGo stakingu i Google MPC integraciji. Nafta (WTI ~$102) i aktivni geopolitički rizici (Houthi napadi, US-Iran napetosti) drže macroPenalty na 2 bez vidljivog pozitivnog katalizatora za kratkoročni oporavak.",
     "warActive":  true,
     "btcDom":  59.5,
-    "stableDom":  10.8,
-    "oil":  102.2
+    "stableDom":  6.5,
+    "oil":  101.9
 }
