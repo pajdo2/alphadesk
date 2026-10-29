@@ -25,8 +25,8 @@
       "d3Hit": false,
       "peakPrice": 201.59,
       "peakPct": 1.41,
-      "maePrice": 194.23,
-      "maePct": -2.29
+      "maePrice": 192.53,
+      "maePct": -3.15
     },
     {
       "id": "1793176556856",
@@ -43,18 +43,19 @@
       "stop": 0.073933,
       "conf": 61,
       "targetPct": 10,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "PROMAŠAJ",
+      "closePrice": 0.07386,
+      "closePct": -3.82,
+      "autoClose": true,
       "engineVer": "v5.349",
       "d1Hit": false,
       "d2Hit": false,
       "d3Hit": false,
       "peakPrice": 0.07695,
       "peakPct": 0.21,
-      "maePrice": 0.07437,
-      "maePct": -3.15
+      "maePrice": 0.07386,
+      "maePct": -3.82,
+      "closeReason": "🛑 Stop-loss -3% hit"
     },
     {
       "id": "1793176537703",
@@ -81,8 +82,8 @@
       "d3Hit": false,
       "peakPrice": 0.7162,
       "peakPct": 0.11,
-      "maePrice": 0.7023,
-      "maePct": -1.83
+      "maePrice": 0.7,
+      "maePct": -2.15
     },
     {
       "id": "1793176522964",
@@ -7434,8 +7435,8 @@
     "_global": {
       "rsiOversold": 0.5,
       "rsiOverbought": 1,
-      "trendUp": 0.371,
-      "trendDown": 0.433,
+      "trendUp": 0.37,
+      "trendDown": 0.431,
       "bbBelow": 1,
       "divBullish": 0.3,
       "divBearish": 0.571,
@@ -7443,13 +7444,13 @@
       "macdBearCross": 1,
       "lsRatioBull": 1,
       "lsRatioExtreme": 1,
-      "basisBack": 0.555,
+      "basisBack": 0.552,
       "takerSell": 1,
       "btcDomHigh": 1,
       "btcDomLow": 1,
-      "volSpike": 0.345,
+      "volSpike": 0.343,
       "mtfAllUp": 0.4,
-      "fgExtremeFear": 0.473,
+      "fgExtremeFear": 0.47,
       "fgFear": 0.3
     },
     "BULL": {
@@ -9652,10 +9653,10 @@
       "conf": 39,
       "score": 0.35,
       "verdict": "🔵 Spekulativno",
-      "graded": false,
-      "correct": null,
-      "fwdPrice": null,
-      "fwdPct": null
+      "graded": true,
+      "correct": true,
+      "fwdPrice": 68456,
+      "fwdPct": 0
     },
     {
       "ts": 1793176489131,
@@ -9665,10 +9666,10 @@
       "conf": 48,
       "score": 4,
       "verdict": "🟡 Oprez",
-      "graded": false,
-      "correct": null,
-      "fwdPrice": null,
-      "fwdPct": null
+      "graded": true,
+      "correct": false,
+      "fwdPrice": 68456,
+      "fwdPct": -15.53
     },
     {
       "ts": 1793180407243,
@@ -9678,10 +9679,10 @@
       "conf": 42,
       "score": 1.4,
       "verdict": "🔵 Spekulativno",
-      "graded": false,
-      "correct": null,
-      "fwdPrice": null,
-      "fwdPct": null
+      "graded": true,
+      "correct": true,
+      "fwdPrice": 68456,
+      "fwdPct": 0
     },
     {
       "ts": 1793185104929,
@@ -9721,7 +9722,20 @@
       "correct": null,
       "fwdPrice": null,
       "fwdPct": null
+    },
+    {
+      "ts": 1793267529942,
+      "price": 68456,
+      "dir": "DOWN",
+      "th": 2.4,
+      "conf": 32,
+      "score": -2.6,
+      "verdict": "🔴 Preskoči",
+      "graded": false,
+      "correct": null,
+      "fwdPrice": null,
+      "fwdPct": null
     }
   ],
-  "updatedAt": "2026-10-29T05:46:31.077Z"
+  "updatedAt": "2026-10-29T09:52:23.409Z"
 }
