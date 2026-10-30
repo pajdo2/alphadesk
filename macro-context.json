@@ -1,71 +1,70 @@
 {
     "dxy":  101.74,
-    "changeSummary":  "Houthi napadi eskalirali i aktivirali ratnu premiju (macroPenalty +2), nafta skočila na $104, dok DXY i F&G ostaju gotovo nepromijenjeni uz nastavak VOLATILE faze uzrokovane Binance hakom.",
-    "lastUpdated":  "2026-10-30T12:00:00Z",
+    "changeSummary":  "Situacija gotovo identična prethodnoj analizi — DXY i nafta nepromijenjeni, dok Binance hack od $6.3B i dalje dominira tržištem uz BTC na ~$77K i F&G indeks koji ostaje na 29 (Strah).",
+    "lastUpdated":  "2026-10-30T18:00:00Z",
     "warnings":  {
                      "ACT":  [
-                             "Nema vijesti, tržišna zaraza od Binance pada"
+                             "Mali kap altcoin, visok rizik pada u VOLATILE fazi"
                              ],
                      "MEME":  [
-                              "Binance haker prodao meme tokene, PEPE -$31M"
+                              "MEME token duplo pogođen negativnim sentimentom"
                               ],
                      "ANIME":  [
-                               "Nema vijesti, niska likvidnost u VOLATILE fazi"
+                               "Meme token, visok rizik u negativnom sentimentu"
                                ],
                      "XRP":  [
-                             "XRP Ledger korišten kao hakerski izlaz, FUD"
+                             "Tržišni pad, podrška slabi uz altcoin slabost"
                              ],
                      "BNB":  [
-                             "Direktno pogođen hakom -5%, suspenzija isplata"
+                             "Binance hack direktno pogađa BNB - exchange token pod pritiskom"
                              ],
                      "SUI":  [
-                             "Tržišna zaraza, nema specifičnih vijesti"
+                             "Altcoin slabost u VOLATILE fazi"
                              ],
                      "AVAX":  [
-                              "AVAX chain korišten u hack izlazu, sell pressure"
+                              "Altcoin slabost, slijedi tržišni trend pada"
                               ],
                      "PENGU":  [
-                               "NFT sektor pati u VOLATILE fazi"
+                               "Meme token pod tržišnim pritiskom"
                                ],
                      "BOME":  [
-                              "Meme token bez katalizatora, tržišni pad"
+                              "Meme token, visok rizik u VOLATILE fazi"
                               ],
                      "DOGS":  [
-                              "Nema vijesti, meme sezona pauzirana"
+                              "Meme token pod tržišnim pritiskom"
                               ],
                      "NOT":  [
-                             "Telegram ekosustav, opće tržišno slabljenje"
+                             "Niska likvidnost, visok rizik u tržišnom padu"
                              ],
                      "PEOPLE":  [
-                                "Nema vijesti, niska likvidnost u strahu"
+                                "Mali kap token, visok rizik pada u VOLATILE fazi"
                                 ],
                      "SOL":  [
-                             "Teži pad od BTC-a, SOL chain korišten u haku"
+                             "Altcoin slabost, tržišni pritisak od Binance incidenta"
                              ],
                      "ADA":  [
-                             "Nema katalizatora, VOLATILE okruženje"
+                             "Opći tržišni pritisak, altcoini pate više od BTC"
                              ],
                      "PNUT":  [
-                              "Nema vijesti, niska likvidnost"
+                              "Meme token, visok rizik u zoni Straha"
                               ],
                      "AIXBT":  [
-                               "AI kripto sektor bez katalizatora danas"
+                               "AI token pati uz tech sell-off i tržišni pad"
                                ],
                      "ETH":  [
-                             "RSI blizu 30, pada -2.8%, ETH chain u haku"
+                             "RSI blizu 30, rizik daljnjeg pada uz tržišni stres"
                              ],
                      "LINK":  [
-                              "VOLATILE okruženje bez jasnih katalizatora"
+                              "Tržišni pad, nema posebnih katalizatora danas"
                               ],
                      "PUMP":  [
-                              "Meme token, visoka volatilnost u VOLATILE fazi"
+                              "Spekulativni token, visok rizik u FUD okruženju"
                               ],
                      "TRUMP":  [
-                               "Meme valuta, visok rizik u VOLATILE fazi"
+                               "Meme token u FUD okruženju - visok rizik"
                                ],
                      "BTC":  [
-                             "Binance hack $6.3B, $1.57B likvidacija tržištu",
-                             "Haker podijelio 18.270 BTC u 19 nezamrzivih novčanika"
+                             "Binance hack $6.3B, bearish pritisak, BTC pao na $77K"
                              ]
                  },
     "sp500Ret5d":  -1.8,
@@ -82,10 +81,10 @@
 
                                 ],
                       "XRP":  [
-                              "XRP Trust Bank partnerstvo u vijestima"
+
                               ],
                       "BNB":  [
-                              "SAFU fond pokriva gubitke hakera"
+
                               ],
                       "SUI":  [
 
@@ -109,7 +108,7 @@
 
                                  ],
                       "SOL":  [
-                              "Polygon integrira SOL u Open Money Stack"
+
                               ],
                       "ADA":  [
 
@@ -121,7 +120,7 @@
 
                                 ],
                       "ETH":  [
-                              "Glamsterdam upgrade u planu, fundamentali OK"
+
                               ],
                       "LINK":  [
 
@@ -133,17 +132,16 @@
 
                                 ],
                       "BTC":  [
-                              "ETF priljevi treći dan zaredom, BTC otporniji",
-                              "Podrška na $76.5K potvrđena kao dno"
+
                               ]
                   },
     "regime":  "VOLATILE",
     "sentimentScore":  {
                            "ACT":  -1,
-                           "MEME":  -2,
+                           "MEME":  -1,
                            "ANIME":  -1,
                            "XRP":  -1,
-                           "BNB":  -3,
+                           "BNB":  -2,
                            "SUI":  -1,
                            "AVAX":  -1,
                            "PENGU":  -1,
@@ -155,15 +153,15 @@
                            "ADA":  -1,
                            "PNUT":  -1,
                            "AIXBT":  -1,
-                           "ETH":  -2,
+                           "ETH":  -1,
                            "LINK":  -1,
                            "PUMP":  -1,
                            "TRUMP":  -1,
                            "BTC":  -1
                        },
-    "aiSummary":  "DXY se zadržao na 101.74 bez većih promjena, no eskalacija Houthi napada na saudijsku infrastrukturu podigla je naftu na $104 i aktivirala ratnu premiju (macroPenalty +2). Kripto tržište ostaje pod pritiskom Binance haka od $6.3B uz F&G indeks na 29 (Strah) i $1.57B likvidiranih pozicija, dok BTC dominacija raste na 61% jer altcoini pate više. Bez rješenja Binance incidenta i geopolitičke smirenosti, VOLATILE faza se nastavlja - kapital bježi u stablecoine i DEX platforme.",
+    "aiSummary":  "DXY ostaje stabilan na 101.74, a nafta (WTI ~$104) zadržava ratnu premiju zbog eskalacije Houthi napada na saudijsku infrastrukturu. Binance hack od $6.3B dominira tržištem — BTC je pao na ~$77K, kripto tržište izgubilo 3.7% tržišne kapitalizacije, F&G ostaje u zoni Straha (29) dok BNB posebno pati kao Binance nativni token. VOLATILE faza se nastavlja bez naznaka rješenja Binance incidenta, kapital i dalje bježi u stablecoine (~11% dominacije).",
     "warActive":  true,
-    "btcDom":  61.0,
-    "stableDom":  11.5,
+    "btcDom":  59.35,
+    "stableDom":  11.2,
     "oil":  104.0
 }
