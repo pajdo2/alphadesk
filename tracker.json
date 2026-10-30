@@ -26,8 +26,8 @@
       "ruleBreaks": [
         "btcdom"
       ],
-      "peakPrice": 1.2609,
-      "peakPct": 0.02,
+      "peakPrice": 1.261,
+      "peakPct": 0.03,
       "maePrice": 1.2606,
       "maePct": 0
     },
@@ -9955,5 +9955,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-10-30T09:09:21.367Z"
+  "updatedAt": "2026-10-30T09:09:25.018Z"
 }
