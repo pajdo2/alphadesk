@@ -27,8 +27,8 @@
         "btcdom",
         "jurenje"
       ],
-      "peakPrice": 280.6,
-      "peakPct": 0,
+      "peakPrice": 280.8,
+      "peakPct": 0.07,
       "maePrice": 280.6,
       "maePct": 0
     },
@@ -122,8 +122,8 @@
         "btcdom",
         "jurenje"
       ],
-      "peakPrice": 91.77,
-      "peakPct": 0.21,
+      "peakPrice": 91.86,
+      "peakPct": 0.31,
       "maePrice": 91.58,
       "maePct": 0
     },
@@ -9892,5 +9892,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-10-30T09:08:46.215Z"
+  "updatedAt": "2026-10-30T09:09:00.898Z"
 }
