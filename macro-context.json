@@ -1,75 +1,76 @@
 {
-    "dxy":  101.75,
-    "changeSummary":  "Uvjeti ostaju gotovo nepromijenjeni u odnosu na prethodnu analizu - F&G zadržan na 30, BTC konsolidira oko $78.5K uz blagi rast BTC dominacije na 59.5% dok Binance hack i dalje pritišće altcoine.",
-    "lastUpdated":  "2026-10-30T22:00:00Z",
+    "dxy":  101.74,
+    "changeSummary":  "Houthi napadi eskalirali i aktivirali ratnu premiju (macroPenalty +2), nafta skočila na $104, dok DXY i F&G ostaju gotovo nepromijenjeni uz nastavak VOLATILE faze uzrokovane Binance hakom.",
+    "lastUpdated":  "2026-10-30T12:00:00Z",
     "warnings":  {
                      "ACT":  [
-
+                             "Nema vijesti, tržišna zaraza od Binance pada"
                              ],
                      "MEME":  [
-
+                              "Binance haker prodao meme tokene, PEPE -$31M"
                               ],
                      "ANIME":  [
-
+                               "Nema vijesti, niska likvidnost u VOLATILE fazi"
                                ],
                      "XRP":  [
-                                 "Dio $1.5B likvidacija - kratkoročni prodajni pritisak"
+                             "XRP Ledger korišten kao hakerski izlaz, FUD"
                              ],
                      "BNB":  [
-                                 "Binance hack $6.3B - direktan udar na BNB ekosustav"
+                             "Direktno pogođen hakom -5%, suspenzija isplata"
                              ],
                      "SUI":  [
-
+                             "Tržišna zaraza, nema specifičnih vijesti"
                              ],
                      "AVAX":  [
-
+                              "AVAX chain korišten u hack izlazu, sell pressure"
                               ],
                      "PENGU":  [
-
+                               "NFT sektor pati u VOLATILE fazi"
                                ],
                      "BOME":  [
-
+                              "Meme token bez katalizatora, tržišni pad"
                               ],
                      "DOGS":  [
-
+                              "Nema vijesti, meme sezona pauzirana"
                               ],
                      "NOT":  [
-
+                             "Telegram ekosustav, opće tržišno slabljenje"
                              ],
                      "PEOPLE":  [
-
+                                "Nema vijesti, niska likvidnost u strahu"
                                 ],
                      "SOL":  [
-                                 "Kamino pauzirao borrowing SOL/BTC tržišta - oprez"
+                             "Teži pad od BTC-a, SOL chain korišten u haku"
                              ],
                      "ADA":  [
-
+                             "Nema katalizatora, VOLATILE okruženje"
                              ],
                      "PNUT":  [
-
+                              "Nema vijesti, niska likvidnost"
                               ],
                      "AIXBT":  [
-
+                               "AI kripto sektor bez katalizatora danas"
                                ],
                      "ETH":  [
-                                 "ETH pogođen $1.5B likvidacija - visok kratkoročni rizik"
+                             "RSI blizu 30, pada -2.8%, ETH chain u haku"
                              ],
                      "LINK":  [
-
+                              "VOLATILE okruženje bez jasnih katalizatora"
                               ],
                      "PUMP":  [
-
+                              "Meme token, visoka volatilnost u VOLATILE fazi"
                               ],
                      "TRUMP":  [
-
+                               "Meme valuta, visok rizik u VOLATILE fazi"
                                ],
                      "BTC":  [
-                                 "$1.5B likvidacija - rizik kaskadnih prodaja ispod $78K"
+                             "Binance hack $6.3B, $1.57B likvidacija tržištu",
+                             "Haker podijelio 18.270 BTC u 19 nezamrzivih novčanika"
                              ]
                  },
-    "sp500Ret5d":  -0.46,
-    "fearGreed":  30,
-    "macroPenalty":  0,
+    "sp500Ret5d":  -1.8,
+    "fearGreed":  29,
+    "macroPenalty":  2,
     "catalysts":  {
                       "ACT":  [
 
@@ -81,10 +82,10 @@
 
                                 ],
                       "XRP":  [
-
+                              "XRP Trust Bank partnerstvo u vijestima"
                               ],
                       "BNB":  [
-
+                              "SAFU fond pokriva gubitke hakera"
                               ],
                       "SUI":  [
 
@@ -108,7 +109,7 @@
 
                                  ],
                       "SOL":  [
-                                  "Ondo RWA launch jača Solana ekosustav"
+                              "Polygon integrira SOL u Open Money Stack"
                               ],
                       "ADA":  [
 
@@ -120,7 +121,7 @@
 
                                 ],
                       "ETH":  [
-                                  "DEX rast - Standard Chartered vidi koristi od Binance hacka"
+                              "Glamsterdam upgrade u planu, fundamentali OK"
                               ],
                       "LINK":  [
 
@@ -132,16 +133,17 @@
 
                                 ],
                       "BTC":  [
-                                  "ETF priljevi 3 dana zaredom - institucionalna podrška drži $78K"
+                              "ETF priljevi treći dan zaredom, BTC otporniji",
+                              "Podrška na $76.5K potvrđena kao dno"
                               ]
                   },
     "regime":  "VOLATILE",
     "sentimentScore":  {
                            "ACT":  -1,
-                           "MEME":  -1,
+                           "MEME":  -2,
                            "ANIME":  -1,
                            "XRP":  -1,
-                           "BNB":  -2,
+                           "BNB":  -3,
                            "SUI":  -1,
                            "AVAX":  -1,
                            "PENGU":  -1,
@@ -153,15 +155,15 @@
                            "ADA":  -1,
                            "PNUT":  -1,
                            "AIXBT":  -1,
-                           "ETH":  -1,
+                           "ETH":  -2,
                            "LINK":  -1,
                            "PUMP":  -1,
                            "TRUMP":  -1,
                            "BTC":  -1
                        },
-    "aiSummary":  "DXY se stabilizirao na 101.75 uz minimalne promjene, no Binance hack od $6.3B koji traje od jučer i dalje drži F&G indeks na 30 (Strah) uz $1.5B likvidiranih pozicija. BTC konsolidira oko $78.5K uz podršku ETF priljeva treći dan zaredom, dok BTC dominacija raste na 59.5% jer altcoini pate više od BTC-a. Bez rješenja Binance incidenta VOLATILE faza se nastavlja - kapital bježi u stablecoine i DEX platforme poput Uniswapa.",
-    "warActive":  false,
-    "btcDom":  59.5,
-    "stableDom":  7.2,
-    "oil":  102.0
+    "aiSummary":  "DXY se zadržao na 101.74 bez većih promjena, no eskalacija Houthi napada na saudijsku infrastrukturu podigla je naftu na $104 i aktivirala ratnu premiju (macroPenalty +2). Kripto tržište ostaje pod pritiskom Binance haka od $6.3B uz F&G indeks na 29 (Strah) i $1.57B likvidiranih pozicija, dok BTC dominacija raste na 61% jer altcoini pate više. Bez rješenja Binance incidenta i geopolitičke smirenosti, VOLATILE faza se nastavlja - kapital bježi u stablecoine i DEX platforme.",
+    "warActive":  true,
+    "btcDom":  61.0,
+    "stableDom":  11.5,
+    "oil":  104.0
 }
