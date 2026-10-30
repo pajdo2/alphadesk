@@ -1,6 +1,69 @@
 {
   "predictions": [
     {
+      "id": "1793351356267",
+      "timestamp": 1793351356267,
+      "sym": "XRP",
+      "type": "regular",
+      "direction": "LONG",
+      "date": "30. lis",
+      "entry": 1.2606,
+      "target": 1.6388,
+      "d1Target": 1.393,
+      "d2Target": 1.5253,
+      "d3Target": 1.6388,
+      "stop": 1.2079,
+      "conf": 55,
+      "targetPct": 30,
+      "status": "AKTIVAN",
+      "closePrice": null,
+      "closePct": null,
+      "autoClose": false,
+      "engineVer": "v5.358",
+      "d1Hit": false,
+      "d2Hit": false,
+      "d3Hit": false,
+      "ruleBreaks": [
+        "btcdom"
+      ],
+      "peakPrice": 1.2609,
+      "peakPct": 0.02,
+      "maePrice": 1.2606,
+      "maePct": 0
+    },
+    {
+      "id": "1793351343850",
+      "timestamp": 1793351343850,
+      "sym": "NIGHT",
+      "type": "regular",
+      "direction": "LONG",
+      "date": "30. lis",
+      "entry": 0.03841,
+      "target": 0.049933,
+      "d1Target": 0.042443,
+      "d2Target": 0.046476,
+      "d3Target": 0.049933,
+      "stop": 0.036874,
+      "conf": 56,
+      "targetPct": 30,
+      "status": "AKTIVAN",
+      "closePrice": null,
+      "closePct": null,
+      "autoClose": false,
+      "engineVer": "v5.358",
+      "d1Hit": false,
+      "d2Hit": false,
+      "d3Hit": false,
+      "ruleBreaks": [
+        "btcdom",
+        "jurenje"
+      ],
+      "peakPrice": 0.03843,
+      "peakPct": 0.05,
+      "maePrice": 0.03841,
+      "maePct": 0
+    },
+    {
       "id": "1793351322233",
       "timestamp": 1793351322233,
       "sym": "BCH",
@@ -27,8 +90,8 @@
         "btcdom",
         "jurenje"
       ],
-      "peakPrice": 280.8,
-      "peakPct": 0.07,
+      "peakPrice": 280.9,
+      "peakPct": 0.11,
       "maePrice": 280.6,
       "maePct": 0
     },
@@ -122,8 +185,8 @@
         "btcdom",
         "jurenje"
       ],
-      "peakPrice": 91.86,
-      "peakPct": 0.31,
+      "peakPrice": 91.89,
+      "peakPct": 0.34,
       "maePrice": 91.58,
       "maePct": 0
     },
@@ -9892,5 +9955,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-10-30T09:09:00.898Z"
+  "updatedAt": "2026-10-30T09:09:21.367Z"
 }
