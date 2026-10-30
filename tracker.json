@@ -28,8 +28,8 @@
       ],
       "peakPrice": 1.261,
       "peakPct": 0.03,
-      "maePrice": 1.2524,
-      "maePct": -0.65
+      "maePrice": 1.2488,
+      "maePct": -0.94
     },
     {
       "id": "1793351343850",
@@ -90,8 +90,8 @@
         "btcdom",
         "jurenje"
       ],
-      "peakPrice": 281.08,
-      "peakPct": 0.17,
+      "peakPrice": 282.2,
+      "peakPct": 0.57,
       "maePrice": 280.6,
       "maePct": 0
     },
@@ -122,8 +122,8 @@
         "btcdom",
         "jurenje"
       ],
-      "peakPrice": 1.695,
-      "peakPct": 0.65,
+      "peakPrice": 1.713,
+      "peakPct": 1.72,
       "maePrice": 1.676,
       "maePct": -0.48
     },
@@ -155,8 +155,8 @@
       ],
       "peakPrice": 1.18,
       "peakPct": 0,
-      "maePrice": 1.17,
-      "maePct": -0.85
+      "maePrice": 1.167,
+      "maePct": -1.1
     },
     {
       "id": "1793347139738",
@@ -185,8 +185,8 @@
         "btcdom",
         "jurenje"
       ],
-      "peakPrice": 91.91,
-      "peakPct": 0.36,
+      "peakPrice": 92.42,
+      "peakPct": 0.92,
       "maePrice": 90.99,
       "maePct": -0.64
     },
@@ -7628,7 +7628,7 @@
       "rsiOversold": 0.5,
       "rsiOverbought": 1,
       "trendUp": 0.37,
-      "trendDown": 0.432,
+      "trendDown": 0.431,
       "bbBelow": 1,
       "divBullish": 0.3,
       "divBearish": 0.571,
@@ -7636,13 +7636,13 @@
       "macdBearCross": 1,
       "lsRatioBull": 1,
       "lsRatioExtreme": 1,
-      "basisBack": 0.554,
+      "basisBack": 0.553,
       "takerSell": 1,
       "btcDomHigh": 1,
       "btcDomLow": 1,
-      "volSpike": 0.345,
+      "volSpike": 0.344,
       "mtfAllUp": 0.4,
-      "fgExtremeFear": 0.472,
+      "fgExtremeFear": 0.471,
       "fgFear": 0.3
     },
     "BULL": {
@@ -7657,11 +7657,11 @@
       "macdBearCross": 1,
       "lsRatioBull": 1,
       "lsRatioExtreme": 1,
-      "basisBack": 0.885,
+      "basisBack": 0.923,
       "takerSell": 1,
       "btcDomHigh": 1,
       "btcDomLow": 1,
-      "volSpike": 0.767,
+      "volSpike": 0.8,
       "mtfAllUp": 1,
       "fgExtremeFear": 1,
       "fgFear": 1
@@ -9981,5 +9981,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-10-30T10:29:29.170Z"
+  "updatedAt": "2026-10-30T10:30:17.403Z"
 }
