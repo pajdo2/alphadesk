@@ -28,8 +28,8 @@
       ],
       "peakPrice": 1.261,
       "peakPct": 0.03,
-      "maePrice": 1.2606,
-      "maePct": 0
+      "maePrice": 1.2524,
+      "maePct": -0.65
     },
     {
       "id": "1793351343850",
@@ -58,8 +58,8 @@
         "btcdom",
         "jurenje"
       ],
-      "peakPrice": 0.03843,
-      "peakPct": 0.05,
+      "peakPrice": 0.03905,
+      "peakPct": 1.67,
       "maePrice": 0.03841,
       "maePct": 0
     },
@@ -122,8 +122,8 @@
         "btcdom",
         "jurenje"
       ],
-      "peakPrice": 1.684,
-      "peakPct": 0,
+      "peakPrice": 1.691,
+      "peakPct": 0.42,
       "maePrice": 1.676,
       "maePct": -0.48
     },
@@ -155,8 +155,8 @@
       ],
       "peakPrice": 1.18,
       "peakPct": 0,
-      "maePrice": 1.179,
-      "maePct": -0.08
+      "maePrice": 1.173,
+      "maePct": -0.59
     },
     {
       "id": "1793347139738",
@@ -187,8 +187,8 @@
       ],
       "peakPrice": 91.91,
       "peakPct": 0.36,
-      "maePrice": 91.58,
-      "maePct": 0
+      "maePrice": 91.12,
+      "maePct": -0.5
     },
     {
       "id": "1793176566857",
@@ -9968,5 +9968,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-10-30T09:47:48.567Z"
+  "updatedAt": "2026-10-30T09:47:58.540Z"
 }
