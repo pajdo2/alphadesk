@@ -58,8 +58,8 @@
         "btcdom",
         "jurenje"
       ],
-      "peakPrice": 0.03905,
-      "peakPct": 1.67,
+      "peakPrice": 0.03912,
+      "peakPct": 1.85,
       "maePrice": 0.03841,
       "maePct": 0
     },
@@ -90,8 +90,8 @@
         "btcdom",
         "jurenje"
       ],
-      "peakPrice": 280.9,
-      "peakPct": 0.11,
+      "peakPrice": 281.08,
+      "peakPct": 0.17,
       "maePrice": 280.6,
       "maePct": 0
     },
@@ -122,8 +122,8 @@
         "btcdom",
         "jurenje"
       ],
-      "peakPrice": 1.691,
-      "peakPct": 0.42,
+      "peakPrice": 1.695,
+      "peakPct": 0.65,
       "maePrice": 1.676,
       "maePct": -0.48
     },
@@ -155,8 +155,8 @@
       ],
       "peakPrice": 1.18,
       "peakPct": 0,
-      "maePrice": 1.173,
-      "maePct": -0.59
+      "maePrice": 1.17,
+      "maePct": -0.85
     },
     {
       "id": "1793347139738",
@@ -187,8 +187,8 @@
       ],
       "peakPrice": 91.91,
       "peakPct": 0.36,
-      "maePrice": 91.12,
-      "maePct": -0.5
+      "maePrice": 90.99,
+      "maePct": -0.64
     },
     {
       "id": "1793176566857",
@@ -9923,10 +9923,10 @@
       "conf": 32,
       "score": -2.6,
       "verdict": "🔴 Preskoči",
-      "graded": false,
-      "correct": null,
-      "fwdPrice": null,
-      "fwdPct": null
+      "graded": true,
+      "correct": false,
+      "fwdPrice": 77814.74,
+      "fwdPct": 13.67
     },
     {
       "ts": 1793347104088,
@@ -9966,7 +9966,20 @@
       "correct": null,
       "fwdPrice": null,
       "fwdPct": null
+    },
+    {
+      "ts": 1793356166168,
+      "price": 77624.6,
+      "dir": "NEUTRAL",
+      "th": 6.34,
+      "conf": 42,
+      "score": 0.6,
+      "verdict": "🔵 Spekulativno",
+      "graded": false,
+      "correct": null,
+      "fwdPrice": null,
+      "fwdPct": null
     }
   ],
-  "updatedAt": "2026-10-30T09:47:58.540Z"
+  "updatedAt": "2026-10-30T10:29:29.170Z"
 }
