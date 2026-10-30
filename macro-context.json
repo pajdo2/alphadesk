@@ -1,75 +1,75 @@
 {
-    "dxy":  102.3,
-    "changeSummary":  "DXY minimalno porastao na 102.3, BTC dominacija porasla na 60%, Fear & Greed stabilan na 51, tržište ostaje u CRAB fazi bez značajnih makro promjena.",
-    "lastUpdated":  "2026-10-29T18:00:00Z",
+    "dxy":  101.7,
+    "changeSummary":  "Binance hack od $6.3B srušio je F&G sa 51 na 30, BTC pao ispod $78K, a DXY se ublažio na 101.7 – režim prešao iz CRAB u VOLATILE.",
+    "lastUpdated":  "2026-10-30T18:00:00Z",
     "warnings":  {
                      "ACT":  [
-
+                                 "Opći altcoin FUD zbog Binance incidenta"
                              ],
                      "MEME":  [
-
+                                  "Opći altcoin FUD zbog Binance incidenta"
                               ],
                      "ANIME":  [
-
-                               ],
+                                    "Opći altcoin FUD zbog Binance incidenta"
+                                ],
                      "XRP":  [
-                             "Proboj razine propao, long pozicije likvidirane"
+                                 "Prodaja briše $1.5B leveraged pozicija"
                              ],
                      "BNB":  [
-
+                                 "Binance hack $6.3B - suspendirana sva isplata!"
                              ],
                      "SUI":  [
-
+                                 "Opći altcoin FUD zbog Binance incidenta"
                              ],
                      "AVAX":  [
-
-                              ],
-                     "PENGU":  [
-
+                                   "Opći altcoin FUD zbog Binance incidenta"
                                ],
+                     "PENGU":  [
+                                    "Opći altcoin FUD zbog Binance incidenta"
+                                ],
                      "BOME":  [
-
-                              ],
+                                   "Opći altcoin FUD zbog Binance incidenta"
+                               ],
                      "DOGS":  [
-
-                              ],
+                                   "Opći altcoin FUD zbog Binance incidenta"
+                               ],
                      "NOT":  [
-
+                                 "Opći altcoin FUD zbog Binance incidenta"
                              ],
                      "PEOPLE":  [
-
-                                ],
+                                     "Opći altcoin FUD zbog Binance incidenta"
+                                 ],
                      "SOL":  [
-                             "Ispod $100, nastavlja slabiti"
+                                 "Kamino pauzirao posudbu SOL/BTC tržišta"
                              ],
                      "ADA":  [
-
+                                 "Opći altcoin FUD zbog Binance incidenta"
                              ],
                      "PNUT":  [
-
-                              ],
-                     "AIXBT":  [
-
+                                   "Opći altcoin FUD zbog Binance incidenta"
                                ],
+                     "AIXBT":  [
+                                    "Opći altcoin FUD zbog Binance incidenta"
+                                ],
                      "ETH":  [
-                             "ETF odljevi nastavljaju se, cijena pada ~$2,300"
+                                 "Hack utjecaj - $1.5B likvidirano u 24h"
                              ],
                      "LINK":  [
-
-                              ],
-                     "PUMP":  [
-
-                              ],
-                     "TRUMP":  [
-
+                                   "Opći altcoin FUD zbog Binance incidenta"
                                ],
+                     "PUMP":  [
+                                   "Opći altcoin FUD zbog Binance incidenta"
+                               ],
+                     "TRUMP":  [
+                                    "Opći altcoin FUD zbog Binance incidenta"
+                                ],
                      "BTC":  [
-                             "Rizik pada ispod $80K, Fed hike 82.6% u prosincu"
+                                 "Pad ispod $78K, raspon $77K-$78.5K"
                              ]
                  },
     "sp500Ret5d":  -0.46,
-    "fearGreed":  51,
-    "macroPenalty":  2,
+    "fearGreed":  30,
+    "macroPenalty":  0,
     "catalysts":  {
                       "ACT":  [
 
@@ -108,7 +108,7 @@
 
                                  ],
                       "SOL":  [
-
+                                  "Ondo RWA lansiranje na Solana ekosustavu"
                               ],
                       "ADA":  [
 
@@ -120,7 +120,7 @@
 
                                 ],
                       "ETH":  [
-
+                                  "Tether zamrznuo $2.38B stablecoina za zaštitu"
                               ],
                       "LINK":  [
 
@@ -132,37 +132,36 @@
 
                                 ],
                       "BTC":  [
-                              "ETF priljevi $137M - treći uzastopni dan",
-                              "Bitwise povisio BTC cilj na $1.6M za 2036."
+                                  "PREDICT token lansiran na Binance Alpha 30.10."
                               ]
                   },
-    "regime":  "CRAB",
+    "regime":  "VOLATILE",
     "sentimentScore":  {
-                           "ACT":  0,
-                           "MEME":  0,
-                           "ANIME":  0,
-                           "XRP":  -1,
-                           "BNB":  0,
-                           "SUI":  0,
-                           "AVAX":  0,
-                           "PENGU":  0,
-                           "BOME":  0,
-                           "DOGS":  0,
-                           "NOT":  0,
-                           "PEOPLE":  0,
-                           "SOL":  -1,
-                           "ADA":  0,
-                           "PNUT":  0,
-                           "AIXBT":  0,
-                           "ETH":  -1,
-                           "LINK":  0,
-                           "PUMP":  0,
-                           "TRUMP":  0,
-                           "BTC":  1
+                           "ACT":  -1,
+                           "MEME":  -1,
+                           "ANIME":  -1,
+                           "XRP":  -2,
+                           "BNB":  -3,
+                           "SUI":  -1,
+                           "AVAX":  -1,
+                           "PENGU":  -1,
+                           "BOME":  -1,
+                           "DOGS":  -1,
+                           "NOT":  -1,
+                           "PEOPLE":  -1,
+                           "SOL":  -2,
+                           "ADA":  -1,
+                           "PNUT":  -1,
+                           "AIXBT":  -1,
+                           "ETH":  -2,
+                           "LINK":  -1,
+                           "PUMP":  -1,
+                           "TRUMP":  -1,
+                           "BTC":  -2
                        },
-    "aiSummary":  "DXY ostaje stabilan na 102.3, a Fed je zadržao kamate no tržišta i dalje cijene 82.6% šansu za podizanje u prosincu što drži pritisak na BTC (~$80K), ETH i XRP koji padaju 1-3%. Fear & Greed indeks je neutralan na 51, BTC dominacija raste na 60% dok ETF priljevi ($137M, treći uzastopni dan) pružaju jedini pozitivni signal. Bez snažnog katalizatora za altcoine, CRAB faza se nastavlja uz povišen makro rizik.",
-    "warActive":  true,
-    "btcDom":  60.05,
-    "stableDom":  5.5,
+    "aiSummary":  "DXY je pao na 101.7 uz slabljenje dolara, no Binance hack od $6.3B izazvao je paniku i strmoglavi pad F&G indeksa sa 51 na 30 (Strah). BTC je probio ključne razine $80K i $78K uz visoke volumene dosežući $77K, dok altcoini pate više od BTC-a (dominacija 58.5%). Bez brzog rješenja Binance incidenta, VOLATILE faza se nastavlja uz visok rizik daljnjih likvidiacija i altcoin prodaje.",
+    "warActive":  false,
+    "btcDom":  58.5,
+    "stableDom":  6.5,
     "oil":  102.0
 }
