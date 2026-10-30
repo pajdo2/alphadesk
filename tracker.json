@@ -185,8 +185,8 @@
         "btcdom",
         "jurenje"
       ],
-      "peakPrice": 91.89,
-      "peakPct": 0.34,
+      "peakPrice": 91.91,
+      "peakPct": 0.36,
       "maePrice": 91.58,
       "maePct": 0
     },
@@ -9953,7 +9953,20 @@
       "correct": null,
       "fwdPrice": null,
       "fwdPct": null
+    },
+    {
+      "ts": 1793353665548,
+      "price": 77814.74,
+      "dir": "NEUTRAL",
+      "th": 6.24,
+      "conf": 40,
+      "score": -0.4,
+      "verdict": "🔵 Spekulativno",
+      "graded": false,
+      "correct": null,
+      "fwdPrice": null,
+      "fwdPct": null
     }
   ],
-  "updatedAt": "2026-10-30T09:09:25.018Z"
+  "updatedAt": "2026-10-30T09:47:48.567Z"
 }
