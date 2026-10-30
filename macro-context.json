@@ -1,70 +1,70 @@
 {
-    "dxy":  101.7,
-    "changeSummary":  "Binance hack od $6.3B srušio je F&G sa 51 na 30, BTC pao ispod $78K, a DXY se ublažio na 101.7 – režim prešao iz CRAB u VOLATILE.",
-    "lastUpdated":  "2026-10-30T18:00:00Z",
+    "dxy":  101.75,
+    "changeSummary":  "Uvjeti ostaju gotovo nepromijenjeni u odnosu na prethodnu analizu - F&G zadržan na 30, BTC konsolidira oko $78.5K uz blagi rast BTC dominacije na 59.5% dok Binance hack i dalje pritišće altcoine.",
+    "lastUpdated":  "2026-10-30T22:00:00Z",
     "warnings":  {
                      "ACT":  [
-                                 "Opći altcoin FUD zbog Binance incidenta"
+
                              ],
                      "MEME":  [
-                                  "Opći altcoin FUD zbog Binance incidenta"
+
                               ],
                      "ANIME":  [
-                                    "Opći altcoin FUD zbog Binance incidenta"
-                                ],
+
+                               ],
                      "XRP":  [
-                                 "Prodaja briše $1.5B leveraged pozicija"
+                                 "Dio $1.5B likvidacija - kratkoročni prodajni pritisak"
                              ],
                      "BNB":  [
-                                 "Binance hack $6.3B - suspendirana sva isplata!"
+                                 "Binance hack $6.3B - direktan udar na BNB ekosustav"
                              ],
                      "SUI":  [
-                                 "Opći altcoin FUD zbog Binance incidenta"
+
                              ],
                      "AVAX":  [
-                                   "Opći altcoin FUD zbog Binance incidenta"
-                               ],
+
+                              ],
                      "PENGU":  [
-                                    "Opći altcoin FUD zbog Binance incidenta"
-                                ],
+
+                               ],
                      "BOME":  [
-                                   "Opći altcoin FUD zbog Binance incidenta"
-                               ],
+
+                              ],
                      "DOGS":  [
-                                   "Opći altcoin FUD zbog Binance incidenta"
-                               ],
+
+                              ],
                      "NOT":  [
-                                 "Opći altcoin FUD zbog Binance incidenta"
+
                              ],
                      "PEOPLE":  [
-                                     "Opći altcoin FUD zbog Binance incidenta"
-                                 ],
+
+                                ],
                      "SOL":  [
-                                 "Kamino pauzirao posudbu SOL/BTC tržišta"
+                                 "Kamino pauzirao borrowing SOL/BTC tržišta - oprez"
                              ],
                      "ADA":  [
-                                 "Opći altcoin FUD zbog Binance incidenta"
+
                              ],
                      "PNUT":  [
-                                   "Opći altcoin FUD zbog Binance incidenta"
-                               ],
+
+                              ],
                      "AIXBT":  [
-                                    "Opći altcoin FUD zbog Binance incidenta"
-                                ],
+
+                               ],
                      "ETH":  [
-                                 "Hack utjecaj - $1.5B likvidirano u 24h"
+                                 "ETH pogođen $1.5B likvidacija - visok kratkoročni rizik"
                              ],
                      "LINK":  [
-                                   "Opći altcoin FUD zbog Binance incidenta"
-                               ],
+
+                              ],
                      "PUMP":  [
-                                   "Opći altcoin FUD zbog Binance incidenta"
-                               ],
+
+                              ],
                      "TRUMP":  [
-                                    "Opći altcoin FUD zbog Binance incidenta"
-                                ],
+
+                               ],
                      "BTC":  [
-                                 "Pad ispod $78K, raspon $77K-$78.5K"
+                                 "$1.5B likvidacija - rizik kaskadnih prodaja ispod $78K"
                              ]
                  },
     "sp500Ret5d":  -0.46,
@@ -108,7 +108,7 @@
 
                                  ],
                       "SOL":  [
-                                  "Ondo RWA lansiranje na Solana ekosustavu"
+                                  "Ondo RWA launch jača Solana ekosustav"
                               ],
                       "ADA":  [
 
@@ -120,7 +120,7 @@
 
                                 ],
                       "ETH":  [
-                                  "Tether zamrznuo $2.38B stablecoina za zaštitu"
+                                  "DEX rast - Standard Chartered vidi koristi od Binance hacka"
                               ],
                       "LINK":  [
 
@@ -132,7 +132,7 @@
 
                                 ],
                       "BTC":  [
-                                  "PREDICT token lansiran na Binance Alpha 30.10."
+                                  "ETF priljevi 3 dana zaredom - institucionalna podrška drži $78K"
                               ]
                   },
     "regime":  "VOLATILE",
@@ -140,8 +140,8 @@
                            "ACT":  -1,
                            "MEME":  -1,
                            "ANIME":  -1,
-                           "XRP":  -2,
-                           "BNB":  -3,
+                           "XRP":  -1,
+                           "BNB":  -2,
                            "SUI":  -1,
                            "AVAX":  -1,
                            "PENGU":  -1,
@@ -149,19 +149,19 @@
                            "DOGS":  -1,
                            "NOT":  -1,
                            "PEOPLE":  -1,
-                           "SOL":  -2,
+                           "SOL":  -1,
                            "ADA":  -1,
                            "PNUT":  -1,
                            "AIXBT":  -1,
-                           "ETH":  -2,
+                           "ETH":  -1,
                            "LINK":  -1,
                            "PUMP":  -1,
                            "TRUMP":  -1,
-                           "BTC":  -2
+                           "BTC":  -1
                        },
-    "aiSummary":  "DXY je pao na 101.7 uz slabljenje dolara, no Binance hack od $6.3B izazvao je paniku i strmoglavi pad F&G indeksa sa 51 na 30 (Strah). BTC je probio ključne razine $80K i $78K uz visoke volumene dosežući $77K, dok altcoini pate više od BTC-a (dominacija 58.5%). Bez brzog rješenja Binance incidenta, VOLATILE faza se nastavlja uz visok rizik daljnjih likvidiacija i altcoin prodaje.",
+    "aiSummary":  "DXY se stabilizirao na 101.75 uz minimalne promjene, no Binance hack od $6.3B koji traje od jučer i dalje drži F&G indeks na 30 (Strah) uz $1.5B likvidiranih pozicija. BTC konsolidira oko $78.5K uz podršku ETF priljeva treći dan zaredom, dok BTC dominacija raste na 59.5% jer altcoini pate više od BTC-a. Bez rješenja Binance incidenta VOLATILE faza se nastavlja - kapital bježi u stablecoine i DEX platforme poput Uniswapa.",
     "warActive":  false,
-    "btcDom":  58.5,
-    "stableDom":  6.5,
+    "btcDom":  59.5,
+    "stableDom":  7.2,
     "oil":  102.0
 }
