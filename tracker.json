@@ -28,8 +28,8 @@
       ],
       "peakPrice": 1.261,
       "peakPct": 0.03,
-      "maePrice": 1.2488,
-      "maePct": -0.94
+      "maePrice": 1.2451,
+      "maePct": -1.23
     },
     {
       "id": "1793351343850",
@@ -58,8 +58,8 @@
         "btcdom",
         "jurenje"
       ],
-      "peakPrice": 0.03912,
-      "peakPct": 1.85,
+      "peakPrice": 0.03942,
+      "peakPct": 2.63,
       "maePrice": 0.03841,
       "maePct": 0
     },
@@ -90,8 +90,8 @@
         "btcdom",
         "jurenje"
       ],
-      "peakPrice": 282.2,
-      "peakPct": 0.57,
+      "peakPrice": 288,
+      "peakPct": 2.64,
       "maePrice": 280.6,
       "maePct": 0
     },
@@ -173,10 +173,10 @@
       "stop": 87.9168,
       "conf": 55,
       "targetPct": 30,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "PROMAŠAJ",
+      "closePrice": 87.17,
+      "closePct": -4.82,
+      "autoClose": true,
       "engineVer": "v5.357",
       "d1Hit": false,
       "d2Hit": false,
@@ -187,8 +187,9 @@
       ],
       "peakPrice": 92.42,
       "peakPct": 0.92,
-      "maePrice": 90.99,
-      "maePct": -0.64
+      "maePrice": 87.17,
+      "maePct": -4.82,
+      "closeReason": "🛑 Stop-loss (24/7)"
     },
     {
       "id": "1793176566857",
@@ -9981,5 +9982,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-10-30T10:30:17.403Z"
+  "updatedAt": "2026-10-31T08:32:26.856Z"
 }
