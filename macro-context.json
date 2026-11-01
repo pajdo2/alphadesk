@@ -1,74 +1,75 @@
 {
-    "dxy":  101.74,
-    "changeSummary":  "Situacija gotovo identična prethodnoj analizi — DXY i nafta nepromijenjeni, dok Binance hack od $6.3B i dalje dominira tržištem uz BTC na ~$77K i F&G indeks koji ostaje na 29 (Strah).",
-    "lastUpdated":  "2026-10-30T18:00:00Z",
+    "dxy":  101.96,
+    "changeSummary":  "F&G blago porastao s 29 na 34, Binance počeo s isplatama no haker nastavlja prebacivati ukradena sredstva što drži tržište u VOLATILE zoni.",
+    "lastUpdated":  "2026-11-01T12:00:00Z",
     "warnings":  {
                      "ACT":  [
-                             "Mali kap altcoin, visok rizik pada u VOLATILE fazi"
+
                              ],
                      "MEME":  [
-                              "MEME token duplo pogođen negativnim sentimentom"
+
                               ],
                      "ANIME":  [
-                               "Meme token, visok rizik u negativnom sentimentu"
+
                                ],
                      "XRP":  [
-                             "Tržišni pad, podrška slabi uz altcoin slabost"
+                             "1 mlrd XRP otključano iz escrowa - pritisak prodaje"
                              ],
                      "BNB":  [
-                             "Binance hack direktno pogađa BNB - exchange token pod pritiskom"
+                             "Binance hack $6.3B - istraga još u tijeku"
                              ],
                      "SUI":  [
-                             "Altcoin slabost u VOLATILE fazi"
-                             ],
+
+                              ],
                      "AVAX":  [
-                              "Altcoin slabost, slijedi tržišni trend pada"
+
                               ],
                      "PENGU":  [
-                               "Meme token pod tržišnim pritiskom"
+
                                ],
                      "BOME":  [
-                              "Meme token, visok rizik u VOLATILE fazi"
+
                               ],
                      "DOGS":  [
-                              "Meme token pod tržišnim pritiskom"
+
                               ],
                      "NOT":  [
-                             "Niska likvidnost, visok rizik u tržišnom padu"
+
                              ],
                      "PEOPLE":  [
-                                "Mali kap token, visok rizik pada u VOLATILE fazi"
+
                                 ],
                      "SOL":  [
-                             "Altcoin slabost, tržišni pritisak od Binance incidenta"
+                             "Haker prodaje 970K SOL za BTC - direktni pritisak"
                              ],
                      "ADA":  [
-                             "Opći tržišni pritisak, altcoini pate više od BTC"
+
                              ],
                      "PNUT":  [
-                              "Meme token, visok rizik u zoni Straha"
+
                               ],
                      "AIXBT":  [
-                               "AI token pati uz tech sell-off i tržišni pad"
+
                                ],
                      "ETH":  [
-                             "RSI blizu 30, rizik daljnjeg pada uz tržišni stres"
+
                              ],
                      "LINK":  [
-                              "Tržišni pad, nema posebnih katalizatora danas"
+
                               ],
                      "PUMP":  [
-                              "Spekulativni token, visok rizik u FUD okruženju"
+
                               ],
                      "TRUMP":  [
-                               "Meme token u FUD okruženju - visok rizik"
+
                                ],
                      "BTC":  [
-                             "Binance hack $6.3B, bearish pritisak, BTC pao na $77K"
+                             "BTC ispod $80K, hawkish Fed pritišće tržište",
+                             "Binance haker prebacuje ukradena sredstva via Relay"
                              ]
                  },
-    "sp500Ret5d":  -1.8,
-    "fearGreed":  29,
+    "sp500Ret5d":  -0.9,
+    "fearGreed":  34,
     "macroPenalty":  2,
     "catalysts":  {
                       "ACT":  [
@@ -84,7 +85,7 @@
 
                               ],
                       "BNB":  [
-
+                              "Binance nastavlja isplate od 1. studenog"
                               ],
                       "SUI":  [
 
@@ -120,7 +121,8 @@
 
                                 ],
                       "ETH":  [
-
+                              "ETH staking red skočio na $2.8B - bullish signal",
+                              "ETH oporavak iznad $2,250 s ciljem $2,300"
                               ],
                       "LINK":  [
 
@@ -132,36 +134,36 @@
 
                                 ],
                       "BTC":  [
-
+                              "Binance nastavlja isplate - sentiment oporavak"
                               ]
                   },
     "regime":  "VOLATILE",
     "sentimentScore":  {
-                           "ACT":  -1,
-                           "MEME":  -1,
-                           "ANIME":  -1,
+                           "ACT":  0,
+                           "MEME":  0,
+                           "ANIME":  0,
                            "XRP":  -1,
-                           "BNB":  -2,
-                           "SUI":  -1,
-                           "AVAX":  -1,
-                           "PENGU":  -1,
-                           "BOME":  -1,
-                           "DOGS":  -1,
-                           "NOT":  -1,
-                           "PEOPLE":  -1,
-                           "SOL":  -1,
-                           "ADA":  -1,
-                           "PNUT":  -1,
-                           "AIXBT":  -1,
-                           "ETH":  -1,
-                           "LINK":  -1,
-                           "PUMP":  -1,
-                           "TRUMP":  -1,
+                           "BNB":  0,
+                           "SUI":  0,
+                           "AVAX":  0,
+                           "PENGU":  0,
+                           "BOME":  0,
+                           "DOGS":  0,
+                           "NOT":  0,
+                           "PEOPLE":  0,
+                           "SOL":  -2,
+                           "ADA":  0,
+                           "PNUT":  0,
+                           "AIXBT":  0,
+                           "ETH":  1,
+                           "LINK":  0,
+                           "PUMP":  0,
+                           "TRUMP":  0,
                            "BTC":  -1
                        },
-    "aiSummary":  "DXY ostaje stabilan na 101.74, a nafta (WTI ~$104) zadržava ratnu premiju zbog eskalacije Houthi napada na saudijsku infrastrukturu. Binance hack od $6.3B dominira tržištem — BTC je pao na ~$77K, kripto tržište izgubilo 3.7% tržišne kapitalizacije, F&G ostaje u zoni Straha (29) dok BNB posebno pati kao Binance nativni token. VOLATILE faza se nastavlja bez naznaka rješenja Binance incidenta, kapital i dalje bježi u stablecoine (~11% dominacije).",
+    "aiSummary":  "DXY stabiliziran na 101.96 dok Fed zadržava kamate, WTI nafta pada na ~$103 s ratnom premijom još prisutnom zbog Houthi napada na saudijsku infrastrukturu. Binance počeo s isplatama 1. studenog no haker nastavlja prodavati ukradeni SOL (~970K) za BTC čime vrši direktni pritisak na cijenu. F&G blago oporavljen na 34 (Strah), BTC drži ~$78K dok ETH pokazuje snagu iznad $2,250 uz rastuće staking zalihe od $2.8B.",
     "warActive":  true,
-    "btcDom":  59.35,
+    "btcDom":  59.86,
     "stableDom":  11.2,
-    "oil":  104.0
+    "oil":  102.95
 }
