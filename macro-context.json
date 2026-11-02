@@ -1,7 +1,7 @@
 {
-    "dxy":  101.77,
-    "changeSummary":  "F&G porastao s 34 na 38, nafta pala na $102.56 zbog Iran-Katar pregovora, BTC zadržava $78.4K unatoč ETF odljevima od $643M.",
-    "lastUpdated":  "2026-11-02T12:00:00Z",
+    "dxy":  101.72,
+    "changeSummary":  "DXY minimalno pao na 101.72, nafta nastavila pad na $101, F&G ostao na 38 (Strah), dok Binance nastavlja oporavak od $6.3B hacka i američki međuizbori povećavaju kratkoročnu neizvjesnost.",
+    "lastUpdated":  "2026-11-02T14:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -13,10 +13,10 @@
 
                                ],
                      "XRP":  [
-                                 "Midterms + regulatorna neizvjesnost"
+                                 "XRP testira podršku na $1.23, rizik daljnjeg pada"
                              ],
                      "BNB":  [
-                                 "Binance hack aftermath, CEO brani od FTX usporedbi"
+                                 "Binance hack $6.3B - oporavak u tijeku, odljevi $3.64B"
                              ],
                      "SUI":  [
 
@@ -40,7 +40,7 @@
 
                                 ],
                      "SOL":  [
-                                 "Haker prodaje ~970K ukradenog SOL za BTC"
+                                 "Haker nastavlja prodavati ukradeni SOL za BTC"
                              ],
                      "ADA":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-
+                                 "ETH ETF odljevi ~$156M, slabi institucionalni sentiment"
                              ],
                      "LINK":  [
 
@@ -61,11 +61,10 @@
 
                               ],
                      "TRUMP":  [
-
+                                   "Američki međuizbori 4.11. - kratkoročna politička neizvjesnost"
                                ],
                      "BTC":  [
-                                 "BTCPay Server hot wallet ranjivost - azuriraj na 2.4.7",
-                                 "BTC ETF odljev $643M u petak"
+                                 "BTC ETF odljevi $643M na 30.10., haker prodaje SOL za BTC"
                              ]
                  },
     "sp500Ret5d":  -0.9,
@@ -85,7 +84,7 @@
 
                               ],
                       "BNB":  [
-
+                                  "Binance zamijenio 95% ukradenih sredstava iz rezervi"
                               ],
                       "SUI":  [
 
@@ -106,7 +105,7 @@
 
                               ],
                       "PEOPLE":  [
-                                     "US midterms 2026 - politicki meme pomak"
+
                                  ],
                       "SOL":  [
 
@@ -130,10 +129,10 @@
 
                                ],
                       "TRUMP":  [
-                                    "US midterms 2026 - politicki sentiment porast"
+
                                 ],
                       "BTC":  [
-
+                                  "Oporavak iznad $80K moguć uz poboljšanje ETF priljeva"
                               ]
                   },
     "regime":  "VOLATILE",
@@ -142,27 +141,27 @@
                            "MEME":  0,
                            "ANIME":  0,
                            "XRP":  -1,
-                           "BNB":  -2,
+                           "BNB":  -1,
                            "SUI":  0,
                            "AVAX":  0,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
-                           "PEOPLE":  1,
+                           "PEOPLE":  0,
                            "SOL":  -2,
                            "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  0,
+                           "ETH":  -1,
                            "LINK":  0,
                            "PUMP":  0,
-                           "TRUMP":  1,
+                           "TRUMP":  0,
                            "BTC":  -1
                        },
-    "aiSummary":  "DXY stabiliziran na 101.77 dok Fed zadrzava kamate, WTI nafta pada na ~$102.56 zbog Iran-Katar diplomatskih pregovora koji smanjuju ratnu premiju. Binance nastavlja fazni oporavak nakon $6.3B hack-a uz BTC ETF odljeve od $643M u petak; F&G ostaje na 38 (Strah) uz BTC koji drzi ~$78.4K dok haker nastavlja prodavati ukradeni SOL za BTC. Americki medjuizbori 4. studenog donose kratkorocnu neizvjesnost, a BTCPay sigurnosno upozorenje vrsi dodatan pritisak na sentiment.",
+    "aiSummary":  "DXY ostaje stabilan na ~101.72 dok Fed drži kamate na 3.75-4.0% uz risk-off sentiment i BTC ETF odljeve od $643M; Binance nastavlja oporavak nakon $6.3B hacka, BTC se konsolidira oko $78K s otporom na $80K uz F&G na 38 (Strah). Američki međuizbori 4. studenog i NFP podaci ovog tjedna donose povećanu volatilnost, dok nafta pada prema $101 zbog Iran-diplomatskih pregovora koji smanjuju ratnu premiju.",
     "warActive":  true,
-    "btcDom":  60.0,
-    "stableDom":  11.0,
-    "oil":  102.56
+    "btcDom":  60.9,
+    "stableDom":  8.5,
+    "oil":  101.0
 }
