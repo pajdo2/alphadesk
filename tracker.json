@@ -15,10 +15,10 @@
       "stop": 1.2079,
       "conf": 55,
       "targetPct": 30,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "PROMAŠAJ",
+      "closePrice": 1.2506,
+      "closePct": -0.79,
+      "autoClose": true,
       "engineVer": "v5.358",
       "d1Hit": false,
       "d2Hit": false,
@@ -29,7 +29,8 @@
       "peakPrice": 1.261,
       "peakPct": 0.03,
       "maePrice": 1.2488,
-      "maePct": -0.94
+      "maePct": -0.94,
+      "closeReason": "⏰ 2 dana, gubimo — soft exit"
     },
     {
       "id": "1793351343850",
@@ -58,8 +59,8 @@
         "btcdom",
         "jurenje"
       ],
-      "peakPrice": 0.03912,
-      "peakPct": 1.85,
+      "peakPrice": 0.04075972,
+      "peakPct": 6.12,
       "maePrice": 0.03841,
       "maePct": 0
     },
@@ -78,10 +79,10 @@
       "stop": 269.376,
       "conf": 62,
       "targetPct": 30,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "PROMAŠAJ",
+      "closePrice": 277.22,
+      "closePct": -1.2,
+      "autoClose": true,
       "engineVer": "v5.358",
       "d1Hit": false,
       "d2Hit": false,
@@ -92,8 +93,9 @@
       ],
       "peakPrice": 282.2,
       "peakPct": 0.57,
-      "maePrice": 280.6,
-      "maePct": 0
+      "maePrice": 277.22,
+      "maePct": -1.2,
+      "closeReason": "⏰ 2 dana, gubimo — soft exit"
     },
     {
       "id": "1793347189243",
@@ -122,8 +124,8 @@
         "btcdom",
         "jurenje"
       ],
-      "peakPrice": 1.713,
-      "peakPct": 1.72,
+      "peakPrice": 1.76,
+      "peakPct": 4.51,
       "maePrice": 1.676,
       "maePct": -0.48
     },
@@ -153,8 +155,8 @@
       "ruleBreaks": [
         "btcdom"
       ],
-      "peakPrice": 1.18,
-      "peakPct": 0,
+      "peakPrice": 1.19,
+      "peakPct": 0.85,
       "maePrice": 1.167,
       "maePct": -1.1
     },
@@ -7628,8 +7630,8 @@
     "_global": {
       "rsiOversold": 0.5,
       "rsiOverbought": 1,
-      "trendUp": 0.37,
-      "trendDown": 0.431,
+      "trendUp": 0.369,
+      "trendDown": 0.43,
       "bbBelow": 1,
       "divBullish": 0.3,
       "divBearish": 0.571,
@@ -7637,13 +7639,13 @@
       "macdBearCross": 1,
       "lsRatioBull": 1,
       "lsRatioExtreme": 1,
-      "basisBack": 0.553,
+      "basisBack": 0.55,
       "takerSell": 1,
       "btcDomHigh": 1,
       "btcDomLow": 1,
-      "volSpike": 0.344,
+      "volSpike": 0.342,
       "mtfAllUp": 0.4,
-      "fgExtremeFear": 0.471,
+      "fgExtremeFear": 0.468,
       "fgFear": 0.3
     },
     "BULL": {
@@ -9995,5 +9997,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-11-02T11:55:06.796Z"
+  "updatedAt": "2026-11-02T11:55:10.626Z"
 }
