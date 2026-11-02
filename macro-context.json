@@ -1,7 +1,7 @@
 {
-    "dxy":  101.96,
-    "changeSummary":  "F&G blago porastao s 29 na 34, Binance počeo s isplatama no haker nastavlja prebacivati ukradena sredstva što drži tržište u VOLATILE zoni.",
-    "lastUpdated":  "2026-11-01T12:00:00Z",
+    "dxy":  101.77,
+    "changeSummary":  "F&G porastao s 34 na 38, nafta pala na $102.56 zbog Iran-Katar pregovora, BTC zadržava $78.4K unatoč ETF odljevima od $643M.",
+    "lastUpdated":  "2026-11-02T12:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -13,14 +13,14 @@
 
                                ],
                      "XRP":  [
-                             "1 mlrd XRP otključano iz escrowa - pritisak prodaje"
+                                 "Midterms + regulatorna neizvjesnost"
                              ],
                      "BNB":  [
-                             "Binance hack $6.3B - istraga još u tijeku"
+                                 "Binance hack aftermath, CEO brani od FTX usporedbi"
                              ],
                      "SUI":  [
 
-                              ],
+                             ],
                      "AVAX":  [
 
                               ],
@@ -40,7 +40,7 @@
 
                                 ],
                      "SOL":  [
-                             "Haker prodaje 970K SOL za BTC - direktni pritisak"
+                                 "Haker prodaje ~970K ukradenog SOL za BTC"
                              ],
                      "ADA":  [
 
@@ -64,12 +64,12 @@
 
                                ],
                      "BTC":  [
-                             "BTC ispod $80K, hawkish Fed pritišće tržište",
-                             "Binance haker prebacuje ukradena sredstva via Relay"
+                                 "BTCPay Server hot wallet ranjivost - azuriraj na 2.4.7",
+                                 "BTC ETF odljev $643M u petak"
                              ]
                  },
     "sp500Ret5d":  -0.9,
-    "fearGreed":  34,
+    "fearGreed":  38,
     "macroPenalty":  2,
     "catalysts":  {
                       "ACT":  [
@@ -85,7 +85,7 @@
 
                               ],
                       "BNB":  [
-                              "Binance nastavlja isplate od 1. studenog"
+
                               ],
                       "SUI":  [
 
@@ -106,7 +106,7 @@
 
                               ],
                       "PEOPLE":  [
-
+                                     "US midterms 2026 - politicki meme pomak"
                                  ],
                       "SOL":  [
 
@@ -121,8 +121,7 @@
 
                                 ],
                       "ETH":  [
-                              "ETH staking red skočio na $2.8B - bullish signal",
-                              "ETH oporavak iznad $2,250 s ciljem $2,300"
+
                               ],
                       "LINK":  [
 
@@ -131,10 +130,10 @@
 
                                ],
                       "TRUMP":  [
-
+                                    "US midterms 2026 - politicki sentiment porast"
                                 ],
                       "BTC":  [
-                              "Binance nastavlja isplate - sentiment oporavak"
+
                               ]
                   },
     "regime":  "VOLATILE",
@@ -143,27 +142,27 @@
                            "MEME":  0,
                            "ANIME":  0,
                            "XRP":  -1,
-                           "BNB":  0,
+                           "BNB":  -2,
                            "SUI":  0,
                            "AVAX":  0,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
-                           "PEOPLE":  0,
+                           "PEOPLE":  1,
                            "SOL":  -2,
                            "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  1,
+                           "ETH":  0,
                            "LINK":  0,
                            "PUMP":  0,
-                           "TRUMP":  0,
+                           "TRUMP":  1,
                            "BTC":  -1
                        },
-    "aiSummary":  "DXY stabiliziran na 101.96 dok Fed zadržava kamate, WTI nafta pada na ~$103 s ratnom premijom još prisutnom zbog Houthi napada na saudijsku infrastrukturu. Binance počeo s isplatama 1. studenog no haker nastavlja prodavati ukradeni SOL (~970K) za BTC čime vrši direktni pritisak na cijenu. F&G blago oporavljen na 34 (Strah), BTC drži ~$78K dok ETH pokazuje snagu iznad $2,250 uz rastuće staking zalihe od $2.8B.",
+    "aiSummary":  "DXY stabiliziran na 101.77 dok Fed zadrzava kamate, WTI nafta pada na ~$102.56 zbog Iran-Katar diplomatskih pregovora koji smanjuju ratnu premiju. Binance nastavlja fazni oporavak nakon $6.3B hack-a uz BTC ETF odljeve od $643M u petak; F&G ostaje na 38 (Strah) uz BTC koji drzi ~$78.4K dok haker nastavlja prodavati ukradeni SOL za BTC. Americki medjuizbori 4. studenog donose kratkorocnu neizvjesnost, a BTCPay sigurnosno upozorenje vrsi dodatan pritisak na sentiment.",
     "warActive":  true,
-    "btcDom":  59.86,
-    "stableDom":  11.2,
-    "oil":  102.95
+    "btcDom":  60.0,
+    "stableDom":  11.0,
+    "oil":  102.56
 }
