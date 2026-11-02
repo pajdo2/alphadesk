@@ -47,10 +47,10 @@
       "stop": 0.036874,
       "conf": 56,
       "targetPct": 30,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "POGODAK",
+      "closePrice": 0.04075972,
+      "closePct": 6.12,
+      "autoClose": true,
       "engineVer": "v5.358",
       "d1Hit": false,
       "d2Hit": false,
@@ -62,7 +62,8 @@
       "peakPrice": 0.04075972,
       "peakPct": 6.12,
       "maePrice": 0.03841,
-      "maePct": 0
+      "maePct": 0,
+      "closeReason": "🔄 CHoCH Bearish — exit (struktura puknula)"
     },
     {
       "id": "1793351322233",
@@ -144,10 +145,10 @@
       "stop": 1.1328,
       "conf": 61,
       "targetPct": 26,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "PROMAŠAJ",
+      "closePrice": 1.195,
+      "closePct": 1.27,
+      "autoClose": true,
       "engineVer": "v5.357",
       "d1Hit": false,
       "d2Hit": false,
@@ -155,10 +156,11 @@
       "ruleBreaks": [
         "btcdom"
       ],
-      "peakPrice": 1.19,
-      "peakPct": 0.85,
+      "peakPrice": 1.195,
+      "peakPct": 1.27,
       "maePrice": 1.167,
-      "maePct": -1.1
+      "maePct": -1.1,
+      "closeReason": "🔄 Bear reversal — exit u profitu"
     },
     {
       "id": "1793347139738",
@@ -9997,5 +9999,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-11-02T11:55:10.626Z"
+  "updatedAt": "2026-11-02T11:55:14.534Z"
 }
