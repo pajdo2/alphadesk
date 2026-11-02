@@ -1,7 +1,7 @@
 {
     "dxy":  101.72,
-    "changeSummary":  "DXY minimalno pao na 101.72, nafta nastavila pad na $101, F&G ostao na 38 (Strah), dok Binance nastavlja oporavak od $6.3B hacka i američki međuizbori povećavaju kratkoročnu neizvjesnost.",
-    "lastUpdated":  "2026-11-02T14:00:00Z",
+    "changeSummary":  "F&G pao s 38 na 37, nafta porasla s $101 na $103 uz eskalaciju Trump-Iran tenzija, warActive promijenjen u true dok BTC ostaje stabilan oko $77.8K s nepromijenjenim macroPenalty=2.",
+    "lastUpdated":  "2026-11-02T16:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -13,10 +13,11 @@
 
                                ],
                      "XRP":  [
-                                 "XRP testira podršku na $1.23, rizik daljnjeg pada"
+                                 "Otpor na $1.30, podrška na $1.25 pod pritiskom"
                              ],
                      "BNB":  [
-                                 "Binance hack $6.3B - oporavak u tijeku, odljevi $3.64B"
+                                 "Binance hack $6.3B - masovna povlačenja $3.6B",
+                                 "Povjerenje korisnika sniženo, depoziti spori"
                              ],
                      "SUI":  [
 
@@ -40,35 +41,36 @@
 
                                 ],
                      "SOL":  [
-                                 "Haker nastavlja prodavati ukradeni SOL za BTC"
+                                 "6 uzastopnih padova, ispod 50-dnevnog EMA $105"
                              ],
                      "ADA":  [
-
+                                 "Prodajni pritisak, slabi tehnički signali"
                              ],
                      "PNUT":  [
 
                               ],
                      "AIXBT":  [
-
+                                   "AI jitter sentiment negativan za AI sektor"
                                ],
                      "ETH":  [
-                                 "ETH ETF odljevi ~$156M, slabi institucionalni sentiment"
+                                 "Spot ETF odljevi $156M - slaba institucionalna"
                              ],
                      "LINK":  [
 
                               ],
                      "PUMP":  [
-
+                                  "Pad volumena prema meme tržišnim podacima"
                               ],
                      "TRUMP":  [
-                                   "Američki međuizbori 4.11. - kratkoročna politička neizvjesnost"
+                                   "Midterm volatilnost negativna za politmeme"
                                ],
                      "BTC":  [
-                                 "BTC ETF odljevi $643M na 30.10., haker prodaje SOL za BTC"
+                                 "Spot ETF odljevi $643M - institucionalni izlaz",
+                                 "BTC ispod SMA200 - oslabljen trend"
                              ]
                  },
-    "sp500Ret5d":  -0.9,
-    "fearGreed":  38,
+    "sp500Ret5d":  -2.0,
+    "fearGreed":  37,
     "macroPenalty":  2,
     "catalysts":  {
                       "ACT":  [
@@ -81,19 +83,19 @@
 
                                 ],
                       "XRP":  [
-
+                                  "Spot ETF priljevi $18.8M u listopadu"
                               ],
                       "BNB":  [
-                                  "Binance zamijenio 95% ukradenih sredstava iz rezervi"
+                                  "Binance obnavlja povlačenja - oporavak likvidnosti"
                               ],
                       "SUI":  [
 
                               ],
                       "AVAX":  [
-
+                                   "Charles Schwab dodaje AVAX na kripto platformu"
                                ],
                       "PENGU":  [
-
+                                    "Penguin meme potaknuo proboj tjednog volumena"
                                 ],
                       "BOME":  [
 
@@ -108,7 +110,7 @@
 
                                  ],
                       "SOL":  [
-
+                                  "Charles Schwab dodaje SOL na kripto platformu"
                               ],
                       "ADA":  [
 
@@ -120,10 +122,10 @@
 
                                 ],
                       "ETH":  [
-
+                                  "ETH oporavlja uz BTC, testira $2,260 razinu"
                               ],
                       "LINK":  [
-
+                                   "Schwab dodaje LINK - institucionalni katalizator"
                                ],
                       "PUMP":  [
 
@@ -132,7 +134,8 @@
 
                                 ],
                       "BTC":  [
-                                  "Oporavak iznad $80K moguć uz poboljšanje ETF priljeva"
+                                  "Binance stabilizira povlačenja, BTC testira $78K",
+                                  "Volatilnost međuizbora - kratkoročna šansa"
                               ]
                   },
     "regime":  "VOLATILE",
@@ -140,28 +143,28 @@
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  -1,
-                           "BNB":  -1,
+                           "XRP":  0,
+                           "BNB":  -2,
                            "SUI":  0,
-                           "AVAX":  0,
-                           "PENGU":  0,
+                           "AVAX":  1,
+                           "PENGU":  1,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  -2,
-                           "ADA":  0,
-                           "PNUT":  0,
-                           "AIXBT":  0,
+                           "SOL":  0,
+                           "ADA":  -1,
+                           "PNUT":  -1,
+                           "AIXBT":  -1,
                            "ETH":  -1,
-                           "LINK":  0,
-                           "PUMP":  0,
-                           "TRUMP":  0,
-                           "BTC":  -1
+                           "LINK":  2,
+                           "PUMP":  -1,
+                           "TRUMP":  -1,
+                           "BTC":  0
                        },
-    "aiSummary":  "DXY ostaje stabilan na ~101.72 dok Fed drži kamate na 3.75-4.0% uz risk-off sentiment i BTC ETF odljeve od $643M; Binance nastavlja oporavak nakon $6.3B hacka, BTC se konsolidira oko $78K s otporom na $80K uz F&G na 38 (Strah). Američki međuizbori 4. studenog i NFP podaci ovog tjedna donose povećanu volatilnost, dok nafta pada prema $101 zbog Iran-diplomatskih pregovora koji smanjuju ratnu premiju.",
+    "aiSummary":  "DXY ostaje stabilan na ~101.72 dok Fed drži kamate na 3.75-4.0% s risk-off sentimentom i BTC ETF odljevima od $643M; BTC se konsolidira oko $77.8K s F&G na 37 (Strah) dok Binance stabilizira masovna povlačenja nakon $6.3B hacka. US međuizbori 4. studenog i NFP podaci ovog tjedna donose pojačanu volatilnost, a Trump-Iran vojne prijetnje gurale su naftu prema $103 uz povećan geopolitički rizik i warActive status.",
     "warActive":  true,
-    "btcDom":  60.9,
-    "stableDom":  8.5,
-    "oil":  101.0
+    "btcDom":  60.0,
+    "stableDom":  11.3,
+    "oil":  102.95
 }
