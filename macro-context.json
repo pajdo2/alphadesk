@@ -1,6 +1,6 @@
 {
-    "dxy":  101.44,
-    "changeSummary":  "Fear & Greed pao s 37 na 26, BTC klizi na $76.8K uz ETF odljeve od $643M i US međuizbore, dok nafta pada na $96.6 s $102.95 jučer.",
+    "dxy":  101.8,
+    "changeSummary":  "DXY je blago porastao na 101.8, F&G ostaje u strahu (27), BTC i dalje brani $76K uz nastavak ETF odljeva na dan US međuizbora.",
     "lastUpdated":  "2026-11-03T12:00:00Z",
     "warnings":  {
                      "ACT":  [
@@ -16,7 +16,7 @@
 
                              ],
                      "BNB":  [
-                                 "Binance hack odljevi još $3.5B/dan, nesigurnost"
+                                 "Binance hack: odljevi smanjeni, ali povjerenje krhko"
                              ],
                      "SUI":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-                                 "Slabost uz tech dionice, pada prema $2,250"
+                                 "ETF odljevi nastavljeni, slaba institucionalna potražnja"
                              ],
                      "LINK":  [
 
@@ -61,15 +61,15 @@
 
                               ],
                      "TRUMP":  [
-
+                                   "Neizvjesnost ishoda međuizbora, visoka volatilnost"
                                ],
                      "BTC":  [
-                                 "ETF odljevi $643M, IV opcija 43.5% pred izbore"
+                                 "ETF odljevi $398M, pad ispod $77K, brani $76K podršku"
                              ]
                  },
     "sp500Ret5d":  -1.8,
-    "fearGreed":  26,
-    "macroPenalty":  2,
+    "fearGreed":  27,
+    "macroPenalty":  0,
     "catalysts":  {
                       "ACT":  [
 
@@ -84,7 +84,7 @@
 
                               ],
                       "BNB":  [
-                                  "Binance odljevi padaju $7B->$3.5B, oporavak"
+                                  "Binance market-maker poticaji za oporavak likvidnosti"
                               ],
                       "SUI":  [
 
@@ -129,10 +129,10 @@
 
                                ],
                       "TRUMP":  [
-                                    "US međuizbori 3.11. - politički katalizator"
+                                    "Dan međuizbora SAD, ishod može pokrenuti jak trend"
                                 ],
                       "BTC":  [
-                                  "US međuizbori - potencijalni kripto zakoni"
+                                  "Moguć odboj od $76K ako izbori donesu kripto-pozitivne rezultate"
                               ]
                   },
     "regime":  "BEAR",
@@ -156,12 +156,12 @@
                            "ETH":  -1,
                            "LINK":  0,
                            "PUMP":  0,
-                           "TRUMP":  1,
+                           "TRUMP":  0,
                            "BTC":  -1
                        },
-    "aiSummary":  "DXY se spustio na 101.44 dok F&G pada na 26 (Strah) uz BTC ETF odljeve od $643M i pad BTC-a na $76.8K na dan US međuizbora. Nafta se spustila na $96.6 unatoč US-Iran tenzijama, dok Binance bilježi pad odljeva s $7B na $3.5B uz lansiranje inicijativa za oporavak. Visoka volatilnost očekivana oko ishoda izbora uz implikacije za buduće kripto zakonodavstvo.",
-    "warActive":  true,
-    "btcDom":  58.0,
-    "stableDom":  8.5,
-    "oil":  96.6
+    "aiSummary":  "DXY se stabilizirao na 101.8 dok kripto tržište ostaje u strahu (F&G: 27) uz BTC koji pada ispod $77K na dan US međuizbora. ETF odljevi nastavljaju pritiskati cijene ($398M 2. studenoga), a BTC dominacija raste na ~60% bez znakova alt sezone. Ishod međuizbora ključan je katalizator — kripto-pozitivni rezultati mogli bi pokrenuti oporavak prema $80K, dok nepovoljan ishod nosi rizik proboja ispod $76K.",
+    "warActive":  false,
+    "btcDom":  59.9,
+    "stableDom":  10.0,
+    "oil":  96.5
 }
