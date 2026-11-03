@@ -1,7 +1,7 @@
 {
     "dxy":  101.8,
-    "changeSummary":  "DXY je blago porastao na 101.8, F&G ostaje u strahu (27), BTC i dalje brani $76K uz nastavak ETF odljeva na dan US međuizbora.",
-    "lastUpdated":  "2026-11-03T12:00:00Z",
+    "changeSummary":  "Binance hack od $6B udario je BTC ispod $76,500, tržište ostaje u BEAR režimu uz F&G na 30, DXY stabilan na 101.8.",
+    "lastUpdated":  "2026-11-03T18:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -16,7 +16,8 @@
 
                              ],
                      "BNB":  [
-                                 "Binance hack: odljevi smanjeni, ali povjerenje krhko"
+                                 "Binance hack $6B — najveći kripto hack u povijesti",
+                                 "Masovni odljevi s Binancea — likvidnost pod pritiskom"
                              ],
                      "SUI":  [
 
@@ -52,7 +53,7 @@
 
                                ],
                      "ETH":  [
-                                 "ETF odljevi nastavljeni, slaba institucionalna potražnja"
+                                 "Lisk L2 gašenje — negativno za Ethereum ekosustav"
                              ],
                      "LINK":  [
 
@@ -61,14 +62,15 @@
 
                               ],
                      "TRUMP":  [
-                                   "Neizvjesnost ishoda međuizbora, visoka volatilnost"
+                                   "Politički token vezan za ishod međuizbora 3.11."
                                ],
                      "BTC":  [
-                                 "ETF odljevi $398M, pad ispod $77K, brani $76K podršku"
+                                 "ETF odljevi $398M 2. studenog — BTC ispod $77K",
+                                 "Međuizbori — ishod ključan za smjer"
                              ]
                  },
-    "sp500Ret5d":  -1.8,
-    "fearGreed":  27,
+    "sp500Ret5d":  -0.6,
+    "fearGreed":  30,
     "macroPenalty":  0,
     "catalysts":  {
                       "ACT":  [
@@ -81,10 +83,10 @@
 
                                 ],
                       "XRP":  [
-
+                                  "Opcije cijenuju 8.7% kretanje do 8.11. — visok interes"
                               ],
                       "BNB":  [
-                                  "Binance market-maker poticaji za oporavak likvidnosti"
+
                               ],
                       "SUI":  [
 
@@ -129,10 +131,10 @@
 
                                ],
                       "TRUMP":  [
-                                    "Dan međuizbora SAD, ishod može pokrenuti jak trend"
+                                    "Pozitivni izborni rezultati mogli bi dati kratkoročni impuls"
                                 ],
                       "BTC":  [
-                                  "Moguć odboj od $76K ako izbori donesu kripto-pozitivne rezultate"
+                                  "Potencijalni povratak na $80K pri pozitivnom izbornom ishodu"
                               ]
                   },
     "regime":  "BEAR",
@@ -141,7 +143,7 @@
                            "MEME":  0,
                            "ANIME":  0,
                            "XRP":  0,
-                           "BNB":  -1,
+                           "BNB":  -3,
                            "SUI":  0,
                            "AVAX":  0,
                            "PENGU":  0,
@@ -149,19 +151,19 @@
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  0,
+                           "SOL":  -1,
                            "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
                            "ETH":  -1,
                            "LINK":  0,
                            "PUMP":  0,
-                           "TRUMP":  0,
+                           "TRUMP":  -1,
                            "BTC":  -1
                        },
-    "aiSummary":  "DXY se stabilizirao na 101.8 dok kripto tržište ostaje u strahu (F&G: 27) uz BTC koji pada ispod $77K na dan US međuizbora. ETF odljevi nastavljaju pritiskati cijene ($398M 2. studenoga), a BTC dominacija raste na ~60% bez znakova alt sezone. Ishod međuizbora ključan je katalizator — kripto-pozitivni rezultati mogli bi pokrenuti oporavak prema $80K, dok nepovoljan ishod nosi rizik proboja ispod $76K.",
+    "aiSummary":  "DXY ostaje stabilan oko 101.8 bez inflatornog pritiska, dok Binance hack od $6B i ETF odljevi ($398M 2.11.) srušili su F&G indeks na 30 i BTC ispod $76,500. Tržište je u BEAR režimu uz povišenu nesigurnost zbog US međuizbora 3. studenog — kripto-pozitivni ishod otvara put prema $80K, negativan nosi rizik proboja $76K potpore.",
     "warActive":  false,
-    "btcDom":  59.9,
-    "stableDom":  10.0,
+    "btcDom":  59.5,
+    "stableDom":  7.5,
     "oil":  96.5
 }
