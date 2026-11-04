@@ -113,10 +113,10 @@
       "stop": 1.6166,
       "conf": 61,
       "targetPct": 30,
-      "status": "AKTIVAN",
-      "closePrice": null,
-      "closePct": null,
-      "autoClose": false,
+      "status": "POGODAK",
+      "closePrice": 1.857,
+      "closePct": 10.27,
+      "autoClose": true,
       "engineVer": "v5.357",
       "d1Hit": false,
       "d2Hit": false,
@@ -125,10 +125,11 @@
         "btcdom",
         "jurenje"
       ],
-      "peakPrice": 1.76,
-      "peakPct": 4.51,
+      "peakPrice": 1.857,
+      "peakPct": 10.27,
       "maePrice": 1.676,
-      "maePct": -0.48
+      "maePct": -0.48,
+      "closeReason": "⏰ 5 dana isteklo"
     },
     {
       "id": "1793347182822",
@@ -7632,8 +7633,8 @@
     "_global": {
       "rsiOversold": 0.5,
       "rsiOverbought": 1,
-      "trendUp": 0.369,
-      "trendDown": 0.43,
+      "trendUp": 0.368,
+      "trendDown": 0.429,
       "bbBelow": 1,
       "divBullish": 0.3,
       "divBearish": 0.571,
@@ -7641,13 +7642,13 @@
       "macdBearCross": 1,
       "lsRatioBull": 1,
       "lsRatioExtreme": 1,
-      "basisBack": 0.55,
+      "basisBack": 0.548,
       "takerSell": 1,
       "btcDomHigh": 1,
       "btcDomLow": 1,
-      "volSpike": 0.342,
+      "volSpike": 0.341,
       "mtfAllUp": 0.4,
-      "fgExtremeFear": 0.468,
+      "fgExtremeFear": 0.467,
       "fgFear": 0.3
     },
     "BULL": {
@@ -7662,11 +7663,11 @@
       "macdBearCross": 1,
       "lsRatioBull": 1,
       "lsRatioExtreme": 1,
-      "basisBack": 0.923,
+      "basisBack": 0.962,
       "takerSell": 1,
       "btcDomHigh": 1,
       "btcDomLow": 1,
-      "volSpike": 0.8,
+      "volSpike": 0.833,
       "mtfAllUp": 1,
       "fgExtremeFear": 1,
       "fgFear": 1
@@ -9993,11 +9994,37 @@
       "conf": 41,
       "score": 1.15,
       "verdict": "🔵 Spekulativno",
+      "graded": true,
+      "correct": true,
+      "fwdPrice": 68456,
+      "fwdPct": 0
+    },
+    {
+      "ts": 1793790711882,
+      "price": 68456,
+      "dir": "NEUTRAL",
+      "th": 2.4,
+      "conf": 42,
+      "score": 1.4,
+      "verdict": "🔵 Spekulativno",
+      "graded": false,
+      "correct": null,
+      "fwdPrice": null,
+      "fwdPct": null
+    },
+    {
+      "ts": 1793800504532,
+      "price": 68456,
+      "dir": "NEUTRAL",
+      "th": 2.4,
+      "conf": 36,
+      "score": -0.9,
+      "verdict": "🔴 Preskoči",
       "graded": false,
       "correct": null,
       "fwdPrice": null,
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-11-02T11:55:14.534Z"
+  "updatedAt": "2026-11-04T13:55:17.054Z"
 }
