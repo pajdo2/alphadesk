@@ -1,143 +1,168 @@
 {
-    "dxy":  101.8,
-    "changeSummary":  "F&G indeks pao s 30 na 26, BTC se stabilizira oko $76,500, Binance odljevi opadaju na $3.5B dok US međuizbori donose ključnu neizvjesnost za tržište.",
-    "lastUpdated":  "2026-11-03T12:00:00Z",
+    "dxy":  101.26,
+    "changeSummary":  "Fear & Greed oporavio se sa 26 na 44 i BTC probio $80K nakon demokratske pobjede na midterm izborima, no VOLATILE režim i prijedlog novog SEC zakona zadržavaju oprez.",
+    "lastUpdated":  "2026-11-05T12:00:00Z",
     "warnings":  {
                      "ACT":  [
-                             "Altcoini pod pritiskom, padovi do -25% uz US izbore"
+
                              ],
                      "MEME":  [
-                              "Meme sektor slabi u bear tržištu, bez katalizatora"
+
                               ],
                      "ANIME":  [
-                               "Altcoini slabe, nema podrške ni katalizatora"
+
                                ],
                      "XRP":  [
+                                 "Prijedlog novog SEC zakona - proširena ovlast nad kriptom"
                              ],
                      "BNB":  [
-                             "Binance odljevi $3.5B, hack rizik još prisutan",
-                             "Faza 2 povlačenja pokrenuta 04:00 GMT"
+
                              ],
                      "SUI":  [
-                             "Altcoini pod pritiskom prodavača pred izbore"
+
                              ],
                      "AVAX":  [
-                              "Altcoini padaju do -25%, ZEC i NEAR predvode pad"
+
                               ],
                      "PENGU":  [
+
                                ],
                      "BOME":  [
-                              "Meme coini u slobodnom padu u bear tržištu"
+
                               ],
                      "DOGS":  [
-                              "Altcoini pod tlakom, nema podrške"
+
                               ],
                      "NOT":  [
-                             "Slabost altcoina, nema kupovnog interesa"
+
                              ],
                      "PEOPLE":  [
-                                "Altcoini slabe pred US međuizborima"
+
                                 ],
                      "SOL":  [
-                             "Altcoini pod pritiskom institucionalnih prodavača"
+
                              ],
                      "ADA":  [
+
                              ],
                      "PNUT":  [
+
                               ],
                      "AIXBT":  [
+
                                ],
                      "ETH":  [
-                             "ETH pada prema $2,250, bear trend potvrđen"
+
                              ],
                      "LINK":  [
+
                               ],
                      "PUMP":  [
+
                               ],
                      "TRUMP":  [
+                                   "Demokratska pobjeda negativna za TRUMP token sentiment"
                                ],
                      "BTC":  [
-                             "ETF odljevi $399M (02.11.), pritisak ostaje",
-                             "BTC ispod $77K, pre-election FUD aktivan"
+                                 "Otpor na $82K, ETF odljevi i dalje prisutni"
                              ]
                  },
-    "sp500Ret5d":  -0.6,
-    "fearGreed":  26,
+    "sp500Ret5d":  0.8,
+    "fearGreed":  44,
     "macroPenalty":  0,
     "catalysts":  {
                       "ACT":  [
+
                               ],
                       "MEME":  [
+                                   "Oporavak tržišta diže meme sektore"
                                ],
                       "ANIME":  [
+
                                 ],
                       "XRP":  [
+                                  "Opći oporavak tržišta, XRP raste uz altcoine"
                               ],
                       "BNB":  [
-                              "Binance ZK proof-of-reserves objavljen (transparentnost)"
+                                  "Opći rast tržišta, BNB stabilna"
                               ],
                       "SUI":  [
+                                  "Opći rast tržišta, SUI ekosustav aktivan"
                               ],
                       "AVAX":  [
+                                   "Opći rast tržišta"
                                ],
                       "PENGU":  [
+
                                 ],
                       "BOME":  [
+
                                ],
                       "DOGS":  [
+
                                ],
                       "NOT":  [
+
                               ],
                       "PEOPLE":  [
+
                                  ],
                       "SOL":  [
+                                  "Opći oporavak tržišta, SOL prati BTC rast"
                               ],
                       "ADA":  [
+                                  "Opći rast tržišta, ADA diže se uz altcoine"
                               ],
                       "PNUT":  [
+
                                ],
                       "AIXBT":  [
+                                    "AI sektor raste uz opće kripto tržište"
                                 ],
                       "ETH":  [
+                                  "Rast +7.21% na $2.400+, short squeeze"
                               ],
                       "LINK":  [
+                                   "Opći rast tržišta"
                                ],
                       "PUMP":  [
+
                                ],
                       "TRUMP":  [
-                                "US međuizbori danas - kripto ishod ključan katalizator"
+
                                 ],
                       "BTC":  [
-                              "$76K potpora drži, odboj moguć pri kripto-poz. ishodu"
+                                  "Demokratski izbori, kratki stisak $378M likvid.",
+                                  "Proboj $80K, ključni otpor na $82K"
                               ]
                   },
-    "regime":  "BEAR",
+    "regime":  "VOLATILE",
     "sentimentScore":  {
-                           "ACT":  -1,
-                           "MEME":  -1,
-                           "ANIME":  -1,
+                           "ACT":  0,
+                           "MEME":  1,
+                           "ANIME":  0,
                            "XRP":  0,
-                           "BNB":  -2,
-                           "SUI":  -1,
-                           "AVAX":  -1,
-                           "PENGU":  -1,
-                           "BOME":  -1,
-                           "DOGS":  -1,
-                           "NOT":  -1,
-                           "PEOPLE":  -1,
-                           "SOL":  -1,
-                           "ADA":  0,
-                           "PNUT":  -1,
-                           "AIXBT":  0,
-                           "ETH":  -1,
-                           "LINK":  0,
-                           "PUMP":  -1,
-                           "TRUMP":  1,
-                           "BTC":  -1
+                           "BNB":  1,
+                           "SUI":  1,
+                           "AVAX":  1,
+                           "PENGU":  0,
+                           "BOME":  0,
+                           "DOGS":  0,
+                           "NOT":  0,
+                           "PEOPLE":  0,
+                           "SOL":  1,
+                           "ADA":  1,
+                           "PNUT":  0,
+                           "AIXBT":  1,
+                           "ETH":  2,
+                           "LINK":  1,
+                           "PUMP":  0,
+                           "TRUMP":  -1,
+                           "BTC":  2
                        },
-    "aiSummary":  "DXY ostaje stabilan oko 101.8 bez inflatornog pritiska, no F&G indeks pada na 26 (strah) pod pritiskom ETF odljeva od $399M i neizvjesnosti pred US međuizborima. BTC se stabilizira oko $76,500 braneći $76K potporu, dok su altcoini pod jakim prodajnim pritiskom s padovima do -25%. Ishod međuizbora 3. studenog ključan je katalizator: kripto-pozitivni rezultat otvara put prema $80K, negativan nosi rizik proboja $76K donje potpore.",
+    "aiSummary":  "DXY je pao na 101.26, smanjujući dolarni pritisak i otvarajući prostor za kripto rast. Fear & Greed indeks oporavio se sa 26 na 44 (neutralno) nakon što je demokratska pobjeda na midterm izborima pokrenula kratki stisak od $378M i gurnula BTC iznad $80.000. Proboj $82.000 ključan je za potvrdu daljnjeg rasta, dok prijedlog novog SEC zakona o proširenim ovlastima donosi regulatorni rizik za altcoine.",
     "warActive":  false,
-    "btcDom":  59.3,
-    "stableDom":  7.5,
-    "oil":  96.5
+    "btcDom":  59.5,
+    "stableDom":  6.3,
+    "oil":  96.0
 }
