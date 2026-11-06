@@ -1,147 +1,167 @@
 {
-    "dxy":  101.6,
-    "changeSummary":  "Situacija ostaje u VOLATILE režimu s nepromijenjenim macroPenalty=2, DXY blago pao na 101.6, ali BTC dominacija porasla na 59.3% jer AI strah u Nasdaqu gura altcoine jače prema dolje od BTC-a.",
-    "lastUpdated":  "2026-11-06T17:00:00Z",
+    "dxy":  101.9,
+    "changeSummary":  "BTC dodatno pada na $75.5K uz S&P500 -3% tjedno, DXY blago raste na 101.9, stableDom na 10.8%, dok Fear & Greed i macroPenalty ostaju nepromijenjeni na 28 i 2.",
+    "lastUpdated":  "2026-11-06T20:00:00Z",
     "warnings":  {
                      "ACT":  [
-                             "Visok fear, izbjegavaj high-beta altcoine"
+
                              ],
                      "MEME":  [
-                              "Meme tokeni u risk-off okolini - visok rizik"
+                                 "Meme tokeni osjetljivi na risk-off, visoka volatilnost"
                               ],
                      "ANIME":  [
-                               "Niska likvidnost, bear sentiment prisutan"
+
                                ],
                      "XRP":  [
-                             "Regulatorni pritisak, oprez u volatilnom tržištu"
+                                 "XRP pada -5.6%, momentum slabi ispod ključnih razina"
                              ],
                      "BNB":  [
-                             "Centralizacijski rizik u risk-off fazi"
+                                 "BNB prati opće tržišno raspoloženje, risk-off pritisak"
                              ],
                      "SUI":  [
-                             "High-beta alt pod pritiskom"
+
                              ],
                      "AVAX":  [
-                              "AVAX prati širi pad, smanjene pozicije"
+                                  "AVAX unlock 8.11. (~$14.7M), cijena down -5.6%"
                               ],
                      "PENGU":  [
-                               "NFT-linked token visoko rizičan u strahu"
+
                                ],
                      "BOME":  [
-                              "Meme/BOME visoko volatilno u bear uvjetima"
+
                               ],
                      "DOGS":  [
-                              "Niska likvidnost, strah dominira"
+
                               ],
                      "NOT":  [
-                             "TON ekosustav pod pritiskom"
+
                              ],
                      "PEOPLE":  [
-                                "Visok beta, izbjegavaj pri F&G<30"
+
                                 ],
                      "SOL":  [
-                             "SOL prati Nasdaq rout, oprez"
+                                 "SOL testira 200-dnevni MA ~$88.93, kritična zona"
                              ],
                      "ADA":  [
-                             "ADA bez katalizatora, bear signal"
+
                              ],
                      "PNUT":  [
-                              "Meme s niskom likvidnošću, visok rizik"
+
                               ],
                      "AIXBT":  [
-                               "AI sektor pod pritiskom, Philly Semi -12.3%"
+                                   "AI strah s Nasdaqa + Binance delisting udara AIXBT"
                                ],
                      "ETH":  [
-                             "ETH -7.8%, gore od BTC, visok beta rizik"
+                                 "ETH -7.8%, ETF odljevi, probijen ključni support"
                              ],
                      "LINK":  [
-                              "Oracle tokeni prate tech selloff"
+
                               ],
                      "PUMP":  [
-                              "Visoka volatilnost, meme rizik prisutan"
+
                               ],
                      "TRUMP":  [
+                                   "TRUMP token pada uz slabljenje post-election entuzijazma"
                                ],
                      "BTC":  [
-                             "Likvidacije $1.25B, ETF odljevi $430M, oprez"
+                                 "BTC testira $75K podršku, rizik pada prema $70K"
                              ]
                  },
-    "sp500Ret5d":  -4.5,
+    "sp500Ret5d":  -3.0,
     "fearGreed":  28,
     "macroPenalty":  2,
     "catalysts":  {
                       "ACT":  [
+
                               ],
                       "MEME":  [
+
                                ],
                       "ANIME":  [
+
                                 ],
                       "XRP":  [
+                                  "Whale akumulacija XRP-a vidljiva na chain analizi"
                               ],
                       "BNB":  [
+
                               ],
                       "SUI":  [
+
                               ],
                       "AVAX":  [
+
                                ],
                       "PENGU":  [
+
                                 ],
                       "BOME":  [
+
                                ],
                       "DOGS":  [
+
                                ],
                       "NOT":  [
+
                               ],
                       "PEOPLE":  [
+
                                  ],
                       "SOL":  [
+
                               ],
                       "ADA":  [
+                                  "ADA i Chainlink Labs podnijeli komentar SEC-u"
                               ],
                       "PNUT":  [
+
                                ],
                       "AIXBT":  [
+
                                 ],
                       "ETH":  [
+
                               ],
                       "LINK":  [
+                                   "LINK 3% od 50-dnevnog prosjeka, blizu proboja"
                                ],
                       "PUMP":  [
+
                                ],
                       "TRUMP":  [
-                                "245 pro-kripto zastupnika izabrano u Kongresu"
+
                                 ],
                       "BTC":  [
-                              "245 pro-kripto zastupnika u Kongresu - dugorocno pozitivno"
+                                  "BTC drži $75-76K zonu, mogući odskočni odboj"
                               ]
                   },
     "regime":  "VOLATILE",
     "sentimentScore":  {
-                           "ACT":  -1,
-                           "MEME":  -2,
-                           "ANIME":  -1,
+                           "ACT":  0,
+                           "MEME":  -1,
+                           "ANIME":  0,
                            "XRP":  -1,
                            "BNB":  -1,
-                           "SUI":  -1,
+                           "SUI":  0,
                            "AVAX":  -1,
-                           "PENGU":  -2,
-                           "BOME":  -2,
-                           "DOGS":  -2,
-                           "NOT":  -1,
-                           "PEOPLE":  -1,
+                           "PENGU":  0,
+                           "BOME":  0,
+                           "DOGS":  0,
+                           "NOT":  0,
+                           "PEOPLE":  0,
                            "SOL":  -1,
-                           "ADA":  -1,
-                           "PNUT":  -2,
+                           "ADA":  0,
+                           "PNUT":  0,
                            "AIXBT":  -2,
-                           "ETH":  -2,
-                           "LINK":  -1,
-                           "PUMP":  -1,
-                           "TRUMP":  0,
-                           "BTC":  -2
+                           "ETH":  -1,
+                           "LINK":  0,
+                           "PUMP":  0,
+                           "TRUMP":  -1,
+                           "BTC":  -1
                        },
-    "aiSummary":  "DXY stabiliziran na ~101.6 bez direktnog pritiska na kripto, ali Nasdaq rout zbog AI straha agresivno se širi: BTC -6% na $75.6K, ETH -7.8%, Fear & Greed pada na 28 (Strah) uz likvidacije $1.25B i ETF odljeve $430M. Warni signali ostaju aktivni (tankerski napadi Hormuz), macroPenalty na 2; kratkorocno dominira strah i pritisak na high-beta altcoine uz moguce usklađivanje prema $70K zoni.",
+    "aiSummary":  "DXY blago raste na 101.9 bez dramatičnog pritiska na kripto, ali Nasdaq AI-rout nastavlja vući tržište prema dolje: BTC -6% na $75.5K, ETH -7.8%, Fear & Greed ostaje na 28 (Strah) uz likvidacije $1.09B i S&P500 -3% tjedno. Warni signali ostaju aktivni (tankerski incidenti Hormuz), macroPenalty na 2; SOL testira kritični 200-dnevni MA dok AIXBT trpi dvostruki udar AI FUD-a i Binance delistinga, kratkoročno dominira strah uz mogući bounce od $75K razine.",
     "warActive":  true,
     "btcDom":  59.3,
-    "stableDom":  11.5,
-    "oil":  99.0
+    "stableDom":  10.8,
+    "oil":  98.4
 }
