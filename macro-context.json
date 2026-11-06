@@ -1,145 +1,125 @@
 {
-    "dxy":  102.0,
-    "changeSummary":  "Nema promjene u DXY (102.0) i F&G (28), ali tankerski napadi u Hormuzskom tjesnacu aktiviraju ratni rizik i dižu naftu s $94.5 na $99, što povećava macroPenalty s 0 na 2.",
-    "lastUpdated":  "2026-11-06T16:00:00Z",
+    "dxy":  101.6,
+    "changeSummary":  "Situacija ostaje u VOLATILE režimu s nepromijenjenim macroPenalty=2, DXY blago pao na 101.6, ali BTC dominacija porasla na 59.3% jer AI strah u Nasdaqu gura altcoine jače prema dolje od BTC-a.",
+    "lastUpdated":  "2026-11-06T17:00:00Z",
     "warnings":  {
                      "ACT":  [
-
+                             "Visok fear, izbjegavaj high-beta altcoine"
                              ],
                      "MEME":  [
-                               "High-beta meme token, najpogodjeniji u trzisnom padu"
+                              "Meme tokeni u risk-off okolini - visok rizik"
                               ],
                      "ANIME":  [
-                                "Niska likvidnost, visoka volatilnost u risk-off okolini"
+                               "Niska likvidnost, bear sentiment prisutan"
                                ],
                      "XRP":  [
-
+                             "Regulatorni pritisak, oprez u volatilnom tržištu"
                              ],
                      "BNB":  [
-
+                             "Centralizacijski rizik u risk-off fazi"
                              ],
                      "SUI":  [
-
+                             "High-beta alt pod pritiskom"
                              ],
                      "AVAX":  [
-
+                              "AVAX prati širi pad, smanjene pozicije"
                               ],
                      "PENGU":  [
-                                "High-beta NFT/meme token, prati trzisni pad"
+                               "NFT-linked token visoko rizičan u strahu"
                                ],
                      "BOME":  [
-                               "Meme token, visoka izlozenost trzisnom padu"
+                              "Meme/BOME visoko volatilno u bear uvjetima"
                               ],
                      "DOGS":  [
-                               "High-beta meme token, prati trzisni pad"
+                              "Niska likvidnost, strah dominira"
                               ],
                      "NOT":  [
-
+                             "TON ekosustav pod pritiskom"
                              ],
                      "PEOPLE":  [
-
+                                "Visok beta, izbjegavaj pri F&G<30"
                                 ],
                      "SOL":  [
-
+                             "SOL prati Nasdaq rout, oprez"
                              ],
                      "ADA":  [
-
+                             "ADA bez katalizatora, bear signal"
                              ],
                      "PNUT":  [
-                               "Meme token, visok beta, rizik daljnjeg pada"
+                              "Meme s niskom likvidnošću, visok rizik"
                               ],
                      "AIXBT":  [
-
+                               "AI sektor pod pritiskom, Philly Semi -12.3%"
                                ],
                      "ETH":  [
-                              "ETH -7.8%, ispod kljucne podrske, test $2000 moguc"
+                             "ETH -7.8%, gore od BTC, visok beta rizik"
                              ],
                      "LINK":  [
-
+                              "Oracle tokeni prate tech selloff"
                               ],
                      "PUMP":  [
-                               "Visok beta, rizik daljnjih likvidacija"
+                              "Visoka volatilnost, meme rizik prisutan"
                               ],
                      "TRUMP":  [
-
                                ],
                      "BTC":  [
-                              "$1.25B likvidacija u 24h, ETF odljevi $430M"
+                             "Likvidacije $1.25B, ETF odljevi $430M, oprez"
                              ]
                  },
-    "sp500Ret5d":  -4.4,
+    "sp500Ret5d":  -4.5,
     "fearGreed":  28,
     "macroPenalty":  2,
     "catalysts":  {
                       "ACT":  [
-
                               ],
                       "MEME":  [
-
                                ],
                       "ANIME":  [
-
                                 ],
                       "XRP":  [
-
                               ],
                       "BNB":  [
-
                               ],
                       "SUI":  [
-
                               ],
                       "AVAX":  [
-
                                ],
                       "PENGU":  [
-
                                 ],
                       "BOME":  [
-
                                ],
                       "DOGS":  [
-
                                ],
                       "NOT":  [
-
                               ],
                       "PEOPLE":  [
-
                                  ],
                       "SOL":  [
-
                               ],
                       "ADA":  [
-
                               ],
                       "PNUT":  [
-
                                ],
                       "AIXBT":  [
-
                                 ],
                       "ETH":  [
-                               "$2.65B opcijska isteka — moguc kratkorocni reset"
                               ],
                       "LINK":  [
-
                                ],
                       "PUMP":  [
-
                                ],
                       "TRUMP":  [
-                                 "245 pro-kripto zastupnika izabrano u Kongres"
+                                "245 pro-kripto zastupnika izabrano u Kongresu"
                                 ],
                       "BTC":  [
-                               "245 pro-kripto zastupnika izabrano u Kongres"
+                              "245 pro-kripto zastupnika u Kongresu - dugorocno pozitivno"
                               ]
                   },
     "regime":  "VOLATILE",
     "sentimentScore":  {
                            "ACT":  -1,
                            "MEME":  -2,
-                           "ANIME":  -2,
+                           "ANIME":  -1,
                            "XRP":  -1,
                            "BNB":  -1,
                            "SUI":  -1,
@@ -152,16 +132,16 @@
                            "SOL":  -1,
                            "ADA":  -1,
                            "PNUT":  -2,
-                           "AIXBT":  -1,
+                           "AIXBT":  -2,
                            "ETH":  -2,
                            "LINK":  -1,
-                           "PUMP":  -2,
+                           "PUMP":  -1,
                            "TRUMP":  0,
                            "BTC":  -2
                        },
-    "aiSummary":  "DXY ostaje stabilan na ~102.0 bez direktnog pritiska na kripto, no tehnoloski Nasdaq rout prelio se agresivno: BTC -6% na $75.6K, Fear & Greed pada na 28 (Strah), likvidacije dosežu $1.25B u 24h i ETF odljevi $430M. Tankerski napadi u Hormuzskom tjesnacu dižu Brent naftu na ~$99 i aktiviraju ratni rizik (macroPenalty raste na 2). Dugorocno pozitivno: 245 pro-kripto zastupnika izabrano na midterm izborima, ali kratkorocno dominiraju strah i pritisak na high-beta altcoine.",
+    "aiSummary":  "DXY stabiliziran na ~101.6 bez direktnog pritiska na kripto, ali Nasdaq rout zbog AI straha agresivno se širi: BTC -6% na $75.6K, ETH -7.8%, Fear & Greed pada na 28 (Strah) uz likvidacije $1.25B i ETF odljeve $430M. Warni signali ostaju aktivni (tankerski napadi Hormuz), macroPenalty na 2; kratkorocno dominira strah i pritisak na high-beta altcoine uz moguce usklađivanje prema $70K zoni.",
     "warActive":  true,
-    "btcDom":  57.4,
-    "stableDom":  11.4,
+    "btcDom":  59.3,
+    "stableDom":  11.5,
     "oil":  99.0
 }
