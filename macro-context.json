@@ -1,123 +1,154 @@
 {
     "dxy":  102.0,
-    "changeSummary":  "BTC je u roku od 24 sata pao 6% na $75.6K, Fear & Greed srušio se s 44 na 28, a masovne likvidacije od $1.25B okončale su kratki midterm skok.",
-    "lastUpdated":  "2026-11-06T12:00:00Z",
+    "changeSummary":  "Nema promjene u DXY (102.0) i F&G (28), ali tankerski napadi u Hormuzskom tjesnacu aktiviraju ratni rizik i dižu naftu s $94.5 na $99, što povećava macroPenalty s 0 na 2.",
+    "lastUpdated":  "2026-11-06T16:00:00Z",
     "warnings":  {
                      "ACT":  [
+
                              ],
                      "MEME":  [
+                               "High-beta meme token, najpogodjeniji u trzisnom padu"
                               ],
                      "ANIME":  [
+                                "Niska likvidnost, visoka volatilnost u risk-off okolini"
                                ],
                      "XRP":  [
+
                              ],
                      "BNB":  [
+
                              ],
                      "SUI":  [
+
                              ],
                      "AVAX":  [
+
                               ],
                      "PENGU":  [
+                                "High-beta NFT/meme token, prati trzisni pad"
                                ],
                      "BOME":  [
+                               "Meme token, visoka izlozenost trzisnom padu"
                               ],
                      "DOGS":  [
-                         "Visok beta, bježi kod straha - FG 28"
+                               "High-beta meme token, prati trzisni pad"
                               ],
                      "NOT":  [
-                         "Visok beta, bježi kod straha - FG 28"
+
                              ],
                      "PEOPLE":  [
-                         "Visok beta, bježi kod straha - FG 28"
+
                                 ],
                      "SOL":  [
-                         "SOL testira 200-dnevni MA - proboj = jači pad"
+
                              ],
                      "ADA":  [
+
                              ],
                      "PNUT":  [
+                               "Meme token, visok beta, rizik daljnjeg pada"
                               ],
                      "AIXBT":  [
+
                                ],
                      "ETH":  [
-                         "ETH -7.8%, pada brže od BTC - slabost altcoin beta"
+                              "ETH -7.8%, ispod kljucne podrske, test $2000 moguc"
                              ],
                      "LINK":  [
+
                               ],
                      "PUMP":  [
-                         "Visok beta, bježi kod straha - FG 28"
+                               "Visok beta, rizik daljnjih likvidacija"
                               ],
                      "TRUMP":  [
-                         "Midterm euforia isparila, TRUMP gubi brzo"
+
                                ],
                      "BTC":  [
-                         "BTC -6%, likvidacije $1.25B, tech rout se nastavlja"
+                              "$1.25B likvidacija u 24h, ETF odljevi $430M"
                              ]
                  },
-    "sp500Ret5d":  -3.8,
+    "sp500Ret5d":  -4.4,
     "fearGreed":  28,
-    "macroPenalty":  0,
+    "macroPenalty":  2,
     "catalysts":  {
                       "ACT":  [
+
                               ],
                       "MEME":  [
+
                                ],
                       "ANIME":  [
+
                                 ],
                       "XRP":  [
-                          "Pro-kripto kongres - regulatorna nada za XRP"
+
                               ],
                       "BNB":  [
+
                               ],
                       "SUI":  [
+
                               ],
                       "AVAX":  [
+
                                ],
                       "PENGU":  [
+
                                 ],
                       "BOME":  [
+
                                ],
                       "DOGS":  [
+
                                ],
                       "NOT":  [
+
                               ],
                       "PEOPLE":  [
+
                                  ],
                       "SOL":  [
-                          "SOL drži 200-dnevni MA kao ključan support"
+
                               ],
                       "ADA":  [
+
                               ],
                       "PNUT":  [
+
                                ],
                       "AIXBT":  [
+
                                 ],
                       "ETH":  [
+                               "$2.65B opcijska isteka — moguc kratkorocni reset"
                               ],
                       "LINK":  [
+
                                ],
                       "PUMP":  [
+
                                ],
                       "TRUMP":  [
+                                 "245 pro-kripto zastupnika izabrano u Kongres"
                                 ],
                       "BTC":  [
-                          "245 pro-kripto kandidata izabrano u Kongres SAD"
+                               "245 pro-kripto zastupnika izabrano u Kongres"
                               ]
                   },
     "regime":  "VOLATILE",
     "sentimentScore":  {
-                           "ACT":  -2,
+                           "ACT":  -1,
                            "MEME":  -2,
                            "ANIME":  -2,
-                           "XRP":  0,
+                           "XRP":  -1,
                            "BNB":  -1,
                            "SUI":  -1,
                            "AVAX":  -1,
                            "PENGU":  -2,
                            "BOME":  -2,
                            "DOGS":  -2,
-                           "NOT":  -2,
-                           "PEOPLE":  -2,
+                           "NOT":  -1,
+                           "PEOPLE":  -1,
                            "SOL":  -1,
                            "ADA":  -1,
                            "PNUT":  -2,
@@ -125,12 +156,12 @@
                            "ETH":  -2,
                            "LINK":  -1,
                            "PUMP":  -2,
-                           "TRUMP":  -2,
-                           "BTC":  -1
+                           "TRUMP":  0,
+                           "BTC":  -2
                        },
-    "aiSummary":  "DXY je blago porastao na ~102.0, ali ostaje ispod ključne razine 106 bez značajnog dolarnog pritiska. Obrt tehnoloških dionica (Nasdaq -4.4%) prelio se na kripto: BTC -6% na $75.6K, Fear & Greed pada s 44 na 28 (Strah), likvidacije dosežu $1.25B u 24 sata. Izlazak 245 pro-kripto zastupnika u Kongresu nudi dugoročnu regulatornu nadu, no kratkoročno dominira strah i high-beta altcoini su najpogođeniji.",
-    "warActive":  false,
+    "aiSummary":  "DXY ostaje stabilan na ~102.0 bez direktnog pritiska na kripto, no tehnoloski Nasdaq rout prelio se agresivno: BTC -6% na $75.6K, Fear & Greed pada na 28 (Strah), likvidacije dosežu $1.25B u 24h i ETF odljevi $430M. Tankerski napadi u Hormuzskom tjesnacu dižu Brent naftu na ~$99 i aktiviraju ratni rizik (macroPenalty raste na 2). Dugorocno pozitivno: 245 pro-kripto zastupnika izabrano na midterm izborima, ali kratkorocno dominiraju strah i pritisak na high-beta altcoine.",
+    "warActive":  true,
     "btcDom":  57.4,
-    "stableDom":  8.5,
-    "oil":  94.5
+    "stableDom":  11.4,
+    "oil":  99.0
 }
