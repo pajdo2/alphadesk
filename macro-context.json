@@ -1,168 +1,136 @@
 {
-    "dxy":  101.26,
-    "changeSummary":  "Fear & Greed oporavio se sa 26 na 44 i BTC probio $80K nakon demokratske pobjede na midterm izborima, no VOLATILE režim i prijedlog novog SEC zakona zadržavaju oprez.",
-    "lastUpdated":  "2026-11-05T12:00:00Z",
+    "dxy":  102.0,
+    "changeSummary":  "BTC je u roku od 24 sata pao 6% na $75.6K, Fear & Greed srušio se s 44 na 28, a masovne likvidacije od $1.25B okončale su kratki midterm skok.",
+    "lastUpdated":  "2026-11-06T12:00:00Z",
     "warnings":  {
                      "ACT":  [
-
                              ],
                      "MEME":  [
-
                               ],
                      "ANIME":  [
-
                                ],
                      "XRP":  [
-                                 "Prijedlog novog SEC zakona - proširena ovlast nad kriptom"
                              ],
                      "BNB":  [
-
                              ],
                      "SUI":  [
-
                              ],
                      "AVAX":  [
-
                               ],
                      "PENGU":  [
-
                                ],
                      "BOME":  [
-
                               ],
                      "DOGS":  [
-
+                         "Visok beta, bježi kod straha - FG 28"
                               ],
                      "NOT":  [
-
+                         "Visok beta, bježi kod straha - FG 28"
                              ],
                      "PEOPLE":  [
-
+                         "Visok beta, bježi kod straha - FG 28"
                                 ],
                      "SOL":  [
-
+                         "SOL testira 200-dnevni MA - proboj = jači pad"
                              ],
                      "ADA":  [
-
                              ],
                      "PNUT":  [
-
                               ],
                      "AIXBT":  [
-
                                ],
                      "ETH":  [
-
+                         "ETH -7.8%, pada brže od BTC - slabost altcoin beta"
                              ],
                      "LINK":  [
-
                               ],
                      "PUMP":  [
-
+                         "Visok beta, bježi kod straha - FG 28"
                               ],
                      "TRUMP":  [
-                                   "Demokratska pobjeda negativna za TRUMP token sentiment"
+                         "Midterm euforia isparila, TRUMP gubi brzo"
                                ],
                      "BTC":  [
-                                 "Otpor na $82K, ETF odljevi i dalje prisutni"
+                         "BTC -6%, likvidacije $1.25B, tech rout se nastavlja"
                              ]
                  },
-    "sp500Ret5d":  0.8,
-    "fearGreed":  44,
+    "sp500Ret5d":  -3.8,
+    "fearGreed":  28,
     "macroPenalty":  0,
     "catalysts":  {
                       "ACT":  [
-
                               ],
                       "MEME":  [
-                                   "Oporavak tržišta diže meme sektore"
                                ],
                       "ANIME":  [
-
                                 ],
                       "XRP":  [
-                                  "Opći oporavak tržišta, XRP raste uz altcoine"
+                          "Pro-kripto kongres - regulatorna nada za XRP"
                               ],
                       "BNB":  [
-                                  "Opći rast tržišta, BNB stabilna"
                               ],
                       "SUI":  [
-                                  "Opći rast tržišta, SUI ekosustav aktivan"
                               ],
                       "AVAX":  [
-                                   "Opći rast tržišta"
                                ],
                       "PENGU":  [
-
                                 ],
                       "BOME":  [
-
                                ],
                       "DOGS":  [
-
                                ],
                       "NOT":  [
-
                               ],
                       "PEOPLE":  [
-
                                  ],
                       "SOL":  [
-                                  "Opći oporavak tržišta, SOL prati BTC rast"
+                          "SOL drži 200-dnevni MA kao ključan support"
                               ],
                       "ADA":  [
-                                  "Opći rast tržišta, ADA diže se uz altcoine"
                               ],
                       "PNUT":  [
-
                                ],
                       "AIXBT":  [
-                                    "AI sektor raste uz opće kripto tržište"
                                 ],
                       "ETH":  [
-                                  "Rast +7.21% na $2.400+, short squeeze"
                               ],
                       "LINK":  [
-                                   "Opći rast tržišta"
                                ],
                       "PUMP":  [
-
                                ],
                       "TRUMP":  [
-
                                 ],
                       "BTC":  [
-                                  "Demokratski izbori, kratki stisak $378M likvid.",
-                                  "Proboj $80K, ključni otpor na $82K"
+                          "245 pro-kripto kandidata izabrano u Kongres SAD"
                               ]
                   },
     "regime":  "VOLATILE",
     "sentimentScore":  {
-                           "ACT":  0,
-                           "MEME":  1,
-                           "ANIME":  0,
+                           "ACT":  -2,
+                           "MEME":  -2,
+                           "ANIME":  -2,
                            "XRP":  0,
-                           "BNB":  1,
-                           "SUI":  1,
-                           "AVAX":  1,
-                           "PENGU":  0,
-                           "BOME":  0,
-                           "DOGS":  0,
-                           "NOT":  0,
-                           "PEOPLE":  0,
-                           "SOL":  1,
-                           "ADA":  1,
-                           "PNUT":  0,
-                           "AIXBT":  1,
-                           "ETH":  2,
-                           "LINK":  1,
-                           "PUMP":  0,
-                           "TRUMP":  -1,
-                           "BTC":  2
+                           "BNB":  -1,
+                           "SUI":  -1,
+                           "AVAX":  -1,
+                           "PENGU":  -2,
+                           "BOME":  -2,
+                           "DOGS":  -2,
+                           "NOT":  -2,
+                           "PEOPLE":  -2,
+                           "SOL":  -1,
+                           "ADA":  -1,
+                           "PNUT":  -2,
+                           "AIXBT":  -1,
+                           "ETH":  -2,
+                           "LINK":  -1,
+                           "PUMP":  -2,
+                           "TRUMP":  -2,
+                           "BTC":  -1
                        },
-    "aiSummary":  "DXY je pao na 101.26, smanjujući dolarni pritisak i otvarajući prostor za kripto rast. Fear & Greed indeks oporavio se sa 26 na 44 (neutralno) nakon što je demokratska pobjeda na midterm izborima pokrenula kratki stisak od $378M i gurnula BTC iznad $80.000. Proboj $82.000 ključan je za potvrdu daljnjeg rasta, dok prijedlog novog SEC zakona o proširenim ovlastima donosi regulatorni rizik za altcoine.",
+    "aiSummary":  "DXY je blago porastao na ~102.0, ali ostaje ispod ključne razine 106 bez značajnog dolarnog pritiska. Obrt tehnoloških dionica (Nasdaq -4.4%) prelio se na kripto: BTC -6% na $75.6K, Fear & Greed pada s 44 na 28 (Strah), likvidacije dosežu $1.25B u 24 sata. Izlazak 245 pro-kripto zastupnika u Kongresu nudi dugoročnu regulatornu nadu, no kratkoročno dominira strah i high-beta altcoini su najpogođeniji.",
     "warActive":  false,
-    "btcDom":  59.5,
-    "stableDom":  6.3,
-    "oil":  96.0
+    "btcDom":  57.4,
+    "stableDom":  8.5,
+    "oil":  94.5
 }
