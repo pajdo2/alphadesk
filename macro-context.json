@@ -1,72 +1,71 @@
 {
-    "dxy":  102.0,
-    "changeSummary":  "Makro uvjeti ostaju gotovo nepromijenjeni u odnosu na prethodnu analizu — BTC stagnira oko $74.2K, F&G na 30 (Strah), DXY na 102.0, a tržište nastavlja konsolidaciju uz aktivni ratni rizik i predstojeće CPI podatke.",
-    "lastUpdated":  "2026-11-09T16:00:00Z",
+    "dxy":  102.1,
+    "changeSummary":  "BTC ostaje na $74.2K bez bitne promjene vs prethodne analize, F&G stagnira na 30 uz nastavak ETF odljeva i risk-off signale iz S&P500.",
+    "lastUpdated":  "2026-11-09T18:00:00Z",
     "warnings":  {
                      "ACT":  [
-                             "Opći risk-off sentiment, bez katalizatora"
+
                              ],
                      "MEME":  [
-                              "Opći risk-off sentiment, bez katalizatora"
+                               "Meme coini pojačano padaju u risk-off okruženju"
                               ],
                      "ANIME":  [
-                               "Opći risk-off sentiment, bez katalizatora"
+
                                ],
                      "XRP":  [
-                             "Pad 12.5% tjedno prema $1.09",
-                             "Polymarket: 49% šansa pada na $1"
+                               "SEC kripto broker-dealer pravila upućena Bijeloj kući"
                              ],
                      "BNB":  [
-                             "Binance hack u tijeku pojačava FUD"
+
                              ],
                      "SUI":  [
-                             "Opći risk-off sentiment, bez katalizatora"
+
                              ],
                      "AVAX":  [
-                              "Opći risk-off sentiment, bez katalizatora"
+
                               ],
                      "PENGU":  [
-                               "Opći risk-off sentiment, bez katalizatora"
+
                                ],
                      "BOME":  [
-                              "Opći risk-off sentiment, bez katalizatora"
+
                               ],
                      "DOGS":  [
-                              "Opći risk-off sentiment, bez katalizatora"
+
                               ],
                      "NOT":  [
-                             "Opći risk-off sentiment, bez katalizatora"
+
                              ],
                      "PEOPLE":  [
-                                "Opći risk-off sentiment, bez katalizatora"
+
                                 ],
                      "SOL":  [
-                             "Pad tržišta, $86 razina podrške testirana"
+
                              ],
                      "ADA":  [
-                             "Opći risk-off sentiment, bez katalizatora"
+
                              ],
                      "PNUT":  [
-                              "Opći risk-off sentiment, bez katalizatora"
+
                               ],
                      "AIXBT":  [
-                               "Opći risk-off sentiment, bez katalizatora"
+
                                ],
                      "ETH":  [
-                             "ETF odljevi $365M tjedno",
-                             "Pad 7.4% tjedno ispod $2.15K"
+                               "ETH pao ispod $2.1K, likvidacije rastu"
                              ],
                      "LINK":  [
+
                               ],
                      "PUMP":  [
-                              "Opći risk-off sentiment, bez katalizatora"
+
                               ],
                      "TRUMP":  [
-                               "Demokrati pobijedili na midterms, politička neizvjesnost"
+
                                ],
                      "BTC":  [
-                             "ETF odljevi $1.28B tjedno — najveći u 4 mj.",
-                             "Likvidacije long pozicija $1.04B"
+                               "ETF odljevi $1.28B tjedno, najveci u 4 mj.",
+                               "Likvidacije $1.04B, longs pogodeni"
                              ]
                  },
     "sp500Ret5d":  -2.7,
@@ -74,79 +73,96 @@
     "macroPenalty":  2,
     "catalysts":  {
                       "ACT":  [
+
                               ],
                       "MEME":  [
+
                                ],
                       "ANIME":  [
+
                                 ],
                       "XRP":  [
+
                               ],
                       "BNB":  [
+
                               ],
                       "SUI":  [
+
                               ],
                       "AVAX":  [
-                               "Blagi +1.5% dnevni oporavak uz podršku na $8"
+
                                ],
                       "PENGU":  [
+
                                 ],
                       "BOME":  [
+
                                ],
                       "DOGS":  [
+
                                ],
                       "NOT":  [
+
                               ],
                       "PEOPLE":  [
+
                                  ],
                       "SOL":  [
+                               "Elysium L2 mainnet launch na Hyperliquid 9.11."
                               ],
                       "ADA":  [
-                              "Blagi +1% dnevni oporavak uz podršku"
+
                               ],
                       "PNUT":  [
+
                                ],
                       "AIXBT":  [
+
                                 ],
                       "ETH":  [
+
                               ],
                       "LINK":  [
-                               "Blagi +1.4% dnevni oporavak"
+
                                ],
                       "PUMP":  [
+
                                ],
                       "TRUMP":  [
+
                                 ],
                       "BTC":  [
-                              "Ključna podrška na $73.7K — bounce moguć"
+                               "Predstoji CPI objava - potencijalni katalizator"
                               ]
                   },
     "regime":  "VOLATILE",
     "sentimentScore":  {
-                           "ACT":  -1,
+                           "ACT":  0,
                            "MEME":  -1,
-                           "ANIME":  -1,
-                           "XRP":  -2,
-                           "BNB":  -2,
-                           "SUI":  -1,
+                           "ANIME":  0,
+                           "XRP":  -1,
+                           "BNB":  0,
+                           "SUI":  0,
                            "AVAX":  0,
-                           "PENGU":  -1,
-                           "BOME":  -1,
-                           "DOGS":  -1,
-                           "NOT":  -1,
-                           "PEOPLE":  -1,
+                           "PENGU":  0,
+                           "BOME":  0,
+                           "DOGS":  0,
+                           "NOT":  0,
+                           "PEOPLE":  0,
                            "SOL":  -1,
                            "ADA":  0,
-                           "PNUT":  -1,
-                           "AIXBT":  -1,
+                           "PNUT":  0,
+                           "AIXBT":  0,
                            "ETH":  -1,
                            "LINK":  0,
-                           "PUMP":  -1,
-                           "TRUMP":  -1,
+                           "PUMP":  0,
+                           "TRUMP":  0,
                            "BTC":  -1
                        },
-    "aiSummary":  "DXY stabiliziran oko 102.0 bez dramatičnog pritiska na kripto, ali BTC pada na $74.2K uz F&G na 30 (Strah), likvidacije long pozicija $1.04B i ETF odljeve $1.28B tjedno — najveće u 4 mjeseca. XRP gubi 12.5% tjedno prema $1.09 uz 49% tržišnu šansu pada na $1, ETH pada 7.4% tjedno ispod $2.15K, a S&P500 -2.7% tjedno pojačava risk-off sentiment uz aktivni US-Israel-Iran ratni rizik. Kratkoročno dominira strah uz ključnu podršku BTC-a na $73.7K, bounce moguć ali rizik daljnjeg pada ostaje visok uz predstojeće CPI podatke i regulatornu neizvjesnost.",
+    "aiSummary":  "DXY stabiliziran oko 102.1 bez pojacanih pritisaka na kripto, ali BTC pada na $74.2K uz F&G na 30 (Strah), ETF odljeve $1.28B tjedno i likvidacije $1.04B. S&P500 -2.7% tjedno zbog midterm sell-offa u tech dionicama pojacava risk-off sentiment uz aktivni US-Israel-Iran ratni rizik. Kratkorocno dominira strah uz kljucnu podrsku BTC-a na $73.5K i predstojeci CPI kao kljucni katalizator smjera.",
     "warActive":  true,
-    "btcDom":  60.0,
-    "stableDom":  11.8,
+    "btcDom":  60.2,
+    "stableDom":  8.0,
     "oil":  97.0
 }
