@@ -1,34 +1,35 @@
 {
-    "dxy":  101.9,
-    "changeSummary":  "BTC dodatno pada na $75.5K uz S&P500 -3% tjedno, DXY blago raste na 101.9, stableDom na 10.8%, dok Fear & Greed i macroPenalty ostaju nepromijenjeni na 28 i 2.",
-    "lastUpdated":  "2026-11-06T20:00:00Z",
+    "dxy":  102.0,
+    "changeSummary":  "Strah blago porastao sa 28 na 30, BTC nastavio pad s $75.5K na $74.2K uz $1.04B likvidacija i ETF odljeve $1.28B, DXY stabilan ~102 bez promjene režima ili macroPenaltya.",
+    "lastUpdated":  "2026-11-09T12:00:00Z",
     "warnings":  {
                      "ACT":  [
 
                              ],
                      "MEME":  [
-                                 "Meme tokeni osjetljivi na risk-off, visoka volatilnost"
+                               "Meme tokeni pod pritiskom u fear okruženju"
                               ],
                      "ANIME":  [
 
                                ],
                      "XRP":  [
-                                 "XRP pada -5.6%, momentum slabi ispod ključnih razina"
+                               "12.5% tjedni pad na $1.09",
+                               "SEC predložio nova pravila za crypto brokere"
                              ],
                      "BNB":  [
-                                 "BNB prati opće tržišno raspoloženje, risk-off pritisak"
+
                              ],
                      "SUI":  [
 
                              ],
                      "AVAX":  [
-                                  "AVAX unlock 8.11. (~$14.7M), cijena down -5.6%"
+
                               ],
                      "PENGU":  [
 
                                ],
                      "BOME":  [
-
+                               "Visoka volatilnost, fear indeks na 30"
                               ],
                      "DOGS":  [
 
@@ -40,19 +41,19 @@
 
                                 ],
                      "SOL":  [
-                                 "SOL testira 200-dnevni MA ~$88.93, kritična zona"
+                               "Testira ključnu support zonu"
                              ],
                      "ADA":  [
 
                              ],
                      "PNUT":  [
-
+                               "Meme coin pod pritiskom, fear okruženje"
                               ],
                      "AIXBT":  [
-                                   "AI strah s Nasdaqa + Binance delisting udara AIXBT"
+                                "Kontinuirani AI FUD pritisak na tržištu"
                                ],
                      "ETH":  [
-                                 "ETH -7.8%, ETF odljevi, probijen ključni support"
+                               "Pad ispod $2100, ETF odljevi $365M tjedan"
                              ],
                      "LINK":  [
 
@@ -61,14 +62,15 @@
 
                               ],
                      "TRUMP":  [
-                                   "TRUMP token pada uz slabljenje post-election entuzijazma"
+
                                ],
                      "BTC":  [
-                                 "BTC testira $75K podršku, rizik pada prema $70K"
+                               "$74K podrška ugrožena, ETF odljevi $1.28B",
+                               "$1.04B likvidacija long pozicija"
                              ]
                  },
-    "sp500Ret5d":  -3.0,
-    "fearGreed":  28,
+    "sp500Ret5d":  -2.7,
+    "fearGreed":  30,
     "macroPenalty":  2,
     "catalysts":  {
                       "ACT":  [
@@ -81,7 +83,7 @@
 
                                 ],
                       "XRP":  [
-                                  "Whale akumulacija XRP-a vidljiva na chain analizi"
+
                               ],
                       "BNB":  [
 
@@ -111,7 +113,7 @@
 
                               ],
                       "ADA":  [
-                                  "ADA i Chainlink Labs podnijeli komentar SEC-u"
+
                               ],
                       "PNUT":  [
 
@@ -123,7 +125,7 @@
 
                               ],
                       "LINK":  [
-                                   "LINK 3% od 50-dnevnog prosjeka, blizu proboja"
+
                                ],
                       "PUMP":  [
 
@@ -132,7 +134,7 @@
 
                                 ],
                       "BTC":  [
-                                  "BTC drži $75-76K zonu, mogući odskočni odboj"
+
                               ]
                   },
     "regime":  "VOLATILE",
@@ -143,25 +145,25 @@
                            "XRP":  -1,
                            "BNB":  -1,
                            "SUI":  0,
-                           "AVAX":  -1,
+                           "AVAX":  0,
                            "PENGU":  0,
-                           "BOME":  0,
+                           "BOME":  -1,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
                            "SOL":  -1,
-                           "ADA":  0,
-                           "PNUT":  0,
+                           "ADA":  -1,
+                           "PNUT":  -1,
                            "AIXBT":  -2,
                            "ETH":  -1,
                            "LINK":  0,
-                           "PUMP":  0,
-                           "TRUMP":  -1,
+                           "PUMP":  -1,
+                           "TRUMP":  0,
                            "BTC":  -1
                        },
-    "aiSummary":  "DXY blago raste na 101.9 bez dramatičnog pritiska na kripto, ali Nasdaq AI-rout nastavlja vući tržište prema dolje: BTC -6% na $75.5K, ETH -7.8%, Fear & Greed ostaje na 28 (Strah) uz likvidacije $1.09B i S&P500 -3% tjedno. Warni signali ostaju aktivni (tankerski incidenti Hormuz), macroPenalty na 2; SOL testira kritični 200-dnevni MA dok AIXBT trpi dvostruki udar AI FUD-a i Binance delistinga, kratkoročno dominira strah uz mogući bounce od $75K razine.",
+    "aiSummary":  "DXY stabiliziran oko 102.0 bez dramatičnog pritiska na kripto, ali BTC pao na $74.2K uz $1.04B likvidacija long pozicija i ETF odljeve $1.28B tjedno dok Fear & Greed ostaje na 30 (Strah). XRP gubi 12.5% tjedno, ETH pada ispod $2100 uz ETF odljeve $365M, a S&P500 pada 2.7% tjedno što pojačava risk-off sentiment. Kratkoročno dominira strah uz ključnu podršku BTC-a na $73.7K, bounce moguć ali rizik daljnjeg pada ostaje visok uz aktivni ratni rizik.",
     "warActive":  true,
-    "btcDom":  59.3,
-    "stableDom":  10.8,
-    "oil":  98.4
+    "btcDom":  60.2,
+    "stableDom":  7.0,
+    "oil":  97.0
 }
