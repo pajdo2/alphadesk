@@ -1,28 +1,28 @@
 {
     "dxy":  101.7,
-    "changeSummary":  "F&G porastao s 30 na 32 uz Iran de-eskalaciju koja je spustila DXY s 102.1 na 101.7, oil srušio se na $89, BTC stabilan oko $74.6K uz macroPenalty nepromijenjen na 2.",
-    "lastUpdated":  "2026-11-10T10:00:00Z",
+    "changeSummary":  "Oil spao sa $89 na $85.6 zbog US-Iran diplomacije smanjujuci macroPenalty na 0, BTC dominacija porasla na 60.5% uz LINK/AVAX/SOL Schwab listing kao jedine pozitivne katalizatore u nepromijenjenom VOLATILE rezimu.",
+    "lastUpdated":  "2026-11-10T12:00:00Z",
     "warnings":  {
                      "ACT":  [
 
                              ],
                      "MEME":  [
-                               "Pranje novca kroz NEAR meme tokene (NK veza)"
+
                               ],
                      "ANIME":  [
 
                                ],
                      "XRP":  [
-
+                                 "Binance haker proda 172M XRP - pritisak na cijenu"
                              ],
                      "BNB":  [
-                              "Binance hack memecoin pranje novca (Elon 2028)"
+
                              ],
                      "SUI":  [
 
                              ],
                      "AVAX":  [
-
+                                  "Konsolidacija ispod MA - tehnicki rizik pada -15%"
                               ],
                      "PENGU":  [
 
@@ -40,7 +40,7 @@
 
                                 ],
                      "SOL":  [
-
+                                 "ETF odljevi $7.68M uz S&P slabost"
                              ],
                      "ADA":  [
 
@@ -52,8 +52,8 @@
 
                                ],
                      "ETH":  [
-                              "ETF odljevi $184.5M na 9. studenog",
-                              "Pad 5.78% tjedno"
+                                 "ETF odljevi $184.51M - najgori dan studenog",
+                                 "Foundation prodala 1000 ETH ($2.13M)"
                              ],
                      "LINK":  [
 
@@ -62,22 +62,22 @@
 
                               ],
                      "TRUMP":  [
-
+                                   "ATL $1.12, pad -98% od vrha po izbornom porazu"
                                ],
                      "BTC":  [
-                              "ETF odljevi $201M dnevno",
-                              "Likvidacije $269M"
+                                 "ETF odljevi $201M, kumulativno -$1.48B u studenom",
+                                 "CPI objava danas - rizik visoke volatilnosti"
                              ]
                  },
-    "sp500Ret5d":  -1.8,
-    "fearGreed":  32,
-    "macroPenalty":  2,
+    "sp500Ret5d":  -2.68,
+    "fearGreed":  31,
+    "macroPenalty":  0,
     "catalysts":  {
                       "ACT":  [
 
                               ],
                       "MEME":  [
-
+                                   "Dnevni meme coin volumen na rekordu 2026"
                                ],
                       "ANIME":  [
 
@@ -92,10 +92,10 @@
 
                               ],
                       "AVAX":  [
-                               "NYSE odabrao Avalanche za tokeniziranu berzu"
-                              ],
+                                   "Schwab dodao AVAX - listing za 40M US klijenata"
+                               ],
                       "PENGU":  [
-
+                                    "White House penguin post viral, +750% market cap"
                                 ],
                       "BOME":  [
 
@@ -110,7 +110,7 @@
 
                                  ],
                       "SOL":  [
-
+                                  "Schwab dodao SOL za 40M US klijenata"
                               ],
                       "ADA":  [
 
@@ -122,11 +122,10 @@
 
                                 ],
                       "ETH":  [
-                               "BitMine kupnja 9,587 ETH",
-                               "mump2p protokol udvostručuje brzinu blokova"
+
                               ],
                       "LINK":  [
-
+                                   "Schwab dodao LINK - listing za 40M US klijenata"
                                ],
                       "PUMP":  [
 
@@ -135,37 +134,36 @@
 
                                 ],
                       "BTC":  [
-                               "Coinbase dobio OCC national trust charter",
-                               "CPI objava kljucni katalizator smjera"
+
                               ]
                   },
     "regime":  "VOLATILE",
     "sentimentScore":  {
                            "ACT":  0,
-                           "MEME":  -1,
+                           "MEME":  1,
                            "ANIME":  0,
-                           "XRP":  0,
-                           "BNB":  -1,
+                           "XRP":  -2,
+                           "BNB":  0,
                            "SUI":  0,
                            "AVAX":  2,
-                           "PENGU":  0,
+                           "PENGU":  2,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  0,
+                           "SOL":  -1,
                            "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
                            "ETH":  -1,
-                           "LINK":  0,
+                           "LINK":  2,
                            "PUMP":  0,
-                           "TRUMP":  -1,
+                           "TRUMP":  -3,
                            "BTC":  0
                        },
-    "aiSummary":  "DXY pao na 101.7 uz nade za US-Iran mir smanjujuci geopoliticki pritisak, no CPI objava danas ostaje kljucni katalizator smjera. Bitcoin konsolidira oko $74.6K s F&G 32 (Strah), ETF odljevima $201M i likvidacijama $269M uz oil na $89 nakon naglog pada. S&P500 oporavlja +2.3% danas, no kripto kasni za dionicama uz AVAX kao iznimku (+8%) nakon NYSE partnerstva za tokeniziranu berzu.",
-    "warActive":  true,
-    "btcDom":  59.8,
-    "stableDom":  9.5,
-    "oil":  89.0
+    "aiSummary":  "DXY stabilan oko 101.7 dok US-Iran diplomacija smanjuje geopoliticki pritisak, ali CPI objava danas ostaje kljucni katalizator dnevnog smjera. Bitcoin konsolidira oko $74.6K s F&G 31 (Strah), ETF odljevima $201M i S&P500 tjednim padom -2.68% koji signalizira risk-off raspolozenje. Schwab listing LINK/AVAX/SOL za 40M klijenata i PENGU viral post jedini su pozitivni signali, dok TRUMP coin na ATL $1.12 i XRP prodajni pritisak hakerskih walleta ostaju kljucni downside rizici.",
+    "warActive":  false,
+    "btcDom":  60.5,
+    "stableDom":  11.2,
+    "oil":  85.6
 }
