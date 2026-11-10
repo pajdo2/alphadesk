@@ -1,7 +1,7 @@
 {
     "dxy":  101.70,
-    "changeSummary":  "AVAX dobio dvostruki katalizator (NYSE tokenizacija + Schwab listing) dok nafta pada na $84.4 zbog US-Iran de-eskalacije, ostatak makra ostaje nepromijenjen uz F&G 31 i BTC na $74.6K.",
-    "lastUpdated":  "2026-11-10T16:00:00Z",
+    "changeSummary":  "Fear & Greed ostao stabilan na 32 dok DXY zadrzava 101.70 uoci CPI objave, nafta pada na $82 uz 'oil crashes' naslove, BTC konsolidira oko $74.6K s povecenim ETF odljevima, a AVAX jedina pozitivna iznimka zbog NYSE tokenizacijskog ugovora.",
+    "lastUpdated":  "2026-11-10T10:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -13,7 +13,7 @@
 
                                ],
                      "XRP":  [
-                                 "ETF odljevi $10.42M, prodajni pritisak hakerskih walleta"
+
                              ],
                      "BNB":  [
 
@@ -40,7 +40,7 @@
 
                                 ],
                      "SOL":  [
-                                 "ETF odljevi $7.68M na 9. studenog"
+
                              ],
                      "ADA":  [
 
@@ -52,7 +52,7 @@
 
                                ],
                      "ETH":  [
-                                 "ETF odljevi $184.51M, cijena pada unatoc BitMine kupnji"
+                                 "ETF odljevi $184.5M, cijena pala na $2120"
                              ],
                      "LINK":  [
 
@@ -61,15 +61,14 @@
 
                               ],
                      "TRUMP":  [
-                                   "Na ATL $1.12, nema fundamentalnih katalizatora za rast"
+
                                ],
                      "BTC":  [
-                                 "ETF odljevi $201M, kumulativno $1.48B u studenom",
-                                 "CPI objava danas - kljucni katalizator smjera"
+                                 "ETF odljevi $201M, likvidacije $269M danas"
                              ]
                  },
-    "sp500Ret5d":  -2.4,
-    "fearGreed":  31,
+    "sp500Ret5d":  -1.5,
+    "fearGreed":  32,
     "macroPenalty":  0,
     "catalysts":  {
                       "ACT":  [
@@ -91,8 +90,7 @@
 
                               ],
                       "AVAX":  [
-                                   "NYSE bira Avalanche za settlement tokeniziranih dionica",
-                                   "Charles Schwab listing AVAX za 40M klijenata"
+                                   "NYSE odabrao AVAX za tokeniziranu settlement platformu"
                                ],
                       "PENGU":  [
 
@@ -110,7 +108,7 @@
 
                                  ],
                       "SOL":  [
-                                  "Charles Schwab listing SOL za 40M brokerage klijenata"
+
                               ],
                       "ADA":  [
 
@@ -122,10 +120,10 @@
 
                                 ],
                       "ETH":  [
-                                  "BitMine kupio 9,587 ETH - korporativna akumulacija"
+
                               ],
                       "LINK":  [
-                                   "Charles Schwab listing LINK za 40M klijenata"
+
                                ],
                       "PUMP":  [
 
@@ -134,8 +132,7 @@
 
                                 ],
                       "BTC":  [
-                                  "Coinbase dobio OCC national trust company charter",
-                                  "BlackRock IBIT whale konverzije rekordne - $3.6B"
+                                  "BlackRock IBIT whale konverzije rekordnih $3.6B"
                               ]
                   },
     "regime":  "VOLATILE",
@@ -143,7 +140,7 @@
                            "ACT":  0,
                            "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  -1,
+                           "XRP":  0,
                            "BNB":  0,
                            "SUI":  0,
                            "AVAX":  3,
@@ -152,19 +149,19 @@
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  1,
+                           "SOL":  0,
                            "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
                            "ETH":  -1,
-                           "LINK":  2,
+                           "LINK":  0,
                            "PUMP":  0,
-                           "TRUMP":  -2,
+                           "TRUMP":  0,
                            "BTC":  -1
                        },
-    "aiSummary":  "DXY stabiliziran oko 101.70 uz CPI podatke kao kljucni katalizator dana koji moze pojacati ili ublaziti risk-off raspolozenje, dok nafta pada na $84.4 radi US-Iran de-eskalacije smanjujuci energetski pritisak. Bitcoin konsolidira na $74.6K uz F&G 31 (Strah) i kumulativnim ETF odljevima $1.48B u studenom koji signaliziraju dominantni risk-off sentiment; AVAX se istice kao jedini snazni pozitivni signal dana zahvaljujuci NYSE tokenizacijskom ugovoru i Schwab listingu.",
+    "aiSummary":  "DXY ostaje stabilan oko 101.70 uz iščekivanje CPI podataka koji će odrediti smjer USD i kripto tržišta u kratkom roku. Bitcoin drži razinu od $74.6K uz Fear & Greed indeks na 32 (Strah) i dnevnim ETF odljevima od $201M što signalizira dominantni risk-off sentiment uz povećane likvidacije. AVAX se ističe kao jedini snažni pozitivni signal zbog NYSE tokenizacijskog ugovora koji može privući institucionalni kapital, dok ETH pati od vlastitih ETF odljeva.",
     "warActive":  false,
     "btcDom":  60.3,
-    "stableDom":  11.8,
-    "oil":  84.4
+    "stableDom":  5.8,
+    "oil":  82.0
 }
