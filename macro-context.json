@@ -1,22 +1,22 @@
 {
-    "dxy":  102.1,
-    "changeSummary":  "BTC ostaje na $74.2K bez bitne promjene vs prethodne analize, F&G stagnira na 30 uz nastavak ETF odljeva i risk-off signale iz S&P500.",
-    "lastUpdated":  "2026-11-09T18:00:00Z",
+    "dxy":  101.7,
+    "changeSummary":  "F&G porastao s 30 na 32 uz Iran de-eskalaciju koja je spustila DXY s 102.1 na 101.7, oil srušio se na $89, BTC stabilan oko $74.6K uz macroPenalty nepromijenjen na 2.",
+    "lastUpdated":  "2026-11-10T10:00:00Z",
     "warnings":  {
                      "ACT":  [
 
                              ],
                      "MEME":  [
-                               "Meme coini pojačano padaju u risk-off okruženju"
+                               "Pranje novca kroz NEAR meme tokene (NK veza)"
                               ],
                      "ANIME":  [
 
                                ],
                      "XRP":  [
-                               "SEC kripto broker-dealer pravila upućena Bijeloj kući"
+
                              ],
                      "BNB":  [
-
+                              "Binance hack memecoin pranje novca (Elon 2028)"
                              ],
                      "SUI":  [
 
@@ -52,7 +52,8 @@
 
                                ],
                      "ETH":  [
-                               "ETH pao ispod $2.1K, likvidacije rastu"
+                              "ETF odljevi $184.5M na 9. studenog",
+                              "Pad 5.78% tjedno"
                              ],
                      "LINK":  [
 
@@ -64,12 +65,12 @@
 
                                ],
                      "BTC":  [
-                               "ETF odljevi $1.28B tjedno, najveci u 4 mj.",
-                               "Likvidacije $1.04B, longs pogodeni"
+                              "ETF odljevi $201M dnevno",
+                              "Likvidacije $269M"
                              ]
                  },
-    "sp500Ret5d":  -2.7,
-    "fearGreed":  30,
+    "sp500Ret5d":  -1.8,
+    "fearGreed":  32,
     "macroPenalty":  2,
     "catalysts":  {
                       "ACT":  [
@@ -91,8 +92,8 @@
 
                               ],
                       "AVAX":  [
-
-                               ],
+                               "NYSE odabrao Avalanche za tokeniziranu berzu"
+                              ],
                       "PENGU":  [
 
                                 ],
@@ -109,7 +110,7 @@
 
                                  ],
                       "SOL":  [
-                               "Elysium L2 mainnet launch na Hyperliquid 9.11."
+
                               ],
                       "ADA":  [
 
@@ -121,7 +122,8 @@
 
                                 ],
                       "ETH":  [
-
+                               "BitMine kupnja 9,587 ETH",
+                               "mump2p protokol udvostručuje brzinu blokova"
                               ],
                       "LINK":  [
 
@@ -133,7 +135,8 @@
 
                                 ],
                       "BTC":  [
-                               "Predstoji CPI objava - potencijalni katalizator"
+                               "Coinbase dobio OCC national trust charter",
+                               "CPI objava kljucni katalizator smjera"
                               ]
                   },
     "regime":  "VOLATILE",
@@ -141,28 +144,28 @@
                            "ACT":  0,
                            "MEME":  -1,
                            "ANIME":  0,
-                           "XRP":  -1,
-                           "BNB":  0,
+                           "XRP":  0,
+                           "BNB":  -1,
                            "SUI":  0,
-                           "AVAX":  0,
+                           "AVAX":  2,
                            "PENGU":  0,
                            "BOME":  0,
                            "DOGS":  0,
                            "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  -1,
+                           "SOL":  0,
                            "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
                            "ETH":  -1,
                            "LINK":  0,
                            "PUMP":  0,
-                           "TRUMP":  0,
-                           "BTC":  -1
+                           "TRUMP":  -1,
+                           "BTC":  0
                        },
-    "aiSummary":  "DXY stabiliziran oko 102.1 bez pojacanih pritisaka na kripto, ali BTC pada na $74.2K uz F&G na 30 (Strah), ETF odljeve $1.28B tjedno i likvidacije $1.04B. S&P500 -2.7% tjedno zbog midterm sell-offa u tech dionicama pojacava risk-off sentiment uz aktivni US-Israel-Iran ratni rizik. Kratkorocno dominira strah uz kljucnu podrsku BTC-a na $73.5K i predstojeci CPI kao kljucni katalizator smjera.",
+    "aiSummary":  "DXY pao na 101.7 uz nade za US-Iran mir smanjujuci geopoliticki pritisak, no CPI objava danas ostaje kljucni katalizator smjera. Bitcoin konsolidira oko $74.6K s F&G 32 (Strah), ETF odljevima $201M i likvidacijama $269M uz oil na $89 nakon naglog pada. S&P500 oporavlja +2.3% danas, no kripto kasni za dionicama uz AVAX kao iznimku (+8%) nakon NYSE partnerstva za tokeniziranu berzu.",
     "warActive":  true,
-    "btcDom":  60.2,
-    "stableDom":  8.0,
-    "oil":  97.0
+    "btcDom":  59.8,
+    "stableDom":  9.5,
+    "oil":  89.0
 }
