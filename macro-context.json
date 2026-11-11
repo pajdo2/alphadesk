@@ -1,20 +1,19 @@
 {
-    "dxy":  102.22,
-    "changeSummary":  "DXY je porastao s 101.70 na 102.22 zbog vrućih CPI podataka, Fear & Greed je pao s 32 na 30, BTC dominacija ostala stabilna na 59.7%, a Bitcoin korigirao s $74.6K na ~$73.5K uz nastavljene ETF odljeve.",
-    "lastUpdated":  "2026-11-11T10:00:00Z",
+    "dxy":  102.52,
+    "changeSummary":  "Fear & Greed indeks pao je s 30 na 29, DXY ojačao na 102.52 zbog vrućeg CPI-ja, BTC dominacija porasla na 60.3%, a ETF odljevi nastavljaju se četvrti dan zaredom uz ukupno $1.28B odljeva.",
+    "lastUpdated":  "2026-11-11T12:00:00Z",
     "warnings":  {
                      "ACT":  [
 
                              ],
                      "MEME":  [
-                                 "Memecoin sektor u rizičnom tržišnom okruženju"
+
                               ],
                      "ANIME":  [
 
                                ],
                      "XRP":  [
-                                 "Ex-CTO Schwartz prodao 23M XRP tokena",
-                                 "Tjedni pad -15.4%, rizik pada na $0.77"
+                                 "60-dnevni minimum, negativan momentum nastavlja se"
                              ],
                      "BNB":  [
 
@@ -26,51 +25,51 @@
 
                               ],
                      "PENGU":  [
-                                   "Opći altcoin pritisak uz risk-off sentiment"
+
                                ],
                      "BOME":  [
-                                  "Opći altcoin pritisak uz risk-off sentiment"
+
                               ],
                      "DOGS":  [
-                                  "Opći altcoin pritisak uz risk-off sentiment"
+
                               ],
                      "NOT":  [
-                                 "Opći altcoin pritisak uz risk-off sentiment"
+
                              ],
                      "PEOPLE":  [
 
                                 ],
                      "SOL":  [
-                                 "Vodeći pad medu altcoinima u tjednom pregledu"
+                                 "Kapital bježi iz altcoina, SOL pod pritiskom"
                              ],
                      "ADA":  [
-                                 "Prolongirani downtrend, cijena ~$0.18"
+
                              ],
                      "PNUT":  [
-                                  "Opći altcoin pritisak uz risk-off sentiment"
+
                               ],
                      "AIXBT":  [
-
+                                   "AI sektor slab, risk-off umanjuje AIXBT potražnju"
                                ],
                      "ETH":  [
-                                 "Foundation wallet prodao 4785 ETH (~$10.58M)",
-                                 "ETF odljevi $185M treća uzastopna sesija"
+                                 "Gubici se produbljuju, ETH ispod $2,100 zone"
                              ],
                      "LINK":  [
 
                               ],
                      "PUMP":  [
-                                  "Opći altcoin pritisak uz risk-off sentiment"
+
                               ],
                      "TRUMP":  [
-                                   "Memecoin u rizičnom tržišnom okruženju"
+
                                ],
                      "BTC":  [
-                                 "ETF odljevi $201M treća uzastopna sesija"
+                                 "CPI iznad očekivanja potiče Fed povišenje kamate",
+                                 "ETF odljevi 4. dan zaredom, $1.28B ukupno"
                              ]
                  },
-    "sp500Ret5d":  -2.7,
-    "fearGreed":  30,
+    "sp500Ret5d":  -2.5,
+    "fearGreed":  29,
     "macroPenalty":  0,
     "catalysts":  {
                       "ACT":  [
@@ -92,7 +91,7 @@
 
                               ],
                       "AVAX":  [
-                                   "SEC odobrio opcije na AVAX ETP-ove"
+
                                ],
                       "PENGU":  [
 
@@ -110,10 +109,10 @@
 
                                  ],
                       "SOL":  [
-                                  "SEC odobrio opcije na SOL ETP-ove"
+
                               ],
                       "ADA":  [
-                                  "SEC odobrio opcije na ADA ETP-ove"
+
                               ],
                       "PNUT":  [
 
@@ -122,11 +121,10 @@
 
                                 ],
                       "ETH":  [
-                                  "SEC odobrio opcije na ETH ETP-ove"
+
                               ],
                       "LINK":  [
-                                   "Charles Schwab listao LINK na platformi",
-                                   "SEC odobrio opcije na LINK ETP-ove"
+                                   "SEC odobrio Nasdaq ISE opcije na digitalne ETP-ove"
                                ],
                       "PUMP":  [
 
@@ -135,36 +133,36 @@
 
                                 ],
                       "BTC":  [
-                                  "Retail dip-buying podrška pri $73K-$74K"
+                                  "Tempo ETF prodaje usporava ($95M vs $201M jučer)"
                               ]
                   },
     "regime":  "VOLATILE",
     "sentimentScore":  {
                            "ACT":  0,
-                           "MEME":  -1,
+                           "MEME":  0,
                            "ANIME":  0,
-                           "XRP":  -2,
+                           "XRP":  -1,
                            "BNB":  0,
                            "SUI":  0,
-                           "AVAX":  1,
-                           "PENGU":  -1,
-                           "BOME":  -1,
-                           "DOGS":  -1,
-                           "NOT":  -1,
+                           "AVAX":  0,
+                           "PENGU":  0,
+                           "BOME":  0,
+                           "DOGS":  0,
+                           "NOT":  0,
                            "PEOPLE":  0,
-                           "SOL":  1,
+                           "SOL":  -1,
                            "ADA":  0,
-                           "PNUT":  -1,
-                           "AIXBT":  0,
-                           "ETH":  -2,
-                           "LINK":  2,
-                           "PUMP":  -1,
-                           "TRUMP":  -1,
+                           "PNUT":  0,
+                           "AIXBT":  -1,
+                           "ETH":  -1,
+                           "LINK":  1,
+                           "PUMP":  0,
+                           "TRUMP":  0,
                            "BTC":  -1
                        },
-    "aiSummary":  "DXY je porastao na 102.22 zbog vrućih CPI podataka koji jačaju teze o novim povećanjima Fed kamatnih stopa, pritišćući Bitcoin na ~$73.5K uz Fear & Greed indeks na 30 (Strah). Kontinuirani ETF odljevi od $201M (BTC) i $185M (ETH) potvrđuju dominantni risk-off sentiment institucionalnih ulagača, dok LINK bilježi pozitivan katalizator kroz Schwab listing i SEC odobrenje opcija na digitalne ETP-ove. Kratkoročno se očekuje nastavak volatilnosti dok tržišta probavljaju inflacijske podatke i čekaju jasnoću Fed politike.",
+    "aiSummary":  "DXY je porastao na 102.52 zbog vrućih CPI podataka koji jačaju očekivanja Fed povišenja kamate, pritišćući Bitcoin na ~$73.9K uz Fear & Greed indeks na 29 (Strah). Spot BTC ETF-ovi bilježe četiri uzastopna dana neto odljeva s ukupno $1.28B u prvom tjednu studenog, dok XRP bilježi 60-dnevni minimum, a altcoini gube kapital prema Bitcoinu (dominacija 60.3%). Kratkoročno se očekuje nastavak volatilnosti i risk-off sentimenta dok tržišta probavljaju inflacijske podatke i čekaju jasnoću Fed politike.",
     "warActive":  false,
-    "btcDom":  59.7,
-    "stableDom":  10.0,
-    "oil":  86.67
+    "btcDom":  60.3,
+    "stableDom":  8.5,
+    "oil":  87.28
 }
