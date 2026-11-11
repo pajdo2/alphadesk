@@ -1,19 +1,20 @@
 {
-    "dxy":  101.70,
-    "changeSummary":  "Fear & Greed ostao stabilan na 32 dok DXY zadrzava 101.70 uoci CPI objave, nafta pada na $82 uz 'oil crashes' naslove, BTC konsolidira oko $74.6K s povecenim ETF odljevima, a AVAX jedina pozitivna iznimka zbog NYSE tokenizacijskog ugovora.",
-    "lastUpdated":  "2026-11-10T10:00:00Z",
+    "dxy":  102.22,
+    "changeSummary":  "DXY je porastao s 101.70 na 102.22 zbog vrućih CPI podataka, Fear & Greed je pao s 32 na 30, BTC dominacija ostala stabilna na 59.7%, a Bitcoin korigirao s $74.6K na ~$73.5K uz nastavljene ETF odljeve.",
+    "lastUpdated":  "2026-11-11T10:00:00Z",
     "warnings":  {
                      "ACT":  [
 
                              ],
                      "MEME":  [
-
+                                 "Memecoin sektor u rizičnom tržišnom okruženju"
                               ],
                      "ANIME":  [
 
                                ],
                      "XRP":  [
-
+                                 "Ex-CTO Schwartz prodao 23M XRP tokena",
+                                 "Tjedni pad -15.4%, rizik pada na $0.77"
                              ],
                      "BNB":  [
 
@@ -25,50 +26,51 @@
 
                               ],
                      "PENGU":  [
-
+                                   "Opći altcoin pritisak uz risk-off sentiment"
                                ],
                      "BOME":  [
-
+                                  "Opći altcoin pritisak uz risk-off sentiment"
                               ],
                      "DOGS":  [
-
+                                  "Opći altcoin pritisak uz risk-off sentiment"
                               ],
                      "NOT":  [
-
+                                 "Opći altcoin pritisak uz risk-off sentiment"
                              ],
                      "PEOPLE":  [
 
                                 ],
                      "SOL":  [
-
+                                 "Vodeći pad medu altcoinima u tjednom pregledu"
                              ],
                      "ADA":  [
-
+                                 "Prolongirani downtrend, cijena ~$0.18"
                              ],
                      "PNUT":  [
-
+                                  "Opći altcoin pritisak uz risk-off sentiment"
                               ],
                      "AIXBT":  [
 
                                ],
                      "ETH":  [
-                                 "ETF odljevi $184.5M, cijena pala na $2120"
+                                 "Foundation wallet prodao 4785 ETH (~$10.58M)",
+                                 "ETF odljevi $185M treća uzastopna sesija"
                              ],
                      "LINK":  [
 
                               ],
                      "PUMP":  [
-
+                                  "Opći altcoin pritisak uz risk-off sentiment"
                               ],
                      "TRUMP":  [
-
+                                   "Memecoin u rizičnom tržišnom okruženju"
                                ],
                      "BTC":  [
-                                 "ETF odljevi $201M, likvidacije $269M danas"
+                                 "ETF odljevi $201M treća uzastopna sesija"
                              ]
                  },
-    "sp500Ret5d":  -1.5,
-    "fearGreed":  32,
+    "sp500Ret5d":  -2.7,
+    "fearGreed":  30,
     "macroPenalty":  0,
     "catalysts":  {
                       "ACT":  [
@@ -90,7 +92,7 @@
 
                               ],
                       "AVAX":  [
-                                   "NYSE odabrao AVAX za tokeniziranu settlement platformu"
+                                   "SEC odobrio opcije na AVAX ETP-ove"
                                ],
                       "PENGU":  [
 
@@ -108,10 +110,10 @@
 
                                  ],
                       "SOL":  [
-
+                                  "SEC odobrio opcije na SOL ETP-ove"
                               ],
                       "ADA":  [
-
+                                  "SEC odobrio opcije na ADA ETP-ove"
                               ],
                       "PNUT":  [
 
@@ -120,10 +122,11 @@
 
                                 ],
                       "ETH":  [
-
+                                  "SEC odobrio opcije na ETH ETP-ove"
                               ],
                       "LINK":  [
-
+                                   "Charles Schwab listao LINK na platformi",
+                                   "SEC odobrio opcije na LINK ETP-ove"
                                ],
                       "PUMP":  [
 
@@ -132,36 +135,36 @@
 
                                 ],
                       "BTC":  [
-                                  "BlackRock IBIT whale konverzije rekordnih $3.6B"
+                                  "Retail dip-buying podrška pri $73K-$74K"
                               ]
                   },
     "regime":  "VOLATILE",
     "sentimentScore":  {
                            "ACT":  0,
-                           "MEME":  0,
+                           "MEME":  -1,
                            "ANIME":  0,
-                           "XRP":  0,
+                           "XRP":  -2,
                            "BNB":  0,
                            "SUI":  0,
-                           "AVAX":  3,
-                           "PENGU":  0,
-                           "BOME":  0,
-                           "DOGS":  0,
-                           "NOT":  0,
+                           "AVAX":  1,
+                           "PENGU":  -1,
+                           "BOME":  -1,
+                           "DOGS":  -1,
+                           "NOT":  -1,
                            "PEOPLE":  0,
-                           "SOL":  0,
+                           "SOL":  1,
                            "ADA":  0,
-                           "PNUT":  0,
+                           "PNUT":  -1,
                            "AIXBT":  0,
-                           "ETH":  -1,
-                           "LINK":  0,
-                           "PUMP":  0,
-                           "TRUMP":  0,
+                           "ETH":  -2,
+                           "LINK":  2,
+                           "PUMP":  -1,
+                           "TRUMP":  -1,
                            "BTC":  -1
                        },
-    "aiSummary":  "DXY ostaje stabilan oko 101.70 uz iščekivanje CPI podataka koji će odrediti smjer USD i kripto tržišta u kratkom roku. Bitcoin drži razinu od $74.6K uz Fear & Greed indeks na 32 (Strah) i dnevnim ETF odljevima od $201M što signalizira dominantni risk-off sentiment uz povećane likvidacije. AVAX se ističe kao jedini snažni pozitivni signal zbog NYSE tokenizacijskog ugovora koji može privući institucionalni kapital, dok ETH pati od vlastitih ETF odljeva.",
+    "aiSummary":  "DXY je porastao na 102.22 zbog vrućih CPI podataka koji jačaju teze o novim povećanjima Fed kamatnih stopa, pritišćući Bitcoin na ~$73.5K uz Fear & Greed indeks na 30 (Strah). Kontinuirani ETF odljevi od $201M (BTC) i $185M (ETH) potvrđuju dominantni risk-off sentiment institucionalnih ulagača, dok LINK bilježi pozitivan katalizator kroz Schwab listing i SEC odobrenje opcija na digitalne ETP-ove. Kratkoročno se očekuje nastavak volatilnosti dok tržišta probavljaju inflacijske podatke i čekaju jasnoću Fed politike.",
     "warActive":  false,
-    "btcDom":  60.3,
-    "stableDom":  5.8,
-    "oil":  82.0
+    "btcDom":  59.7,
+    "stableDom":  10.0,
+    "oil":  86.67
 }
