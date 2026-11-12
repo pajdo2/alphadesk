@@ -1,169 +1,130 @@
 {
-    "dxy":  102.85,
-    "changeSummary":  "Makro se blago pogoršao uz rast DXY-a s 102.52 na 102.85 i pad F&G-a s 29 na 28, dok Schwab listing SOL, AVAX i LINK donosi selektivne pozitivne katalizatore u inače risk-off tržištu.",
-    "lastUpdated":  "2026-11-12T12:00:00Z",
+    "dxy":  102.97,
+    "changeSummary":  "DXY je neznatno narastao na 102.97, BTC drži $73K uz nepromijenjenu razinu straha (F&G 28), dok Deutsche Bank otvaranje kriptoservisa i mirovni pregovori Iran/Ukraina donose minimalne pozitivne signale uz nastavljeni bearish pritisak.",
+    "lastUpdated":  "2026-11-12T16:00:00Z",
     "warnings":  {
                      "ACT":  [
-
                              ],
                      "MEME":  [
-
                               ],
                      "ANIME":  [
-
                                ],
                      "XRP":  [
-                         "60-dnevni minimum, -17% u 7 dana",
-                         "Schwab iskljucio XRP iz direktnog tradinga"
                              ],
                      "BNB":  [
-
                              ],
                      "SUI":  [
-
                              ],
                      "AVAX":  [
-
                               ],
                      "PENGU":  [
-
                                ],
                      "BOME":  [
-
                               ],
                      "DOGS":  [
-
                               ],
                      "NOT":  [
-
                              ],
                      "PEOPLE":  [
-
                                 ],
                      "SOL":  [
-
+                             "Altcoini padaju brže od BTC-a, SOL pod pritiskom"
                              ],
                      "ADA":  [
-
                              ],
                      "PNUT":  [
-
                               ],
                      "AIXBT":  [
-
                                ],
                      "ETH":  [
-                         "Otpor na $2,186 prijeti daljnjem oporavku"
+                             "ETH drži se ispod donje Bollinger trake"
                              ],
                      "LINK":  [
-
                               ],
                      "PUMP":  [
-
                               ],
                      "TRUMP":  [
-
                                ],
                      "BTC":  [
-                         "4 uzastopna dana ETF odljeva, ukupno $1.4B+",
-                         "Vrući CPI podigao Fed hawkish očekivanja"
+                             "4 uzastopna dana neto odljeva BTC spot ETF-ova"
                              ]
                  },
     "sp500Ret5d":  1.3,
     "fearGreed":  28,
-    "macroPenalty":  0,
+    "macroPenalty":  2,
     "catalysts":  {
                       "ACT":  [
-
                               ],
                       "MEME":  [
-
                                ],
                       "ANIME":  [
-
                                 ],
                       "XRP":  [
-
                               ],
                       "BNB":  [
-
                               ],
                       "SUI":  [
-
                               ],
                       "AVAX":  [
-                          "Schwab dodao AVAX za direktno trading"
                                ],
                       "PENGU":  [
-
                                 ],
                       "BOME":  [
-
                                ],
                       "DOGS":  [
-
                                ],
                       "NOT":  [
-
                               ],
                       "PEOPLE":  [
-
                                  ],
                       "SOL":  [
-                          "Schwab dodao SOL za direktno trading"
                               ],
                       "ADA":  [
-
                               ],
                       "PNUT":  [
-
                                ],
                       "AIXBT":  [
-
                                 ],
                       "ETH":  [
-                          "Schwab platforma nudi ETH, oporavak +2% od $2,000"
+                              "Deutsche Bank podrška ETH custody i transferima u EU"
                               ],
                       "LINK":  [
-                          "Schwab dodao LINK za direktno trading"
                                ],
                       "PUMP":  [
-
                                ],
                       "TRUMP":  [
-
                                 ],
                       "BTC":  [
-                          "Drži ključnu potporu iznad $72K unatoč ETF odljevima"
+                              "Deutsche Bank otvara BTC kriptoservise za inst. klijente"
                               ]
                   },
-    "regime":  "VOLATILE",
+    "regime":  "BEAR",
     "sentimentScore":  {
-                           "ACT":  0,
-                           "MEME":  0,
-                           "ANIME":  0,
-                           "XRP":  -2,
-                           "BNB":  0,
-                           "SUI":  0,
-                           "AVAX":  1,
-                           "PENGU":  0,
-                           "BOME":  0,
-                           "DOGS":  0,
-                           "NOT":  0,
-                           "PEOPLE":  0,
-                           "SOL":  1,
-                           "ADA":  0,
-                           "PNUT":  0,
-                           "AIXBT":  0,
-                           "ETH":  1,
-                           "LINK":  2,
-                           "PUMP":  0,
-                           "TRUMP":  0,
+                           "ACT":  -1,
+                           "MEME":  -1,
+                           "ANIME":  -1,
+                           "XRP":  -1,
+                           "BNB":  -1,
+                           "SUI":  -1,
+                           "AVAX":  -1,
+                           "PENGU":  -1,
+                           "BOME":  -1,
+                           "DOGS":  -1,
+                           "NOT":  -1,
+                           "PEOPLE":  -1,
+                           "SOL":  -1,
+                           "ADA":  -1,
+                           "PNUT":  -1,
+                           "AIXBT":  -1,
+                           "ETH":  -1,
+                           "LINK":  0,
+                           "PUMP":  -1,
+                           "TRUMP":  -1,
                            "BTC":  -1
                        },
-    "aiSummary":  "DXY je porastao na 102.85 nakon vrućih inflacijskih podataka u SAD-u i hawkish komentara Feda, pritišćući Bitcoin na ~$73.3K uz Fear & Greed indeks na 28 (Strah). Spot BTC ETF-ovi bilježe četiri uzastopna dana neto odljeva dok Bitcoin dominacija raste na 60.98% jer altcoini padaju brže od BTC-a. Kratkoročno se očekuje nastavak volatilnosti uz ključnu potporu na $72K, dok Schwab listing SOL, AVAX i LINK donosi selektivne pozitivne katalizatore.",
-    "warActive":  false,
+    "aiSummary":  "DXY blago raste na 102.97 dok BTC trguje ispod $73.4K, ispod 50-tjednog SMA od $75.2K, uz Fear & Greed koji ostaje u zoni straha na 28 i BTC ETF-ove koji bilježe četvrti uzastopni dan neto odljeva. Stablecoin supply pao je za $14.2B u 30 dana, Deutsche Bank otvorio kriptoservise za institucije u Europi, a mirovni pregovori za Iran i Ukrajinu pritišću naftu prema dolje. Kratkoročno se očekuje nastavak bearish pritiska uz ključnu potporu na $72K dok BTC dominacija na 60.98% signalizira daljnji altcoin pad.",
+    "warActive":  true,
     "btcDom":  60.98,
-    "stableDom":  11.8,
+    "stableDom":  12.1,
     "oil":  86.75
 }
