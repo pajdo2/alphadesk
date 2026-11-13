@@ -1,147 +1,168 @@
 {
     "dxy":  103.17,
-    "changeSummary":  "BTC se srušio ispod $70K uz $1.3B likvidacija i Fear & Greed koji pao na 20, dok XRP bilježi iznimnih +14% naspram tržišnog pada.",
-    "lastUpdated":  "2026-11-13T12:00:00Z",
+    "changeSummary":  "BTC dominacija skočila s 56.6% na 61% dok BTC nastavlja pad ispod $70K uz povećane likvidacije od $1.41B, a ostatak makro signala ostaje nepromijenjen.",
+    "lastUpdated":  "2026-11-13T16:00:00Z",
     "warnings":  {
                      "ACT":  [
-                             "Pad tržišta udara jače manje AI tokene"
+                             "Bearish tržišni uvjeti, visok rizik pada"
                              ],
                      "MEME":  [
-                              "Meme tokeni padaju jače u ekstremnom strahu"
+                              "Memecoini pod teškim pritiskom u bear marketu"
                               ],
                      "ANIME":  [
-                               "Meme token bez potpore, nastavak pada"
+                               "Niski volumeni, visok rizik u ekstremnom strahu"
                                ],
                      "XRP":  [
+
                              ],
                      "BNB":  [
-                             "Prati opći tržišni pad"
+                             "BNB -6% uz globalni crypto selloff"
                              ],
                      "SUI":  [
-                             "Manji cap, pada jače od BTC-a"
+                             "SUI pada uz ostatak tržišta, likvidacije rastu"
                              ],
                      "AVAX":  [
-                              "Prati bearish sentiment"
+                              "AVAX bearish, nema katalizatora za oporavak"
                               ],
                      "PENGU":  [
-                               "Meme NFT token, visok rizik u strahu"
+                               "Memecoin visoke volatilnosti u bear uvjetima"
                                ],
                      "BOME":  [
-                              "Meme token bez potpore u padu"
+                              "BOME izložen jakim prodajnim pritiscima"
                               ],
                      "DOGS":  [
-                              "TON meme token, pada jače od tržišta"
+                              "DOGS bez podrške u ekstremnom strahu"
                               ],
                      "NOT":  [
-                             "TON meme token, pada jače od tržišta"
+                             "NOT pada uz Telegram eko-sustav u bear fazi"
                              ],
                      "PEOPLE":  [
-                                "Spekulativni token, visok rizik u strahu"
+                                "PEOPLE bez katalizatora, rizik daljnjeg pada"
                                 ],
                      "SOL":  [
-                             "Ispod $80, visoke likvidacije u sektoru"
+                             "SOL ispod $80, rizik daljnjeg pada"
                              ],
                      "ADA":  [
-                             "Prati opći tržišni pad"
+                             "ADA u bear trendu, nema pozitivnih vijesti"
                              ],
                      "PNUT":  [
-                              "Meme token, pada jače u ekstremnom strahu"
+                              "PNUT visoki rizik u ekstremnom strahu"
                               ],
                      "AIXBT":  [
-                               "AI tokeni prate generalni bearish trend"
+                               "AI tokeni pod pritiskom zbog Nvidia CEO odlaska"
                                ],
                      "ETH":  [
-                             "Ispod $2000, ETH likvidacije i odljevi"
+                             "ETH ispod $2000, Ethereum Foundation prodaje ETH"
                              ],
                      "LINK":  [
-                              "Prati bearish sentiment tržišta"
+                              "LINK bearish uz opći tržišni pad"
                               ],
                      "PUMP":  [
-                              "Spekulativni token, pada jače u strahu"
+                              "PUMP izložen visokim likvidacijama"
                               ],
                      "TRUMP":  [
-                               "Meme coin prati tržišni pad"
+                               "TRUMP memecoin pada s ostatkom tržišta"
                                ],
                      "BTC":  [
-                             "Ispod $70K, $677M likvidirano",
+                             "Likvidacije $1.41B, BTC ispod $70K",
                              "ETF odljevi peti uzastopni dan"
                              ]
                  },
-    "sp500Ret5d":  1.8,
+    "sp500Ret5d":  1.2,
     "fearGreed":  20,
     "macroPenalty":  0,
     "catalysts":  {
                       "ACT":  [
+
                               ],
                       "MEME":  [
+
                                ],
                       "ANIME":  [
+
                                 ],
                       "XRP":  [
-                              "XRP +14% dok tržište pada, moguće pravne vijesti"
+                              "XRPL ažuriranje 3. prosinca - fix ledger closure"
                               ],
                       "BNB":  [
+
                               ],
                       "SUI":  [
+
                               ],
                       "AVAX":  [
+
                                ],
                       "PENGU":  [
+
                                 ],
                       "BOME":  [
+
                                ],
                       "DOGS":  [
+
                                ],
                       "NOT":  [
+
                               ],
                       "PEOPLE":  [
+
                                  ],
                       "SOL":  [
+
                               ],
                       "ADA":  [
+
                               ],
                       "PNUT":  [
+
                                ],
                       "AIXBT":  [
+
                                 ],
                       "ETH":  [
+                              "Quantum otpornost roadmap pqai27 planiran za 2027."
                               ],
                       "LINK":  [
+
                                ],
                       "PUMP":  [
+
                                ],
                       "TRUMP":  [
+
                                 ],
                       "BTC":  [
+
                               ]
                   },
     "regime":  "BEAR",
     "sentimentScore":  {
-                           "ACT":  -2,
+                           "ACT":  -1,
                            "MEME":  -2,
-                           "ANIME":  -2,
-                           "XRP":  2,
+                           "ANIME":  -1,
+                           "XRP":  0,
                            "BNB":  -1,
-                           "SUI":  -2,
+                           "SUI":  -1,
                            "AVAX":  -1,
-                           "PENGU":  -2,
+                           "PENGU":  -1,
                            "BOME":  -2,
-                           "DOGS":  -2,
-                           "NOT":  -2,
-                           "PEOPLE":  -2,
-                           "SOL":  -2,
+                           "DOGS":  -1,
+                           "NOT":  -1,
+                           "PEOPLE":  -1,
+                           "SOL":  -1,
                            "ADA":  -1,
                            "PNUT":  -2,
                            "AIXBT":  -2,
                            "ETH":  -2,
                            "LINK":  -1,
-                           "PUMP":  -2,
-                           "TRUMP":  -2,
+                           "PUMP":  -1,
+                           "TRUMP":  -1,
                            "BTC":  -2
                        },
-    "aiSummary":  "DXY blago raste na 103.17 dok BTC se ruši ispod $70K uz likvidacije od $1.3B i Fear & Greed koji tone na 20 (ekstremni strah), najniže u četiri mjeseca. ETF odljevi nastavljaju peti uzastopni dan, stablecoin supply se kontrahirao za $14.2B, a jedini pozitivan signal dolazi od XRP-a koji raste +14% uz moguće pravne vijesti dok ostatak tržišta tone. Kratkoročno se očekuje nastavak bearish pritiska uz ključnu potporu na $67-68K dok BTC dominacija pada na 56.6%.",
+    "aiSummary":  "DXY ostaje stabilan na 103.17 dok BTC nastavlja pad ispod $70K na $68.7K uz masovne likvidacije od $1.41B i Fear & Greed koji tone na 20 (ekstremni strah). ETH probija ispod $2.000 s Ethereum Foundation koja prodaje ETH, a BTC dominacija snažno raste na 61% dok altcoini gube tržišni udjel. Kratkoročno se očekuje nastavak bearish pritiska uz ključnu potporu na $66-67K bez jasnih katalizatora za oporavak.",
     "warActive":  false,
-    "btcDom":  56.6,
-    "stableDom":  6.4,
-    "oil":  88.26
+    "btcDom":  61.0,
+    "stableDom":  7.5,
+    "oil":  88.39
 }
