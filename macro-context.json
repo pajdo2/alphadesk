@@ -1,168 +1,131 @@
 {
     "dxy":  103.17,
-    "changeSummary":  "BTC dominacija skočila s 56.6% na 61% dok BTC nastavlja pad ispod $70K uz povećane likvidacije od $1.41B, a ostatak makro signala ostaje nepromijenjen.",
-    "lastUpdated":  "2026-11-13T16:00:00Z",
+    "changeSummary":  "BTC ostaje u silaznom kanalu ispod $70K uz novi val likvidacija od $1.6B+ koji guraju cijenu prema 200-tjednom MA, dok DXY i Fear & Greed ostaju nepromijenjeni — makro slika se nije popravila od prethodne analize.",
+    "lastUpdated":  "2026-11-13T13:30:00Z",
     "warnings":  {
                      "ACT":  [
-                             "Bearish tržišni uvjeti, visok rizik pada"
                              ],
                      "MEME":  [
-                              "Memecoini pod teškim pritiskom u bear marketu"
                               ],
                      "ANIME":  [
-                               "Niski volumeni, visok rizik u ekstremnom strahu"
                                ],
                      "XRP":  [
-
                              ],
                      "BNB":  [
-                             "BNB -6% uz globalni crypto selloff"
                              ],
                      "SUI":  [
-                             "SUI pada uz ostatak tržišta, likvidacije rastu"
                              ],
                      "AVAX":  [
-                              "AVAX bearish, nema katalizatora za oporavak"
                               ],
                      "PENGU":  [
-                               "Memecoin visoke volatilnosti u bear uvjetima"
                                ],
                      "BOME":  [
-                              "BOME izložen jakim prodajnim pritiscima"
                               ],
                      "DOGS":  [
-                              "DOGS bez podrške u ekstremnom strahu"
                               ],
                      "NOT":  [
-                             "NOT pada uz Telegram eko-sustav u bear fazi"
+                             "TON ekosustav pod pritiskom pri FG=20"
                              ],
                      "PEOPLE":  [
-                                "PEOPLE bez katalizatora, rizik daljnjeg pada"
                                 ],
                      "SOL":  [
-                             "SOL ispod $80, rizik daljnjeg pada"
                              ],
                      "ADA":  [
-                             "ADA u bear trendu, nema pozitivnih vijesti"
                              ],
                      "PNUT":  [
-                              "PNUT visoki rizik u ekstremnom strahu"
                               ],
                      "AIXBT":  [
-                               "AI tokeni pod pritiskom zbog Nvidia CEO odlaska"
+                               "AI tokeni pod pritiskom - Huang napustio Nvidiu"
                                ],
                      "ETH":  [
-                             "ETH ispod $2000, Ethereum Foundation prodaje ETH"
+                             "Staking exit queue raste, cijena ispod $2.000"
                              ],
                      "LINK":  [
-                              "LINK bearish uz opći tržišni pad"
                               ],
                      "PUMP":  [
-                              "PUMP izložen visokim likvidacijama"
                               ],
                      "TRUMP":  [
-                               "TRUMP memecoin pada s ostatkom tržišta"
                                ],
                      "BTC":  [
-                             "Likvidacije $1.41B, BTC ispod $70K",
-                             "ETF odljevi peti uzastopni dan"
+                             "Likvidacije $1.6B+, ekstremni strah, pad ispod $70K"
                              ]
                  },
-    "sp500Ret5d":  1.2,
+    "sp500Ret5d":  3.3,
     "fearGreed":  20,
     "macroPenalty":  0,
     "catalysts":  {
                       "ACT":  [
-
                               ],
                       "MEME":  [
-
                                ],
                       "ANIME":  [
-
                                 ],
                       "XRP":  [
-                              "XRPL ažuriranje 3. prosinca - fix ledger closure"
                               ],
                       "BNB":  [
-
                               ],
                       "SUI":  [
-
                               ],
                       "AVAX":  [
-
                                ],
                       "PENGU":  [
-
                                 ],
                       "BOME":  [
-
                                ],
                       "DOGS":  [
-
                                ],
                       "NOT":  [
-
                               ],
                       "PEOPLE":  [
-
                                  ],
                       "SOL":  [
-
+                              "Relativna otpornost vs BTC - manji pad od prosjeka"
                               ],
                       "ADA":  [
-
                               ],
                       "PNUT":  [
-
                                ],
                       "AIXBT":  [
-
                                 ],
                       "ETH":  [
-                              "Quantum otpornost roadmap pqai27 planiran za 2027."
                               ],
                       "LINK":  [
-
                                ],
                       "PUMP":  [
-
                                ],
                       "TRUMP":  [
-
                                 ],
                       "BTC":  [
-
+                              "200-tjedni MA podrška ~$68K - potencijalni bounce"
                               ]
                   },
     "regime":  "BEAR",
     "sentimentScore":  {
-                           "ACT":  -1,
+                           "ACT":  -2,
                            "MEME":  -2,
-                           "ANIME":  -1,
-                           "XRP":  0,
+                           "ANIME":  -2,
+                           "XRP":  -1,
                            "BNB":  -1,
                            "SUI":  -1,
                            "AVAX":  -1,
-                           "PENGU":  -1,
+                           "PENGU":  -2,
                            "BOME":  -2,
-                           "DOGS":  -1,
-                           "NOT":  -1,
-                           "PEOPLE":  -1,
+                           "DOGS":  -2,
+                           "NOT":  -2,
+                           "PEOPLE":  -2,
                            "SOL":  -1,
                            "ADA":  -1,
                            "PNUT":  -2,
                            "AIXBT":  -2,
                            "ETH":  -2,
                            "LINK":  -1,
-                           "PUMP":  -1,
+                           "PUMP":  -2,
                            "TRUMP":  -1,
-                           "BTC":  -2
+                           "BTC":  -1
                        },
-    "aiSummary":  "DXY ostaje stabilan na 103.17 dok BTC nastavlja pad ispod $70K na $68.7K uz masovne likvidacije od $1.41B i Fear & Greed koji tone na 20 (ekstremni strah). ETH probija ispod $2.000 s Ethereum Foundation koja prodaje ETH, a BTC dominacija snažno raste na 61% dok altcoini gube tržišni udjel. Kratkoročno se očekuje nastavak bearish pritiska uz ključnu potporu na $66-67K bez jasnih katalizatora za oporavak.",
+    "aiSummary":  "DXY stagnira na 103.17 dok BTC ruši $70K razinu i pada na $68.7K uz likvidacije od $1.6B+ i Fear & Greed koji ostaje na ekstremnom strahu (20) — najniža razina od srpnja. ETH klizi ispod $2.000 s rastućim redom za izlaz iz stakinga, a AI tokeni pate zbog iznenadne ostavke Jensen Huanga iz Nvidie uz istovremeno vruću inflaciju i rast prinosa na obveznice. Kratkoročno se očekuje nastavak bearish pritiska uz ključnu potporu na 200-tjednom MA (~$68K) bez jasnih katalizatora za oporavak, uz jedini pozitivan signal S&P 500 tjednog oporavka od +3.3%.",
     "warActive":  false,
-    "btcDom":  61.0,
-    "stableDom":  7.5,
-    "oil":  88.39
+    "btcDom":  60.0,
+    "stableDom":  6.8,
+    "oil":  88.4
 }
