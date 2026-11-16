@@ -1,7 +1,7 @@
 {
-    "dxy":  103.37,
-    "changeSummary":  "BTC dominancija pala s 60.66% na 59.3% uz nepromijenjeni Fear & Greed od 10, dok DXY ostaje stabilan na 103.37, a macroPenalty ispravljen na 0 (donja granica raspona).",
-    "lastUpdated":  "2026-11-16T18:00:00Z",
+    "dxy":  103.45,
+    "changeSummary":  "Makro uvjeti ostaju gotovo identični (DXY 103.45, F&G 10, oil $88.10), no macroPenalty raste na +1 zbog obnovljenih bliskoistočnih sukoba koji aktiviraju ratni rizik.",
+    "lastUpdated":  "2026-11-16T20:00:00Z",
     "warnings":  {
                      "ACT":  [
 
@@ -13,7 +13,7 @@
 
                                ],
                      "XRP":  [
-                                 "XRP na 2-godišnjem minimumu - regulatorni pritisak"
+                         "Proboj ispod $1.00 potpore, dvogodiški min."
                              ],
                      "BNB":  [
 
@@ -40,7 +40,7 @@
 
                                 ],
                      "SOL":  [
-                                 "SOL proširuje gubitke u bearish tržišnom okruženju"
+                         "ETF odljevi $32.1M, pad -7% dnevno"
                              ],
                      "ADA":  [
 
@@ -52,10 +52,10 @@
 
                                ],
                      "ETH":  [
-                                 "ETH pao ispod $1.7K; stablecoin supply pao za $17B"
+                         "ETF odljevi $398.9M neto tjedni"
                              ],
                      "LINK":  [
-
+                         "ETF odljevi $705K, pad -1.1%"
                               ],
                      "PUMP":  [
 
@@ -64,12 +64,12 @@
 
                                ],
                      "BTC":  [
-                                 "Fed podizanje kamata prijeti; $2B+ likvidacija vikend"
+                         "ETF odljevi ~$1B studenom, Fed podizanje kamata"
                              ]
                  },
     "sp500Ret5d":  2.5,
     "fearGreed":  10,
-    "macroPenalty":  0,
+    "macroPenalty":  1,
     "catalysts":  {
                       "ACT":  [
 
@@ -90,7 +90,7 @@
 
                               ],
                       "AVAX":  [
-
+                          "Jedini altcoin ETF s pozitivnim prilivom $227K"
                                ],
                       "PENGU":  [
 
@@ -120,7 +120,8 @@
 
                                 ],
                       "ETH":  [
-                                  "Vitalik predlaže EIP-8037 reformu gas troškova"
+                          "Vitalik podržava EIP-8288 leanPCS",
+                          "Toss wallet za 30M korisnika na ETH"
                               ],
                       "LINK":  [
 
@@ -132,7 +133,7 @@
 
                                 ],
                       "BTC":  [
-                                  "BTC odbija $62K podršku, vraća se prema $65K"
+
                               ]
                   },
     "regime":  "BEAR",
@@ -153,15 +154,15 @@
                            "ADA":  0,
                            "PNUT":  0,
                            "AIXBT":  0,
-                           "ETH":  1,
-                           "LINK":  0,
+                           "ETH":  0,
+                           "LINK":  -1,
                            "PUMP":  0,
                            "TRUMP":  0,
                            "BTC":  -1
                        },
-    "aiSummary":  "DXY stabilan na 103.37 dok Fear & Greed ostaje u ekstremnom strahu (10) drugi dan zaredom, s BTC-om koji se oporavlja od $61.97K vikend minimuma i konsolidira oko $64.8K uz rekordan udio dugih likvidacija. Stablecoin supply pao za $17B signalizira slab institucionalni apetit, a Fed podizanje kamata ostaje ključni rizik koji može gurnuti BTC prema $60K bez jasnog katalizatora oporavka.",
-    "warActive":  false,
-    "btcDom":  59.3,
-    "stableDom":  8.0,
-    "oil":  88.0
+    "aiSummary":  "DXY stabilan oko 103.45 uz pojačane Fed hawkish signale i mogućim podizanjem kamata u prosincu, dok Fear & Greed ostaje na 10 (ekstremni strah) a BTC konsolidira oko $65K usred ~$1B ETF odljeva. XRP je probio ispod $1.00 na dvogodiški minimum (-14% tjedno), dok jedino AVAX bilježi pozitivne ETF priljeve, a Vitalik EIP-8288 i Toss wallet (30M korisnika) donose rijetke kataliste. Geopolitički rizik Bliskog istoka i Fed tightening ostaju dominantni makro pritisci koji mogu gurnuti BTC prema $60K.",
+    "warActive":  true,
+    "btcDom":  60.0,
+    "stableDom":  13.3,
+    "oil":  88.1
 }
