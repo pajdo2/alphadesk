@@ -1,131 +1,83 @@
 {
-    "dxy":  103.17,
-    "changeSummary":  "BTC ostaje u silaznom kanalu ispod $70K uz novi val likvidacija od $1.6B+ koji guraju cijenu prema 200-tjednom MA, dok DXY i Fear & Greed ostaju nepromijenjeni — makro slika se nije popravila od prethodne analize.",
-    "lastUpdated":  "2026-11-13T13:30:00Z",
+    "dxy":  103.37,
+    "changeSummary":  "Fear & Greed indeks pao je s 20 na 10 (ekstremni strah), BTC dominacija blago porasla na 60.66% dok je DXY minimalno porastao na 103.37, a masovne likvidacije od $2B+ gurnule su BTC na $62K vikend minimum s kratkim odbitkom prema $65K.",
+    "lastUpdated":  "2026-11-16T12:00:00Z",
     "warnings":  {
-                     "ACT":  [
-                             ],
-                     "MEME":  [
-                              ],
-                     "ANIME":  [
-                               ],
-                     "XRP":  [
-                             ],
-                     "BNB":  [
-                             ],
-                     "SUI":  [
-                             ],
-                     "AVAX":  [
-                              ],
-                     "PENGU":  [
-                               ],
-                     "BOME":  [
-                              ],
-                     "DOGS":  [
-                              ],
-                     "NOT":  [
-                             "TON ekosustav pod pritiskom pri FG=20"
-                             ],
-                     "PEOPLE":  [
-                                ],
-                     "SOL":  [
-                             ],
-                     "ADA":  [
-                             ],
-                     "PNUT":  [
-                              ],
-                     "AIXBT":  [
-                               "AI tokeni pod pritiskom - Huang napustio Nvidiu"
-                               ],
-                     "ETH":  [
-                             "Staking exit queue raste, cijena ispod $2.000"
-                             ],
-                     "LINK":  [
-                              ],
-                     "PUMP":  [
-                              ],
-                     "TRUMP":  [
-                               ],
-                     "BTC":  [
-                             "Likvidacije $1.6B+, ekstremni strah, pad ispod $70K"
-                             ]
+                     "ACT":  ["Bearish tržište, nema volumena ni katalizatora"],
+                     "MEME":  ["Meme tokeni pate u ekstremnom strahu (FG=10)"],
+                     "ANIME":  ["AI/meme token bez katalizatora u bear marketu"],
+                     "XRP":  ["2-godišnji minimum, futures leverage naglo pao", "Rizik daljnjeg pada ispod $0.90"],
+                     "BNB":  ["Exchange token pati uz opći bearish sentiment"],
+                     "SUI":  [],
+                     "AVAX":  ["Bearish tržišno okruženje, rizik daljnjih padova"],
+                     "PENGU":  ["NFT/meme token bez potpore u bear marketu"],
+                     "BOME":  ["Meme token u ekstremnom strahu bez katalizatora"],
+                     "DOGS":  ["Bez volumena i katalizatora, bear market pritisak"],
+                     "NOT":  ["TON ekosustav pati uz opći kripto bear market"],
+                     "PEOPLE":  ["Niski volumen, bez katalizatora u bear marketu"],
+                     "SOL":  ["Pad od ATH, bearish sentiment uz opće tržišno okruženje"],
+                     "ADA":  ["Bez katalizatora, bearish tržišno okruženje"],
+                     "PNUT":  ["Meme/politički token volatilan u bear marketu"],
+                     "AIXBT":  ["AI token bez kataliz., Nvidia pritisak i dalje"],
+                     "ETH":  ["Ispod $2K, exit queue iz stakinga raste", "Rizik pada prema $1.600-$1.700 zoni"],
+                     "LINK":  ["Bearish sentiment, nema jakih katalizatora"],
+                     "PUMP":  ["Visok rizik u bear marketu, nema volumena"],
+                     "TRUMP":  ["Politički meme bez katalizatora, bear pritisak"],
+                     "BTC":  ["Ekstremni strah (FG=10), likvidacije $2B+", "Ključna podrška $62K-$63K zona"]
                  },
-    "sp500Ret5d":  3.3,
-    "fearGreed":  20,
+    "sp500Ret5d":  2.5,
+    "fearGreed":  10,
     "macroPenalty":  0,
     "catalysts":  {
-                      "ACT":  [
-                              ],
-                      "MEME":  [
-                               ],
-                      "ANIME":  [
-                                ],
-                      "XRP":  [
-                              ],
-                      "BNB":  [
-                              ],
-                      "SUI":  [
-                              ],
-                      "AVAX":  [
-                               ],
-                      "PENGU":  [
-                                ],
-                      "BOME":  [
-                               ],
-                      "DOGS":  [
-                               ],
-                      "NOT":  [
-                              ],
-                      "PEOPLE":  [
-                                 ],
-                      "SOL":  [
-                              "Relativna otpornost vs BTC - manji pad od prosjeka"
-                              ],
-                      "ADA":  [
-                              ],
-                      "PNUT":  [
-                               ],
-                      "AIXBT":  [
-                                ],
-                      "ETH":  [
-                              ],
-                      "LINK":  [
-                               ],
-                      "PUMP":  [
-                               ],
-                      "TRUMP":  [
-                                ],
-                      "BTC":  [
-                              "200-tjedni MA podrška ~$68K - potencijalni bounce"
-                              ]
+                      "ACT":  [],
+                      "MEME":  [],
+                      "ANIME":  [],
+                      "XRP":  [],
+                      "BNB":  [],
+                      "SUI":  [],
+                      "AVAX":  [],
+                      "PENGU":  [],
+                      "BOME":  [],
+                      "DOGS":  [],
+                      "NOT":  [],
+                      "PEOPLE":  [],
+                      "SOL":  [],
+                      "ADA":  [],
+                      "PNUT":  [],
+                      "AIXBT":  [],
+                      "ETH":  [],
+                      "LINK":  [],
+                      "PUMP":  [],
+                      "TRUMP":  [],
+                      "BTC":  ["S&P 500 tjedni rast +2.5% signal risk-on", "Oporavak s $62K vikend dna prema $65K"]
                   },
     "regime":  "BEAR",
     "sentimentScore":  {
-                           "ACT":  -2,
-                           "MEME":  -2,
-                           "ANIME":  -2,
-                           "XRP":  -1,
+                           "ACT":  -1,
+                           "MEME":  -1,
+                           "ANIME":  -1,
+                           "XRP":  -2,
                            "BNB":  -1,
-                           "SUI":  -1,
+                           "SUI":  0,
                            "AVAX":  -1,
-                           "PENGU":  -2,
-                           "BOME":  -2,
-                           "DOGS":  -2,
-                           "NOT":  -2,
-                           "PEOPLE":  -2,
+                           "PENGU":  -1,
+                           "BOME":  -1,
+                           "DOGS":  -1,
+                           "NOT":  -1,
+                           "PEOPLE":  -1,
                            "SOL":  -1,
                            "ADA":  -1,
-                           "PNUT":  -2,
-                           "AIXBT":  -2,
-                           "ETH":  -2,
+                           "PNUT":  -1,
+                           "AIXBT":  -1,
+                           "ETH":  -1,
                            "LINK":  -1,
-                           "PUMP":  -2,
+                           "PUMP":  -1,
                            "TRUMP":  -1,
                            "BTC":  -1
                        },
-    "aiSummary":  "DXY stagnira na 103.17 dok BTC ruši $70K razinu i pada na $68.7K uz likvidacije od $1.6B+ i Fear & Greed koji ostaje na ekstremnom strahu (20) — najniža razina od srpnja. ETH klizi ispod $2.000 s rastućim redom za izlaz iz stakinga, a AI tokeni pate zbog iznenadne ostavke Jensen Huanga iz Nvidie uz istovremeno vruću inflaciju i rast prinosa na obveznice. Kratkoročno se očekuje nastavak bearish pritiska uz ključnu potporu na 200-tjednom MA (~$68K) bez jasnih katalizatora za oporavak, uz jedini pozitivan signal S&P 500 tjednog oporavka od +3.3%.",
+    "aiSummary":  "DXY ostaje stabilan na 103.37 dok Fear & Greed pada na historijski nizak 10 (ekstremni strah), s masovnim likvidacijama od $2B+ koje su gurnule BTC na $62K vikend minimum — najniže od srpnja. Bitcoin se kratko oporavlja prema $65K zahvaljujući tjednom S&P 500 rastu od +2.5%, no ETH klizi ispod $2K, XRP testira 2-godišnje minimume, a stablecoin supply se smanjio za $17B što signalizira izlazak institucija. Kratkoročno se očekuje nastavak bearish pritiska uz ključne potpore na $62K-$63K za BTC, bez jasnog katalizatora oporavka osim potencijalne Fed pauze u povećanju kamatnih stopa.",
     "warActive":  false,
-    "btcDom":  60.0,
-    "stableDom":  6.8,
-    "oil":  88.4
+    "btcDom":  60.66,
+    "stableDom":  13.2,
+    "oil":  88.0
 }
