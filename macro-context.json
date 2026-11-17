@@ -1,19 +1,19 @@
 {
-    "dxy":  103.49,
-    "changeSummary":  "Makro uvjeti ostaju nepromijenjeni od prethodne analize — DXY stabilan na 103.5, Fear & Greed zadržan na 10, BTC nastavlja padati prema $64K uz tjedne ETF odljeve od $1.07B, dok Rusija legalizira kripto za retail kao jedini pozitivni katalist.",
-    "lastUpdated":  "2026-11-16T22:00:00Z",
+    "dxy":  103.6,
+    "changeSummary":  "Ispravljen macroPenalty na 0 (min. granica), BTC četveromjesečni minimum $64.8k, F&G=12 ekstremni strah.",
+    "lastUpdated":  "2026-11-17T14:00:00Z",
     "warnings":  {
                      "ACT":  [
-
+                             "Ekstremni strah, meme tokeni visoki rizik"
                              ],
                      "MEME":  [
-
+                              "Ekstremni strah, meme tokeni visoki rizik"
                               ],
                      "ANIME":  [
-
+                               "Mala kap., visok rizik u bear tržištu"
                                ],
                      "XRP":  [
-                               "XRP ispod $1.00 - dvogodišnji minimum"
+                             "Testira donju granicu podrške (Bollinger)"
                              ],
                      "BNB":  [
 
@@ -22,55 +22,54 @@
 
                              ],
                      "AVAX":  [
-
+                              "Bear sentiment, nema katalitičkih vijesti"
                               ],
                      "PENGU":  [
-
+                               "NFT meme token - visok rizik, ekstremni strah"
                                ],
                      "BOME":  [
-
+                              "Meme token u ekstremnom strahu, visok rizik"
                               ],
                      "DOGS":  [
-
+                              "Meme token - visok rizik u ekstremnom strahu"
                               ],
                      "NOT":  [
-
+                             "Telegram meme token pod prodajnim pritiskom"
                              ],
                      "PEOPLE":  [
-
+                                "Mala kapitalizacija, visok rizik"
                                 ],
                      "SOL":  [
-                               "SOL nastavlja padati uz altcoin raspad"
+
                              ],
                      "ADA":  [
 
                              ],
                      "PNUT":  [
-
+                              "Meme token - visok rizik u ekstremnom strahu"
                               ],
                      "AIXBT":  [
-                                "AI-to-crypto rotacijska teza upitna"
+
                                ],
                      "ETH":  [
-                               "ETH pao na $1,711 - višemjesečni minimum"
+                             "$399M ETF odljevi tjedno, prodajni pritisak"
                              ],
                      "LINK":  [
 
                               ],
                      "PUMP":  [
-
+                              "Meme token - visok rizik u ekstremnom strahu"
                               ],
                      "TRUMP":  [
 
                                ],
                      "BTC":  [
-                               "ETF odljevi $1.07B tjedno, BTC ispod 200T SMA",
-                               "Luxor Commander hack - rudari pogođeni"
+                             "F&G=12, BTC četveromjes. minimum, $1B ETF odljevi"
                              ]
                  },
-    "sp500Ret5d":  2.51,
-    "fearGreed":  10,
-    "macroPenalty":  1,
+    "sp500Ret5d":  -1.5,
+    "fearGreed":  12,
+    "macroPenalty":  0,
     "catalysts":  {
                       "ACT":  [
 
@@ -121,7 +120,7 @@
 
                                 ],
                       "ETH":  [
-                                "EIP-8288 aktivacija (Vitalik) - dugoročni katalist"
+                              "Kitovi kupuju dip, cijena ~$1,800"
                               ],
                       "LINK":  [
 
@@ -130,39 +129,39 @@
 
                                ],
                       "TRUMP":  [
-
+                                "Trump imenuje SEC i CFTC nominacije"
                                 ],
                       "BTC":  [
-                                "Rusija legalizirala kripto za retail investitore"
+                              "Backpack CFTC suglasnost; HK širi crypto licenciranje"
                               ]
                   },
     "regime":  "BEAR",
     "sentimentScore":  {
-                           "ACT":  0,
-                           "MEME":  0,
-                           "ANIME":  0,
-                           "XRP":  -2,
+                           "ACT":  -1,
+                           "MEME":  -1,
+                           "ANIME":  -1,
+                           "XRP":  -1,
                            "BNB":  0,
                            "SUI":  0,
-                           "AVAX":  0,
-                           "PENGU":  0,
-                           "BOME":  0,
-                           "DOGS":  0,
-                           "NOT":  0,
-                           "PEOPLE":  0,
-                           "SOL":  -1,
+                           "AVAX":  -1,
+                           "PENGU":  -1,
+                           "BOME":  -1,
+                           "DOGS":  -1,
+                           "NOT":  -1,
+                           "PEOPLE":  -1,
+                           "SOL":  0,
                            "ADA":  0,
-                           "PNUT":  0,
-                           "AIXBT":  -1,
-                           "ETH":  -1,
+                           "PNUT":  -1,
+                           "AIXBT":  0,
+                           "ETH":  0,
                            "LINK":  0,
-                           "PUMP":  0,
-                           "TRUMP":  0,
+                           "PUMP":  -1,
+                           "TRUMP":  1,
                            "BTC":  -1
                        },
-    "aiSummary":  "DXY stabilan na 103.5 uz daljnje Fed hawkish signale, BTC konsolidira oko $64K ispod 200-tjednog SMA uz tjedne ETF odljeve od $1.07B i akumulirane likvidacije od ~$2B vikend. Fear & Greed zadržan na 10 (ekstremni strah), XRP na dvogodišnjem minimumu ispod $1.00, dok Rusija otvara kripto za retail kao jedini pozitivni signal. Geopolitički rizik Bliskog istoka i Fed tightening nastavljaju pritiskati tržište prema $60K.",
-    "warActive":  true,
-    "btcDom":  59.5,
-    "stableDom":  12.9,
-    "oil":  88.1
+    "aiSummary":  "DXY se drži na 103.6, pritisak na kripto umjeren ali Fed signalizira mogući porast kamatnih stopa u prosincu što povećava rizik pada. Indeks straha i pohlepe ostaje na ekstremnih 12, BTC doseže četveromjesečni minimum oko $64,800 uz $1B+ tjednih ETF odljeva i S&P padom od 1.92% danas. Oporavak je moguć samo ako BTC čvrsto zadrži razinu $62k-$64k bez eskalacije Fedovih hawkish signala.",
+    "warActive":  false,
+    "btcDom":  59.3,
+    "stableDom":  8.0,
+    "oil":  73.0
 }
