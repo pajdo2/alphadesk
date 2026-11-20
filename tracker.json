@@ -28,8 +28,8 @@
       ],
       "peakPrice": 0.2484,
       "peakPct": 0,
-      "maePrice": 0.2483,
-      "maePct": -0.04
+      "maePrice": 0.2481,
+      "maePct": -0.12
     },
     {
       "id": "1794833588723",
@@ -10270,5 +10270,5 @@
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-11-20T08:15:01.537Z"
+  "updatedAt": "2026-11-20T08:16:23.186Z"
 }
