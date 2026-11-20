@@ -1,6 +1,37 @@
 {
   "predictions": [
     {
+      "id": "1795162494602",
+      "timestamp": 1795162494602,
+      "sym": "WLD",
+      "type": "regular",
+      "direction": "LONG",
+      "date": "20. stu",
+      "entry": 0.2484,
+      "target": 0.268272,
+      "d1Target": 0.255355,
+      "d2Target": 0.26231,
+      "d3Target": 0.268272,
+      "stop": 0.240948,
+      "conf": 56,
+      "targetPct": 8,
+      "status": "AKTIVAN",
+      "closePrice": null,
+      "closePct": null,
+      "autoClose": false,
+      "engineVer": "v5.392",
+      "d1Hit": false,
+      "d2Hit": false,
+      "d3Hit": false,
+      "ruleBreaks": [
+        "btcdom"
+      ],
+      "peakPrice": 0.2484,
+      "peakPct": 0,
+      "maePrice": 0.2483,
+      "maePct": -0.04
+    },
+    {
       "id": "1794833588723",
       "timestamp": 1794833588723,
       "sym": "BCH",
@@ -7729,8 +7760,8 @@
     "_global": {
       "rsiOversold": 0.5,
       "rsiOverbought": 1,
-      "trendUp": 0.367,
-      "trendDown": 0.428,
+      "trendUp": 0.366,
+      "trendDown": 0.427,
       "bbBelow": 1,
       "divBullish": 0.3,
       "divBearish": 0.571,
@@ -7738,13 +7769,13 @@
       "macdBearCross": 1,
       "lsRatioBull": 1,
       "lsRatioExtreme": 1,
-      "basisBack": 0.546,
+      "basisBack": 0.544,
       "takerSell": 1,
       "btcDomHigh": 1,
       "btcDomLow": 1,
-      "volSpike": 0.339,
+      "volSpike": 0.338,
       "mtfAllUp": 0.4,
-      "fgExtremeFear": 0.465,
+      "fgExtremeFear": 0.464,
       "fgFear": 0.3
     },
     "BULL": {
@@ -10207,10 +10238,10 @@
       "conf": 42,
       "score": 1.65,
       "verdict": "🔵 Spekulativno",
-      "graded": false,
-      "correct": null,
-      "fwdPrice": null,
-      "fwdPct": null
+      "graded": true,
+      "correct": false,
+      "fwdPrice": 68456,
+      "fwdPct": 0
     },
     {
       "ts": 1794837552782,
@@ -10220,11 +10251,24 @@
       "conf": 23,
       "score": -6.1,
       "verdict": "🔴 Preskoči",
+      "graded": true,
+      "correct": false,
+      "fwdPrice": 68456,
+      "fwdPct": 6.63
+    },
+    {
+      "ts": 1795162481149,
+      "price": 68456,
+      "dir": "NEUTRAL",
+      "th": 2.4,
+      "conf": 41,
+      "score": 1.15,
+      "verdict": "🔵 Spekulativno",
       "graded": false,
       "correct": null,
       "fwdPrice": null,
       "fwdPct": null
     }
   ],
-  "updatedAt": "2026-11-16T13:59:25.633Z"
+  "updatedAt": "2026-11-20T08:15:01.537Z"
 }
