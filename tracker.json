@@ -26,8 +26,8 @@
       "ruleBreaks": [
         "btcdom"
       ],
-      "peakPrice": 0.249,
-      "peakPct": 0.24,
+      "peakPrice": 0.2492,
+      "peakPct": 0.32,
       "maePrice": 0.2481,
       "maePct": -0.12
     },
@@ -10281,7 +10281,20 @@
       "correct": null,
       "fwdPrice": null,
       "fwdPct": null
+    },
+    {
+      "ts": 1795168642064,
+      "price": 61932.29,
+      "dir": "NEUTRAL",
+      "th": 5.66,
+      "conf": 39,
+      "score": 0.68,
+      "verdict": "🔵 Spekulativno",
+      "graded": false,
+      "correct": null,
+      "fwdPrice": null,
+      "fwdPct": null
     }
   ],
-  "updatedAt": "2026-11-20T08:45:39.486Z"
+  "updatedAt": "2026-11-20T09:57:25.115Z"
 }
