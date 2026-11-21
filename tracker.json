@@ -1,6 +1,37 @@
 {
   "predictions": [
     {
+      "id": "1795242723150",
+      "timestamp": 1795242723150,
+      "sym": "GRAM",
+      "type": "regular",
+      "direction": "LONG",
+      "date": "21. stu",
+      "entry": 0.893,
+      "target": 1.066,
+      "d1Target": 0.95355,
+      "d2Target": 1.0141,
+      "d3Target": 1.066,
+      "stop": 0.85728,
+      "conf": 60,
+      "targetPct": 19.37,
+      "status": "AKTIVAN",
+      "closePrice": null,
+      "closePct": null,
+      "autoClose": false,
+      "engineVer": "v5.392",
+      "d1Hit": false,
+      "d2Hit": false,
+      "d3Hit": false,
+      "ruleBreaks": [
+        "btcdom"
+      ],
+      "peakPrice": 0.893,
+      "peakPct": 0,
+      "maePrice": 0.893,
+      "maePct": 0
+    },
+    {
       "id": "1795162494602",
       "timestamp": 1795162494602,
       "sym": "WLD",
@@ -10295,7 +10326,20 @@
       "correct": null,
       "fwdPrice": null,
       "fwdPct": null
+    },
+    {
+      "ts": 1795242640290,
+      "price": 68456,
+      "dir": "NEUTRAL",
+      "th": 2.4,
+      "conf": 36,
+      "score": -0.95,
+      "verdict": "🔴 Preskoči",
+      "graded": false,
+      "correct": null,
+      "fwdPrice": null,
+      "fwdPct": null
     }
   ],
-  "updatedAt": "2026-11-20T18:41:34.760Z"
+  "updatedAt": "2026-11-21T06:32:07.274Z"
 }
